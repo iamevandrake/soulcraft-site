@@ -1,0 +1,19 @@
+{
+  "version": "1.0",
+  "site": "https://soulcraftagency.com",
+  "lastUpdated": "2026-03-05",
+  "pages": [
+    {
+      "slug": "solutions/agentic-seo",
+      "title": "Agentic SEO: AI-Powered Search Optimization",
+      "description": "Agentic SEO deploys autonomous AI agents to research, create, and optimize your search presence across Google, AI Overviews, and generative engines.",
+      "type": "solution",
+      "primaryKeyword": "agentic SEO",
+      "secondaryKeywords": ["AI SEO", "generative engine optimization", "GEO", "AIO", "AI-powered search optimization", "agentic marketing"],
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "wordCount": 2100,
+      "url": "https://soulcraftagency.com/solutions/agentic-seo/"
+    }
+  ]
+}
