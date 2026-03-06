@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>SHADE</title>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#F5F2EC;--card:#fff;--text:#1E1E1E;--text-mid:#555;--text-light:#999;
+  --neg-1:#D4735E;--neg-2:#D9A066;--pos-1:#7EB8A0;--pos-2:#4A9E7D;
+  --correct:#2ECC71;--close:#F0C05A;--wrong:#E05D5D;
+  --border:#E8E2D8;--shadow:0 2px 8px rgba(0,0,0,0.06);
+  --shadow-lg:0 4px 20px rgba(0,0,0,0.08);
+  --r:14px;--sans:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;
+}
+html{font-size:16px}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);min-height:100dvh;min-height:100vh;overflow-x:hidden;-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent}
+.container{max-width:440px;margin:0 auto;padding:0 18px;min-height:100dvh;min-height:100vh;display:flex;flex-direction:column}
+.screen{display:none;flex-direction:column;flex:1}.screen.active{display:flex}
+
+/* Animations */
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes pop{0%{transform:scale(.85);opacity:0}60%{transform:scale(1.04)}100%{transform:scale(1);opacity:1}}
+@keyframes slideIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+@keyframes bounceIn{0%{transform:scale(0)}50%{transform:scale(1.12)}70%{transform:scale(.96)}100%{transform:scale(1)}}
+
+/* ===== HEADER ===== */
+.header{text-align:center;padding:16px 0 8px;flex-shrink:0}
+.header-logo{font-size:.9rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--text)}
+
+/* ===== START ===== */
+#start-screen{align-items:center;justify-content:center;text-align:center;padding-bottom:40px;animation:fadeUp .5s ease-out}
+.s-emoji{font-size:3.2rem;margin-bottom:12px}
+.s-title{font-size:clamp(2.8rem,11vw,4rem);font-weight:900;letter-spacing:-1.5px;line-height:1;margin-bottom:8px}
+.s-tagline{font-size:1.05rem;color:var(--text-mid);font-weight:500;margin-bottom:44px}
+.s-play{font-family:var(--sans);font-size:1rem;font-weight:800;padding:16px 56px;border:none;border-radius:50px;background:var(--text);color:#fff;cursor:pointer;transition:transform .12s;box-shadow:0 4px 14px rgba(0,0,0,.12)}
+.s-play:active{transform:scale(.96)}
+.s-how{margin-top:44px;background:var(--card);border-radius:var(--r);padding:22px;box-shadow:var(--shadow);max-width:360px;width:100%;text-align:left}
+.s-how h3{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--text-light);margin-bottom:14px}
+.s-how p{font-size:.88rem;line-height:1.65;color:var(--text-mid);margin-bottom:10px}
+.s-how p:last-child{margin-bottom:0}
+.s-how strong{color:var(--text)}
+.s-how .example{display:flex;gap:6px;margin:12px 0;flex-wrap:wrap}
+.s-how .ex-chip{font-size:.75rem;font-weight:700;padding:6px 12px;border-radius:8px;color:#fff}
+
+/* ===== GAME ===== */
+#game-screen{padding-top:12px;animation:fadeIn .3s ease-out}
+.g-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+.g-round{font-size:.78rem;font-weight:700;color:var(--text-light)}
+.g-score{font-size:.78rem;font-weight:700;color:var(--text)}.g-score span{color:var(--pos-2)}
+.g-progress{width:100%;height:5px;background:var(--border);border-radius:3px;overflow:hidden;margin-bottom:20px}
+.g-progress-fill{height:100%;background:linear-gradient(90deg,var(--neg-1),var(--pos-2));border-radius:3px;transition:width .4s ease-out}
+
+.g-category{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--text-light);text-align:center;margin-bottom:16px}
+
+/* Word pool */
+.g-pool{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:24px;min-height:46px}
+.pool-chip{font-size:.92rem;font-weight:700;padding:11px 18px;border-radius:10px;background:var(--card);border:2px solid var(--border);color:var(--text);cursor:pointer;transition:all .15s;box-shadow:var(--shadow);text-transform:uppercase;letter-spacing:.03em;user-select:none}
+.pool-chip:active{transform:scale(.94)}
+.pool-chip.placed{opacity:.25;pointer-events:none;transform:scale(.9)}
+
+/* Spectrum + slots */
+.g-spectrum{position:relative;margin-bottom:20px}
+.spectrum-labels{display:flex;justify-content:space-between;margin-bottom:8px}
+.spectrum-label{font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em}
+.spectrum-label.neg{color:var(--neg-1)}.spectrum-label.pos{color:var(--pos-2)}
+.spectrum-bar{height:4px;border-radius:2px;background:linear-gradient(90deg,var(--neg-1),var(--neg-2),var(--pos-1),var(--pos-2));margin-bottom:12px}
+
+.g-slots{display:flex;gap:6px}
+.g-slot{flex:1;min-height:64px;border-radius:10px;border:2px dashed var(--border);display:flex;align-items:center;justify-content:center;font-size:.82rem;font-weight:700;color:var(--text-light);transition:all .2s;position:relative;cursor:pointer;text-transform:uppercase;letter-spacing:.02em;padding:4px 2px;text-align:center;word-break:break-word;hyphens:auto}
+.g-slot.filled{border-style:solid;background:var(--card);color:var(--text);box-shadow:var(--shadow);animation:pop .25s ease-out}
+.g-slot.filled:active{transform:scale(.95)}
+.g-slot:nth-child(1){border-color:rgba(212,115,94,.3)}.g-slot:nth-child(1).filled{border-color:var(--neg-1)}
+.g-slot:nth-child(2){border-color:rgba(217,160,102,.3)}.g-slot:nth-child(2).filled{border-color:var(--neg-2)}
+.g-slot:nth-child(3){border-color:rgba(126,184,160,.3)}.g-slot:nth-child(3).filled{border-color:var(--pos-1)}
+.g-slot:nth-child(4){border-color:rgba(74,158,125,.3)}.g-slot:nth-child(4).filled{border-color:var(--pos-2)}
+.slot-num{position:absolute;top:4px;left:8px;font-size:.55rem;color:var(--text-light);font-weight:600}
+
+/* Lock in */
+.g-lock{text-align:center;margin-bottom:16px}
+.lock-btn{font-family:var(--sans);font-size:.9rem;font-weight:800;padding:14px 44px;border:none;border-radius:50px;background:var(--text);color:#fff;cursor:pointer;transition:transform .12s;box-shadow:0 3px 12px rgba(0,0,0,.1);animation:fadeUp .3s ease-out}
+.lock-btn:active{transform:scale(.96)}
+.lock-btn:disabled{opacity:.3;cursor:default;transform:none!important}
+
+/* Reveal */
+.g-reveal{display:none;animation:slideIn .35s ease-out}
+.g-reveal.active{display:block}
+.reveal-header{text-align:center;margin-bottom:16px}
+.reveal-score-badge{display:inline-block;font-size:.75rem;font-weight:800;padding:6px 16px;border-radius:50px;color:#fff;margin-bottom:8px}
+.reveal-score-badge.s4{background:var(--correct)}.reveal-score-badge.s3{background:#6DBF7B}
+.reveal-score-badge.s2{background:var(--close)}.reveal-score-badge.s1{background:#D9A066}
+.reveal-score-badge.s0{background:var(--wrong)}
+
+.reveal-correct{display:flex;gap:6px;margin-bottom:16px}
+.reveal-word{flex:1;padding:12px 4px;border-radius:10px;text-align:center;font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.02em;border:2px solid transparent}
+.reveal-word:nth-child(1){background:rgba(212,115,94,.12);border-color:var(--neg-1);color:var(--neg-1)}
+.reveal-word:nth-child(2){background:rgba(217,160,102,.12);border-color:var(--neg-2);color:#b07830}
+.reveal-word:nth-child(3){background:rgba(126,184,160,.12);border-color:var(--pos-1);color:#4a8a6e}
+.reveal-word:nth-child(4){background:rgba(74,158,125,.12);border-color:var(--pos-2);color:var(--pos-2)}
+
+/* Your ranking feedback */
+.reveal-yours{display:flex;gap:6px;margin-bottom:16px}
+.yours-word{flex:1;padding:8px 4px;border-radius:8px;text-align:center;font-size:.7rem;font-weight:700;text-transform:uppercase}
+.yours-word.exact{background:rgba(46,204,113,.12);color:var(--correct)}
+.yours-word.close{background:rgba(240,192,90,.12);color:#B8860B}
+.yours-word.off{background:rgba(224,93,93,.1);color:var(--wrong)}
+
+.reveal-explain{font-size:.88rem;line-height:1.6;color:var(--text-mid);text-align:center;margin-bottom:18px;padding:0 4px}
+.next-btn{font-family:var(--sans);font-size:.85rem;font-weight:700;padding:13px 40px;border:none;border-radius:50px;background:var(--text);color:#fff;cursor:pointer;transition:transform .12s;display:block;margin:0 auto}
+.next-btn:active{transform:scale(.96)}
+
+/* ===== END ===== */
+#end-screen{align-items:center;justify-content:center;text-align:center;padding:20px 0 40px;animation:fadeUp .5s ease-out}
+.e-emoji{font-size:3rem;margin-bottom:8px;animation:bounceIn .5s ease-out}
+.e-title{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.15em;color:var(--text-light);margin-bottom:4px}
+.e-score{font-size:3.2rem;font-weight:900;line-height:1;color:var(--text)}
+.e-of{font-size:.9rem;color:var(--text-light);font-weight:600;margin-bottom:8px}
+.e-quip{font-size:.95rem;color:var(--text-mid);line-height:1.6;max-width:320px;margin:0 auto 28px}
+.e-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:4px;margin-bottom:28px;max-width:280px}
+.e-dot{width:24px;height:24px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:.55rem;font-weight:800;color:#fff}
+.e-dot.p4{background:var(--correct)}.e-dot.p3{background:#6DBF7B}
+.e-dot.p2{background:var(--close)}.e-dot.p1{background:#D9A066}
+.e-dot.p0{background:var(--wrong)}
+.e-stats{display:flex;gap:28px;justify-content:center;margin-bottom:28px}
+.es-val{font-size:1.5rem;font-weight:900;color:var(--text)}.es-label{font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text-light);margin-top:2px}
+.e-btns{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.share-btn{font-family:var(--sans);font-size:.85rem;font-weight:800;padding:14px 36px;border:none;border-radius:50px;background:var(--text);color:#fff;cursor:pointer;transition:transform .12s;box-shadow:0 3px 12px rgba(0,0,0,.1)}
+.share-btn:active{transform:scale(.96)}
+.again-btn{font-family:var(--sans);font-size:.85rem;font-weight:700;padding:14px 36px;border:2px solid var(--border);border-radius:50px;background:transparent;color:var(--text-mid);cursor:pointer;transition:all .15s}
+.again-btn:active{transform:scale(.96);border-color:var(--text);color:var(--text)}
+
+/* Toast */
+.toast{position:fixed;bottom:28px;left:50%;transform:translateX(-50%);background:var(--text);color:#fff;padding:10px 24px;border-radius:50px;font-size:.82rem;font-weight:700;z-index:200;animation:toastA 2s ease-out forwards;box-shadow:0 4px 16px rgba(0,0,0,.15)}
+@keyframes toastA{0%{opacity:0;transform:translateX(-50%) translateY(10px)}12%{opacity:1;transform:translateX(-50%) translateY(0)}80%{opacity:1}100%{opacity:0}}
+
+@media(max-width:370px){.container{padding:0 12px}.g-slot{min-height:56px;font-size:.72rem}.pool-chip{padding:9px 12px;font-size:.82rem}}
+@supports(-webkit-touch-callout:none){input,select,textarea{font-size:16px!important}}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="header"><div class="header-logo">Shade</div></div>
+
+  <!-- START -->
+  <div class="screen active" id="start-screen">
+    <div class="s-emoji">🎨</div>
+    <div class="s-title">Shade</div>
+    <div class="s-tagline">Every word has a vibe.</div>
+    <button class="s-play" onclick="startGame()">Play</button>
+    <div class="s-how">
+      <h3>How it works</h3>
+      <p>Four words. They all roughly mean the same thing. But the <strong>vibes are totally different</strong>.</p>
+      <p>Rank them from <strong>most negative</strong> to <strong>most positive</strong> connotation.</p>
+      <div class="example">
+        <span class="ex-chip" style="background:var(--neg-1)">weird</span>
+        <span class="ex-chip" style="background:var(--neg-2)">odd</span>
+        <span class="ex-chip" style="background:var(--pos-1)">quirky</span>
+        <span class="ex-chip" style="background:var(--pos-2)">unique</span>
+      </div>
+      <p>10 rounds. Tap words to place them. Argue with your friends about the results.</p>
+    </div>
+  </div>
+
+  <!-- GAME -->
+  <div class="screen" id="game-screen">
+    <div class="g-top">
+      <div class="g-round" id="g-round">1 / 10</div>
+      <div class="g-score">Score: <span id="g-score">0</span></div>
+    </div>
+    <div class="g-progress"><div class="g-progress-fill" id="g-pfill" style="width:0%"></div></div>
+
+    <div class="g-category" id="g-category"></div>
+
+    <div class="g-pool" id="g-pool"></div>
+
+    <div class="g-spectrum">
+      <div class="spectrum-labels">
+        <span class="spectrum-label neg">Most negative</span>
+        <span class="spectrum-label pos">Most positive</span>
+      </div>
+      <div class="spectrum-bar"></div>
+      <div class="g-slots" id="g-slots">
+        <div class="g-slot" data-idx="0" onclick="removeFromSlot(0)"><span class="slot-num">1</span></div>
+        <div class="g-slot" data-idx="1" onclick="removeFromSlot(1)"><span class="slot-num">2</span></div>
+        <div class="g-slot" data-idx="2" onclick="removeFromSlot(2)"><span class="slot-num">3</span></div>
+        <div class="g-slot" data-idx="3" onclick="removeFromSlot(3)"><span class="slot-num">4</span></div>
+      </div>
+    </div>
+
+    <div class="g-lock" id="g-lock">
+      <button class="lock-btn" id="lock-btn" onclick="lockIn()" disabled>Lock In</button>
+    </div>
+
+    <div class="g-reveal" id="g-reveal">
+      <div class="reveal-header">
+        <div class="reveal-score-badge" id="r-badge"></div>
+      </div>
+      <div style="font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--text-light);text-align:center;margin-bottom:6px">Correct order</div>
+      <div class="reveal-correct" id="r-correct"></div>
+      <div style="font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--text-light);text-align:center;margin-bottom:6px">Your ranking</div>
+      <div class="reveal-yours" id="r-yours"></div>
+      <div class="reveal-explain" id="r-explain"></div>
+      <button class="next-btn" id="r-next" onclick="nextRound()">Next</button>
+    </div>
+  </div>
+
+  <!-- END -->
+  <div class="screen" id="end-screen">
+    <div class="e-emoji" id="e-emoji"></div>
+    <div class="e-title">Your ear for nuance</div>
+    <div class="e-score" id="e-score"></div>
+    <div class="e-of">of 40</div>
+    <div class="e-quip" id="e-quip"></div>
+    <div class="e-grid" id="e-grid"></div>
+    <div class="e-stats">
+      <div><div class="es-val" id="es-perfect">0</div><div class="es-label">Perfect</div></div>
+      <div><div class="es-val" id="es-avg">0</div><div class="es-label">Avg Score</div></div>
+      <div><div class="es-val" id="es-hardest">-</div><div class="es-label">Hardest</div></div>
+    </div>
+    <div class="e-btns">
+      <button class="share-btn" onclick="shareResults()">Share</button>
+      <button class="again-btn" onclick="playAgain()">Play Again</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const PUZZLES=[
+{category:"Words that mean 'thin'",words:['SCRAWNY','SKINNY','SLIM','SLENDER'],
+explain:"Scrawny implies malnourishment. Skinny is blunt. Slim suggests intention. Slender is what gets written in novels."},
+
+{category:"Words that mean 'not spending money'",words:['STINGY','CHEAP','FRUGAL','THRIFTY'],
+explain:"Stingy withholds from others. Cheap lacks generosity. Frugal is practical. Thrifty is a virtue your grandparents bragged about."},
+
+{category:"Words that mean 'persistent'",words:['STUBBORN','OBSTINATE','TENACIOUS','DETERMINED'],
+explain:"Stubborn is a flaw. Obstinate is stubborn in a suit. Tenacious adds grit. Determined goes on resumes."},
+
+{category:"Words that mean 'talkative'",words:['MOUTHY','CHATTY','ARTICULATE','ELOQUENT'],
+explain:"Mouthy gets you in trouble. Chatty is your coworker at the coffee machine. Articulate is respected. Eloquent wins arguments and elections."},
+
+{category:"Words that mean 'different'",words:['WEIRD','ODD','QUIRKY','UNIQUE'],
+explain:"Weird gets you avoided. Odd gets you noticed. Quirky gets you a dating profile. Unique gets you a TED talk."},
+
+{category:"Words that mean 'self-assured'",words:['ARROGANT','COCKY','BOLD','CONFIDENT'],
+explain:"Arrogant assumes superiority. Cocky hasn't earned it yet. Bold takes calculated risks. Confident doesn't need to prove anything."},
+
+{category:"Words that mean 'detail-oriented'",words:['OBSESSIVE','FUSSY','METICULOUS','THOROUGH'],
+explain:"Obsessive needs therapy. Fussy needs decaf. Meticulous gets promotions. Thorough gets the job done right."},
+
+{category:"Words that mean 'youthful'",words:['CHILDISH','IMMATURE','YOUTHFUL','SPIRITED'],
+explain:"Childish throws tantrums. Immature isn't there yet. Youthful has energy. Spirited has joie de vivre."},
+
+{category:"Words that mean 'emotional'",words:['HYSTERICAL','OVERSENSITIVE','EMOTIONAL','PASSIONATE'],
+explain:"Hysterical is dismissive. Oversensitive deflects blame. Emotional is human. Passionate goes on every resume."},
+
+{category:"Words that mean 'opinionated'",words:['DOGMATIC','OPINIONATED','ASSERTIVE','PRINCIPLED'],
+explain:"Dogmatic won't listen. Opinionated won't stop talking. Assertive knows when to speak. Principled knows why."},
+
+{category:"Words that mean 'relaxed'",words:['LAZY','IDLE','LAID-BACK','EASYGOING'],
+explain:"Lazy is a judgment. Idle is a fact. Laid-back is a California vibe. Easygoing is a compliment you actually want."},
+
+{category:"Words that mean 'simple'",words:['SIMPLEMINDED','NAIVE','UNDERSTATED','ELEGANT'],
+explain:"Simpleminded is an insult. Naive hasn't learned yet. Understated chooses restraint. Elegant makes less feel like more."},
+
+{category:"Words that mean 'curious'",words:['NOSY','PRYING','INQUISITIVE','CURIOUS'],
+explain:"Nosy reads your texts. Prying won't drop it. Inquisitive asks good questions. Curious discovers new worlds."},
+
+{category:"Words that mean 'ambitious'",words:['RUTHLESS','CUTTHROAT','DRIVEN','AMBITIOUS'],
+explain:"Ruthless has no limits. Cutthroat has no allies. Driven has direction. Ambitious has dreams."},
+
+{category:"Words that mean 'old'",words:['DECREPIT','AGED','MATURE','SEASONED'],
+explain:"Decrepit is falling apart. Aged carries weight. Mature implies growth. Seasoned suggests every wrinkle was earned."}
+];
+
+let game={round:0,total:10,score:0,puzzles:[],current:null,ranking:[null,null,null,null],pool:[],results:[],locked:false};
+
+function shuffle(a){const b=[...a];for(let i=b.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[b[i],b[j]]=[b[j],b[i]]}return b}
+function $(id){return document.getElementById(id)}
+function show(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));$(id).classList.add('active')}
+
+function countInversions(player,correct){
+  const pos={};correct.forEach((w,i)=>pos[w]=i);
+  let inv=0;
+  for(let i=0;i<player.length;i++)for(let j=i+1;j<player.length;j++)if(pos[player[i]]>pos[player[j]])inv++;
+  return inv;
+}
+
+function invToPoints(inv){
+  if(inv===0)return 4;if(inv===1)return 3;if(inv===2)return 2;if(inv<=4)return 1;return 0;
+}
+
+function startGame(){
+  game={round:0,total:10,score:0,puzzles:shuffle(PUZZLES).slice(0,10),current:null,ranking:[null,null,null,null],pool:[],results:[],locked:false};
+  show('game-screen');
+  nextRound();
+}
+
+function nextRound(){
+  $('g-reveal').classList.remove('active');
+  $('g-lock').style.display='block';
+
+  if(game.round>=game.total){endGame();return}
+
+  game.current=game.puzzles[game.round];
+  game.round++;
+  game.ranking=[null,null,null,null];
+  game.pool=shuffle([...game.current.words]);
+  game.locked=false;
+
+  $('g-round').textContent=`${game.round} / ${game.total}`;
+  $('g-score').textContent=game.score;
+  $('g-pfill').style.width=`${((game.round-1)/game.total)*100}%`;
+  $('g-category').textContent=game.current.category;
+  $('lock-btn').disabled=true;
+
+  renderPool();
+  renderSlots();
+}
+
+function renderPool(){
+  const el=$('g-pool');el.innerHTML='';
+  game.pool.forEach(word=>{
+    const chip=document.createElement('div');
+    chip.className='pool-chip';
+    if(game.ranking.includes(word))chip.classList.add('placed');
+    chip.textContent=word;
+    chip.onclick=()=>placeWord(word);
+    el.appendChild(chip);
+  });
+}
+
+function renderSlots(){
+  const slots=$('g-slots').children;
+  for(let i=0;i<4;i++){
+    const slot=slots[i];
+    const word=game.ranking[i];
+    if(word){
+      slot.className='g-slot filled';
+      slot.innerHTML=`<span class="slot-num">${i+1}</span>${word}`;
+    }else{
+      slot.className='g-slot';
+      slot.innerHTML=`<span class="slot-num">${i+1}</span>`;
+    }
+  }
+  $('lock-btn').disabled=game.ranking.includes(null);
+}
+
+function placeWord(word){
+  if(game.locked)return;
+  if(game.ranking.includes(word))return;
+  const idx=game.ranking.indexOf(null);
+  if(idx===-1)return;
+  game.ranking[idx]=word;
+  renderPool();renderSlots();
+}
+
+function removeFromSlot(idx){
+  if(game.locked)return;
+  if(!game.ranking[idx])return;
+  game.ranking[idx]=null;
+  // Collapse: shift remaining words up
+  const compact=game.ranking.filter(w=>w!==null);
+  game.ranking=[...compact,...Array(4-compact.length).fill(null)];
+  renderPool();renderSlots();
+}
+
+function lockIn(){
+  if(game.ranking.includes(null)||game.locked)return;
+  game.locked=true;
+
+  const correct=game.current.words;
+  const player=game.ranking;
+  const inv=countInversions(player,correct);
+  const pts=invToPoints(inv);
+  game.score+=pts;
+  game.results.push(pts);
+
+  $('g-score').textContent=game.score;
+  $('g-lock').style.display='none';
+
+  // Badge
+  const badge=$('r-badge');
+  const labels=['Nope','Close-ish','Getting there','Almost!','Perfect!'];
+  badge.textContent=`+${pts} ${labels[pts]}`;
+  badge.className=`reveal-score-badge s${pts}`;
+
+  // Correct order
+  const rc=$('r-correct');rc.innerHTML='';
+  correct.forEach(w=>{
+    const d=document.createElement('div');d.className='reveal-word';d.textContent=w;rc.appendChild(d);
+  });
+
+  // Player ranking with feedback
+  const ry=$('r-yours');ry.innerHTML='';
+  player.forEach((w,i)=>{
+    const ci=correct.indexOf(w);
+    const diff=Math.abs(ci-i);
+    const cls=diff===0?'exact':diff===1?'close':'off';
+    const d=document.createElement('div');d.className=`yours-word ${cls}`;d.textContent=w;ry.appendChild(d);
+  });
+
+  $('r-explain').textContent=game.current.explain;
+  $('r-next').textContent=game.round>=game.total?'See Results':'Next';
+  $('g-reveal').classList.add('active');
+
+  // Scroll reveal into view on mobile
+  setTimeout(()=>$('g-reveal').scrollIntoView({behavior:'smooth',block:'nearest'}),100);
+}
+
+function endGame(){
+  show('end-screen');
+  $('g-pfill').style.width='100%';
+
+  const s=game.score,mx=40,pct=s/mx;
+  let emoji,quip;
+  if(pct>=.9){emoji='🎭';quip='You don\'t just read words -- you feel their temperature. Language bends to your will.';}
+  else if(pct>=.75){emoji='✨';quip='You understand that "moist" and "damp" are NOT the same thing. Your text messages are probably immaculate.';}
+  else if(pct>=.6){emoji='🧐';quip='Solid instincts. You catch most shades of meaning. Your emails are probably well-calibrated.';}
+  else if(pct>=.45){emoji='🤷';quip='You know words have vibes, even if you can\'t always rank them. To be fair, some of these are genuinely debatable.';}
+  else if(pct>=.3){emoji='😅';quip='Language is a spectrum and you\'re still finding your seat. The good news: now you know "frugal" and "stingy" are NOT interchangeable.';}
+  else{emoji='🫠';quip='Words are just letters to you, and there\'s a certain bliss in that. Nuance is overrated. (It\'s not.)';}
+
+  $('e-emoji').textContent=emoji;
+  $('e-score').textContent=s;
+  $('e-quip').textContent=quip;
+
+  // Grid
+  const grid=$('e-grid');grid.innerHTML='';
+  game.results.forEach(p=>{
+    const d=document.createElement('div');
+    d.className=`e-dot p${p}`;
+    d.textContent=p;
+    grid.appendChild(d);
+  });
+
+  // Stats
+  const perfects=game.results.filter(p=>p===4).length;
+  const avg=(game.results.reduce((a,b)=>a+b,0)/game.results.length).toFixed(1);
+  const hardestIdx=game.results.indexOf(Math.min(...game.results));
+  $('es-perfect').textContent=perfects;
+  $('es-avg').textContent=avg;
+  $('es-hardest').textContent=`R${hardestIdx+1}`;
+}
+
+function getShareText(){
+  const emojis=game.results.map(p=>{
+    if(p===4)return'🟩';if(p===3)return'🟨';if(p===2)return'🟧';if(p===1)return'🟥';return'⬛';
+  });
+  let rows=[];
+  for(let i=0;i<emojis.length;i+=5)rows.push(emojis.slice(i,i+5).join(''));
+  return`SHADE 🎨 ${game.score}/40\n\n${rows.join('\n')}\n\n🟩perfect 🟨almost 🟧close 🟥rough ⬛nope\n\nEvery word has a vibe. How well do you read them?`;
+}
+
+function shareResults(){
+  const t=getShareText();
+  navigator.clipboard.writeText(t).then(()=>showToast('Copied!')).catch(()=>{
+    const ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);showToast('Copied!');
+  });
+}
+
+function showToast(m){const t=document.createElement('div');t.className='toast';t.textContent=m;document.body.appendChild(t);setTimeout(()=>t.remove(),2200)}
+function playAgain(){startGame()}
+</script>
+</body>
+</html>
