@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page Not Found — Soulcraft</title>
+<meta name="robots" content="noindex, follow">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --parchment: #F1EBE2;
+  --espresso: #2A2118;
+  --copper: #B87A4A;
+  --warm-gray: #8A7E70;
+  --serif: 'Cormorant Garamond', 'Georgia', serif;
+  --sans: 'Inter', 'Helvetica Neue', sans-serif;
+}
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { font-size: 18px; }
+body {
+  font-family: var(--serif);
+  font-weight: 300;
+  background: var(--parchment);
+  color: var(--espresso);
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 32px;
+}
+h1 {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: clamp(28px, 4vw, 42px);
+  line-height: 1.4;
+  margin-bottom: 16px;
+}
+h1 em { font-style: italic; color: var(--copper); }
+p {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: clamp(16px, 2vw, 20px);
+  color: var(--warm-gray);
+  line-height: 1.7;
+  max-width: 480px;
+  margin-bottom: 32px;
+}
+nav { display: flex; gap: 24px; flex-wrap: wrap; justify-content: center; }
+nav a {
+  font-family: var(--sans);
+  font-weight: 400;
+  font-size: clamp(12px, 1.5vw, 14px);
+  color: var(--warm-gray);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: color 0.4s;
+}
+nav a:hover { color: var(--copper); }
+</style>
+</head>
+<body>
+<h1>This page doesn't <em>exist</em> yet.</h1>
+<p>But you do. And that's what matters. Let's get you back to somewhere meaningful.</p>
+<nav>
+  <a href="/">Soulcraft Home</a>
+  <a href="/games/shade.html">Play SHADE</a>
+  <a href="mailto:hello@soulcraftagency.com">Say Hello</a>
+</nav>
+</body>
+</html>
