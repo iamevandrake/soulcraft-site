@@ -66,6 +66,43 @@
         "priceCurrency": "USD",
         "availability": "https://schema.org/InStock"
       }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is SHADE?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "SHADE is a free browser word game by Soulcraft where you rank four synonyms from most negative to most positive connotation. It tests your ear for linguistic nuance across 10 rounds."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you play SHADE?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Each round presents four words that roughly mean the same thing. You rank them from most negative to most positive connotation by tapping to place them on a spectrum. After locking in your answer, you see the correct order and an explanation of the nuances."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is SHADE scored?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Each round is worth up to 4 points based on how close your ranking is to the correct order. A perfect match earns 4 points. The maximum score across 10 rounds is 40 points."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is word connotation?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Word connotation is the emotional or cultural association a word carries beyond its literal definition. For example, 'thrifty' and 'stingy' both describe not spending money, but 'thrifty' is positive while 'stingy' is negative. SHADE tests your ability to detect these shades of meaning."
+          }
+        }
+      ]
     }
   ]
 }
@@ -110,7 +147,7 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);min-height:1
 .s-play{font-family:var(--sans);font-size:1rem;font-weight:800;padding:16px 56px;border:none;border-radius:50px;background:var(--text);color:#fff;cursor:pointer;transition:transform .12s;box-shadow:0 4px 14px rgba(0,0,0,.12)}
 .s-play:active{transform:scale(.96)}
 .s-how{margin-top:44px;background:var(--card);border-radius:var(--r);padding:22px;box-shadow:var(--shadow);max-width:360px;width:100%;text-align:left}
-.s-how h3{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--text-light);margin-bottom:14px}
+.s-how h2{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--text-light);margin-bottom:14px}
 .s-how p{font-size:.88rem;line-height:1.65;color:var(--text-mid);margin-bottom:10px}
 .s-how p:last-child{margin-bottom:0}
 .s-how strong{color:var(--text)}
@@ -225,11 +262,11 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);min-height:1
   <!-- START -->
   <div class="screen active" id="start-screen">
     <div class="s-emoji">🎨</div>
-    <div class="s-title">Shade</div>
-    <div class="s-tagline">Every word has a vibe.</div>
+    <h1 class="s-title">Shade</h1>
+    <p class="s-tagline">Every word has a vibe.</p>
     <button class="s-play" onclick="startGame()">Play</button>
     <div class="s-how">
-      <h3>How it works</h3>
+      <h2>How it works</h2>
       <p>Four words. They all roughly mean the same thing. But the <strong>vibes are totally different</strong>.</p>
       <p>Rank them from <strong>most negative</strong> to <strong>most positive</strong> connotation.</p>
       <div class="example">

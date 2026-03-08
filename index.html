@@ -80,6 +80,43 @@
       "about": {
         "@id": "https://soulcraftagency.com/#organization"
       }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is Soulcraft?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Soulcraft is a creative studio that helps people and companies discover their soul. We work at the intersection of identity and intelligence, crafting AI to speak, think, and act with your essence."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who leads Soulcraft?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Soulcraft is a collective led by Evan Drake. We work with a small number of clients who care deeply about what they put into the world."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What services does Soulcraft offer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Soulcraft specializes in identity design, AI brand voice development, and creative strategy. We help brands define their essence and craft AI systems that authentically represent who they are."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I work with Soulcraft?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "If you care deeply about what you put into the world, reach out at hello@soulcraftagency.com. We work with a small number of clients to ensure deep, meaningful engagement."
+          }
+        }
+      ]
     }
   ]
 }
@@ -342,6 +379,21 @@ body {
 }
 
 
+/* ===== VISUALLY HIDDEN (accessible to crawlers + screen readers) ===== */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+
 /* ===== RESPONSIVE ===== */
 
 @media (max-width: 600px) {
@@ -366,6 +418,7 @@ body {
 
 <!-- ===== OPENING ===== -->
 <section class="opening">
+  <h1 class="sr-only">Soulcraft — Identity Design at the Intersection of Soul and Intelligence</h1>
 
   <svg class="heart-mark" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
     <!-- Square frame -->
