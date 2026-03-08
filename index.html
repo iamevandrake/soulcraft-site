@@ -17,8 +17,8 @@
 <meta name="twitter:title" content="Soulcraft — We help you discover your soul." />
 <meta name="twitter:description" content="Identity design at the intersection of soul and intelligence." />
 <meta name="twitter:image" content="https://soulcraftagency.com/soulcraft-og-image.png" />
-<title>Soulcraft</title>
-<meta name="description" content="We help you discover your soul.">
+<title>Soulcraft — Identity Design & AI Brand Voice Studio</title>
+<meta name="description" content="Soulcraft is a creative studio that helps people and companies discover their soul. Identity design, AI brand voice, and creative strategy at the intersection of soul and intelligence.">
 <link rel="canonical" href="https://soulcraftagency.com/">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 
@@ -378,6 +378,30 @@ body {
   color: var(--copper);
 }
 
+.closing-nav {
+  margin-top: 24px;
+  opacity: 0;
+  transition: opacity 1.2s ease-out 0.6s;
+}
+
+.closing-nav.visible {
+  opacity: 1;
+}
+
+.closing-nav-link {
+  font-family: var(--sans);
+  font-weight: 400;
+  font-size: clamp(12px, 1.5vw, 14px);
+  color: var(--warm-gray);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: color 0.4s;
+}
+
+.closing-nav-link:hover {
+  color: var(--copper);
+}
+
 
 /* ===== VISUALLY HIDDEN (accessible to crawlers + screen readers) ===== */
 
@@ -417,6 +441,7 @@ body {
 
 
 <!-- ===== OPENING ===== -->
+<main>
 <section class="opening">
   <h1 class="sr-only">Soulcraft — Identity Design at the Intersection of Soul and Intelligence</h1>
 
@@ -539,9 +564,10 @@ body {
   <p class="quiet">If that sounds like you, we'd love to have a conversation.</p>
 
 </section>
-
+</main>
 
 <!-- ===== CLOSING ===== -->
+<footer>
 <section class="closing">
 
   <div class="closing-lockup">
@@ -569,7 +595,12 @@ body {
     <a href="mailto:hello@soulcraftagency.com">hello@soulcraftagency.com</a>
   </div>
 
+  <nav class="closing-nav" aria-label="Games">
+    <a href="/games/shade.html" class="closing-nav-link">Play SHADE — our word connotation game</a>
+  </nav>
+
 </section>
+</footer>
 
 
 <script>
@@ -586,7 +617,7 @@ const observer = new IntersectionObserver((entries) => {
 });
 
 // Observe all animated elements
-document.querySelectorAll('.letter p, .divider, .closing-lockup, .closing-contact').forEach(el => {
+document.querySelectorAll('.letter p, .divider, .closing-lockup, .closing-contact, .closing-nav').forEach(el => {
   observer.observe(el);
 });
 </script>
