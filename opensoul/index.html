@@ -1,0 +1,1366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Open Graph -->
+<meta property="og:title" content="opensoul — AI Marketing Agency That Runs Itself" />
+<meta property="og:description" content="The open-source agentic marketing stack. A full AI marketing team that executes campaigns, creates content, and grows your brand — autonomously." />
+<meta property="og:image" content="https://soulcraftagency.com/opensoul/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://soulcraftagency.com/opensoul/" />
+
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="opensoul — AI Marketing Agency That Runs Itself" />
+<meta name="twitter:description" content="The open-source agentic marketing stack. A full AI marketing team that executes campaigns, creates content, and grows your brand." />
+<meta name="twitter:image" content="https://soulcraftagency.com/opensoul/og-image.png" />
+
+<title>opensoul — AI Marketing Agency That Runs Itself | Soulcraft</title>
+<meta name="description" content="opensoul is an open-source agentic marketing stack. Deploy a full AI marketing team — Director, Strategist, Creative, Producer, Growth, Analyst — that executes campaigns autonomously.">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<link rel="canonical" href="https://soulcraftagency.com/opensoul/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://soulcraftagency.com/opensoul/#software",
+      "name": "opensoul",
+      "description": "Open-source agentic marketing stack. A full AI marketing agency that runs itself.",
+      "url": "https://soulcraftagency.com/opensoul/",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Cross-platform",
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Open Source",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        {
+          "@type": "Offer",
+          "name": "Managed Services",
+          "priceSpecification": {
+            "@type": "PriceSpecification",
+            "price": "2500",
+            "priceCurrency": "USD",
+            "unitText": "month"
+          }
+        }
+      ],
+      "author": {
+        "@type": "Organization",
+        "name": "Soulcraft",
+        "url": "https://soulcraftagency.com"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://soulcraftagency.com/opensoul/",
+      "url": "https://soulcraftagency.com/opensoul/",
+      "name": "opensoul — AI Marketing Agency That Runs Itself",
+      "description": "Deploy an autonomous AI marketing team. Open-source agentic marketing stack.",
+      "datePublished": "2026-03-09",
+      "dateModified": "2026-03-09"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is opensoul?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "opensoul is an open-source agentic marketing stack — a team of AI agents organized as a marketing agency. It includes a Director, Strategist, Creative, Producer, Growth Marketer, and Analyst that work together autonomously to execute your marketing campaigns."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does opensoul work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You set marketing objectives, opensoul's AI agents execute. The Director coordinates strategy, delegates tasks to specialized agents, and each agent wakes on schedule to check their queue, produce work, and hand off to the next team member."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is opensoul free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "opensoul is open-source under the MIT license. You can self-host for free. Soulcraft also offers managed services starting at $2,500/month for teams that want expert setup, custom agent training, and ongoing optimization."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+
+<noscript><style>.hero-content,.section,.pricing-card,.team-card{opacity:1!important;transform:none!important}</style></noscript>
+
+<style>
+:root {
+  --parchment: #F1EBE2;
+  --espresso: #2A2118;
+  --copper: #B87A4A;
+  --warm-gray: #8A7E70;
+  --sandstone: #E9E0D3;
+  --deep-teal: #1A3A3A;
+  --accent-green: #2D5A4A;
+  --serif: 'Cormorant Garamond', 'Georgia', serif;
+  --sans: 'Inter', 'Helvetica Neue', sans-serif;
+  --mono: 'JetBrains Mono', monospace;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 18px;
+}
+
+body {
+  font-family: var(--sans);
+  font-weight: 400;
+  background: var(--parchment);
+  color: var(--espresso);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--copper);
+  color: var(--parchment);
+}
+
+
+/* ===== LAYOUT ===== */
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.container--narrow {
+  max-width: 800px;
+}
+
+
+/* ===== HEADER ===== */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 20px 0;
+  background: rgba(241, 235, 226, 0.9);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(42, 33, 24, 0.05);
+}
+
+.header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--espresso);
+}
+
+.header__logo-icon {
+  width: 32px;
+  height: 32px;
+}
+
+.header__logo-icon path,
+.header__logo-icon rect,
+.header__logo-icon circle {
+  stroke: var(--copper);
+}
+
+.header__logo-text {
+  font-family: var(--serif);
+  font-size: 1.4rem;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+.header__nav {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+
+.header__link {
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--warm-gray);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.header__link:hover {
+  color: var(--espresso);
+}
+
+.header__cta {
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--parchment);
+  background: var(--espresso);
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.header__cta:hover {
+  background: var(--copper);
+  transform: translateY(-1px);
+}
+
+
+/* ===== HERO ===== */
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 120px 0 80px;
+  background: linear-gradient(180deg, var(--parchment) 0%, var(--sandstone) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 20%;
+  right: -10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(184, 122, 74, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero__content {
+  max-width: 720px;
+}
+
+.hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: rgba(42, 33, 24, 0.05);
+  border-radius: 100px;
+  margin-bottom: 32px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.8s 0.2s ease-out forwards;
+}
+
+.hero__badge-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--accent-green);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+.hero__badge-text {
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--warm-gray);
+}
+
+.hero__title {
+  font-family: var(--serif);
+  font-size: clamp(2.8rem, 6vw, 4.5rem);
+  font-weight: 400;
+  line-height: 1.1;
+  margin-bottom: 24px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.8s 0.4s ease-out forwards;
+}
+
+.hero__title em {
+  font-style: italic;
+  color: var(--copper);
+}
+
+.hero__subtitle {
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  line-height: 1.7;
+  color: var(--warm-gray);
+  margin-bottom: 40px;
+  max-width: 560px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.8s 0.6s ease-out forwards;
+}
+
+.hero__actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.8s 0.8s ease-out forwards;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 28px;
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.3s;
+  cursor: pointer;
+  border: none;
+}
+
+.btn--primary {
+  background: var(--espresso);
+  color: var(--parchment);
+}
+
+.btn--primary:hover {
+  background: var(--copper);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(42, 33, 24, 0.15);
+}
+
+.btn--secondary {
+  background: transparent;
+  color: var(--espresso);
+  border: 1.5px solid var(--espresso);
+}
+
+.btn--secondary:hover {
+  background: var(--espresso);
+  color: var(--parchment);
+}
+
+.btn__icon {
+  width: 18px;
+  height: 18px;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+
+/* ===== SECTION STYLING ===== */
+
+.section {
+  padding: 100px 0;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.section--dark {
+  background: var(--espresso);
+  color: var(--parchment);
+}
+
+.section--alt {
+  background: var(--sandstone);
+}
+
+.section__header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.section__eyebrow {
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--copper);
+  margin-bottom: 16px;
+}
+
+.section__title {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.section__title em {
+  font-style: italic;
+  color: var(--copper);
+}
+
+.section--dark .section__title em {
+  color: var(--copper);
+}
+
+.section__description {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--warm-gray);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.section--dark .section__description {
+  color: rgba(241, 235, 226, 0.7);
+}
+
+
+/* ===== HOW IT WORKS ===== */
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px;
+}
+
+.step {
+  text-align: center;
+}
+
+.step__number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: var(--copper);
+  color: var(--parchment);
+  font-family: var(--serif);
+  font-size: 1.4rem;
+  font-weight: 500;
+  border-radius: 50%;
+  margin-bottom: 24px;
+}
+
+.step__title {
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 12px;
+}
+
+.step__description {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--warm-gray);
+}
+
+
+/* ===== THE TEAM ===== */
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.team-card {
+  background: var(--parchment);
+  border-radius: 12px;
+  padding: 32px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.team-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.team-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(42, 33, 24, 0.08);
+}
+
+.team-card__icon {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 20px;
+}
+
+.team-card__icon svg {
+  width: 100%;
+  height: 100%;
+  stroke: var(--copper);
+  stroke-width: 1.5;
+  fill: none;
+}
+
+.team-card__role {
+  font-family: var(--serif);
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: var(--espresso);
+}
+
+.team-card__description {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--warm-gray);
+}
+
+
+/* ===== FEATURES ===== */
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.feature {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.feature__icon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  background: rgba(184, 122, 74, 0.1);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.feature__icon svg {
+  width: 24px;
+  height: 24px;
+  stroke: var(--copper);
+  stroke-width: 1.5;
+  fill: none;
+}
+
+.feature__content {
+  flex: 1;
+}
+
+.feature__title {
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.feature__description {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--warm-gray);
+}
+
+
+/* ===== PRICING ===== */
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  align-items: stretch;
+}
+
+.pricing-card {
+  background: var(--parchment);
+  border-radius: 16px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s, box-shadow 0.3s;
+  opacity: 0;
+  transform: translateY(20px);
+  position: relative;
+}
+
+.pricing-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.pricing-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(42, 33, 24, 0.1);
+}
+
+.pricing-card--featured {
+  background: var(--espresso);
+  color: var(--parchment);
+}
+
+.pricing-card--featured::before {
+  content: 'Most Popular';
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--copper);
+  color: var(--parchment);
+  padding: 6px 16px;
+  border-radius: 100px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.pricing-card__header {
+  margin-bottom: 32px;
+}
+
+.pricing-card__name {
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+
+.pricing-card__description {
+  font-size: 0.9rem;
+  color: var(--warm-gray);
+  line-height: 1.5;
+}
+
+.pricing-card--featured .pricing-card__description {
+  color: rgba(241, 235, 226, 0.7);
+}
+
+.pricing-card__price {
+  margin-bottom: 32px;
+}
+
+.pricing-card__amount {
+  font-family: var(--serif);
+  font-size: 3rem;
+  font-weight: 400;
+}
+
+.pricing-card__amount span {
+  font-size: 1rem;
+  font-family: var(--sans);
+  color: var(--warm-gray);
+}
+
+.pricing-card--featured .pricing-card__amount span {
+  color: rgba(241, 235, 226, 0.6);
+}
+
+.pricing-card__features {
+  list-style: none;
+  margin-bottom: 40px;
+  flex-grow: 1;
+}
+
+.pricing-card__features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 16px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.pricing-card__features li::before {
+  content: '';
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23B87A4A' stroke-width='2'%3E%3Cpath d='M20 6L9 17l-5-5'/%3E%3C/svg%3E") center/contain no-repeat;
+}
+
+.pricing-card--featured .pricing-card__features li::before {
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23B87A4A' stroke-width='2'%3E%3Cpath d='M20 6L9 17l-5-5'/%3E%3C/svg%3E") center/contain no-repeat;
+}
+
+.pricing-card__cta {
+  margin-top: auto;
+}
+
+.pricing-card__cta .btn {
+  width: 100%;
+  justify-content: center;
+}
+
+.pricing-card--featured .btn--secondary {
+  border-color: var(--parchment);
+  color: var(--parchment);
+}
+
+.pricing-card--featured .btn--secondary:hover {
+  background: var(--parchment);
+  color: var(--espresso);
+}
+
+
+/* ===== CODE BLOCK ===== */
+
+.code-block {
+  background: var(--espresso);
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 48px 0;
+}
+
+.code-block__header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 24px;
+  background: rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.code-block__dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.code-block__dot--red { background: #ff5f56; }
+.code-block__dot--yellow { background: #ffbd2e; }
+.code-block__dot--green { background: #27ca40; }
+
+.code-block__content {
+  padding: 24px;
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  color: var(--sandstone);
+  line-height: 1.7;
+  overflow-x: auto;
+}
+
+.code-block__content .comment {
+  color: var(--warm-gray);
+}
+
+.code-block__content .command {
+  color: var(--copper);
+}
+
+
+/* ===== CTA SECTION ===== */
+
+.cta-section {
+  text-align: center;
+  padding: 120px 0;
+}
+
+.cta-section__title {
+  font-family: var(--serif);
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-weight: 400;
+  margin-bottom: 24px;
+  color: var(--parchment);
+}
+
+.cta-section__title em {
+  font-style: italic;
+  color: var(--copper);
+}
+
+.cta-section__description {
+  font-size: 1.15rem;
+  color: rgba(241, 235, 226, 0.7);
+  margin-bottom: 40px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.7;
+}
+
+.cta-section__actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cta-section .btn--primary {
+  background: var(--copper);
+}
+
+.cta-section .btn--primary:hover {
+  background: var(--parchment);
+  color: var(--espresso);
+}
+
+.cta-section .btn--secondary {
+  border-color: rgba(241, 235, 226, 0.3);
+  color: var(--parchment);
+}
+
+.cta-section .btn--secondary:hover {
+  background: var(--parchment);
+  color: var(--espresso);
+  border-color: var(--parchment);
+}
+
+
+/* ===== FOOTER ===== */
+
+.footer {
+  padding: 64px 0;
+  background: var(--sandstone);
+  border-top: 1px solid rgba(42, 33, 24, 0.08);
+}
+
+.footer__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.footer__brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.footer__logo {
+  width: 28px;
+  height: 28px;
+}
+
+.footer__logo path,
+.footer__logo rect,
+.footer__logo circle {
+  stroke: var(--warm-gray);
+}
+
+.footer__text {
+  font-family: var(--serif);
+  font-size: 1rem;
+  color: var(--warm-gray);
+}
+
+.footer__links {
+  display: flex;
+  gap: 32px;
+}
+
+.footer__link {
+  font-size: 0.85rem;
+  color: var(--warm-gray);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer__link:hover {
+  color: var(--copper);
+}
+
+.footer__copyright {
+  font-size: 0.8rem;
+  color: var(--warm-gray);
+  opacity: 0.7;
+}
+
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 1024px) {
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 24px;
+  }
+
+  .header__nav {
+    display: none;
+  }
+
+  .hero {
+    padding: 100px 0 60px;
+  }
+
+  .steps {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section {
+    padding: 80px 0;
+  }
+
+  .footer__inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer__links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="header">
+  <div class="container header__inner">
+    <a href="/" class="header__logo">
+      <svg class="header__logo-icon" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="20" y="20" width="160" height="160" rx="4" stroke-width="3" stroke-linecap="round" fill="none"/>
+        <path d="M100 152 C 100 152, 48 116, 46 84 C 44 62, 58 50, 74 50 C 86 50, 94 58, 100 68 C 106 58, 114 50, 126 50 C 142 50, 156 62, 154 84 C 152 116, 100 152, 100 152Z" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <circle cx="100" cy="96" r="4.5" fill="#B87A4A"/>
+      </svg>
+      <span class="header__logo-text">opensoul</span>
+    </a>
+    <nav class="header__nav">
+      <a href="#how-it-works" class="header__link">How It Works</a>
+      <a href="#team" class="header__link">The Team</a>
+      <a href="#pricing" class="header__link">Pricing</a>
+      <a href="https://github.com/iamevandrake/opensoul" class="header__link" target="_blank">GitHub</a>
+      <a href="#pricing" class="header__cta">Get Started</a>
+    </nav>
+  </div>
+</header>
+
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container">
+    <div class="hero__content">
+      <div class="hero__badge">
+        <span class="hero__badge-dot"></span>
+        <span class="hero__badge-text">Open Source</span>
+      </div>
+      <h1 class="hero__title">An AI marketing agency that <em>runs itself</em></h1>
+      <p class="hero__subtitle">Deploy a full marketing team — Director, Strategist, Creative, Producer, Growth, Analyst — all AI agents working together autonomously. Manage outcomes, not prompts.</p>
+      <div class="hero__actions">
+        <a href="#pricing" class="btn btn--primary">
+          Get Managed Services
+          <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+        <a href="https://github.com/iamevandrake/opensoul" class="btn btn--secondary" target="_blank">
+          <svg class="btn__icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+          </svg>
+          View on GitHub
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- How It Works -->
+<section id="how-it-works" class="section section--alt">
+  <div class="container">
+    <div class="section__header">
+      <p class="section__eyebrow">How It Works</p>
+      <h2 class="section__title">Three steps to <em>autonomous marketing</em></h2>
+      <p class="section__description">Set objectives, staff your agency with AI agents, and watch them execute. You approve strategy — they do the work.</p>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step__number">1</div>
+        <h3 class="step__title">Set the Objective</h3>
+        <p class="step__description">"Launch product X to 10K signups in 90 days." Give your agency a clear goal — they'll figure out how to get there.</p>
+      </div>
+      <div class="step">
+        <div class="step__number">2</div>
+        <h3 class="step__title">Staff the Agency</h3>
+        <p class="step__description">Director, Strategist, Producer, Creative, Growth, Analyst — six AI agents with clear roles and reporting lines.</p>
+      </div>
+      <div class="step">
+        <div class="step__number">3</div>
+        <h3 class="step__title">Let Them Execute</h3>
+        <p class="step__description">Review strategy. Approve campaigns. Monitor performance. Your agents work 24/7 while you focus on what matters.</p>
+      </div>
+    </div>
+
+    <div class="code-block">
+      <div class="code-block__header">
+        <span class="code-block__dot code-block__dot--red"></span>
+        <span class="code-block__dot code-block__dot--yellow"></span>
+        <span class="code-block__dot code-block__dot--green"></span>
+      </div>
+      <div class="code-block__content">
+        <span class="comment"># Get started in under 5 minutes</span><br>
+        <span class="command">git clone</span> https://github.com/iamevandrake/opensoul.git<br>
+        <span class="command">cd</span> opensoul<br>
+        <span class="command">pnpm install</span><br>
+        <span class="command">pnpm dev</span><br><br>
+        <span class="comment"># API server at http://localhost:3200</span><br>
+        <span class="comment"># Embedded PostgreSQL — no setup required</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- The Team -->
+<section id="team" class="section">
+  <div class="container">
+    <div class="section__header">
+      <p class="section__eyebrow">The Marketing Team</p>
+      <h2 class="section__title">Six roles. <em>One mission.</em></h2>
+      <p class="section__description">A real agency structure with reporting lines, delegation, and specialized expertise — all AI agents.</p>
+    </div>
+
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-card__icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-6 8-6s8 2 8 6"/><path d="M12 2v2M12 14v2"/></svg>
+        </div>
+        <h3 class="team-card__role">Director</h3>
+        <p class="team-card__description">Overall strategy, budget allocation, team coordination, and performance reporting. The conductor of your marketing orchestra.</p>
+      </div>
+
+      <div class="team-card">
+        <div class="team-card__icon">
+          <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><path d="M3.27 6.96L12 12.01l8.73-5.05M12 22.08V12"/></svg>
+        </div>
+        <h3 class="team-card__role">Strategist</h3>
+        <p class="team-card__description">Market research, competitive analysis, positioning, campaign planning, and audience segmentation.</p>
+      </div>
+
+      <div class="team-card">
+        <div class="team-card__icon">
+          <svg viewBox="0 0 24 24"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
+        </div>
+        <h3 class="team-card__role">Creative</h3>
+        <p class="team-card__description">Brand voice, copy, visual direction, content strategy, and messaging frameworks that resonate.</p>
+      </div>
+
+      <div class="team-card">
+        <div class="team-card__icon">
+          <svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+        </div>
+        <h3 class="team-card__role">Producer</h3>
+        <p class="team-card__description">Content production, asset creation, publishing workflows, and editorial calendar management.</p>
+      </div>
+
+      <div class="team-card">
+        <div class="team-card__icon">
+          <svg viewBox="0 0 24 24"><path d="M23 6l-9.5 9.5-5-5L1 18"/><path d="M17 6h6v6"/></svg>
+        </div>
+        <h3 class="team-card__role">Growth</h3>
+        <p class="team-card__description">SEO, paid acquisition, conversion optimization, A/B testing, and funnel optimization for maximum ROI.</p>
+      </div>
+
+      <div class="team-card">
+        <div class="team-card__icon">
+          <svg viewBox="0 0 24 24"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+        </div>
+        <h3 class="team-card__role">Analyst</h3>
+        <p class="team-card__description">Performance measurement, attribution, reporting, and data-driven recommendations for continuous improvement.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Features -->
+<section class="section section--dark">
+  <div class="container">
+    <div class="section__header">
+      <p class="section__eyebrow">Built for Scale</p>
+      <h2 class="section__title">Enterprise-grade <em>marketing operations</em></h2>
+      <p class="section__description">Everything you need to run marketing at scale, with full control and visibility.</p>
+    </div>
+
+    <div class="features-grid">
+      <div class="feature">
+        <div class="feature__icon">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        <div class="feature__content">
+          <h3 class="feature__title">Marketing Org Chart</h3>
+          <p class="feature__description">A real agency structure with reporting lines, clear roles, and delegated responsibility.</p>
+        </div>
+      </div>
+
+      <div class="feature">
+        <div class="feature__icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        </div>
+        <div class="feature__content">
+          <h3 class="feature__title">Autonomous Execution</h3>
+          <p class="feature__description">Agents wake on schedule, check their queue, produce work, and hand off — 24/7.</p>
+        </div>
+      </div>
+
+      <div class="feature">
+        <div class="feature__icon">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="feature__content">
+          <h3 class="feature__title">Campaign Governance</h3>
+          <p class="feature__description">You're the client. Approve strategies, review creative, pause or redirect any agent.</p>
+        </div>
+      </div>
+
+      <div class="feature">
+        <div class="feature__icon">
+          <svg viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2"/><path d="M1 10h22"/></svg>
+        </div>
+        <div class="feature__content">
+          <h3 class="feature__title">Budget Control</h3>
+          <p class="feature__description">Monthly budgets per agent. Track spend across your team. No runaway costs.</p>
+        </div>
+      </div>
+
+      <div class="feature">
+        <div class="feature__icon">
+          <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
+        </div>
+        <div class="feature__content">
+          <h3 class="feature__title">Full Audit Trail</h3>
+          <p class="feature__description">Every decision, every draft, every revision — traced and explained. Complete accountability.</p>
+        </div>
+      </div>
+
+      <div class="feature">
+        <div class="feature__icon">
+          <svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+        </div>
+        <div class="feature__content">
+          <h3 class="feature__title">Goal-Driven Campaigns</h3>
+          <p class="feature__description">Every task traces back to objectives. Agents know what to create and why it matters.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Pricing -->
+<section id="pricing" class="section section--alt">
+  <div class="container">
+    <div class="section__header">
+      <p class="section__eyebrow">Pricing</p>
+      <h2 class="section__title">Open source or <em>fully managed</em></h2>
+      <p class="section__description">Self-host for free, or let us handle everything so you can focus on growing your business.</p>
+    </div>
+
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <div class="pricing-card__header">
+          <h3 class="pricing-card__name">Open Source</h3>
+          <p class="pricing-card__description">Self-hosted, full control. Perfect for technical teams.</p>
+        </div>
+        <div class="pricing-card__price">
+          <span class="pricing-card__amount">$0</span>
+        </div>
+        <ul class="pricing-card__features">
+          <li>Full source code (MIT license)</li>
+          <li>All 6 marketing agent roles</li>
+          <li>Bring your own AI (Claude, GPT, etc.)</li>
+          <li>Community support via GitHub</li>
+          <li>Self-managed infrastructure</li>
+        </ul>
+        <div class="pricing-card__cta">
+          <a href="https://github.com/iamevandrake/opensoul" class="btn btn--secondary" target="_blank">View on GitHub</a>
+        </div>
+      </div>
+
+      <div class="pricing-card pricing-card--featured">
+        <div class="pricing-card__header">
+          <h3 class="pricing-card__name">Managed Agency</h3>
+          <p class="pricing-card__description">We set up, train, and optimize your AI marketing team.</p>
+        </div>
+        <div class="pricing-card__price">
+          <span class="pricing-card__amount">$2,500<span>/mo</span></span>
+        </div>
+        <ul class="pricing-card__features">
+          <li>Fully managed infrastructure</li>
+          <li>Custom agent training for your brand</li>
+          <li>Dedicated onboarding specialist</li>
+          <li>Strategy review calls (2x/month)</li>
+          <li>Priority support (24hr response)</li>
+          <li>Performance optimization</li>
+        </ul>
+        <div class="pricing-card__cta">
+          <a href="https://buy.stripe.com/test_28E5ov4KJ8nK0hO001" class="btn btn--secondary" target="_blank">Start Trial</a>
+        </div>
+      </div>
+
+      <div class="pricing-card">
+        <div class="pricing-card__header">
+          <h3 class="pricing-card__name">Enterprise</h3>
+          <p class="pricing-card__description">Custom deployment, dedicated support, SLA guarantees.</p>
+        </div>
+        <div class="pricing-card__price">
+          <span class="pricing-card__amount">Custom</span>
+        </div>
+        <ul class="pricing-card__features">
+          <li>Everything in Managed Agency</li>
+          <li>Custom integrations</li>
+          <li>Dedicated account manager</li>
+          <li>SLA with uptime guarantees</li>
+          <li>On-premise deployment option</li>
+          <li>Custom agent development</li>
+        </ul>
+        <div class="pricing-card__cta">
+          <a href="mailto:hello@soulcraftagency.com?subject=opensoul%20Enterprise%20Inquiry" class="btn btn--secondary">Contact Sales</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- CTA Section -->
+<section class="section section--dark cta-section">
+  <div class="container container--narrow">
+    <h2 class="cta-section__title">Ready to deploy your <em>AI marketing agency</em>?</h2>
+    <p class="cta-section__description">Join marketers who manage outcomes, not prompts. Start with open source or let us handle everything.</p>
+    <div class="cta-section__actions">
+      <a href="https://buy.stripe.com/test_28E5ov4KJ8nK0hO001" class="btn btn--primary" target="_blank">Get Managed Services</a>
+      <a href="https://github.com/iamevandrake/opensoul" class="btn btn--secondary" target="_blank">View Source Code</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container footer__inner">
+    <div class="footer__brand">
+      <svg class="footer__logo" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="20" y="20" width="160" height="160" rx="4" stroke-width="3" stroke-linecap="round" fill="none"/>
+        <path d="M100 152 C 100 152, 48 116, 46 84 C 44 62, 58 50, 74 50 C 86 50, 94 58, 100 68 C 106 58, 114 50, 126 50 C 142 50, 156 62, 154 84 C 152 116, 100 152, 100 152Z" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      </svg>
+      <span class="footer__text">opensoul by Soulcraft</span>
+    </div>
+
+    <nav class="footer__links">
+      <a href="https://github.com/iamevandrake/opensoul" class="footer__link" target="_blank">GitHub</a>
+      <a href="https://github.com/iamevandrake/opensoul/blob/main/LICENSE" class="footer__link" target="_blank">MIT License</a>
+      <a href="mailto:hello@soulcraftagency.com" class="footer__link">Contact</a>
+      <a href="/" class="footer__link">Soulcraft</a>
+    </nav>
+
+    <p class="footer__copyright">&copy; 2026 Soulcraft. All rights reserved.</p>
+  </div>
+</footer>
+
+
+<script>
+// Intersection Observer for scroll-triggered animations
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, {
+  threshold: 0.1,
+  rootMargin: '0px 0px -50px 0px'
+});
+
+// Observe sections
+document.querySelectorAll('.section, .team-card, .pricing-card').forEach(el => {
+  observer.observe(el);
+});
+
+// Staggered animation for team cards
+document.querySelectorAll('.team-card').forEach((card, index) => {
+  card.style.transitionDelay = `${index * 0.1}s`;
+});
+
+// Staggered animation for pricing cards
+document.querySelectorAll('.pricing-card').forEach((card, index) => {
+  card.style.transitionDelay = `${index * 0.15}s`;
+});
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  });
+});
+</script>
+
+</body>
+</html>
