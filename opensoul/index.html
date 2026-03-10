@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- Open Graph -->
-<meta property="og:title" content="opensoul — AI Marketing Agency That Runs Itself" />
-<meta property="og:description" content="The open-source agentic marketing stack. A full AI marketing team that executes campaigns, creates content, and grows your brand — autonomously." />
+<meta property="og:title" content="opensoul -- AI Marketing Agency That Runs Itself" />
+<meta property="og:description" content="The open-source agentic marketing stack. A full AI marketing team that executes campaigns, creates content, and grows your brand -- autonomously." />
 <meta property="og:image" content="https://soulcraftagency.com/opensoul/og-image.png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
@@ -15,12 +15,12 @@
 
 <!-- Twitter / X -->
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="opensoul — AI Marketing Agency That Runs Itself" />
+<meta name="twitter:title" content="opensoul -- AI Marketing Agency That Runs Itself" />
 <meta name="twitter:description" content="The open-source agentic marketing stack. A full AI marketing team that executes campaigns, creates content, and grows your brand." />
 <meta name="twitter:image" content="https://soulcraftagency.com/opensoul/og-image.png" />
 
-<title>opensoul — AI Marketing Agency That Runs Itself | Soulcraft</title>
-<meta name="description" content="opensoul is an open-source agentic marketing stack. Deploy a full AI marketing team — Director, Strategist, Creative, Producer, Growth, Analyst — that executes campaigns autonomously.">
+<title>opensoul -- AI Marketing Agency That Runs Itself | Soulcraft</title>
+<meta name="description" content="opensoul is an open-source agentic marketing stack. Deploy a full AI marketing team -- Director, Strategist, Creative, Producer, Growth, Analyst -- that executes campaigns autonomously.">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
 <link rel="canonical" href="https://soulcraftagency.com/opensoul/">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -66,7 +66,7 @@
       "@type": "WebPage",
       "@id": "https://soulcraftagency.com/opensoul/",
       "url": "https://soulcraftagency.com/opensoul/",
-      "name": "opensoul — AI Marketing Agency That Runs Itself",
+      "name": "opensoul -- AI Marketing Agency That Runs Itself",
       "description": "Deploy an autonomous AI marketing team. Open-source agentic marketing stack.",
       "datePublished": "2026-03-09",
       "dateModified": "2026-03-09"
@@ -79,7 +79,7 @@
           "name": "What is opensoul?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "opensoul is an open-source agentic marketing stack — a team of AI agents organized as a marketing agency. It includes a Director, Strategist, Creative, Producer, Growth Marketer, and Analyst that work together autonomously to execute your marketing campaigns."
+            "text": "opensoul is an open-source agentic marketing stack -- a team of AI agents organized as a marketing agency. It includes a Director, Strategist, Creative, Producer, Growth Marketer, and Analyst that work together autonomously to execute your marketing campaigns."
           }
         },
         {
@@ -259,6 +259,35 @@ body {
   background: linear-gradient(180deg, var(--parchment) 0%, var(--sandstone) 100%);
   position: relative;
   overflow: hidden;
+}
+
+.hero__layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.hero__image {
+  position: relative;
+}
+
+.hero__image img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 24px 64px rgba(42, 33, 24, 0.15);
+}
+
+@media (max-width: 1024px) {
+  .hero__layout {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .hero__image {
+    order: -1;
+  }
 }
 
 .hero::before {
@@ -795,6 +824,70 @@ body {
 }
 
 
+/* ===== PRODUCT SHOWCASE ===== */
+
+.showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.showcase-item {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(42, 33, 24, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.showcase-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(42, 33, 24, 0.15);
+}
+
+.showcase-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.showcase-item--wide {
+  grid-column: span 2;
+}
+
+.showcase-item__caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px 24px;
+  background: linear-gradient(to top, rgba(42, 33, 24, 0.9), transparent);
+  color: var(--parchment);
+}
+
+.showcase-item__title {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.showcase-item__description {
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .showcase-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .showcase-item--wide {
+    grid-column: span 1;
+  }
+}
+
+
 /* ===== CTA SECTION ===== */
 
 .cta-section {
@@ -998,26 +1091,31 @@ body {
 <!-- Hero -->
 <section class="hero">
   <div class="container">
-    <div class="hero__content">
-      <div class="hero__badge">
-        <span class="hero__badge-dot"></span>
-        <span class="hero__badge-text">Open Source</span>
+    <div class="hero__layout">
+      <div class="hero__content">
+        <div class="hero__badge">
+          <span class="hero__badge-dot"></span>
+          <span class="hero__badge-text">Open Source</span>
+        </div>
+        <h1 class="hero__title">An AI marketing agency that <em>runs itself</em></h1>
+        <p class="hero__subtitle">Deploy a full marketing team -- Director, Strategist, Creative, Producer, Growth, Analyst -- all AI agents working together autonomously. Manage outcomes, not prompts.</p>
+        <div class="hero__actions">
+          <a href="#pricing" class="btn btn--primary">
+            Get Managed Services
+            <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+          <a href="https://github.com/iamevandrake/opensoul" class="btn btn--secondary" target="_blank">
+            <svg class="btn__icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+            </svg>
+            View on GitHub
+          </a>
+        </div>
       </div>
-      <h1 class="hero__title">An AI marketing agency that <em>runs itself</em></h1>
-      <p class="hero__subtitle">Deploy a full marketing team — Director, Strategist, Creative, Producer, Growth, Analyst — all AI agents working together autonomously. Manage outcomes, not prompts.</p>
-      <div class="hero__actions">
-        <a href="#pricing" class="btn btn--primary">
-          Get Managed Services
-          <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M5 12h14M12 5l7 7-7 7"/>
-          </svg>
-        </a>
-        <a href="https://github.com/iamevandrake/opensoul" class="btn btn--secondary" target="_blank">
-          <svg class="btn__icon" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-          </svg>
-          View on GitHub
-        </a>
+      <div class="hero__image">
+        <img src="images/hero-laptop.png" alt="opensoul running on a laptop" loading="eager">
       </div>
     </div>
   </div>
@@ -1030,19 +1128,19 @@ body {
     <div class="section__header">
       <p class="section__eyebrow">How It Works</p>
       <h2 class="section__title">Three steps to <em>autonomous marketing</em></h2>
-      <p class="section__description">Set objectives, staff your agency with AI agents, and watch them execute. You approve strategy — they do the work.</p>
+      <p class="section__description">Set objectives, staff your agency with AI agents, and watch them execute. You approve strategy -- they do the work.</p>
     </div>
 
     <div class="steps">
       <div class="step">
         <div class="step__number">1</div>
         <h3 class="step__title">Set the Objective</h3>
-        <p class="step__description">"Launch product X to 10K signups in 90 days." Give your agency a clear goal — they'll figure out how to get there.</p>
+        <p class="step__description">"Launch product X to 10K signups in 90 days." Give your agency a clear goal -- they'll figure out how to get there.</p>
       </div>
       <div class="step">
         <div class="step__number">2</div>
         <h3 class="step__title">Staff the Agency</h3>
-        <p class="step__description">Director, Strategist, Producer, Creative, Growth, Analyst — six AI agents with clear roles and reporting lines.</p>
+        <p class="step__description">Director, Strategist, Producer, Creative, Growth, Analyst -- six AI agents with clear roles and reporting lines.</p>
       </div>
       <div class="step">
         <div class="step__number">3</div>
@@ -1064,7 +1162,43 @@ body {
         <span class="command">pnpm install</span><br>
         <span class="command">pnpm dev</span><br><br>
         <span class="comment"># API server at http://localhost:3200</span><br>
-        <span class="comment"># Embedded PostgreSQL — no setup required</span>
+        <span class="comment"># Embedded PostgreSQL -- no setup required</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Product Showcase -->
+<section class="section">
+  <div class="container">
+    <div class="section__header">
+      <p class="section__eyebrow">See It In Action</p>
+      <h2 class="section__title">Your <em>marketing command center</em></h2>
+      <p class="section__description">A beautiful dashboard to manage your AI marketing team, track performance, and coordinate campaigns.</p>
+    </div>
+
+    <div class="showcase-grid">
+      <div class="showcase-item showcase-item--wide">
+        <img src="images/dashboard-screenshot.png" alt="opensoul dashboard showing agents, tasks, and spending" loading="lazy">
+        <div class="showcase-item__caption">
+          <h4 class="showcase-item__title">Dashboard</h4>
+          <p class="showcase-item__description">Monitor your entire marketing team at a glance</p>
+        </div>
+      </div>
+      <div class="showcase-item">
+        <img src="images/org-chart-screenshot.png" alt="opensoul org chart showing agent hierarchy" loading="lazy">
+        <div class="showcase-item__caption">
+          <h4 class="showcase-item__title">Org Chart</h4>
+          <p class="showcase-item__description">Clear reporting lines and team structure</p>
+        </div>
+      </div>
+      <div class="showcase-item">
+        <img src="images/product-coffee-shop.png" alt="opensoul running in a coffee shop" loading="lazy">
+        <div class="showcase-item__caption">
+          <h4 class="showcase-item__title">Work Anywhere</h4>
+          <p class="showcase-item__description">Your AI team runs 24/7 while you focus on strategy</p>
+        </div>
       </div>
     </div>
   </div>
@@ -1077,7 +1211,7 @@ body {
     <div class="section__header">
       <p class="section__eyebrow">The Marketing Team</p>
       <h2 class="section__title">Six roles. <em>One mission.</em></h2>
-      <p class="section__description">A real agency structure with reporting lines, delegation, and specialized expertise — all AI agents.</p>
+      <p class="section__description">A real agency structure with reporting lines, delegation, and specialized expertise -- all AI agents.</p>
     </div>
 
     <div class="team-grid">
@@ -1159,7 +1293,7 @@ body {
         </div>
         <div class="feature__content">
           <h3 class="feature__title">Autonomous Execution</h3>
-          <p class="feature__description">Agents wake on schedule, check their queue, produce work, and hand off — 24/7.</p>
+          <p class="feature__description">Agents wake on schedule, check their queue, produce work, and hand off -- 24/7.</p>
         </div>
       </div>
 
@@ -1189,7 +1323,7 @@ body {
         </div>
         <div class="feature__content">
           <h3 class="feature__title">Full Audit Trail</h3>
-          <p class="feature__description">Every decision, every draft, every revision — traced and explained. Complete accountability.</p>
+          <p class="feature__description">Every decision, every draft, every revision -- traced and explained. Complete accountability.</p>
         </div>
       </div>
 
