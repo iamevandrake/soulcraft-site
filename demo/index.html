@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Open Graph -->
+<meta property="og:title" content="OpenSoul Product Demo | See It In Action" />
+<meta property="og:description" content="Walk through OpenSoul's AI marketing agency. See the dashboard, org chart, agent coordination, and autonomous execution in action." />
+<meta property="og:image" content="https://soulcraftagency.com/opensoul/og-image.png" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://soulcraftagency.com/demo/" />
+
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="OpenSoul Product Demo | See It In Action" />
+<meta name="twitter:description" content="Walk through OpenSoul's AI marketing agency. See the dashboard, org chart, agent coordination, and autonomous execution." />
+<meta name="twitter:image" content="https://soulcraftagency.com/opensoul/og-image.png" />
+
+<title>OpenSoul Product Demo | Soulcraft</title>
+<meta name="description" content="Interactive demo of OpenSoul - the open-source AI marketing agency. See how 6 AI agents coordinate to execute your marketing autonomously.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --parchment: #F1EBE2;
+  --espresso: #2A2118;
+  --copper: #B87A4A;
+  --warm-gray: #8A7E70;
+  --sandstone: #E9E0D3;
+  --deep-teal: #1A3A3A;
+  --accent-green: #2D5A4A;
+  --dark-bg: #1a1a1a;
+  --serif: 'Cormorant Garamond', 'Georgia', serif;
+  --sans: 'Inter', 'Helvetica Neue', sans-serif;
+  --mono: 'JetBrains Mono', monospace;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 18px;
+}
+
+body {
+  font-family: var(--sans);
+  font-weight: 400;
+  background: var(--parchment);
+  color: var(--espresso);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--copper);
+  color: var(--parchment);
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+/* Header */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 20px 0;
+  background: rgba(241, 235, 226, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(42, 33, 24, 0.08);
+}
+
+.header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--espresso);
+}
+
+.header__logo-text {
+  font-family: var(--serif);
+  font-size: 1.4rem;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+.header__nav {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.header__link {
+  font-size: 0.85rem;
+  color: var(--warm-gray);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.header__link:hover {
+  color: var(--espresso);
+}
+
+.header__cta {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--parchment);
+  background: var(--espresso);
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.header__cta:hover {
+  background: var(--copper);
+}
+
+/* Hero */
+.hero {
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  padding: 140px 0 60px;
+  text-align: center;
+  background: linear-gradient(180deg, var(--parchment) 0%, var(--sandstone) 100%);
+}
+
+.hero h1 {
+  font-family: var(--serif);
+  font-size: 3.5rem;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  margin-bottom: 24px;
+  line-height: 1.1;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: var(--warm-gray);
+  max-width: 600px;
+  margin: 0 auto 40px;
+  line-height: 1.6;
+}
+
+.demo-nav {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.demo-nav__item {
+  padding: 10px 20px;
+  border-radius: 100px;
+  font-size: 0.85rem;
+  text-decoration: none;
+  color: var(--espresso);
+  background: white;
+  border: 1px solid rgba(42, 33, 24, 0.1);
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.demo-nav__item:hover,
+.demo-nav__item.active {
+  background: var(--espresso);
+  color: var(--parchment);
+  border-color: var(--espresso);
+}
+
+/* Demo Sections */
+.demo-section {
+  padding: 80px 0;
+  border-bottom: 1px solid rgba(42, 33, 24, 0.08);
+}
+
+.demo-section:last-of-type {
+  border-bottom: none;
+}
+
+.demo-section--dark {
+  background: var(--dark-bg);
+  color: white;
+}
+
+.demo-section--dark h2 {
+  color: white;
+}
+
+.demo-section--dark p {
+  color: rgba(255,255,255,0.7);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.section-number {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  background: var(--copper);
+  color: white;
+  border-radius: 50%;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.demo-section--dark .section-number {
+  background: var(--copper);
+}
+
+.section-header h2 {
+  font-family: var(--serif);
+  font-size: 2.5rem;
+  font-weight: 400;
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+
+.section-header p {
+  font-size: 1.1rem;
+  color: var(--warm-gray);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Screenshot Display */
+.screenshot-container {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.screenshot {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 24px 80px rgba(42, 33, 24, 0.2);
+}
+
+.demo-section--dark .screenshot {
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.5);
+}
+
+/* Annotations */
+.annotations {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+  margin-top: 48px;
+}
+
+.annotation {
+  background: white;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(42, 33, 24, 0.08);
+}
+
+.demo-section--dark .annotation {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.annotation__icon {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, var(--copper), #D4956A);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  font-size: 1.5rem;
+}
+
+.annotation h3 {
+  font-family: var(--serif);
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.demo-section--dark .annotation h3 {
+  color: white;
+}
+
+.annotation p {
+  font-size: 0.95rem;
+  color: var(--warm-gray);
+  line-height: 1.6;
+}
+
+.demo-section--dark .annotation p {
+  color: rgba(255,255,255,0.6);
+}
+
+/* Feature highlights */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+}
+
+@media (max-width: 900px) {
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.feature-card {
+  background: white;
+  padding: 32px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(42, 33, 24, 0.06);
+  border: 1px solid rgba(42, 33, 24, 0.06);
+}
+
+.feature-card__number {
+  font-family: var(--serif);
+  font-size: 3rem;
+  font-weight: 300;
+  color: var(--copper);
+  margin-bottom: 8px;
+}
+
+.feature-card h3 {
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.feature-card p {
+  font-size: 0.9rem;
+  color: var(--warm-gray);
+  line-height: 1.5;
+}
+
+/* CTA Section */
+.cta-section {
+  background: var(--espresso);
+  color: white;
+  padding: 100px 0;
+  text-align: center;
+}
+
+.cta-section h2 {
+  font-family: var(--serif);
+  font-size: 2.8rem;
+  font-weight: 400;
+  margin-bottom: 24px;
+  letter-spacing: -0.02em;
+}
+
+.cta-section p {
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.7);
+  max-width: 500px;
+  margin: 0 auto 40px;
+  line-height: 1.6;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.cta-button {
+  padding: 16px 32px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.cta-button--primary {
+  background: var(--copper);
+  color: white;
+}
+
+.cta-button--primary:hover {
+  background: #C88A5A;
+  transform: translateY(-2px);
+}
+
+.cta-button--secondary {
+  background: transparent;
+  color: white;
+  border: 1px solid rgba(255,255,255,0.3);
+}
+
+.cta-button--secondary:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: rgba(255,255,255,0.5);
+}
+
+/* Footer */
+.footer {
+  padding: 40px 0;
+  text-align: center;
+  background: var(--parchment);
+  border-top: 1px solid rgba(42, 33, 24, 0.08);
+}
+
+.footer p {
+  font-size: 0.85rem;
+  color: var(--warm-gray);
+}
+
+.footer a {
+  color: var(--espresso);
+  text-decoration: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .section-header h2 {
+    font-size: 2rem;
+  }
+
+  .annotations {
+    grid-template-columns: 1fr;
+  }
+
+  .header__nav {
+    display: none;
+  }
+}
+
+/* Progress indicator */
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: var(--copper);
+  z-index: 101;
+  transition: width 0.1s;
+}
+
+/* Slide navigation */
+.slide-nav {
+  position: fixed;
+  right: 32px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 50;
+}
+
+.slide-nav__dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(42, 33, 24, 0.2);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  position: relative;
+}
+
+.slide-nav__dot:hover,
+.slide-nav__dot.active {
+  background: var(--copper);
+  transform: scale(1.2);
+}
+
+.slide-nav__dot::after {
+  content: attr(data-label);
+  position: absolute;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  white-space: nowrap;
+  font-size: 0.75rem;
+  color: var(--warm-gray);
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+
+.slide-nav__dot:hover::after {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .slide-nav {
+    display: none;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<header class="header">
+  <div class="container header__inner">
+    <a href="/" class="header__logo">
+      <span class="header__logo-text">opensoul</span>
+    </a>
+    <nav class="header__nav">
+      <a href="/opensoul/" class="header__link">Overview</a>
+      <a href="#" class="header__link" style="color: var(--copper);">Demo</a>
+      <a href="https://github.com/iamevandrake/opensoul" class="header__link" target="_blank">GitHub</a>
+      <a href="mailto:hello@soulcraftagency.com" class="header__cta">Contact Us</a>
+    </nav>
+  </div>
+</header>
+
+<nav class="slide-nav">
+  <button class="slide-nav__dot active" data-label="Overview" data-section="hero"></button>
+  <button class="slide-nav__dot" data-label="Start" data-section="section-1"></button>
+  <button class="slide-nav__dot" data-label="Dashboard" data-section="section-2"></button>
+  <button class="slide-nav__dot" data-label="Org Chart" data-section="section-3"></button>
+  <button class="slide-nav__dot" data-label="Live Agents" data-section="section-4"></button>
+  <button class="slide-nav__dot" data-label="Get Started" data-section="cta"></button>
+</nav>
+
+<section class="hero" id="hero">
+  <div class="container">
+    <h1>See OpenSoul in Action</h1>
+    <p>Walk through how an AI marketing agency coordinates strategy, creates content, and executes campaigns autonomously.</p>
+    <div class="demo-nav">
+      <a href="#section-1" class="demo-nav__item">1. Start the Agency</a>
+      <a href="#section-2" class="demo-nav__item">2. Dashboard</a>
+      <a href="#section-3" class="demo-nav__item">3. Org Chart</a>
+      <a href="#section-4" class="demo-nav__item">4. Live Agents</a>
+    </div>
+  </div>
+</section>
+
+<section class="demo-section demo-section--dark" id="section-1">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-number">1</div>
+      <h2>Start Your AI Agency</h2>
+      <p>One command. Embedded database. Your marketing team is live in seconds.</p>
+    </div>
+
+    <div class="screenshot-container">
+      <img src="images/terminal.png" alt="OpenSoul terminal startup" class="screenshot">
+    </div>
+
+    <div class="annotations">
+      <div class="annotation">
+        <div class="annotation__icon">&#9889;</div>
+        <h3>Zero Configuration</h3>
+        <p>No database setup, no Docker, no configuration files. Clone the repo, run pnpm dev, and you're live.</p>
+      </div>
+      <div class="annotation">
+        <div class="annotation__icon">&#128736;</div>
+        <h3>Local-First</h3>
+        <p>Everything runs on your machine. Your data stays private. Deploy to production when ready.</p>
+      </div>
+      <div class="annotation">
+        <div class="annotation__icon">&#128202;</div>
+        <h3>Built-in Monitoring</h3>
+        <p>Real-time logs show exactly what each agent is doing. Full transparency into every decision.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="demo-section" id="section-2">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-number">2</div>
+      <h2>Your Command Center</h2>
+      <p>Monitor your entire marketing operation from one dashboard. Track agents, spending, and campaign progress.</p>
+    </div>
+
+    <div class="screenshot-container">
+      <img src="images/dashboard.png" alt="OpenSoul dashboard" class="screenshot">
+    </div>
+
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="feature-card__number">6</div>
+        <h3>Agents Enabled</h3>
+        <p>Director, Strategist, Creative, Producer, Growth, and Analyst working together</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card__number">$25</div>
+        <h3>Monthly Spend</h3>
+        <p>Track AI costs in real-time. Set budgets. No surprise bills.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card__number">24/7</div>
+        <h3>Autonomous</h3>
+        <p>Agents wake on schedule, check their queue, and execute without prompting</p>
+      </div>
+    </div>
+
+    <div class="annotations">
+      <div class="annotation">
+        <div class="annotation__icon">&#128200;</div>
+        <h3>Run Activity</h3>
+        <p>See when agents are working, what they're producing, and how tasks flow through your marketing org.</p>
+      </div>
+      <div class="annotation">
+        <div class="annotation__icon">&#128221;</div>
+        <h3>Issues by Priority</h3>
+        <p>Critical, high, medium, low. Your marketing backlog, organized and visible at a glance.</p>
+      </div>
+      <div class="annotation">
+        <div class="annotation__icon">&#9989;</div>
+        <h3>Success Rate</h3>
+        <p>Track task completion. Identify bottlenecks. Optimize your marketing machine over time.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="demo-section demo-section--dark" id="section-3">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-number">3</div>
+      <h2>A Real Agency Structure</h2>
+      <p>Not a pile of prompts. A coordinated team with reporting lines, specializations, and clear responsibilities.</p>
+    </div>
+
+    <div class="screenshot-container">
+      <img src="images/org-chart.png" alt="OpenSoul org chart" class="screenshot">
+    </div>
+
+    <div class="annotations">
+      <div class="annotation">
+        <div class="annotation__icon">&#128081;</div>
+        <h3>Director</h3>
+        <p>Sets strategy, allocates budget, coordinates the team. Your AI CMO.</p>
+      </div>
+      <div class="annotation">
+        <div class="annotation__icon">&#128201;</div>
+        <h3>Strategist</h3>
+        <p>Market research, competitive analysis, positioning, campaign planning.</p>
+      </div>
+      <div class="annotation">
+        <div class="annotation__icon">&#127912;</div>
+        <h3>Creative</h3>
+        <p>Brand voice, copy, visual direction, messaging frameworks.</p>
+      </div>
+      <div class="annotation">
+        <div class="annotation__icon">&#128250;</div>
+        <h3>Producer</h3>
+        <p>Content production, asset creation, publishing workflows.</p>
+      </div>
+      <div class="annotation">
+        <div class="annotation__icon">&#128640;</div>
+        <h3>Growth Marketer</h3>
+        <p>SEO, paid acquisition, conversion optimization, funnel building.</p>
+      </div>
+      <div class="annotation">
+        <div class="annotation__icon">&#128202;</div>
+        <h3>Analyst</h3>
+        <p>Performance measurement, attribution, reporting, ROI analysis.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="demo-section" id="section-4">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-number">4</div>
+      <h2>Watch Them Work</h2>
+      <p>Live status for every agent. See tasks being picked up, executed, and handed off in real-time.</p>
+    </div>
+
+    <div class="screenshot-container">
+      <img src="images/agents-live.png" alt="OpenSoul live agents" class="screenshot">
+    </div>
+
+    <div class="annotations">
+      <div class="annotation">
+        <div class="annotation__icon">&#128994;</div>
+        <h3>Live Status</h3>
+        <p>Green dots show which agents are currently working. Watch your marketing team execute in real-time.</p>
+      </div>
+      <div class="annotation">
+        <div class="annotation__icon">&#128221;</div>
+        <h3>Current Tasks</h3>
+        <p>See exactly what each agent is working on. "Create community seeding strategy." "Prepare HN submission."</p>
+      </div>
+      <div class="annotation">
+        <div class="annotation__icon">&#9201;</div>
+        <h3>Waiting for Output</h3>
+        <p>Tasks queue up automatically. Agents pick up work when they wake. No manual assignment needed.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section" id="cta">
+  <div class="container">
+    <h2>Ready to Try It?</h2>
+    <p>OpenSoul is open source. Clone the repo and have your AI marketing agency running in minutes.</p>
+    <div class="cta-buttons">
+      <a href="https://github.com/iamevandrake/opensoul" class="cta-button cta-button--primary" target="_blank">
+        View on GitHub
+      </a>
+      <a href="mailto:hello@soulcraftagency.com?subject=OpenSoul%20Managed%20Services" class="cta-button cta-button--secondary">
+        Talk to Us
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <p>&copy; 2026 <a href="/">Soulcraft</a>. OpenSoul is open source under MIT license.</p>
+  </div>
+</footer>
+
+<script>
+// Progress bar
+function updateProgress() {
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = (scrollTop / docHeight) * 100;
+  document.getElementById('progressBar').style.width = progress + '%';
+}
+
+window.addEventListener('scroll', updateProgress);
+
+// Slide navigation
+const sections = ['hero', 'section-1', 'section-2', 'section-3', 'section-4', 'cta'];
+const dots = document.querySelectorAll('.slide-nav__dot');
+
+function updateActiveSection() {
+  const scrollPosition = window.scrollY + window.innerHeight / 2;
+
+  sections.forEach((sectionId, index) => {
+    const section = document.getElementById(sectionId);
+    if (!section) return;
+
+    const sectionTop = section.offsetTop;
+    const sectionBottom = sectionTop + section.offsetHeight;
+
+    if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+      dots.forEach(d => d.classList.remove('active'));
+      dots[index].classList.add('active');
+    }
+  });
+}
+
+window.addEventListener('scroll', updateActiveSection);
+
+dots.forEach((dot, index) => {
+  dot.addEventListener('click', () => {
+    const section = document.getElementById(sections[index]);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+});
+
+// Demo nav active state
+document.querySelectorAll('.demo-nav__item').forEach(item => {
+  item.addEventListener('click', function() {
+    document.querySelectorAll('.demo-nav__item').forEach(i => i.classList.remove('active'));
+    this.classList.add('active');
+  });
+});
+
+// Initialize
+updateProgress();
+updateActiveSection();
+</script>
+
+</body>
+</html>
