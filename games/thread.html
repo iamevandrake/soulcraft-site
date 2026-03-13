@@ -314,6 +314,7 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);min-height:1
 
   <!-- START -->
   <div class="screen active" id="start-screen">
+    <div class="s-emoji">&#x1F9F5;</div>
     <h1 class="s-title">Thread</h1>
     <p class="s-tagline">Every word connects.</p>
     <button class="s-play" onclick="startGame()">Play</button>
@@ -629,12 +630,12 @@ function endGame(){
 
   const s=game.score,mx=40,pct=s/mx;
   let emoji,quip;
-  if(pct>=.9){emoji='ð§ ';quip='You see connections other people miss. Your brain is basically a compound word encyclopedia. Terrifying and impressive.';}
-  else if(pct>=.75){emoji='ð§µ';quip='You thread the needle almost every time. Your pattern recognition is sharp enough to cut glass.';}
-  else if(pct>=.6){emoji='ð';quip='Solid links. You caught most of the chains. A few tangles, but nothing you can\'t untangle next time.';}
-  else if(pct>=.45){emoji='ð¤';quip='You found some threads but lost a few. In your defense, who knew "linebacker" was hiding in there?';}
-  else if(pct>=.3){emoji='ðª¢';quip='A few knots to work out. The good news: you now know that "breakfast" is literally "break" + "fast." You\'re welcome.';}
-  else{emoji='ð« ';quip='The thread got away from you this time. But hey, now you know "wormhole" starts with a bookworm. That\'s something.';}
+  if(pct>=.9){emoji='\uD83E\uDDE0';quip='You see connections other people miss. Your brain is basically a compound word encyclopedia. Terrifying and impressive.';}
+  else if(pct>=.75){emoji='\uD83E\uDDF5';quip='You thread the needle almost every time. Your pattern recognition is sharp enough to cut glass.';}
+  else if(pct>=.6){emoji='\uD83D\uDD17';quip='Solid links. You caught most of the chains. A few tangles, but nothing you can\'t untangle next time.';}
+  else if(pct>=.45){emoji='\uD83E\uDD14';quip='You found some threads but lost a few. In your defense, who knew "linebacker" was hiding in there?';}
+  else if(pct>=.3){emoji='\uD83E\uDEA2';quip='A few knots to work out. The good news: you now know that "breakfast" is literally "break" + "fast." You\'re welcome.';}
+  else{emoji='\uD83E\uDEE0';quip='The thread got away from you this time. But hey, now you know "wormhole" starts with a bookworm. That\'s something.';}
 
   $('e-emoji').textContent=emoji;
   $('e-score').textContent=s;
@@ -658,11 +659,11 @@ function endGame(){
 
 function getShareText(){
   const emojis=game.results.map(p=>{
-    if(p===4)return'ð©';if(p===3)return'ð¨';if(p===2)return'ð§';if(p===1)return'ð¥';return'â¬';
+    if(p===4)return'\uD83D\uDFE9';if(p===3)return'\uD83D\uDFE8';if(p===2)return'\uD83D\uDFE7';if(p===1)return'\uD83D\uDFE5';return'\u2B1B';
   });
   let rows=[];
   for(let i=0;i<emojis.length;i+=5)rows.push(emojis.slice(i,i+5).join(''));
-  return`THREAD ð§µ ${game.score}/40\n\n${rows.join('\n')}\n\nð©perfect ð¨almost ð§close ð¥one â¬tangled\n\nsoulcraftagency.com/games/thread.html`;
+  return`THREAD \uD83E\uDDF5 ${game.score}/40\n\n${rows.join('\n')}\n\n\uD83D\uDFE9perfect \uD83D\uDFE8almost \uD83D\uDFE7close \uD83D\uDFE5one \u2B1Btangled\n\nsoulcraftagency.com/games/thread.html`;
 }
 
 function shareResults(){
