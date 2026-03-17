@@ -1,0 +1,212 @@
+---
+layout: null
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Blog | Soulcraft</title>
+<meta name="description" content="Insights on identity design, AI brand voice, and building companies with soul.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://soulcraftagency.com/blog/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Blog | Soulcraft" />
+<meta property="og:description" content="Insights on identity design, AI brand voice, and building companies with soul." />
+<meta property="og:image" content="https://soulcraftagency.com/soulcraft-og-image.png" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://soulcraftagency.com/blog/" />
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+
+<!-- Shared Design System -->
+<link rel="stylesheet" href="/assets/css/landing.css">
+
+<style>
+/* ===== BLOG INDEX STYLES ===== */
+
+.sc-blog-hero {
+  padding: 160px 0 60px;
+  text-align: center;
+}
+
+.sc-blog-hero h1 {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: clamp(36px, 5vw, 52px);
+  color: var(--espresso);
+  margin-bottom: 16px;
+}
+
+.sc-blog-hero p {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: clamp(18px, 2vw, 21px);
+  color: var(--warm-gray);
+  line-height: 1.7;
+}
+
+.sc-blog-list {
+  padding: 0 0 100px;
+}
+
+.sc-blog-post {
+  display: block;
+  text-decoration: none;
+  padding: 40px 0;
+  border-bottom: 1px solid var(--sandstone);
+  transition: padding-left 0.3s;
+}
+
+.sc-blog-post:first-child {
+  border-top: 1px solid var(--sandstone);
+}
+
+.sc-blog-post:hover {
+  padding-left: 12px;
+}
+
+.sc-blog-post-date {
+  font-family: var(--sans);
+  font-weight: 400;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--copper);
+  margin-bottom: 10px;
+}
+
+.sc-blog-post-title {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(22px, 2.8vw, 30px);
+  line-height: 1.3;
+  color: var(--espresso);
+  margin-bottom: 10px;
+  transition: color 0.3s;
+}
+
+.sc-blog-post:hover .sc-blog-post-title {
+  color: var(--copper);
+}
+
+.sc-blog-post-description {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: clamp(16px, 1.6vw, 18px);
+  line-height: 1.7;
+  color: var(--warm-gray);
+}
+
+.sc-blog-empty {
+  text-align: center;
+  padding: 80px 0;
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: 20px;
+  color: var(--warm-gray);
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .sc-blog-hero {
+    padding: 120px 0 40px;
+  }
+
+  .sc-blog-post {
+    padding: 28px 0;
+  }
+
+  .sc-blog-post:hover {
+    padding-left: 0;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<nav class="sc-nav">
+  <a href="/" class="sc-nav-logo">
+    <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="20" y="20" width="160" height="160" rx="4" stroke-width="3" stroke-linecap="round" fill="none"/>
+      <path d="M100 152 C 100 152, 48 116, 46 84 C 44 62, 58 50, 74 50 C 86 50, 94 58, 100 68 C 106 58, 114 50, 126 50 C 142 50, 156 62, 154 84 C 152 116, 100 152, 100 152Z" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      <circle cx="100" cy="96" r="4.5" fill="currentColor"/>
+    </svg>
+    <span class="sc-nav-wordmark">Soulcraft</span>
+  </a>
+  <ul class="sc-nav-links">
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/opensoul/">Opensoul</a></li>
+    <li><a href="mailto:hello@soulcraftagency.com" class="sc-nav-cta">Get in touch</a></li>
+  </ul>
+  <button class="sc-nav-toggle" aria-label="Menu" onclick="document.querySelector('.sc-nav-links').classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="sc-blog-hero">
+  <div class="sc-container">
+    <h1>Journal</h1>
+    <p>Thinking about identity, intelligence, and the soul of what we build.</p>
+  </div>
+</section>
+
+<!-- ===== POST LIST ===== -->
+<section class="sc-blog-list">
+  <div class="sc-container">
+    {% assign sorted_posts = site.posts | sort: "date" | reverse %}
+    {% if sorted_posts.size > 0 %}
+      {% for post in sorted_posts %}
+      <a href="{{ post.url }}" class="sc-blog-post">
+        <div class="sc-blog-post-date">{{ post.date | date: "%B %-d, %Y" }}</div>
+        <h2 class="sc-blog-post-title">{{ post.title }}</h2>
+        {% if post.description %}
+        <p class="sc-blog-post-description">{{ post.description }}</p>
+        {% endif %}
+      </a>
+      {% endfor %}
+    {% else %}
+      <p class="sc-blog-empty">Something is brewing. Check back soon.</p>
+    {% endif %}
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="sc-container-wide">
+    <div class="sc-footer">
+      <div class="sc-footer-brand">
+        <svg width="22" height="22" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="20" y="20" width="160" height="160" rx="4" stroke-width="3" stroke-linecap="round" fill="none"/>
+          <path d="M100 152 C 100 152, 48 116, 46 84 C 44 62, 58 50, 74 50 C 86 50, 94 58, 100 68 C 106 58, 114 50, 126 50 C 142 50, 156 62, 154 84 C 152 116, 100 152, 100 152Z" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <circle cx="100" cy="96" r="4.5"/>
+        </svg>
+        <span class="sc-footer-text">&copy; 2026 Soulcraft. All rights reserved.</span>
+      </div>
+      <div class="sc-footer-links">
+        <a href="mailto:hello@soulcraftagency.com">Contact</a>
+        <a href="/blog/">Blog</a>
+        <a href="/opensoul/">Opensoul</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Scroll-triggered nav border -->
+<script>
+const nav = document.querySelector('.sc-nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 40);
+});
+</script>
+
+</body>
+</html>

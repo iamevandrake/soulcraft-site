@@ -1,0 +1,32 @@
+# Soulcraft - Jekyll Configuration
+# GitHub Pages will use this to build the site
+
+title: Soulcraft
+description: "Identity design at the intersection of soul and intelligence."
+url: "https://soulcraftagency.com"
+baseurl: ""
+
+# Build settings
+markdown: kramdown
+kramdown:
+  input: GFM
+  auto_ids: true
+  syntax_highlighter: rouge
+
+# Permalink structure for blog posts
+permalink: /blog/:slug/
+
+# Collections / defaults
+defaults:
+  - scope:
+      path: "_posts"
+      type: "posts"
+    values:
+      layout: post
+
+# Exclude files Jekyll doesn't need to process
+exclude:
+  - README.md
+  - LICENSE
+  - pages.json
+  - .claude
