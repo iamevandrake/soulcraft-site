@@ -49,6 +49,64 @@
     font-size: 1rem;
   }
 }
+
+.sc-item-list {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 0 40px 60px;
+}
+
+.sc-item {
+  display: grid;
+  grid-template-columns: 52px 1fr;
+  gap: 24px;
+  padding: 48px 0;
+  border-top: 1px solid var(--sandstone);
+}
+
+.sc-item:last-child {
+  border-bottom: 1px solid var(--sandstone);
+}
+
+.sc-item-num {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  color: var(--copper);
+  padding-top: 7px;
+}
+
+.sc-item-body h3 {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: clamp(22px, 2.5vw, 28px);
+  color: var(--espresso);
+  margin-bottom: 14px;
+  letter-spacing: -0.3px;
+}
+
+.sc-item-body p {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: clamp(16px, 1.5vw, 18px);
+  line-height: 1.75;
+  color: var(--warm-gray);
+  max-width: 520px;
+}
+
+@media (max-width: 768px) {
+  .sc-item-list {
+    padding: 0 24px 40px;
+  }
+
+  .sc-item {
+    grid-template-columns: 36px 1fr;
+    gap: 16px;
+    padding: 36px 0;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -77,6 +135,90 @@
   <h1>Industries</h1>
   <p class="subtitle">The markets we know by heart.</p>
 </section>
+
+<!-- ===== INDUSTRIES LIST ===== -->
+<main>
+<div class="sc-item-list">
+
+  <div class="sc-item">
+    <span class="sc-item-num">01</span>
+    <div class="sc-item-body">
+      <h3>B2B SaaS</h3>
+      <p>Complex buying cycles and a crowded market. We build the demand engine that gets you found before your competitors -- in search, in AI recommendations, and in the feed.</p>
+    </div>
+  </div>
+
+  <div class="sc-item">
+    <span class="sc-item-num">02</span>
+    <div class="sc-item-body">
+      <h3>Professional Services</h3>
+      <p>Reputation is your moat. We help law firms, consultancies, and agencies build thought leadership that attracts the right clients at the right moment.</p>
+    </div>
+  </div>
+
+  <div class="sc-item">
+    <span class="sc-item-num">03</span>
+    <div class="sc-item-body">
+      <h3>Healthcare &amp; Life Sciences</h3>
+      <p>Long sales cycles and high stakes. We build compliant marketing systems that educate, establish trust, and generate qualified pipeline.</p>
+    </div>
+  </div>
+
+  <div class="sc-item">
+    <span class="sc-item-num">04</span>
+    <div class="sc-item-body">
+      <h3>E-commerce &amp; DTC</h3>
+      <p>Traffic is only the start. We build acquisition and retention systems that turn browsers into buyers, and buyers into advocates.</p>
+    </div>
+  </div>
+
+  <div class="sc-item">
+    <span class="sc-item-num">05</span>
+    <div class="sc-item-body">
+      <h3>Local Businesses</h3>
+      <p>Showing up where it counts. We help local businesses own their neighborhood -- in search, in AI recommendations, and in the minds of their community.</p>
+    </div>
+  </div>
+
+</div>
+</main>
+
+<!-- ===== LEAD CAPTURE ===== -->
+<section class="sc-lead-section" style="max-width:780px;margin:0 auto;padding-left:40px;padding-right:40px">
+  <p class="sc-section-label">Let's connect</p>
+  <h2>Start a <em>conversation</em></h2>
+  <p class="sc-lead-sub">Tell us a bit about yourself and we'll be in touch.</p>
+
+  <form class="sc-lead-form" id="leadForm" novalidate>
+    <div class="sc-lead-form-row">
+      <div class="sc-lead-form-field">
+        <label for="lead-first">First name</label>
+        <input type="text" id="lead-first" name="firstName" required autocomplete="given-name">
+      </div>
+      <div class="sc-lead-form-field">
+        <label for="lead-last">Last name</label>
+        <input type="text" id="lead-last" name="lastName" required autocomplete="family-name">
+      </div>
+    </div>
+    <div class="sc-lead-form-field">
+      <label for="lead-email">Email</label>
+      <input type="email" id="lead-email" name="email" required autocomplete="email">
+    </div>
+    <div class="sc-lead-form-field">
+      <label for="lead-company">Company <span class="optional">(optional)</span></label>
+      <input type="text" id="lead-company" name="company" autocomplete="organization">
+    </div>
+    <button type="submit" class="sc-lead-form-submit">Send</button>
+    <p class="sc-lead-error" id="leadError"></p>
+  </form>
+
+  <div class="sc-lead-success" id="leadSuccess">
+    <div class="sc-lead-check">&#10003;</div>
+    <p>Thank you. We'll be in touch soon.</p>
+  </div>
+</section>
+
+<div class="sc-divider" style="margin:0 auto 60px"></div>
 
 <section class="closing">
   <div class="closing-lockup">
@@ -126,6 +268,43 @@ window.addEventListener('scroll', () => {
     nav.classList.add('scrolled');
   } else {
     nav.classList.remove('scrolled');
+  }
+});
+
+// Lead form submission
+const WEBHOOK_URL = 'https://soulcraft-leads.up.railway.app/api/lead';
+
+document.getElementById('leadForm')?.addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const btn = this.querySelector('.sc-lead-form-submit');
+  const error = document.getElementById('leadError');
+  const success = document.getElementById('leadSuccess');
+  error.style.display = 'none';
+  btn.disabled = true;
+  btn.textContent = 'Sending...';
+
+  const data = {
+    firstName: this.firstName.value.trim(),
+    lastName: this.lastName.value.trim(),
+    email: this.email.value.trim(),
+    company: this.company.value.trim() || null,
+    source: window.location.pathname
+  };
+
+  try {
+    const res = await fetch(WEBHOOK_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
+    if (!res.ok) throw new Error('Submission failed');
+    this.style.display = 'none';
+    success.style.display = 'block';
+  } catch (err) {
+    error.textContent = 'Something went wrong. Please try again or email us directly.';
+    error.style.display = 'block';
+    btn.disabled = false;
+    btn.textContent = 'Send';
   }
 });
 </script>

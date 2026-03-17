@@ -49,6 +49,95 @@
     font-size: 1rem;
   }
 }
+
+.sc-solutions-grid {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 0 40px 80px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2px;
+}
+
+.sc-solution-card {
+  padding: 40px 36px;
+  border: 1px solid var(--sandstone);
+  margin: -1px -1px 0 0;
+  transition: border-color 0.3s;
+  position: relative;
+}
+
+.sc-solution-card.is-live:hover {
+  border-color: var(--copper);
+  z-index: 1;
+}
+
+.sc-solution-status {
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--copper);
+  margin-bottom: 20px;
+}
+
+.sc-solution-status.is-soon {
+  color: var(--sandstone);
+}
+
+.sc-solution-card h3 {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: clamp(20px, 2vw, 24px);
+  color: var(--espresso);
+  margin-bottom: 14px;
+  letter-spacing: -0.3px;
+}
+
+.sc-solution-card.is-soon h3 {
+  color: var(--warm-gray);
+}
+
+.sc-solution-card p {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--warm-gray);
+}
+
+.sc-solution-card.is-soon p {
+  opacity: 0.6;
+}
+
+.sc-solution-cta {
+  display: inline-block;
+  margin-top: 24px;
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--copper);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.sc-solution-cta:hover {
+  color: var(--espresso);
+}
+
+@media (max-width: 768px) {
+  .sc-solutions-grid {
+    padding: 0 24px 60px;
+    grid-template-columns: 1fr;
+  }
+
+  .sc-solution-card {
+    margin: 0 0 -1px 0;
+  }
+}
 </style>
 </head>
 <body>
@@ -77,6 +166,69 @@
   <h1>Solutions</h1>
   <p class="subtitle">How we solve the problems that matter.</p>
 </section>
+
+<!-- ===== SOLUTIONS GRID ===== -->
+<main>
+<div class="sc-solutions-grid">
+
+  <div class="sc-solution-card is-live">
+    <p class="sc-solution-status">Available now</p>
+    <h3>Agentic SEO</h3>
+    <p>Autonomous agents that research keywords, create content, and optimize your search presence across Google and AI engines -- without the overhead.</p>
+    <a href="/solutions/agentic-seo/" class="sc-solution-cta">Learn more &rarr;</a>
+  </div>
+
+  <div class="sc-solution-card is-soon">
+    <p class="sc-solution-status is-soon">Coming soon</p>
+    <h3>Agentic Demand Gen</h3>
+    <p>An outbound system that identifies, scores, and sequences leads -- from intent signal to booked meeting.</p>
+  </div>
+
+  <div class="sc-solution-card is-soon">
+    <p class="sc-solution-status is-soon">Coming soon</p>
+    <h3>Brand OS</h3>
+    <p>Your brand voice, codified and deployed. A system that keeps every piece of content consistent, on-message, and on-brand -- at scale.</p>
+  </div>
+
+</div>
+</main>
+
+<!-- ===== LEAD CAPTURE ===== -->
+<section class="sc-lead-section" style="max-width:780px;margin:0 auto;padding-left:40px;padding-right:40px">
+  <p class="sc-section-label">Let's connect</p>
+  <h2>Start a <em>conversation</em></h2>
+  <p class="sc-lead-sub">Tell us a bit about yourself and we'll be in touch.</p>
+
+  <form class="sc-lead-form" id="leadForm" novalidate>
+    <div class="sc-lead-form-row">
+      <div class="sc-lead-form-field">
+        <label for="lead-first">First name</label>
+        <input type="text" id="lead-first" name="firstName" required autocomplete="given-name">
+      </div>
+      <div class="sc-lead-form-field">
+        <label for="lead-last">Last name</label>
+        <input type="text" id="lead-last" name="lastName" required autocomplete="family-name">
+      </div>
+    </div>
+    <div class="sc-lead-form-field">
+      <label for="lead-email">Email</label>
+      <input type="email" id="lead-email" name="email" required autocomplete="email">
+    </div>
+    <div class="sc-lead-form-field">
+      <label for="lead-company">Company <span class="optional">(optional)</span></label>
+      <input type="text" id="lead-company" name="company" autocomplete="organization">
+    </div>
+    <button type="submit" class="sc-lead-form-submit">Send</button>
+    <p class="sc-lead-error" id="leadError"></p>
+  </form>
+
+  <div class="sc-lead-success" id="leadSuccess">
+    <div class="sc-lead-check">&#10003;</div>
+    <p>Thank you. We'll be in touch soon.</p>
+  </div>
+</section>
+
+<div class="sc-divider" style="margin:0 auto 60px"></div>
 
 <section class="closing">
   <div class="closing-lockup">
@@ -126,6 +278,43 @@ window.addEventListener('scroll', () => {
     nav.classList.add('scrolled');
   } else {
     nav.classList.remove('scrolled');
+  }
+});
+
+// Lead form submission
+const WEBHOOK_URL = 'https://soulcraft-leads.up.railway.app/api/lead';
+
+document.getElementById('leadForm')?.addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const btn = this.querySelector('.sc-lead-form-submit');
+  const error = document.getElementById('leadError');
+  const success = document.getElementById('leadSuccess');
+  error.style.display = 'none';
+  btn.disabled = true;
+  btn.textContent = 'Sending...';
+
+  const data = {
+    firstName: this.firstName.value.trim(),
+    lastName: this.lastName.value.trim(),
+    email: this.email.value.trim(),
+    company: this.company.value.trim() || null,
+    source: window.location.pathname
+  };
+
+  try {
+    const res = await fetch(WEBHOOK_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
+    if (!res.ok) throw new Error('Submission failed');
+    this.style.display = 'none';
+    success.style.display = 'block';
+  } catch (err) {
+    error.textContent = 'Something went wrong. Please try again or email us directly.';
+    error.style.display = 'block';
+    btn.disabled = false;
+    btn.textContent = 'Send';
   }
 });
 </script>

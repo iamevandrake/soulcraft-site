@@ -49,6 +49,80 @@
     font-size: 1rem;
   }
 }
+
+.sc-item-list {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 0 40px 60px;
+}
+
+.sc-item {
+  display: grid;
+  grid-template-columns: 52px 1fr;
+  gap: 24px;
+  padding: 48px 0;
+  border-top: 1px solid var(--sandstone);
+}
+
+.sc-item:last-child {
+  border-bottom: 1px solid var(--sandstone);
+}
+
+.sc-item-num {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  color: var(--copper);
+  padding-top: 7px;
+}
+
+.sc-item-body h3 {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: clamp(22px, 2.5vw, 28px);
+  color: var(--espresso);
+  margin-bottom: 14px;
+  letter-spacing: -0.3px;
+}
+
+.sc-item-body p {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: clamp(16px, 1.5vw, 18px);
+  line-height: 1.75;
+  color: var(--warm-gray);
+  max-width: 520px;
+}
+
+.sc-item-link {
+  display: inline-block;
+  margin-top: 18px;
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--copper);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.sc-item-link:hover {
+  color: var(--espresso);
+}
+
+@media (max-width: 768px) {
+  .sc-item-list {
+    padding: 0 24px 40px;
+  }
+
+  .sc-item {
+    grid-template-columns: 36px 1fr;
+    gap: 16px;
+    padding: 36px 0;
+  }
+}
 </style>
 </head>
 <body>
@@ -77,6 +151,46 @@
   <h1>Services</h1>
   <p class="subtitle">What we do and where we do it.</p>
 </section>
+
+<!-- ===== SERVICES LIST ===== -->
+<main>
+<div class="sc-item-list">
+
+  <div class="sc-item">
+    <span class="sc-item-num">01</span>
+    <div class="sc-item-body">
+      <h3>Agentic SEO</h3>
+      <p>Your search presence, run by agents. We deploy autonomous systems that research, publish, and optimize across Google, AI Overviews, and generative engines -- continuously, without the overhead.</p>
+      <a href="/solutions/agentic-seo/" class="sc-item-link">See the solution &rarr;</a>
+    </div>
+  </div>
+
+  <div class="sc-item">
+    <span class="sc-item-num">02</span>
+    <div class="sc-item-body">
+      <h3>Demand Generation</h3>
+      <p>Pipeline that builds itself. Outbound sequences, lead scoring, and intent signals work together so your team spends time closing, not prospecting.</p>
+    </div>
+  </div>
+
+  <div class="sc-item">
+    <span class="sc-item-num">03</span>
+    <div class="sc-item-body">
+      <h3>Content &amp; Brand</h3>
+      <p>A voice that doesn't get lost. We build editorial systems that produce consistent, on-target content across every channel -- built once, running without you.</p>
+    </div>
+  </div>
+
+  <div class="sc-item">
+    <span class="sc-item-num">04</span>
+    <div class="sc-item-body">
+      <h3>Marketing Strategy</h3>
+      <p>Clarity before execution. We map your audience, sharpen your positioning, and design a go-to-market motion that your agents can actually run.</p>
+    </div>
+  </div>
+
+</div>
+</main>
 
 <!-- ===== LEAD CAPTURE ===== -->
 <section class="sc-lead-section" style="max-width:780px;margin:0 auto;padding-left:40px;padding-right:40px">
