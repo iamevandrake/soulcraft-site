@@ -1075,6 +1075,160 @@ body {
     justify-content: center;
   }
 }
+
+/* Lead capture form */
+.sc-lead-section--os {
+  padding: 80px 0;
+  text-align: center;
+}
+
+.sc-lead-section--os .sc-lead-label {
+  font-family: var(--sans);
+  font-weight: 400;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--copper);
+  margin-bottom: 20px;
+}
+
+.sc-lead-section--os h2 {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: clamp(28px, 3.5vw, 40px);
+  line-height: 1.3;
+  color: var(--espresso);
+  margin-bottom: 12px;
+}
+
+.sc-lead-section--os h2 em {
+  font-style: italic;
+  color: var(--copper);
+}
+
+.sc-lead-section--os .sc-lead-sub {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: clamp(16px, 1.6vw, 19px);
+  line-height: 1.7;
+  color: var(--warm-gray);
+  margin-bottom: 40px;
+}
+
+.sc-lead-form--os {
+  max-width: 480px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.sc-lead-form--os .sc-lead-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.sc-lead-form--os .sc-lead-form-field {
+  margin-bottom: 16px;
+}
+
+.sc-lead-form--os label {
+  display: block;
+  font-family: var(--sans);
+  font-weight: 400;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--warm-gray);
+  margin-bottom: 8px;
+}
+
+.sc-lead-form--os label .optional {
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  text-transform: none;
+  opacity: 0.6;
+}
+
+.sc-lead-form--os input {
+  width: 100%;
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: 17px;
+  color: var(--espresso);
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--sandstone);
+  padding: 10px 0;
+  outline: none;
+  transition: border-color 0.3s;
+  border-radius: 0;
+  -webkit-appearance: none;
+}
+
+.sc-lead-form--os input::placeholder { color: var(--sandstone); }
+.sc-lead-form--os input:focus { border-bottom-color: var(--copper); }
+
+.sc-lead-form--os .sc-lead-form-submit {
+  display: inline-block;
+  font-family: var(--sans);
+  font-weight: 400;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--parchment);
+  background: var(--copper);
+  padding: 14px 36px;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background 0.3s, opacity 0.3s;
+  margin-top: 8px;
+}
+
+.sc-lead-form--os .sc-lead-form-submit:hover { background: var(--espresso); }
+.sc-lead-form--os .sc-lead-form-submit:disabled { opacity: 0.5; cursor: default; }
+
+.sc-lead-success--os {
+  display: none;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.sc-lead-success--os p {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: 20px;
+  color: var(--espresso);
+  line-height: 1.6;
+}
+
+.sc-lead-success--os .sc-lead-check {
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  border: 2px solid var(--copper);
+  border-radius: 50%;
+  line-height: 24px;
+  text-align: center;
+  color: var(--copper);
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.sc-lead-error--os {
+  display: none;
+  font-family: var(--sans);
+  font-size: 13px;
+  color: #a0522d;
+  margin-top: 12px;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .sc-lead-section--os { padding: 60px 0; }
+  .sc-lead-form--os .sc-lead-form-row { grid-template-columns: 1fr; gap: 0; }
+}
 </style>
 </head>
 <body>
@@ -1443,6 +1597,43 @@ body {
 </section>
 
 
+<!-- Lead Capture -->
+<section class="sc-lead-section--os">
+  <div class="container container--narrow">
+    <p class="sc-lead-label">Let's connect</p>
+    <h2>Start a <em>conversation</em></h2>
+    <p class="sc-lead-sub">Tell us a bit about yourself and we'll be in touch.</p>
+
+    <form class="sc-lead-form--os" id="leadForm" novalidate>
+      <div class="sc-lead-form-row">
+        <div class="sc-lead-form-field">
+          <label for="lead-first">First name</label>
+          <input type="text" id="lead-first" name="firstName" required autocomplete="given-name">
+        </div>
+        <div class="sc-lead-form-field">
+          <label for="lead-last">Last name</label>
+          <input type="text" id="lead-last" name="lastName" required autocomplete="family-name">
+        </div>
+      </div>
+      <div class="sc-lead-form-field">
+        <label for="lead-email">Email</label>
+        <input type="email" id="lead-email" name="email" required autocomplete="email">
+      </div>
+      <div class="sc-lead-form-field">
+        <label for="lead-company">Company <span class="optional">(optional)</span></label>
+        <input type="text" id="lead-company" name="company" autocomplete="organization">
+      </div>
+      <button type="submit" class="sc-lead-form-submit">Send</button>
+      <p class="sc-lead-error--os" id="leadError"></p>
+    </form>
+
+    <div class="sc-lead-success--os" id="leadSuccess">
+      <div class="sc-lead-check">&#10003;</div>
+      <p>Thank you. We'll be in touch soon.</p>
+    </div>
+  </div>
+</section>
+
 <!-- Footer -->
 <footer class="footer">
   <div class="container footer__inner">
@@ -1493,6 +1684,43 @@ document.querySelectorAll('.team-card').forEach((card, index) => {
 // Staggered animation for pricing cards
 document.querySelectorAll('.pricing-card').forEach((card, index) => {
   card.style.transitionDelay = `${index * 0.15}s`;
+});
+
+// Lead form submission
+const WEBHOOK_URL = 'https://soulcraft-leads.up.railway.app/api/lead';
+
+document.getElementById('leadForm')?.addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const btn = this.querySelector('.sc-lead-form-submit');
+  const error = document.getElementById('leadError');
+  const success = document.getElementById('leadSuccess');
+  error.style.display = 'none';
+  btn.disabled = true;
+  btn.textContent = 'Sending...';
+
+  const data = {
+    firstName: this.firstName.value.trim(),
+    lastName: this.lastName.value.trim(),
+    email: this.email.value.trim(),
+    company: this.company.value.trim() || null,
+    source: window.location.pathname
+  };
+
+  try {
+    const res = await fetch(WEBHOOK_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
+    if (!res.ok) throw new Error('Submission failed');
+    this.style.display = 'none';
+    success.style.display = 'block';
+  } catch (err) {
+    error.textContent = 'Something went wrong. Please try again or email us directly.';
+    error.style.display = 'block';
+    btn.disabled = false;
+    btn.textContent = 'Send';
+  }
 });
 
 // Smooth scroll for anchor links

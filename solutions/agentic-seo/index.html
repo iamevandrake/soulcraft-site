@@ -320,6 +320,41 @@
     </section>
   </main>
 
+  <!-- LEAD CAPTURE -->
+  <section class="sc-lead-section sc-container">
+    <p class="sc-section-label">Let's connect</p>
+    <h2>Start a <em>conversation</em></h2>
+    <p class="sc-lead-sub">Tell us a bit about yourself and we'll be in touch.</p>
+
+    <form class="sc-lead-form" id="leadForm" novalidate>
+      <div class="sc-lead-form-row">
+        <div class="sc-lead-form-field">
+          <label for="lead-first">First name</label>
+          <input type="text" id="lead-first" name="firstName" required autocomplete="given-name">
+        </div>
+        <div class="sc-lead-form-field">
+          <label for="lead-last">Last name</label>
+          <input type="text" id="lead-last" name="lastName" required autocomplete="family-name">
+        </div>
+      </div>
+      <div class="sc-lead-form-field">
+        <label for="lead-email">Email</label>
+        <input type="email" id="lead-email" name="email" required autocomplete="email">
+      </div>
+      <div class="sc-lead-form-field">
+        <label for="lead-company">Company <span class="optional">(optional)</span></label>
+        <input type="text" id="lead-company" name="company" autocomplete="organization">
+      </div>
+      <button type="submit" class="sc-lead-form-submit">Send</button>
+      <p class="sc-lead-error" id="leadError"></p>
+    </form>
+
+    <div class="sc-lead-success" id="leadSuccess">
+      <div class="sc-lead-check">&#10003;</div>
+      <p>Thank you. We'll be in touch soon.</p>
+    </div>
+  </section>
+
   <!-- FOOTER -->
   <footer class="sc-container">
     <div class="sc-footer">
@@ -366,6 +401,43 @@
       btn.addEventListener('click', () => {
         btn.closest('.sc-faq-item').classList.toggle('open');
       });
+    });
+
+    // Lead form submission
+    const WEBHOOK_URL = 'https://soulcraft-leads.up.railway.app/api/lead';
+
+    document.getElementById('leadForm')?.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const btn = this.querySelector('.sc-lead-form-submit');
+      const error = document.getElementById('leadError');
+      const success = document.getElementById('leadSuccess');
+      error.style.display = 'none';
+      btn.disabled = true;
+      btn.textContent = 'Sending...';
+
+      const data = {
+        firstName: this.firstName.value.trim(),
+        lastName: this.lastName.value.trim(),
+        email: this.email.value.trim(),
+        company: this.company.value.trim() || null,
+        source: window.location.pathname
+      };
+
+      try {
+        const res = await fetch(WEBHOOK_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
+        if (!res.ok) throw new Error('Submission failed');
+        this.style.display = 'none';
+        success.style.display = 'block';
+      } catch (err) {
+        error.textContent = 'Something went wrong. Please try again or email us directly.';
+        error.style.display = 'block';
+        btn.disabled = false;
+        btn.textContent = 'Send';
+      }
     });
   </script>
 
