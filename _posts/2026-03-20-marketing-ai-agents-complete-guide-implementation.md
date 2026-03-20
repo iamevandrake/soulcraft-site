@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: "Marketing AI Agents: Complete Guide & Implementation"
 description: "Discover how marketing AI agents revolutionize campaigns with proactive intelligence. Learn implementation strategies for data-driven automation that works 24/7."
 date: 2026-03-20
