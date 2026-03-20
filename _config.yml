@@ -30,3 +30,5 @@ exclude:
   - LICENSE
   - pages.json
   - .claude
+
+future: true
