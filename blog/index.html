@@ -20,193 +20,220 @@ layout: null
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://soulcraftagency.com/blog/" />
 
-<!-- Fonts -->
+<!-- Fonts (matching homepage) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
-
-<!-- Shared Design System -->
-<link rel="stylesheet" href="/assets/css/landing.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,700&display=swap" rel="stylesheet">
 
 <style>
-/* ===== BLOG INDEX STYLES ===== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --black: #0a0a0a;
+  --dark: #111111;
+  --card: #161616;
+  --border: #222222;
+  --muted: #555555;
+  --text: #d0d0d0;
+  --white: #f0f0f0;
+  --accent: #c8a97e;
+  --accent-dim: rgba(200,169,126,0.12);
+  --accent-glow: rgba(200,169,126,0.25);
+}
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', sans-serif; background: var(--black); color: var(--text); line-height: 1.6; overflow-x: hidden; }
+a { color: var(--accent); text-decoration: none; }
+.container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
 
-.sc-blog-hero {
+/* Accessibility */
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+
+/* Nav */
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(10,10,10,0.85); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); }
+nav .container { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+.logo { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--white); display: flex; align-items: center; gap: 10px; }
+.logo-text { white-space: nowrap; }
+.logo-text span { color: var(--accent); }
+.heartmark { width: 28px; height: 28px; flex-shrink: 0; }
+.nav-right { display: flex; gap: 24px; align-items: center; }
+.nav-right a { color: var(--muted); font-size: 13px; font-weight: 500; transition: color 0.2s; }
+.nav-right a:hover { color: var(--white); }
+.nav-cta-btn { background: var(--accent) !important; color: var(--black) !important; padding: 8px 20px; border-radius: 6px; font-weight: 600 !important; font-size: 13px !important; }
+
+/* Blog hero */
+.blog-hero {
   padding: 160px 0 60px;
   text-align: center;
 }
-
-.sc-blog-hero h1 {
-  font-family: var(--serif);
-  font-weight: 300;
+.blog-hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
   font-size: clamp(36px, 5vw, 52px);
-  color: var(--espresso);
+  color: var(--white);
   margin-bottom: 16px;
 }
-
-.sc-blog-hero p {
-  font-family: var(--serif);
-  font-weight: 300;
+.blog-hero p {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
   font-size: clamp(18px, 2vw, 21px);
-  color: var(--warm-gray);
+  color: var(--muted);
   line-height: 1.7;
-}
-
-.sc-blog-list {
-  padding: 0 0 100px;
-}
-
-.sc-blog-post {
-  display: block;
-  text-decoration: none;
-  padding: 40px 0;
-  border-bottom: 1px solid var(--sandstone);
-  transition: padding-left 0.3s;
-}
-
-.sc-blog-post:first-child {
-  border-top: 1px solid var(--sandstone);
-}
-
-.sc-blog-post:hover {
-  padding-left: 12px;
-}
-
-.sc-blog-post-date {
-  font-family: var(--sans);
-  font-weight: 400;
-  font-size: 11px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--copper);
-  margin-bottom: 10px;
-}
-
-.sc-blog-post-title {
-  font-family: var(--serif);
-  font-weight: 400;
-  font-size: clamp(22px, 2.8vw, 30px);
-  line-height: 1.3;
-  color: var(--espresso);
-  margin-bottom: 10px;
-  transition: color 0.3s;
-}
-
-.sc-blog-post:hover .sc-blog-post-title {
-  color: var(--copper);
-}
-
-.sc-blog-post-description {
-  font-family: var(--serif);
-  font-weight: 300;
-  font-size: clamp(16px, 1.6vw, 18px);
-  line-height: 1.7;
-  color: var(--warm-gray);
-}
-
-.sc-blog-empty {
-  text-align: center;
-  padding: 80px 0;
-  font-family: var(--serif);
-  font-weight: 300;
-  font-size: 20px;
-  color: var(--warm-gray);
   font-style: italic;
 }
 
+/* Blog list */
+.blog-list {
+  padding: 0 0 100px;
+}
+.blog-list .container {
+  padding-left: 48px;
+  padding-right: 48px;
+}
+.blog-post {
+  display: block;
+  text-decoration: none;
+  padding: 40px 0;
+  border-bottom: 1px solid var(--border);
+  transition: padding-left 0.3s;
+}
+.blog-post:first-child {
+  border-top: 1px solid var(--border);
+}
+.blog-post:hover {
+  padding-left: 12px;
+}
+.blog-post-date {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+.blog-post-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  font-size: clamp(22px, 2.8vw, 30px);
+  line-height: 1.3;
+  color: var(--white);
+  margin-bottom: 10px;
+  transition: color 0.3s;
+}
+.blog-post:hover .blog-post-title {
+  color: var(--accent);
+}
+.blog-post-description {
+  font-size: clamp(14px, 1.6vw, 16px);
+  line-height: 1.7;
+  color: var(--muted);
+}
+.blog-empty {
+  text-align: center;
+  padding: 80px 0;
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  font-size: 20px;
+  color: var(--muted);
+  font-style: italic;
+}
+
+/* Footer */
+footer { padding: 48px 0; border-top: 1px solid var(--border); }
+footer .container { padding-left: 48px; padding-right: 48px; }
+.footer-row { display: flex; justify-content: space-between; align-items: center; }
+.footer-links { display: flex; gap: 20px; flex-wrap: wrap; }
+.footer-links a { font-size: 12px; color: var(--muted); }
+.footer-links a:hover { color: var(--accent); }
+.footer-tagline { font-family: 'Playfair Display', serif; font-size: 14px; color: #333; font-style: italic; }
+
 @media (max-width: 768px) {
-  .sc-blog-hero {
+  .blog-hero {
     padding: 120px 0 40px;
   }
-
-  .sc-blog-post {
+  .blog-post {
     padding: 28px 0;
   }
-
-  .sc-blog-post:hover {
+  .blog-post:hover {
     padding-left: 0;
   }
+  .nav-right a:not(.nav-cta-btn) { display: none; }
+  .footer-row { flex-direction: column; gap: 20px; text-align: center; }
+  .footer-links { justify-content: center; }
+  .blog-list .container { padding-left: 24px; padding-right: 24px; }
+  footer .container { padding-left: 24px; padding-right: 24px; }
 }
 </style>
 </head>
 <body>
 
-<!-- ===== NAV ===== -->
-<nav class="sc-nav">
-  <a href="/" class="sc-nav-logo">
-    <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect x="20" y="20" width="160" height="160" rx="4" stroke-width="3" stroke-linecap="round" fill="none"/>
-      <path d="M100 152 C 100 152, 48 116, 46 84 C 44 62, 58 50, 74 50 C 86 50, 94 58, 100 68 C 106 58, 114 50, 126 50 C 142 50, 156 62, 154 84 C 152 116, 100 152, 100 152Z" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-      <circle cx="100" cy="96" r="4.5" fill="currentColor"/>
-    </svg>
-    <span class="sc-nav-wordmark">Soulcraft</span>
-  </a>
-  <ul class="sc-nav-links">
-    <li><a href="/blog/">Blog</a></li>
-    <li><a href="/opensoul/">Opensoul</a></li>
-    <li><a href="mailto:hello@soulcraftagency.com" class="sc-nav-cta">Get in touch</a></li>
-  </ul>
-  <button class="sc-nav-toggle" aria-label="Menu" onclick="document.querySelector('.sc-nav-links').classList.toggle('open')">
-    <span></span><span></span><span></span>
-  </button>
+<!-- Nav -->
+<nav>
+  <div class="container">
+    <a href="/" class="logo" aria-label="Soulcraft home">
+      <svg class="heartmark" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect x="20" y="20" width="160" height="160" rx="4" stroke="#c8a97e" stroke-width="3" stroke-linecap="round" fill="none"/>
+        <path d="M100 152 C 100 152, 48 116, 46 84 C 44 62, 58 50, 74 50 C 86 50, 94 58, 100 68 C 106 58, 114 50, 126 50 C 142 50, 156 62, 154 84 C 152 116, 100 152, 100 152Z" stroke="#c8a97e" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <circle cx="100" cy="96" r="4.5" fill="#c8a97e"/>
+      </svg>
+      <span class="logo-text">Soul<span>craft</span></span>
+    </a>
+    <div class="nav-right">
+      <a href="/blog">Blog</a>
+      <a href="/opensoul">Opensoul</a>
+      <a href="mailto:hello@soulcraftagency.com" class="nav-cta-btn">Get in touch</a>
+    </div>
+  </div>
 </nav>
 
-<!-- ===== HERO ===== -->
-<section class="sc-blog-hero">
-  <div class="sc-container">
-    <h1>Journal</h1>
+<!-- Hero -->
+<section class="blog-hero">
+  <div class="container">
+    <h1>Blog</h1>
     <p>Thinking about identity, intelligence, and the soul of what we build.</p>
   </div>
 </section>
 
-<!-- ===== POST LIST ===== -->
-<section class="sc-blog-list">
-  <div class="sc-container">
+<!-- Post list -->
+<section class="blog-list">
+  <div class="container">
     {% assign sorted_posts = site.posts | sort: "date" | reverse %}
     {% if sorted_posts.size > 0 %}
       {% for post in sorted_posts %}
-      <a href="{{ post.url }}" class="sc-blog-post">
-        <div class="sc-blog-post-date">{{ post.date | date: "%B %-d, %Y" }}</div>
-        <h2 class="sc-blog-post-title">{{ post.title }}</h2>
+      <a href="{{ post.url }}" class="blog-post">
+        <div class="blog-post-date">{{ post.date | date: "%B %-d, %Y" }}</div>
+        <h2 class="blog-post-title">{{ post.title }}</h2>
         {% if post.description %}
-        <p class="sc-blog-post-description">{{ post.description }}</p>
+        <p class="blog-post-description">{{ post.description }}</p>
         {% endif %}
       </a>
       {% endfor %}
     {% else %}
-      <p class="sc-blog-empty">Something is brewing. Check back soon.</p>
+      <p class="blog-empty">Something is brewing. Check back soon.</p>
     {% endif %}
   </div>
 </section>
 
-<!-- ===== FOOTER ===== -->
+<!-- Footer -->
 <footer>
-  <div class="sc-container-wide">
-    <div class="sc-footer">
-      <div class="sc-footer-brand">
-        <svg width="22" height="22" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="20" y="20" width="160" height="160" rx="4" stroke-width="3" stroke-linecap="round" fill="none"/>
-          <path d="M100 152 C 100 152, 48 116, 46 84 C 44 62, 58 50, 74 50 C 86 50, 94 58, 100 68 C 106 58, 114 50, 126 50 C 142 50, 156 62, 154 84 C 152 116, 100 152, 100 152Z" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-          <circle cx="100" cy="96" r="4.5"/>
+  <div class="container">
+    <div class="footer-row">
+      <span class="logo">
+        <svg class="heartmark" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="20" y="20" width="160" height="160" rx="4" stroke="#c8a97e" stroke-width="3" stroke-linecap="round" fill="none"/>
+          <path d="M100 152 C 100 152, 48 116, 46 84 C 44 62, 58 50, 74 50 C 86 50, 94 58, 100 68 C 106 58, 114 50, 126 50 C 142 50, 156 62, 154 84 C 152 116, 100 152, 100 152Z" stroke="#c8a97e" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <circle cx="100" cy="96" r="4.5" fill="#c8a97e"/>
         </svg>
-        <span class="sc-footer-text">&copy; 2026 Soulcraft. All rights reserved.</span>
-      </div>
-      <div class="sc-footer-links">
-        <a href="mailto:hello@soulcraftagency.com">Contact</a>
-        <a href="/blog/">Blog</a>
-        <a href="/opensoul/">Opensoul</a>
+        <span class="logo-text">Soul<span>craft</span></span>
+      </span>
+      <div class="footer-links">
+        <a href="/blog">Blog</a>
+        <a href="/opensoul">Opensoul</a>
+        <a href="https://www.linkedin.com/company/112723961/admin/dashboard/" target="_blank" rel="noopener">LinkedIn</a>
       </div>
     </div>
+    <div class="footer-tagline" style="text-align:center;margin-top:32px;">&copy; 2026 Soulcraft. The soul is the system.</div>
   </div>
 </footer>
-
-<!-- Scroll-triggered nav border -->
-<script>
-const nav = document.querySelector('.sc-nav');
-window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 40);
-});
-</script>
 
 </body>
 </html>
