@@ -6,14 +6,14 @@
 
 <!-- SEO -->
 <title>Industries -- Soulcraft</title>
-<meta name="description" content="The markets we know by heart. Soulcraft builds agentic marketing systems for B2B SaaS, professional services, healthcare, e-commerce, and local businesses.">
+<meta name="description" content="Soulcraft builds agentic marketing systems for B2B SaaS, professional services, healthcare, e-commerce, and local businesses. The markets we know by heart.">
 <link rel="canonical" href="https://soulcraftagency.com/industries/">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 
 <!-- Open Graph -->
 <meta property="og:title" content="Industries -- Soulcraft">
-<meta property="og:description" content="The markets we know by heart. Soulcraft builds agentic marketing systems for B2B SaaS, professional services, healthcare, e-commerce, and local businesses.">
+<meta property="og:description" content="Soulcraft builds agentic marketing systems for B2B SaaS, professional services, healthcare, e-commerce, and local businesses. The markets we know by heart.">
 <meta property="og:image" content="https://soulcraftagency.com/soulcraft-og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="300">
@@ -23,359 +23,251 @@
 <!-- Twitter / X -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Industries -- Soulcraft">
-<meta name="twitter:description" content="The markets we know by heart. Soulcraft builds agentic marketing systems for B2B SaaS, professional services, healthcare, e-commerce, and local businesses.">
+<meta name="twitter:description" content="Soulcraft builds agentic marketing systems for B2B SaaS, professional services, healthcare, e-commerce, and local businesses.">
 <meta name="twitter:image" content="https://soulcraftagency.com/soulcraft-og-image.png">
 
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,700&display=swap" rel="stylesheet">
 
-<!-- Styles -->
-<link rel="stylesheet" href="/assets/css/landing.css">
-
-<!-- Schema: Organization -->
+<!-- Schema -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  "@id": "https://soulcraftagency.com/#organization",
-  "name": "Soulcraft",
-  "url": "https://soulcraftagency.com",
-  "email": "hello@soulcraftagency.com",
-  "description": "Soulcraft builds agentic marketing systems driven by your identity.",
-  "founder": {
-    "@type": "Person",
-    "name": "Evan Drake"
-  }
-}
-</script>
-
-<!-- Schema: BreadcrumbList -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://soulcraftagency.com/"},
-    {"@type": "ListItem", "position": 2, "name": "Industries"}
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://soulcraftagency.com/#organization",
+      "name": "Soulcraft",
+      "url": "https://soulcraftagency.com",
+      "email": "hello@soulcraftagency.com",
+      "founder": { "@type": "Person", "name": "Evan Drake" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://soulcraftagency.com/"},
+        {"@type": "ListItem", "position": 2, "name": "Industries"}
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "name": "Industries -- Soulcraft",
+      "description": "Soulcraft builds agentic marketing systems for B2B SaaS, professional services, healthcare, e-commerce, and local businesses.",
+      "url": "https://soulcraftagency.com/industries/"
+    }
   ]
 }
 </script>
 
-<!-- Schema: WebPage -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Industries -- Soulcraft",
-  "description": "The markets we know by heart. Soulcraft builds agentic marketing systems for B2B SaaS, professional services, healthcare, e-commerce, and local businesses.",
-  "url": "https://soulcraftagency.com/industries/",
-  "isPartOf": {
-    "@id": "https://soulcraftagency.com/#website"
-  },
-  "about": {
-    "@id": "https://soulcraftagency.com/#organization"
-  }
-}
-</script>
-
 <style>
-.category-hero {
-  min-height: 60vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 120px 32px 80px;
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --black: #0a0a0a;
+  --dark: #111111;
+  --card: #161616;
+  --border: #222222;
+  --muted: #555555;
+  --text: #d0d0d0;
+  --white: #f0f0f0;
+  --accent: #c8a97e;
+  --accent-dim: rgba(200,169,126,0.12);
 }
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', sans-serif; background: var(--black); color: var(--text); line-height: 1.6; overflow-x: hidden; }
+a { color: var(--accent); text-decoration: none; }
+.container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
 
-.category-hero h1 {
-  font-size: 4rem;
-  font-weight: 300;
-  margin-bottom: 24px;
-  letter-spacing: -1px;
-}
+/* Nav */
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(10,10,10,0.85); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); }
+nav .container { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+.logo { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--white); display: flex; align-items: center; gap: 10px; }
+.logo-text { white-space: nowrap; }
+.logo-text span { color: var(--accent); }
+.heartmark { width: 28px; height: 28px; flex-shrink: 0; }
+.nav-right { display: flex; gap: 24px; align-items: center; }
+.nav-right a { color: var(--muted); font-size: 13px; font-weight: 500; transition: color 0.2s; }
+.nav-right a:hover { color: var(--white); }
+.nav-cta-btn { background: var(--accent) !important; color: var(--black) !important; padding: 8px 20px; border-radius: 6px; font-weight: 600 !important; font-size: 13px !important; }
 
-.category-hero .subtitle {
-  font-size: 1.25rem;
-  color: var(--warm-gray);
-  font-weight: 300;
-  max-width: 500px;
-  margin: 0 auto;
-}
+/* Breadcrumbs */
+.breadcrumbs { padding-top: 88px; font-size: 12px; color: var(--muted); font-weight: 400; }
+.breadcrumbs a { color: var(--muted); transition: color 0.2s; }
+.breadcrumbs a:hover { color: var(--accent); }
+.breadcrumbs .sep { margin: 0 8px; opacity: 0.4; }
+
+/* Chapter labels */
+.chapter-num { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 4px; color: var(--accent); margin-bottom: 32px; opacity: 0.7; }
+
+/* Hero */
+.page-hero { padding: 80px 0 60px; text-align: center; }
+.page-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(40px, 5vw, 64px); line-height: 1.15; color: var(--white); margin-bottom: 20px; font-weight: 400; }
+.page-hero h1 em { font-style: italic; color: var(--accent); font-weight: 700; }
+.page-hero p { font-size: 18px; color: var(--muted); max-width: 520px; margin: 0 auto; line-height: 1.7; font-weight: 300; }
+
+/* Industry items */
+.industry-list { max-width: 720px; margin: 0 auto; padding: 20px 0 80px; }
+.industry-item { padding: 48px 0; border-top: 1px solid var(--border); display: grid; grid-template-columns: 52px 1fr; gap: 24px; }
+.industry-item:last-child { border-bottom: 1px solid var(--border); }
+.industry-num { font-size: 11px; font-weight: 600; letter-spacing: 2px; color: var(--accent); padding-top: 6px; }
+.industry-item h3 { font-family: 'Playfair Display', serif; font-size: clamp(22px, 2.5vw, 28px); color: var(--white); margin-bottom: 14px; font-weight: 400; }
+.industry-item p { font-size: 16px; color: var(--muted); line-height: 1.8; max-width: 540px; }
+
+/* Closing CTA */
+.closing-cta { padding: 100px 0; text-align: center; position: relative; }
+.closing-cta::before { content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 1px; height: 60px; background: linear-gradient(var(--border), transparent); }
+.closing-cta h2 { font-family: 'Playfair Display', serif; font-size: clamp(28px, 3.5vw, 44px); color: var(--white); margin-bottom: 16px; font-weight: 400; }
+.closing-cta h2 em { font-style: italic; color: var(--accent); }
+.closing-cta p { font-size: 17px; color: var(--muted); margin-bottom: 36px; max-width: 480px; margin-left: auto; margin-right: auto; }
+.closing-cta .cta-btn { display: inline-block; padding: 14px 36px; background: var(--accent); color: var(--black); border-radius: 8px; font-weight: 700; font-size: 14px; font-family: 'Inter', sans-serif; transition: all 0.2s; }
+.closing-cta .cta-btn:hover { background: var(--white); }
+
+/* Footer */
+footer { padding: 48px 0; border-top: 1px solid var(--border); }
+.footer-row { display: flex; justify-content: space-between; align-items: center; }
+.footer-links { display: flex; gap: 20px; flex-wrap: wrap; }
+.footer-links a { font-size: 12px; color: var(--muted); }
+.footer-links a:hover { color: var(--accent); }
+.footer-tagline { font-family: 'Playfair Display', serif; font-size: 14px; color: #333; font-style: italic; }
+
+/* Reveal */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.8s ease, transform 0.8s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
 
 @media (max-width: 768px) {
-  .category-hero {
-    padding: 80px 32px 60px;
-    min-height: auto;
-  }
-
-  .category-hero h1 {
-    font-size: 2.5rem;
-  }
-
-  .category-hero .subtitle {
-    font-size: 1rem;
-  }
-}
-
-.sc-item-list {
-  max-width: 780px;
-  margin: 0 auto;
-  padding: 0 40px 60px;
-}
-
-.sc-item {
-  display: grid;
-  grid-template-columns: 52px 1fr;
-  gap: 24px;
-  padding: 48px 0;
-  border-top: 1px solid var(--sandstone);
-}
-
-.sc-item:last-child {
-  border-bottom: 1px solid var(--sandstone);
-}
-
-.sc-item-num {
-  font-family: var(--sans);
-  font-size: 11px;
-  font-weight: 400;
-  letter-spacing: 2px;
-  color: var(--copper);
-  padding-top: 7px;
-}
-
-.sc-item-body h3 {
-  font-family: var(--serif);
-  font-weight: 300;
-  font-size: clamp(22px, 2.5vw, 28px);
-  color: var(--espresso);
-  margin-bottom: 14px;
-  letter-spacing: -0.3px;
-}
-
-.sc-item-body p {
-  font-family: var(--serif);
-  font-weight: 300;
-  font-size: clamp(16px, 1.5vw, 18px);
-  line-height: 1.75;
-  color: var(--warm-gray);
-  max-width: 520px;
-}
-
-@media (max-width: 768px) {
-  .sc-item-list {
-    padding: 0 24px 40px;
-  }
-
-  .sc-item {
-    grid-template-columns: 36px 1fr;
-    gap: 16px;
-    padding: 36px 0;
-  }
+  .nav-right a:not(.nav-cta-btn) { display: none; }
+  .page-hero { padding: 60px 0 40px; }
+  .industry-item { grid-template-columns: 36px 1fr; gap: 16px; padding: 36px 0; }
+  .footer-row { flex-direction: column; gap: 20px; text-align: center; }
+  .footer-links { justify-content: center; }
 }
 </style>
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav class="sc-nav">
-    <a href="/" class="sc-nav-logo">
-      <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect x="20" y="20" width="160" height="160" rx="4" stroke-width="3" stroke-linecap="round" fill="none"/>
-        <path d="M100 152 C 100 152, 48 116, 46 84 C 44 62, 58 50, 74 50 C 86 50, 94 58, 100 68 C 106 58, 114 50, 126 50 C 142 50, 156 62, 154 84 C 152 116, 100 152, 100 152Z" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-        <circle cx="100" cy="96" r="4.5" fill="#B87A4A"/>
+<!-- Nav -->
+<nav>
+  <div class="container">
+    <a href="/" class="logo" aria-label="Soulcraft home">
+      <svg class="heartmark" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect x="20" y="20" width="160" height="160" rx="4" stroke="#c8a97e" stroke-width="3" stroke-linecap="round" fill="none"/>
+        <path d="M100 152 C 100 152, 48 116, 46 84 C 44 62, 58 50, 74 50 C 86 50, 94 58, 100 68 C 106 58, 114 50, 126 50 C 142 50, 156 62, 154 84 C 152 116, 100 152, 100 152Z" stroke="#c8a97e" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <circle cx="100" cy="96" r="4.5" fill="#c8a97e"/>
       </svg>
-      <span class="sc-nav-wordmark">Soulcraft</span>
+      <span class="logo-text">Soul<span>craft</span></span>
     </a>
-    <button class="sc-nav-toggle" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
-    <ul class="sc-nav-links">
-      <li><a href="/services/">Services</a></li>
-      <li><a href="/industries/">Industries</a></li>
-      <li><a href="/solutions/">Solutions</a></li>
-      <li><a href="mailto:hello@soulcraftagency.com" class="sc-nav-cta">Get in Touch</a></li>
-    </ul>
-  </nav>
-
-  <main>
-    <!-- BREADCRUMBS -->
-    <div class="sc-container">
-      <div class="sc-breadcrumbs">
-        <a href="/">Home</a>
-        <span>/</span>
-        Industries
-      </div>
+    <div class="nav-right">
+      <a href="/services/">Services</a>
+      <a href="/industries/">Industries</a>
+      <a href="/solutions/">Solutions</a>
+      <a href="/blog">Blog</a>
+      <a href="/opensoul">Opensoul</a>
+      <a href="mailto:hello@soulcraftagency.com" class="nav-cta-btn">Get in Touch</a>
     </div>
+  </div>
+</nav>
 
-    <section class="category-hero">
-      <h1>Industries</h1>
-      <p class="subtitle">The markets we know by heart.</p>
-    </section>
-
-    <!-- ===== INDUSTRIES LIST ===== -->
-    <div class="sc-item-list sc-reveal">
-
-      <div class="sc-item">
-        <span class="sc-item-num">01</span>
-        <div class="sc-item-body">
-          <h3>B2B SaaS</h3>
-          <p>Complex buying cycles and a crowded market. We build the demand engine that gets you found before your competitors -- in search, in AI recommendations, and in the feed.</p>
-        </div>
-      </div>
-
-      <div class="sc-item">
-        <span class="sc-item-num">02</span>
-        <div class="sc-item-body">
-          <h3>Professional Services</h3>
-          <p>Reputation is your moat. We help law firms, consultancies, and agencies build thought leadership that attracts the right clients at the right moment.</p>
-        </div>
-      </div>
-
-      <div class="sc-item">
-        <span class="sc-item-num">03</span>
-        <div class="sc-item-body">
-          <h3>Healthcare &amp; Life Sciences</h3>
-          <p>Long sales cycles and high stakes. We build compliant marketing systems that educate, establish trust, and generate qualified pipeline.</p>
-        </div>
-      </div>
-
-      <div class="sc-item">
-        <span class="sc-item-num">04</span>
-        <div class="sc-item-body">
-          <h3>E-commerce &amp; DTC</h3>
-          <p>Traffic is only the start. We build acquisition and retention systems that turn browsers into buyers, and buyers into advocates.</p>
-        </div>
-      </div>
-
-      <div class="sc-item">
-        <span class="sc-item-num">05</span>
-        <div class="sc-item-body">
-          <h3>Local Businesses</h3>
-          <p>Showing up where it counts. We help local businesses own their neighborhood -- in search, in AI recommendations, and in the minds of their community.</p>
-        </div>
-      </div>
-
+<main>
+  <div class="container">
+    <div class="breadcrumbs">
+      <a href="/">Home</a><span class="sep">/</span>Industries
     </div>
-  </main>
+  </div>
 
-  <!-- LEAD CAPTURE -->
-  <section class="sc-lead-section sc-container sc-reveal">
-    <p class="sc-section-label">Let's connect</p>
-    <h2>Start a <em>conversation</em></h2>
-    <p class="sc-lead-sub">Tell us a bit about yourself and we'll be in touch.</p>
-
-    <form class="sc-lead-form" id="leadForm" novalidate>
-      <div class="sc-lead-form-row">
-        <div class="sc-lead-form-field">
-          <label for="lead-first">First name</label>
-          <input type="text" id="lead-first" name="firstName" required autocomplete="given-name">
-        </div>
-        <div class="sc-lead-form-field">
-          <label for="lead-last">Last name</label>
-          <input type="text" id="lead-last" name="lastName" required autocomplete="family-name">
-        </div>
-      </div>
-      <div class="sc-lead-form-field">
-        <label for="lead-email">Email</label>
-        <input type="email" id="lead-email" name="email" required autocomplete="email">
-      </div>
-      <div class="sc-lead-form-field">
-        <label for="lead-company">Company <span class="optional">(optional)</span></label>
-        <input type="text" id="lead-company" name="company" autocomplete="organization">
-      </div>
-      <button type="submit" class="sc-lead-form-submit">Send</button>
-      <p class="sc-lead-error" id="leadError"></p>
-    </form>
-
-    <div class="sc-lead-success" id="leadSuccess">
-      <div class="sc-lead-check">&#10003;</div>
-      <p>Thank you. We'll be in touch soon.</p>
-    </div>
+  <section class="page-hero container">
+    <h1>The markets we know <em>by heart.</em></h1>
+    <p>Every industry has its own rhythms, its own language, its own way of building trust. We build systems that speak yours.</p>
   </section>
 
-  <!-- FOOTER -->
-  <footer class="sc-container">
-    <div class="sc-footer">
-      <div class="sc-footer-brand">
-        <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="20" y="20" width="160" height="160" rx="4" stroke-width="3" stroke-linecap="round" fill="none"/>
-          <path d="M100 152 C 100 152, 48 116, 46 84 C 44 62, 58 50, 74 50 C 86 50, 94 58, 100 68 C 106 58, 114 50, 126 50 C 142 50, 156 62, 154 84 C 152 116, 100 152, 100 152Z" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-          <circle cx="100" cy="96" r="4.5" fill="#8A7E70"/>
-        </svg>
-        <span class="sc-footer-text">&copy; 2026 Soulcraft</span>
+  <div class="container">
+    <div class="industry-list reveal">
+
+      <div class="industry-item">
+        <span class="industry-num">01</span>
+        <div>
+          <h3>B2B SaaS</h3>
+          <p>Crowded categories, long buying cycles, and buyers who research for weeks before they ever talk to sales. Your competitors are publishing at scale. Your prospects are asking AI for recommendations. We build agentic systems that get you found first -- in search results, in AI-generated answers, and in the conversations that happen before a demo ever gets booked.</p>
+        </div>
       </div>
-      <div class="sc-footer-links">
-        <a href="mailto:hello@soulcraftagency.com">Contact</a>
+
+      <div class="industry-item">
+        <span class="industry-num">02</span>
+        <div>
+          <h3>Professional Services</h3>
+          <p>Reputation is your moat, but reputation doesn't scale by itself. Law firms, consultancies, and agencies win when they're the name that surfaces at the right moment. We build thought leadership engines that turn your expertise into a steady signal -- publishing, distributing, and optimizing content that positions you as the obvious choice, not just another option.</p>
+        </div>
+      </div>
+
+      <div class="industry-item">
+        <span class="industry-num">03</span>
+        <div>
+          <h3>Healthcare &amp; Life Sciences</h3>
+          <p>High stakes, long timelines, and compliance that doesn't bend. You can't move fast and break things when patients are involved. We build marketing systems that respect the constraints while still generating qualified pipeline -- educating prospects, establishing clinical credibility, and earning trust at every touchpoint without cutting a single corner.</p>
+        </div>
+      </div>
+
+      <div class="industry-item">
+        <span class="industry-num">04</span>
+        <div>
+          <h3>E-commerce &amp; DTC</h3>
+          <p>Traffic is the easy part. The hard part is turning browsers into buyers and buyers into people who come back. We build acquisition and retention systems that work together -- product feed optimization for AI shopping platforms, content engines that drive organic discovery, and identity-driven messaging that makes your store feel like a place, not a transaction.</p>
+        </div>
+      </div>
+
+      <div class="industry-item">
+        <span class="industry-num">05</span>
+        <div>
+          <h3>Local Businesses</h3>
+          <p>When someone in your neighborhood asks their phone where to go, you need to be the answer. We help local businesses own their territory -- in search, in maps, in AI recommendations, and in the minds of the community around them. Not with gimmicks. With a presence so clear and consistent that the algorithms have no choice but to surface you.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <section class="closing-cta container reveal">
+    <h2>Find your <em>people.</em></h2>
+    <p>Every industry has its own path to growth. Let's figure out yours.</p>
+    <a href="mailto:hello@soulcraftagency.com" class="cta-btn">Start a Conversation</a>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="footer-row">
+      <span class="logo">
+        <svg class="heartmark" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="20" y="20" width="160" height="160" rx="4" stroke="#c8a97e" stroke-width="3" stroke-linecap="round" fill="none"/>
+          <path d="M100 152 C 100 152, 48 116, 46 84 C 44 62, 58 50, 74 50 C 86 50, 94 58, 100 68 C 106 58, 114 50, 126 50 C 142 50, 156 62, 154 84 C 152 116, 100 152, 100 152Z" stroke="#c8a97e" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <circle cx="100" cy="96" r="4.5" fill="#c8a97e"/>
+        </svg>
+        <span class="logo-text">Soul<span>craft</span></span>
+      </span>
+      <div class="footer-links">
         <a href="/services/">Services</a>
         <a href="/industries/">Industries</a>
         <a href="/solutions/">Solutions</a>
-        <a href="/opensoul/">Opensoul</a>
+        <a href="/blog">Blog</a>
+        <a href="/opensoul">Opensoul</a>
+        <a href="https://www.linkedin.com/company/112723961/admin/dashboard/" target="_blank" rel="noopener">LinkedIn</a>
       </div>
     </div>
-  </footer>
+    <div class="footer-tagline" style="text-align:center;margin-top:32px;">&copy; 2026 Soulcraft. The soul is the system.</div>
+  </div>
+</footer>
 
-  <!-- SCRIPTS -->
-  <script>
-    // Nav scroll effect
-    window.addEventListener('scroll', () => {
-      document.querySelector('.sc-nav').classList.toggle('scrolled', window.scrollY > 40);
+<script>
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
     });
-
-    // Mobile nav toggle
-    document.querySelector('.sc-nav-toggle')?.addEventListener('click', () => {
-      document.querySelector('.sc-nav-links').classList.toggle('open');
-    });
-
-    // Scroll reveal
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('visible');
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-    document.querySelectorAll('.sc-reveal').forEach(el => observer.observe(el));
-
-    // Lead form submission
-    const WEBHOOK_URL = 'https://soulcraft-leads.up.railway.app/api/lead';
-
-    document.getElementById('leadForm')?.addEventListener('submit', async function(e) {
-      e.preventDefault();
-      const btn = this.querySelector('.sc-lead-form-submit');
-      const error = document.getElementById('leadError');
-      const success = document.getElementById('leadSuccess');
-      error.style.display = 'none';
-      btn.disabled = true;
-      btn.textContent = 'Sending...';
-
-      const data = {
-        firstName: this.firstName.value.trim(),
-        lastName: this.lastName.value.trim(),
-        email: this.email.value.trim(),
-        company: this.company.value.trim() || null,
-        source: window.location.pathname
-      };
-
-      try {
-        const res = await fetch(WEBHOOK_URL, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(data)
-        });
-        if (!res.ok) throw new Error('Submission failed');
-        this.style.display = 'none';
-        success.style.display = 'block';
-      } catch (err) {
-        error.textContent = 'Something went wrong. Please try again or email us directly.';
-        error.style.display = 'block';
-        btn.disabled = false;
-        btn.textContent = 'Send';
-      }
-    });
-  </script>
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
 
 </body>
 </html>
