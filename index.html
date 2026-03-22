@@ -869,31 +869,58 @@ function hideModal() {
   document.getElementById('modalOverlay').classList.remove('visible');
 }
 
+// ============================================================
+// Lead submission -- POSTs to Supabase Edge Function -> Attio
+// ============================================================
+// IMPORTANT: Replace this URL with your deployed Supabase Edge Function URL
+var LEAD_ENDPOINT = 'https://owisphatovxkygwnchkw.supabase.co/functions/v1/attio-lead';
+
+function submitLead(data) {
+  return fetch(LEAD_ENDPOINT, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  });
+}
+
 function submitModal() {
   var name = document.getElementById('modalName').value.trim();
   var email = document.getElementById('modalEmail').value.trim();
   var company = document.getElementById('modalCompany').value.trim();
   var domain = document.getElementById('modalDomain').value;
   var scores = document.getElementById('modalScores').value;
+  var submitBtn = document.querySelector('.modal-submit');
 
   if (!email) {
     document.getElementById('modalEmail').focus();
     return;
   }
 
-  // In production, POST to your API here
-  // For now, open a mailto as a temporary capture
-  var subject = encodeURIComponent('Soul Report Request: ' + (domain || company || 'New Lead'));
-  var body = encodeURIComponent(
-    'Name: ' + name + '\n' +
-    'Email: ' + email + '\n' +
-    'Company: ' + company + '\n' +
-    'Domain: ' + domain + '\n' +
-    'Scores: ' + scores + '\n'
-  );
-  window.location.href = 'mailto:hello@soulcraftagency.com?subject=' + subject + '&body=' + body;
+  submitBtn.textContent = 'Sending...';
+  submitBtn.disabled = true;
 
-  hideModal();
+  submitLead({
+    name: name,
+    email: email,
+    company: company,
+    domain: domain,
+    scores: scores,
+    source: 'soul-report'
+  })
+  .then(function(res) {
+    if (!res.ok) throw new Error('submit failed');
+    submitBtn.textContent = 'Sent!';
+    setTimeout(function() { hideModal(); submitBtn.textContent = 'Send My Report'; submitBtn.disabled = false; }, 1500);
+  })
+  .catch(function() {
+    // Fallback: open mailto if edge function is unreachable
+    var subject = encodeURIComponent('Soul Report Request: ' + (domain || company || 'New Lead'));
+    var body = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\nCompany: ' + company + '\nDomain: ' + domain + '\nScores: ' + scores);
+    window.location.href = 'mailto:hello@soulcraftagency.com?subject=' + subject + '&body=' + body;
+    submitBtn.textContent = 'Send My Report';
+    submitBtn.disabled = false;
+    hideModal();
+  });
 }
 
 function submitClosing() {
@@ -902,9 +929,27 @@ function submitClosing() {
     document.getElementById('closingEmail').focus();
     return;
   }
-  var subject = encodeURIComponent('Soulcraft Inquiry');
-  var body = encodeURIComponent('From: ' + email + '\n\nI\'d like to learn more about Soulcraft.');
-  window.location.href = 'mailto:hello@soulcraftagency.com?subject=' + subject + '&body=' + body;
+
+  var btn = document.querySelector('.closing-form button');
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+
+  submitLead({
+    email: email,
+    source: 'closing-cta'
+  })
+  .then(function(res) {
+    if (!res.ok) throw new Error('submit failed');
+    btn.textContent = 'We\'ll be in touch!';
+    setTimeout(function() { btn.textContent = 'Start the Conversation'; btn.disabled = false; }, 3000);
+  })
+  .catch(function() {
+    var subject = encodeURIComponent('Soulcraft Inquiry');
+    var body = encodeURIComponent('From: ' + email + '\n\nI\'d like to learn more about Soulcraft.');
+    window.location.href = 'mailto:hello@soulcraftagency.com?subject=' + subject + '&body=' + body;
+    btn.textContent = 'Start the Conversation';
+    btn.disabled = false;
+  });
 }
 
 // Event listeners
