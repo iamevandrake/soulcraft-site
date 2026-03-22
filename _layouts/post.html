@@ -57,263 +57,165 @@
 }
 </script>
 
-<!-- Fonts -->
+<!-- Fonts (matching homepage) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Inter:wght@300;400&display=swap">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
-
-<!-- Shared Design System -->
-<link rel="stylesheet" href="/assets/css/landing.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,700&display=swap" rel="stylesheet">
 
 <style>
-/* ===== BLOG POST STYLES ===== */
-
-.sc-article {
-  padding: 40px 0 80px;
+/* ===== RESET & TOKENS (matched to homepage) ===== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --black: #0a0a0a;
+  --dark: #111111;
+  --card: #161616;
+  --border: #222222;
+  --muted: #555555;
+  --text: #d0d0d0;
+  --white: #f0f0f0;
+  --accent: #c8a97e;
+  --accent-dim: rgba(200,169,126,0.12);
+  --accent-glow: rgba(200,169,126,0.25);
 }
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', sans-serif; background: var(--black); color: var(--text); line-height: 1.6; overflow-x: hidden; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+a { color: var(--accent); text-decoration: none; }
+::selection { background: var(--accent); color: var(--black); }
 
-.sc-article-header {
-  text-align: center;
-  margin-bottom: 60px;
-}
+/* Accessibility */
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
 
-.sc-article-date {
-  font-family: var(--sans);
-  font-weight: 400;
-  font-size: 12px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: var(--copper);
-  margin-bottom: 20px;
-}
+/* ===== NAV (matched to homepage) ===== */
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(10,10,10,0.85); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); }
+nav .container { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+.logo { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--white); display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-text { white-space: nowrap; }
+.logo-text span { color: var(--accent); }
+.heartmark { width: 28px; height: 28px; flex-shrink: 0; }
+.nav-right { display: flex; gap: 24px; align-items: center; }
+.nav-right a { color: var(--muted); font-size: 13px; font-weight: 500; transition: color 0.2s; }
+.nav-right a:hover { color: var(--white); }
+.nav-cta-btn { background: var(--accent) !important; color: var(--black) !important; padding: 8px 20px; border-radius: 6px; font-weight: 600 !important; font-size: 13px !important; }
 
-.sc-article-title {
-  font-family: var(--serif);
-  font-weight: 300;
-  font-size: clamp(32px, 4.5vw, 48px);
-  line-height: 1.2;
-  color: var(--espresso);
-  margin-bottom: 20px;
-}
+/* ===== LAYOUT ===== */
+.container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+.container-narrow { max-width: 720px; margin: 0 auto; padding: 0 24px; }
 
-.sc-article-description {
-  font-family: var(--serif);
-  font-weight: 300;
-  font-size: clamp(18px, 2vw, 21px);
-  line-height: 1.7;
-  color: var(--warm-gray);
-  max-width: 600px;
-  margin: 0 auto;
-}
+/* ===== BREADCRUMBS ===== */
+.breadcrumbs { padding: 88px 0 0; font-family: 'Inter', sans-serif; font-weight: 400; font-size: 12px; color: var(--muted); }
+.breadcrumbs a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
+.breadcrumbs a:hover { color: var(--accent); }
+.breadcrumbs .sep { margin: 0 8px; opacity: 0.4; }
 
-/* Article body content */
-.sc-article-body {
-  font-family: var(--serif);
-  font-weight: 300;
-  font-size: clamp(17px, 1.8vw, 20px);
-  line-height: 1.8;
-  color: var(--espresso);
-}
+/* ===== ARTICLE ===== */
+.article { padding: 40px 0 100px; }
 
-.sc-article-body p {
-  margin-bottom: 1.6em;
-  color: var(--espresso);
-}
+.article-header { text-align: center; margin-bottom: 64px; }
 
-.sc-article-body h2 {
-  font-family: var(--serif);
-  font-weight: 400;
-  font-size: clamp(26px, 3vw, 34px);
-  line-height: 1.3;
-  color: var(--espresso);
-  margin-top: 2.5em;
-  margin-bottom: 0.8em;
-}
+.article-date { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: var(--accent); margin-bottom: 24px; opacity: 0.7; }
 
-.sc-article-body h3 {
-  font-family: var(--serif);
-  font-weight: 400;
-  font-size: clamp(21px, 2.4vw, 26px);
-  line-height: 1.35;
-  color: var(--espresso);
-  margin-top: 2em;
-  margin-bottom: 0.6em;
-}
+.article-title { font-family: 'Playfair Display', serif; font-weight: 400; font-size: clamp(32px, 4.5vw, 52px); line-height: 1.15; color: var(--white); margin-bottom: 20px; }
 
-.sc-article-body h4 {
-  font-family: var(--sans);
-  font-weight: 400;
-  font-size: 14px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--copper);
-  margin-top: 2em;
-  margin-bottom: 0.6em;
-}
+.article-description { font-family: 'Inter', sans-serif; font-weight: 300; font-size: clamp(16px, 1.8vw, 19px); line-height: 1.8; color: var(--muted); max-width: 600px; margin: 0 auto; }
 
-.sc-article-body em {
-  font-style: italic;
-  color: var(--copper);
-}
+.article-meta { font-family: 'Inter', sans-serif; font-weight: 300; font-size: 13px; color: var(--muted); letter-spacing: 0.5px; margin-top: 16px; }
 
-.sc-article-body strong {
-  font-weight: 500;
-}
+/* ===== ARTICLE BODY ===== */
+.article-body { font-family: 'Inter', sans-serif; font-weight: 300; font-size: clamp(16px, 1.6vw, 18px); line-height: 1.85; color: var(--text); }
 
-.sc-article-body a {
-  color: var(--copper);
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  transition: color 0.3s;
-}
+.article-body p { margin-bottom: 1.6em; }
 
-.sc-article-body a:hover {
-  color: var(--espresso);
-}
+.article-body h2 { font-family: 'Playfair Display', serif; font-weight: 400; font-size: clamp(24px, 3vw, 34px); line-height: 1.25; color: var(--white); margin-top: 2.5em; margin-bottom: 0.8em; }
 
-.sc-article-body blockquote {
-  border-left: 2px solid var(--copper);
-  padding-left: 24px;
-  margin: 2em 0;
-  font-style: italic;
-  color: var(--warm-gray);
-}
+.article-body h3 { font-family: 'Playfair Display', serif; font-weight: 400; font-size: clamp(20px, 2.4vw, 26px); line-height: 1.3; color: var(--white); margin-top: 2em; margin-bottom: 0.6em; }
 
-.sc-article-body ul,
-.sc-article-body ol {
-  margin: 1.5em 0;
-  padding-left: 1.5em;
-}
+.article-body h4 { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: var(--accent); margin-top: 2em; margin-bottom: 0.6em; opacity: 0.7; }
 
-.sc-article-body li {
-  margin-bottom: 0.6em;
-  line-height: 1.7;
-}
+.article-body em { font-style: italic; color: var(--accent); }
 
-.sc-article-body code {
-  font-family: 'SF Mono', 'Fira Code', monospace;
-  font-size: 0.88em;
-  background: var(--sandstone);
-  padding: 2px 6px;
-  border-radius: 3px;
-}
+.article-body strong { font-weight: 600; color: var(--white); }
 
-.sc-article-body pre {
-  background: var(--espresso);
-  color: var(--parchment);
-  padding: 24px;
-  border-radius: 4px;
-  overflow-x: auto;
-  margin: 2em 0;
-  font-size: 0.85em;
-  line-height: 1.6;
-}
+.article-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; transition: color 0.2s; }
+.article-body a:hover { color: var(--white); }
 
-.sc-article-body pre code {
-  background: none;
-  padding: 0;
-  color: inherit;
-}
+.article-body blockquote { border-left: 2px solid var(--accent); padding-left: 24px; margin: 2em 0; font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(18px, 2vw, 22px); color: var(--muted); line-height: 1.7; }
 
-.sc-article-body img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 4px;
-  margin: 2em 0;
-}
+.article-body ul, .article-body ol { margin: 1.5em 0; padding-left: 1.5em; }
+.article-body li { margin-bottom: 0.6em; line-height: 1.7; }
+.article-body li::marker { color: var(--accent); }
 
-.sc-article-body hr {
-  border: none;
-  width: 40px;
-  height: 2px;
-  background: var(--copper);
-  margin: 3em auto;
-  opacity: 0.4;
-}
+.article-body code { font-family: 'SF Mono', 'Fira Code', monospace; font-size: 0.88em; background: var(--card); border: 1px solid var(--border); padding: 2px 6px; border-radius: 4px; color: var(--accent); }
 
-/* Back to blog link */
-.sc-back-link {
-  display: inline-block;
-  font-family: var(--sans);
-  font-weight: 400;
-  font-size: 12px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: var(--warm-gray);
-  text-decoration: none;
-  transition: color 0.3s;
-  margin-bottom: 20px;
-}
+.article-body pre { background: var(--card); border: 1px solid var(--border); color: var(--text); padding: 24px; border-radius: 8px; overflow-x: auto; margin: 2em 0; font-size: 0.85em; line-height: 1.6; }
 
-.sc-back-link:hover {
-  color: var(--copper);
-}
+.article-body pre code { background: none; border: none; padding: 0; color: inherit; }
 
-/* Reading time estimate */
-.sc-article-meta {
-  font-family: var(--sans);
-  font-weight: 300;
-  font-size: 13px;
-  color: var(--warm-gray);
-  letter-spacing: 0.5px;
-  margin-top: 12px;
-}
+.article-body img { max-width: 100%; height: auto; border-radius: 8px; border: 1px solid var(--border); margin: 2em 0; }
 
+.article-body hr { border: none; width: 40px; height: 2px; background: var(--accent); margin: 3em auto; opacity: 0.4; }
+
+/* ===== FOOTER (matched to homepage) ===== */
+footer { padding: 48px 0; border-top: 1px solid var(--border); }
+.footer-row { display: flex; justify-content: space-between; align-items: center; }
+.footer-links { display: flex; gap: 20px; flex-wrap: wrap; }
+.footer-links a { font-size: 12px; color: var(--muted); }
+.footer-links a:hover { color: var(--accent); }
+.footer-tagline { font-family: 'Playfair Display', serif; font-size: 14px; color: #333; font-style: italic; }
+
+/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
-  .sc-article {
-    padding: 20px 0 60px;
-  }
-
-  .sc-article-header {
-    margin-bottom: 40px;
-  }
+  .nav-right a:not(.nav-cta-btn) { display: none; }
+  .article { padding: 20px 0 60px; }
+  .article-header { margin-bottom: 40px; }
+  .footer-row { flex-direction: column; gap: 20px; text-align: center; }
+  .footer-links { justify-content: center; }
 }
 </style>
 </head>
 <body>
 
-<!-- ===== NAV ===== -->
-<nav class="sc-nav">
-  <a href="/" class="sc-nav-logo">
-    <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect x="20" y="20" width="160" height="160" rx="4" stroke-width="3" stroke-linecap="round" fill="none"/>
-      <path d="M100 152 C 100 152, 48 116, 46 84 C 44 62, 58 50, 74 50 C 86 50, 94 58, 100 68 C 106 58, 114 50, 126 50 C 142 50, 156 62, 154 84 C 152 116, 100 152, 100 152Z" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-      <circle cx="100" cy="96" r="4.5" fill="currentColor"/>
-    </svg>
-    <span class="sc-nav-wordmark">Soulcraft</span>
-  </a>
-  <ul class="sc-nav-links">
-    <li><a href="/blog/">Blog</a></li>
-    <li><a href="/opensoul/">Opensoul</a></li>
-    <li><a href="mailto:hello@soulcraftagency.com" class="sc-nav-cta">Get in touch</a></li>
-  </ul>
-  <button class="sc-nav-toggle" aria-label="Menu" onclick="document.querySelector('.sc-nav-links').classList.toggle('open')">
-    <span></span><span></span><span></span>
-  </button>
+<!-- ===== NAV (matched to homepage) ===== -->
+<nav>
+  <div class="container">
+    <a href="/" class="logo" aria-label="Soulcraft home">
+      <svg class="heartmark" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect x="20" y="20" width="160" height="160" rx="4" stroke="#c8a97e" stroke-width="3" stroke-linecap="round" fill="none"/>
+        <path d="M100 152 C 100 152, 48 116, 46 84 C 44 62, 58 50, 74 50 C 86 50, 94 58, 100 68 C 106 58, 114 50, 126 50 C 142 50, 156 62, 154 84 C 152 116, 100 152, 100 152Z" stroke="#c8a97e" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <circle cx="100" cy="96" r="4.5" fill="#c8a97e"/>
+      </svg>
+      <span class="logo-text">Soul<span>craft</span></span>
+    </a>
+    <div class="nav-right">
+      <a href="/#capabilities">What We Do</a>
+      <a href="/#investment">Investment</a>
+      <a href="/blog">Blog</a>
+      <a href="/opensoul">Opensoul</a>
+      <a href="/" class="nav-cta-btn">Discover Your Soul</a>
+    </div>
+  </div>
 </nav>
 
 <!-- ===== BREADCRUMBS ===== -->
-<div class="sc-container">
-  <div class="sc-breadcrumbs">
-    <a href="/">Home</a><span>/</span><a href="/blog/">Blog</a><span>/</span>{{ page.title }}
+<div class="container-narrow">
+  <div class="breadcrumbs">
+    <a href="/">Home</a><span class="sep">/</span><a href="/blog/">Blog</a><span class="sep">/</span>{{ page.title }}
   </div>
 </div>
 
 <!-- ===== ARTICLE ===== -->
 <main>
-<article class="sc-container">
-  <div class="sc-article">
+<article class="container-narrow">
+  <div class="article">
 
-    <header class="sc-article-header">
-      <div class="sc-article-date">{{ page.date | date: "%B %-d, %Y" }}</div>
-      <h1 class="sc-article-title">{{ page.title }}</h1>
+    <header class="article-header">
+      <div class="article-date">{{ page.date | date: "%B %-d, %Y" }}</div>
+      <h1 class="article-title">{{ page.title }}</h1>
       {% if page.description %}
-      <p class="sc-article-description">{{ page.description }}</p>
+      <p class="article-description">{{ page.description }}</p>
       {% endif %}
     </header>
 
-    <div class="sc-article-body">
+    <div class="article-body">
       {{ content }}
     </div>
 
@@ -321,32 +223,34 @@
 </article>
 </main>
 
-<!-- ===== FOOTER ===== -->
+<!-- ===== FOOTER (matched to homepage) ===== -->
 <footer>
-  <div class="sc-container-wide">
-    <div class="sc-footer">
-      <div class="sc-footer-brand">
-        <svg width="22" height="22" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="20" y="20" width="160" height="160" rx="4" stroke-width="3" stroke-linecap="round" fill="none"/>
-          <path d="M100 152 C 100 152, 48 116, 46 84 C 44 62, 58 50, 74 50 C 86 50, 94 58, 100 68 C 106 58, 114 50, 126 50 C 142 50, 156 62, 154 84 C 152 116, 100 152, 100 152Z" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-          <circle cx="100" cy="96" r="4.5"/>
+  <div class="container">
+    <div class="footer-row">
+      <span class="logo">
+        <svg class="heartmark" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="20" y="20" width="160" height="160" rx="4" stroke="#c8a97e" stroke-width="3" stroke-linecap="round" fill="none"/>
+          <path d="M100 152 C 100 152, 48 116, 46 84 C 44 62, 58 50, 74 50 C 86 50, 94 58, 100 68 C 106 58, 114 50, 126 50 C 142 50, 156 62, 154 84 C 152 116, 100 152, 100 152Z" stroke="#c8a97e" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <circle cx="100" cy="96" r="4.5" fill="#c8a97e"/>
         </svg>
-        <span class="sc-footer-text">&copy; 2026 Soulcraft. All rights reserved.</span>
-      </div>
-      <div class="sc-footer-links">
-        <a href="mailto:hello@soulcraftagency.com">Contact</a>
-        <a href="/blog/">Blog</a>
-        <a href="/opensoul/">Opensoul</a>
+        <span class="logo-text">Soul<span>craft</span></span>
+      </span>
+      <div class="footer-links">
+        <a href="/#capabilities">Services</a>
+        <a href="/#investment">Pricing</a>
+        <a href="/blog">Blog</a>
+        <a href="/opensoul">Opensoul</a>
       </div>
     </div>
+    <div class="footer-tagline" style="text-align:center;margin-top:32px;">&copy; 2026 Soulcraft. The soul is the system.</div>
   </div>
 </footer>
 
-<!-- Scroll-triggered nav border -->
+<!-- Scroll-triggered nav opacity -->
 <script>
-const nav = document.querySelector('.sc-nav');
+const nav = document.querySelector('nav');
 window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 40);
+  nav.style.background = window.scrollY > 40 ? 'rgba(10,10,10,0.95)' : 'rgba(10,10,10,0.85)';
 });
 </script>
 
