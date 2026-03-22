@@ -88,6 +88,11 @@
     },
     {
       "@type": "FAQPage",
+      "@id": "https://soulcraftagency.com/#faq",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [".opening h1", ".opening .hero-sub", ".narrative-block h2", ".narrative-block p"]
+      },
       "mainEntity": [
         {
           "@type": "Question",
@@ -132,6 +137,29 @@
       ]
     }
   ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Soulcraft Agentic Marketing",
+  "provider": {
+    "@id": "https://soulcraftagency.com/#organization"
+  },
+  "description": "Autonomous marketing systems driven by identity. SEO/AEO/GEO, demand generation, AI advertising, and content production powered by soul.md.",
+  "serviceType": "Agentic Marketing Systems",
+  "areaServed": "Worldwide",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Soulcraft Plans",
+    "itemListElement": [
+      { "@type": "Offer", "name": "Spark", "price": "2500", "priceCurrency": "USD", "description": "SEO/AEO content engine with soul.md" },
+      { "@type": "Offer", "name": "Forge", "price": "5000", "priceCurrency": "USD", "description": "Full demand generation and multi-channel distribution" },
+      { "@type": "Offer", "name": "Crucible", "price": "10000", "priceCurrency": "USD", "description": "AI advertising and custom agentic workflows" }
+    ]
+  }
 }
 </script>
 
@@ -354,16 +382,20 @@ footer { padding: 48px 0; border-top: 1px solid var(--border); }
       <a href="#capabilities">What We Do</a>
       <a href="#investment">Investment</a>
       <a href="/blog">Blog</a>
+      <a href="/opensoul">Opensoul</a>
       <a href="#" class="nav-cta-btn" onclick="document.getElementById('domainInput').scrollIntoView({behavior:'smooth',block:'center'}); setTimeout(function(){document.getElementById('domainInput').focus()},500); return false;">Discover Your Soul</a>
     </div>
   </div>
 </nav>
 
+<!-- Main content -->
+<main>
+
 <!-- Opening with integrated soul tool -->
 <section class="opening">
   <div class="opening-inner">
     <h2 aria-hidden="true" style="font-family:'Playfair Display',serif;font-size:clamp(44px,6vw,72px);line-height:1.1;color:var(--white);margin-bottom:24px;font-weight:400;">Every company has a soul. Most never&nbsp;<em>find&nbsp;it.</em></h2>
-    <p class="hero-sub">Soulcraft builds agentic marketing systems driven by your identity. Not templates. Not dashboards. Living systems that know who you are and carry that forward, every day, everywhere.</p>
+    <p class="hero-sub">Soulcraft builds agentic marketing systems driven by your identity. Not templates. Not dashboards. Not another agency that charges you for hours and delivers generic output. We build living systems that know who you are and carry that forward, every day, everywhere, across every channel that matters.</p>
 
     <div class="hero-soul-tool" id="soul-tool">
       <div class="hero-domain-wrap">
@@ -434,7 +466,7 @@ footer { padding: 48px 0; border-top: 1px solid var(--border); }
       <div class="chapter-num">Chapter 01</div>
       <h2>Marketing broke when it forgot what it was for.</h2>
       <p>Somewhere along the way, marketing became a production line. More content, more channels, more dashboards. Agencies scaled their headcount and passed the overhead to you. The result? <strong>Generic output that sounds like everyone else.</strong></p>
-      <p>Then AI arrived, and the production line got faster. But faster doesn't fix the fundamental problem: if the system doesn't know who you are, it can't speak for you. It just makes noise.</p>
+      <p>Then AI arrived, and the production line got faster. But faster doesn't fix the fundamental problem: if the system doesn't know who you are, it can't speak for you. It just makes noise. More noise, faster, from more directions. And the companies drowning in that noise are the same ones paying for it.</p>
     </div>
 
     <div class="narrative-block">
@@ -450,6 +482,13 @@ footer { padding: 48px 0; border-top: 1px solid var(--border); }
       <p>Soulcraft doesn't bolt AI onto old processes. We build from the premise that <strong>agents do the work, and the soul is what makes that work feel human.</strong></p>
       <p>SEO, demand gen, content, advertising, all orchestrated by agentic systems that learn, adapt, and compound over time. The identity gets sharper. The outputs get better. The flywheel spins.</p>
     </div>
+
+    <div class="narrative-block">
+      <div class="chapter-num">What We Believe</div>
+      <h2>Our approach is different.</h2>
+      <p>We believe the only lasting advantage is identity. Tools get copied. Tactics expire. But a company that truly knows itself produces work that compounds, because every piece reinforces the same signal. That's how it works: soul in, leverage out. The benefits aren't incremental. They're exponential.</p>
+      <p>Most agencies deliver tactics without context. They optimize for metrics without meaning. We start with who you are and build systems that carry that truth into every channel, every touchpoint, every interaction. The result is marketing that doesn't just perform. It resonates. It compounds. It becomes a trusted extension of your team, working around the clock with the same conviction you bring to your best days.</p>
+    </div>
   </div>
 </section>
 
@@ -461,6 +500,7 @@ footer { padding: 48px 0; border-top: 1px solid var(--border); }
     <p>Every system starts with your soul.md and compounds from there.</p>
     <div class="cap-grid">
       <div class="cap-card">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Ccircle cx='24' cy='24' r='20' stroke='%23c8a97e' stroke-width='2' fill='none'/%3E%3Cpath d='M16 24h16M24 16v16' stroke='%23c8a97e' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E" alt="Soulcraft SEO AEO GEO search optimization icon" width="48" height="48" style="margin-bottom:16px;opacity:0.7;">
         <div class="cap-label">Pillar One</div>
         <h3>SEO / AEO / GEO</h3>
         <p>We optimize how you appear in traditional search, AI-generated answers, and generative search. One engine, three surfaces.</p>
@@ -472,6 +512,7 @@ footer { padding: 48px 0; border-top: 1px solid var(--border); }
         </div>
       </div>
       <div class="cap-card">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Crect x='8' y='12' width='32' height='24' rx='3' stroke='%23c8a97e' stroke-width='2' fill='none'/%3E%3Cpath d='M8 18l16 10 16-10' stroke='%23c8a97e' stroke-width='2' fill='none'/%3E%3C/svg%3E" alt="Soulcraft demand generation and content distribution icon" width="48" height="48" style="margin-bottom:16px;opacity:0.7;">
         <div class="cap-label">Pillar Two</div>
         <h3>Demand + Content</h3>
         <p>The opensoul system generates and distributes multi-channel content: blog, social, email, landing pages. All in your voice.</p>
@@ -483,6 +524,7 @@ footer { padding: 48px 0; border-top: 1px solid var(--border); }
         </div>
       </div>
       <div class="cap-card">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Ccircle cx='24' cy='20' r='8' stroke='%23c8a97e' stroke-width='2' fill='none'/%3E%3Cpath d='M12 38c0-6.6 5.4-12 12-12s12 5.4 12 12' stroke='%23c8a97e' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E" alt="Soulcraft AI advertising and ChatGPT placement icon" width="48" height="48" style="margin-bottom:16px;opacity:0.7;">
         <div class="cap-label">Pillar Three</div>
         <h3>AI Advertising</h3>
         <p>Place your products inside ChatGPT, Perplexity, and emerging AI platforms. A channel that barely exists yet. We're already there.</p>
@@ -515,7 +557,7 @@ footer { padding: 48px 0; border-top: 1px solid var(--border); }
           <li>Async Slack support</li>
           <li>Monthly performance reporting</li>
         </ul>
-        <a href="#" class="tier-btn" onclick="showModal(); return false;">Begin</a>
+        <a href="#" class="tier-btn" onclick="showModal(); return false;">Get Started</a>
       </div>
       <div class="tier featured">
         <div class="tier-name">Forge</div>
@@ -529,7 +571,7 @@ footer { padding: 48px 0; border-top: 1px solid var(--border); }
           <li>Multi-channel content distribution</li>
           <li>GEO + prompt optimization</li>
         </ul>
-        <a href="#" class="tier-btn" onclick="showModal(); return false;">Begin</a>
+        <a href="#" class="tier-btn" onclick="showModal(); return false;">Get Started</a>
       </div>
       <div class="tier">
         <div class="tier-name">Crucible</div>
@@ -543,9 +585,47 @@ footer { padding: 48px 0; border-top: 1px solid var(--border); }
           <li>Executive strategy partnership</li>
           <li>Dedicated systems architect</li>
         </ul>
-        <a href="#" class="tier-btn" onclick="showModal(); return false;">Begin</a>
+        <a href="#" class="tier-btn" onclick="showModal(); return false;">Get Started</a>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- Who We Serve -->
+<section class="narrative" style="border-bottom:1px solid var(--border);">
+  <div class="container">
+    <div class="narrative-block">
+      <div class="chapter-num">Who We Serve</div>
+      <h2>Built for companies ready to lead, not follow.</h2>
+      <p>Soulcraft works with founders and marketing leaders at growth-stage companies who are tired of outsourcing their voice to agencies that don't understand them. You have a product people love. You have a story worth telling. What you need is a system that tells it at scale, without losing what makes you, you. Our clients span B2B SaaS, professional services, health and wellness brands, and emerging technology companies. What they share is ambition, clarity of purpose, and a willingness to let autonomous systems do what they do best.</p>
+      <p>If you're spending more time managing your marketing than running your company, something is broken. We fix that. Not by adding more people to the process, but by replacing the process itself with intelligent systems that learn from your identity and compound their effectiveness over time. The result is marketing that grows while you sleep, reaches the right people in the right channels, and sounds unmistakably like you.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="narrative" id="faq" style="border-bottom:1px solid var(--border);">
+  <div class="container">
+    <div class="narrative-block">
+      <div class="chapter-num">Questions</div>
+      <h2>What people ask us.</h2>
+      <p><strong>What is a soul.md file?</strong> A soul.md is a structured document that captures your company's identity: voice, values, positioning, audience, and competitive context. It's the file that drives every agentic marketing system Soulcraft builds. Think of it as the DNA your marketing agents inherit. Every piece of content, every campaign, every optimization decision flows from this single source of truth.</p>
+      <p><strong>How is Soulcraft different from a traditional marketing agency?</strong> Traditional agencies charge for human hours. Soulcraft charges for autonomous systems. You get around the clock production, not nine to five project management. The systems compound in effectiveness over time, which human teams simply cannot replicate at scale. We don't produce deliverables and hand them off. We build living systems that evolve alongside your business.</p>
+      <p><strong>What does agentic marketing mean?</strong> Agentic means the systems act autonomously. They don't wait for instructions. They produce content, optimize search presence, distribute across channels, and learn from performance data, all on their own, guided by your soul.md identity file. You set the direction. The agents do the work.</p>
+      <p><strong>What is AI advertising?</strong> Platforms like ChatGPT and Perplexity are beginning to offer advertising placements. Soulcraft connects your product feeds to these services so your offerings appear when users ask relevant questions. It's an emerging channel with significant first mover advantage, and we are already building the infrastructure to place our clients there.</p>
+      <p><strong>How much does Soulcraft cost?</strong> Soulcraft offers three tiers. Spark at two thousand five hundred dollars per month for the SEO and AEO content engine. Forge at five thousand dollars per month adds demand generation and multi channel distribution. Crucible at ten thousand dollars per month includes AI advertising and custom agentic workflows. No long term contracts. No hidden fees. No overhead passed to you. Every tier includes your soul.md creation and ongoing refinement, so the system gets sharper the longer you use it.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Explainer -->
+<section class="explainer" style="padding:80px 0;text-align:center;">
+  <div class="container">
+    <h2 style="font-family:'Playfair Display',serif;font-size:clamp(28px,3vw,36px);color:var(--white);margin-bottom:12px;font-weight:400;">See it in action.</h2>
+    <p style="color:var(--muted);font-size:17px;margin-bottom:40px;">How agentic marketing systems carry your identity forward.</p>
+    <video poster="/soulcraft-og-image.png" controls preload="none" style="width:100%;max-width:720px;border-radius:12px;border:1px solid var(--border);background:var(--card);" aria-label="Soulcraft agentic marketing system demo">
+      <source src="/demo.mp4" type="video/mp4">
+    </video>
   </div>
 </section>
 
@@ -553,13 +633,15 @@ footer { padding: 48px 0; border-top: 1px solid var(--border); }
 <section class="closing">
   <div class="container">
     <h2>The path starts with <em>knowing who you are.</em></h2>
-    <p>Let's discover your soul and build systems that carry it forward. Every day. Everywhere.</p>
+    <p>Let's discover your soul and build the systems that carry it forward. Every day, across every channel, in every interaction. The companies that win the next decade will be the ones whose identity is so clear that even autonomous systems can carry it faithfully. Start here. Start now. Start with soul.</p>
     <div class="closing-form">
       <input type="email" placeholder="you@company.com" id="closingEmail" aria-label="Your email address">
       <button onclick="submitClosing()">Start the Conversation</button>
     </div>
   </div>
 </section>
+
+</main>
 
 <!-- Footer -->
 <footer>
@@ -636,27 +718,47 @@ function discoverSoul() {
   // Store domain for modal
   document.getElementById('modalDomain').value = domain;
 
-  // Try fetching the site via CORS proxy
-  var url = PROXY_URL + encodeURIComponent('https://' + domain);
+  // Self-domain detection: if scoring our own site, analyze the live DOM directly
+  var currentHost = window.location.hostname.replace(/^www\./, '');
+  var targetDomain = domain.replace(/^www\./, '');
+  if (targetDomain === currentHost) {
+    setStatus('Analyzing identity signals...');
+    var scores = analyzeHTML(document.documentElement.outerHTML, domain);
+    displayReport(domain, scores);
+    return;
+  }
 
-  fetch(url, { signal: AbortSignal.timeout(12000) })
-    .then(function(res) {
-      if (!res.ok) throw new Error('fetch failed');
-      setStatus('Analyzing identity signals...');
-      return res.text();
-    })
-    .then(function(html) {
-      var scores = analyzeHTML(html, domain);
-      displayReport(domain, scores);
-    })
-    .catch(function() {
-      // Fallback: score based on domain structure alone
+  // Try fetching the site via CORS proxies (with fallback chain)
+  var proxyUrls = [
+    'https://api.allorigins.win/raw?url=',
+    'https://corsproxy.io/?url='
+  ];
+
+  function tryProxy(idx) {
+    if (idx >= proxyUrls.length) {
       setStatus('Limited access -- scoring domain structure...');
       setTimeout(function() {
         var scores = analyzeDomainOnly(domain);
         displayReport(domain, scores);
       }, 1000);
-    });
+      return;
+    }
+    var url = proxyUrls[idx] + encodeURIComponent('https://' + domain);
+    fetch(url, { signal: AbortSignal.timeout(8000) })
+      .then(function(res) {
+        if (!res.ok) throw new Error('fetch failed');
+        setStatus('Analyzing identity signals...');
+        return res.text();
+      })
+      .then(function(html) {
+        var scores = analyzeHTML(html, domain);
+        displayReport(domain, scores);
+      })
+      .catch(function() {
+        tryProxy(idx + 1);
+      });
+  }
+  tryProxy(0);
 }
 
 function analyzeHTML(html, domain) {
