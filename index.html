@@ -215,7 +215,14 @@ nav .container { display: flex; align-items: center; justify-content: space-betw
 .report-subtitle { font-size: 12px; color: var(--muted); margin-bottom: 24px; }
 .soul-scores { display: flex; flex-direction: column; gap: 16px; margin-bottom: 24px; }
 .soul-score-row { display: flex; align-items: center; gap: 14px; }
-.soul-score-label { font-family: 'Playfair Display', serif; font-size: 13px; color: var(--text); width: 120px; flex-shrink: 0; }
+.soul-score-label { font-family: 'Playfair Display', serif; font-size: 13px; color: var(--text); width: 120px; flex-shrink: 0; position: relative; cursor: help; border-bottom: 1px dotted var(--muted); }
+.soul-score-label .score-tip { visibility: hidden; opacity: 0; position: absolute; bottom: calc(100% + 10px); left: 50%; transform: translateX(-50%); width: 260px; padding: 14px 16px; background: var(--card); border: 1px solid var(--accent); border-radius: 10px; font-family: 'Inter', sans-serif; font-size: 12px; color: var(--text); line-height: 1.6; z-index: 50; pointer-events: none; transition: opacity 0.2s, visibility 0.2s; box-shadow: 0 8px 32px rgba(0,0,0,0.5); }
+.soul-score-label .score-tip::after { content: ''; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); border: 6px solid transparent; border-top-color: var(--accent); }
+.soul-score-label:hover .score-tip { visibility: visible; opacity: 1; }
+@media (max-width: 768px) {
+  .soul-score-label .score-tip { left: 0; transform: none; width: 220px; }
+  .soul-score-label .score-tip::after { left: 30px; }
+}
 .soul-score-bar { flex: 1; height: 4px; background: var(--border); border-radius: 2px; overflow: hidden; }
 .soul-score-fill { height: 100%; border-radius: 2px; transition: width 1.2s cubic-bezier(0.22, 1, 0.36, 1); }
 .soul-score-fill.gold { background: var(--accent); }
@@ -372,27 +379,27 @@ footer { padding: 48px 0; border-top: 1px solid var(--border); }
           <div class="report-subtitle" id="reportSub">Identity analysis</div>
           <div class="soul-scores">
             <div class="soul-score-row">
-              <span class="soul-score-label">Identity Clarity</span>
+              <span class="soul-score-label">Identity Clarity<span class="score-tip">How well your origin, beliefs, and purpose come through. Can a stranger tell what you do and why you exist?</span></span>
               <div class="soul-score-bar"><div class="soul-score-fill gold" id="fillIdentity" style="width:0"></div></div>
               <span class="soul-score-num" id="numIdentity">--</span>
             </div>
             <div class="soul-score-row">
-              <span class="soul-score-label">Voice Consistency</span>
+              <span class="soul-score-label">Voice Consistency<span class="score-tip">How uniform your personality is across your site. Does every page sound like the same company wrote it?</span></span>
               <div class="soul-score-bar"><div class="soul-score-fill gold" id="fillVoice" style="width:0"></div></div>
               <span class="soul-score-num" id="numVoice">--</span>
             </div>
             <div class="soul-score-row">
-              <span class="soul-score-label">AI Readiness</span>
+              <span class="soul-score-label">AI Readiness<span class="score-tip">How well AI systems can understand and represent you. When someone asks ChatGPT about you, does it get you right?</span></span>
               <div class="soul-score-bar"><div class="soul-score-fill gold" id="fillAI" style="width:0"></div></div>
               <span class="soul-score-num" id="numAI">--</span>
             </div>
             <div class="soul-score-row">
-              <span class="soul-score-label">Positioning</span>
+              <span class="soul-score-label">Positioning<span class="score-tip">How clearly you occupy a distinct space. Not "are you better" but "are you a different kind of thing?"</span></span>
               <div class="soul-score-bar"><div class="soul-score-fill gold" id="fillPosition" style="width:0"></div></div>
               <span class="soul-score-num" id="numPosition">--</span>
             </div>
             <div class="soul-score-row">
-              <span class="soul-score-label">Content Signal</span>
+              <span class="soul-score-label">Content Signal<span class="score-tip">The strength of what you're putting into the world. Clear identity means nothing if the world can't hear you.</span></span>
               <div class="soul-score-bar"><div class="soul-score-fill gold" id="fillContent" style="width:0"></div></div>
               <span class="soul-score-num" id="numContent">--</span>
             </div>
