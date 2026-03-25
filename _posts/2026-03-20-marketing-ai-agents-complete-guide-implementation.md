@@ -1,15 +1,15 @@
 ---
 layout: post
 title: "Marketing AI Agents: Complete Guide & Implementation"
-description: "Discover how marketing AI agents revolutionize campaigns with proactive intelligence. Learn implementation strategies for data-driven automation that works 24/7."
+description: "Discover how marketing AI agents revolutionize campaigns with proactive intelligence. Learn implementation strategies for 24/7 data-driven automation."
 date: 2026-03-20
 keywords: "marketing ai agents"
 og_title: "Marketing AI Agents: Complete Guide & Implementation"
 og_description: "Discover how marketing AI agents revolutionize campaigns with proactive intelligence. Learn implementation strategies for 24/7 automated marketing success."
-schema_markup: '{"@context": "https://schema.org", "@type": "Article", "headline": "Marketing AI Agents: Complete Guide & Implementation", "description": "The marketing landscape is shifting from reactive automation to proactive intelligence. Learn how marketing AI agents work around the clock, making data-driven decisions without human intervention.", "author": {"@type": "Organization", "name": "Marketing AI Hub"}, "datePublished": "2024-01-01", "dateModified": "2024-01-01", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://example.com/marketing-ai-agents-guide"}, "publisher": {"@type": "Organization", "name": "Marketing AI Hub"}, "articleSection": "Marketing Technology", "keywords": "marketing ai agents, ai marketing automation, intelligent marketing tools, marketing artificial intelligence"}'
+schema_markup: '{"@context": "https://schema.org", "@type": "Article", "headline": "Marketing AI Agents: Complete Guide & Implementation", "description": "The marketing landscape is shifting from reactive automation to proactive intelligence. Learn how marketing AI agents work around the clock, making data-driven decisions without human intervention.", "author": {"@type": "Organization", "name": "Soulcraft", "url": "https://soulcraftagency.com"}, "datePublished": "2026-03-20", "dateModified": "2026-03-20", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://soulcraftagency.com/blog/marketing-ai-agents-complete-guide-implementation/"}, "publisher": {"@type": "Organization", "name": "Soulcraft", "url": "https://soulcraftagency.com", "logo": {"@type": "ImageObject", "url": "https://soulcraftagency.com/soulcraft-og-image.png"}}, "articleSection": "Marketing Technology", "keywords": "marketing ai agents, ai marketing automation, intelligent marketing tools, marketing artificial intelligence"}'
 ---
 
-# Marketing AI Agents: Complete Guide & Implementation
+Marketing AI Agents: Complete Guide & Implementation
 
 The marketing landscape is shifting from reactive automation to proactive intelligence. While traditional marketing teams scramble to keep up with manual campaign optimization and content creation, forward-thinking companies are deploying marketing AI agents that work around the clock, making data-driven decisions without human intervention.
 

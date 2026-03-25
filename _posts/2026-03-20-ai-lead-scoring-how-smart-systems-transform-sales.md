@@ -6,10 +6,10 @@ date: 2026-03-20
 keywords: "ai lead scoring"
 og_title: "AI Lead Scoring: How Smart Systems Transform Sales"
 og_description: "Stop wasting time on unqualified leads. Learn how AI lead scoring automatically identifies your hottest prospects and transforms B2B sales performance."
-schema_markup: '{"@context": "https://schema.org", "@type": "Article", "headline": "AI Lead Scoring: How Smart Systems Transform Sales", "description": "Most B2B sales teams are drowning in leads they can''t properly qualify. AI lead scoring solves this problem by automatically ranking every prospect based on their likelihood to convert.", "author": {"@type": "Organization", "name": "Website"}, "publisher": {"@type": "Organization", "name": "Website"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://example.com/ai-lead-scoring"}, "keywords": ["ai lead scoring", "B2B sales", "lead qualification", "sales automation", "prospect ranking"], "articleSection": "Sales Technology"}'
+schema_markup: '{"@context": "https://schema.org", "@type": "Article", "headline": "AI Lead Scoring: How Smart Systems Transform Sales", "description": "Most B2B sales teams are drowning in leads they can''t properly qualify. AI lead scoring solves this problem by automatically ranking every prospect based on their likelihood to convert.", "author": {"@type": "Organization", "name": "Soulcraft", "url": "https://soulcraftagency.com"}, "publisher": {"@type": "Organization", "name": "Soulcraft", "url": "https://soulcraftagency.com", "logo": {"@type": "ImageObject", "url": "https://soulcraftagency.com/soulcraft-og-image.png"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://soulcraftagency.com/blog/ai-lead-scoring-how-smart-systems-transform-sales/"}, "keywords": ["ai lead scoring", "B2B sales", "lead qualification", "sales automation", "prospect ranking"], "articleSection": "Sales Technology", "datePublished": "2026-03-20", "dateModified": "2026-03-20"}'
 ---
 
-# AI Lead Scoring: How Smart Systems Transform Sales
+AI Lead Scoring: How Smart Systems Transform Sales
 
 Most B2B sales teams are drowning in leads they can't properly qualify. Marketing generates hundreds of prospects monthly, but sales reps waste countless hours chasing unqualified contacts while hot prospects slip through the cracks. AI lead scoring solves this problem by automatically ranking every prospect based on their likelihood to convert, creating scalable qualification systems that continuously optimize without human intervention.
 
