@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Soulcraft for Developers -- API, CLI, MCP</title>
+<meta name="description" content="Add identity analysis to your AI agents. The Soulcraft API scores any company's identity across 5 dimensions and generates a soul.md. Free API key, MCP server, CLI.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://soulcraftagency.com/developers">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #0a0a0a;
+    --card: #161616;
+    --border: #222222;
+    --muted: #555555;
+    --text: #d0d0d0;
+    --white: #f0f0f0;
+    --accent: #c8a97e;
+    --accent-dim: rgba(200,169,126,0.12);
+    --accent-glow: rgba(200,169,126,0.25);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Inter', sans-serif; background: var(--black); color: var(--text); line-height: 1.6; overflow-x: hidden; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { color: var(--white); }
+
+  /* Nav */
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(10,10,10,0.85); backdrop-filter: blur(24px); }
+  nav .container { display: flex; align-items: center; justify-content: space-between; height: 64px; max-width: 1100px; margin: 0 auto; padding: 0 32px; }
+  .logo { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--white); }
+  .logo span { color: var(--accent); }
+  .nav-right { display: flex; gap: 24px; align-items: center; }
+  .nav-right a { color: var(--muted); font-size: 13px; font-weight: 500; transition: color 0.2s; }
+  .nav-right a:hover { color: var(--white); }
+  .nav-cta { background: var(--accent); color: var(--black) !important; padding: 8px 20px; border-radius: 6px; font-weight: 700 !important; }
+
+  /* Layout */
+  .page { max-width: 820px; margin: 0 auto; padding: 120px 32px 80px; }
+
+  /* Hero */
+  .hero { margin-bottom: 72px; }
+  .eyebrow { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 4px; color: var(--accent); margin-bottom: 20px; opacity: 0.8; }
+  .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(36px, 5vw, 56px); line-height: 1.1; color: var(--white); font-weight: 400; margin-bottom: 20px; }
+  .hero h1 em { font-style: italic; color: var(--accent); }
+  .hero p { font-size: 18px; color: var(--muted); max-width: 560px; line-height: 1.8; }
+
+  /* Surface cards */
+  .surfaces { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 72px; }
+  @media (max-width: 640px) { .surfaces { grid-template-columns: 1fr; } }
+  .surface-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 24px; }
+  .surface-card h3 { font-family: 'Playfair Display', serif; font-size: 17px; color: var(--white); margin-bottom: 8px; }
+  .surface-card p { font-size: 13px; color: var(--muted); line-height: 1.6; margin-bottom: 12px; }
+  .surface-card code { font-size: 12px; color: var(--accent); background: var(--accent-dim); padding: 2px 7px; border-radius: 4px; font-family: monospace; }
+
+  /* Score dimensions */
+  .dimensions { margin-bottom: 72px; }
+  .dimensions h2 { font-family: 'Playfair Display', serif; font-size: 28px; color: var(--white); margin-bottom: 8px; font-weight: 400; }
+  .dimensions .sub { font-size: 15px; color: var(--muted); margin-bottom: 32px; }
+  .dim-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  @media (max-width: 640px) { .dim-grid { grid-template-columns: 1fr; } }
+  .dim { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 18px 20px; }
+  .dim-name { font-size: 13px; font-weight: 700; color: var(--white); margin-bottom: 4px; }
+  .dim-desc { font-size: 13px; color: var(--muted); }
+
+  /* Code blocks */
+  .section { margin-bottom: 64px; }
+  .section h2 { font-family: 'Playfair Display', serif; font-size: 28px; color: var(--white); margin-bottom: 8px; font-weight: 400; }
+  .section .sub { font-size: 15px; color: var(--muted); margin-bottom: 24px; }
+  pre {
+    background: var(--card); border: 1px solid var(--border); border-radius: 10px;
+    padding: 20px 24px; font-size: 13px; color: var(--text); overflow-x: auto;
+    font-family: 'SF Mono', 'Fira Code', monospace; line-height: 1.7; margin-bottom: 16px;
+  }
+  pre .comment { color: var(--muted); }
+  pre .key { color: #7dd3fc; }
+  pre .val { color: #86efac; }
+  pre .accent { color: var(--accent); }
+
+  /* Key request form */
+  .key-form-section { margin-bottom: 72px; }
+  .key-form-section h2 { font-family: 'Playfair Display', serif; font-size: 28px; color: var(--white); margin-bottom: 8px; font-weight: 400; }
+  .key-form-section .sub { font-size: 15px; color: var(--muted); margin-bottom: 32px; }
+  .key-form { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 36px; max-width: 500px; }
+  .form-row { margin-bottom: 16px; }
+  .form-row label { display: block; font-size: 12px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+  .form-row input {
+    width: 100%; padding: 12px 16px; background: var(--black); border: 1px solid var(--border);
+    border-radius: 8px; color: var(--white); font-size: 15px; font-family: 'Inter', sans-serif;
+    outline: none; transition: border-color 0.2s;
+  }
+  .form-row input:focus { border-color: var(--accent); }
+  .form-submit {
+    width: 100%; padding: 14px; background: var(--accent); color: var(--black);
+    border: none; border-radius: 8px; font-weight: 700; font-size: 15px;
+    cursor: pointer; font-family: 'Inter', sans-serif; margin-top: 8px; transition: background 0.2s;
+  }
+  .form-submit:hover { background: var(--white); }
+  .form-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+  .form-note { font-size: 12px; color: var(--muted); margin-top: 12px; }
+
+  /* Status states */
+  .status-box { display: none; background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 28px; max-width: 500px; }
+  .status-box.visible { display: block; }
+  .status-box.success { border-color: rgba(200,169,126,0.4); }
+  .status-box.error { border-color: rgba(248,113,113,0.4); }
+  .status-box h3 { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--white); margin-bottom: 10px; }
+  .status-box p { font-size: 14px; color: var(--muted); }
+
+  /* Divider */
+  .divider { border: none; border-top: 1px solid var(--border); margin: 64px 0; }
+
+  /* Footer */
+  footer { border-top: 1px solid var(--border); padding: 40px 32px; text-align: center; }
+  footer p { font-size: 13px; color: var(--muted); }
+  footer .tagline { font-family: 'Playfair Display', serif; font-style: italic; color: var(--accent); margin-bottom: 8px; font-size: 14px; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <a href="/" class="logo">Soul<span>craft</span></a>
+    <div class="nav-right">
+      <a href="/">Home</a>
+      <a href="/opensoul">Opensoul</a>
+      <a href="/developers" style="color: var(--white);">Developers</a>
+      <a href="/#contact" class="nav-cta">Get in touch</a>
+    </div>
+  </div>
+</nav>
+
+<div class="page">
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="eyebrow">Developers</div>
+    <h1>Give your agents<br><em>the ability to understand identity.</em></h1>
+    <p>
+      The Soulcraft API scores any company's identity across 5 dimensions,
+      generates a complete soul.md, and returns 10 tailored recommendations.
+      Available as a REST API, CLI, and MCP server.
+    </p>
+  </div>
+
+  <!-- Three surfaces -->
+  <div class="surfaces">
+    <div class="surface-card">
+      <h3>REST API</h3>
+      <p>Call it from anywhere. Returns structured JSON with scores and full soul.md content.</p>
+      <code>POST /api/soul/analyze</code>
+    </div>
+    <div class="surface-card">
+      <h3>CLI</h3>
+      <p>Analyze any domain from your terminal. Pipe scores, save soul.md files, or trigger PDF reports.</p>
+      <code>python soul.py analyze</code>
+    </div>
+    <div class="surface-card">
+      <h3>MCP Server</h3>
+      <p>Native tool for Claude Desktop, Cowork, and any MCP-compatible agent.</p>
+      <code>npx soulcraft-mcp</code>
+    </div>
+  </div>
+
+  <!-- Score dimensions -->
+  <div class="dimensions">
+    <h2>Five dimensions. One score.</h2>
+    <p class="sub">Every analysis returns a Soul Score (0-100) built from five weighted dimensions.</p>
+    <div class="dim-grid">
+      <div class="dim">
+        <div class="dim-name">Identity Clarity</div>
+        <div class="dim-desc">How clearly defined the origin, purpose, and beliefs are. Can a stranger understand what this company stands for?</div>
+      </div>
+      <div class="dim">
+        <div class="dim-name">Voice Consistency</div>
+        <div class="dim-desc">How uniform and distinctive the communication style is across channels and touchpoints.</div>
+      </div>
+      <div class="dim">
+        <div class="dim-name">AI Readiness</div>
+        <div class="dim-desc">How well the identity translates to machine-readable context. Can an AI agent reliably represent this company?</div>
+      </div>
+      <div class="dim">
+        <div class="dim-name">Positioning</div>
+        <div class="dim-desc">How distinct and defensible the competitive position is. Is this company hard to confuse with anyone else?</div>
+      </div>
+      <div class="dim" style="grid-column: span 2;">
+        <div class="dim-name">Content Signal</div>
+        <div class="dim-desc">How much indexed, attributable, on-brand content exists to reinforce the identity in the world.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- API example -->
+  <div class="section">
+    <h2>API</h2>
+    <p class="sub">One endpoint. Point it at a domain, get back identity intelligence.</p>
+<pre><span class="comment"># Analyze any domain</span>
+curl -X POST https://soulcraft-report-production.up.railway.app/api/soul/analyze \
+  -H <span class="val">"Content-Type: application/json"</span> \
+  -H <span class="val">"X-Soul-Key: sc_your_key"</span> \
+  -d <span class="val">'{"domain": "stripe.com"}'</span></pre>
+<pre><span class="comment"># Response</span>
+{
+  <span class="key">"company"</span>: <span class="val">"Stripe"</span>,
+  <span class="key">"domain"</span>: <span class="val">"stripe.com"</span>,
+  <span class="key">"scores"</span>: {
+    <span class="key">"identity"</span>: <span class="accent">82</span>,
+    <span class="key">"voice"</span>: <span class="accent">75</span>,
+    <span class="key">"ai"</span>: <span class="accent">61</span>,
+    <span class="key">"position"</span>: <span class="accent">88</span>,
+    <span class="key">"content"</span>: <span class="accent">79</span>,
+    <span class="key">"overall"</span>: <span class="accent">77</span>
+  },
+  <span class="key">"soul"</span>: { <span class="comment">/* full soul.md sections */</span> }
+}</pre>
+  </div>
+
+  <!-- MCP example -->
+  <div class="section">
+    <h2>MCP server</h2>
+    <p class="sub">Add to Claude Desktop or Cowork and your agents get identity analysis as a native tool.</p>
+<pre><span class="comment"># Install</span>
+npx soulcraft-mcp
+
+<span class="comment"># claude_desktop_config.json</span>
+{
+  <span class="key">"mcpServers"</span>: {
+    <span class="key">"soul"</span>: {
+      <span class="key">"command"</span>: <span class="val">"npx"</span>,
+      <span class="key">"args"</span>: [<span class="val">"-y"</span>, <span class="val">"soulcraft-mcp"</span>],
+      <span class="key">"env"</span>: {
+        <span class="key">"SOUL_API_URL"</span>: <span class="val">"https://soulcraft-report-production.up.railway.app"</span>,
+        <span class="key">"SOUL_API_KEY"</span>: <span class="val">"sc_your_key"</span>
+      }
+    }
+  }
+}</pre>
+    <p style="font-size:14px; color: var(--muted);">
+      Available tools: <code style="color:var(--accent); background:var(--accent-dim); padding: 2px 7px; border-radius:4px; font-family:monospace;">analyze_identity</code> and <code style="color:var(--accent); background:var(--accent-dim); padding: 2px 7px; border-radius:4px; font-family:monospace;">get_soul_file</code>
+    </p>
+  </div>
+
+  <hr class="divider">
+
+  <!-- Key request form -->
+  <div class="key-form-section" id="get-key">
+    <h2>Get your free API key</h2>
+    <p class="sub">Free tier: 3 analyses per day. No credit card required.</p>
+
+    <!-- Form -->
+    <div class="key-form" id="keyForm">
+      <div class="form-row">
+        <label>Name</label>
+        <input type="text" id="keyName" placeholder="Jane Smith" autocomplete="name">
+      </div>
+      <div class="form-row">
+        <label>Work email *</label>
+        <input type="email" id="keyEmail" placeholder="jane@company.com" autocomplete="email">
+      </div>
+      <div class="form-row">
+        <label>Company</label>
+        <input type="text" id="keyCompany" placeholder="Acme Corp" autocomplete="organization">
+      </div>
+      <button class="form-submit" id="keySubmit" onclick="requestKey()">Get my API key</button>
+      <p class="form-note">We'll send a confirmation email. Your key arrives after you verify.</p>
+    </div>
+
+    <!-- Email sent -->
+    <div class="status-box success" id="emailSent">
+      <h3>Check your email.</h3>
+      <p>We sent a verification link to <strong id="sentTo"></strong>. Click it to get your key. Check your spam folder if it doesn't arrive in a minute.</p>
+    </div>
+
+    <!-- Verified -->
+    <div class="status-box success" id="keyVerified">
+      <h3>You're verified.</h3>
+      <p>Your API key is on its way. Check your inbox -- it includes setup instructions for the CLI and MCP server.</p>
+    </div>
+
+    <!-- Error -->
+    <div class="status-box error" id="keyError">
+      <h3>Something went wrong.</h3>
+      <p id="keyErrorMsg">Please try again or email <a href="mailto:hello@soulcraftagency.com">hello@soulcraftagency.com</a>.</p>
+    </div>
+  </div>
+
+</div><!-- /page -->
+
+<footer>
+  <p class="tagline">Every agent has a soul. We craft it.</p>
+  <p><a href="/">soulcraftagency.com</a> &nbsp;&middot;&nbsp; <a href="mailto:hello@soulcraftagency.com">hello@soulcraftagency.com</a></p>
+</footer>
+
+<script>
+var API_URL = 'https://soulcraft-report-production.up.railway.app';
+
+function show(id) { document.getElementById(id).classList.add('visible'); }
+function hide(id) { document.getElementById(id).classList.remove('visible'); }
+
+function requestKey() {
+  var name    = document.getElementById('keyName').value.trim();
+  var email   = document.getElementById('keyEmail').value.trim();
+  var company = document.getElementById('keyCompany').value.trim();
+  var btn     = document.getElementById('keySubmit');
+
+  if (!email) { document.getElementById('keyEmail').focus(); return; }
+
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+
+  fetch(API_URL + '/api/soul/keys/request', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email: email, name: name || null, company: company || null }),
+  })
+  .then(function(res) {
+    if (!res.ok) return res.json().then(function(d) { throw new Error(d.detail || 'Request failed'); });
+    return res.json();
+  })
+  .then(function() {
+    document.getElementById('keyForm').style.display = 'none';
+    document.getElementById('sentTo').textContent = email;
+    show('emailSent');
+  })
+  .catch(function(err) {
+    btn.textContent = 'Get my API key';
+    btn.disabled = false;
+    document.getElementById('keyErrorMsg').textContent = err.message || 'Please try again.';
+    show('keyError');
+  });
+}
+
+// Handle verification token in URL
+(function() {
+  var params = new URLSearchParams(window.location.search);
+  var token  = params.get('token');
+  if (!token) return;
+
+  // Hide the form, show loading state
+  document.getElementById('keyForm').style.display = 'none';
+
+  fetch(API_URL + '/api/soul/keys/verify?token=' + encodeURIComponent(token))
+  .then(function(res) {
+    if (!res.ok) return res.json().then(function(d) { throw new Error(d.detail || 'Verification failed'); });
+    return res.json();
+  })
+  .then(function() {
+    show('keyVerified');
+    // Clean the token out of the URL
+    window.history.replaceState({}, '', '/developers');
+  })
+  .catch(function(err) {
+    document.getElementById('keyErrorMsg').textContent = err.message;
+    document.getElementById('keyForm').style.display = 'block';
+    show('keyError');
+  });
+})();
+
+// Enter key submits form
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Enter' && document.activeElement.closest('#keyForm')) requestKey();
+});
+</script>
+
+</body>
+</html>
