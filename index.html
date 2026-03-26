@@ -686,6 +686,7 @@ footer { padding: 48px 0; border-top: 1px solid var(--border); }
         <a href="/blog/">Blog</a>
         <a href="/games/">Games</a>
         <a href="/opensoul/">Opensoul</a>
+        <a href="/brand/">Identity Guide</a>
         <a href="https://www.linkedin.com/company/112723961/admin/dashboard/" target="_blank" rel="noopener">LinkedIn</a>
       </div>
     </div>
@@ -1008,12 +1009,24 @@ function hideModal() {
 // ============================================================
 // IMPORTANT: Replace this URL with your deployed Supabase Edge Function URL
 var LEAD_ENDPOINT = 'https://owisphatovxkygwnchkw.supabase.co/functions/v1/attio-lead';
+var SOUL_REPORT_ENDPOINT = 'https://soulcraft-report-production.up.railway.app/api/soul/queue';
 
 function submitLead(data) {
   return fetch(LEAD_ENDPOINT, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(data)
+  });
+}
+
+function queueSoulReport(data) {
+  // Fire-and-forget -- Railway returns 202 immediately, report emails when ready (~60s)
+  fetch(SOUL_REPORT_ENDPOINT, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  }).catch(function() {
+    // Silent fallback -- CRM capture already succeeded
   });
 }
 
@@ -1033,6 +1046,7 @@ function submitModal() {
   submitBtn.textContent = 'Sending...';
   submitBtn.disabled = true;
 
+  // 1. CRM capture
   submitLead({
     name: name,
     email: email,
@@ -1043,7 +1057,16 @@ function submitModal() {
   })
   .then(function(res) {
     if (!res.ok) throw new Error('submit failed');
-    submitBtn.textContent = 'Sent!';
+
+    // 2. Queue the real PDF report -- async, returns immediately
+    queueSoulReport({
+      domain: domain,
+      company: company || null,
+      name: name || null,
+      email: email,
+    });
+
+    submitBtn.textContent = 'On its way!';
     setTimeout(function() { hideModal(); submitBtn.textContent = 'Send My Report'; submitBtn.disabled = false; }, 1500);
   })
   .catch(function() {
