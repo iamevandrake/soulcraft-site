@@ -1,0 +1,1843 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FXWVCQJ7YT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-FXWVCQJ7YT');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Soulcraft: Identity Guide</title>
+<meta name="description" content="Soulcraft's visual and verbal identity. Colors, typography, voice, logo, and component patterns used across soulcraftagency.com.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://soulcraftagency.com/brand/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --black:       #0a0a0a;
+    --dark:        #111111;
+    --card:        #161616;
+    --border:      #222222;
+    --muted:       #555555;
+    --text:        #d0d0d0;
+    --white:       #f0f0f0;
+    --accent:      #c8a97e;
+    --accent-dim:  rgba(200,169,126,0.12);
+    --accent-glow: rgba(200,169,126,0.25);
+    --radius:      16px;
+    --radius-sm:   10px;
+    --radius-pill: 100px;
+    --font-serif:  'Playfair Display', serif;
+    --font-sans:   'Inter', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-sans);
+    background: var(--black);
+    color: var(--text);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  /* ── NAV ─────────────────────────────────────────────── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(10,10,10,0.85);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border-bottom: 1px solid var(--border);
+  }
+  nav .container { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+  .logo { font-family: var(--font-serif); font-size: 20px; color: var(--white); display: flex; align-items: center; gap: 10px; }
+  .logo-text span { color: var(--accent); }
+  .heartmark { width: 28px; height: 28px; flex-shrink: 0; }
+  .nav-right { display: flex; gap: 24px; align-items: center; }
+  .nav-right a { color: var(--muted); font-size: 13px; font-weight: 500; transition: color 0.2s; }
+  .nav-right a:hover { color: var(--white); }
+  .nav-cta-btn { background: var(--accent) !important; color: var(--black) !important; padding: 8px 20px; border-radius: 6px; font-weight: 600 !important; font-size: 13px !important; }
+
+  /* ── SECTION NAV (sticky strip) ──────────────────────── */
+  .section-nav {
+    position: sticky;
+    top: 64px;
+    z-index: 90;
+    background: rgba(10,10,10,0.92);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+  }
+  .section-nav-inner {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .section-nav-inner::-webkit-scrollbar { display: none; }
+  .section-nav-inner a {
+    flex-shrink: 0;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--muted);
+    padding: 12px 16px;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+    white-space: nowrap;
+  }
+  .section-nav-inner a:hover { color: var(--white); }
+  .section-nav-inner a.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+  /* ── PAGE LAYOUT ─────────────────────────────────────── */
+  .page-wrap {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ── MAIN CONTENT ────────────────────────────────────── */
+  .main-content {
+    padding: 64px 0 120px 0;
+  }
+
+  /* ── PAGE HERO ───────────────────────────────────────── */
+  .page-hero {
+    margin-bottom: 80px;
+  }
+  .page-hero .chapter-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: var(--accent);
+    opacity: 0.7;
+    margin-bottom: 20px;
+  }
+  .page-hero h1 {
+    font-family: var(--font-serif);
+    font-size: clamp(40px, 5vw, 60px);
+    font-weight: 400;
+    color: var(--white);
+    line-height: 1.1;
+    margin-bottom: 24px;
+  }
+  .page-hero h1 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+  .page-hero p {
+    font-size: 17px;
+    font-weight: 300;
+    color: var(--muted);
+    line-height: 1.8;
+    max-width: 560px;
+  }
+
+  /* ── SECTIONS ────────────────────────────────────────── */
+  .brand-section {
+    margin-bottom: 96px;
+    padding-top: 16px;
+  }
+  .brand-section:last-child { margin-bottom: 0; }
+
+  .section-header {
+    margin-bottom: 40px;
+  }
+  .chapter-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: var(--accent);
+    opacity: 0.7;
+    margin-bottom: 12px;
+  }
+  .section-header h2 {
+    font-family: var(--font-serif);
+    font-size: clamp(28px, 3.5vw, 40px);
+    font-weight: 400;
+    color: var(--white);
+    line-height: 1.15;
+    margin-bottom: 14px;
+  }
+  .section-header p {
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.8;
+    max-width: 560px;
+  }
+
+  /* ── DIVIDER ─────────────────────────────────────────── */
+  .divider {
+    width: 100%;
+    height: 1px;
+    background: var(--border);
+    margin-bottom: 96px;
+  }
+
+  /* ── LOGO SECTION ────────────────────────────────────── */
+  .logo-demos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+  .logo-demo {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 48px 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+  }
+  .logo-demo.light-bg {
+    background: #f0f0f0;
+  }
+  .logo-demo.dark-bg {
+    background: var(--card);
+  }
+  .logo-demo .logo-label {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--muted);
+  }
+  .logo-demo.light-bg .logo-label { color: #999; }
+  .logo-demo .demo-logo {
+    font-family: var(--font-serif);
+    font-size: 26px;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .logo-demo.light-bg .demo-logo { color: #0a0a0a; }
+  .logo-demo.light-bg .demo-logo .logo-text span { color: var(--accent); }
+  .logo-demo.light-bg .demo-logo svg rect,
+  .logo-demo.light-bg .demo-logo svg path,
+  .logo-demo.light-bg .demo-logo svg circle { stroke: var(--accent); }
+  .logo-demo .demo-logo .logo-text span { color: var(--accent); }
+
+  .logo-icon-only {
+    display: flex; gap: 16px; margin-bottom: 32px;
+  }
+  .logo-icon-card {
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    background: var(--card);
+  }
+  .logo-icon-card span {
+    font-size: 11px;
+    color: var(--muted);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  .logo-rules {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .logo-rule {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 14px;
+    color: var(--text);
+    line-height: 1.6;
+  }
+  .rule-icon {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 700;
+    margin-top: 1px;
+  }
+  .rule-icon.yes { background: rgba(200,169,126,0.15); color: var(--accent); }
+  .rule-icon.no { background: rgba(180,60,60,0.15); color: #c86060; }
+
+  /* ── COLOR SECTION ───────────────────────────────────── */
+  .color-group { margin-bottom: 32px; }
+  .color-group-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--muted);
+    margin-bottom: 14px;
+  }
+  .color-swatches {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .color-swatch {
+    cursor: pointer;
+    position: relative;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    border: 1px solid var(--border);
+    transition: transform 0.2s, border-color 0.2s;
+    min-width: 120px;
+  }
+  .color-swatch:hover { transform: translateY(-2px); border-color: var(--accent); }
+  .swatch-block {
+    height: 80px;
+    width: 100%;
+  }
+  .swatch-info {
+    background: var(--card);
+    padding: 10px 12px;
+  }
+  .swatch-name {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 2px;
+  }
+  .swatch-hex {
+    font-size: 11px;
+    color: var(--muted);
+    font-family: 'Courier New', monospace;
+  }
+  .swatch-usage {
+    font-size: 10px;
+    color: var(--muted);
+    margin-top: 4px;
+    line-height: 1.4;
+  }
+  .copy-hint {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0,0,0,0.8);
+    color: var(--white);
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 4px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s;
+    white-space: nowrap;
+  }
+  .color-swatch:hover .copy-hint { opacity: 1; }
+
+  /* ── TYPOGRAPHY SECTION ──────────────────────────────── */
+  .type-specimen {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin-bottom: 16px;
+  }
+  .type-specimen-header {
+    background: var(--card);
+    padding: 12px 20px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .type-specimen-header span {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--muted);
+  }
+  .type-specimen-header code {
+    font-size: 11px;
+    color: var(--accent);
+    background: var(--accent-dim);
+    padding: 2px 8px;
+    border-radius: 4px;
+  }
+  .type-specimen-body {
+    padding: 32px 28px;
+    background: var(--black);
+  }
+
+  .type-scale-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 24px;
+  }
+  .type-scale-table th {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--muted);
+    text-align: left;
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--border);
+  }
+  .type-scale-table td {
+    padding: 14px 12px;
+    border-bottom: 1px solid rgba(34,34,34,0.5);
+    vertical-align: middle;
+    font-size: 13px;
+    color: var(--text);
+  }
+  .type-scale-table tr:last-child td { border-bottom: none; }
+  .type-scale-table td:first-child { color: var(--white); font-weight: 500; }
+  .type-scale-table td code {
+    font-size: 11px;
+    color: var(--accent);
+    background: var(--accent-dim);
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: 'Courier New', monospace;
+  }
+
+  /* ── VOICE SECTION ───────────────────────────────────── */
+  .voice-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+  .voice-card {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px;
+    background: var(--card);
+    position: relative;
+    overflow: hidden;
+  }
+  .voice-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s;
+  }
+  .voice-card:hover::before { transform: scaleX(1); }
+  .voice-card-title {
+    font-family: var(--font-serif);
+    font-size: 18px;
+    color: var(--white);
+    margin-bottom: 10px;
+  }
+  .voice-card-desc {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.7;
+    margin-bottom: 16px;
+  }
+  .voice-example {
+    background: var(--black);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 14px 16px;
+    font-size: 13px;
+    color: var(--text);
+    font-style: italic;
+    line-height: 1.7;
+  }
+  .voice-example-label {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--accent);
+    opacity: 0.7;
+    margin-bottom: 8px;
+    font-style: normal;
+  }
+
+  .word-swap {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+  }
+  .swap-pair {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-pill);
+    padding: 6px 14px 6px 8px;
+    font-size: 13px;
+  }
+  .swap-from {
+    background: rgba(180,60,60,0.15);
+    color: #c87070;
+    padding: 2px 10px;
+    border-radius: var(--radius-pill);
+    text-decoration: line-through;
+    font-size: 12px;
+  }
+  .swap-arrow { color: var(--muted); font-size: 12px; }
+  .swap-to {
+    background: var(--accent-dim);
+    color: var(--accent);
+    padding: 2px 10px;
+    border-radius: var(--radius-pill);
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  .never-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .never-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    color: var(--text);
+    padding: 8px 14px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--card);
+  }
+  .never-x {
+    color: #c86060;
+    font-weight: 700;
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+
+  /* ── COMPONENTS SECTION ──────────────────────────────── */
+  .component-block {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin-bottom: 24px;
+  }
+  .component-block-header {
+    background: var(--card);
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .component-block-title {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--muted);
+  }
+  .component-block-code {
+    font-size: 11px;
+    color: var(--accent);
+    background: var(--accent-dim);
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+  }
+  .component-block-body {
+    padding: 36px 32px;
+    background: var(--black);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: center;
+  }
+  .component-block-body.column { flex-direction: column; align-items: flex-start; }
+  .component-block-body.dark-demo { background: var(--dark); }
+
+  /* Buttons */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 28px;
+    border-radius: var(--radius-sm);
+    font-size: 14px;
+    font-weight: 600;
+    font-family: var(--font-sans);
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s;
+    text-decoration: none;
+    line-height: 1;
+  }
+  .btn-primary {
+    background: var(--accent);
+    color: var(--black);
+  }
+  .btn-primary:hover { background: var(--white); transform: translateY(-1px); }
+  .btn-secondary {
+    background: transparent;
+    color: var(--white);
+    border: 1px solid var(--border);
+  }
+  .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
+  .btn-ghost {
+    background: var(--accent-dim);
+    color: var(--accent);
+    border: 1px solid rgba(200,169,126,0.2);
+  }
+  .btn-ghost:hover { background: rgba(200,169,126,0.2); }
+  .btn-sm { padding: 8px 18px; font-size: 13px; border-radius: 6px; }
+
+  /* Cards */
+  .demo-card {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 32px;
+    background: var(--card);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s;
+    max-width: 240px;
+  }
+  .demo-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s;
+  }
+  .demo-card:hover { border-color: var(--accent); transform: translateY(-4px); }
+  .demo-card:hover::before { transform: scaleX(1); }
+  .demo-card-icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 16px;
+    opacity: 0.7;
+  }
+  .demo-card h4 {
+    font-family: var(--font-serif);
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--white);
+    margin-bottom: 8px;
+  }
+  .demo-card p {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  /* Badges */
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 14px;
+    border-radius: var(--radius-pill);
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 1;
+  }
+  .badge-accent { background: var(--accent-dim); color: var(--accent); border: 1px solid rgba(200,169,126,0.2); }
+  .badge-white { background: rgba(240,240,240,0.08); color: var(--text); border: 1px solid var(--border); }
+  .badge-dark { background: var(--card); color: var(--muted); border: 1px solid var(--border); }
+
+  /* Inputs */
+  .demo-input {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    color: var(--white);
+    font-family: var(--font-sans);
+    font-size: 15px;
+    padding: 12px 16px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    width: 280px;
+    max-width: 100%;
+  }
+  .demo-input:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-dim);
+  }
+  .demo-input::placeholder { color: #333; font-style: italic; }
+
+  /* Nav mock */
+  .nav-mock {
+    background: rgba(10,10,10,0.85);
+    backdrop-filter: blur(24px);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 56px;
+    width: 100%;
+  }
+  .nav-mock-links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  .nav-mock-links a {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--muted);
+    transition: color 0.2s;
+  }
+  .nav-mock-links a:hover { color: var(--white); }
+
+  /* Pricing card mock */
+  .pricing-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 0;
+  }
+  .pricing-card {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 32px 24px;
+    background: var(--card);
+    position: relative;
+    transition: all 0.3s;
+  }
+  .pricing-card:hover { border-color: rgba(200,169,126,0.3); }
+  .pricing-card.featured { border-color: var(--accent); }
+  .pricing-card .recommended {
+    position: absolute;
+    top: -11px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--accent);
+    color: var(--black);
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 4px 14px;
+    border-radius: var(--radius-pill);
+    white-space: nowrap;
+  }
+  .pricing-tier { font-family: var(--font-serif); font-size: 18px; font-style: italic; color: var(--accent); margin-bottom: 8px; }
+  .pricing-price { font-family: var(--font-serif); font-size: 36px; font-weight: 700; color: var(--white); line-height: 1; margin-bottom: 20px; }
+  .pricing-price span { font-size: 16px; font-weight: 400; color: var(--muted); }
+  .pricing-btn-std {
+    width: 100%;
+    padding: 10px;
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--white);
+    font-size: 13px;
+    font-weight: 600;
+    font-family: var(--font-sans);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .pricing-btn-std:hover { border-color: var(--accent); color: var(--accent); }
+  .pricing-btn-feat {
+    width: 100%;
+    padding: 10px;
+    background: var(--accent);
+    border: 1px solid var(--accent);
+    border-radius: 8px;
+    color: var(--black);
+    font-size: 13px;
+    font-weight: 700;
+    font-family: var(--font-sans);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .pricing-btn-feat:hover { background: var(--white); }
+
+  /* ── SPACING SECTION ─────────────────────────────────── */
+  .spacing-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .spacing-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .spacing-bar-wrap {
+    flex: 1;
+    height: 32px;
+    background: var(--card);
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+  .spacing-bar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent), rgba(200,169,126,0.3));
+  }
+  .spacing-name {
+    font-size: 12px;
+    font-family: 'Courier New', monospace;
+    color: var(--accent);
+    width: 80px;
+    flex-shrink: 0;
+  }
+  .spacing-val {
+    font-size: 12px;
+    color: var(--muted);
+    width: 120px;
+    flex-shrink: 0;
+    text-align: right;
+  }
+
+  /* ── MOTION SECTION ──────────────────────────────────── */
+  .motion-demos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .motion-demo {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 32px 24px;
+    background: var(--card);
+    text-align: center;
+    min-width: 180px;
+    flex: 1;
+  }
+  .motion-demo-label {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--muted);
+    margin-bottom: 20px;
+  }
+  .motion-demo-desc {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 16px;
+    line-height: 1.6;
+  }
+
+  /* Hover demo */
+  .hover-demo-box {
+    width: 64px;
+    height: 64px;
+    border-radius: var(--radius-sm);
+    background: var(--accent-dim);
+    border: 1px solid rgba(200,169,126,0.3);
+    margin: 0 auto;
+    transition: border-color 0.2s, background 0.2s;
+    cursor: pointer;
+  }
+  .hover-demo-box:hover {
+    background: rgba(200,169,126,0.25);
+    border-color: var(--accent);
+  }
+
+  /* Pulse */
+  @keyframes pulse-ring {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.18); opacity: 0.6; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+  .pulse-dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--accent);
+    margin: 24px auto;
+    animation: pulse-ring 2s ease-in-out infinite;
+    box-shadow: 0 0 0 0 var(--accent-glow);
+  }
+
+  /* Entrance */
+  @keyframes revealUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .entrance-demo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+  }
+  .entrance-item {
+    width: 120px;
+    height: 10px;
+    border-radius: 3px;
+    background: rgba(200,169,126,0.25);
+    opacity: 0;
+  }
+  .entrance-item:nth-child(1) { width: 80px; }
+  .entrance-item:nth-child(2) { width: 120px; }
+  .entrance-item:nth-child(3) { width: 100px; }
+
+  .entrance-item.playing {
+    animation: revealUp 0.45s ease-out forwards;
+  }
+  .entrance-item.playing:nth-child(1) { animation-delay: 0s; }
+  .entrance-item.playing:nth-child(2) { animation-delay: 0.14s; }
+  .entrance-item.playing:nth-child(3) { animation-delay: 0.28s; }
+
+  .replay-btn {
+    margin-top: 12px;
+    font-size: 11px;
+    color: var(--accent);
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-family: var(--font-sans);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 4px 0;
+    transition: opacity 0.2s;
+  }
+  .replay-btn:hover { opacity: 0.7; }
+
+  /* ── TOKENS / QUICK REF ──────────────────────────────── */
+  .tokens-block {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+  .tokens-header {
+    background: var(--card);
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .tokens-header span {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--muted);
+  }
+  .copy-all-btn {
+    background: var(--accent-dim);
+    color: var(--accent);
+    border: 1px solid rgba(200,169,126,0.2);
+    border-radius: 6px;
+    padding: 4px 12px;
+    font-size: 11px;
+    font-weight: 600;
+    font-family: var(--font-sans);
+    cursor: pointer;
+    transition: all 0.2s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .copy-all-btn:hover { background: rgba(200,169,126,0.2); }
+  .tokens-code {
+    background: #0d0d0d;
+    padding: 28px 28px;
+    margin: 0;
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+    color: var(--text);
+    line-height: 2;
+    overflow-x: auto;
+  }
+  .tokens-code .token-comment { color: var(--muted); }
+  .tokens-code .token-prop { color: #88b0d0; }
+  .tokens-code .token-val { color: var(--accent); }
+  .tokens-code .token-punct { color: var(--muted); }
+
+  /* ── TOAST ───────────────────────────────────────────── */
+  #toast {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 12px 20px;
+    font-size: 13px;
+    color: var(--white);
+    z-index: 999;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.2s, transform 0.2s;
+    pointer-events: none;
+  }
+  #toast.show { opacity: 1; transform: translateY(0); }
+
+  /* ── FOOTER ──────────────────────────────────────────── */
+  .site-footer {
+    border-top: 1px solid var(--border);
+    padding: 48px 0;
+    margin-top: 0;
+  }
+  .site-footer .footer-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer-links {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .footer-links a { font-size: 12px; color: var(--muted); transition: color 0.2s; }
+  .footer-links a:hover { color: var(--accent); }
+  .footer-tagline {
+    font-family: var(--font-serif);
+    font-size: 14px;
+    color: #333;
+    font-style: italic;
+    text-align: center;
+    margin-top: 32px;
+  }
+
+  /* ── RESPONSIVE ──────────────────────────────────────── */
+  @media (max-width: 640px) {
+    .page-wrap { padding: 0 16px; }
+    .main-content { padding: 48px 0 80px 0; }
+    .logo-demos { grid-template-columns: 1fr; }
+    .voice-cards { grid-template-columns: 1fr; }
+    .pricing-cards { grid-template-columns: 1fr; }
+    .nav-right a:not(.nav-cta-btn) { display: none; }
+    .site-footer .footer-row { flex-direction: column; gap: 20px; text-align: center; }
+    .footer-links { justify-content: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="container">
+    <a href="/" class="logo" aria-label="Soulcraft home">
+      <svg class="heartmark" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect x="20" y="20" width="160" height="160" rx="4" stroke="#c8a97e" stroke-width="3" stroke-linecap="round" fill="none"/>
+        <path d="M100 152 C 100 152, 48 116, 46 84 C 44 62, 58 50, 74 50 C 86 50, 94 58, 100 68 C 106 58, 114 50, 126 50 C 142 50, 156 62, 154 84 C 152 116, 100 152, 100 152Z" stroke="#c8a97e" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <circle cx="100" cy="96" r="4.5" fill="#c8a97e"/>
+      </svg>
+      <span class="logo-text">Soul<span>craft</span></span>
+    </a>
+    <div class="nav-right">
+      <a href="/#capabilities">What We Do</a>
+      <a href="/#investment">Investment</a>
+      <a href="/blog/">Blog</a>
+      <a href="/opensoul/">Opensoul</a>
+      <a href="/" class="nav-cta-btn">Get Your Free Report</a>
+    </div>
+  </div>
+</nav>
+
+<!-- MAIN PAGE LAYOUT -->
+<div style="padding-top: 64px;">
+
+  <!-- SECTION NAV -->
+  <div class="section-nav">
+    <div class="section-nav-inner">
+      <a href="#overview" class="active">Overview</a>
+      <a href="#logo">Logo</a>
+      <a href="#color">Color</a>
+      <a href="#typography">Typography</a>
+      <a href="#voice">Voice &amp; Tone</a>
+      <a href="#components">Components</a>
+      <a href="#spacing">Spacing</a>
+      <a href="#motion">Motion</a>
+      <a href="#tokens">Quick Reference</a>
+    </div>
+  </div>
+
+  <div class="page-wrap">
+    <main class="main-content">
+
+      <!-- HERO -->
+      <div class="page-hero" id="overview">
+        <div class="chapter-label">Soulcraft Identity Guide</div>
+        <h1>Every system<br>has a <em>soul.</em></h1>
+        <p>This document defines the visual and verbal identity of Soulcraft. It covers colors, typography, logo, voice, and component patterns used across soulcraftagency.com and all client-facing surfaces. The soul is the system.</p>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- LOGO -->
+      <section class="brand-section" id="logo">
+        <div class="section-header">
+          <div class="chapter-label">Logo</div>
+          <h2>The Heartmark</h2>
+          <p>A bordered square containing a heart and a center dot. Precise. Contained. The heart lives inside a frame -- identity within structure. Always rendered as stroke, never filled.</p>
+        </div>
+
+        <div class="logo-demos">
+          <div class="logo-demo dark-bg">
+            <div class="demo-logo">
+              <svg width="36" height="36" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="20" y="20" width="160" height="160" rx="4" stroke="#c8a97e" stroke-width="3" stroke-linecap="round" fill="none"/>
+                <path d="M100 152 C 100 152, 48 116, 46 84 C 44 62, 58 50, 74 50 C 86 50, 94 58, 100 68 C 106 58, 114 50, 126 50 C 142 50, 156 62, 154 84 C 152 116, 100 152, 100 152Z" stroke="#c8a97e" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                <circle cx="100" cy="96" r="4.5" fill="#c8a97e"/>
+              </svg>
+              <span class="logo-text">Soul<span>craft</span></span>
+            </div>
+            <div class="logo-label">Primary -- Dark</div>
+          </div>
+          <div class="logo-demo light-bg">
+            <div class="demo-logo">
+              <svg width="36" height="36" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="20" y="20" width="160" height="160" rx="4" stroke="#c8a97e" stroke-width="3" stroke-linecap="round" fill="none"/>
+                <path d="M100 152 C 100 152, 48 116, 46 84 C 44 62, 58 50, 74 50 C 86 50, 94 58, 100 68 C 106 58, 114 50, 126 50 C 142 50, 156 62, 154 84 C 152 116, 100 152, 100 152Z" stroke="#c8a97e" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                <circle cx="100" cy="96" r="4.5" fill="#c8a97e"/>
+              </svg>
+              <span class="logo-text">Soul<span>craft</span></span>
+            </div>
+            <div class="logo-label">Primary -- Light</div>
+          </div>
+        </div>
+
+        <div class="logo-icon-only">
+          <div class="logo-icon-card">
+            <svg width="48" height="48" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="20" y="20" width="160" height="160" rx="4" stroke="#c8a97e" stroke-width="3" stroke-linecap="round" fill="none"/>
+              <path d="M100 152 C 100 152, 48 116, 46 84 C 44 62, 58 50, 74 50 C 86 50, 94 58, 100 68 C 106 58, 114 50, 126 50 C 142 50, 156 62, 154 84 C 152 116, 100 152, 100 152Z" stroke="#c8a97e" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              <circle cx="100" cy="96" r="4.5" fill="#c8a97e"/>
+            </svg>
+            <span>Icon Only</span>
+          </div>
+          <div class="logo-icon-card">
+            <svg width="24" height="24" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="20" y="20" width="160" height="160" rx="4" stroke="#c8a97e" stroke-width="3" stroke-linecap="round" fill="none"/>
+              <path d="M100 152 C 100 152, 48 116, 46 84 C 44 62, 58 50, 74 50 C 86 50, 94 58, 100 68 C 106 58, 114 50, 126 50 C 142 50, 156 62, 154 84 C 152 116, 100 152, 100 152Z" stroke="#c8a97e" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              <circle cx="100" cy="96" r="4.5" fill="#c8a97e"/>
+            </svg>
+            <span>Favicon</span>
+          </div>
+        </div>
+
+        <div class="logo-rules">
+          <div class="logo-rule"><span class="rule-icon yes">✓</span> Always use the stroke-based mark. Never fill the heartmark.</div>
+          <div class="logo-rule"><span class="rule-icon yes">✓</span> Maintain minimum clear space equal to the icon width on all sides.</div>
+          <div class="logo-rule"><span class="rule-icon yes">✓</span> Always title-case: <strong style="color:var(--white)">Soulcraft</strong>. "Soul" in white, "craft" in gold.</div>
+          <div class="logo-rule"><span class="rule-icon no">✗</span> Never rotate, skew, or add effects (drop shadows, gradients) to the mark.</div>
+          <div class="logo-rule"><span class="rule-icon no">✗</span> Never use "SoulCraft", "soulcraft", or "SOULCRAFT".</div>
+          <div class="logo-rule"><span class="rule-icon no">✗</span> Never recolor the accent gold or substitute a different stroke color.</div>
+        </div>
+      </section>
+
+      <div class="divider"></div>
+
+      <!-- COLOR -->
+      <section class="brand-section" id="color">
+        <div class="section-header">
+          <div class="chapter-label">Color</div>
+          <h2>Dark. Gold. Nothing else.</h2>
+          <p>The palette is dark-first. Nearly black backgrounds, warm gold as the single accent. No secondary accent. No surface gradients. Click any swatch to copy the hex.</p>
+        </div>
+
+        <div class="color-group">
+          <div class="color-group-label">Foundations</div>
+          <div class="color-swatches">
+            <div class="color-swatch" onclick="copyColor('#0a0a0a', this)">
+              <div class="swatch-block" style="background:#0a0a0a; border-bottom: 1px solid #222;"></div>
+              <div class="swatch-info">
+                <div class="swatch-name">Black</div>
+                <div class="swatch-hex">#0a0a0a</div>
+                <div class="swatch-usage">Page background</div>
+              </div>
+              <div class="copy-hint">Copy</div>
+            </div>
+            <div class="color-swatch" onclick="copyColor('#111111', this)">
+              <div class="swatch-block" style="background:#111111; border-bottom: 1px solid #222;"></div>
+              <div class="swatch-info">
+                <div class="swatch-name">Dark</div>
+                <div class="swatch-hex">#111111</div>
+                <div class="swatch-usage">Section backgrounds</div>
+              </div>
+              <div class="copy-hint">Copy</div>
+            </div>
+            <div class="color-swatch" onclick="copyColor('#161616', this)">
+              <div class="swatch-block" style="background:#161616; border-bottom: 1px solid #222;"></div>
+              <div class="swatch-info">
+                <div class="swatch-name">Card</div>
+                <div class="swatch-hex">#161616</div>
+                <div class="swatch-usage">Card surfaces, modals</div>
+              </div>
+              <div class="copy-hint">Copy</div>
+            </div>
+            <div class="color-swatch" onclick="copyColor('#222222', this)">
+              <div class="swatch-block" style="background:#222222; border-bottom: 1px solid #333;"></div>
+              <div class="swatch-info">
+                <div class="swatch-name">Border</div>
+                <div class="swatch-hex">#222222</div>
+                <div class="swatch-usage">Borders, dividers</div>
+              </div>
+              <div class="copy-hint">Copy</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="color-group">
+          <div class="color-group-label">Text</div>
+          <div class="color-swatches">
+            <div class="color-swatch" onclick="copyColor('#f0f0f0', this)">
+              <div class="swatch-block" style="background:#f0f0f0;"></div>
+              <div class="swatch-info">
+                <div class="swatch-name">White</div>
+                <div class="swatch-hex">#f0f0f0</div>
+                <div class="swatch-usage">Headings, emphasis</div>
+              </div>
+              <div class="copy-hint">Copy</div>
+            </div>
+            <div class="color-swatch" onclick="copyColor('#d0d0d0', this)">
+              <div class="swatch-block" style="background:#d0d0d0;"></div>
+              <div class="swatch-info">
+                <div class="swatch-name">Text</div>
+                <div class="swatch-hex">#d0d0d0</div>
+                <div class="swatch-usage">Body text</div>
+              </div>
+              <div class="copy-hint">Copy</div>
+            </div>
+            <div class="color-swatch" onclick="copyColor('#555555', this)">
+              <div class="swatch-block" style="background:#555555;"></div>
+              <div class="swatch-info">
+                <div class="swatch-name">Muted</div>
+                <div class="swatch-hex">#555555</div>
+                <div class="swatch-usage">Secondary text, nav</div>
+              </div>
+              <div class="copy-hint">Copy</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="color-group">
+          <div class="color-group-label">Accent</div>
+          <div class="color-swatches">
+            <div class="color-swatch" onclick="copyColor('#c8a97e', this)">
+              <div class="swatch-block" style="background:#c8a97e;"></div>
+              <div class="swatch-info">
+                <div class="swatch-name">Gold</div>
+                <div class="swatch-hex">#c8a97e</div>
+                <div class="swatch-usage">CTAs, labels, logo, hover</div>
+              </div>
+              <div class="copy-hint">Copy</div>
+            </div>
+            <div class="color-swatch" onclick="copyColor('rgba(200,169,126,0.12)', this)">
+              <div class="swatch-block" style="background:rgba(200,169,126,0.12); border-bottom: 1px solid #222;"></div>
+              <div class="swatch-info">
+                <div class="swatch-name">Gold Dim</div>
+                <div class="swatch-hex">rgba(200,169,126,.12)</div>
+                <div class="swatch-usage">Tint, insight boxes</div>
+              </div>
+              <div class="copy-hint">Copy</div>
+            </div>
+            <div class="color-swatch" onclick="copyColor('rgba(200,169,126,0.25)', this)">
+              <div class="swatch-block" style="background:rgba(200,169,126,0.25); border-bottom: 1px solid #222;"></div>
+              <div class="swatch-info">
+                <div class="swatch-name">Gold Glow</div>
+                <div class="swatch-hex">rgba(200,169,126,.25)</div>
+                <div class="swatch-usage">Radial glow, hero</div>
+              </div>
+              <div class="copy-hint">Copy</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="divider"></div>
+
+      <!-- TYPOGRAPHY -->
+      <section class="brand-section" id="typography">
+        <div class="section-header">
+          <div class="chapter-label">Typography</div>
+          <h2>Two faces. Each with a job.</h2>
+          <p>Playfair Display carries the editorial weight -- soul, character, warmth. Inter does the work. Together they hold precision and poetry in balance.</p>
+        </div>
+
+        <div class="type-specimen">
+          <div class="type-specimen-header">
+            <span>Playfair Display -- Headings</span>
+            <code>font-family: 'Playfair Display', serif</code>
+          </div>
+          <div class="type-specimen-body">
+            <div style="font-family:'Playfair Display',serif; font-size: clamp(32px,5vw,52px); font-weight:400; color:var(--white); line-height:1.1; margin-bottom:16px;">
+              Agentic marketing<br><em style="color:var(--accent);">with soul.</em>
+            </div>
+            <div style="font-family:'Playfair Display',serif; font-size:20px; font-weight:400; font-style:italic; color:var(--accent); margin-bottom:12px;">Scale. Craft. Identity.</div>
+            <div style="font-family:'Playfair Display',serif; font-size:16px; font-weight:400; color:var(--muted);">Weight 400 only -- the delicacy of the serifs provides natural emphasis.</div>
+          </div>
+        </div>
+
+        <div class="type-specimen">
+          <div class="type-specimen-header">
+            <span>Inter -- Body & UI</span>
+            <code>font-family: 'Inter', sans-serif</code>
+          </div>
+          <div class="type-specimen-body">
+            <div style="font-size:17px; font-weight:300; color:var(--text); line-height:1.8; margin-bottom:16px; max-width:480px;">
+              We don't bolt AI onto old processes. We build from the premise that agents do the work, and the soul is what makes that work feel human.
+            </div>
+            <div style="display:flex; gap:24px; flex-wrap:wrap; align-items:baseline;">
+              <span style="font-size:24px; font-weight:700; color:var(--white);">700</span>
+              <span style="font-size:20px; font-weight:600; color:var(--white);">600</span>
+              <span style="font-size:17px; font-weight:500; color:var(--text);">500</span>
+              <span style="font-size:15px; font-weight:400; color:var(--text);">400</span>
+              <span style="font-size:13px; font-weight:300; color:var(--muted);">300</span>
+            </div>
+          </div>
+        </div>
+
+        <table class="type-scale-table">
+          <thead>
+            <tr>
+              <th>Element</th>
+              <th>Family</th>
+              <th>Size</th>
+              <th>Weight</th>
+              <th>Color</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Hero h1</td>
+              <td>Playfair Display</td>
+              <td><code>clamp(44px, 6vw, 72px)</code></td>
+              <td>400</td>
+              <td><code>--white</code></td>
+            </tr>
+            <tr>
+              <td>Section h2</td>
+              <td>Playfair Display</td>
+              <td><code>clamp(28px, 3.5vw, 44px)</code></td>
+              <td>400</td>
+              <td><code>--white</code></td>
+            </tr>
+            <tr>
+              <td>Card h3</td>
+              <td>Playfair Display</td>
+              <td><code>28px</code></td>
+              <td>400</td>
+              <td><code>--white</code></td>
+            </tr>
+            <tr>
+              <td>Body paragraph</td>
+              <td>Inter</td>
+              <td><code>17px</code></td>
+              <td>400</td>
+              <td><code>--muted</code></td>
+            </tr>
+            <tr>
+              <td>Hero subtitle</td>
+              <td>Inter</td>
+              <td><code>20px</code></td>
+              <td>300</td>
+              <td><code>--muted</code></td>
+            </tr>
+            <tr>
+              <td>Chapter label</td>
+              <td>Inter</td>
+              <td><code>11px</code></td>
+              <td>700</td>
+              <td><code>--accent</code></td>
+            </tr>
+            <tr>
+              <td>Nav links</td>
+              <td>Inter</td>
+              <td><code>13px</code></td>
+              <td>500</td>
+              <td><code>--muted</code></td>
+            </tr>
+            <tr>
+              <td>Tier name</td>
+              <td>Playfair Display</td>
+              <td><code>20px</code></td>
+              <td>400 italic</td>
+              <td><code>--accent</code></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <div class="divider"></div>
+
+      <!-- VOICE & TONE -->
+      <section class="brand-section" id="voice">
+        <div class="section-header">
+          <div class="chapter-label">Voice &amp; Tone</div>
+          <h2>The magician at the dinner party.</h2>
+          <p>Wise, not pretentious. Poetic, not flowery. Funny, but never trying too hard. A conversation with someone who knows more than they let on, delivered with warmth and quiet confidence.</p>
+        </div>
+
+        <div class="voice-cards">
+          <div class="voice-card">
+            <div class="voice-card-title">Casual</div>
+            <div class="voice-card-desc">We talk like a person, not a press release. Short sentences. Real words. No jargon that needs a decoder ring.</div>
+            <div class="voice-example">
+              <div class="voice-example-label">Example</div>
+              "The system runs itself. You just set the soul."
+            </div>
+          </div>
+          <div class="voice-card">
+            <div class="voice-card-title">Poetic</div>
+            <div class="voice-card-desc">There's a craft to the words we choose. We're specific, rhythmic, occasionally surprising. Never filler.</div>
+            <div class="voice-example">
+              <div class="voice-example-label">Example</div>
+              "A soul isn't fixed. It changes. It grows. It can be fine-tuned."
+            </div>
+          </div>
+          <div class="voice-card">
+            <div class="voice-card-title">Punchy</div>
+            <div class="voice-card-desc">One idea per sentence. If a word doesn't earn its place, cut it. We trust the reader to keep up.</div>
+            <div class="voice-example">
+              <div class="voice-example-label">Example</div>
+              "We don't bolt AI onto old processes. We build from first principles."
+            </div>
+          </div>
+          <div class="voice-card">
+            <div class="voice-card-title">Engaged</div>
+            <div class="voice-card-desc">We're genuinely interested in what we're building. That curiosity comes through. We're never bored, and it shows.</div>
+            <div class="voice-example">
+              <div class="voice-example-label">Example</div>
+              "This channel barely exists yet, and we're already here."
+            </div>
+          </div>
+        </div>
+
+        <div class="section-header" style="margin-top:40px; margin-bottom:20px;">
+          <h2 style="font-size:22px;">Word swaps</h2>
+          <p>We have specific language preferences. These aren't suggestions.</p>
+        </div>
+
+        <div class="word-swap">
+          <div class="swap-pair">
+            <span class="swap-from">brand</span>
+            <span class="swap-arrow">&#8594;</span>
+            <span class="swap-to">identity</span>
+          </div>
+          <div class="swap-pair">
+            <span class="swap-from">journey</span>
+            <span class="swap-arrow">&#8594;</span>
+            <span class="swap-to">path</span>
+          </div>
+          <div class="swap-pair">
+            <span class="swap-from">AI-powered</span>
+            <span class="swap-arrow">&#8594;</span>
+            <span class="swap-to">agentic</span>
+          </div>
+          <div class="swap-pair">
+            <span class="swap-from">brand story</span>
+            <span class="swap-arrow">&#8594;</span>
+            <span class="swap-to">origin</span>
+          </div>
+        </div>
+
+        <div class="section-header" style="margin-top:40px; margin-bottom:20px;">
+          <h2 style="font-size:22px;">Never use</h2>
+        </div>
+
+        <div class="never-list">
+          <div class="never-item"><span class="never-x">&#215;</span> Business buzzwords: "circle back," "synergy," "move the needle"</div>
+          <div class="never-item"><span class="never-x">&#215;</span> AI buzzwords: "AI-powered," "leveraging AI," "next-gen"</div>
+          <div class="never-item"><span class="never-x">&#215;</span> Marketing clichés: "journey," "brand," "brand story," "human-centered"</div>
+          <div class="never-item"><span class="never-x">&#215;</span> GrowthX energy: "Expert-Led, AI-Powered Growth" -- exactly what we don't sound like</div>
+          <div class="never-item"><span class="never-x">&#215;</span> Emdashes (--). Use commas, semicolons, colons, or double hyphens (--) instead.</div>
+        </div>
+      </section>
+
+      <div class="divider"></div>
+
+      <!-- COMPONENTS -->
+      <section class="brand-section" id="components">
+        <div class="section-header">
+          <div class="chapter-label">Components</div>
+          <h2>Living elements.</h2>
+          <p>Core UI patterns used across the Soulcraft interface. Hover to see interaction states.</p>
+        </div>
+
+        <!-- Buttons -->
+        <div class="component-block">
+          <div class="component-block-header">
+            <span class="component-block-title">Buttons</span>
+            <code class="component-block-code">border-radius: 10px</code>
+          </div>
+          <div class="component-block-body">
+            <button class="btn btn-primary">Get Your Free Report</button>
+            <button class="btn btn-secondary">Learn More</button>
+            <button class="btn btn-ghost">View Opensoul</button>
+            <button class="btn btn-primary btn-sm">Small CTA</button>
+          </div>
+        </div>
+
+        <!-- Cards -->
+        <div class="component-block">
+          <div class="component-block-header">
+            <span class="component-block-title">Cards</span>
+            <code class="component-block-code">border-radius: 16px &middot; hover: translateY(-4px)</code>
+          </div>
+          <div class="component-block-body">
+            <div class="demo-card">
+              <svg class="demo-card-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="24" cy="24" r="18" stroke="#c8a97e" stroke-width="2.5" stroke-linecap="round"/>
+                <path d="M24 16v8l5 5" stroke="#c8a97e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <h4>SEO / AEO / GEO</h4>
+              <p>An automated content engine that improves your presence and sentiment. The system runs itself.</p>
+            </div>
+            <div class="demo-card">
+              <svg class="demo-card-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 40 L8 20 L24 8 L40 20 L40 40" stroke="#c8a97e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <rect x="18" y="28" width="12" height="12" rx="1" stroke="#c8a97e" stroke-width="2" fill="none"/>
+              </svg>
+              <h4>Demand Generation</h4>
+              <p>Campaigns and workflows that generate leads. Plugs directly into CRM, email, and social channels.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Badges -->
+        <div class="component-block">
+          <div class="component-block-header">
+            <span class="component-block-title">Badges</span>
+            <code class="component-block-code">border-radius: 100px &middot; 11px uppercase</code>
+          </div>
+          <div class="component-block-body">
+            <span class="badge badge-accent">Active</span>
+            <span class="badge badge-accent">New</span>
+            <span class="badge badge-white">AI Advertising</span>
+            <span class="badge badge-dark">In Progress</span>
+            <span class="badge badge-dark">Recommended</span>
+          </div>
+        </div>
+
+        <!-- Inputs -->
+        <div class="component-block">
+          <div class="component-block-header">
+            <span class="component-block-title">Inputs</span>
+            <code class="component-block-code">focus: border-color accent + box-shadow dim</code>
+          </div>
+          <div class="component-block-body">
+            <input class="demo-input" type="text" placeholder="yourdomain.com">
+          </div>
+        </div>
+
+        <!-- Nav -->
+        <div class="component-block">
+          <div class="component-block-header">
+            <span class="component-block-title">Navigation</span>
+            <code class="component-block-code">backdrop-filter: blur(24px)</code>
+          </div>
+          <div class="component-block-body dark-demo" style="padding: 20px 24px;">
+            <div class="nav-mock">
+              <span style="font-family:var(--font-serif); font-size:18px; color:var(--white); display:flex; align-items:center; gap:8px;">
+                <svg width="22" height="22" viewBox="0 0 200 200" fill="none">
+                  <rect x="20" y="20" width="160" height="160" rx="4" stroke="#c8a97e" stroke-width="3" stroke-linecap="round" fill="none"/>
+                  <path d="M100 152 C 100 152, 48 116, 46 84 C 44 62, 58 50, 74 50 C 86 50, 94 58, 100 68 C 106 58, 114 50, 126 50 C 142 50, 156 62, 154 84 C 152 116, 100 152, 100 152Z" stroke="#c8a97e" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                  <circle cx="100" cy="96" r="4.5" fill="#c8a97e"/>
+                </svg>
+                <span style="white-space:nowrap">Soul<span style="color:var(--accent)">craft</span></span>
+              </span>
+              <div class="nav-mock-links">
+                <a href="#">What We Do</a>
+                <a href="#">Investment</a>
+                <a href="#">Blog</a>
+                <button class="btn btn-primary btn-sm">Get Your Free Report</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pricing -->
+        <div class="component-block">
+          <div class="component-block-header">
+            <span class="component-block-title">Pricing Tiers</span>
+            <code class="component-block-code">featured: border-color accent</code>
+          </div>
+          <div class="component-block-body" style="display:block; padding: 32px;">
+            <div class="pricing-cards">
+              <div class="pricing-card">
+                <div class="pricing-tier">Seed</div>
+                <div class="pricing-price">$2,500<span>/mo</span></div>
+                <button class="pricing-btn-std">Get Started</button>
+              </div>
+              <div class="pricing-card featured">
+                <div class="recommended">Recommended</div>
+                <div class="pricing-tier">Growth</div>
+                <div class="pricing-price">$5,000<span>/mo</span></div>
+                <button class="pricing-btn-feat">Get Started</button>
+              </div>
+              <div class="pricing-card">
+                <div class="pricing-tier">Scale</div>
+                <div class="pricing-price">$10,000<span>/mo</span></div>
+                <button class="pricing-btn-std">Get Started</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="divider"></div>
+
+      <!-- SPACING -->
+      <section class="brand-section" id="spacing">
+        <div class="section-header">
+          <div class="chapter-label">Spacing &amp; Layout</div>
+          <h2>Generous. Fluid. Scaled.</h2>
+          <p>Container max-width is 1100px. All spacing uses CSS <code style="color:var(--accent); background:var(--accent-dim); padding:1px 6px; border-radius:3px; font-size:13px;">clamp()</code> for fluid responsiveness. Single breakpoint at 768px.</p>
+        </div>
+
+        <div class="spacing-grid">
+          <div class="spacing-row">
+            <span class="spacing-name">--space-xs</span>
+            <div class="spacing-bar-wrap"><div class="spacing-bar" style="width:4%"></div></div>
+            <span class="spacing-val">0.5rem / 8px</span>
+          </div>
+          <div class="spacing-row">
+            <span class="spacing-name">--space-sm</span>
+            <div class="spacing-bar-wrap"><div class="spacing-bar" style="width:9%"></div></div>
+            <span class="spacing-val">1rem / 16px</span>
+          </div>
+          <div class="spacing-row">
+            <span class="spacing-name">--space-md</span>
+            <div class="spacing-bar-wrap"><div class="spacing-bar" style="width:13%"></div></div>
+            <span class="spacing-val">1.5rem / 24px</span>
+          </div>
+          <div class="spacing-row">
+            <span class="spacing-name">--space-lg</span>
+            <div class="spacing-bar-wrap"><div class="spacing-bar" style="width:22%"></div></div>
+            <span class="spacing-val">clamp(2rem &rarr; 3rem)</span>
+          </div>
+          <div class="spacing-row">
+            <span class="spacing-name">--space-xl</span>
+            <div class="spacing-bar-wrap"><div class="spacing-bar" style="width:38%"></div></div>
+            <span class="spacing-val">clamp(3rem &rarr; 5rem)</span>
+          </div>
+          <div class="spacing-row">
+            <span class="spacing-name">--space-section</span>
+            <div class="spacing-bar-wrap"><div class="spacing-bar" style="width:72%"></div></div>
+            <span class="spacing-val">clamp(5rem &rarr; 9rem)</span>
+          </div>
+        </div>
+
+        <div style="margin-top:32px; display:flex; gap:12px; flex-wrap:wrap;">
+          <div style="background:var(--card); border:1px solid var(--border); border-radius:var(--radius-sm); padding:14px 20px; font-size:13px; color:var(--text);">
+            <span style="font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:2px; color:var(--muted); display:block; margin-bottom:6px;">Border Radius</span>
+            <code style="color:var(--accent);">10px</code> &nbsp;cards<br>
+            <code style="color:var(--accent);">16px</code> &nbsp;modals<br>
+            <code style="color:var(--accent);">100px</code> badges
+          </div>
+          <div style="background:var(--card); border:1px solid var(--border); border-radius:var(--radius-sm); padding:14px 20px; font-size:13px; color:var(--text);">
+            <span style="font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:2px; color:var(--muted); display:block; margin-bottom:6px;">Container</span>
+            max-width: <code style="color:var(--accent);">1100px</code><br>
+            padding: <code style="color:var(--accent);">0 24px</code><br>
+            centered: <code style="color:var(--accent);">margin: 0 auto</code>
+          </div>
+          <div style="background:var(--card); border:1px solid var(--border); border-radius:var(--radius-sm); padding:14px 20px; font-size:13px; color:var(--text);">
+            <span style="font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:2px; color:var(--muted); display:block; margin-bottom:6px;">Breakpoints</span>
+            mobile: <code style="color:var(--accent);">768px</code><br>
+            single column<br>
+            nav collapses
+          </div>
+        </div>
+      </section>
+
+      <div class="divider"></div>
+
+      <!-- MOTION -->
+      <section class="brand-section" id="motion">
+        <div class="section-header">
+          <div class="chapter-label">Motion</div>
+          <h2>Purposeful. Never showy.</h2>
+          <p>Animation signals life and state. Entrance reveals use staggered delays. Active elements pulse. Transitions ease at 0.2s. Nothing moves unless it has a reason.</p>
+        </div>
+
+        <div class="motion-demos">
+          <div class="motion-demo">
+            <div class="motion-demo-label">Hover Transition</div>
+            <div class="hover-demo-box"></div>
+            <div class="motion-demo-desc">Simple color and border shift.<br>No transform, no bounce.<br><code style="color:var(--accent); font-size:11px;">0.2s ease</code></div>
+          </div>
+          <div class="motion-demo">
+            <div class="motion-demo-label">Heartbeat Pulse</div>
+            <div class="pulse-dot"></div>
+            <div class="motion-demo-desc">Active agent indicator.<br>Scale 1 &rarr; 1.18, infinite loop.<br><code style="color:var(--accent); font-size:11px;">2s ease-in-out infinite</code></div>
+          </div>
+          <div class="motion-demo">
+            <div class="motion-demo-label">Staggered Entrance</div>
+            <div class="entrance-demo" id="entranceDemo">
+              <div class="entrance-item"></div>
+              <div class="entrance-item"></div>
+              <div class="entrance-item"></div>
+            </div>
+            <button class="replay-btn" onclick="replayEntrance()">Replay</button>
+            <div class="motion-demo-desc">Items appear with 140ms delay.<br>translateY 12px &rarr; 0.<br><code style="color:var(--accent); font-size:11px;">0.45s ease-out</code></div>
+          </div>
+          <div class="motion-demo">
+            <div class="motion-demo-label">Card Accent Bar</div>
+            <div class="demo-card" style="max-width:none;">
+              <div style="font-size:13px; color:var(--muted);">Hover this card</div>
+            </div>
+            <div class="motion-demo-desc">Top accent bar scales in.<br>scaleX 0 &rarr; 1.<br><code style="color:var(--accent); font-size:11px;">0.4s ease</code></div>
+          </div>
+        </div>
+      </section>
+
+      <div class="divider"></div>
+
+      <!-- TOKENS -->
+      <section class="brand-section" id="tokens">
+        <div class="section-header">
+          <div class="chapter-label">Quick Reference</div>
+          <h2>Design tokens.</h2>
+          <p>Drop these CSS custom properties into any project to get Soulcraft's visual DNA.</p>
+        </div>
+
+        <div class="tokens-block">
+          <div class="tokens-header">
+            <span>CSS Custom Properties</span>
+            <button class="copy-all-btn" onclick="copyTokens()">Copy All</button>
+          </div>
+          <pre class="tokens-code" id="tokensCode"><span class="token-comment">/* Soulcraft Design Tokens */</span>
+
+<span class="token-comment">/* Backgrounds */</span>
+<span class="token-prop">--black</span><span class="token-punct">:</span>        <span class="token-val">#0a0a0a</span><span class="token-punct">;</span>
+<span class="token-prop">--dark</span><span class="token-punct">:</span>         <span class="token-val">#111111</span><span class="token-punct">;</span>
+<span class="token-prop">--card</span><span class="token-punct">:</span>         <span class="token-val">#161616</span><span class="token-punct">;</span>
+<span class="token-prop">--border</span><span class="token-punct">:</span>       <span class="token-val">#222222</span><span class="token-punct">;</span>
+
+<span class="token-comment">/* Text */</span>
+<span class="token-prop">--white</span><span class="token-punct">:</span>        <span class="token-val">#f0f0f0</span><span class="token-punct">;</span>
+<span class="token-prop">--text</span><span class="token-punct">:</span>         <span class="token-val">#d0d0d0</span><span class="token-punct">;</span>
+<span class="token-prop">--muted</span><span class="token-punct">:</span>        <span class="token-val">#555555</span><span class="token-punct">;</span>
+
+<span class="token-comment">/* Accent */</span>
+<span class="token-prop">--accent</span><span class="token-punct">:</span>       <span class="token-val">#c8a97e</span><span class="token-punct">;</span>
+<span class="token-prop">--accent-dim</span><span class="token-punct">:</span>   <span class="token-val">rgba(200,169,126,0.12)</span><span class="token-punct">;</span>
+<span class="token-prop">--accent-glow</span><span class="token-punct">:</span>  <span class="token-val">rgba(200,169,126,0.25)</span><span class="token-punct">;</span>
+
+<span class="token-comment">/* Shape */</span>
+<span class="token-prop">--radius</span><span class="token-punct">:</span>       <span class="token-val">16px</span><span class="token-punct">;</span>
+<span class="token-prop">--radius-sm</span><span class="token-punct">:</span>    <span class="token-val">10px</span><span class="token-punct">;</span>
+<span class="token-prop">--radius-pill</span><span class="token-punct">:</span>  <span class="token-val">100px</span><span class="token-punct">;</span>
+
+<span class="token-comment">/* Typography */</span>
+<span class="token-prop">--font-serif</span><span class="token-punct">:</span>   <span class="token-val">'Playfair Display', serif</span><span class="token-punct">;</span>
+<span class="token-prop">--font-sans</span><span class="token-punct">:</span>    <span class="token-val">'Inter', sans-serif</span><span class="token-punct">;</span></pre>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-row">
+        <span class="logo">
+          <svg class="heartmark" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="20" y="20" width="160" height="160" rx="4" stroke="#c8a97e" stroke-width="3" stroke-linecap="round" fill="none"/>
+            <path d="M100 152 C 100 152, 48 116, 46 84 C 44 62, 58 50, 74 50 C 86 50, 94 58, 100 68 C 106 58, 114 50, 126 50 C 142 50, 156 62, 154 84 C 152 116, 100 152, 100 152Z" stroke="#c8a97e" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <circle cx="100" cy="96" r="4.5" fill="#c8a97e"/>
+          </svg>
+          <span class="logo-text">Soul<span>craft</span></span>
+        </span>
+        <div class="footer-links">
+          <a href="/#capabilities">Services</a>
+          <a href="/#investment">Pricing</a>
+          <a href="/blog/">Blog</a>
+          <a href="/opensoul/">Opensoul</a>
+          <a href="https://www.linkedin.com/company/112723961/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+      <div class="footer-tagline">&copy; 2026 Soulcraft. The soul is the system.</div>
+    </div>
+  </footer>
+</div>
+
+<!-- TOAST -->
+<div id="toast"></div>
+
+<script>
+  // ── COPY COLOR ────────────────────────────────────────
+  function copyColor(hex, el) {
+    navigator.clipboard.writeText(hex).then(function() {
+      showToast('Copied ' + hex);
+    });
+  }
+
+  // ── COPY TOKENS ───────────────────────────────────────
+  function copyTokens() {
+    var raw = `:root {\n  /* Soulcraft Design Tokens */\n\n  /* Backgrounds */\n  --black:       #0a0a0a;\n  --dark:        #111111;\n  --card:        #161616;\n  --border:      #222222;\n\n  /* Text */\n  --white:       #f0f0f0;\n  --text:        #d0d0d0;\n  --muted:       #555555;\n\n  /* Accent */\n  --accent:      #c8a97e;\n  --accent-dim:  rgba(200,169,126,0.12);\n  --accent-glow: rgba(200,169,126,0.25);\n\n  /* Shape */\n  --radius:      16px;\n  --radius-sm:   10px;\n  --radius-pill: 100px;\n\n  /* Typography */\n  --font-serif:  'Playfair Display', serif;\n  --font-sans:   'Inter', sans-serif;\n}`;
+    navigator.clipboard.writeText(raw).then(function() {
+      showToast('Tokens copied to clipboard');
+    });
+  }
+
+  // ── TOAST ─────────────────────────────────────────────
+  function showToast(msg) {
+    var t = document.getElementById('toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    setTimeout(function() { t.classList.remove('show'); }, 2000);
+  }
+
+  // ── ENTRANCE ANIMATION ────────────────────────────────
+  function replayEntrance() {
+    var items = document.querySelectorAll('.entrance-item');
+    items.forEach(function(item) { item.classList.remove('playing'); });
+    void document.getElementById('entranceDemo').offsetWidth;
+    setTimeout(function() {
+      items.forEach(function(item) { item.classList.add('playing'); });
+    }, 50);
+  }
+  // Auto-play on load
+  setTimeout(replayEntrance, 800);
+
+  // ── SCROLL SPY ────────────────────────────────────────
+  var sections = ['overview', 'logo', 'color', 'typography', 'voice', 'components', 'spacing', 'motion', 'tokens'];
+  var navLinks = document.querySelectorAll('.section-nav-inner a');
+
+  function onScroll() {
+    var scrollY = window.scrollY + 120;
+    var current = sections[0];
+    sections.forEach(function(id) {
+      var el = document.getElementById(id);
+      if (el && el.offsetTop <= scrollY) { current = id; }
+    });
+    navLinks.forEach(function(link) {
+      var href = link.getAttribute('href').replace('#', '');
+      link.classList.toggle('active', href === current);
+    });
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+</script>
+</body>
+</html>
