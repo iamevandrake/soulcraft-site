@@ -9,6 +9,42 @@
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="{{ site.url }}{{ page.url }}">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+<!-- Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://soulcraftagency.com/#evan-drake",
+      "name": "Evan Drake",
+      "jobTitle": "Founder",
+      "description": "Founder of Soulcraft, an AI-native marketing agency. 20 years at the intersection of technology and marketing, from Apple to Chainlink Labs.",
+      "url": "https://soulcraftagency.com",
+      "sameAs": ["https://www.linkedin.com/in/iamevandrake/", "https://x.com/iamevandrake"]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://soulcraftagency.com/#organization",
+      "name": "Soulcraft",
+      "url": "https://soulcraftagency.com",
+      "foundingDate": "2026",
+      "sameAs": ["https://www.linkedin.com/company/112723961/"],
+      "email": "hello@soulcraftagency.com",
+      "founder": { "@id": "https://soulcraftagency.com/#evan-drake" }
+    },
+    {
+      "@type": "WebPage",
+      "url": "{{ site.url }}{{ page.url }}",
+      "name": "{{ page.title | default: site.title }}",
+      "description": "{{ page.description | default: site.description }}",
+      "isPartOf": { "@id": "https://soulcraftagency.com/#organization" }
+    }
+  ]
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">

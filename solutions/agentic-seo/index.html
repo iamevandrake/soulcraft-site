@@ -39,6 +39,20 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,700&display=swap" rel="stylesheet">
 
+<!-- Schema: Person -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://soulcraftagency.com/#evan-drake",
+  "name": "Evan Drake",
+  "jobTitle": "Founder",
+  "description": "Founder of Soulcraft, an AI-native marketing agency. 20 years at the intersection of technology and marketing, from Apple to Chainlink Labs.",
+  "url": "https://soulcraftagency.com",
+  "sameAs": ["https://www.linkedin.com/in/iamevandrake/", "https://x.com/iamevandrake"]
+}
+</script>
+
 <!-- Schema: Organization -->
 <script type="application/ld+json">
 {
@@ -47,9 +61,11 @@
   "@id": "https://soulcraftagency.com/#organization",
   "name": "Soulcraft",
   "url": "https://soulcraftagency.com",
+  "foundingDate": "2026",
+  "sameAs": ["https://www.linkedin.com/company/112723961/"],
   "email": "hello@soulcraftagency.com",
   "description": "Identity design at the intersection of soul and intelligence.",
-  "founder": { "@type": "Person", "name": "Evan Drake" }
+  "founder": { "@id": "https://soulcraftagency.com/#evan-drake" }
 }
 </script>
 

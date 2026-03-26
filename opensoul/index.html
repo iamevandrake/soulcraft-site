@@ -39,6 +39,25 @@
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "Person",
+      "@id": "https://soulcraftagency.com/#evan-drake",
+      "name": "Evan Drake",
+      "jobTitle": "Founder",
+      "description": "Founder of Soulcraft, an AI-native marketing agency. 20 years at the intersection of technology and marketing, from Apple to Chainlink Labs.",
+      "url": "https://soulcraftagency.com",
+      "sameAs": ["https://www.linkedin.com/in/iamevandrake/", "https://x.com/iamevandrake"]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://soulcraftagency.com/#organization",
+      "name": "Soulcraft",
+      "url": "https://soulcraftagency.com",
+      "foundingDate": "2026",
+      "sameAs": ["https://www.linkedin.com/company/112723961/"],
+      "email": "hello@soulcraftagency.com",
+      "founder": { "@id": "https://soulcraftagency.com/#evan-drake" }
+    },
+    {
       "@type": "SoftwareApplication",
       "@id": "https://soulcraftagency.com/opensoul/#software",
       "name": "Opensoul",
@@ -65,9 +84,7 @@
         }
       ],
       "author": {
-        "@type": "Organization",
-        "name": "Soulcraft",
-        "url": "https://soulcraftagency.com"
+        "@id": "https://soulcraftagency.com/#organization"
       }
     },
     {

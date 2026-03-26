@@ -1,0 +1,50 @@
+# Soulcraft
+
+> Soulcraft is an AI-native marketing agency that builds agentic marketing systems driven by identity. Founded in 2026 by Evan Drake. The soul is the system.
+
+Soulcraft builds autonomous marketing systems for Series A through C startups and lean marketing teams. The agency's core product is the soul.md file -- a structured identity document that captures a company's voice, values, positioning, audience, and competitive context. Every agentic system Soulcraft builds is driven by this file. Clients get 24/7 autonomous content production, SEO/AEO/GEO optimization, demand generation, and AI advertising, all rooted in their identity.
+
+## About
+
+- [Soulcraft Home](https://soulcraftagency.com/): Overview, soul.md scoring tool, pricing tiers, and core philosophy
+- [Services](https://soulcraftagency.com/services/): Full breakdown of Soulcraft's agentic marketing services
+
+## Founder
+
+Evan Drake is the founder of Soulcraft. He has 20 years of experience at the intersection of technology and marketing, with a background spanning Apple, Chainlink Labs, and others. He is based in California. LinkedIn: https://www.linkedin.com/in/iamevandrake/ -- X: https://x.com/iamevandrake
+
+## Solutions
+
+- [Agentic SEO](https://soulcraftagency.com/solutions/agentic-seo/): Autonomous AI agents that research, create, and optimize search presence across Google, AI Overviews, and generative engines
+
+## Product
+
+- [opensoul](https://soulcraftagency.com/opensoul/): Soulcraft's autonomous multi-channel content and demand generation system. Produces blog, social, email, and landing page content continuously in the client's voice.
+
+## Industries
+
+- [Industries](https://soulcraftagency.com/industries/): Sectors Soulcraft serves -- AI, crypto, technology, CPG, health and wellness, and small businesses
+
+## Blog
+
+- [Blog](https://soulcraftagency.com/blog/): Articles on agentic marketing, AI SEO, AEO/GEO, demand generation, and marketing automation
+
+## Pricing
+
+Soulcraft offers three retainer tiers with no long-term contracts:
+- Spark: $2,500/month -- SEO/AEO content engine with soul.md
+- Forge: $5,000/month -- Full demand generation and multi-channel distribution
+- Crucible: $10,000/month -- AI advertising and custom agentic workflows
+
+## Contact
+
+- Email: hello@soulcraftagency.com
+- Website: https://soulcraftagency.com
+
+## Key Concepts
+
+- soul.md: A structured identity document capturing company voice, values, positioning, audience, and competitive context. The file that drives all agentic systems.
+- AEO (Answer Engine Optimization): Optimizing for AI-driven answer surfaces like ChatGPT, Perplexity, and Claude.
+- GEO (Generative Engine Optimization): Optimizing for visibility in generative AI responses.
+- opensoul: Soulcraft's autonomous content and demand generation platform.
+- Agentic marketing: Marketing systems that act autonomously -- producing content, optimizing presence, and distributing across channels without waiting for human instructions.
