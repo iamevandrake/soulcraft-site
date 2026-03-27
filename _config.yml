@@ -32,3 +32,7 @@ exclude:
   - .claude
 
 future: true
+
+# Include dotfiles/dot-directories (e.g. .well-known)
+include:
+  - .well-known
