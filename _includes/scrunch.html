@@ -1,0 +1,22 @@
+<!-- Scrunch AI agent traffic tracking -->
+<script>
+(function() {
+  try {
+    var payload = {
+      domain: "soulcraftagency.com",
+      user_agent: navigator.userAgent,
+      url: window.location.href,
+      path: window.location.pathname,
+      method: "GET",
+      status_code: 200,
+      timestamp: Math.floor(Date.now() / 1000)
+    };
+    fetch("https://soulcraft-report-production.up.railway.app/api/scrunch-traffic", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+      keepalive: true
+    });
+  } catch (e) {}
+})();
+</script>
