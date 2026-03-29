@@ -187,7 +187,8 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,700&display=swap"></noscript>
 
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -400,11 +401,12 @@ footer { padding: 48px 0; border-top: 1px solid var(--border); }
       <span class="logo-text">Soul<span>craft</span></span>
     </a>
     <div class="nav-right">
-      <a href="#capabilities">What We Do</a>
-      <a href="#investment">Investment</a>
+      <a href="/services/">Services</a>
+      <a href="/solutions/">Solutions</a>
+      <a href="/industries/">Industries</a>
       <a href="/blog/">Blog</a>
       <a href="/opensoul/">Opensoul</a>
-      <a href="#" class="nav-cta-btn" onclick="document.getElementById('domainInput').scrollIntoView({behavior:'smooth',block:'center'}); setTimeout(function(){document.getElementById('domainInput').focus()},500); return false;">Get Your Free Report</a>
+      <a href="/contact/" class="nav-cta-btn">Get Started</a>
     </div>
   </div>
 </nav>
@@ -529,7 +531,7 @@ footer { padding: 48px 0; border-top: 1px solid var(--border); }
   <div class="container">
     <blockquote>"The most valuable asset a person or business possesses is its identity. And that identity isn't fixed. Identity evolves. It can be shaped, refined, tuned. That's the craft."</blockquote>
     <div class="attribution">- Evan Drake, Founder</div>
-    <img src="images/evan-drake.jpg" alt="Evan Drake, Founder of Soulcraft" class="founder-photo">
+    <img src="images/evan-drake.jpg" alt="Evan Drake, Founder of Soulcraft" class="founder-photo" loading="lazy" decoding="async">
   </div>
 </section>
 
@@ -584,7 +586,7 @@ footer { padding: 48px 0; border-top: 1px solid var(--border); }
           <li>Async Slack support</li>
           <li>Monthly performance reporting</li>
         </ul>
-        <a href="#" class="tier-btn" onclick="showModal(); return false;">Get Started</a>
+        <a href="/contact/" class="tier-btn" onclick="showModal(); return false;">Get Started</a>
       </div>
       <div class="tier featured">
         <div class="tier-name">Forge</div>
@@ -598,7 +600,7 @@ footer { padding: 48px 0; border-top: 1px solid var(--border); }
           <li>Multi-channel content distribution</li>
           <li>GEO + prompt optimization</li>
         </ul>
-        <a href="#" class="tier-btn" onclick="showModal(); return false;">Get Started</a>
+        <a href="/contact/" class="tier-btn" onclick="showModal(); return false;">Get Started</a>
       </div>
       <div class="tier">
         <div class="tier-name">Crucible</div>
@@ -612,7 +614,7 @@ footer { padding: 48px 0; border-top: 1px solid var(--border); }
           <li>Executive strategy partnership</li>
           <li>Dedicated systems architect</li>
         </ul>
-        <a href="#" class="tier-btn" onclick="showModal(); return false;">Get Started</a>
+        <a href="/contact/" class="tier-btn" onclick="showModal(); return false;">Get Started</a>
       </div>
     </div>
   </div>
@@ -684,12 +686,15 @@ footer { padding: 48px 0; border-top: 1px solid var(--border); }
         <span class="logo-text">Soul<span>craft</span></span>
       </span>
       <div class="footer-links">
-        <a href="#capabilities">Services</a>
+        <a href="/services/">Services</a>
+        <a href="/solutions/">Solutions</a>
+        <a href="/industries/">Industries</a>
         <a href="#investment">Pricing</a>
         <a href="/blog/">Blog</a>
         <a href="/games/">Games</a>
         <a href="/opensoul/">Opensoul</a>
         <a href="/brand/">Identity Guide</a>
+        <a href="/contact/">Contact</a>
         <a href="https://www.linkedin.com/company/112723961/admin/dashboard/" target="_blank" rel="noopener">LinkedIn</a>
       </div>
     </div>
