@@ -311,8 +311,11 @@ footer { padding: 48px 0; border-top: 1px solid var(--border); }
 </footer>
 
 <script>
-function submitForm(e) {
+var LEADS_ENDPOINT = 'https://soulcraft-leads.up.railway.app/api/lead';
+
+async function submitForm(e) {
   e.preventDefault();
+  var btn = document.querySelector('.form-submit');
   var form = document.getElementById('inquiryForm');
   var name = document.getElementById('name').value.trim();
   var email = document.getElementById('email').value.trim();
@@ -323,21 +326,37 @@ function submitForm(e) {
 
   if (!name || !email || !company) return;
 
-  var subject = encodeURIComponent('New inquiry from ' + name + ' at ' + company);
-  var body = encodeURIComponent(
-    'Name: ' + name + '\n' +
-    'Email: ' + email + '\n' +
-    'Company: ' + company + '\n' +
-    'Website: ' + (website || 'not provided') + '\n' +
-    'Budget: ' + (budget || 'not specified') + '\n\n' +
-    'Message:\n' + (message || 'none')
-  );
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
 
-  window.location.href = 'mailto:hello@soulcraftagency.com?subject=' + subject + '&body=' + body;
+  try {
+    var res = await fetch(LEADS_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, email, company, website, budget, message, source: 'contact-form' })
+    });
 
-  // Show success state
-  form.style.display = 'none';
-  document.getElementById('formSuccess').style.display = 'block';
+    if (!res.ok) throw new Error('Request failed: ' + res.status);
+
+    // Show success state
+    form.style.display = 'none';
+    document.getElementById('formSuccess').style.display = 'block';
+
+  } catch (err) {
+    console.error('[contact-form] Submission error:', err.message);
+    // Fallback: open mailto so the lead is never lost
+    var subject = encodeURIComponent('New inquiry from ' + name + ' at ' + company);
+    var body = encodeURIComponent(
+      'Name: ' + name + '\nEmail: ' + email + '\nCompany: ' + company +
+      '\nWebsite: ' + (website || 'not provided') +
+      '\nBudget: ' + (budget || 'not specified') +
+      '\n\nMessage:\n' + (message || 'none')
+    );
+    window.location.href = 'mailto:hello@soulcraftagency.com?subject=' + subject + '&body=' + body;
+  } finally {
+    btn.textContent = 'Send It';
+    btn.disabled = false;
+  }
 }
 
 // Reveal on scroll
