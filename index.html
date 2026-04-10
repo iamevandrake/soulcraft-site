@@ -381,9 +381,25 @@ footer { padding: 48px 0; border-top: 1px solid var(--border); }
 .modal .modal-submit:hover { background: var(--white); }
 .modal-close { position: absolute; top: 12px; right: 16px; background: none; border: none; color: #333; font-size: 20px; cursor: pointer; }
 
+/* Hamburger button */
+.nav-burger { display: none; flex-direction: column; justify-content: center; gap: 5px; width: 36px; height: 36px; background: none; border: none; cursor: pointer; padding: 4px; z-index: 110; }
+.nav-burger span { display: block; width: 22px; height: 2px; background: var(--text); border-radius: 2px; transition: transform 0.25s, opacity 0.25s; transform-origin: center; }
+.nav-burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-burger.open span:nth-child(2) { opacity: 0; }
+.nav-burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* Mobile drawer */
+.nav-drawer { display: none; position: fixed; top: 64px; left: 0; right: 0; background: rgba(10,10,10,0.97); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border-top: 1px solid var(--border); z-index: 99; padding: 24px; flex-direction: column; gap: 4px; }
+.nav-drawer.open { display: flex; }
+.nav-drawer a { color: var(--text); font-size: 16px; font-weight: 400; padding: 14px 8px; border-bottom: 1px solid var(--border); transition: color 0.2s; text-decoration: none; }
+.nav-drawer a:last-child { border-bottom: none; margin-top: 8px; }
+.nav-drawer a:hover { color: var(--accent); }
+.nav-drawer .nav-cta-btn { background: var(--accent); color: var(--black) !important; border-radius: 8px; text-align: center; font-weight: 600; padding: 14px; border-bottom: none; }
+
 @media (max-width: 768px) {
   .opening { padding-top: 120px; }
-  .nav-right a:not(.nav-cta-btn) { display: none; }
+  .nav-right { display: none; }
+  .nav-burger { display: flex; }
   .cap-grid, .tiers { grid-template-columns: 1fr; }
   .closing-form { flex-direction: column; }
   .hero-domain-wrap { flex-direction: column; }
@@ -414,8 +430,19 @@ footer { padding: 48px 0; border-top: 1px solid var(--border); }
       <a href="/opensoul/">Opensoul</a>
       <a href="/contact/" class="nav-cta-btn">Get Started</a>
     </div>
+    <button class="nav-burger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
+<div class="nav-drawer" id="nav-drawer">
+  <a href="/services/">Services</a>
+  <a href="/solutions/">Solutions</a>
+  <a href="/industries/">Industries</a>
+  <a href="/blog/">Blog</a>
+  <a href="/opensoul/">Opensoul</a>
+  <a href="/contact/" class="nav-cta-btn">Get Started</a>
+</div>
 
 <!-- Main content -->
 <main>
@@ -1136,6 +1163,28 @@ document.getElementById('domainInput').addEventListener('keypress', function(e) 
 document.addEventListener('keydown', function(e) {
   if (e.key === 'Escape') hideModal();
 });
+
+// Mobile nav
+(function() {
+  var burger = document.querySelector('.nav-burger');
+  var drawer = document.getElementById('nav-drawer');
+  if (!burger || !drawer) return;
+  burger.addEventListener('click', function() {
+    var open = drawer.classList.toggle('open');
+    burger.classList.toggle('open', open);
+    burger.setAttribute('aria-expanded', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+  // Close on link click
+  drawer.querySelectorAll('a').forEach(function(a) {
+    a.addEventListener('click', function() {
+      drawer.classList.remove('open');
+      burger.classList.remove('open');
+      burger.setAttribute('aria-expanded', false);
+      document.body.style.overflow = '';
+    });
+  });
+})();
 </script>
 </body>
 </html>
