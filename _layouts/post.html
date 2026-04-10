@@ -142,6 +142,12 @@ nav .container { display: flex; align-items: center; justify-content: space-betw
 
 .article-meta { font-family: 'Inter', sans-serif; font-weight: 300; font-size: 13px; color: var(--muted); letter-spacing: 0.5px; margin-top: 16px; }
 
+.article-author { display: inline-flex; align-items: center; gap: 12px; margin-top: 28px; }
+.author-photo { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; border: 2px solid var(--accent); flex-shrink: 0; }
+.author-info { display: flex; flex-direction: column; text-align: left; }
+.author-name { font-family: 'Inter', sans-serif; font-weight: 500; font-size: 14px; color: var(--white); }
+.author-title { font-family: 'Inter', sans-serif; font-weight: 300; font-size: 12px; color: var(--muted); margin-top: 2px; }
+
 /* ===== ARTICLE BODY ===== */
 .article-body { font-family: 'Inter', sans-serif; font-weight: 300; font-size: clamp(16px, 1.6vw, 18px); line-height: 1.85; color: var(--text); }
 
@@ -235,6 +241,16 @@ footer { padding: 48px 0; border-top: 1px solid var(--border); }
       {% if page.description %}
       <p class="article-description">{{ page.description }}</p>
       {% endif %}
+      <div class="article-author">
+        <picture>
+          <source srcset="/images/evan-drake.webp" type="image/webp">
+          <img src="/images/evan-drake.jpg" alt="Evan Drake, Founder of Soulcraft" class="author-photo" width="48" height="48" loading="lazy" decoding="async">
+        </picture>
+        <div class="author-info">
+          <span class="author-name">Evan Drake</span>
+          <span class="author-title">Founder, Soulcraft</span>
+        </div>
+      </div>
     </header>
 
     <div class="article-body">
