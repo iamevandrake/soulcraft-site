@@ -1,12 +1,12 @@
 ---
 layout: post
 title: "AI Search Optimization: Complete Strategy Guide"
-description: "Master ai search optimization with our complete strategy guide. Learn how AI-powered algorithms reshape SEO and boost your search rankings in 2024."
+description: "Master ai search optimization with our complete strategy guide. Learn how AI-powered algorithms reshape SEO and boost your search rankings in 2026."
 date: 2026-04-15
 keywords: "ai search optimization"
 og_title: "AI Search Optimization: Complete Strategy Guide"
 og_description: "Master ai search optimization strategies for AI-powered search engines. Complete guide for growth-stage companies to dominate search rankings."
-schema_markup: '{"@context": "https://schema.org", "@type": "Article", "headline": "AI Search Optimization: Complete Strategy Guide", "description": "Complete guide to ai search optimization strategies for growth-stage companies adapting to AI-powered search algorithms and semantic understanding.", "author": {"@type": "Organization", "name": "Publisher"}, "datePublished": "2024-01-01", "dateModified": "2024-01-01", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://example.com/ai-search-optimization-guide"}, "publisher": {"@type": "Organization", "name": "Publisher"}}'
+schema_markup: '{"@context": "https://schema.org", "@type": "Article", "headline": "AI Search Optimization: Complete Strategy Guide", "description": "Complete guide to ai search optimization strategies for growth-stage companies adapting to AI-powered search algorithms and semantic understanding.", "author": {"@type": "Organization", "name": "Publisher"}, "datePublished": "2026-04-14", "dateModified": "2026-04-14", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://example.com/ai-search-optimization-guide"}, "publisher": {"@type": "Organization", "name": "Publisher"}}'
 ---
 
 # AI Search Optimization: Complete Strategy Guide
