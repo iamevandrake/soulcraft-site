@@ -6,8 +6,7 @@ date: 2026-04-17
 keywords: "llm visibility"
 og_title: "LLM Visibility: How AI Models See Your Marketing Content"
 og_description: "Master LLM visibility to reach audiences through AI-powered search and chatbots. Learn how large language models are changing content discovery and marketing strategies."
-schema_markup: | 
-  {"@context": "https://schema.org", "@type": "Article", "headline": "LLM Visibility: How AI Models See Your Marketing Content", "description": "The marketing game has fundamentally changed. While companies continue optimizing for Google's search algorithms, a new frontier has emerged that demands immediate attention: LLM visibility.", "keywords": ["llm visibility", "AI marketing", "large language models", "content optimization", "AI search"], "author": {"@type": "Organization", "name": "Publisher"}, "publisher": {"@type": "Organization", "name": "Publisher"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "URL_PLACEHOLDER"}, "datePublished": "DATE_PLACEHOLDER", "dateModified": "DATE_PLACEHOLDER"}
+
 ---
 
 # LLM Visibility: How AI Models See Your Marketing Content
