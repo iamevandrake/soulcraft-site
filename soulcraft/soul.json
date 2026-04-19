@@ -1,0 +1,33 @@
+{
+  "specVersion": "0.5",
+  "name": "soulcraft",
+  "displayName": "Soulcraft",
+  "version": "1.0.0",
+  "description": "A custom AI persona",
+  "author": {
+    "name": "Your Name",
+    "github": "your-github"
+  },
+  "license": "Apache-2.0",
+  "tags": [
+    "custom"
+  ],
+  "category": "general",
+  "compatibility": {
+    "frameworks": [
+      "openclaw"
+    ]
+  },
+  "allowedTools": [],
+  "disclosure": {
+    "summary": "A custom AI persona."
+  },
+  "environment": "virtual",
+  "interactionMode": "text",
+  "files": {
+    "soul": "SOUL.md",
+    "identity": "IDENTITY.md",
+    "agents": "AGENTS.md",
+    "heartbeat": "HEARTBEAT.md"
+  }
+}
