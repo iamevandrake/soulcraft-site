@@ -4,31 +4,25 @@ layout: null
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-FXWVCQJ7YT"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-FXWVCQJ7YT');
-</script>
+{% include gtag.html %}
+{% include scrunch.html %}
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Agentic Marketing Blog: AI, Identity & Autonomous Systems | Soulcraft</title>
-<meta name="description" content="Soulcraft's blog on agentic marketing, identity design, AI brand voice, and building autonomous systems that carry your company's soul forward.">
+<title>Learn AEO, GEO & AI Marketing | Soulcraft Education</title>
+<meta name="description" content="In-depth guides, comparisons, and reviews on AEO, GEO, and AI-native marketing. Learn what works, what doesn't, and which agencies actually deliver.">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://soulcraftagency.com/blog/">
+<link rel="canonical" href="https://soulcraftagency.com/learn/">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 
 <!-- Open Graph -->
-<meta property="og:title" content="Agentic Marketing Blog: AI, Identity & Autonomous Systems | Soulcraft" />
-<meta property="og:description" content="Insights on identity design, AI brand voice, and building companies with soul." />
+<meta property="og:title" content="Learn AEO, GEO & AI Marketing | Soulcraft" />
+<meta property="og:description" content="In-depth guides, comparisons, and reviews on AEO, GEO, and AI-native marketing. Learn what works, what doesn't, and which agencies actually deliver." />
 <meta property="og:image" content="https://soulcraftagency.com/soulcraft-og-image.png" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://soulcraftagency.com/blog/" />
+<meta property="og:url" content="https://soulcraftagency.com/learn/" />
 
-<!-- Fonts (matching homepage) -->
+<!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,700&display=swap" rel="stylesheet">
@@ -43,7 +37,6 @@ layout: null
       "@id": "https://soulcraftagency.com/#evan-drake",
       "name": "Evan Drake",
       "jobTitle": "Founder",
-      "description": "Founder of Soulcraft, an AI-native marketing agency. 20 years at the intersection of technology and marketing, from Apple to Chainlink Labs.",
       "url": "https://soulcraftagency.com",
       "sameAs": ["https://www.linkedin.com/in/iamevandrake/", "https://x.com/iamevandrake"]
     },
@@ -53,23 +46,21 @@ layout: null
       "name": "Soulcraft",
       "url": "https://soulcraftagency.com",
       "foundingDate": "2026",
-      "sameAs": ["https://www.linkedin.com/company/112723961/"],
-      "email": "hello@soulcraftagency.com",
       "founder": { "@id": "https://soulcraftagency.com/#evan-drake" }
     },
     {
-      "@type": "Blog",
-      "@id": "https://soulcraftagency.com/blog/",
-      "name": "Soulcraft Blog",
-      "description": "Insights on agentic marketing, identity design, AI brand voice, and building autonomous systems that carry your company's soul forward.",
-      "url": "https://soulcraftagency.com/blog/",
+      "@type": "CollectionPage",
+      "@id": "https://soulcraftagency.com/learn/",
+      "name": "Soulcraft Learn",
+      "description": "In-depth guides, comparisons, and reviews on AEO, GEO, and AI-native marketing.",
+      "url": "https://soulcraftagency.com/learn/",
       "publisher": { "@id": "https://soulcraftagency.com/#organization" }
     },
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
         {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://soulcraftagency.com/"},
-        {"@type": "ListItem", "position": 2, "name": "Blog"}
+        {"@type": "ListItem", "position": 2, "name": "Learn"}
       ]
     }
   ]
@@ -108,60 +99,103 @@ nav .container { display: flex; align-items: center; justify-content: space-betw
 .nav-right { display: flex; gap: 24px; align-items: center; }
 .nav-right a { color: var(--muted); font-size: 13px; font-weight: 500; transition: color 0.2s; }
 .nav-right a:hover { color: var(--white); }
+.nav-right a.active { color: var(--accent); }
 .nav-cta-btn { background: var(--accent) !important; color: var(--black) !important; padding: 8px 20px; border-radius: 6px; font-weight: 600 !important; font-size: 13px !important; }
 
-/* Blog hero */
-.blog-hero {
+/* Hero */
+.learn-hero {
   padding: 160px 0 60px;
   text-align: center;
 }
-.blog-hero h1 {
+.learn-hero .eyebrow {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 20px;
+  opacity: 0.7;
+}
+.learn-hero h1 {
   font-family: 'Playfair Display', serif;
   font-weight: 400;
   font-size: clamp(36px, 5vw, 52px);
   color: var(--white);
   margin-bottom: 16px;
 }
-.blog-hero p {
+.learn-hero p {
   font-family: 'Playfair Display', serif;
   font-weight: 400;
-  font-size: clamp(18px, 2vw, 21px);
+  font-size: clamp(17px, 2vw, 20px);
   color: var(--muted);
   line-height: 1.7;
   font-style: italic;
+  max-width: 560px;
+  margin: 0 auto;
 }
 
-/* Blog list */
-.blog-list {
-  padding: 0 0 100px;
+/* Filter chips */
+.filter-row {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 0 0 48px;
+  flex-wrap: wrap;
 }
-.blog-list .container {
-  padding-left: 48px;
-  padding-right: 48px;
+.chip {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  padding: 6px 16px;
+  border-radius: 100px;
+  cursor: default;
 }
-.blog-post {
+
+/* Post list */
+.learn-list { padding: 0 0 100px; }
+.learn-list .container { padding-left: 48px; padding-right: 48px; }
+
+.learn-post {
   display: block;
   text-decoration: none;
   padding: 40px 0;
   border-bottom: 1px solid var(--border);
   transition: padding-left 0.3s;
 }
-.blog-post:first-child {
-  border-top: 1px solid var(--border);
+.learn-post:first-child { border-top: 1px solid var(--border); }
+.learn-post:hover { padding-left: 12px; }
+
+.learn-post-meta {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 12px;
 }
-.blog-post:hover {
-  padding-left: 12px;
+.learn-post-type {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 10px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--black);
+  background: var(--accent);
+  padding: 3px 10px;
+  border-radius: 100px;
 }
-.blog-post-date {
+.learn-post-date {
   font-family: 'Inter', sans-serif;
   font-weight: 500;
   font-size: 11px;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 10px;
+  color: var(--muted);
 }
-.blog-post-title {
+.learn-post-title {
   font-family: 'Playfair Display', serif;
   font-weight: 400;
   font-size: clamp(22px, 2.8vw, 30px);
@@ -170,15 +204,14 @@ nav .container { display: flex; align-items: center; justify-content: space-betw
   margin-bottom: 10px;
   transition: color 0.3s;
 }
-.blog-post:hover .blog-post-title {
-  color: var(--accent);
-}
-.blog-post-description {
+.learn-post:hover .learn-post-title { color: var(--accent); }
+.learn-post-description {
   font-size: clamp(14px, 1.6vw, 16px);
   line-height: 1.7;
   color: var(--muted);
+  max-width: 680px;
 }
-.blog-empty {
+.learn-empty {
   text-align: center;
   padding: 80px 0;
   font-family: 'Playfair Display', serif;
@@ -197,24 +230,6 @@ footer .container { padding-left: 48px; padding-right: 48px; }
 .footer-links a:hover { color: var(--accent); }
 .footer-tagline { font-family: 'Playfair Display', serif; font-size: 14px; color: #333; font-style: italic; }
 
-@media (max-width: 768px) {
-  .blog-hero {
-    padding: 120px 0 40px;
-  }
-  .blog-post {
-    padding: 28px 0;
-  }
-  .blog-post:hover {
-    padding-left: 0;
-  }
-  .nav-right { display: none; }
-  .nav-burger { display: flex; }
-  .footer-row { flex-direction: column; gap: 20px; text-align: center; }
-  .footer-links { justify-content: center; }
-  .blog-list .container { padding-left: 24px; padding-right: 24px; }
-  footer .container { padding-left: 24px; padding-right: 24px; }
-}
-
 /* Hamburger button */
 .nav-burger { display: none; flex-direction: column; justify-content: center; gap: 5px; width: 36px; height: 36px; background: none; border: none; cursor: pointer; padding: 4px; z-index: 110; }
 .nav-burger span { display: block; width: 22px; height: 2px; background: var(--text); border-radius: 2px; transition: transform 0.25s, opacity 0.25s; transform-origin: center; }
@@ -223,12 +238,24 @@ footer .container { padding-left: 48px; padding-right: 48px; }
 .nav-burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 /* Mobile drawer */
-.nav-drawer { display: none; position: fixed; top: 64px; left: 0; right: 0; background: rgba(10,10,10,0.97); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border-top: 1px solid var(--border); z-index: 99; padding: 24px; flex-direction: column; gap: 4px; }
+.nav-drawer { display: none; position: fixed; top: 64px; left: 0; right: 0; background: rgba(10,10,10,0.97); backdrop-filter: blur(24px); border-top: 1px solid var(--border); z-index: 99; padding: 24px; flex-direction: column; gap: 4px; }
 .nav-drawer.open { display: flex; }
 .nav-drawer a { color: var(--text); font-size: 16px; font-weight: 400; padding: 14px 8px; border-bottom: 1px solid var(--border); transition: color 0.2s; text-decoration: none; }
 .nav-drawer a:last-child { border-bottom: none; margin-top: 8px; }
 .nav-drawer a:hover { color: var(--accent); }
 .nav-drawer .nav-cta-btn { background: var(--accent); color: var(--black) !important; border-radius: 8px; text-align: center; font-weight: 600; padding: 14px; border-bottom: none; }
+
+@media (max-width: 768px) {
+  .learn-hero { padding: 120px 0 40px; }
+  .learn-post { padding: 28px 0; }
+  .learn-post:hover { padding-left: 0; }
+  .nav-right { display: none; }
+  .nav-burger { display: flex; }
+  .footer-row { flex-direction: column; gap: 20px; text-align: center; }
+  .footer-links { justify-content: center; }
+  .learn-list .container { padding-left: 24px; padding-right: 24px; }
+  footer .container { padding-left: 24px; padding-right: 24px; }
+}
 </style>
 </head>
 <body>
@@ -248,7 +275,7 @@ footer .container { padding-left: 48px; padding-right: 48px; }
       <a href="/services/">Services</a>
       <a href="/solutions/">Solutions</a>
       <a href="/industries/">Industries</a>
-      <a href="/learn/">Learn</a>
+      <a href="/learn/" class="active">Learn</a>
       <a href="/blog/">Blog</a>
       <a href="/opensoul/">Opensoul</a>
       <a href="/contact/" class="nav-cta-btn">Get Started</a>
@@ -269,29 +296,33 @@ footer .container { padding-left: 48px; padding-right: 48px; }
 </div>
 
 <!-- Hero -->
-<section class="blog-hero">
+<section class="learn-hero">
   <div class="container">
-    <h1>Blog</h1>
-    <p>Thinking about identity, intelligence, and the soul of what we build.</p>
+    <div class="eyebrow">Education</div>
+    <h1>Learn</h1>
+    <p>Guides, comparisons, and reviews on AEO, GEO, and what it actually takes to show up in AI search.</p>
   </div>
 </section>
 
 <!-- Post list -->
-<section class="blog-list">
+<section class="learn-list">
   <div class="container">
-    {% assign sorted_posts = site.posts | sort: "date" | reverse %}
-    {% if sorted_posts.size > 0 %}
-      {% for post in sorted_posts %}
-      <a href="{{ post.url }}" class="blog-post">
-        <div class="blog-post-date">{{ post.date | date: "%B %-d, %Y" }}</div>
-        <h2 class="blog-post-title">{{ post.title }}</h2>
+    {% assign learn_posts = site.posts | where: "category", "learn" | sort: "date" | reverse %}
+    {% if learn_posts.size > 0 %}
+      {% for post in learn_posts %}
+      <a href="{{ post.url }}" class="learn-post">
+        <div class="learn-post-meta">
+          {% if post.content_type %}<span class="learn-post-type">{{ post.content_type }}</span>{% endif %}
+          <span class="learn-post-date">{{ post.date | date: "%B %-d, %Y" }}</span>
+        </div>
+        <h2 class="learn-post-title">{{ post.title }}</h2>
         {% if post.description %}
-        <p class="blog-post-description">{{ post.description }}</p>
+        <p class="learn-post-description">{{ post.description }}</p>
         {% endif %}
       </a>
       {% endfor %}
     {% else %}
-      <p class="blog-empty">Something is brewing. Check back soon.</p>
+      <p class="learn-empty">Something is brewing. Check back soon.</p>
     {% endif %}
   </div>
 </section>
@@ -309,9 +340,10 @@ footer .container { padding-left: 48px; padding-right: 48px; }
         <span class="logo-text">Soul<span>craft</span></span>
       </span>
       <div class="footer-links">
+        <a href="/learn/">Learn</a>
         <a href="/blog/">Blog</a>
         <a href="/opensoul/">Opensoul</a>
-        <a href="https://www.linkedin.com/company/112723961/admin/dashboard/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://www.linkedin.com/company/112723961/" target="_blank" rel="noopener">LinkedIn</a>
       </div>
     </div>
     <div class="footer-tagline" style="text-align:center;margin-top:32px;">&copy; 2026 Soulcraft. The soul is the system.</div>

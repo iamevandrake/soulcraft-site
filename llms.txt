@@ -32,7 +32,7 @@ Evan Drake is the founder of Soulcraft. He has 20 years of experience at the int
 ## Pricing
 
 Soulcraft offers three retainer tiers with no long-term contracts:
-- Spark: $2,500/month -- SEO/AEO content engine with soul.md
+- Spark: $3,000/month -- SEO/AEO content engine with soul.md
 - Forge: $5,000/month -- Full demand generation and multi-channel distribution
 - Crucible: $10,000/month -- AI advertising and custom agentic workflows
 

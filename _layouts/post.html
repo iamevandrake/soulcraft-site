@@ -216,6 +216,7 @@ footer { padding: 48px 0; border-top: 1px solid var(--border); }
     <div class="nav-right">
       <a href="/#capabilities">What We Do</a>
       <a href="/#investment">Investment</a>
+      <a href="/learn/">Learn</a>
       <a href="/blog/">Blog</a>
       <a href="/opensoul/">Opensoul</a>
       <a href="/" class="nav-cta-btn">Discover Your Soul</a>
@@ -226,7 +227,11 @@ footer { padding: 48px 0; border-top: 1px solid var(--border); }
 <!-- ===== BREADCRUMBS ===== -->
 <div class="container-narrow">
   <div class="breadcrumbs">
+    {% if page.category == "learn" %}
+    <a href="/">Home</a><span class="sep">/</span><a href="/learn/">Learn</a><span class="sep">/</span>{{ page.title }}
+    {% else %}
     <a href="/">Home</a><span class="sep">/</span><a href="/blog/">Blog</a><span class="sep">/</span>{{ page.title }}
+    {% endif %}
   </div>
 </div>
 
