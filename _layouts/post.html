@@ -34,7 +34,7 @@
 </script>
 {% endif %}
 
-<!-- Article Schema -->
+<!-- Schema Markup -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -44,8 +44,12 @@
       "@id": "https://soulcraftagency.com/#evan-drake",
       "name": "Evan Drake",
       "jobTitle": "Founder",
-      "description": "Founder of Soulcraft, an AI-native marketing agency. Former Marketing Director at Chainlink Labs. 20 years at the intersection of technology and marketing, from Apple to Chainlink Labs.",
+      "description": "Founder of Soulcraft, an AI-native marketing agency. 20 years at the intersection of technology and marketing, from Apple to Chainlink Labs.",
       "url": "https://soulcraftagency.com",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://soulcraftagency.com/images/evan-drake.jpg"
+      },
       "alumniOf": {
         "@type": "Organization",
         "name": "Chainlink Labs",
@@ -57,20 +61,33 @@
       "@type": "Organization",
       "@id": "https://soulcraftagency.com/#organization",
       "name": "Soulcraft",
+      "description": "AI-native marketing agency building agentic marketing systems driven by identity.",
       "url": "https://soulcraftagency.com",
       "foundingDate": "2026",
-      "sameAs": ["https://www.linkedin.com/company/112723961/"],
+      "email": "hello@soulcraftagency.com",
       "logo": {
         "@type": "ImageObject",
         "url": "https://soulcraftagency.com/soulcraft-og-image.png"
       },
+      "sameAs": ["https://www.linkedin.com/company/112723961/"],
       "founder": { "@id": "https://soulcraftagency.com/#evan-drake" }
     },
     {
       "@type": "Article",
+      "@id": "{{ site.url }}{{ page.url }}#article",
       "headline": "{{ page.title }}",
       "description": "{{ page.description }}",
+      "url": "{{ site.url }}{{ page.url }}",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "{{ site.url }}{{ page.url }}"
+      },
       "datePublished": "{{ page.date | date_to_xmlschema }}",
+      "dateModified": "{{ page.date | date_to_xmlschema }}",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://soulcraftagency.com/soulcraft-og-image.png"
+      },
       "author": { "@id": "https://soulcraftagency.com/#evan-drake" },
       "publisher": { "@id": "https://soulcraftagency.com/#organization" }
     }
