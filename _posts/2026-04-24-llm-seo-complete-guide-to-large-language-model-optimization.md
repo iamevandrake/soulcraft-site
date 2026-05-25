@@ -128,7 +128,7 @@ Provide concrete examples in consistent formats. Use "For example:" introduction
 Tracking **LLM SEO** success requires new metrics and monitoring approaches beyond traditional search rankings.
 
 **Citation Tracking**
-Monitor where and how your content gets cited across AI-powered platforms. This includes Google AI Overviews, ChatGPT responses, Claude citations, and other LLM-powered search experiences. Track both frequency and context of citations.
+Monitor where and how your content gets cited across AI-powered platforms. This includes Google AI Overviews, ChatGPT responses, Claude citations, and other LLM-powered search experiences. For a full breakdown of monitoring approaches, see [LLM visibility strategies for marketing teams](/blog/llm-visibility-strategies-for-marketing-teams-in-2026/). Track both frequency and context of citations.
 
 **Content Velocity Metrics**
 Measure how quickly new content gets discovered and cited by AI systems. Fast citation pickup indicates strong **LLM SEO** optimization and can guide content publishing strategies.
@@ -171,7 +171,14 @@ Implement advanced **LLM SEO** strategies including cross-platform optimization,
 
 The shift to LLM-powered search represents the most significant change in content discovery since the early days of Google. Companies that master **LLM SEO** now will dominate AI-mediated content discovery as these systems become the primary way users find and consume information.
 
-At Soulcraft, we've built agentic marketing systems specifically designed to handle this transition automatically. Our AI agents continuously optimize content for both traditional search and LLM citation, ensuring our clients' content remains discoverable regardless of how search technology evolves. Instead of manually implementing these strategies, growth-stage companies can deploy systems that adapt to the changing search landscape without constant human intervention.
+At Soulcraft, we've built [agentic marketing systems](/blog/what-is-agentic-marketing-ai-powered-growth-systems-guide/) specifically designed to handle this transition automatically. Our AI agents continuously optimize content for both traditional search and LLM citation, ensuring our clients' content remains discoverable regardless of how search technology evolves. Instead of manually implementing these strategies, growth-stage companies can deploy systems that adapt to the changing search landscape without constant human intervention.
+
+
+## Related Posts
+
+- [LLM Visibility: How AI Models See Your Marketing Content](/blog/llm-visibility-how-ai-models-see-your-marketing-content/): Explains how large language models process and evaluate content, covering the foundational concepts that LLM SEO builds on.
+- [LLM Visibility Optimization: Make Your Content AI-Discoverable](/blog/llm-visibility-optimization-make-your-content-ai-discoverable/): Practical content structure and authority-building strategies that complement the technical LLM SEO implementation covered here.
+- [AEO vs SEO: Complete Guide to AI Search Optimization](/blog/aeo-vs-seo-complete-guide-to-ai-search-optimization/): Compares the two optimization frameworks and explains when to prioritize each, providing useful context for LLM SEO strategy decisions.
 
 ## Frequently Asked Questions
 

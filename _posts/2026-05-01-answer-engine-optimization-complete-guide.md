@@ -24,7 +24,7 @@ This guide covers the full picture. What AEO is and how it differs from SEO. How
 
 ## What Is AEO?
 
-AEO stands for answer engine optimization. It's sometimes called GEO (generative engine optimization) or AIO (AI optimization). The terms are largely interchangeable, though practitioners use them with slightly different emphasis:
+AEO stands for answer engine optimization. It's sometimes called GEO (generative engine optimization) or AIO (AI optimization). The terms are largely interchangeable, though practitioners use them with slightly different emphasis. For a full treatment of the GEO side, see the [generative engine optimization complete guide](/blog/generative-engine-optimization-complete-guide-to-geo/).
 
 - **AEO** tends to focus on appearing in answer-format responses, particularly in AI assistants and chatbots
 - **GEO** tends to focus on the broader question of how generative AI systems retrieve and represent your organization
@@ -96,7 +96,7 @@ At Soulcraft, we build a soul.md for every client before anything else. It's a s
 
 AEO content is different from traditional SEO content in three specific ways.
 
-**Depth over volume.** A single, authoritative, comprehensive piece performs better in AI retrieval than ten thin pieces on related topics. AI systems are good at recognizing depth. They surface content that actually addresses a query, not content that merely mentions the relevant terms.
+**Depth over volume.** A single, authoritative, comprehensive piece performs better in AI retrieval than ten thin pieces on related topics. This is why [LLM visibility optimization](/blog/llm-visibility-optimization-make-your-content-ai-discoverable/) prioritizes structural quality and semantic clarity over keyword volume. AI systems are good at recognizing depth. They surface content that actually addresses a query, not content that merely mentions the relevant terms.
 
 **Question-answer structure.** AI answer engines respond to questions. Content structured as direct answers to specific questions, with clear claims, evidence, and context, is more retrievable than content structured as a narrative.
 
@@ -188,7 +188,7 @@ This has practical implications for how you build the program:
 
 **Ignoring the identity layer.** Companies that jump straight to content without doing the identity work produce content that's inconsistent in voice, positioning, and claim. AI systems retrieve content that tells a coherent story.
 
-**Measuring SEO metrics and calling it AEO.** Traffic, rankings, and impressions in traditional search are not AEO metrics. If you don't have AI-specific measurement in place, you're not running an AEO program.
+**Measuring SEO metrics and calling it AEO.** Traffic, rankings, and impressions in traditional search are not AEO metrics. For a breakdown of how the two measurement frameworks differ, see the [AEO vs SEO complete guide](/blog/aeo-vs-seo-complete-guide-to-ai-search-optimization/). If you don't have AI-specific measurement in place, you're not running an AEO program.
 
 **Treating AEO as a one-time project.** The organizations winning in AI search in 2026 are the ones that started building their presence in 2024 and kept going. It compounds. Start now.
 
@@ -215,3 +215,11 @@ AEO is a long game. The organizations building the strongest AI presence in 2026
 ---
 
 If you want help with any part of this, from the identity work through to the technical infrastructure and ongoing measurement, [we'd be glad to talk](/contact/). AEO is the center of what we do at Soulcraft. We've built the systems to do it well, and we're happy to show you what that looks like in practice.
+
+
+## Related Posts
+
+- [Generative Engine Optimization: Complete Guide to GEO](/blog/generative-engine-optimization-complete-guide-to-geo/): The parallel framework to AEO, covering how generative engines select and cite content and how to optimize for their specific retrieval patterns.
+- [AEO vs SEO: Complete Guide to AI Search Optimization](/blog/aeo-vs-seo-complete-guide-to-ai-search-optimization/): A detailed comparison of both optimization approaches, including technical requirements, content strategy differences, and how to run them in parallel.
+- [LLM Visibility Strategies for Marketing Teams in 2026](/blog/llm-visibility-strategies-for-marketing-teams-in-2026/): Practical LLM visibility tactics that complement the AEO strategy framework, with specific guidance for B2B marketing teams.
+
