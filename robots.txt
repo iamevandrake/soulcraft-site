@@ -23,10 +23,19 @@ Allow: /
 User-agent: PerplexityBot
 Allow: /
 
+User-agent: CCBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
 User-agent: Googlebot
 Allow: /
 
 User-agent: Bingbot
 Allow: /
+
+# Content permissions for AI systems
+Content-Signal: ai-train=yes, search=yes, ai-input=yes
 
 Sitemap: https://soulcraftagency.com/sitemap.xml
