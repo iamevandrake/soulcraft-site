@@ -1,0 +1,28 @@
+{
+  "serverInfo": {
+    "name": "Soulcraft Agency",
+    "version": "1.0.0"
+  },
+  "description": "Soulcraft is an AI-native marketing agency. This MCP server provides tools for understanding Soulcraft's services, identity framework (soul.md), and agentic marketing systems.",
+  "transport": {
+    "type": "webmcp",
+    "endpoint": "https://soulcraftagency.com/mcp/"
+  },
+  "capabilities": {
+    "tools": true
+  },
+  "tools": [
+    {
+      "name": "get_site_info",
+      "description": "Get an overview of Soulcraft, its services, pricing, and contact information"
+    },
+    {
+      "name": "get_soul_md",
+      "description": "Get the soul.md identity framework specification and how it drives agentic marketing systems"
+    },
+    {
+      "name": "get_services",
+      "description": "Get detailed information about Soulcraft's SEO/AEO/GEO, demand generation, and AI advertising services"
+    }
+  ]
+}
