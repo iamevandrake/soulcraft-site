@@ -7,7 +7,7 @@ permalink: /blog/llm-visibility-strategies-for-marketing-teams-in-2026/
 keywords: "llm visibility"
 og_title: "LLM Visibility Strategies for Marketing Teams in 2026"
 og_description: "Master LLM visibility for marketing success. Learn how to optimize content for AI-powered systems and stay ahead of competitors in 2026's evolving digital landscape."
-schema_markup: '{"@context": "https://schema.org", "@type": "Article", "headline": "LLM Visibility Strategies for Marketing Teams in 2026", "description": "The marketing landscape has fundamentally shifted. While you've been optimizing for Google's algorithms, your prospects are increasingly turning to AI-powered systems to find solutions.", "author": {"@type": "Organization", "name": "Marketing Team"}, "datePublished": "2024-12-19", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://example.com/llm-visibility-strategies-marketing-teams-2026"}, "keywords": "llm visibility, marketing strategies, AI optimization, large language models, digital marketing"}'
+schema_markup: '{"@context": "https://schema.org", "@type": "Article", "headline": "LLM Visibility Strategies for Marketing Teams in 2026", "description": "The marketing landscape has fundamentally shifted. While you''ve been optimizing for Google''s algorithms, your prospects are increasingly turning to AI-powered systems to find solutions.", "author": {"@type": "Organization", "name": "Marketing Team"}, "datePublished": "2024-12-19", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://example.com/llm-visibility-strategies-marketing-teams-2026"}, "keywords": "llm visibility, marketing strategies, AI optimization, large language models, digital marketing"}'
 ---
 
 # LLM Visibility Strategies for Marketing Teams in 2026
