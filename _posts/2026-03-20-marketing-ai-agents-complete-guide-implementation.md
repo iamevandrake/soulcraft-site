@@ -91,7 +91,7 @@ The quantifiable advantages of marketing AI agents extend far beyond simple task
 
 **Performance Improvements**: Agents process data faster and more comprehensively than human teams. Campaign optimization agents typically improve conversion rates by 15-35% within 60-90 days of implementation by identifying and acting on optimization opportunities humans miss.
 
-**Scalability Without Headcount**: The most significant benefit is scaling marketing operations without proportional increases in team size. Companies can 3x their marketing output while adding only specialized oversight roles rather than entire departments. The [AI marketing automation ROI data](/blog/ai-marketing-automation-roi-performance-data--case-studies/) shows how this plays out across real implementations.
+**Scalability Without Headcount**: The most significant benefit is scaling marketing operations without proportional increases in team size. Companies can 3x their marketing output while adding only specialized oversight roles rather than entire departments. The [AI marketing automation ROI data](/blog/ai-marketing-automation-roi-performance-data-case-studies/) shows how this plays out across real implementations.
 
 ## Real-World Marketing AI Agent Use Cases
 

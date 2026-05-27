@@ -209,7 +209,7 @@ For marketing leaders at growth-stage companies, AI marketing automation represe
 ## Related Posts
 
 - [What Is Agentic Marketing? AI-Powered Growth Systems Guide](/blog/what-is-agentic-marketing-ai-powered-growth-systems-guide/): Explores the autonomous agent architecture that powers modern AI marketing automation, including how decision-making engines work across marketing functions.
-- [AI Marketing Automation ROI: Performance Data and Case Studies](/blog/ai-marketing-automation-roi-performance-data--case-studies/): Benchmarks and real implementation data showing the efficiency gains and cost savings companies achieve with AI marketing automation.
+- [AI Marketing Automation ROI: Performance Data and Case Studies](/blog/ai-marketing-automation-roi-performance-data-case-studies/): Benchmarks and real implementation data showing the efficiency gains and cost savings companies achieve with AI marketing automation.
 - [Marketing AI Agents: Complete Guide and Implementation](/blog/marketing-ai-agents-complete-guide-implementation/): Details the specific types of AI agents used in marketing automation, from SEO and content agents to lead scoring and campaign management.
 
 ## FAQ

@@ -269,7 +269,7 @@ The future belongs to companies that can optimize for both traditional search en
 
 ## Related Posts
 
-- [Answer Engine Optimization: The Complete 2026 Guide](/blog/answer-engine-optimization-complete-guide/): The definitive AEO strategy framework, covering the four layers of identity, content, technical foundation, and authority signals that make AEO programs work.
+- [Answer Engine Optimization: The Complete 2026 Guide](/learn/answer-engine-optimization-complete-guide/): The definitive AEO strategy framework, covering the four layers of identity, content, technical foundation, and authority signals that make AEO programs work.
 - [Generative Engine Optimization: Complete Guide to GEO](/blog/generative-engine-optimization-complete-guide-to-geo/): The GEO perspective on AI search optimization, covering how generative engines select and cite content with specific technical implementation guidance.
 - [AEO vs SEO: Key Differences for Modern Marketers](/blog/aeo-vs-seo-key-differences-for-modern-marketers/): A focused comparison of the two optimization approaches, including resource allocation recommendations and when to prioritize each for your business.
 

@@ -21,7 +21,7 @@ This comprehensive guide explores how generative engine optimization is reshapin
 
 The fundamental difference lies in how search engines now function. Traditional search engines index pages and rank them based on relevance and authority signals. Generative engines, however, use LLMs to analyze multiple sources, extract relevant information, synthesize coherent responses, and provide citations -- creating an entirely new optimization challenge.
 
-Where SEO optimizes for clicks and rankings, generative engine optimization optimizes for selection and citation. This is closely related to [answer engine optimization](/blog/answer-engine-optimization-complete-guide/), which focuses on the same retrieval mechanisms with particular emphasis on AI assistant responses. This shift represents the most significant change in search behavior since Google's original PageRank algorithm, requiring marketers to rethink their entire approach to content optimization and search visibility.
+Where SEO optimizes for clicks and rankings, generative engine optimization optimizes for selection and citation. This is closely related to [answer engine optimization](/learn/answer-engine-optimization-complete-guide/), which focuses on the same retrieval mechanisms with particular emphasis on AI assistant responses. This shift represents the most significant change in search behavior since Google's original PageRank algorithm, requiring marketers to rethink their entire approach to content optimization and search visibility.
 
 ## Why Generative Engine Optimization Matters More Than SEO in 2026
 
@@ -126,7 +126,7 @@ At Soulcraft, we've been building these agentic systems since recognizing that t
 
 ## Related Posts
 
-- [Answer Engine Optimization: The Complete 2026 Guide](/blog/answer-engine-optimization-complete-guide/): The closely related AEO framework that covers AI answer engine strategy across ChatGPT, Perplexity, and Gemini, with measurement approaches specific to those platforms.
+- [Answer Engine Optimization: The Complete 2026 Guide](/learn/answer-engine-optimization-complete-guide/): The closely related AEO framework that covers AI answer engine strategy across ChatGPT, Perplexity, and Gemini, with measurement approaches specific to those platforms.
 - [LLM Visibility Optimization: Make Your Content AI-Discoverable](/blog/llm-visibility-optimization-make-your-content-ai-discoverable/): Practical content structure and schema markup strategies that directly support GEO by improving how AI systems parse and extract your content.
 - [AEO vs SEO: Complete Guide to AI Search Optimization](/blog/aeo-vs-seo-complete-guide-to-ai-search-optimization/): Covers the relationship between generative engine optimization and traditional SEO, including how to run both approaches simultaneously.
 

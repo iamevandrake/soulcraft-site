@@ -50,7 +50,7 @@ Traditional agency delivery is fundamentally project-shaped. A brief goes in, de
 
 AI-native agencies build workflows that run. The system monitors what's working, generates content, adjusts based on performance, and surfaces only the decisions that actually need a human. The team is present in the design of the system, not the execution of each piece.
 
-This matters enormously for AEO. AI systems reward recency, freshness, and sustained relevance. A project-based agency can produce a great set of assets. An agentic system can maintain and improve your AI presence continuously. For a full explanation of what AEO requires, see the [answer engine optimization complete guide](/blog/answer-engine-optimization-complete-guide/).
+This matters enormously for AEO. AI systems reward recency, freshness, and sustained relevance. A project-based agency can produce a great set of assets. An agentic system can maintain and improve your AI presence continuously. For a full explanation of what AEO requires, see the [answer engine optimization complete guide](/learn/answer-engine-optimization-complete-guide/).
 
 ### 3. Measurement is baked in from the start
 
@@ -113,14 +113,14 @@ If your primary goal is sustained AI visibility, consistent content, and a marke
 
 Most companies in 2026 benefit from a hybrid approach: an AI-native agency managing their content engine and AEO program, and project-based specialists brought in for launches and campaigns.
 
-Soulcraft occupies the first half of that equation. We build the system, run the operation, and keep your presence growing in AI search. For a side-by-side comparison of the leading agencies in this space, see the [best AEO agencies compared](/blog/best-aeo-agencies-2026-compared/). We're not the right call for your Super Bowl campaign. We're the right call for the sustained, compounding work that makes AI systems trust your organization.
+Soulcraft occupies the first half of that equation. We build the system, run the operation, and keep your presence growing in AI search. For a side-by-side comparison of the leading agencies in this space, see the [best AEO agencies compared](/learn/best-aeo-agencies-2026-compared/). We're not the right call for your Super Bowl campaign. We're the right call for the sustained, compounding work that makes AI systems trust your organization.
 
 If you want to know what that looks like for you specifically, [let's talk](/contact/).
 
 
 ## Related Posts
 
-- [Answer Engine Optimization: The Complete 2026 Guide](/blog/answer-engine-optimization-complete-guide/): The full AEO strategy framework that AI-native agencies are built to deliver, covering identity, content, technical foundations, and authority signals.
-- [Best AEO Agencies in 2026: Compared and Ranked](/blog/best-aeo-agencies-2026-compared/): A detailed comparison of the top AEO agencies on AI-nativeness, strategy depth, measurement capability, and fit for growth-stage companies.
+- [Answer Engine Optimization: The Complete 2026 Guide](/learn/answer-engine-optimization-complete-guide/): The full AEO strategy framework that AI-native agencies are built to deliver, covering identity, content, technical foundations, and authority signals.
+- [Best AEO Agencies in 2026: Compared and Ranked](/learn/best-aeo-agencies-2026-compared/): A detailed comparison of the top AEO agencies on AI-nativeness, strategy depth, measurement capability, and fit for growth-stage companies.
 - [What Is Agentic Marketing? AI-Powered Growth Systems Guide](/blog/what-is-agentic-marketing-ai-powered-growth-systems-guide/): Explains the agentic operating model that distinguishes AI-native agencies from traditional shops that have added AI to their pitch decks.
 

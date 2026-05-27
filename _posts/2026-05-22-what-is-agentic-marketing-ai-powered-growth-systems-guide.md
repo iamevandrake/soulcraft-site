@@ -147,7 +147,7 @@ Implementing agentic marketing requires strategic decision-making around technol
 
 - [Marketing AI Agents: Complete Guide and Implementation](/blog/marketing-ai-agents-complete-guide-implementation/): Covers the specific agent types that make up agentic marketing systems, including SEO, content, lead scoring, and campaign management agents, with implementation timelines and ROI data.
 - [Agentic Marketing Systems: Build vs Buy Guide](/blog/agentic-marketing-systems-build-vs-buy-guide/): A practical decision framework for growth-stage companies evaluating whether to build agentic systems in-house or partner with an agency, including detailed cost comparisons.
-- [AI Marketing Automation ROI: Performance Data and Case Studies](/blog/ai-marketing-automation-roi-performance-data--case-studies/): Real-world performance benchmarks from agentic system implementations, showing how companies achieve 150-200% ROI improvements within the first year.
+- [AI Marketing Automation ROI: Performance Data and Case Studies](/blog/ai-marketing-automation-roi-performance-data-case-studies/): Real-world performance benchmarks from agentic system implementations, showing how companies achieve 150-200% ROI improvements within the first year.
 
 ## Frequently Asked Questions
 

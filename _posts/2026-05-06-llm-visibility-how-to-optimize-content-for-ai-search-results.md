@@ -26,7 +26,7 @@ Unlike traditional SEO visibility, which focuses on ranking positions in search 
 
 The business impact is significant. Companies with strong LLM visibility report 35% higher qualified lead generation from organic channels compared to those focused solely on traditional SEO metrics. When prospects research solutions using AI tools, they're more likely to consider vendors whose content consistently appears in AI-generated recommendations and comparisons.
 
-LLM visibility differs from traditional SEO in three critical ways. For the full strategic context, see [answer engine optimization](/blog/answer-engine-optimization-complete-guide/), which covers how to build an AI search presence across all major platforms.
+LLM visibility differs from traditional SEO in three critical ways. For the full strategic context, see [answer engine optimization](/learn/answer-engine-optimization-complete-guide/), which covers how to build an AI search presence across all major platforms.
 
 **Content Selection vs. Ranking:** While search engines rank entire pages, LLMs extract specific facts, quotes, and insights from content to synthesize responses. A page ranking #15 might contribute more to LLM responses than the #1 result if it contains more quotable, authoritative statements.
 

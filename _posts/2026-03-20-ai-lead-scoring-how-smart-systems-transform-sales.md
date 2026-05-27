@@ -51,7 +51,7 @@ Manual lead scoring relies on predetermined rules and point assignments based on
 - Continuous learning improves accuracy with every new data point
 - Predictive capabilities identify high-value prospects before they show obvious buying signals
 
-The performance difference is substantial. Companies using AI lead scoring typically see 30-50% improvements in lead conversion rates and 25% reductions in sales cycle length compared to manual methods. For a broader look at how these systems pay off, see the [AI marketing automation ROI data and case studies](/blog/ai-marketing-automation-roi-performance-data--case-studies/). More importantly, AI systems scale effortlessly -- handling 10,000 leads as effectively as 100 leads without additional human resources.
+The performance difference is substantial. Companies using AI lead scoring typically see 30-50% improvements in lead conversion rates and 25% reductions in sales cycle length compared to manual methods. For a broader look at how these systems pay off, see the [AI marketing automation ROI data and case studies](/blog/ai-marketing-automation-roi-performance-data-case-studies/). More importantly, AI systems scale effortlessly -- handling 10,000 leads as effectively as 100 leads without additional human resources.
 
 ## Key Benefits of Implementing AI Lead Scoring
 
@@ -144,7 +144,7 @@ The future of AI lead scoring lies in broader agentic marketing systems that han
 
 - [What Is Agentic Marketing? AI-Powered Growth Systems Guide](/blog/what-is-agentic-marketing-ai-powered-growth-systems-guide/): Explains the broader agentic marketing framework that AI lead scoring fits into, including how autonomous agents coordinate across marketing functions.
 - [AI Marketing Automation: Complete Guide for 2026](/blog/ai-marketing-automation-complete-guide-for-2026/): Covers the full spectrum of AI-driven marketing automation, including lead nurturing and campaign optimization that complement lead scoring systems.
-- [AI Marketing Automation ROI: Performance Data and Case Studies](/blog/ai-marketing-automation-roi-performance-data--case-studies/): Real-world performance data showing how AI systems reduce cost per qualified lead and improve conversion rates.
+- [AI Marketing Automation ROI: Performance Data and Case Studies](/blog/ai-marketing-automation-roi-performance-data-case-studies/): Real-world performance data showing how AI systems reduce cost per qualified lead and improve conversion rates.
 
 ---
 

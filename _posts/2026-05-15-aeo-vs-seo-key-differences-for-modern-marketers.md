@@ -14,7 +14,7 @@ schema_markup: |
 
 The digital marketing landscape has evolved dramatically with the rise of AI-powered search experiences. As marketing leaders navigate this transformation, understanding the differences between Answer Engine Optimization (AEO) and traditional Search Engine Optimization (SEO) has become critical for strategic success. The AEO vs SEO debate isn't about choosing one over the other -- it's about understanding when and how to deploy each approach effectively in your marketing strategy.
 
-While SEO has dominated marketing strategies for decades, AEO represents the future of search optimization, designed specifically for AI assistants and generative search engines. For the complete AEO strategy framework, see the [answer engine optimization guide](/blog/answer-engine-optimization-complete-guide/). For growth-stage companies allocating limited resources, the question isn't whether these approaches matter, but how to balance investment between traditional search optimization and AI-powered search experiences.
+While SEO has dominated marketing strategies for decades, AEO represents the future of search optimization, designed specifically for AI assistants and generative search engines. For the complete AEO strategy framework, see the [answer engine optimization guide](/learn/answer-engine-optimization-complete-guide/). For growth-stage companies allocating limited resources, the question isn't whether these approaches matter, but how to balance investment between traditional search optimization and AI-powered search experiences.
 
 ## What Are AEO and SEO?
 
@@ -110,7 +110,7 @@ The future belongs to marketing organizations that understand both approaches an
 ## Related Posts
 
 - [AEO vs SEO: Complete Guide to AI Search Optimization](/blog/aeo-vs-seo-complete-guide-to-ai-search-optimization/): A deeper dive into the AEO vs SEO comparison, including integrated strategy components, resource allocation frameworks, and how agentic systems manage both simultaneously.
-- [Answer Engine Optimization: The Complete 2026 Guide](/blog/answer-engine-optimization-complete-guide/): The full AEO strategy framework, covering all four program layers from identity through authority signals, with specific measurement guidance.
+- [Answer Engine Optimization: The Complete 2026 Guide](/learn/answer-engine-optimization-complete-guide/): The full AEO strategy framework, covering all four program layers from identity through authority signals, with specific measurement guidance.
 - [ChatGPT SEO: How to Optimize Content for AI Language Models](/blog/chatgpt-seo-how-to-optimize-content-for-ai-language-models/): Practical optimization strategies for the specific AI platforms that AEO targets, including ChatGPT, Claude, and Perplexity.
 
 ## Frequently Asked Questions

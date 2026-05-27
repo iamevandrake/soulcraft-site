@@ -26,7 +26,7 @@ AI language models retrieve information through fundamentally different processe
 
 This matters because user behavior is rapidly shifting toward AI-assisted research and decision-making. Business professionals increasingly turn to ChatGPT for market analysis, strategic recommendations, and technical guidance. When your content appears in these AI responses, you gain direct access to decision-makers at the exact moment they're seeking solutions.
 
-The business impact extends beyond visibility. Companies that master ChatGPT SEO establish themselves as authoritative sources in AI-mediated conversations. This positions them well across all major AI platforms, which is the goal of [answer engine optimization](/blog/answer-engine-optimization-complete-guide/) more broadly. This positioning translates to increased brand recognition, thought leadership, and ultimately, more qualified leads from prospects who discovered their expertise through AI recommendations.
+The business impact extends beyond visibility. Companies that master ChatGPT SEO establish themselves as authoritative sources in AI-mediated conversations. This positions them well across all major AI platforms, which is the goal of [answer engine optimization](/learn/answer-engine-optimization-complete-guide/) more broadly. This positioning translates to increased brand recognition, thought leadership, and ultimately, more qualified leads from prospects who discovered their expertise through AI recommendations.
 
 ## How ChatGPT Finds and Uses Content
 
@@ -160,7 +160,7 @@ For growth-stage companies seeking to implement comprehensive ChatGPT SEO strate
 ## Related Posts
 
 - [LLM SEO: Complete Guide to Large Language Model Optimization](/blog/llm-seo-complete-guide-to-large-language-model-optimization/): The broader LLM optimization framework that ChatGPT SEO fits into, covering citation-optimized architecture, structured data, and cross-platform performance tracking.
-- [Answer Engine Optimization: The Complete 2026 Guide](/blog/answer-engine-optimization-complete-guide/): The strategic AEO framework that contextualizes ChatGPT SEO within a full AI search presence program covering identity, content, technical, and authority layers.
+- [Answer Engine Optimization: The Complete 2026 Guide](/learn/answer-engine-optimization-complete-guide/): The strategic AEO framework that contextualizes ChatGPT SEO within a full AI search presence program covering identity, content, technical, and authority layers.
 - [LLM Visibility: How to Optimize Content for AI Search Results](/blog/llm-visibility-how-to-optimize-content-for-ai-search-results/): Practical content structure, schema markup, and distribution strategies that apply across ChatGPT and other major AI platforms.
 
 ## Frequently Asked Questions

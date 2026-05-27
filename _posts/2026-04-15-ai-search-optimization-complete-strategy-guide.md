@@ -73,7 +73,7 @@ AI algorithms prefer topical authority over scattered content. Structure your co
 
 **Pillar Content Strategy**: Create comprehensive cornerstone content that covers broad topics thoroughly, then develop supporting content that explores specific aspects in detail. This structure helps AI systems understand your expertise depth and topical authority.
 
-**Internal Linking for Semantic Relationships**: Link related content using descriptive anchor text that helps AI understand content relationships. This is the same principle that makes [answer engine optimization](/blog/answer-engine-optimization-complete-guide/) effective for AI-powered search systems. Instead of "click here" or "read more," use phrases like "advanced email automation strategies" or "integration setup procedures."
+**Internal Linking for Semantic Relationships**: Link related content using descriptive anchor text that helps AI understand content relationships. This is the same principle that makes [answer engine optimization](/learn/answer-engine-optimization-complete-guide/) effective for AI-powered search systems. Instead of "click here" or "read more," use phrases like "advanced email automation strategies" or "integration setup procedures."
 
 ### Intent Mapping for AI Algorithms
 
@@ -250,7 +250,7 @@ Implementing sustainable ai search optimization requires strategic decisions abo
 
 ## Related Posts
 
-- [Answer Engine Optimization: The Complete 2026 Guide](/blog/answer-engine-optimization-complete-guide/): Covers the AEO layer of AI search, including how to optimize for retrieval in AI-generated answers rather than just traditional search rankings.
+- [Answer Engine Optimization: The Complete 2026 Guide](/learn/answer-engine-optimization-complete-guide/): Covers the AEO layer of AI search, including how to optimize for retrieval in AI-generated answers rather than just traditional search rankings.
 - [LLM Visibility: How AI Models See Your Marketing Content](/blog/llm-visibility-how-ai-models-see-your-marketing-content/): Explains how large language models process and evaluate content, which is the underlying mechanism behind AI search optimization.
 - [Generative Engine Optimization: Complete Guide to GEO](/blog/generative-engine-optimization-complete-guide-to-geo/): The parallel framework to AI search optimization, focused specifically on how generative engines select and cite content in their responses.
 
