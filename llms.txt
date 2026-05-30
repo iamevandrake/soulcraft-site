@@ -8,6 +8,7 @@ Soulcraft builds autonomous marketing systems for Series A through C startups an
 
 - [Soulcraft Home](https://soulcraftagency.com/): Overview, soul.md scoring tool, pricing tiers, and core philosophy
 - [Services](https://soulcraftagency.com/services/): Full breakdown of Soulcraft's agentic marketing services
+- [EntityMap](https://soulcraftagency.com/entitymap.json): Structured, entity-first index of Soulcraft's knowledge for AI systems and RAG pipelines, conforming to EntityMap v1.0. Human-readable view at https://soulcraftagency.com/entitymap.html
 
 ## Founder
 

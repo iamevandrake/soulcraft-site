@@ -39,3 +39,6 @@ Allow: /
 Content-Signal: ai-train=yes, search=yes, ai-input=yes
 
 Sitemap: https://soulcraftagency.com/sitemap.xml
+
+# Entity-first knowledge index for AI systems (EntityMap v1.0)
+EntityMap: https://soulcraftagency.com/entitymap.json

@@ -1,0 +1,359 @@
+{
+  "version": "1.0",
+  "schema": "https://entitymap.org/spec/v1.0",
+  "publisher": {
+    "name": "Soulcraft",
+    "url": "https://soulcraftagency.com",
+    "sameAs": "https://www.wikidata.org/wiki/Q139981209"
+  },
+  "generated": "2026-05-29T00:00:00Z",
+  "profile": "core",
+  "verificationStatus": "self-declared",
+  "entities": [
+    {
+      "entityId": "e_001",
+      "@type": "Organization",
+      "name": "Soulcraft",
+      "alternateName": "Soulcraft Agency",
+      "description": "Soulcraft is an AI-native marketing agency that builds agentic marketing systems driven by a company's identity. Its work spans SEO, AEO, and GEO, demand and content generation, and AI advertising, all anchored to a structured soul.md identity file.",
+      "sameAs": "https://www.wikidata.org/wiki/Q139981209",
+      "status": "active",
+      "maturityStatus": "established",
+      "audienceType": "general",
+      "relations": [
+        { "predicate": "OFFERS", "targetId": "e_004", "targetName": "SEO / AEO / GEO" },
+        { "predicate": "OFFERS", "targetId": "e_005", "targetName": "Demand and Content Generation" },
+        { "predicate": "OFFERS", "targetId": "e_006", "targetName": "AI Advertising" },
+        { "predicate": "OFFERS", "targetId": "e_008", "targetName": "soul.md Score" },
+        {
+          "predicate": "TARGETS",
+          "targetId": "e_010",
+          "targetName": "Growth-stage technology, SaaS, and health and wellness companies",
+          "confidence": "declared",
+          "targetDescription": "Founders and marketing leaders at growth-stage companies who want autonomous systems rather than added agency headcount."
+        }
+      ],
+      "hasChunks": [
+        {
+          "chunkId": "c_001",
+          "text": "Soulcraft builds agentic marketing systems that sharpen your identity and put you in the AI answers your customers are already reading.",
+          "sourceUrl": "https://soulcraftagency.com/",
+          "pageTitle": "Soulcraft: Agentic Marketing Systems With Soul",
+          "publisher": "Soulcraft",
+          "retrieved": "2026-05-29T00:00:00Z",
+          "contentType": "definition",
+          "audienceType": "general"
+        },
+        {
+          "chunkId": "c_002",
+          "text": "Soulcraft doesn't bolt AI onto old processes. We build from the premise that agents do the work, and the soul is what makes that work feel human.",
+          "sourceUrl": "https://soulcraftagency.com/",
+          "pageTitle": "Soulcraft: Agentic Marketing Systems With Soul",
+          "publisher": "Soulcraft",
+          "retrieved": "2026-05-29T00:00:00Z",
+          "contentType": "evidence",
+          "audienceType": "general"
+        },
+        {
+          "chunkId": "c_003",
+          "text": "Traditional agencies charge for human hours. Soulcraft charges for autonomous systems. You get around the clock production, not nine to five project management. The systems compound in effectiveness over time, which human teams simply cannot replicate at scale.",
+          "sourceUrl": "https://soulcraftagency.com/",
+          "pageTitle": "Soulcraft: Agentic Marketing Systems With Soul",
+          "publisher": "Soulcraft",
+          "retrieved": "2026-05-29T00:00:00Z",
+          "contentType": "evidence",
+          "audienceType": "executive"
+        }
+      ]
+    },
+    {
+      "entityId": "e_002",
+      "@type": "ProprietaryTerm",
+      "name": "soul.md",
+      "alternateName": "soul.md file",
+      "description": "A soul.md is a structured identity file that captures a company's voice, values, positioning, audience, and competitive context. It is the single source of truth that every Soulcraft agentic system inherits and carries forward into the content it produces.",
+      "status": "active",
+      "maturityStatus": "established",
+      "audienceType": "technical",
+      "relations": [
+        { "predicate": "DESCRIBED_BY", "targetId": "e_001", "targetName": "Soulcraft" },
+        { "predicate": "ENABLES", "targetId": "e_007", "targetName": "Agentic Marketing" }
+      ],
+      "hasChunks": [
+        {
+          "chunkId": "c_004",
+          "text": "A soul.md is a structured document that captures your company's identity: voice, values, positioning, audience, and competitive context. It's the file that drives every agentic marketing system Soulcraft builds. Think of it as the DNA your marketing agents inherit.",
+          "sourceUrl": "https://soulcraftagency.com/",
+          "pageTitle": "Soulcraft: Agentic Marketing Systems With Soul",
+          "publisher": "Soulcraft",
+          "retrieved": "2026-05-29T00:00:00Z",
+          "contentType": "definition",
+          "audienceType": "technical"
+        },
+        {
+          "chunkId": "c_005",
+          "text": "When agents carry your soul.md, they don't produce generic content. They produce work that sounds like you, thinks like you, and reaches the people you care about, autonomously, around the clock.",
+          "sourceUrl": "https://soulcraftagency.com/",
+          "pageTitle": "Soulcraft: Agentic Marketing Systems With Soul",
+          "publisher": "Soulcraft",
+          "retrieved": "2026-05-29T00:00:00Z",
+          "contentType": "evidence",
+          "audienceType": "general"
+        }
+      ]
+    },
+    {
+      "entityId": "e_003",
+      "@type": "SoftwareProduct",
+      "name": "Opensoul",
+      "alternateName": "opensoul",
+      "canonicalLabel": "agentic marketing stack",
+      "description": "Opensoul is Soulcraft's open-source agentic marketing stack (MIT licensed). It deploys a full AI marketing team of six specialized agents (Director, Strategist, Creative, Producer, Growth, and Analyst) that plan and execute campaigns autonomously while the operator approves strategy.",
+      "status": "active",
+      "maturityStatus": "established",
+      "audienceType": "technical",
+      "relations": [
+        { "predicate": "PART_OF", "targetId": "e_001", "targetName": "Soulcraft" },
+        { "predicate": "DEPENDS_ON", "targetId": "e_002", "targetName": "soul.md" },
+        { "predicate": "ENABLES", "targetId": "e_005", "targetName": "Demand and Content Generation" }
+      ],
+      "hasChunks": [
+        {
+          "chunkId": "c_006",
+          "text": "Deploy a full marketing team: Director, Strategist, Creative, Producer, Growth, and Analyst. All AI agents working together autonomously. Manage outcomes, not prompts.",
+          "sourceUrl": "https://soulcraftagency.com/opensoul/",
+          "pageTitle": "Opensoul: An AI Agency That Runs Itself | Soulcraft",
+          "publisher": "Soulcraft",
+          "retrieved": "2026-05-29T00:00:00Z",
+          "contentType": "definition",
+          "audienceType": "technical"
+        },
+        {
+          "chunkId": "c_007",
+          "text": "Agents wake on schedule, check their queue, produce work, and hand off. Around the clock. Every decision, every draft, every revision is traced and explained.",
+          "sourceUrl": "https://soulcraftagency.com/opensoul/",
+          "pageTitle": "Opensoul: An AI Agency That Runs Itself | Soulcraft",
+          "publisher": "Soulcraft",
+          "retrieved": "2026-05-29T00:00:00Z",
+          "contentType": "evidence",
+          "audienceType": "technical"
+        }
+      ]
+    },
+    {
+      "entityId": "e_004",
+      "@type": "Service",
+      "name": "SEO / AEO / GEO",
+      "alternateName": "Agentic SEO",
+      "canonicalLabel": "search optimization",
+      "description": "Soulcraft's autonomous search service that optimizes how a brand appears across traditional search, AI-generated answers (AEO), and generative search engines (GEO). Agents research keywords, identify content gaps, and create and publish optimized pages continuously.",
+      "status": "active",
+      "audienceType": "technical",
+      "relations": [
+        { "predicate": "PART_OF", "targetId": "e_001", "targetName": "Soulcraft" }
+      ],
+      "hasChunks": [
+        {
+          "chunkId": "c_008",
+          "text": "Your search presence, run by agents. We deploy autonomous systems that research keywords, identify content gaps, create optimized pages, and publish them continuously, across Google, AI Overviews, and generative search engines.",
+          "sourceUrl": "https://soulcraftagency.com/services/",
+          "pageTitle": "Agentic Marketing Services: SEO, Demand Gen & Content | Soulcraft",
+          "publisher": "Soulcraft",
+          "retrieved": "2026-05-29T00:00:00Z",
+          "contentType": "definition",
+          "audienceType": "technical"
+        },
+        {
+          "chunkId": "c_009",
+          "text": "We optimize how you appear in traditional search, AI-generated answers, and generative search. One engine, three surfaces.",
+          "sourceUrl": "https://soulcraftagency.com/",
+          "pageTitle": "Soulcraft: Agentic Marketing Systems With Soul",
+          "publisher": "Soulcraft",
+          "retrieved": "2026-05-29T00:00:00Z",
+          "contentType": "evidence",
+          "audienceType": "general"
+        }
+      ]
+    },
+    {
+      "entityId": "e_005",
+      "@type": "Service",
+      "name": "Demand and Content Generation",
+      "alternateName": "Demand Generation",
+      "description": "Soulcraft's demand generation and content service. It wires intent signals, lead scoring, CRM and email automation, and multi-channel content production into a system that creates and distributes content in a brand's voice and reaches prospects before they fill out a form.",
+      "status": "active",
+      "audienceType": "technical",
+      "relations": [
+        { "predicate": "PART_OF", "targetId": "e_001", "targetName": "Soulcraft" },
+        { "predicate": "DEPENDS_ON", "targetId": "e_003", "targetName": "Opensoul" }
+      ],
+      "hasChunks": [
+        {
+          "chunkId": "c_010",
+          "text": "Pipeline that builds itself. We wire together intent signals, lead scoring, and outbound sequences into a system that identifies your best prospects and reaches them before they ever fill out a form.",
+          "sourceUrl": "https://soulcraftagency.com/services/",
+          "pageTitle": "Agentic Marketing Services: SEO, Demand Gen & Content | Soulcraft",
+          "publisher": "Soulcraft",
+          "retrieved": "2026-05-29T00:00:00Z",
+          "contentType": "definition",
+          "audienceType": "technical"
+        },
+        {
+          "chunkId": "c_011",
+          "text": "The opensoul system generates and distributes multi-channel content: blog, social, email, landing pages. All in your voice.",
+          "sourceUrl": "https://soulcraftagency.com/",
+          "pageTitle": "Soulcraft: Agentic Marketing Systems With Soul",
+          "publisher": "Soulcraft",
+          "retrieved": "2026-05-29T00:00:00Z",
+          "contentType": "evidence",
+          "audienceType": "general"
+        }
+      ]
+    },
+    {
+      "entityId": "e_006",
+      "@type": "Service",
+      "name": "AI Advertising",
+      "description": "Soulcraft's emerging-channel advertising service that places client products inside AI platforms such as ChatGPT and Perplexity by connecting product feeds to those services, so a brand's offerings surface when users ask relevant questions.",
+      "status": "active",
+      "audienceType": "general",
+      "relations": [
+        { "predicate": "PART_OF", "targetId": "e_001", "targetName": "Soulcraft" }
+      ],
+      "hasChunks": [
+        {
+          "chunkId": "c_012",
+          "text": "Platforms like ChatGPT and Perplexity are beginning to offer advertising placements. Soulcraft connects your product feeds to these services so your offerings appear when users ask relevant questions.",
+          "sourceUrl": "https://soulcraftagency.com/",
+          "pageTitle": "Soulcraft: Agentic Marketing Systems With Soul",
+          "publisher": "Soulcraft",
+          "retrieved": "2026-05-29T00:00:00Z",
+          "contentType": "definition",
+          "audienceType": "general"
+        },
+        {
+          "chunkId": "c_013",
+          "text": "Place your products inside ChatGPT, Perplexity, and emerging AI platforms. A channel that barely exists yet. We're already there.",
+          "sourceUrl": "https://soulcraftagency.com/",
+          "pageTitle": "Soulcraft: Agentic Marketing Systems With Soul",
+          "publisher": "Soulcraft",
+          "retrieved": "2026-05-29T00:00:00Z",
+          "contentType": "evidence",
+          "audienceType": "general"
+        }
+      ]
+    },
+    {
+      "entityId": "e_007",
+      "@type": "ProprietaryTerm",
+      "name": "Agentic Marketing",
+      "alternateName": "agentic marketing",
+      "canonicalLabel": "agentic marketing",
+      "description": "Agentic marketing is an approach in which autonomous AI systems (rather than humans driving every step) produce content, optimize search presence, distribute across channels, and learn from performance, all guided by a brand's soul.md identity file.",
+      "maturityStatus": "proposed",
+      "audienceType": "technical",
+      "status": "active",
+      "relations": [
+        { "predicate": "DESCRIBED_BY", "targetId": "e_001", "targetName": "Soulcraft" },
+        { "predicate": "DEPENDS_ON", "targetId": "e_002", "targetName": "soul.md" }
+      ],
+      "hasChunks": [
+        {
+          "chunkId": "c_014",
+          "text": "Agentic means the systems act autonomously. They don't wait for instructions. They produce content, optimize search presence, distribute across channels, and learn from performance data, all on their own, guided by your soul.md identity file.",
+          "sourceUrl": "https://soulcraftagency.com/",
+          "pageTitle": "Soulcraft: Agentic Marketing Systems With Soul",
+          "publisher": "Soulcraft",
+          "retrieved": "2026-05-29T00:00:00Z",
+          "contentType": "definition",
+          "audienceType": "technical"
+        }
+      ]
+    },
+    {
+      "entityId": "e_008",
+      "@type": "Metric",
+      "name": "soul.md Score",
+      "alternateName": "Soul Report",
+      "description": "A free identity score Soulcraft generates for a domain, rating Identity Clarity, Voice Consistency, AI Readiness, Positioning, and Content Signal, with tailored recommendations for how clearly AI systems can understand and represent a brand.",
+      "status": "active",
+      "audienceType": "general",
+      "relations": [
+        {
+          "predicate": "MEASURES",
+          "targetId": "e_002",
+          "targetName": "soul.md",
+          "targetDescription": "How clearly a company's identity comes through and how well AI systems can understand and represent it."
+        },
+        { "predicate": "DESCRIBED_BY", "targetId": "e_001", "targetName": "Soulcraft" }
+      ],
+      "hasChunks": [
+        {
+          "chunkId": "c_015",
+          "text": "Enter your domain. Get your soul.md identity score. Free. Your full soul.md includes 15+ tailored recommendations.",
+          "sourceUrl": "https://soulcraftagency.com/",
+          "pageTitle": "Soulcraft: Agentic Marketing Systems With Soul",
+          "publisher": "Soulcraft",
+          "retrieved": "2026-05-29T00:00:00Z",
+          "contentType": "definition",
+          "audienceType": "general"
+        },
+        {
+          "chunkId": "c_016",
+          "text": "AI Readiness: how well AI systems can understand and represent you. When someone asks ChatGPT about you, does it get you right?",
+          "sourceUrl": "https://soulcraftagency.com/",
+          "pageTitle": "Soulcraft: Agentic Marketing Systems With Soul",
+          "publisher": "Soulcraft",
+          "retrieved": "2026-05-29T00:00:00Z",
+          "contentType": "evidence",
+          "audienceType": "general"
+        }
+      ]
+    },
+    {
+      "entityId": "e_009",
+      "@type": "Person",
+      "name": "Evan Drake",
+      "description": "Evan Drake is the founder of Soulcraft. He spent two decades at the intersection of technology and marketing and built Soulcraft on the premise that a company's identity is its most valuable, and most shapeable, asset.",
+      "status": "active",
+      "audienceType": "general",
+      "relations": [
+        { "predicate": "AFFILIATED_WITH", "targetId": "e_001", "targetName": "Soulcraft" }
+      ],
+      "hasChunks": [
+        {
+          "chunkId": "c_017",
+          "text": "The most valuable asset a person or business possesses is its identity. And that identity isn't fixed. Identity evolves. It can be shaped, refined, tuned. That's the craft. (Evan Drake, Founder)",
+          "sourceUrl": "https://soulcraftagency.com/",
+          "pageTitle": "Soulcraft: Agentic Marketing Systems With Soul",
+          "publisher": "Soulcraft",
+          "retrieved": "2026-05-29T00:00:00Z",
+          "contentType": "evidence",
+          "audienceType": "general"
+        }
+      ]
+    },
+    {
+      "entityId": "e_010",
+      "@type": "ProprietaryTerm",
+      "name": "Growth-stage technology, SaaS, and health and wellness companies",
+      "canonicalLabel": "ideal customer profile",
+      "description": "Soulcraft's primary audience: founders and marketing leaders at growth-stage companies across B2B SaaS, professional services, technology, and health and wellness, who want autonomous systems that carry their identity rather than added agency headcount.",
+      "status": "active",
+      "audienceType": "executive",
+      "relations": [],
+      "hasChunks": [
+        {
+          "chunkId": "c_018",
+          "text": "Our clients span B2B SaaS, professional services, health and wellness brands, and emerging technology companies. What they share is ambition, clarity of purpose, and a willingness to let autonomous systems do what they do best.",
+          "sourceUrl": "https://soulcraftagency.com/",
+          "pageTitle": "Soulcraft: Agentic Marketing Systems With Soul",
+          "publisher": "Soulcraft",
+          "retrieved": "2026-05-29T00:00:00Z",
+          "contentType": "evidence",
+          "audienceType": "executive"
+        }
+      ]
+    }
+  ]
+}
