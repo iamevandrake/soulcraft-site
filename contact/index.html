@@ -161,11 +161,25 @@ footer { padding: 48px 0; border-top: 1px solid var(--border); }
 .reveal.visible { opacity: 1; transform: translateY(0); }
 
 @media (max-width: 768px) {
-  .nav-right a:not(.nav-cta-btn) { display: none; }
   .page-hero { padding: 60px 0 40px; }
   .contact-form { padding: 32px 24px; }
   .footer-row { flex-direction: column; gap: 20px; text-align: center; }
   .footer-links { justify-content: center; }
+}
+.nav-burger { display: none; flex-direction: column; justify-content: center; gap: 5px; width: 36px; height: 36px; background: none; border: none; cursor: pointer; padding: 4px; z-index: 110; }
+.nav-burger span { display: block; width: 22px; height: 2px; background: var(--text); border-radius: 2px; transition: transform 0.25s, opacity 0.25s; transform-origin: center; }
+.nav-burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-burger.open span:nth-child(2) { opacity: 0; }
+.nav-burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+.nav-drawer { display: none; position: fixed; top: 64px; left: 0; right: 0; background: rgba(10,10,10,0.97); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border-top: 1px solid var(--border); z-index: 99; padding: 24px; flex-direction: column; gap: 4px; }
+.nav-drawer.open { display: flex; }
+.nav-drawer a { color: var(--text); font-size: 16px; font-weight: 400; padding: 14px 8px; border-bottom: 1px solid var(--border); transition: color 0.2s; text-decoration: none; }
+.nav-drawer a:last-child { border-bottom: none; margin-top: 8px; }
+.nav-drawer a:hover { color: var(--accent); }
+.nav-drawer .nav-cta-btn { background: var(--accent); color: var(--black) !important; border-radius: 8px; text-align: center; font-weight: 600; padding: 14px; border-bottom: none; }
+@media (max-width: 768px) {
+  .nav-right { display: none; }
+  .nav-burger { display: flex; }
 }
 </style>
 </head>
@@ -186,12 +200,25 @@ footer { padding: 48px 0; border-top: 1px solid var(--border); }
       <a href="/services/">Services</a>
       <a href="/solutions/">Solutions</a>
       <a href="/industries/">Industries</a>
+      <a href="/learn/">Learn</a>
       <a href="/blog/">Blog</a>
       <a href="/opensoul/">Opensoul</a>
       <a href="/contact/" class="nav-cta-btn">Get Started</a>
     </div>
+    <button class="nav-burger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
+<div class="nav-drawer" id="nav-drawer">
+  <a href="/services/">Services</a>
+  <a href="/solutions/">Solutions</a>
+  <a href="/industries/">Industries</a>
+  <a href="/learn/">Learn</a>
+  <a href="/blog/">Blog</a>
+  <a href="/opensoul/">Opensoul</a>
+  <a href="/contact/" class="nav-cta-btn">Get Started</a>
+</div>
 
 <main>
   <div class="container">
@@ -370,6 +397,18 @@ var observer = new IntersectionObserver(function(entries) {
   });
 }, { threshold: 0.1 });
 reveals.forEach(function(el) { observer.observe(el); });
+</script>
+<script>
+(function() {
+  var burger = document.querySelector('.nav-burger');
+  var drawer = document.getElementById('nav-drawer');
+  if (!burger || !drawer) return;
+  burger.addEventListener('click', function() {
+    var open = drawer.classList.toggle('open');
+    burger.classList.toggle('open', open);
+    burger.setAttribute('aria-expanded', open);
+  });
+})();
 </script>
 </body>
 </html>
