@@ -289,7 +289,12 @@ nav .container { display: flex; align-items: center; justify-content: space-betw
 .opening::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 200px; background: linear-gradient(transparent, var(--black)); pointer-events: none; }
 .opening-inner { max-width: 700px; position: relative; z-index: 1; }
 .opening h1 { font-family: 'Playfair Display', serif; font-size: clamp(44px, 6vw, 72px); line-height: 1.1; color: var(--white); margin-bottom: 24px; font-weight: 400; }
-.opening h1 em { font-style: normal; color: var(--color-accent); font-weight: 700; background-image: linear-gradient(var(--color-accent-line), var(--color-accent-line)); background-size: 100% 2px; background-position: 0 92%; background-repeat: no-repeat; padding-bottom: 2px; }
+/* "with craft" — carved / letterpress into the paper */
+.opening h1 em { font-style: normal; color: var(--color-accent); font-weight: 700;
+  text-shadow:
+    0 1px 0 var(--color-surface),
+    0 -1px 1px oklch(22% 0.014 60 / 0.22),
+    0 2px 3px oklch(22% 0.014 60 / 0.14); }
 .opening .hero-sub { font-size: 20px; color: var(--muted); margin-bottom: 40px; line-height: 1.8; font-weight: 300; }
 
 /* Hero Soul Tool */
@@ -504,7 +509,7 @@ footer { padding: 48px 0; border-top: 1px solid var(--border); }
 <!-- Opening with integrated soul tool -->
 <section class="opening">
   <div class="opening-inner">
-    <h1 style="font-family:'Playfair Display',serif;font-size:clamp(44px,6vw,72px);line-height:1.1;color:var(--white);margin-bottom:24px;font-weight:400;">Give AI something&nbsp;worth<br><em>saying about you.</em></h1>
+    <h1 style="font-family:'Playfair Display',serif;font-size:clamp(44px,6vw,72px);line-height:1.1;color:var(--white);margin-bottom:24px;font-weight:400;">We optimize search and AI<br><em>with craft.</em></h1>
     <p class="hero-sub">Soulcraft builds agentic marketing systems that sharpen your identity and put you in the AI answers your customers are already reading.</p>
 
     <div class="hero-soul-tool" id="soul-tool">
