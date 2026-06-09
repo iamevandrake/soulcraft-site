@@ -273,6 +273,12 @@
   .logo-demo.light-bg .demo-logo svg path,
   .logo-demo.light-bg .demo-logo svg circle { stroke: var(--accent); }
   .logo-demo .demo-logo .logo-text span { color: var(--accent); }
+  /* Reversed (dark) lockup: mark + "Soul" go light so the full wordmark reads */
+  .logo-demo.dark-bg .demo-logo { color: var(--color-paper); }
+  .logo-demo.dark-bg .demo-logo .logo-text span { color: var(--color-accent-line); }
+  .logo-demo.dark-bg .demo-logo svg rect,
+  .logo-demo.dark-bg .demo-logo svg path { stroke: var(--color-paper); }
+  .logo-demo.dark-bg .demo-logo svg circle { fill: var(--color-paper); }
 
   .logo-icon-only {
     display: flex; gap: 16px; margin-bottom: 32px;
