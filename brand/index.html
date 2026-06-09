@@ -21,43 +21,79 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
+  /* Hallmark · macrostructure: Long Document/Catalogue · tone: editorial · theme: Editorial (light) */
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --black:       #0a0a0a;
-    --dark:        #111111;
-    --card:        #161616;
-    --border:      #222222;
-    --muted:       #555555;
-    --text:        #d0d0d0;
-    --white:       #f0f0f0;
-    --accent:      #c8a97e;
-    --accent-dim:  rgba(200,169,126,0.12);
-    --accent-glow: rgba(200,169,126,0.25);
-    --radius:      16px;
+    /* — Editorial palette (OKLCH source of truth) — */
+    --color-paper:        oklch(96.5% 0.012 83);   /* warm cream page */
+    --color-paper-2:      oklch(93.8% 0.014 80);   /* alt section band */
+    --color-surface:      oklch(99.2% 0.006 83);   /* card / input */
+    --color-ink:          oklch(22% 0.014 60);     /* headings, high-contrast */
+    --color-body:         oklch(40% 0.012 58);     /* paragraph text */
+    --color-muted:        oklch(55% 0.012 60);     /* secondary, labels */
+    --color-rule:         oklch(87% 0.012 75);     /* hairlines, borders */
+    --color-rule-strong:  oklch(78% 0.014 70);     /* emphasised divider */
+    --color-accent:       oklch(47% 0.13 52);      /* terracotta — links, CTA, emphasis */
+    --color-accent-deep:  oklch(40% 0.13 50);      /* accent hover */
+    --color-accent-soft:  oklch(93% 0.035 62);     /* accent tint background */
+    --color-accent-line:  oklch(70% 0.09 72);      /* gold hairline, decorative */
+    --color-on-accent:    oklch(97% 0.012 83);     /* text on accent fills */
+    --color-good:         oklch(52% 0.12 150);
+    --color-warn:         oklch(58% 0.17 28);
+
+    /* — Legacy aliases: existing markup references flip automatically — */
+    --black: var(--color-paper);
+    --dark: var(--color-paper-2);
+    --card: var(--color-surface);
+    --border: var(--color-rule);
+    --muted: var(--color-muted);
+    --text: var(--color-body);
+    --white: var(--color-ink);
+    --accent: var(--color-accent);
+    --accent-dim: var(--color-accent-soft);
+    --accent-glow: transparent;
+
+    /* — Type — */
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-body: 'Inter', system-ui, sans-serif;
+
+    /* — Spacing (4pt) — */
+    --space-xs: 8px; --space-sm: 16px; --space-md: 24px;
+    --space-lg: 48px; --space-xl: 96px; --space-2xl: 160px;
+
+    /* — Motion — */
+    --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+    --ease-in: cubic-bezier(0.55, 0, 1, 0.45);
+    --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+    --dur-fast: 0.18s; --dur-mid: 0.32s; --dur-slow: 0.8s;
+
+    --radius:      6px;
     --radius-sm:   10px;
     --radius-pill: 100px;
     --font-serif:  'Playfair Display', serif;
     --font-sans:   'Inter', sans-serif;
   }
 
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; overflow-x: clip; }
 
   body {
     font-family: var(--font-sans);
-    background: var(--black);
-    color: var(--text);
+    background: var(--color-paper);
+    color: var(--color-body);
     font-size: 16px;
     line-height: 1.6;
+    overflow-x: clip;
     -webkit-font-smoothing: antialiased;
   }
 
   a { color: inherit; text-decoration: none; }
+  :focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; }
 
   /* ── NAV ─────────────────────────────────────────────── */
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    background: rgba(10,10,10,0.85);
+    background: color-mix(in oklch, var(--color-paper) 88%, transparent);
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
     border-bottom: 1px solid var(--border);
@@ -66,7 +102,7 @@
   .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
   .logo { font-family: var(--font-serif); font-size: 20px; color: var(--white); display: flex; align-items: center; gap: 10px; }
   .logo-text span { color: var(--accent); }
-  .heartmark { width: 28px; height: 28px; flex-shrink: 0; }
+  .heartmark { width: 28px; height: 28px; flex-shrink: 0; color: var(--color-accent); }
   .nav-right { display: flex; gap: 24px; align-items: center; }
   .nav-right a { color: var(--muted); font-size: 13px; font-weight: 500; transition: color 0.2s; }
   .nav-right a:hover { color: var(--white); }
@@ -77,7 +113,7 @@
     position: sticky;
     top: 64px;
     z-index: 90;
-    background: rgba(10,10,10,0.92);
+    background: color-mix(in oklch, var(--color-paper) 92%, transparent);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--border);
@@ -139,8 +175,8 @@
     margin-bottom: 24px;
   }
   .page-hero h1 em {
-    font-style: italic;
-    color: var(--accent);
+    font-style: normal;
+    color: var(--color-accent);
   }
   .page-hero p {
     font-size: 17px;
@@ -210,10 +246,10 @@
     gap: 24px;
   }
   .logo-demo.light-bg {
-    background: #f0f0f0;
+    background: var(--color-paper-2);
   }
   .logo-demo.dark-bg {
-    background: var(--card);
+    background: var(--color-ink);
   }
   .logo-demo .logo-label {
     font-size: 11px;
@@ -222,7 +258,7 @@
     letter-spacing: 3px;
     color: var(--muted);
   }
-  .logo-demo.light-bg .logo-label { color: #999; }
+  .logo-demo.light-bg .logo-label { color: var(--color-muted); }
   .logo-demo .demo-logo {
     font-family: var(--font-serif);
     font-size: 26px;
@@ -231,7 +267,7 @@
     align-items: center;
     gap: 12px;
   }
-  .logo-demo.light-bg .demo-logo { color: #0a0a0a; }
+  .logo-demo.light-bg .demo-logo { color: var(--color-ink); }
   .logo-demo.light-bg .demo-logo .logo-text span { color: var(--accent); }
   .logo-demo.light-bg .demo-logo svg rect,
   .logo-demo.light-bg .demo-logo svg path,
@@ -284,8 +320,8 @@
     font-weight: 700;
     margin-top: 1px;
   }
-  .rule-icon.yes { background: rgba(200,169,126,0.15); color: var(--accent); }
-  .rule-icon.no { background: rgba(180,60,60,0.15); color: #c86060; }
+  .rule-icon.yes { background: var(--color-accent-soft); color: var(--accent); }
+  .rule-icon.no { background: color-mix(in oklch, var(--color-warn) 14%, transparent); color: var(--color-warn); }
 
   /* ── COLOR SECTION ───────────────────────────────────── */
   .color-group { margin-bottom: 32px; }
@@ -311,7 +347,7 @@
     transition: transform 0.2s, border-color 0.2s;
     min-width: 120px;
   }
-  .color-swatch:hover { transform: translateY(-2px); border-color: var(--accent); }
+  .color-swatch:hover { border-color: var(--color-rule-strong); box-shadow: 0 1px 0 var(--color-accent-line) inset; }
   .swatch-block {
     height: 80px;
     width: 100%;
@@ -342,8 +378,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: rgba(0,0,0,0.8);
-    color: var(--white);
+    background: oklch(22% 0.014 60 / 0.85);
+    color: var(--color-on-accent);
     font-size: 11px;
     font-weight: 600;
     padding: 4px 10px;
@@ -406,7 +442,7 @@
   }
   .type-scale-table td {
     padding: 14px 12px;
-    border-bottom: 1px solid rgba(34,34,34,0.5);
+    border-bottom: 1px solid color-mix(in oklch, var(--color-rule) 50%, transparent);
     vertical-align: middle;
     font-size: 13px;
     color: var(--text);
@@ -436,18 +472,9 @@
     background: var(--card);
     position: relative;
     overflow: hidden;
+    transition: border-color var(--dur-mid) var(--ease-out), box-shadow var(--dur-mid) var(--ease-out);
   }
-  .voice-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 3px;
-    background: var(--accent);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.4s;
-  }
-  .voice-card:hover::before { transform: scaleX(1); }
+  .voice-card:hover { border-color: var(--color-rule-strong); box-shadow: 0 1px 0 var(--color-accent-line) inset; }
   .voice-card-title {
     font-family: var(--font-serif);
     font-size: 18px;
@@ -498,8 +525,8 @@
     font-size: 13px;
   }
   .swap-from {
-    background: rgba(180,60,60,0.15);
-    color: #c87070;
+    background: color-mix(in oklch, var(--color-warn) 14%, transparent);
+    color: var(--color-warn);
     padding: 2px 10px;
     border-radius: var(--radius-pill);
     text-decoration: line-through;
@@ -532,7 +559,7 @@
     background: var(--card);
   }
   .never-x {
-    color: #c86060;
+    color: var(--color-warn);
     font-weight: 700;
     font-size: 14px;
     flex-shrink: 0;
@@ -609,9 +636,9 @@
   .btn-ghost {
     background: var(--accent-dim);
     color: var(--accent);
-    border: 1px solid rgba(200,169,126,0.2);
+    border: 1px solid color-mix(in oklch, var(--color-accent) 20%, transparent);
   }
-  .btn-ghost:hover { background: rgba(200,169,126,0.2); }
+  .btn-ghost:hover { background: color-mix(in oklch, var(--color-accent) 18%, transparent); }
   .btn-sm { padding: 8px 18px; font-size: 13px; border-radius: 6px; }
 
   /* Cards */
@@ -628,15 +655,14 @@
   .demo-card::before {
     content: '';
     position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 3px;
+    bottom: 0; left: 0; right: 0;
+    height: 2px;
     background: var(--accent);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.4s;
+    opacity: 0;
+    transition: opacity 0.32s var(--ease-out);
   }
-  .demo-card:hover { border-color: var(--accent); transform: translateY(-4px); }
-  .demo-card:hover::before { transform: scaleX(1); }
+  .demo-card:hover { border-color: var(--accent); }
+  .demo-card:hover::before { opacity: 1; }
   .demo-card-icon {
     width: 40px;
     height: 40px;
@@ -668,7 +694,7 @@
     letter-spacing: 2px;
     line-height: 1;
   }
-  .badge-accent { background: var(--accent-dim); color: var(--accent); border: 1px solid rgba(200,169,126,0.2); }
+  .badge-accent { background: var(--accent-dim); color: var(--accent); border: 1px solid color-mix(in oklch, var(--color-accent) 20%, transparent); }
   .badge-white { background: rgba(240,240,240,0.08); color: var(--text); border: 1px solid var(--border); }
   .badge-dark { background: var(--card); color: var(--muted); border: 1px solid var(--border); }
 
@@ -690,11 +716,11 @@
     border-color: var(--accent);
     box-shadow: 0 0 0 3px var(--accent-dim);
   }
-  .demo-input::placeholder { color: #333; font-style: italic; }
+  .demo-input::placeholder { color: var(--color-muted); font-style: italic; }
 
   /* Nav mock */
   .nav-mock {
-    background: rgba(10,10,10,0.85);
+    background: color-mix(in oklch, var(--color-paper) 85%, transparent);
     backdrop-filter: blur(24px);
     border: 1px solid var(--border);
     border-radius: var(--radius);
@@ -733,7 +759,7 @@
     position: relative;
     transition: all 0.3s;
   }
-  .pricing-card:hover { border-color: rgba(200,169,126,0.3); }
+  .pricing-card:hover { border-color: color-mix(in oklch, var(--color-accent) 35%, transparent); }
   .pricing-card.featured { border-color: var(--accent); }
   .pricing-card .recommended {
     position: absolute;
@@ -750,7 +776,7 @@
     border-radius: var(--radius-pill);
     white-space: nowrap;
   }
-  .pricing-tier { font-family: var(--font-serif); font-size: 18px; font-style: italic; color: var(--accent); margin-bottom: 8px; }
+  .pricing-tier { font-family: var(--font-serif); font-size: 18px; font-style: normal; color: var(--accent); margin-bottom: 8px; }
   .pricing-price { font-family: var(--font-serif); font-size: 36px; font-weight: 700; color: var(--white); line-height: 1; margin-bottom: 20px; }
   .pricing-price span { font-size: 16px; font-weight: 400; color: var(--muted); }
   .pricing-btn-std {
@@ -803,7 +829,7 @@
   }
   .spacing-bar {
     height: 100%;
-    background: linear-gradient(90deg, var(--accent), rgba(200,169,126,0.3));
+    background: linear-gradient(90deg, var(--accent), color-mix(in oklch, var(--color-accent) 30%, transparent));
   }
   .spacing-name {
     font-size: 12px;
@@ -856,13 +882,13 @@
     height: 64px;
     border-radius: var(--radius-sm);
     background: var(--accent-dim);
-    border: 1px solid rgba(200,169,126,0.3);
+    border: 1px solid color-mix(in oklch, var(--color-accent) 30%, transparent);
     margin: 0 auto;
     transition: border-color 0.2s, background 0.2s;
     cursor: pointer;
   }
   .hover-demo-box:hover {
-    background: rgba(200,169,126,0.25);
+    background: color-mix(in oklch, var(--color-accent) 22%, transparent);
     border-color: var(--accent);
   }
 
@@ -897,7 +923,7 @@
     width: 120px;
     height: 10px;
     border-radius: 3px;
-    background: rgba(200,169,126,0.25);
+    background: color-mix(in oklch, var(--color-accent) 25%, transparent);
     opacity: 0;
   }
   .entrance-item:nth-child(1) { width: 80px; }
@@ -951,7 +977,7 @@
   .copy-all-btn {
     background: var(--accent-dim);
     color: var(--accent);
-    border: 1px solid rgba(200,169,126,0.2);
+    border: 1px solid color-mix(in oklch, var(--color-accent) 20%, transparent);
     border-radius: 6px;
     padding: 4px 12px;
     font-size: 11px;
@@ -962,21 +988,24 @@
     text-transform: uppercase;
     letter-spacing: 1px;
   }
-  .copy-all-btn:hover { background: rgba(200,169,126,0.2); }
+  .copy-all-btn:hover { background: color-mix(in oklch, var(--color-accent) 18%, transparent); }
+  /* Editorial token export panel — light code surface that matches the system. */
   .tokens-code {
-    background: #0d0d0d;
+    background: var(--color-surface);
     padding: 28px 28px;
     margin: 0;
     font-family: 'Courier New', monospace;
     font-size: 13px;
-    color: var(--text);
+    color: var(--color-ink);
     line-height: 2;
     overflow-x: auto;
+    border: 1px solid var(--color-rule);
+    border-radius: var(--radius);
   }
-  .tokens-code .token-comment { color: var(--muted); }
-  .tokens-code .token-prop { color: #88b0d0; }
-  .tokens-code .token-val { color: var(--accent); }
-  .tokens-code .token-punct { color: var(--muted); }
+  .tokens-code .token-comment { color: var(--color-muted); }
+  .tokens-code .token-prop { color: var(--color-ink); }
+  .tokens-code .token-val { color: var(--color-accent); }
+  .tokens-code .token-punct { color: var(--color-muted); }
 
   /* ── TOAST ───────────────────────────────────────────── */
   #toast {
@@ -1018,8 +1047,8 @@
   .footer-tagline {
     font-family: var(--font-serif);
     font-size: 14px;
-    color: #333;
-    font-style: italic;
+    color: var(--color-muted);
+    font-style: normal;
     text-align: center;
     margin-top: 32px;
   }
@@ -1039,7 +1068,7 @@
 .nav-burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
 .nav-burger.open span:nth-child(2) { opacity: 0; }
 .nav-burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-.nav-drawer { display: none; position: fixed; top: 64px; left: 0; right: 0; background: rgba(10,10,10,0.97); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border-top: 1px solid var(--border); z-index: 99; padding: 24px; flex-direction: column; gap: 4px; }
+.nav-drawer { display: none; position: fixed; top: 64px; left: 0; right: 0; background: var(--color-paper); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border-top: 1px solid var(--border); box-shadow: 0 12px 32px -16px oklch(22% 0.014 60 / 0.25); z-index: 99; padding: 24px; flex-direction: column; gap: 4px; }
 .nav-drawer.open { display: flex; }
 .nav-drawer a { color: var(--text); font-size: 16px; font-weight: 400; padding: 14px 8px; border-bottom: 1px solid var(--border); transition: color 0.2s; text-decoration: none; }
 .nav-drawer a:last-child { border-bottom: none; margin-top: 8px; }
@@ -1049,6 +1078,15 @@
   .nav-right { display: none; }
   .nav-burger { display: flex; }
 }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
 </style>
 </head>
 <body>
@@ -1058,9 +1096,9 @@
   <div class="container">
     <a href="/" class="logo" aria-label="Soulcraft home">
       <svg class="heartmark" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <rect x="20" y="20" width="160" height="160" rx="4" stroke="#c8a97e" stroke-width="3" stroke-linecap="round" fill="none"/>
-        <path d="M100 152 C 100 152, 48 116, 46 84 C 44 62, 58 50, 74 50 C 86 50, 94 58, 100 68 C 106 58, 114 50, 126 50 C 142 50, 156 62, 154 84 C 152 116, 100 152, 100 152Z" stroke="#c8a97e" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-        <circle cx="100" cy="96" r="4.5" fill="#c8a97e"/>
+        <rect x="20" y="20" width="160" height="160" rx="4" stroke="currentColor" stroke-width="3" stroke-linecap="round" fill="none"/>
+        <path d="M100 152 C 100 152, 48 116, 46 84 C 44 62, 58 50, 74 50 C 86 50, 94 58, 100 68 C 106 58, 114 50, 126 50 C 142 50, 156 62, 154 84 C 152 116, 100 152, 100 152Z" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <circle cx="100" cy="96" r="4.5" fill="currentColor"/>
       </svg>
       <span class="logo-text">Soul<span>craft</span></span>
     </a>
@@ -1130,41 +1168,41 @@
           <div class="logo-demo dark-bg">
             <div class="demo-logo">
               <svg width="36" height="36" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="20" y="20" width="160" height="160" rx="4" stroke="#c8a97e" stroke-width="3" stroke-linecap="round" fill="none"/>
-                <path d="M100 152 C 100 152, 48 116, 46 84 C 44 62, 58 50, 74 50 C 86 50, 94 58, 100 68 C 106 58, 114 50, 126 50 C 142 50, 156 62, 154 84 C 152 116, 100 152, 100 152Z" stroke="#c8a97e" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-                <circle cx="100" cy="96" r="4.5" fill="#c8a97e"/>
+                <rect x="20" y="20" width="160" height="160" rx="4" stroke="var(--color-accent)" stroke-width="3" stroke-linecap="round" fill="none"/>
+                <path d="M100 152 C 100 152, 48 116, 46 84 C 44 62, 58 50, 74 50 C 86 50, 94 58, 100 68 C 106 58, 114 50, 126 50 C 142 50, 156 62, 154 84 C 152 116, 100 152, 100 152Z" stroke="var(--color-accent)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                <circle cx="100" cy="96" r="4.5" fill="var(--color-accent)"/>
               </svg>
               <span class="logo-text">Soul<span>craft</span></span>
             </div>
-            <div class="logo-label">Primary -- Dark</div>
+            <div class="logo-label">Reversed -- Dark</div>
           </div>
           <div class="logo-demo light-bg">
             <div class="demo-logo">
               <svg width="36" height="36" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="20" y="20" width="160" height="160" rx="4" stroke="#c8a97e" stroke-width="3" stroke-linecap="round" fill="none"/>
-                <path d="M100 152 C 100 152, 48 116, 46 84 C 44 62, 58 50, 74 50 C 86 50, 94 58, 100 68 C 106 58, 114 50, 126 50 C 142 50, 156 62, 154 84 C 152 116, 100 152, 100 152Z" stroke="#c8a97e" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-                <circle cx="100" cy="96" r="4.5" fill="#c8a97e"/>
+                <rect x="20" y="20" width="160" height="160" rx="4" stroke="var(--color-accent)" stroke-width="3" stroke-linecap="round" fill="none"/>
+                <path d="M100 152 C 100 152, 48 116, 46 84 C 44 62, 58 50, 74 50 C 86 50, 94 58, 100 68 C 106 58, 114 50, 126 50 C 142 50, 156 62, 154 84 C 152 116, 100 152, 100 152Z" stroke="var(--color-accent)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                <circle cx="100" cy="96" r="4.5" fill="var(--color-accent)"/>
               </svg>
               <span class="logo-text">Soul<span>craft</span></span>
             </div>
-            <div class="logo-label">Primary -- Light</div>
+            <div class="logo-label">Primary -- Paper</div>
           </div>
         </div>
 
         <div class="logo-icon-only">
           <div class="logo-icon-card">
             <svg width="48" height="48" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="20" y="20" width="160" height="160" rx="4" stroke="#c8a97e" stroke-width="3" stroke-linecap="round" fill="none"/>
-              <path d="M100 152 C 100 152, 48 116, 46 84 C 44 62, 58 50, 74 50 C 86 50, 94 58, 100 68 C 106 58, 114 50, 126 50 C 142 50, 156 62, 154 84 C 152 116, 100 152, 100 152Z" stroke="#c8a97e" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-              <circle cx="100" cy="96" r="4.5" fill="#c8a97e"/>
+              <rect x="20" y="20" width="160" height="160" rx="4" stroke="var(--color-accent)" stroke-width="3" stroke-linecap="round" fill="none"/>
+              <path d="M100 152 C 100 152, 48 116, 46 84 C 44 62, 58 50, 74 50 C 86 50, 94 58, 100 68 C 106 58, 114 50, 126 50 C 142 50, 156 62, 154 84 C 152 116, 100 152, 100 152Z" stroke="var(--color-accent)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              <circle cx="100" cy="96" r="4.5" fill="var(--color-accent)"/>
             </svg>
             <span>Icon Only</span>
           </div>
           <div class="logo-icon-card">
             <svg width="24" height="24" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="20" y="20" width="160" height="160" rx="4" stroke="#c8a97e" stroke-width="3" stroke-linecap="round" fill="none"/>
-              <path d="M100 152 C 100 152, 48 116, 46 84 C 44 62, 58 50, 74 50 C 86 50, 94 58, 100 68 C 106 58, 114 50, 126 50 C 142 50, 156 62, 154 84 C 152 116, 100 152, 100 152Z" stroke="#c8a97e" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-              <circle cx="100" cy="96" r="4.5" fill="#c8a97e"/>
+              <rect x="20" y="20" width="160" height="160" rx="4" stroke="var(--color-accent)" stroke-width="3" stroke-linecap="round" fill="none"/>
+              <path d="M100 152 C 100 152, 48 116, 46 84 C 44 62, 58 50, 74 50 C 86 50, 94 58, 100 68 C 106 58, 114 50, 126 50 C 142 50, 156 62, 154 84 C 152 116, 100 152, 100 152Z" stroke="var(--color-accent)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              <circle cx="100" cy="96" r="4.5" fill="var(--color-accent)"/>
             </svg>
             <span>Favicon</span>
           </div>
@@ -1173,10 +1211,10 @@
         <div class="logo-rules">
           <div class="logo-rule"><span class="rule-icon yes">✓</span> Always use the stroke-based mark. Never fill the heartmark.</div>
           <div class="logo-rule"><span class="rule-icon yes">✓</span> Maintain minimum clear space equal to the icon width on all sides.</div>
-          <div class="logo-rule"><span class="rule-icon yes">✓</span> Always title-case: <strong style="color:var(--white)">Soulcraft</strong>. "Soul" in white, "craft" in gold.</div>
+          <div class="logo-rule"><span class="rule-icon yes">✓</span> Always title-case: <strong style="color:var(--white)">Soulcraft</strong>. "Soul" in ink, "craft" in terracotta accent.</div>
           <div class="logo-rule"><span class="rule-icon no">✗</span> Never rotate, skew, or add effects (drop shadows, gradients) to the mark.</div>
           <div class="logo-rule"><span class="rule-icon no">✗</span> Never use "SoulCraft", "soulcraft", or "SOULCRAFT".</div>
-          <div class="logo-rule"><span class="rule-icon no">✗</span> Never recolor the accent gold or substitute a different stroke color.</div>
+          <div class="logo-rule"><span class="rule-icon no">✗</span> Never recolor the terracotta accent or substitute a different stroke color.</div>
         </div>
       </section>
 
@@ -1186,46 +1224,46 @@
       <section class="brand-section" id="color">
         <div class="section-header">
           <div class="chapter-label">Color</div>
-          <h2>Dark. Gold. Nothing else.</h2>
-          <p>The palette is dark-first. Nearly black backgrounds, warm gold as the single accent. No secondary accent. No surface gradients. Click any swatch to copy the hex.</p>
+          <h2>Warm. Editorial. Unmistakable.</h2>
+          <p>The palette is light-first. Warm cream paper, ink for type, terracotta as the single accent, with a gold hairline reserved for decorative rules. No secondary accent. No surface gradients. Click any swatch to copy its value.</p>
         </div>
 
         <div class="color-group">
           <div class="color-group-label">Foundations</div>
           <div class="color-swatches">
-            <div class="color-swatch" onclick="copyColor('#0a0a0a', this)">
-              <div class="swatch-block" style="background:#0a0a0a; border-bottom: 1px solid #222;"></div>
+            <div class="color-swatch" onclick="copyColor('oklch(96.5% 0.012 83)', this)">
+              <div class="swatch-block" style="background:var(--color-paper); border: 1px solid var(--color-rule);"></div>
               <div class="swatch-info">
-                <div class="swatch-name">Black</div>
-                <div class="swatch-hex">#0a0a0a</div>
+                <div class="swatch-name">Paper</div>
+                <div class="swatch-hex">oklch(96.5% .012 83) &middot; #f6f2ea</div>
                 <div class="swatch-usage">Page background</div>
               </div>
               <div class="copy-hint">Copy</div>
             </div>
-            <div class="color-swatch" onclick="copyColor('#111111', this)">
-              <div class="swatch-block" style="background:#111111; border-bottom: 1px solid #222;"></div>
+            <div class="color-swatch" onclick="copyColor('oklch(93.8% 0.014 80)', this)">
+              <div class="swatch-block" style="background:var(--color-paper-2); border: 1px solid var(--color-rule);"></div>
               <div class="swatch-info">
-                <div class="swatch-name">Dark</div>
-                <div class="swatch-hex">#111111</div>
-                <div class="swatch-usage">Section backgrounds</div>
+                <div class="swatch-name">Paper 2</div>
+                <div class="swatch-hex">oklch(93.8% .014 80) &middot; #efe9dd</div>
+                <div class="swatch-usage">Alt section band</div>
               </div>
               <div class="copy-hint">Copy</div>
             </div>
-            <div class="color-swatch" onclick="copyColor('#161616', this)">
-              <div class="swatch-block" style="background:#161616; border-bottom: 1px solid #222;"></div>
+            <div class="color-swatch" onclick="copyColor('oklch(99.2% 0.006 83)', this)">
+              <div class="swatch-block" style="background:var(--color-surface); border: 1px solid var(--color-rule);"></div>
               <div class="swatch-info">
-                <div class="swatch-name">Card</div>
-                <div class="swatch-hex">#161616</div>
-                <div class="swatch-usage">Card surfaces, modals</div>
+                <div class="swatch-name">Surface</div>
+                <div class="swatch-hex">oklch(99.2% .006 83) &middot; #fdfcf8</div>
+                <div class="swatch-usage">Cards, inputs</div>
               </div>
               <div class="copy-hint">Copy</div>
             </div>
-            <div class="color-swatch" onclick="copyColor('#222222', this)">
-              <div class="swatch-block" style="background:#222222; border-bottom: 1px solid #333;"></div>
+            <div class="color-swatch" onclick="copyColor('oklch(87% 0.012 75)', this)">
+              <div class="swatch-block" style="background:var(--color-rule); border: 1px solid var(--color-rule-strong);"></div>
               <div class="swatch-info">
-                <div class="swatch-name">Border</div>
-                <div class="swatch-hex">#222222</div>
-                <div class="swatch-usage">Borders, dividers</div>
+                <div class="swatch-name">Rule</div>
+                <div class="swatch-hex">oklch(87% .012 75) &middot; #dcd6ca</div>
+                <div class="swatch-usage">Hairlines, borders</div>
               </div>
               <div class="copy-hint">Copy</div>
             </div>
@@ -1235,30 +1273,30 @@
         <div class="color-group">
           <div class="color-group-label">Text</div>
           <div class="color-swatches">
-            <div class="color-swatch" onclick="copyColor('#f0f0f0', this)">
-              <div class="swatch-block" style="background:#f0f0f0;"></div>
+            <div class="color-swatch" onclick="copyColor('oklch(22% 0.014 60)', this)">
+              <div class="swatch-block" style="background:var(--color-ink);"></div>
               <div class="swatch-info">
-                <div class="swatch-name">White</div>
-                <div class="swatch-hex">#f0f0f0</div>
-                <div class="swatch-usage">Headings, emphasis</div>
+                <div class="swatch-name">Ink</div>
+                <div class="swatch-hex">oklch(22% .014 60) &middot; #2b2620</div>
+                <div class="swatch-usage">Headings, high-contrast</div>
               </div>
               <div class="copy-hint">Copy</div>
             </div>
-            <div class="color-swatch" onclick="copyColor('#d0d0d0', this)">
-              <div class="swatch-block" style="background:#d0d0d0;"></div>
+            <div class="color-swatch" onclick="copyColor('oklch(40% 0.012 58)', this)">
+              <div class="swatch-block" style="background:var(--color-body);"></div>
               <div class="swatch-info">
-                <div class="swatch-name">Text</div>
-                <div class="swatch-hex">#d0d0d0</div>
+                <div class="swatch-name">Body</div>
+                <div class="swatch-hex">oklch(40% .012 58) &middot; #5a534a</div>
                 <div class="swatch-usage">Body text</div>
               </div>
               <div class="copy-hint">Copy</div>
             </div>
-            <div class="color-swatch" onclick="copyColor('#555555', this)">
-              <div class="swatch-block" style="background:#555555;"></div>
+            <div class="color-swatch" onclick="copyColor('oklch(55% 0.012 60)', this)">
+              <div class="swatch-block" style="background:var(--color-muted);"></div>
               <div class="swatch-info">
                 <div class="swatch-name">Muted</div>
-                <div class="swatch-hex">#555555</div>
-                <div class="swatch-usage">Secondary text, nav</div>
+                <div class="swatch-hex">oklch(55% .012 60) &middot; #837c72</div>
+                <div class="swatch-usage">Secondary text, labels</div>
               </div>
               <div class="copy-hint">Copy</div>
             </div>
@@ -1268,30 +1306,30 @@
         <div class="color-group">
           <div class="color-group-label">Accent</div>
           <div class="color-swatches">
-            <div class="color-swatch" onclick="copyColor('#c8a97e', this)">
-              <div class="swatch-block" style="background:#c8a97e;"></div>
+            <div class="color-swatch" onclick="copyColor('oklch(47% 0.13 52)', this)">
+              <div class="swatch-block" style="background:var(--color-accent);"></div>
               <div class="swatch-info">
-                <div class="swatch-name">Gold</div>
-                <div class="swatch-hex">#c8a97e</div>
-                <div class="swatch-usage">CTAs, labels, logo, hover</div>
+                <div class="swatch-name">Terracotta</div>
+                <div class="swatch-hex">oklch(47% .13 52) &middot; #9d5a37</div>
+                <div class="swatch-usage">Links, CTA, emphasis</div>
               </div>
               <div class="copy-hint">Copy</div>
             </div>
-            <div class="color-swatch" onclick="copyColor('rgba(200,169,126,0.12)', this)">
-              <div class="swatch-block" style="background:rgba(200,169,126,0.12); border-bottom: 1px solid #222;"></div>
+            <div class="color-swatch" onclick="copyColor('oklch(40% 0.13 50)', this)">
+              <div class="swatch-block" style="background:var(--color-accent-deep);"></div>
               <div class="swatch-info">
-                <div class="swatch-name">Gold Dim</div>
-                <div class="swatch-hex">rgba(200,169,126,.12)</div>
-                <div class="swatch-usage">Tint, insight boxes</div>
+                <div class="swatch-name">Accent Deep</div>
+                <div class="swatch-hex">oklch(40% .13 50) &middot; #864428</div>
+                <div class="swatch-usage">Accent hover</div>
               </div>
               <div class="copy-hint">Copy</div>
             </div>
-            <div class="color-swatch" onclick="copyColor('rgba(200,169,126,0.25)', this)">
-              <div class="swatch-block" style="background:rgba(200,169,126,0.25); border-bottom: 1px solid #222;"></div>
+            <div class="color-swatch" onclick="copyColor('oklch(70% 0.09 72)', this)">
+              <div class="swatch-block" style="background:var(--color-accent-line); border: 1px solid var(--color-rule);"></div>
               <div class="swatch-info">
-                <div class="swatch-name">Gold Glow</div>
-                <div class="swatch-hex">rgba(200,169,126,.25)</div>
-                <div class="swatch-usage">Radial glow, hero</div>
+                <div class="swatch-name">Accent Line</div>
+                <div class="swatch-hex">oklch(70% .09 72) &middot; #c79a5f</div>
+                <div class="swatch-usage">Gold hairline, decorative</div>
               </div>
               <div class="copy-hint">Copy</div>
             </div>
@@ -1316,10 +1354,10 @@
           </div>
           <div class="type-specimen-body">
             <div style="font-family:'Playfair Display',serif; font-size: clamp(32px,5vw,52px); font-weight:400; color:var(--white); line-height:1.1; margin-bottom:16px;">
-              Agentic marketing<br><em style="color:var(--accent);">with soul.</em>
+              Agentic marketing<br><em style="font-style:normal; color:var(--accent);">with soul.</em>
             </div>
-            <div style="font-family:'Playfair Display',serif; font-size:20px; font-weight:400; font-style:italic; color:var(--accent); margin-bottom:12px;">Scale. Craft. Identity.</div>
-            <div style="font-family:'Playfair Display',serif; font-size:16px; font-weight:400; color:var(--muted);">Weight 400 only -- the delicacy of the serifs provides natural emphasis.</div>
+            <div style="font-family:'Playfair Display',serif; font-size:20px; font-weight:400; font-style:normal; color:var(--accent); margin-bottom:12px;">Scale. Craft. Identity.</div>
+            <div style="font-family:'Playfair Display',serif; font-size:16px; font-weight:400; color:var(--muted);">Roman only, never italic -- emphasis comes from weight, accent colour, or a drawn underline.</div>
           </div>
         </div>
 
@@ -1406,7 +1444,7 @@
               <td>Tier name</td>
               <td>Playfair Display</td>
               <td><code>20px</code></td>
-              <td>400 italic</td>
+              <td>400 roman</td>
               <td><code>--accent</code></td>
             </tr>
           </tbody>
@@ -1527,21 +1565,21 @@
         <div class="component-block">
           <div class="component-block-header">
             <span class="component-block-title">Cards</span>
-            <code class="component-block-code">border-radius: 16px &middot; hover: translateY(-4px)</code>
+            <code class="component-block-code">border-radius: 6px &middot; hover: accent underline</code>
           </div>
           <div class="component-block-body">
             <div class="demo-card">
               <svg class="demo-card-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="24" cy="24" r="18" stroke="#c8a97e" stroke-width="2.5" stroke-linecap="round"/>
-                <path d="M24 16v8l5 5" stroke="#c8a97e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="24" cy="24" r="18" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round"/>
+                <path d="M24 16v8l5 5" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
               <h4>SEO / AEO / GEO</h4>
               <p>An automated content engine that improves your presence and sentiment. The system runs itself.</p>
             </div>
             <div class="demo-card">
               <svg class="demo-card-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M8 40 L8 20 L24 8 L40 20 L40 40" stroke="#c8a97e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-                <rect x="18" y="28" width="12" height="12" rx="1" stroke="#c8a97e" stroke-width="2" fill="none"/>
+                <path d="M8 40 L8 20 L24 8 L40 20 L40 40" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <rect x="18" y="28" width="12" height="12" rx="1" stroke="var(--color-accent)" stroke-width="2" fill="none"/>
               </svg>
               <h4>Demand Generation</h4>
               <p>Campaigns and workflows that generate leads. Plugs directly into CRM, email, and social channels.</p>
@@ -1585,9 +1623,9 @@
             <div class="nav-mock">
               <span style="font-family:var(--font-serif); font-size:18px; color:var(--white); display:flex; align-items:center; gap:8px;">
                 <svg width="22" height="22" viewBox="0 0 200 200" fill="none">
-                  <rect x="20" y="20" width="160" height="160" rx="4" stroke="#c8a97e" stroke-width="3" stroke-linecap="round" fill="none"/>
-                  <path d="M100 152 C 100 152, 48 116, 46 84 C 44 62, 58 50, 74 50 C 86 50, 94 58, 100 68 C 106 58, 114 50, 126 50 C 142 50, 156 62, 154 84 C 152 116, 100 152, 100 152Z" stroke="#c8a97e" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-                  <circle cx="100" cy="96" r="4.5" fill="#c8a97e"/>
+                  <rect x="20" y="20" width="160" height="160" rx="4" stroke="var(--color-accent)" stroke-width="3" stroke-linecap="round" fill="none"/>
+                  <path d="M100 152 C 100 152, 48 116, 46 84 C 44 62, 58 50, 74 50 C 86 50, 94 58, 100 68 C 106 58, 114 50, 126 50 C 142 50, 156 62, 154 84 C 152 116, 100 152, 100 152Z" stroke="var(--color-accent)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                  <circle cx="100" cy="96" r="4.5" fill="var(--color-accent)"/>
                 </svg>
                 <span style="white-space:nowrap">Soul<span style="color:var(--accent)">craft</span></span>
               </span>
@@ -1727,11 +1765,11 @@
             <div class="motion-demo-desc">Items appear with 140ms delay.<br>translateY 12px &rarr; 0.<br><code style="color:var(--accent); font-size:11px;">0.45s ease-out</code></div>
           </div>
           <div class="motion-demo">
-            <div class="motion-demo-label">Card Accent Bar</div>
+            <div class="motion-demo-label">Card Accent Underline</div>
             <div class="demo-card" style="max-width:none;">
               <div style="font-size:13px; color:var(--muted);">Hover this card</div>
             </div>
-            <div class="motion-demo-desc">Top accent bar scales in.<br>scaleX 0 &rarr; 1.<br><code style="color:var(--accent); font-size:11px;">0.4s ease</code></div>
+            <div class="motion-demo-desc">A terracotta underline fades in.<br>opacity 0 &rarr; 1, no lift.<br><code style="color:var(--accent); font-size:11px;">0.32s ease-out</code></div>
           </div>
         </div>
       </section>
@@ -1751,32 +1789,33 @@
             <span>CSS Custom Properties</span>
             <button class="copy-all-btn" onclick="copyTokens()">Copy All</button>
           </div>
-          <pre class="tokens-code" id="tokensCode"><span class="token-comment">/* Soulcraft Design Tokens */</span>
+          <pre class="tokens-code" id="tokensCode"><span class="token-comment">/* Soulcraft Editorial Tokens */</span>
 
-<span class="token-comment">/* Backgrounds */</span>
-<span class="token-prop">--black</span><span class="token-punct">:</span>        <span class="token-val">#0a0a0a</span><span class="token-punct">;</span>
-<span class="token-prop">--dark</span><span class="token-punct">:</span>         <span class="token-val">#111111</span><span class="token-punct">;</span>
-<span class="token-prop">--card</span><span class="token-punct">:</span>         <span class="token-val">#161616</span><span class="token-punct">;</span>
-<span class="token-prop">--border</span><span class="token-punct">:</span>       <span class="token-val">#222222</span><span class="token-punct">;</span>
+<span class="token-comment">/* Palette (OKLCH source of truth) */</span>
+<span class="token-prop">--color-paper</span><span class="token-punct">:</span>       <span class="token-val">oklch(96.5% 0.012 83)</span><span class="token-punct">;</span>
+<span class="token-prop">--color-paper-2</span><span class="token-punct">:</span>     <span class="token-val">oklch(93.8% 0.014 80)</span><span class="token-punct">;</span>
+<span class="token-prop">--color-surface</span><span class="token-punct">:</span>     <span class="token-val">oklch(99.2% 0.006 83)</span><span class="token-punct">;</span>
+<span class="token-prop">--color-ink</span><span class="token-punct">:</span>         <span class="token-val">oklch(22% 0.014 60)</span><span class="token-punct">;</span>
+<span class="token-prop">--color-body</span><span class="token-punct">:</span>        <span class="token-val">oklch(40% 0.012 58)</span><span class="token-punct">;</span>
+<span class="token-prop">--color-muted</span><span class="token-punct">:</span>       <span class="token-val">oklch(55% 0.012 60)</span><span class="token-punct">;</span>
+<span class="token-prop">--color-rule</span><span class="token-punct">:</span>        <span class="token-val">oklch(87% 0.012 75)</span><span class="token-punct">;</span>
+<span class="token-prop">--color-accent</span><span class="token-punct">:</span>      <span class="token-val">oklch(47% 0.13 52)</span><span class="token-punct">;</span>
+<span class="token-prop">--color-accent-deep</span><span class="token-punct">:</span> <span class="token-val">oklch(40% 0.13 50)</span><span class="token-punct">;</span>
+<span class="token-prop">--color-accent-line</span><span class="token-punct">:</span> <span class="token-val">oklch(70% 0.09 72)</span><span class="token-punct">;</span>
 
-<span class="token-comment">/* Text */</span>
-<span class="token-prop">--white</span><span class="token-punct">:</span>        <span class="token-val">#f0f0f0</span><span class="token-punct">;</span>
-<span class="token-prop">--text</span><span class="token-punct">:</span>         <span class="token-val">#d0d0d0</span><span class="token-punct">;</span>
-<span class="token-prop">--muted</span><span class="token-punct">:</span>        <span class="token-val">#555555</span><span class="token-punct">;</span>
+<span class="token-comment">/* Type */</span>
+<span class="token-prop">--font-display</span><span class="token-punct">:</span>      <span class="token-val">'Playfair Display', serif</span><span class="token-punct">;</span>
+<span class="token-prop">--font-body</span><span class="token-punct">:</span>         <span class="token-val">'Inter', sans-serif</span><span class="token-punct">;</span>
 
-<span class="token-comment">/* Accent */</span>
-<span class="token-prop">--accent</span><span class="token-punct">:</span>       <span class="token-val">#c8a97e</span><span class="token-punct">;</span>
-<span class="token-prop">--accent-dim</span><span class="token-punct">:</span>   <span class="token-val">rgba(200,169,126,0.12)</span><span class="token-punct">;</span>
-<span class="token-prop">--accent-glow</span><span class="token-punct">:</span>  <span class="token-val">rgba(200,169,126,0.25)</span><span class="token-punct">;</span>
+<span class="token-comment">/* Spacing (4pt) */</span>
+<span class="token-prop">--space-sm</span><span class="token-punct">:</span>          <span class="token-val">16px</span><span class="token-punct">;</span>
+<span class="token-prop">--space-md</span><span class="token-punct">:</span>          <span class="token-val">24px</span><span class="token-punct">;</span>
+<span class="token-prop">--space-lg</span><span class="token-punct">:</span>          <span class="token-val">48px</span><span class="token-punct">;</span>
 
-<span class="token-comment">/* Shape */</span>
-<span class="token-prop">--radius</span><span class="token-punct">:</span>       <span class="token-val">16px</span><span class="token-punct">;</span>
-<span class="token-prop">--radius-sm</span><span class="token-punct">:</span>    <span class="token-val">10px</span><span class="token-punct">;</span>
-<span class="token-prop">--radius-pill</span><span class="token-punct">:</span>  <span class="token-val">100px</span><span class="token-punct">;</span>
-
-<span class="token-comment">/* Typography */</span>
-<span class="token-prop">--font-serif</span><span class="token-punct">:</span>   <span class="token-val">'Playfair Display', serif</span><span class="token-punct">;</span>
-<span class="token-prop">--font-sans</span><span class="token-punct">:</span>    <span class="token-val">'Inter', sans-serif</span><span class="token-punct">;</span></pre>
+<span class="token-comment">/* Motion &amp; shape */</span>
+<span class="token-prop">--ease-out</span><span class="token-punct">:</span>          <span class="token-val">cubic-bezier(0.22, 1, 0.36, 1)</span><span class="token-punct">;</span>
+<span class="token-prop">--dur-mid</span><span class="token-punct">:</span>           <span class="token-val">0.32s</span><span class="token-punct">;</span>
+<span class="token-prop">--radius</span><span class="token-punct">:</span>            <span class="token-val">6px</span><span class="token-punct">;</span></pre>
         </div>
       </section>
 
@@ -1789,9 +1828,9 @@
       <div class="footer-row">
         <span class="logo">
           <svg class="heartmark" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <rect x="20" y="20" width="160" height="160" rx="4" stroke="#c8a97e" stroke-width="3" stroke-linecap="round" fill="none"/>
-            <path d="M100 152 C 100 152, 48 116, 46 84 C 44 62, 58 50, 74 50 C 86 50, 94 58, 100 68 C 106 58, 114 50, 126 50 C 142 50, 156 62, 154 84 C 152 116, 100 152, 100 152Z" stroke="#c8a97e" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-            <circle cx="100" cy="96" r="4.5" fill="#c8a97e"/>
+            <rect x="20" y="20" width="160" height="160" rx="4" stroke="currentColor" stroke-width="3" stroke-linecap="round" fill="none"/>
+            <path d="M100 152 C 100 152, 48 116, 46 84 C 44 62, 58 50, 74 50 C 86 50, 94 58, 100 68 C 106 58, 114 50, 126 50 C 142 50, 156 62, 154 84 C 152 116, 100 152, 100 152Z" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <circle cx="100" cy="96" r="4.5" fill="currentColor"/>
           </svg>
           <span class="logo-text">Soul<span>craft</span></span>
         </span>
@@ -1822,7 +1861,7 @@
 
   // ── COPY TOKENS ───────────────────────────────────────
   function copyTokens() {
-    var raw = `:root {\n  /* Soulcraft Design Tokens */\n\n  /* Backgrounds */\n  --black:       #0a0a0a;\n  --dark:        #111111;\n  --card:        #161616;\n  --border:      #222222;\n\n  /* Text */\n  --white:       #f0f0f0;\n  --text:        #d0d0d0;\n  --muted:       #555555;\n\n  /* Accent */\n  --accent:      #c8a97e;\n  --accent-dim:  rgba(200,169,126,0.12);\n  --accent-glow: rgba(200,169,126,0.25);\n\n  /* Shape */\n  --radius:      16px;\n  --radius-sm:   10px;\n  --radius-pill: 100px;\n\n  /* Typography */\n  --font-serif:  'Playfair Display', serif;\n  --font-sans:   'Inter', sans-serif;\n}`;
+    var raw = `:root {\n  /* Soulcraft Editorial Tokens */\n\n  /* Palette (OKLCH source of truth) */\n  --color-paper:        oklch(96.5% 0.012 83);\n  --color-paper-2:      oklch(93.8% 0.014 80);\n  --color-surface:      oklch(99.2% 0.006 83);\n  --color-ink:          oklch(22% 0.014 60);\n  --color-body:         oklch(40% 0.012 58);\n  --color-muted:        oklch(55% 0.012 60);\n  --color-rule:         oklch(87% 0.012 75);\n  --color-rule-strong:  oklch(78% 0.014 70);\n  --color-accent:       oklch(47% 0.13 52);\n  --color-accent-deep:  oklch(40% 0.13 50);\n  --color-accent-line:  oklch(70% 0.09 72);\n\n  /* Type */\n  --font-display:       'Playfair Display', Georgia, serif;\n  --font-body:          'Inter', system-ui, sans-serif;\n\n  /* Spacing (4pt) */\n  --space-xs:  8px;\n  --space-sm:  16px;\n  --space-md:  24px;\n  --space-lg:  48px;\n  --space-xl:  96px;\n\n  /* Motion */\n  --ease-out:  cubic-bezier(0.22, 1, 0.36, 1);\n  --dur-fast:  0.18s;\n  --dur-mid:   0.32s;\n  --dur-slow:  0.8s;\n\n  /* Shape */\n  --radius:    6px;\n}`;
     navigator.clipboard.writeText(raw).then(function() {
       showToast('Tokens copied to clipboard');
     });

@@ -1,0 +1,50 @@
+/* Hallmark · Soulcraft Editorial theme (light) · genre: editorial
+ * Portable token system extracted from the homepage build.
+ * Each page's :root mirrors these; legacy aliases keep existing markup working.
+ */
+:root {
+  /* — Editorial palette (OKLCH source of truth) — */
+  --color-paper:        oklch(96.5% 0.012 83);   /* warm cream page */
+  --color-paper-2:      oklch(93.8% 0.014 80);   /* alt section band */
+  --color-surface:      oklch(99.2% 0.006 83);   /* card / input */
+  --color-ink:          oklch(22% 0.014 60);     /* headings, high-contrast */
+  --color-body:         oklch(40% 0.012 58);     /* paragraph text */
+  --color-muted:        oklch(55% 0.012 60);     /* secondary, labels */
+  --color-rule:         oklch(87% 0.012 75);     /* hairlines, borders */
+  --color-rule-strong:  oklch(78% 0.014 70);     /* emphasised divider */
+  --color-accent:       oklch(47% 0.13 52);      /* terracotta — links, CTA, emphasis */
+  --color-accent-deep:  oklch(40% 0.13 50);      /* accent hover */
+  --color-accent-soft:  oklch(93% 0.035 62);     /* accent tint background */
+  --color-accent-line:  oklch(70% 0.09 72);      /* gold hairline, decorative */
+  --color-on-accent:    oklch(97% 0.012 83);     /* text on accent fills */
+  --color-good:         oklch(52% 0.12 150);
+  --color-warn:         oklch(58% 0.17 28);
+
+  /* — Legacy aliases (dark-theme names → light values) — */
+  --black: var(--color-paper);
+  --dark: var(--color-paper-2);
+  --card: var(--color-surface);
+  --border: var(--color-rule);
+  --muted: var(--color-muted);
+  --text: var(--color-body);
+  --white: var(--color-ink);
+  --accent: var(--color-accent);
+  --accent-dim: var(--color-accent-soft);
+  --accent-glow: transparent;
+
+  /* — Type — */
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+
+  /* — Spacing (4pt) — */
+  --space-xs: 8px; --space-sm: 16px; --space-md: 24px;
+  --space-lg: 48px; --space-xl: 96px; --space-2xl: 160px;
+
+  /* — Motion — */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in: cubic-bezier(0.55, 0, 1, 0.45);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 0.18s; --dur-mid: 0.32s; --dur-slow: 0.8s;
+
+  --radius: 6px;
+}

@@ -16,24 +16,64 @@
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,700&display=swap" rel="stylesheet">
 <style>
+/* Hallmark · macrostructure: centered · tone: editorial · theme: Editorial (light) */
 :root {
-  --parchment: #F1EBE2;
-  --espresso: #2A2118;
-  --copper: #B87A4A;
-  --warm-gray: #8A7E70;
-  --serif: 'Cormorant Garamond', 'Georgia', serif;
-  --sans: 'Inter', 'Helvetica Neue', sans-serif;
+  /* — Editorial palette (OKLCH source of truth) — */
+  --color-paper:        oklch(96.5% 0.012 83);   /* warm cream page */
+  --color-paper-2:      oklch(93.8% 0.014 80);   /* alt section band */
+  --color-surface:      oklch(99.2% 0.006 83);   /* card / input */
+  --color-ink:          oklch(22% 0.014 60);     /* headings, high-contrast */
+  --color-body:         oklch(40% 0.012 58);     /* paragraph text */
+  --color-muted:        oklch(55% 0.012 60);     /* secondary, labels */
+  --color-rule:         oklch(87% 0.012 75);     /* hairlines, borders */
+  --color-rule-strong:  oklch(78% 0.014 70);     /* emphasised divider */
+  --color-accent:       oklch(47% 0.13 52);      /* terracotta — links, CTA, emphasis */
+  --color-accent-deep:  oklch(40% 0.13 50);      /* accent hover */
+  --color-accent-soft:  oklch(93% 0.035 62);     /* accent tint background */
+  --color-accent-line:  oklch(70% 0.09 72);      /* gold hairline, decorative */
+  --color-on-accent:    oklch(97% 0.012 83);     /* text on accent fills */
+  --color-good:         oklch(52% 0.12 150);
+  --color-warn:         oklch(58% 0.17 28);
+
+  /* — Legacy aliases (dark-theme names → light values) — */
+  --black: var(--color-paper);
+  --dark: var(--color-paper-2);
+  --card: var(--color-surface);
+  --border: var(--color-rule);
+  --muted: var(--color-muted);
+  --text: var(--color-body);
+  --white: var(--color-ink);
+  --accent: var(--color-accent);
+  --accent-dim: var(--color-accent-soft);
+  --accent-glow: transparent;
+
+  /* — Type — */
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+
+  /* — Spacing (4pt) — */
+  --space-xs: 8px; --space-sm: 16px; --space-md: 24px;
+  --space-lg: 48px; --space-xl: 96px; --space-2xl: 160px;
+
+  /* — Motion — */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in: cubic-bezier(0.55, 0, 1, 0.45);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 0.18s; --dur-mid: 0.32s; --dur-slow: 0.8s;
+
+  --radius: 6px;
 }
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-html { font-size: 18px; }
+html { font-size: 18px; overflow-x: clip; }
 body {
-  font-family: var(--serif);
-  font-weight: 300;
-  background: var(--parchment);
-  color: var(--espresso);
+  font-family: var(--font-display);
+  font-weight: 400;
+  background: var(--color-paper);
+  color: var(--color-body);
   -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -42,34 +82,36 @@ body {
   text-align: center;
   padding: 32px;
 }
+:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; }
 h1 {
-  font-family: var(--serif);
-  font-weight: 300;
+  font-family: var(--font-display);
+  font-weight: 400;
   font-size: clamp(28px, 4vw, 42px);
   line-height: 1.4;
   margin-bottom: 16px;
+  color: var(--color-ink);
 }
-h1 em { font-style: italic; color: var(--copper); }
+h1 em { font-style: normal; color: var(--color-accent); }
 p {
-  font-family: var(--serif);
-  font-weight: 300;
+  font-family: var(--font-display);
+  font-weight: 400;
   font-size: clamp(16px, 2vw, 20px);
-  color: var(--warm-gray);
+  color: var(--color-muted);
   line-height: 1.7;
   max-width: 480px;
   margin-bottom: 32px;
 }
 nav { display: flex; gap: 24px; flex-wrap: wrap; justify-content: center; }
 nav a {
-  font-family: var(--sans);
+  font-family: var(--font-body);
   font-weight: 400;
   font-size: clamp(12px, 1.5vw, 14px);
-  color: var(--warm-gray);
+  color: var(--color-muted);
   text-decoration: none;
   letter-spacing: 0.04em;
   transition: color 0.4s;
 }
-nav a:hover { color: var(--copper); }
+nav a:hover { color: var(--color-accent); }
 </style>
 </head>
 <body>
