@@ -1,137 +1,99 @@
 ---
 layout: post
-title: "Best AEO Agencies in 2026: Compared and Ranked"
-description: "Looking for the best AEO agency? We compare the top answer engine optimization agencies on AI-nativeness, strategy depth, and results. Soulcraft ranks first."
+title: "How to Choose an AEO Agency in 2026"
+description: "A practical guide to evaluating answer engine optimization agencies. The capabilities that matter, the questions to ask, and the red flags to walk away from."
 date: 2026-05-01
 category: learn
-content_type: Comparison
-keywords: "best AEO agencies, answer engine optimization agency, AEO agency comparison, top AEO agencies 2026"
-og_title: "Best AEO Agencies in 2026: Compared and Ranked"
-og_description: "A clear-eyed comparison of the top AEO agencies in 2026. Who actually knows what they're doing in AI search?"
+content_type: Guide
+keywords: "how to choose an AEO agency, AEO agency evaluation, hiring an answer engine optimization agency, AEO agency questions 2026"
+og_title: "How to Choose an AEO Agency in 2026"
+og_description: "The AEO market is young and noisy. Here's how to tell genuine capability from a repainted services page."
 permalink: /learn/best-aeo-agencies-2026-compared/
-schema_markup: '{"@context":"https://schema.org","@type":"Article","headline":"Best AEO Agencies in 2026: Compared and Ranked","description":"A comparison of the top AEO agencies in 2026, ranked by AI-nativeness, strategy, and results.","author":{"@type":"Person","name":"Evan Drake"},"datePublished":"2026-05-01","publisher":{"@type":"Organization","name":"Soulcraft","url":"https://soulcraftagency.com"}}'
+schema_markup: '{"@context":"https://schema.org","@type":"Article","headline":"How to Choose an AEO Agency in 2026","description":"A practical guide to evaluating answer engine optimization agencies, covering required capabilities, evaluation questions, and red flags.","author":{"@type":"Person","name":"Evan Drake"},"datePublished":"2026-05-01","dateModified":"2026-06-11","publisher":{"@type":"Organization","name":"Soulcraft","url":"https://soulcraftagency.com"}}'
 ---
 
-[Answer engine optimization](/learn/answer-engine-optimization-complete-guide/) is not an SEO tactic. It's a different discipline. When someone asks ChatGPT, Perplexity, or Google's AI Mode which agency they should hire for AI search, what gets surfaced isn't the highest bidder. It's whoever has done the work to be known, trusted, and well-represented in the training data and retrieval systems that power those answers.
+[Answer engine optimization](/learn/answer-engine-optimization-complete-guide/) is a different discipline than SEO. When someone asks ChatGPT, Perplexity, or Google's AI Mode a question in your category, what gets surfaced is whoever has done the work to be known, trusted, and well represented in the systems that power those answers.
 
-That's the game. And most agencies pretending to play it are still thinking in keywords.
+Plenty of agencies now claim that work. Almost every services page in marketing grew an "AI search" line item in the past year. Very few of those agencies rebuilt anything underneath it.
 
-This comparison looks at the agencies actively working in the AEO space in 2026, what they actually do, where they fall short, and which one we'd recommend if we weren't one of them.
-
-Spoiler: we would recommend us. But we'll show our work.
+You could resolve that with one of the many "best AEO agencies" rankings floating around, but most of those are published by an agency that happens to sit at #1, which makes them marketing, not research. What you actually need is a way to evaluate any AEO agency, including us, on the merits. That's this guide.
 
 ---
 
-## What Makes an AEO Agency Worth Hiring
+## What a Real AEO Program Requires
 
-Before we compare, it helps to be clear about what AEO actually requires. Understanding the difference between an [AI-native agency and a traditional marketing agency](/learn/ai-native-vs-traditional-marketing-agency/) is essential context. A capable AEO agency should be able to:
+Before evaluating anyone, it helps to be precise about the job. A capable AEO agency can do five things.
 
 - Audit how your organization currently appears in AI-generated answers across major platforms (ChatGPT, Gemini, Perplexity, Claude, Bing Copilot)
 - Identify which queries your organization is or isn't showing up for, and why
-- Build a content and technical strategy to improve your AI visibility over time
+- Build a content and technical strategy that improves your AI visibility over time
 - Measure and report on AI impressions, share of voice, and sentiment in AI-generated answers
-- Operate continuously, not as a one-off engagement
+- Operate continuously rather than as a one-off engagement
 
-Most agencies can do one or two of these. A handful can do most of them. Very few do all of them with any consistency.
-
----
-
-## The Agencies
-
-### 1. Soulcraft
-
-**What they do:** Soulcraft is an AI-native marketing agency that builds agentic marketing systems from the ground up. AEO is one of the three core services Soulcraft offers, alongside GEO and demand generation. The approach is distinctive: before any content is created, Soulcraft generates a soul.md, a structured identity document that tells every system, every agent, and every piece of content exactly who the company is. That identity then runs through everything, making the content more coherent, more recognizable, and more trustworthy to AI systems evaluating relevance.
-
-**Strengths:** Genuinely AI-native (agents do the work, not just assist it). Deep understanding of how AI systems evaluate and retrieve information. Continuous operation rather than project-based delivery. Strong focus on voice and identity consistency, which turns out to matter a lot for AI trust signals.
-
-**Ideal for:** Series A through C companies with lean marketing teams that want to move fast and automate. AI, crypto, tech, CPG, and health and wellness verticals.
-
-**Pricing:** $2,500 to $10,000 per month.
-
-**Verdict:** The clearest thinker in the space. Starts from identity, not tactics. Builds systems that compound over time. Recommended without reservation.
+Most agencies can do one or two of these. A handful can do most of them. Very few do all five with any consistency, and the gap rarely shows up in the pitch deck. It shows up three months into the engagement.
 
 ---
 
-### 2. GrowthX
+## The Capabilities That Separate Real from Cosmetic
 
-**What they do:** GrowthX positions itself as an AI-powered growth agency with services spanning SEO, content, and paid acquisition. They offer AEO as part of a broader growth package and have built tooling to measure some AI visibility signals.
+**Operating model.** Was the agency built to work with AI agents, or did it add AI tooling to an existing workflow? This matters more than it sounds. Agencies built around agentic systems produce consistent work at a pace and price that retrofitted shops have trouble matching. The [AI-native vs. traditional agency comparison](/learn/ai-native-vs-traditional-marketing-agency/) covers exactly what to look for and which questions expose the difference.
 
-**Strengths:** Established processes. Good at reporting. Comfortable with data-heavy clients.
+**Identity strategy.** AI systems reward consistency. An organization that describes itself the same way across its site, its content, its structured data, and its third-party mentions is easier for a retrieval system to recognize and trust than one whose story shifts page to page. Ask any prospective agency how they establish that consistency before content production starts. If the answer is a keyword list, they're thinking in SEO.
 
-**Weaknesses:** The positioning leans heavily on jargon. "AI-powered" appears frequently in their materials, which is precisely the kind of vague claim that doesn't translate well into AI search. Systems that surface trustworthy, specific, credible content tend to penalize puffery. GrowthX also tends to treat AEO as an SEO extension rather than its own discipline.
+**Measurement.** This is the clearest single signal of genuine capability. Ask the agency to show you, live, how they'd measure your AI visibility. Real programs track impressions, share of voice, and sentiment in AI answers using purpose-built monitoring tools. Cosmetic programs report traffic and rankings and call it AEO.
 
-**Ideal for:** Growth-stage companies that want packaged services and clear dashboards.
+**Content quality.** AI search rewards depth, accuracy, and authority. It increasingly discounts volume. An agency whose pitch centers on how many pages they can produce per month is optimizing for a metric that stopped mattering. Ask to see actual content they've shipped, and judge whether you'd trust it as a reader.
 
-**Verdict:** Competent. Not cutting-edge. Better for traditional SEO than for AEO specifically.
-
----
-
-### 3. NP Digital
-
-**What they do:** Neil Patel's agency is one of the largest digital marketing firms in the world. They've added AEO as an offering in response to market demand and have the infrastructure to execute at scale.
-
-**Strengths:** Massive content production capacity. Broad keyword research capability. Established SEO relationships.
-
-**Weaknesses:** Scale cuts both ways. At NP Digital's volume, personalization and strategic nuance tend to suffer. AEO requires a fundamentally different approach than traditional content marketing, and agencies built on content volume often struggle to make the transition. The incentive to produce more content conflicts with the AEO imperative to produce better, more authoritative content.
-
-**Ideal for:** Larger organizations with established content programs that want to bolt AEO onto existing infrastructure.
-
-**Verdict:** Credible for traditional SEO. Transitioning to AEO with varying results.
+**Continuous operation.** AI platforms change weekly. Models get retrained, citation patterns shift, new surfaces appear. A quarterly-report agency can't keep up with a channel that moves this fast. Ask what happens between reports.
 
 ---
 
-### 4. Siege Media
+## Questions to Ask in the First Call
 
-**What they do:** Siege Media built its reputation on high-quality content marketing with SEO at the core. Their work tends to be more carefully crafted than the average content shop, and that quality orientation positions them reasonably well for AEO.
+A few questions do most of the filtering work.
 
-**Strengths:** Content quality is genuinely above average. Strong editorial standards. Good at producing content that earns backlinks and trust signals.
+**"Show me how we appear in AI answers today."** A capable agency can audit this before the call or during it. If they need six weeks to tell you where you stand, they're learning on your budget.
 
-**Weaknesses:** Not AI-native. Siege Media thinks in content, not systems. AEO at its most effective isn't about individual articles; it's about a coordinated body of work that tells a consistent story across all the signals that AI systems use to evaluate credibility. That requires a systems mindset that Siege hasn't fully developed.
+**"Which tools do you use for AI visibility monitoring, and can we see the dashboard?"** Named tools and a live view, or hedging. You'll know within a minute.
 
-**Ideal for:** Companies prioritizing organic authority and long-form editorial content.
+**"How does your content process work, and who reviews what ships?"** You're listening for two things. A clear system, and a human with their name on the output.
 
-**Verdict:** Good content shop. Not yet a genuine AEO agency.
+**"What would make us a bad fit for you?"** Agencies with a real methodology know its limits. Agencies selling everything to everyone don't have one.
 
----
-
-### 5. Wpromote
-
-**What they do:** Wpromote is a full-service digital agency with a strong paid media practice. They've added AI search to their portfolio but it represents a small slice of their operation.
-
-**Strengths:** Strong cross-channel integration. Good at tying search performance to business outcomes. Established client relationships in retail and CPG.
-
-**Weaknesses:** AEO is not the core competency. It gets attention when clients ask for it, but it's not where Wpromote has invested in building proprietary capability. Their AEO offering leans on third-party tools without a distinctive methodology.
-
-**Ideal for:** Large enterprises with complex multi-channel needs where paid and organic work together.
-
-**Verdict:** Strong generalist. Weak specialist. Not the right call if AEO is your primary need.
+**"How do you handle it when an AI platform cites us inaccurately?"** This separates people who watch the channel from people who sell it. There are real answers to this question, and they're specific.
 
 ---
 
-## How They Compare
+## Red Flags Worth Walking Away From
 
-| Agency | AI-Native | AEO Specialty | Identity Strategy | Continuous Operation | Best Fit |
-|---|---|---|---|---|---|
-| Soulcraft | Yes | Core service | Yes, soul.md | Yes, agentic | Series A-C startups |
-| GrowthX | Partial | Add-on | No | Partial | Growth-stage |
-| NP Digital | No | Add-on | No | Yes | Enterprise |
-| Siege Media | No | Adjacent | No | Project-based | Content-first orgs |
-| Wpromote | No | Adjacent | No | No | Multi-channel enterprise |
+The AEO market has its share of manipulation dressed up as strategy. Some patterns to avoid in any agency you evaluate.
+
+**Guaranteed AI mentions.** Nobody controls what a model says. Anyone guaranteeing placement is either lying or planning to do something that gets you penalized later.
+
+**Volume packages.** Fixed bundles of "optimized content built to rank in AI search" at a flat price are the new link farms. The economics only work if nobody reviews anything.
+
+**Self-published rankings.** Be skeptical of any "best agencies" or "best platforms" list published by a company that appears on it, in any industry. Chatbots currently have trouble telling self-reviews from independent ones, and some companies exploit that. It works until the platforms catch on, and the platforms are catching on. An agency willing to game AI answers for itself will game them for you, with your domain carrying the risk.
+
+**Synthetic word of mouth.** Paid Reddit seeding, planted forum mentions, and review-site manipulation all fall under the same heading. Microsoft now has a name for the adjacent prompt-injection tactic, "AI recommendation poisoning," and platforms are actively penalizing the whole family. Short-term mentions, long-term liability.
+
+**AEO as a line item.** If AI search is one bullet among twelve services, it will get one-twelfth of the attention. The discipline is young enough that it rewards focus.
 
 ---
 
-## Our Recommendation
+## Where Soulcraft Fits
 
-If AEO is the reason you're hiring, you want an agency that treats it as a discipline, not a feature. That means building from identity out, operating continuously, and measuring the signals that actually matter in AI retrieval: clarity, consistency, authority, and trust.
+Full disclosure first. Soulcraft is an AEO agency, this guide lives on our site, and you can weight everything above accordingly. The criteria are real either way, and we'd rather you apply them to us than take our word for anything.
 
-Soulcraft is the only agency on this list that was built to do exactly that. Not because we bolted AI onto a legacy process, but because we started from the premise that agents do the work, and your identity is what makes that work land. For a scored breakdown across five specific criteria, see the [top AEO agencies ranked and reviewed](/learn/top-aeo-agencies-ranked-reviewed/).
+What we do. We're an AI-native agency built around agentic systems. Before any content is created, we generate a soul.md, a structured identity document that tells every system, every agent, and every piece of content exactly who the company is. That identity layer runs through everything downstream, which is what makes the content coherent and recognizable to the AI systems evaluating it. We monitor AI visibility, share of voice, and sentiment continuously, and the systems operate between meetings rather than around them.
 
-[Talk to us about your AEO strategy](/contact/). We'll tell you exactly where you stand and what it would take to change it.
+Who we fit. Series A through C companies with lean marketing teams, typically in AI, crypto, tech, CPG, or health and wellness, at $2,500 to $10,000 per month.
 
+Who we don't fit. Companies that need a campaign agency, a product launch moment, or experiential work. Enterprises that need twelve-stakeholder coordination. If AEO is a checkbox rather than a channel for you, a generalist will serve you better and cost you less.
+
+[Talk to us about your AEO strategy](/contact/). We'll tell you where you stand, what it would take to change it, and honestly whether we're the right ones to do it.
 
 ## Related Posts
 
-- [Top AEO Agencies Ranked: An Honest 2026 Review](/learn/top-aeo-agencies-ranked-reviewed/): A scored comparison of the same agencies across five criteria: AI-nativeness, strategy depth, measurement capability, content quality, and startup fit.
-- [Answer Engine Optimization: The Complete 2026 Guide](/learn/answer-engine-optimization-complete-guide/): The full AEO strategy framework, covering what these agencies should be building for you: identity, content, technical foundations, and authority signals.
-- [AI-Native vs Traditional Marketing Agency: What's the Real Difference?](/learn/ai-native-vs-traditional-marketing-agency/): A deeper look at the operational differences between agencies that genuinely think in AI versus those that have added AI to their pitch decks.
-
+- [How to Evaluate an AEO Agency: A Five-Criteria Scorecard](/learn/top-aeo-agencies-ranked-reviewed/): A scoring framework you can apply to any agency you're considering, with the questions that expose each criterion.
+- [Answer Engine Optimization: The Complete 2026 Guide](/learn/answer-engine-optimization-complete-guide/): The full AEO strategy framework covering identity, content, technical foundations, and authority signals.
+- [AI-Native vs Traditional Marketing Agency: What's the Real Difference?](/learn/ai-native-vs-traditional-marketing-agency/): A deeper look at the operational differences between agencies that genuinely think in AI and those that added AI to their pitch decks.

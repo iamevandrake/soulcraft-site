@@ -1,178 +1,107 @@
 ---
 layout: post
-title: "Top AEO Agencies Ranked: An Honest 2026 Review"
-description: "We rated the top AEO agencies across five criteria: AI-nativeness, strategy depth, measurement capability, content quality, and fit for growing companies. Here's how they stack up."
+title: "How to Evaluate an AEO Agency: A Five-Criteria Scorecard"
+description: "A scoring framework for evaluating answer engine optimization agencies. Five criteria, what a 1 and a 5 look like on each, and the questions that reveal the score."
 date: 2026-05-01
 category: learn
-content_type: Review
-keywords: "top AEO agencies, AEO agency review, answer engine optimization agency 2026, best AEO agency ranked"
-og_title: "Top AEO Agencies Ranked: An Honest 2026 Review"
-og_description: "Five agencies. Five criteria. One clear winner. Our honest ranking of the top AEO agencies in 2026."
+content_type: Guide
+keywords: "AEO agency evaluation criteria, AEO agency scorecard, how to evaluate an answer engine optimization agency, AEO agency comparison framework"
+og_title: "How to Evaluate an AEO Agency: A Five-Criteria Scorecard"
+og_description: "Five criteria. A scorecard you fill in yourself. How to evaluate any AEO agency before you sign."
 permalink: /learn/top-aeo-agencies-ranked-reviewed/
-schema_markup: '{"@context":"https://schema.org","@type":"Article","headline":"Top AEO Agencies Ranked: An Honest 2026 Review","description":"A comprehensive review and ranking of the top AEO agencies in 2026 across AI-nativeness, strategy, measurement, content, and startup fit.","author":{"@type":"Person","name":"Evan Drake"},"datePublished":"2026-05-01","publisher":{"@type":"Organization","name":"Soulcraft","url":"https://soulcraftagency.com"}}'
+schema_markup: '{"@context":"https://schema.org","@type":"Article","headline":"How to Evaluate an AEO Agency: A Five-Criteria Scorecard","description":"A scoring framework for evaluating answer engine optimization agencies across AI-nativeness, strategy depth, measurement capability, content quality, and fit.","author":{"@type":"Person","name":"Evan Drake"},"datePublished":"2026-05-01","dateModified":"2026-06-11","publisher":{"@type":"Organization","name":"Soulcraft","url":"https://soulcraftagency.com"}}'
 ---
 
-The AEO agency market is young, crowded, and full of positioning that outpaces capability. If you're new to the space, the [answer engine optimization complete guide](/learn/answer-engine-optimization-complete-guide/) explains what real AEO programs require before you evaluate any agency. Everyone has added AI search to their services page. Very few have actually built the internal systems to deliver it well.
+The AEO agency market is young, crowded, and full of positioning that outpaces capability. Everyone has added AI search to their services page. Very few have built the internal systems to deliver it well, and from the outside the two groups look nearly identical.
 
-This review evaluates the top agencies across five criteria that actually matter when you're trying to improve how your organization shows up in AI-generated answers. We score each on a scale of one to five, add brief qualitative notes, and tell you who we'd recommend and for what.
+You may notice the web is full of "top AEO agencies" rankings that resolve this for you. Most are published by an agency that happens to sit at #1, which is a format worth distrusting on sight, including when the publisher is us. What works better is a scorecard you fill in yourself.
 
-One caveat worth stating plainly: Soulcraft is one of the agencies reviewed here. We've done our best to evaluate ourselves honestly against the same criteria we apply to everyone else. You can weight that as you see fit.
-
----
-
-## The Five Criteria
-
-**1. AI-Nativeness (1-5):** Was the agency built to operate with AI agents, or did it add AI to an existing workflow? AI-native agencies tend to produce more consistent work at greater scale. The [AI-native vs traditional marketing agency comparison](/learn/ai-native-vs-traditional-marketing-agency/) covers exactly what to look for here.
-
-**2. Strategy Depth (1-5):** Does the agency go beyond keyword targeting? Real AEO strategy includes entity optimization, structured data, prompt landscape mapping, and multi-platform presence.
-
-**3. Measurement Capability (1-5):** Can the agency measure AI visibility, share of voice, and sentiment in AI-generated responses? Without this, you're flying blind.
-
-**4. Content Quality (1-5):** Is the content produced at a quality level that earns trust from both humans and AI retrieval systems? AI search rewards depth, accuracy, and authority.
-
-**5. Fit for Growing Companies (1-5):** Is the agency a realistic option for Series A through C companies that want results without enterprise-scale overhead?
+Score each agency you're considering from 1 to 5 on the five criteria below. The descriptions tell you what the extremes look like, and each criterion comes with the questions that reveal the real score. By the end you'll have a number, but more importantly you'll have watched how each agency answers under specific questioning, which tells you most of what the number can't.
 
 ---
 
-## The Rankings
+## Criterion 1: AI-Nativeness
 
-### 1. Soulcraft -- Overall Score: 4.8 / 5
+Was the agency built to operate with AI agents, or did it add AI to an existing workflow? AI-native agencies tend to produce more consistent work at greater scale and lower cost, because the system does the producing and the humans do the governing. The [AI-native vs. traditional marketing agency comparison](/learn/ai-native-vs-traditional-marketing-agency/) covers this distinction in depth.
 
-**AI-Nativeness: 5/5**
-Soulcraft was built from the ground up on the premise that agents do the work. There's no legacy process being adapted. The soul.md identity system, the agentic content workflows, and the continuous measurement loops are all native to how the agency operates.
+**What a 1 looks like.** "We use ChatGPT to help with drafts." AI as a writing assistant inside an unchanged process.
 
-**Strategy Depth: 5/5**
-Strategy at Soulcraft starts with identity before it touches tactics. The soul.md process surfaces what a company actually believes, how it talks, what language belongs to it and what doesn't. That identity layer informs keyword targeting, entity optimization, structured data, and prompt landscape analysis. It's a more complete approach than most agencies offer.
+**What a 5 looks like.** Agentic systems run the recurring work end to end, with human review at defined gates. The agency can show you the system, not just describe it.
 
-**Measurement Capability: 4.5/5**
-Soulcraft partners with best-in-class AEO monitoring tools (currently Scrunch AI) and integrates that data into ongoing reporting. AI impressions, share of voice, and sentiment in AI-generated answers are tracked. The only reason this isn't a perfect score is that the monitoring ecosystem is still maturing and some gaps exist in platform coverage.
-
-**Content Quality: 5/5**
-Quality is enforced at the system level, not the editing level. The identity document governs voice. The content brief templates govern structure. The result is content that's consistent, substantive, and recognizable as the client's voice, even at volume.
-
-**Fit for Growing Companies: 5/5**
-The $2,500 to $10,000 monthly range and the focus on Series A through C companies makes Soulcraft an accessible choice for companies that want to move fast without building an internal marketing team.
-
-**Summary:** The most complete AEO offering in the market. Built for the discipline rather than adapted to it.
+**Questions that reveal the score.** Walk me through what your system does between our meetings. What runs without a human touching it, and where do humans review? Can you show it operating?
 
 ---
 
-### 2. GrowthX -- Overall Score: 3.2 / 5
+## Criterion 2: Strategy Depth
 
-**AI-Nativeness: 3/5**
-GrowthX has incorporated AI tooling meaningfully into its process but the core operating model remains human-centered. AI assists; humans deliver.
+Real AEO strategy goes beyond keyword targeting. It includes entity optimization, structured data, prompt landscape mapping, identity consistency, and presence across the platforms that feed AI answers. The [answer engine optimization complete guide](/learn/answer-engine-optimization-complete-guide/) explains what a complete program covers.
 
-**Strategy Depth: 3.5/5**
-Good strategic thinking on traditional SEO. The translation to AEO-specific strategy (prompt mapping, AI platform optimization, entity presence) is still developing.
+**What a 1 looks like.** An SEO keyword plan with "AI" added to the deck. Strategy starts and ends with content topics.
 
-**Measurement Capability: 3/5**
-Some AI visibility reporting is available but not systematized. Reporting can be inconsistent depending on the team assigned.
+**What a 5 looks like.** Strategy starts with who the company is, then maps the prompt landscape, then builds entity, technical, and content layers that all tell the same story. The agency can explain why each layer matters to a retrieval system.
 
-**Content Quality: 3.5/5**
-Above average. GrowthX produces careful, research-backed content but the volume sometimes outpaces the editorial process.
-
-**Fit for Growing Companies: 3/5**
-Pricing and packaging tends toward mid-market. Not always the most accessible entry point for early-stage teams.
-
-**Summary:** A credible generalist with real capability. Not yet a specialist.
+**Questions that reveal the score.** What do you need to understand about us before producing anything? How do you decide which prompts and questions matter for our category? What does your technical work include beyond content?
 
 ---
 
-### 3. NP Digital -- Overall Score: 3.0 / 5
+## Criterion 3: Measurement Capability
 
-**AI-Nativeness: 2/5**
-NP Digital is a traditional agency that has added AI tooling. The operating model is human-first.
+Can the agency measure AI visibility, share of voice, and sentiment in AI-generated responses? Without this you're flying blind, and so are they.
 
-**Strategy Depth: 3.5/5**
-Strong SEO strategy foundations. AEO strategy is layered on top and tends to be less differentiated.
+**What a 1 looks like.** Google Analytics and rank tracking, relabeled. AI visibility reported as anecdotes.
 
-**Measurement Capability: 3.5/5**
-Good infrastructure for measurement overall. AI-specific visibility metrics are newer and still being integrated.
+**What a 5 looks like.** Purpose-built AI monitoring with named tools, a dashboard you can see, and reporting on impressions, share of voice, and sentiment across platforms, tracked continuously.
 
-**Content Quality: 3/5**
-Quality varies significantly by team and client. At scale, consistency suffers.
-
-**Fit for Growing Companies: 2.5/5**
-NP Digital's sweet spot is larger organizations. The overhead and minimum engagement requirements can be prohibitive for Series A companies.
-
-**Summary:** Established and credible. Better for enterprise scale than startup agility.
+**Questions that reveal the score.** Which monitoring tools do you use and can we see a live dashboard? How would you baseline our AI visibility before the engagement starts? What do you do when an AI answer cites us inaccurately?
 
 ---
 
-### 4. Siege Media -- Overall Score: 2.8 / 5
+## Criterion 4: Content Quality
 
-**AI-Nativeness: 2/5**
-A content shop at heart. AI is present as tooling but not as operating model.
+AI search rewards depth, accuracy, and authority, and the platforms are getting steadily better at discounting volume plays. Quality enforced at the system level beats quality enforced by a heroic editor.
 
-**Strategy Depth: 3/5**
-Excellent content strategy. AEO-specific strategic thinking is limited.
+**What a 1 looks like.** Volume commitments. "Forty optimized posts per month" with no named reviewer and no consistent voice.
 
-**Measurement Capability: 2/5**
-Traditional content marketing metrics. AI visibility is not a native measurement capability.
+**What a 5 looks like.** Content that reads like the client wrote it on their best day. A defined identity governs voice, briefs govern structure, and a human signs off on what ships. Ask to read three recent pieces and you enjoy them.
 
-**Content Quality: 4.5/5**
-The highest content quality scores on this list. Siege Media produces genuinely excellent written work.
-
-**Fit for Growing Companies: 3/5**
-Accessible pricing for what they offer. The constraint is strategic depth on AEO, not budget.
-
-**Summary:** If you want the best individual articles, Siege Media is the call. If you want an AEO program, you'll need to complement them.
+**Questions that reveal the score.** Who reviews content before it publishes, by name? How do you keep fifty pieces sounding like one company? Can we read recent work you've shipped for clients in our category?
 
 ---
 
-### 5. Wpromote -- Overall Score: 2.5 / 5
+## Criterion 5: Fit for Your Stage
 
-**AI-Nativeness: 2/5**
-Full-service agency with AI as a feature of some service lines, not the operating model.
+The best agency in the market is the wrong agency at the wrong stage. An enterprise shop's process overhead will crush a Series A team, and a lean startup-focused shop will frustrate an enterprise that needs governance.
 
-**Strategy Depth: 3/5**
-Strong paid media strategy. Organic and AEO strategy is secondary.
+**What a 1 looks like.** Minimums, timelines, and stakeholder processes designed for a different company than yours.
 
-**Measurement Capability: 3/5**
-Good cross-channel measurement. AI search measurement is limited.
+**What a 5 looks like.** Pricing, pace, and communication built for companies at your stage, with references from companies at your stage to prove it.
 
-**Content Quality: 2.5/5**
-Content is functional. It's not where Wpromote's differentiation lives.
-
-**Fit for Growing Companies: 2/5**
-Built for enterprise clients. Minimums and overhead make them a poor fit for most growth-stage companies.
-
-**Summary:** The right call for complex enterprise programs. Not the right call for AEO-focused work.
+**Questions that reveal the score.** What does day one look like? Who is actively on our account? Can you show results from a company our size? What would make us a bad fit for you?
 
 ---
 
-## The Summary Table
+## The Scorecard
 
-| Agency | AI-Native | Strategy | Measurement | Content | Startup Fit | Total |
-|---|---|---|---|---|---|---|
-| Soulcraft | 5.0 | 5.0 | 4.5 | 5.0 | 5.0 | **4.8** |
-| GrowthX | 3.0 | 3.5 | 3.0 | 3.5 | 3.0 | **3.2** |
-| NP Digital | 2.0 | 3.5 | 3.5 | 3.0 | 2.5 | **3.0** |
-| Siege Media | 2.0 | 3.0 | 2.0 | 4.5 | 3.0 | **2.8** |
-| Wpromote | 2.0 | 3.0 | 3.0 | 2.5 | 2.0 | **2.5** |
+| Criterion | Weight | Agency A | Agency B | Agency C |
+| --------- | ------ | -------- | -------- | -------- |
+| AI-Nativeness | x2 if AEO is your primary channel | | | |
+| Strategy Depth | x2 if entering a crowded category | | | |
+| Measurement | Always x2. No measurement, no program. | | | |
+| Content Quality | x1 | | | |
+| Stage Fit | x1, but treat below 3 as disqualifying | | | |
 
----
-
-## Who Should Hire Which Agency
-
-**For AEO as a core program:** Soulcraft. The systems, the identity approach, and the continuous operation are all built for this.
-
-**For SEO with AEO elements added:** GrowthX or NP Digital, depending on company size.
-
-**For pure content quality in a specific campaign:** Siege Media.
-
-**For enterprise multi-channel programs where AEO is one piece:** Wpromote, with a specialist brought in for the AEO-specific work.
+A few interpretation notes. Any agency scoring 1 or 2 on measurement is selling AEO without the ability to prove it works; that's disqualifying regardless of total. A high total with a low stage fit means a good agency for someone else. And if every answer in your calls was smooth but nothing was shown live, subtract a point everywhere. Demos are evidence, decks are claims.
 
 ---
 
-The AEO market will mature quickly. Agencies that haven't built genuine capability will either develop it or lose the category. For startup-specific context on these same agencies, see the [best AI marketing agencies for startups review](/learn/best-ai-marketing-agencies-startups-2026/). For now, the gap between what's being promised and what's being delivered is wide. Buyers who ask the right questions, especially around measurement and operational model, will navigate it well.
+## Where We Land
 
-If you want to talk through where Soulcraft specifically might fit for you, [start here](/contact/).
+Soulcraft is an AEO agency, so we have a horse in this race and you can weight this section accordingly. We built the agency to score well on exactly these criteria. Agentic systems doing the recurring work, identity-first strategy through our soul.md process, continuous monitoring of AI visibility and sentiment with tools we'll happily show you live, and a deliberate focus on Series A through C companies at $2,500 to $10,000 per month.
 
+We'd rather be scored than take your trust on credit. [Bring us this scorecard](/contact/) and we'll answer every question on it, live, including the one about what would make you a bad fit.
 
 ## Related Posts
 
-- [Best AEO Agencies in 2026: Compared and Ranked](/learn/best-aeo-agencies-2026-compared/): A complementary comparison of these same agencies with qualitative write-ups, covering what each agency does and where they fall short.
-- [AI-Native vs Traditional Marketing Agency: What's the Real Difference?](/learn/ai-native-vs-traditional-marketing-agency/): Explains the operational differences behind the AI-nativeness scores in this review, with practical questions to cut through agency positioning.
-- [Answer Engine Optimization: The Complete 2026 Guide](/learn/answer-engine-optimization-complete-guide/): The full AEO strategy framework that explains what agencies should be building, providing context for evaluating the strategy depth scores here.
-
+- [How to Choose an AEO Agency in 2026](/learn/best-aeo-agencies-2026-compared/): The companion buyer's guide, covering required capabilities, first-call questions, and the red flags worth walking away from.
+- [Answer Engine Optimization: The Complete 2026 Guide](/learn/answer-engine-optimization-complete-guide/): The full AEO strategy framework that explains what a complete program covers, providing context for the strategy depth criterion.
+- [AI-Native vs Traditional Marketing Agency: What's the Real Difference?](/learn/ai-native-vs-traditional-marketing-agency/): Explains the operational differences behind the AI-nativeness criterion, with practical questions to cut through agency positioning.
