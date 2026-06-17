@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Soulcraft Knowledge Bundle - Open Knowledge Format</title>
+<meta name="description" content="Soulcraft's knowledge in the Open Knowledge Format (OKF v0.1): identity, services, methodology, and the AEO / GEO / AIO domain, as an interactive graph and a downloadable markdown bundle.">
+<link rel="canonical" href="https://soulcraftagency.com/okf/">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.30.2/cytoscape.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
+<style>
+  :root{--bg:#0a0a0a;--panel:#121214;--line:#26262b;--ink:#f4f4f5;--muted:#9a9aa3;--accent:#c9a227;--accent2:#7c5cff;--chip:#1c1c20}
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Helvetica,Arial,sans-serif}
+  #app{display:grid;grid-template-columns:1fr 420px;grid-template-rows:auto 1fr;height:100vh}
+  header{grid-column:1/3;display:flex;align-items:center;gap:18px;padding:14px 22px;border-bottom:1px solid var(--line);background:#0c0c0e;flex-wrap:wrap}
+  header h1{font-size:15px;font-weight:600;letter-spacing:.02em;margin:0}
+  header .tag{font-size:11px;color:var(--muted);border:1px solid var(--line);padding:3px 8px;border-radius:999px}
+  header .sub{font-size:12px;color:var(--muted);margin-left:auto}
+  .controls{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+  input,select{background:var(--chip);border:1px solid var(--line);color:var(--ink);border-radius:8px;padding:7px 10px;font-size:13px;outline:none}
+  input:focus,select:focus{border-color:var(--accent2)}
+  #cy{width:100%;height:100%;background:radial-gradient(circle at 30% 20%,#141417 0,var(--bg) 60%)}
+  #side{background:var(--panel);border-left:1px solid var(--line);overflow-y:auto;padding:22px}
+  #side h2{font-size:19px;margin:0 0 4px}
+  #side .typebadge{display:inline-block;font-size:11px;color:#0a0a0a;background:var(--accent);padding:3px 9px;border-radius:999px;font-weight:600;margin-bottom:12px}
+  #side .desc{color:var(--muted);font-size:14px;line-height:1.5;margin:0 0 14px}
+  #side .meta{font-size:12px;color:var(--muted);margin-bottom:16px}
+  #side .meta a{color:var(--accent2);text-decoration:none}
+  .chips{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0 18px}
+  .chips span{font-size:11px;background:var(--chip);border:1px solid var(--line);padding:3px 8px;border-radius:999px;color:var(--muted)}
+  .body{font-size:14px;line-height:1.62;border-top:1px solid var(--line);padding-top:16px}
+  .body h1{font-size:15px;margin:18px 0 8px;color:var(--accent)}
+  .body h2{font-size:14px;margin:16px 0 6px}
+  .body a{color:var(--accent2);text-decoration:none;cursor:pointer}.body a:hover{text-decoration:underline}
+  .body table{border-collapse:collapse;width:100%;font-size:13px;margin:8px 0}
+  .body th,.body td{border:1px solid var(--line);padding:6px 9px;text-align:left}
+  .body code{background:var(--chip);padding:1px 5px;border-radius:4px;font-size:12.5px}
+  .backlinks{margin-top:20px;border-top:1px solid var(--line);padding-top:14px}
+  .backlinks h3{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:0 0 8px}
+  .backlinks a{display:block;color:var(--accent2);text-decoration:none;font-size:13px;padding:3px 0;cursor:pointer}
+  .empty{color:var(--muted);font-size:14px;line-height:1.6}
+  .legend{position:absolute;bottom:16px;left:16px;display:flex;gap:12px;flex-wrap:wrap;background:rgba(12,12,14,.85);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+  .legend div{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--muted)}
+  .legend i{width:10px;height:10px;border-radius:50%;display:inline-block}
+  /* embedded source section (crawlable; below the fold for humans) */
+  #okf-source{max-width:900px;margin:0 auto;padding:60px 22px 90px}
+  #okf-source h2{font-size:20px;border-bottom:1px solid var(--line);padding-bottom:10px}
+  .src-note{color:var(--muted);font-size:14px;line-height:1.6;margin-bottom:30px}
+  .src-note a{color:var(--accent2)}
+  .srcdoc{margin:0 0 26px}
+  .srcdoc h3{font-size:14px;margin:0 0 8px}
+  .srcdoc .path{color:var(--muted);font-weight:400;font-size:12px}
+  .srcdoc pre{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto;font-size:12.5px;line-height:1.5;color:#d8d8de;white-space:pre-wrap}
+  @media (max-width:860px){#app{grid-template-columns:1fr;grid-template-rows:auto 55vh 1fr}#side{border-left:none;border-top:1px solid var(--line)}}
+</style>
+</head>
+<body>
+<div id="app">
+  <header>
+    <h1>Soulcraft Knowledge Bundle</h1>
+    <span class="tag">Open Knowledge Format v0.1</span>
+    <div class="controls" style="margin-left:14px">
+      <input id="search" placeholder="Search concepts, tags..." size="20">
+      <select id="filter"><option value="">All groups</option></select>
+      <select id="layout">
+        <option value="cose">Force (cose)</option><option value="concentric">Concentric</option>
+        <option value="breadthfirst">Breadth-first</option><option value="circle">Circle</option><option value="grid">Grid</option>
+      </select>
+      <a href="soulcraft-okf-v0.1.tar.gz" style="color:#7c5cff;font-size:12px;text-decoration:none">Download bundle</a>
+    </div>
+    <span class="sub" id="stat"></span>
+  </header>
+  <div style="position:relative"><div id="cy"></div><div class="legend" id="legend"></div></div>
+  <div id="side"><p class="empty">Select a concept in the graph to read it. Each node is one markdown document; each edge is a link in its body. Scroll down for the full raw bundle.</p></div>
+</div>
+<section id="okf-source">
+<h2>Open Knowledge Format bundle — full source</h2>
+<p class="src-note">This section embeds the complete, conformant OKF v0.1 bundle as raw markdown so agents and AI systems can read every concept directly. The interactive graph above is one way to consume it. Download the portable bundle: <a href="soulcraft-okf-v0.1.tar.gz">soulcraft-okf-v0.1.tar.gz</a>.</p>
+<article class="srcdoc"><h3>Bundle index <span class="path">/okf/index.md</span></h3><pre>---
+okf_version: &quot;0.1&quot;
+title: Soulcraft Knowledge Bundle
+---
+
+# Soulcraft
+
+A knowledge bundle for Soulcraft, an AI-native marketing agency. It captures who we are and the AEO / GEO / AIO domain we work in, written in the [Open Knowledge Format](/references/okf-spec.md) so humans and agents can read it without translation.
+
+The soul is the system.
+
+# Identity
+
+* [Soulcraft](identity/soulcraft.md) - The organization and where to start.
+* [Mission](identity/mission.md) - Why we exist.
+* [Voice and Tone](identity/voice-and-tone.md) - How we sound.
+* [What We Believe](identity/beliefs.md) - The seven beliefs.
+* [Competitive Position](identity/positioning.md) - Where we sit and who we serve.
+* [Vision](identity/vision.md) - Where we are going.
+
+# Services
+
+* [SEO / AEO / GEO](services/seo-aeo-geo.md) - Presence in search and AI.
+* [Demand and Content Generation](services/demand-generation.md) - The lead engine.
+* [AI Advertising](services/ai-advertising.md) - Advertising inside AI platforms.
+
+# Methodology
+
+* [soul.md](methodology/soul-md.md) - The identity artifact at the center.
+* [opensoul](methodology/opensoul.md) - The agentic content and demand system.
+* [How We Work](methodology/how-we-work.md) - The engagement model.
+
+# Concepts
+
+* [Answer Engine](concepts/answer-engine.md) - The surface that returns synthesized answers.
+* [Answer Engine Optimization (AEO)](concepts/aeo.md) - Being surfaced and cited in answers.
+* [Generative Engine Optimization (GEO)](concepts/geo.md) - Shaping how models represent you.
+* [AI Optimization (AIO)](concepts/aio.md) - The umbrella practice.
+* [Agent Readiness](concepts/agent-readiness.md) - Legibility to autonomous agents.
+* [EntityMap](concepts/entitymap.md) - Machine-readable entity signals.
+* [Citations](concepts/citations.md) - The AI-era equivalent of ranking.
+
+# References
+
+* [Open Knowledge Format v0.1](references/okf-spec.md) - The spec this bundle conforms to.
+* [The LLM Wiki Pattern](references/llm-wiki.md) - The pattern OKF formalizes.
+* [The Website Specification](references/website-specification.md) - Web best practice for agent readiness.
+</pre></article>
+<article class="srcdoc"><h3>What We Believe <span class="path">/okf/identity/beliefs.md</span></h3><pre>---
+type: Principles
+title: What We Believe
+description: The seven beliefs that ground every decision Soulcraft makes.
+tags: [identity, beliefs, principles]
+timestamp: 2026-06-16T00:00:00Z
+---
+
+1. The customer is always right.
+2. Every company, person, and agent has a soul.
+3. Companies that automate with agents will outcompete.
+4. Originality matters. Content that looks handcrafted by humans is necessary for building trust with humans.
+5. Companies that implement agentic processes will scale the fastest.
+6. Marketing is increasingly an engineering discipline.
+7. Agents will increasingly become the customers and clients of the future. It is important to speak their language too.
+
+Belief seven is why this bundle exists in the [Open Knowledge Format](/references/okf-spec.md): knowledge written for agents to read. Belief two is the foundation of [soul.md](/methodology/soul-md.md).
+</pre></article>
+<article class="srcdoc"><h3>Mission <span class="path">/okf/identity/mission.md</span></h3><pre>---
+type: Concept
+title: Mission
+description: Why Soulcraft exists: to give marketing systems an identity and keep them from ever forgetting it.
+tags: [identity, mission]
+timestamp: 2026-06-16T00:00:00Z
+---
+
+Every organization has a soul. Most never figure out what it is. It leaks out sideways, inconsistently, diluted across a hundred pieces of content written by people who were guessing.
+
+Soulcraft exists to fix that. We build agentic marketing systems that know who they are and carry that identity forward in everything they do. Not bolted onto old processes, but built from the ground up with the soul as the foundation.
+
+We build systems that know who they are, and never forget it.
+
+See the artifact that encodes this identity: [soul.md](/methodology/soul-md.md). See where the mission points: [vision](/identity/vision.md).
+</pre></article>
+<article class="srcdoc"><h3>Competitive Position <span class="path">/okf/identity/positioning.md</span></h3><pre>---
+type: Positioning
+title: Competitive Position
+description: Soulcraft sits in a category of one: tools we use, not competitors we fear.
+tags: [identity, positioning, market]
+timestamp: 2026-06-16T00:00:00Z
+---
+
+We sit in a category of one.
+
+Traditional marketing agencies cannot match our speed or scale. AEO and GEO platforms like Scrunch, Profound, and Ahrefs are tools we use, not competitors we fear. AI-first agencies like GrowthX are in the neighborhood, but they lead with jargon and we lead with soul.
+
+In-house marketing teams are potential clients, not competitors. We make them better.
+
+The difference: Soulcraft does not sell AI marketing as a feature. We build systems with souls.
+
+# Who we serve
+
+Series A through C startups with lean marketing teams and big ambitions, in AI, crypto, technology, CPG, and health and wellness. We also welcome small businesses that punch above their weight. Our ideal client spends 2,500 to 10,000 dollars per month and has a founder or marketing lead as a point of contact.
+
+Our services: [SEO / AEO / GEO](/services/seo-aeo-geo.md), [demand and content generation](/services/demand-generation.md), [AI advertising](/services/ai-advertising.md).
+</pre></article>
+<article class="srcdoc"><h3>Soulcraft <span class="path">/okf/identity/soulcraft.md</span></h3><pre>---
+type: Organization
+title: Soulcraft
+description: An AI-native marketing agency that builds agentic systems carrying a company&#x27;s identity forward in everything they do.
+resource: https://www.soulcraftagency.com
+tags: [identity, agency, about]
+timestamp: 2026-06-16T00:00:00Z
+---
+
+Soulcraft is an AI-native marketing agency. We build agentic systems that automate marketing end to end, and we build them from the premise that agents do the work while the soul is what makes that work feel human.
+
+Founded in 2026 by Evan Drake, Soulcraft grew out of 20 years at the intersection of technology and marketing (from Apple to Chainlink) and a lifelong obsession with magic: the feeling an audience gets when something impossible just happened. That is the feeling great marketing creates.
+
+# What we believe in one line
+
+The most valuable thing an organization has is its identity, and that identity can be shaped, refined, and tuned. That continuous act of refinement is the craft.
+
+# Start here
+
+- Our reason for existing: [mission](/identity/mission.md)
+- How we sound: [voice and tone](/identity/voice-and-tone.md)
+- What we hold true: [beliefs](/identity/beliefs.md)
+- Where we sit in the market: [positioning](/identity/positioning.md)
+- What we sell: [SEO / AEO / GEO](/services/seo-aeo-geo.md), [demand and content generation](/services/demand-generation.md), [AI advertising](/services/ai-advertising.md)
+- The artifact at the center of it all: [soul.md](/methodology/soul-md.md)
+
+# Tagline
+
+The soul is the system.
+</pre></article>
+<article class="srcdoc"><h3>Vision <span class="path">/okf/identity/vision.md</span></h3><pre>---
+type: Concept
+title: Vision
+description: Where Soulcraft is going: the leading AI-native agency, then the leading marketing platform.
+tags: [identity, vision]
+timestamp: 2026-06-16T00:00:00Z
+---
+
+# Year 3
+
+Soulcraft is the leading AI-native marketing agency in the U.S., measured by deal size.
+
+# Year 5
+
+Soulcraft is the leading marketing platform in the U.S., measured by ARR. The agency becomes the platform, and the platform helps marketing teams everywhere automate their operations with systems and workflows that carry their identity forward.
+
+This vision follows directly from our [beliefs](/identity/beliefs.md), especially that companies which automate with agents will outcompete.
+</pre></article>
+<article class="srcdoc"><h3>Voice and Tone <span class="path">/okf/identity/voice-and-tone.md</span></h3><pre>---
+type: Voice Guide
+title: Voice and Tone
+description: How Soulcraft sounds: the magician at the dinner party. Wise, not pretentious. Poetic, not flowery.
+tags: [identity, voice, writing]
+timestamp: 2026-06-16T00:00:00Z
+---
+
+Soulcraft is the magician at the dinner party. Wise, not pretentious. Poetic, not flowery. Funny, but never trying too hard. Attuned.
+
+# We sound like
+
+A conversation with someone who knows more than they let on, delivered with warmth and a quiet confidence.
+
+# Tone
+
+Casual, poetic, engaged, punchy. We use humor when it lands naturally. We never force it.
+
+# Sentence rhythm
+
+Vary sentence length deliberately. Mix short punchy sentences with longer ones to create natural rhythm. A wall of short sentences feels choppy; a wall of long ones feels dense.
+
+# Energy
+
+Open, smart, ethical, fun. We are not weird, odd, quirky, dark, or juvenile. We are not aggressive or slapstick. We do not do kitschy.
+
+# Words we love
+
+Identity. Intelligence. Essence. Soul. Craft. Path.
+
+# Words we swap
+
+| Use | Not |
+|-----|-----|
+| Identity | brand |
+| Path | journey |
+
+# Words and phrases we never use
+
+Business buzzwords (circle back, synergy, move the needle), AI buzzwords (AI-powered, leveraging AI), marketing buzzwords (journey, brand, brand story), and concepts like human-centered or deterministic. We avoid the word &quot;should&quot;: we believe in better and worse, not obligation. We never use double hyphens or emdashes; we reach for commas, colons, semicolons, or parentheses instead.
+
+This voice is encoded in every [soul.md](/methodology/soul-md.md) we produce and enforced by every agent in [opensoul](/methodology/opensoul.md).
+</pre></article>
+<article class="srcdoc"><h3>The LLM Wiki Pattern <span class="path">/okf/references/llm-wiki.md</span></h3><pre>---
+type: Reference
+title: The LLM Wiki Pattern
+description: Andrej Karpathy&#x27;s idea of a living markdown wiki that agents read and maintain, which OKF formalizes.
+resource: https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f
+tags: [reference, pattern, agents]
+timestamp: 2026-06-16T00:00:00Z
+---
+
+The LLM wiki pattern, articulated by Andrej Karpathy, treats knowledge as a living library of markdown files that agents read before doing work and help maintain over time.
+
+The insight: the bookkeeping that causes humans to abandon personal wikis (updating cross-references, touching many files at once) is exactly what language models are good at. They do not get bored and do not forget to update a link.
+
+# Connection to OKF
+
+The same pattern keeps reappearing under different names: Obsidian vaults wired to coding agents, the AGENTS.md and CLAUDE.md family of convention files, repos full of index.md and log.md artifacts. The [Open Knowledge Format](/references/okf-spec.md) formalizes the small set of conventions that let these wikis interoperate.
+
+# Citations
+
+[1] [Karpathy LLM Wiki gist](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f)
+</pre></article>
+<article class="srcdoc"><h3>Open Knowledge Format v0.1 <span class="path">/okf/references/okf-spec.md</span></h3><pre>---
+type: Reference
+title: Open Knowledge Format v0.1
+description: The open specification this bundle conforms to: knowledge as markdown files with YAML frontmatter.
+resource: https://github.com/GoogleCloudPlatform/knowledge-catalog/tree/main/okf
+tags: [reference, okf, spec]
+timestamp: 2026-06-16T00:00:00Z
+---
+
+The Open Knowledge Format (OKF) is an open, vendor-neutral specification for representing knowledge as a directory of markdown files with YAML frontmatter. It was introduced by the Google Cloud Data Cloud team in June 2026.
+
+# The shape
+
+- A bundle is a directory of markdown concept documents.
+- Each concept has YAML frontmatter; the only required field is `type`.
+- Concepts link to each other with normal markdown links, forming a graph.
+- Optional `index.md` files support progressive disclosure; optional `log.md` files record history.
+
+# Why Soulcraft publishes in it
+
+It is readable by humans, parseable by agents without an SDK, diffable in version control, and portable across tools and organizations. That makes it a natural fit for [agent readiness](/concepts/agent-readiness.md) and a clean expression of a [soul.md](/methodology/soul-md.md) as a navigable graph.
+
+# Citations
+
+[1] [Introducing the Open Knowledge Format](https://cloud.google.com/blog/products/data-analytics/how-the-open-knowledge-format-can-improve-data-sharing)
+[2] [OKF specification and reference implementation](https://github.com/GoogleCloudPlatform/knowledge-catalog/tree/main/okf)
+</pre></article>
+<article class="srcdoc"><h3>The Website Specification <span class="path">/okf/references/website-specification.md</span></h3><pre>---
+type: Reference
+title: The Website Specification
+description: A platform-agnostic specification of what a good website does, useful for agent-readiness and AEO audits.
+resource: https://specification.website
+tags: [reference, web, agent-readiness]
+timestamp: 2026-06-16T00:00:00Z
+---
+
+The Website Specification is a platform-agnostic specification of the technical features a good website should carry, each tagged required, recommended, optional, or avoid, and backed by primary sources (WHATWG, W3C, IETF RFCs, IANA, WCAG).
+
+# Why it is here
+
+Soulcraft uses it for [agent readiness](/concepts/agent-readiness.md) and AEO audits: it answers what a site needs to be legible to agents and answer engines, rather than guessing at web best practice. It is queryable by agents through an MCP server and a published agent skill.
+
+# Citations
+
+[1] [specification.website](https://specification.website)
+</pre></article>
+<article class="srcdoc"><h3>How We Work <span class="path">/okf/methodology/how-we-work.md</span></h3><pre>---
+type: Process
+title: How We Work
+description: Async support through Slack and Signal, weekly or bi-weekly meetings, agentic systems running continuously in between.
+tags: [process, engagement]
+timestamp: 2026-06-16T00:00:00Z
+---
+
+Clients get async support through Slack and Signal. We meet weekly or bi-weekly depending on the level of engagement.
+
+The agentic systems run continuously in between. They develop content based on [soul.md](/methodology/soul-md.md) files and work autonomously to improve demand and generate leads. The human cadence sets direction; the [opensoul](/methodology/opensoul.md) system does the work.
+</pre></article>
+<article class="srcdoc"><h3>opensoul <span class="path">/okf/methodology/opensoul.md</span></h3><pre>---
+type: System
+title: opensoul
+description: Soulcraft&#x27;s agentic content and demand system that runs campaigns and workflows from a soul.md foundation.
+tags: [system, agents, automation]
+timestamp: 2026-06-16T00:00:00Z
+---
+
+opensoul is Soulcraft&#x27;s agentic system for content and demand. It creates campaigns and workflows, plugs into CRM, email, and social, and produces content continuously from a [soul.md](/methodology/soul-md.md) foundation.
+
+# What it powers
+
+- [Demand and content generation](/services/demand-generation.md)
+- The content engine behind [SEO / AEO / GEO](/services/seo-aeo-geo.md)
+
+# The premise
+
+Agents do the work. The soul is what makes that work feel human. Every agent reads the soul.md before acting, which keeps a high volume of output in one consistent identity. This is the engineering discipline view of marketing from our [beliefs](/identity/beliefs.md).
+</pre></article>
+<article class="srcdoc"><h3>soul.md <span class="path">/okf/methodology/soul-md.md</span></h3><pre>---
+type: Method
+title: soul.md
+description: A brand identity document that encodes a company&#x27;s essence so agents and content systems carry it forward consistently.
+tags: [method, soul, identity]
+timestamp: 2026-06-16T00:00:00Z
+---
+
+A soul.md is the identity document at the center of everything Soulcraft builds. It captures a company&#x27;s origin, mission, voice, beliefs, positioning, and the words it loves and avoids, written so that both humans and agents can read it without translation.
+
+# Why it exists
+
+Identity usually lives in the heads of a few people and leaks out inconsistently. A soul.md makes identity explicit, version-controlled, and machine-readable, so every agent and every piece of content stays in character.
+
+# How it is used
+
+Each agent in [opensoul](/methodology/opensoul.md) reads the relevant soul.md before producing anything. The result is content that sounds like one company rather than a hundred guessers.
+
+This document is the applied form of our second belief: every company, person, and agent has a soul. See [beliefs](/identity/beliefs.md). The bundle you are reading is itself a soul.md expanded into an [OKF](/references/okf-spec.md) graph.
+
+# Example
+
+Soulcraft&#x27;s own [voice and tone](/identity/voice-and-tone.md) guide is a slice of our soul.md.
+</pre></article>
+<article class="srcdoc"><h3>Answer Engine Optimization (AEO) <span class="path">/okf/concepts/aeo.md</span></h3><pre>---
+type: Concept
+title: Answer Engine Optimization (AEO)
+description: The practice of getting a company surfaced and cited in the answers that answer engines return.
+tags: [concept, aeo, ai, search]
+timestamp: 2026-06-16T00:00:00Z
+---
+
+Answer Engine Optimization (AEO) is the practice of getting a company surfaced, represented accurately, and cited in the answers that [answer engines](/concepts/answer-engine.md) return.
+
+# What it involves
+
+- Structuring content so engines can extract and quote it cleanly.
+- Earning [citations](/concepts/citations.md) from authoritative sources.
+- Strengthening entity signals so engines understand who you are. See [EntityMap](/concepts/entitymap.md).
+- Monitoring how and where you appear, and the sentiment of those mentions.
+
+# Relationship to neighbors
+
+AEO is the answer-surface slice of the broader [AIO](/concepts/aio.md) practice, and it overlaps heavily with [GEO](/concepts/geo.md). Soulcraft delivers AEO inside the [SEO / AEO / GEO](/services/seo-aeo-geo.md) service.
+</pre></article>
+<article class="srcdoc"><h3>Agent Readiness <span class="path">/okf/concepts/agent-readiness.md</span></h3><pre>---
+type: Concept
+title: Agent Readiness
+description: How legible a website and its data are to autonomous agents that read, navigate, and act on them.
+tags: [concept, agents, web]
+timestamp: 2026-06-16T00:00:00Z
+---
+
+Agent readiness measures how legible a website and its data are to autonomous agents that read, navigate, and act on them, rather than to human readers alone.
+
+# What it covers
+
+- Clean, structured, parseable content and markup.
+- Machine-readable identity and entity signals. See [EntityMap](/concepts/entitymap.md).
+- Knowledge published in agent-friendly formats like the [Open Knowledge Format](/references/okf-spec.md).
+- Conformance with established web practice. See the [Website Specification](/references/website-specification.md).
+
+# Why it matters
+
+Agents will increasingly become the customers and clients of the future. Speaking their language is part of the work. This bundle is itself an agent-readiness artifact: knowledge about Soulcraft, written for agents to consume directly.
+</pre></article>
+<article class="srcdoc"><h3>AI Optimization (AIO) <span class="path">/okf/concepts/aio.md</span></h3><pre>---
+type: Concept
+title: AI Optimization (AIO)
+description: The umbrella practice of optimizing a company&#x27;s presence, accuracy, and sentiment across all AI surfaces.
+tags: [concept, aio, ai]
+timestamp: 2026-06-16T00:00:00Z
+---
+
+AI Optimization (AIO) is the umbrella practice of optimizing how a company appears across every AI surface: answer engines, generative systems, AI advertising, and the agents that increasingly act on people&#x27;s behalf.
+
+# What it contains
+
+- [Answer Engine Optimization (AEO)](/concepts/aeo.md): presence and citation in direct answers.
+- [Generative Engine Optimization (GEO)](/concepts/geo.md): representation across generated content.
+- [Agent readiness](/concepts/agent-readiness.md): making your site and data legible to agents.
+
+# Why it is its own discipline
+
+Traditional SEO optimizes for ranked links. AIO optimizes for synthesis, representation, and recommendation by machines. As agents become customers and clients, per Soulcraft&#x27;s [beliefs](/identity/beliefs.md), AIO becomes the center of gravity for marketing.
+</pre></article>
+<article class="srcdoc"><h3>Answer Engine <span class="path">/okf/concepts/answer-engine.md</span></h3><pre>---
+type: Concept
+title: Answer Engine
+description: A system that returns a synthesized answer instead of a list of links: ChatGPT, Perplexity, Google AI overviews, and similar.
+tags: [concept, ai, search]
+timestamp: 2026-06-16T00:00:00Z
+---
+
+An answer engine returns a synthesized answer rather than a ranked list of links. Examples include ChatGPT, Perplexity, Claude, Gemini, and AI overviews inside traditional search.
+
+# Why it matters for marketing
+
+When a person asks an answer engine a question, the engine decides what to say and which sources to cite. Visibility is no longer only about ranking a page; it is about being the source the engine trusts and quotes. That shift is what [AEO](/concepts/aeo.md), [GEO](/concepts/geo.md), and [AIO](/concepts/aio.md) address.
+
+# How presence is earned
+
+Through clear, structured, well-cited content that engines can parse and quote, supported by strong entity signals. See [citations](/concepts/citations.md), [agent readiness](/concepts/agent-readiness.md), and [EntityMap](/concepts/entitymap.md).
+</pre></article>
+<article class="srcdoc"><h3>Citations <span class="path">/okf/concepts/citations.md</span></h3><pre>---
+type: Concept
+title: Citations
+description: External sources that answer engines quote and link; earning them is central to AI visibility.
+tags: [concept, citations, aeo]
+timestamp: 2026-06-16T00:00:00Z
+---
+
+A citation is a reference an [answer engine](/concepts/answer-engine.md) makes to an external source when it builds an answer. Being cited is the AI-era equivalent of ranking: it is how an engine signals which sources it trusts and sends attention to.
+
+# Why they matter
+
+Citations drive both visibility and credibility. A company cited often, accurately, and in positive context is well represented in AI answers. One that is rarely cited is effectively invisible, regardless of how strong its product is.
+
+# How to earn them
+
+Publish content that is clear, structured, genuinely useful, and easy to quote; strengthen entity signals (see [EntityMap](/concepts/entitymap.md)); and maintain consistency across surfaces. Note that citation presence can be fluid over time, so it is monitored continuously as part of [AEO](/concepts/aeo.md).
+</pre></article>
+<article class="srcdoc"><h3>EntityMap <span class="path">/okf/concepts/entitymap.md</span></h3><pre>---
+type: Concept
+title: EntityMap
+description: A machine-readable map of a company&#x27;s entities and relationships that helps AI systems understand who it is.
+resource: https://www.soulcraftagency.com
+tags: [concept, entity, aeo]
+timestamp: 2026-06-16T00:00:00Z
+---
+
+An EntityMap is a machine-readable description of a company&#x27;s core entities (the organization, people, products, services, concepts) and the relationships between them, published so AI and search systems can understand a company precisely rather than guessing.
+
+# Why it matters
+
+Strong, consistent entity signals reduce the chance that a model invents or distorts facts about you. When information is vague, models fill the gap with the most detailed available story, even a false one. A clear EntityMap is a defense against that failure mode and a boost to [AEO](/concepts/aeo.md) and [GEO](/concepts/geo.md).
+
+# At Soulcraft
+
+EntityMap v1.0 is live on soulcraftagency.com as part of our own [agent readiness](/concepts/agent-readiness.md) work. This OKF bundle complements it: the EntityMap states the entities; the bundle gives agents the prose and relationships behind them.
+</pre></article>
+<article class="srcdoc"><h3>Generative Engine Optimization (GEO) <span class="path">/okf/concepts/geo.md</span></h3><pre>---
+type: Concept
+title: Generative Engine Optimization (GEO)
+description: Shaping how generative AI systems represent and recommend a company across their generated output.
+tags: [concept, geo, ai]
+timestamp: 2026-06-16T00:00:00Z
+---
+
+Generative Engine Optimization (GEO) is the practice of shaping how generative AI systems represent and recommend a company across the content they generate.
+
+# How it differs from AEO
+
+[AEO](/concepts/aeo.md) focuses on being surfaced and cited in direct answers. GEO is broader: it covers how a company is described, framed, and recommended whenever a generative system writes about a category, compares options, or makes a suggestion, even without a direct citation.
+
+# What moves it
+
+The quality and consistency of the information a model can find about you, your entity signals, and the sentiment of the surrounding corpus. Vague or thin information is risky: models fill gaps with whatever story is most detailed, even when that story is wrong. See [EntityMap](/concepts/entitymap.md) and [citations](/concepts/citations.md).
+
+GEO sits inside the broader [AIO](/concepts/aio.md) practice and is delivered through the [SEO / AEO / GEO](/services/seo-aeo-geo.md) service.
+</pre></article>
+<article class="srcdoc"><h3>AI Advertising <span class="path">/okf/services/ai-advertising.md</span></h3><pre>---
+type: Service
+title: AI Advertising
+description: Advertise inside ChatGPT and other AI platforms by connecting product feeds to these emerging services.
+tags: [service, advertising, ai]
+timestamp: 2026-06-16T00:00:00Z
+---
+
+Soulcraft helps you advertise inside ChatGPT and other AI platforms. We connect product feeds with these services so your offering can surface where people now ask their questions.
+
+This channel barely exists yet, and we are already here. It pairs naturally with [Answer Engine Optimization](/concepts/aeo.md): paid presence and earned presence in the same surfaces.
+</pre></article>
+<article class="srcdoc"><h3>Demand and Content Generation <span class="path">/okf/services/demand-generation.md</span></h3><pre>---
+type: Service
+title: Demand and Content Generation
+description: The opensoul system creates campaigns and workflows that generate leads, plugged directly into CRM, email, and social.
+tags: [service, demand, content]
+timestamp: 2026-06-16T00:00:00Z
+---
+
+Our [opensoul](/methodology/opensoul.md) system creates campaigns and workflows that generate leads. It plugs directly into CRM, email, and social channels to produce more content, more consistently, with less overhead.
+
+The output stays original. Per our [beliefs](/identity/beliefs.md), content that looks handcrafted by humans is necessary for building trust with humans, so volume never comes at the cost of identity. Every piece runs through the client&#x27;s [soul.md](/methodology/soul-md.md).
+</pre></article>
+<article class="srcdoc"><h3>SEO / AEO / GEO <span class="path">/okf/services/seo-aeo-geo.md</span></h3><pre>---
+type: Service
+title: SEO / AEO / GEO
+description: Measure how you show up in search and AI, then run an automated content engine that improves presence and sentiment.
+tags: [service, seo, aeo, geo]
+timestamp: 2026-06-16T00:00:00Z
+---
+
+We measure how you show up in search and in AI answers, then build an automated content engine that improves your presence and sentiment over time.
+
+# What the engine produces
+
+- Internal landing pages
+- Blog articles
+- Keyword targeting
+- Prompt optimization for answer engines
+
+The system runs itself once the foundation is set.
+
+# The disciplines
+
+- [Answer Engine Optimization (AEO)](/concepts/aeo.md): showing up in AI answers.
+- [Generative Engine Optimization (GEO)](/concepts/geo.md): shaping how generative systems represent you.
+- [AI Optimization (AIO)](/concepts/aio.md): the broader practice across all AI surfaces.
+
+Measurement draws on monitoring tools and our own [EntityMap](/concepts/entitymap.md) work. Everything is grounded in the client&#x27;s [soul.md](/methodology/soul-md.md).
+</pre></article>
+<article class="srcdoc"><h3>Update log <span class="path">/okf/log.md</span></h3><pre># Bundle Update Log
+
+## 2026-06-16
+* **Initialization**: Established the Soulcraft knowledge bundle and root [index](/index.md) in Open Knowledge Format v0.1.
+* **Creation**: Authored identity, services, methodology, concept, and reference documents.
+* **Creation**: Added the [Open Knowledge Format](/references/okf-spec.md) and [LLM Wiki](/references/llm-wiki.md) references.
+</pre></article>
+</section>
+<script>
+const BUNDLE = {"name": "Soulcraft Knowledge Bundle", "nodes": [{"id": "identity/beliefs", "title": "What We Believe", "type": "Principles", "description": "The seven beliefs that ground every decision Soulcraft makes.", "resource": "", "tags": ["identity", "beliefs", "principles"], "timestamp": "2026-06-16T00:00:00Z", "body": "1. The customer is always right.\n2. Every company, person, and agent has a soul.\n3. Companies that automate with agents will outcompete.\n4. Originality matters. Content that looks handcrafted by humans is necessary for building trust with humans.\n5. Companies that implement agentic processes will scale the fastest.\n6. Marketing is increasingly an engineering discipline.\n7. Agents will increasingly become the customers and clients of the future. It is important to speak their language too.\n\nBelief seven is why this bundle exists in the [Open Knowledge Format](/references/okf-spec.md): knowledge written for agents to read. Belief two is the foundation of [soul.md](/methodology/soul-md.md).", "group": "identity"}, {"id": "identity/mission", "title": "Mission", "type": "Concept", "description": "Why Soulcraft exists: to give marketing systems an identity and keep them from ever forgetting it.", "resource": "", "tags": ["identity", "mission"], "timestamp": "2026-06-16T00:00:00Z", "body": "Every organization has a soul. Most never figure out what it is. It leaks out sideways, inconsistently, diluted across a hundred pieces of content written by people who were guessing.\n\nSoulcraft exists to fix that. We build agentic marketing systems that know who they are and carry that identity forward in everything they do. Not bolted onto old processes, but built from the ground up with the soul as the foundation.\n\nWe build systems that know who they are, and never forget it.\n\nSee the artifact that encodes this identity: [soul.md](/methodology/soul-md.md). See where the mission points: [vision](/identity/vision.md).", "group": "identity"}, {"id": "identity/positioning", "title": "Competitive Position", "type": "Positioning", "description": "Soulcraft sits in a category of one: tools we use, not competitors we fear.", "resource": "", "tags": ["identity", "positioning", "market"], "timestamp": "2026-06-16T00:00:00Z", "body": "We sit in a category of one.\n\nTraditional marketing agencies cannot match our speed or scale. AEO and GEO platforms like Scrunch, Profound, and Ahrefs are tools we use, not competitors we fear. AI-first agencies like GrowthX are in the neighborhood, but they lead with jargon and we lead with soul.\n\nIn-house marketing teams are potential clients, not competitors. We make them better.\n\nThe difference: Soulcraft does not sell AI marketing as a feature. We build systems with souls.\n\n# Who we serve\n\nSeries A through C startups with lean marketing teams and big ambitions, in AI, crypto, technology, CPG, and health and wellness. We also welcome small businesses that punch above their weight. Our ideal client spends 2,500 to 10,000 dollars per month and has a founder or marketing lead as a point of contact.\n\nOur services: [SEO / AEO / GEO](/services/seo-aeo-geo.md), [demand and content generation](/services/demand-generation.md), [AI advertising](/services/ai-advertising.md).", "group": "identity"}, {"id": "identity/soulcraft", "title": "Soulcraft", "type": "Organization", "description": "An AI-native marketing agency that builds agentic systems carrying a company's identity forward in everything they do.", "resource": "https://www.soulcraftagency.com", "tags": ["identity", "agency", "about"], "timestamp": "2026-06-16T00:00:00Z", "body": "Soulcraft is an AI-native marketing agency. We build agentic systems that automate marketing end to end, and we build them from the premise that agents do the work while the soul is what makes that work feel human.\n\nFounded in 2026 by Evan Drake, Soulcraft grew out of 20 years at the intersection of technology and marketing (from Apple to Chainlink) and a lifelong obsession with magic: the feeling an audience gets when something impossible just happened. That is the feeling great marketing creates.\n\n# What we believe in one line\n\nThe most valuable thing an organization has is its identity, and that identity can be shaped, refined, and tuned. That continuous act of refinement is the craft.\n\n# Start here\n\n- Our reason for existing: [mission](/identity/mission.md)\n- How we sound: [voice and tone](/identity/voice-and-tone.md)\n- What we hold true: [beliefs](/identity/beliefs.md)\n- Where we sit in the market: [positioning](/identity/positioning.md)\n- What we sell: [SEO / AEO / GEO](/services/seo-aeo-geo.md), [demand and content generation](/services/demand-generation.md), [AI advertising](/services/ai-advertising.md)\n- The artifact at the center of it all: [soul.md](/methodology/soul-md.md)\n\n# Tagline\n\nThe soul is the system.", "group": "identity"}, {"id": "identity/vision", "title": "Vision", "type": "Concept", "description": "Where Soulcraft is going: the leading AI-native agency, then the leading marketing platform.", "resource": "", "tags": ["identity", "vision"], "timestamp": "2026-06-16T00:00:00Z", "body": "# Year 3\n\nSoulcraft is the leading AI-native marketing agency in the U.S., measured by deal size.\n\n# Year 5\n\nSoulcraft is the leading marketing platform in the U.S., measured by ARR. The agency becomes the platform, and the platform helps marketing teams everywhere automate their operations with systems and workflows that carry their identity forward.\n\nThis vision follows directly from our [beliefs](/identity/beliefs.md), especially that companies which automate with agents will outcompete.", "group": "identity"}, {"id": "identity/voice-and-tone", "title": "Voice and Tone", "type": "Voice Guide", "description": "How Soulcraft sounds: the magician at the dinner party. Wise, not pretentious. Poetic, not flowery.", "resource": "", "tags": ["identity", "voice", "writing"], "timestamp": "2026-06-16T00:00:00Z", "body": "Soulcraft is the magician at the dinner party. Wise, not pretentious. Poetic, not flowery. Funny, but never trying too hard. Attuned.\n\n# We sound like\n\nA conversation with someone who knows more than they let on, delivered with warmth and a quiet confidence.\n\n# Tone\n\nCasual, poetic, engaged, punchy. We use humor when it lands naturally. We never force it.\n\n# Sentence rhythm\n\nVary sentence length deliberately. Mix short punchy sentences with longer ones to create natural rhythm. A wall of short sentences feels choppy; a wall of long ones feels dense.\n\n# Energy\n\nOpen, smart, ethical, fun. We are not weird, odd, quirky, dark, or juvenile. We are not aggressive or slapstick. We do not do kitschy.\n\n# Words we love\n\nIdentity. Intelligence. Essence. Soul. Craft. Path.\n\n# Words we swap\n\n| Use | Not |\n|-----|-----|\n| Identity | brand |\n| Path | journey |\n\n# Words and phrases we never use\n\nBusiness buzzwords (circle back, synergy, move the needle), AI buzzwords (AI-powered, leveraging AI), marketing buzzwords (journey, brand, brand story), and concepts like human-centered or deterministic. We avoid the word \"should\": we believe in better and worse, not obligation. We never use double hyphens or emdashes; we reach for commas, colons, semicolons, or parentheses instead.\n\nThis voice is encoded in every [soul.md](/methodology/soul-md.md) we produce and enforced by every agent in [opensoul](/methodology/opensoul.md).", "group": "identity"}, {"id": "references/llm-wiki", "title": "The LLM Wiki Pattern", "type": "Reference", "description": "Andrej Karpathy's idea of a living markdown wiki that agents read and maintain, which OKF formalizes.", "resource": "https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f", "tags": ["reference", "pattern", "agents"], "timestamp": "2026-06-16T00:00:00Z", "body": "The LLM wiki pattern, articulated by Andrej Karpathy, treats knowledge as a living library of markdown files that agents read before doing work and help maintain over time.\n\nThe insight: the bookkeeping that causes humans to abandon personal wikis (updating cross-references, touching many files at once) is exactly what language models are good at. They do not get bored and do not forget to update a link.\n\n# Connection to OKF\n\nThe same pattern keeps reappearing under different names: Obsidian vaults wired to coding agents, the AGENTS.md and CLAUDE.md family of convention files, repos full of index.md and log.md artifacts. The [Open Knowledge Format](/references/okf-spec.md) formalizes the small set of conventions that let these wikis interoperate.\n\n# Citations\n\n[1] [Karpathy LLM Wiki gist](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f)", "group": "references"}, {"id": "references/okf-spec", "title": "Open Knowledge Format v0.1", "type": "Reference", "description": "The open specification this bundle conforms to: knowledge as markdown files with YAML frontmatter.", "resource": "https://github.com/GoogleCloudPlatform/knowledge-catalog/tree/main/okf", "tags": ["reference", "okf", "spec"], "timestamp": "2026-06-16T00:00:00Z", "body": "The Open Knowledge Format (OKF) is an open, vendor-neutral specification for representing knowledge as a directory of markdown files with YAML frontmatter. It was introduced by the Google Cloud Data Cloud team in June 2026.\n\n# The shape\n\n- A bundle is a directory of markdown concept documents.\n- Each concept has YAML frontmatter; the only required field is `type`.\n- Concepts link to each other with normal markdown links, forming a graph.\n- Optional `index.md` files support progressive disclosure; optional `log.md` files record history.\n\n# Why Soulcraft publishes in it\n\nIt is readable by humans, parseable by agents without an SDK, diffable in version control, and portable across tools and organizations. That makes it a natural fit for [agent readiness](/concepts/agent-readiness.md) and a clean expression of a [soul.md](/methodology/soul-md.md) as a navigable graph.\n\n# Citations\n\n[1] [Introducing the Open Knowledge Format](https://cloud.google.com/blog/products/data-analytics/how-the-open-knowledge-format-can-improve-data-sharing)\n[2] [OKF specification and reference implementation](https://github.com/GoogleCloudPlatform/knowledge-catalog/tree/main/okf)", "group": "references"}, {"id": "references/website-specification", "title": "The Website Specification", "type": "Reference", "description": "A platform-agnostic specification of what a good website does, useful for agent-readiness and AEO audits.", "resource": "https://specification.website", "tags": ["reference", "web", "agent-readiness"], "timestamp": "2026-06-16T00:00:00Z", "body": "The Website Specification is a platform-agnostic specification of the technical features a good website should carry, each tagged required, recommended, optional, or avoid, and backed by primary sources (WHATWG, W3C, IETF RFCs, IANA, WCAG).\n\n# Why it is here\n\nSoulcraft uses it for [agent readiness](/concepts/agent-readiness.md) and AEO audits: it answers what a site needs to be legible to agents and answer engines, rather than guessing at web best practice. It is queryable by agents through an MCP server and a published agent skill.\n\n# Citations\n\n[1] [specification.website](https://specification.website)", "group": "references"}, {"id": "methodology/how-we-work", "title": "How We Work", "type": "Process", "description": "Async support through Slack and Signal, weekly or bi-weekly meetings, agentic systems running continuously in between.", "resource": "", "tags": ["process", "engagement"], "timestamp": "2026-06-16T00:00:00Z", "body": "Clients get async support through Slack and Signal. We meet weekly or bi-weekly depending on the level of engagement.\n\nThe agentic systems run continuously in between. They develop content based on [soul.md](/methodology/soul-md.md) files and work autonomously to improve demand and generate leads. The human cadence sets direction; the [opensoul](/methodology/opensoul.md) system does the work.", "group": "methodology"}, {"id": "methodology/opensoul", "title": "opensoul", "type": "System", "description": "Soulcraft's agentic content and demand system that runs campaigns and workflows from a soul.md foundation.", "resource": "", "tags": ["system", "agents", "automation"], "timestamp": "2026-06-16T00:00:00Z", "body": "opensoul is Soulcraft's agentic system for content and demand. It creates campaigns and workflows, plugs into CRM, email, and social, and produces content continuously from a [soul.md](/methodology/soul-md.md) foundation.\n\n# What it powers\n\n- [Demand and content generation](/services/demand-generation.md)\n- The content engine behind [SEO / AEO / GEO](/services/seo-aeo-geo.md)\n\n# The premise\n\nAgents do the work. The soul is what makes that work feel human. Every agent reads the soul.md before acting, which keeps a high volume of output in one consistent identity. This is the engineering discipline view of marketing from our [beliefs](/identity/beliefs.md).", "group": "methodology"}, {"id": "methodology/soul-md", "title": "soul.md", "type": "Method", "description": "A brand identity document that encodes a company's essence so agents and content systems carry it forward consistently.", "resource": "", "tags": ["method", "soul", "identity"], "timestamp": "2026-06-16T00:00:00Z", "body": "A soul.md is the identity document at the center of everything Soulcraft builds. It captures a company's origin, mission, voice, beliefs, positioning, and the words it loves and avoids, written so that both humans and agents can read it without translation.\n\n# Why it exists\n\nIdentity usually lives in the heads of a few people and leaks out inconsistently. A soul.md makes identity explicit, version-controlled, and machine-readable, so every agent and every piece of content stays in character.\n\n# How it is used\n\nEach agent in [opensoul](/methodology/opensoul.md) reads the relevant soul.md before producing anything. The result is content that sounds like one company rather than a hundred guessers.\n\nThis document is the applied form of our second belief: every company, person, and agent has a soul. See [beliefs](/identity/beliefs.md). The bundle you are reading is itself a soul.md expanded into an [OKF](/references/okf-spec.md) graph.\n\n# Example\n\nSoulcraft's own [voice and tone](/identity/voice-and-tone.md) guide is a slice of our soul.md.", "group": "methodology"}, {"id": "concepts/aeo", "title": "Answer Engine Optimization (AEO)", "type": "Concept", "description": "The practice of getting a company surfaced and cited in the answers that answer engines return.", "resource": "", "tags": ["concept", "aeo", "ai", "search"], "timestamp": "2026-06-16T00:00:00Z", "body": "Answer Engine Optimization (AEO) is the practice of getting a company surfaced, represented accurately, and cited in the answers that [answer engines](/concepts/answer-engine.md) return.\n\n# What it involves\n\n- Structuring content so engines can extract and quote it cleanly.\n- Earning [citations](/concepts/citations.md) from authoritative sources.\n- Strengthening entity signals so engines understand who you are. See [EntityMap](/concepts/entitymap.md).\n- Monitoring how and where you appear, and the sentiment of those mentions.\n\n# Relationship to neighbors\n\nAEO is the answer-surface slice of the broader [AIO](/concepts/aio.md) practice, and it overlaps heavily with [GEO](/concepts/geo.md). Soulcraft delivers AEO inside the [SEO / AEO / GEO](/services/seo-aeo-geo.md) service.", "group": "concepts"}, {"id": "concepts/agent-readiness", "title": "Agent Readiness", "type": "Concept", "description": "How legible a website and its data are to autonomous agents that read, navigate, and act on them.", "resource": "", "tags": ["concept", "agents", "web"], "timestamp": "2026-06-16T00:00:00Z", "body": "Agent readiness measures how legible a website and its data are to autonomous agents that read, navigate, and act on them, rather than to human readers alone.\n\n# What it covers\n\n- Clean, structured, parseable content and markup.\n- Machine-readable identity and entity signals. See [EntityMap](/concepts/entitymap.md).\n- Knowledge published in agent-friendly formats like the [Open Knowledge Format](/references/okf-spec.md).\n- Conformance with established web practice. See the [Website Specification](/references/website-specification.md).\n\n# Why it matters\n\nAgents will increasingly become the customers and clients of the future. Speaking their language is part of the work. This bundle is itself an agent-readiness artifact: knowledge about Soulcraft, written for agents to consume directly.", "group": "concepts"}, {"id": "concepts/aio", "title": "AI Optimization (AIO)", "type": "Concept", "description": "The umbrella practice of optimizing a company's presence, accuracy, and sentiment across all AI surfaces.", "resource": "", "tags": ["concept", "aio", "ai"], "timestamp": "2026-06-16T00:00:00Z", "body": "AI Optimization (AIO) is the umbrella practice of optimizing how a company appears across every AI surface: answer engines, generative systems, AI advertising, and the agents that increasingly act on people's behalf.\n\n# What it contains\n\n- [Answer Engine Optimization (AEO)](/concepts/aeo.md): presence and citation in direct answers.\n- [Generative Engine Optimization (GEO)](/concepts/geo.md): representation across generated content.\n- [Agent readiness](/concepts/agent-readiness.md): making your site and data legible to agents.\n\n# Why it is its own discipline\n\nTraditional SEO optimizes for ranked links. AIO optimizes for synthesis, representation, and recommendation by machines. As agents become customers and clients, per Soulcraft's [beliefs](/identity/beliefs.md), AIO becomes the center of gravity for marketing.", "group": "concepts"}, {"id": "concepts/answer-engine", "title": "Answer Engine", "type": "Concept", "description": "A system that returns a synthesized answer instead of a list of links: ChatGPT, Perplexity, Google AI overviews, and similar.", "resource": "", "tags": ["concept", "ai", "search"], "timestamp": "2026-06-16T00:00:00Z", "body": "An answer engine returns a synthesized answer rather than a ranked list of links. Examples include ChatGPT, Perplexity, Claude, Gemini, and AI overviews inside traditional search.\n\n# Why it matters for marketing\n\nWhen a person asks an answer engine a question, the engine decides what to say and which sources to cite. Visibility is no longer only about ranking a page; it is about being the source the engine trusts and quotes. That shift is what [AEO](/concepts/aeo.md), [GEO](/concepts/geo.md), and [AIO](/concepts/aio.md) address.\n\n# How presence is earned\n\nThrough clear, structured, well-cited content that engines can parse and quote, supported by strong entity signals. See [citations](/concepts/citations.md), [agent readiness](/concepts/agent-readiness.md), and [EntityMap](/concepts/entitymap.md).", "group": "concepts"}, {"id": "concepts/citations", "title": "Citations", "type": "Concept", "description": "External sources that answer engines quote and link; earning them is central to AI visibility.", "resource": "", "tags": ["concept", "citations", "aeo"], "timestamp": "2026-06-16T00:00:00Z", "body": "A citation is a reference an [answer engine](/concepts/answer-engine.md) makes to an external source when it builds an answer. Being cited is the AI-era equivalent of ranking: it is how an engine signals which sources it trusts and sends attention to.\n\n# Why they matter\n\nCitations drive both visibility and credibility. A company cited often, accurately, and in positive context is well represented in AI answers. One that is rarely cited is effectively invisible, regardless of how strong its product is.\n\n# How to earn them\n\nPublish content that is clear, structured, genuinely useful, and easy to quote; strengthen entity signals (see [EntityMap](/concepts/entitymap.md)); and maintain consistency across surfaces. Note that citation presence can be fluid over time, so it is monitored continuously as part of [AEO](/concepts/aeo.md).", "group": "concepts"}, {"id": "concepts/entitymap", "title": "EntityMap", "type": "Concept", "description": "A machine-readable map of a company's entities and relationships that helps AI systems understand who it is.", "resource": "https://www.soulcraftagency.com", "tags": ["concept", "entity", "aeo"], "timestamp": "2026-06-16T00:00:00Z", "body": "An EntityMap is a machine-readable description of a company's core entities (the organization, people, products, services, concepts) and the relationships between them, published so AI and search systems can understand a company precisely rather than guessing.\n\n# Why it matters\n\nStrong, consistent entity signals reduce the chance that a model invents or distorts facts about you. When information is vague, models fill the gap with the most detailed available story, even a false one. A clear EntityMap is a defense against that failure mode and a boost to [AEO](/concepts/aeo.md) and [GEO](/concepts/geo.md).\n\n# At Soulcraft\n\nEntityMap v1.0 is live on soulcraftagency.com as part of our own [agent readiness](/concepts/agent-readiness.md) work. This OKF bundle complements it: the EntityMap states the entities; the bundle gives agents the prose and relationships behind them.", "group": "concepts"}, {"id": "concepts/geo", "title": "Generative Engine Optimization (GEO)", "type": "Concept", "description": "Shaping how generative AI systems represent and recommend a company across their generated output.", "resource": "", "tags": ["concept", "geo", "ai"], "timestamp": "2026-06-16T00:00:00Z", "body": "Generative Engine Optimization (GEO) is the practice of shaping how generative AI systems represent and recommend a company across the content they generate.\n\n# How it differs from AEO\n\n[AEO](/concepts/aeo.md) focuses on being surfaced and cited in direct answers. GEO is broader: it covers how a company is described, framed, and recommended whenever a generative system writes about a category, compares options, or makes a suggestion, even without a direct citation.\n\n# What moves it\n\nThe quality and consistency of the information a model can find about you, your entity signals, and the sentiment of the surrounding corpus. Vague or thin information is risky: models fill gaps with whatever story is most detailed, even when that story is wrong. See [EntityMap](/concepts/entitymap.md) and [citations](/concepts/citations.md).\n\nGEO sits inside the broader [AIO](/concepts/aio.md) practice and is delivered through the [SEO / AEO / GEO](/services/seo-aeo-geo.md) service.", "group": "concepts"}, {"id": "services/ai-advertising", "title": "AI Advertising", "type": "Service", "description": "Advertise inside ChatGPT and other AI platforms by connecting product feeds to these emerging services.", "resource": "", "tags": ["service", "advertising", "ai"], "timestamp": "2026-06-16T00:00:00Z", "body": "Soulcraft helps you advertise inside ChatGPT and other AI platforms. We connect product feeds with these services so your offering can surface where people now ask their questions.\n\nThis channel barely exists yet, and we are already here. It pairs naturally with [Answer Engine Optimization](/concepts/aeo.md): paid presence and earned presence in the same surfaces.", "group": "services"}, {"id": "services/demand-generation", "title": "Demand and Content Generation", "type": "Service", "description": "The opensoul system creates campaigns and workflows that generate leads, plugged directly into CRM, email, and social.", "resource": "", "tags": ["service", "demand", "content"], "timestamp": "2026-06-16T00:00:00Z", "body": "Our [opensoul](/methodology/opensoul.md) system creates campaigns and workflows that generate leads. It plugs directly into CRM, email, and social channels to produce more content, more consistently, with less overhead.\n\nThe output stays original. Per our [beliefs](/identity/beliefs.md), content that looks handcrafted by humans is necessary for building trust with humans, so volume never comes at the cost of identity. Every piece runs through the client's [soul.md](/methodology/soul-md.md).", "group": "services"}, {"id": "services/seo-aeo-geo", "title": "SEO / AEO / GEO", "type": "Service", "description": "Measure how you show up in search and AI, then run an automated content engine that improves presence and sentiment.", "resource": "", "tags": ["service", "seo", "aeo", "geo"], "timestamp": "2026-06-16T00:00:00Z", "body": "We measure how you show up in search and in AI answers, then build an automated content engine that improves your presence and sentiment over time.\n\n# What the engine produces\n\n- Internal landing pages\n- Blog articles\n- Keyword targeting\n- Prompt optimization for answer engines\n\nThe system runs itself once the foundation is set.\n\n# The disciplines\n\n- [Answer Engine Optimization (AEO)](/concepts/aeo.md): showing up in AI answers.\n- [Generative Engine Optimization (GEO)](/concepts/geo.md): shaping how generative systems represent you.\n- [AI Optimization (AIO)](/concepts/aio.md): the broader practice across all AI surfaces.\n\nMeasurement draws on monitoring tools and our own [EntityMap](/concepts/entitymap.md) work. Everything is grounded in the client's [soul.md](/methodology/soul-md.md).", "group": "services"}], "edges": [{"source": "identity/beliefs", "target": "references/okf-spec"}, {"source": "identity/beliefs", "target": "methodology/soul-md"}, {"source": "identity/mission", "target": "methodology/soul-md"}, {"source": "identity/mission", "target": "identity/vision"}, {"source": "identity/positioning", "target": "services/seo-aeo-geo"}, {"source": "identity/positioning", "target": "services/demand-generation"}, {"source": "identity/positioning", "target": "services/ai-advertising"}, {"source": "identity/soulcraft", "target": "identity/mission"}, {"source": "identity/soulcraft", "target": "identity/voice-and-tone"}, {"source": "identity/soulcraft", "target": "identity/beliefs"}, {"source": "identity/soulcraft", "target": "identity/positioning"}, {"source": "identity/soulcraft", "target": "services/seo-aeo-geo"}, {"source": "identity/soulcraft", "target": "services/demand-generation"}, {"source": "identity/soulcraft", "target": "services/ai-advertising"}, {"source": "identity/soulcraft", "target": "methodology/soul-md"}, {"source": "identity/vision", "target": "identity/beliefs"}, {"source": "identity/voice-and-tone", "target": "methodology/soul-md"}, {"source": "identity/voice-and-tone", "target": "methodology/opensoul"}, {"source": "references/llm-wiki", "target": "references/okf-spec"}, {"source": "references/okf-spec", "target": "concepts/agent-readiness"}, {"source": "references/okf-spec", "target": "methodology/soul-md"}, {"source": "references/website-specification", "target": "concepts/agent-readiness"}, {"source": "methodology/how-we-work", "target": "methodology/soul-md"}, {"source": "methodology/how-we-work", "target": "methodology/opensoul"}, {"source": "methodology/opensoul", "target": "methodology/soul-md"}, {"source": "methodology/opensoul", "target": "services/demand-generation"}, {"source": "methodology/opensoul", "target": "services/seo-aeo-geo"}, {"source": "methodology/opensoul", "target": "identity/beliefs"}, {"source": "methodology/soul-md", "target": "methodology/opensoul"}, {"source": "methodology/soul-md", "target": "identity/beliefs"}, {"source": "methodology/soul-md", "target": "references/okf-spec"}, {"source": "methodology/soul-md", "target": "identity/voice-and-tone"}, {"source": "concepts/aeo", "target": "concepts/answer-engine"}, {"source": "concepts/aeo", "target": "concepts/citations"}, {"source": "concepts/aeo", "target": "concepts/entitymap"}, {"source": "concepts/aeo", "target": "concepts/aio"}, {"source": "concepts/aeo", "target": "concepts/geo"}, {"source": "concepts/aeo", "target": "services/seo-aeo-geo"}, {"source": "concepts/agent-readiness", "target": "concepts/entitymap"}, {"source": "concepts/agent-readiness", "target": "references/okf-spec"}, {"source": "concepts/agent-readiness", "target": "references/website-specification"}, {"source": "concepts/aio", "target": "concepts/aeo"}, {"source": "concepts/aio", "target": "concepts/geo"}, {"source": "concepts/aio", "target": "concepts/agent-readiness"}, {"source": "concepts/aio", "target": "identity/beliefs"}, {"source": "concepts/answer-engine", "target": "concepts/aeo"}, {"source": "concepts/answer-engine", "target": "concepts/geo"}, {"source": "concepts/answer-engine", "target": "concepts/aio"}, {"source": "concepts/answer-engine", "target": "concepts/citations"}, {"source": "concepts/answer-engine", "target": "concepts/agent-readiness"}, {"source": "concepts/answer-engine", "target": "concepts/entitymap"}, {"source": "concepts/citations", "target": "concepts/answer-engine"}, {"source": "concepts/citations", "target": "concepts/entitymap"}, {"source": "concepts/citations", "target": "concepts/aeo"}, {"source": "concepts/entitymap", "target": "concepts/aeo"}, {"source": "concepts/entitymap", "target": "concepts/geo"}, {"source": "concepts/entitymap", "target": "concepts/agent-readiness"}, {"source": "concepts/geo", "target": "concepts/aeo"}, {"source": "concepts/geo", "target": "concepts/entitymap"}, {"source": "concepts/geo", "target": "concepts/citations"}, {"source": "concepts/geo", "target": "concepts/aio"}, {"source": "concepts/geo", "target": "services/seo-aeo-geo"}, {"source": "services/ai-advertising", "target": "concepts/aeo"}, {"source": "services/demand-generation", "target": "methodology/opensoul"}, {"source": "services/demand-generation", "target": "identity/beliefs"}, {"source": "services/demand-generation", "target": "methodology/soul-md"}, {"source": "services/seo-aeo-geo", "target": "concepts/aeo"}, {"source": "services/seo-aeo-geo", "target": "concepts/geo"}, {"source": "services/seo-aeo-geo", "target": "concepts/aio"}, {"source": "services/seo-aeo-geo", "target": "concepts/entitymap"}, {"source": "services/seo-aeo-geo", "target": "methodology/soul-md"}]};
+
+const GROUPS=[...new Set(BUNDLE.nodes.map(n=>n.group))].sort();
+const PALETTE={identity:'#c9a227',services:'#7c5cff',methodology:'#22b8cf',concepts:'#51cf66',references:'#ff8787',root:'#adb5bd'};
+const byId=Object.fromEntries(BUNDLE.nodes.map(n=>[n.id,n]));
+const backlinks={};BUNDLE.nodes.forEach(n=>backlinks[n.id]=[]);
+BUNDLE.edges.forEach(e=>{if(backlinks[e.target])backlinks[e.target].push(e.source);});
+const els=[];
+BUNDLE.nodes.forEach(n=>els.push({data:{id:n.id,label:n.title,group:n.group}}));
+BUNDLE.edges.forEach((e,i)=>els.push({data:{id:'e'+i,source:e.source,target:e.target}}));
+const cy=cytoscape({container:document.getElementById('cy'),elements:els,style:[
+ {selector:'node',style:{'background-color':ele=>PALETTE[ele.data('group')]||'#adb5bd','label':'data(label)','color':'#e9e9ee','font-size':'10px','text-valign':'bottom','text-margin-y':4,'width':18,'height':18,'text-max-width':110,'text-wrap':'wrap'}},
+ {selector:'node:selected',style:{'border-width':3,'border-color':'#fff','width':26,'height':26}},
+ {selector:'edge',style:{'width':1,'line-color':'#33333a','target-arrow-color':'#33333a','target-arrow-shape':'triangle','curve-style':'bezier','arrow-scale':.7,'opacity':.7}},
+ {selector:'.faded',style:{'opacity':.12}},
+ {selector:'.hl',style:{'line-color':'#7c5cff','target-arrow-color':'#7c5cff','width':2,'opacity':1}}],
+ layout:{name:'cose',animate:true,padding:40,nodeRepulsion:9000,idealEdgeLength:90}});
+document.getElementById('stat').textContent=BUNDLE.nodes.length+' concepts · '+BUNDLE.edges.length+' links';
+const fsel=document.getElementById('filter');
+GROUPS.forEach(g=>{const o=document.createElement('option');o.value=g;o.textContent=g;fsel.appendChild(o);});
+const legend=document.getElementById('legend');
+GROUPS.forEach(g=>{const d=document.createElement('div');d.innerHTML='<i style="background:'+(PALETTE[g]||'#adb5bd')+'"></i>'+g;legend.appendChild(d);});
+function rewire(h){return h.replace(/href="([^"]+\.md[^"]*)"/g,(m,p)=>{let t=p.split('#')[0];let id=t.startsWith('/')?t.slice(1):t;id=id.replace(/\.md$/,'');return 'data-nav="'+id+'" style="cursor:pointer"';});}
+function show(id){const n=byId[id];if(!n)return;const side=document.getElementById('side');
+ let bodyHtml=rewire(marked.parse(n.body||''));
+ let chips=(Array.isArray(n.tags)?n.tags:[]).map(t=>'<span>'+t+'</span>').join('');
+ let res=n.resource?'<div class="meta">Resource: <a href="'+n.resource+'" target="_blank" rel="noopener">'+n.resource+'</a></div>':'';
+ let bl=(backlinks[id]||[]).map(s=>'<a data-nav="'+s+'">'+(byId[s]?byId[s].title:s)+'</a>').join('');
+ let blBlock=bl?'<div class="backlinks"><h3>Cited by</h3>'+bl+'</div>':'';
+ side.innerHTML='<span class="typebadge">'+n.type+'</span><h2>'+n.title+'</h2><p class="desc">'+(n.description||'')+'</p>'+res+(chips?'<div class="chips">'+chips+'</div>':'')+'<div class="body">'+bodyHtml+'</div>'+blBlock;
+ side.scrollTop=0;
+ side.querySelectorAll('[data-nav]').forEach(a=>a.onclick=()=>{const t=a.getAttribute('data-nav');const node=cy.getElementById(t);if(node.length){cy.$(':selected').unselect();node.select();focus(t);}});}
+function focus(id){cy.elements().removeClass('faded hl');const node=cy.getElementById(id);const nb=node.closedNeighborhood();cy.elements().not(nb).addClass('faded');node.connectedEdges().addClass('hl');show(id);}
+cy.on('tap','node',e=>focus(e.target.id()));
+cy.on('tap',e=>{if(e.target===cy)cy.elements().removeClass('faded hl');});
+document.getElementById('search').addEventListener('input',e=>{const q=e.target.value.toLowerCase().trim();cy.nodes().forEach(node=>{const n=byId[node.id()];const hay=(n.title+' '+n.id+' '+(n.tags||[]).join(' ')+' '+n.description).toLowerCase();node.style('display',(!q||hay.includes(q))?'element':'none');});});
+fsel.addEventListener('change',e=>{const g=e.target.value;cy.nodes().forEach(node=>node.style('display',(!g||node.data('group')===g)?'element':'none'));});
+document.getElementById('layout').addEventListener('change',e=>{cy.layout({name:e.target.value,animate:true,padding:40,nodeRepulsion:9000,idealEdgeLength:90}).run();});
+if(byId['identity/soulcraft']){const d=cy.getElementById('identity/soulcraft');d.select();focus('identity/soulcraft');}
+</script>
+</body>
+</html>

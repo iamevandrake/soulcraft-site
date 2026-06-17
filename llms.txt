@@ -24,6 +24,11 @@ X: https://x.com/iamevandrake
 
 - [opensoul](https://soulcraftagency.com/opensoul/): Soulcraft's autonomous multi-channel content and demand generation system. Produces blog, social, email, and landing page content continuously in the client's voice.
 
+## Open Knowledge Format (OKF)
+
+- [Soulcraft Knowledge Bundle](https://soulcraftagency.com/okf/): Soulcraft's identity and the AEO/GEO/AIO knowledge domain published as a conformant Open Knowledge Format v0.1 bundle (markdown concepts with YAML frontmatter, cross-linked as a graph). Interactive graph viewer plus the full raw markdown embedded in-page for direct AI consumption.
+- [OKF bundle download](https://soulcraftagency.com/okf/soulcraft-okf-v0.1.tar.gz): The portable, conformant bundle as a tarball, ready to mount, query, or load into context.
+
 ## Industries
 
 - [Industries](https://soulcraftagency.com/industries/): Sectors Soulcraft serves: AI, crypto, technology, CPG, health and wellness, and small businesses
@@ -65,4 +70,5 @@ Soulcraft offers three retainer tiers with no long-term contracts:
 - AEO (Answer Engine Optimization): Optimizing for AI-driven answer surfaces like ChatGPT, Perplexity, and Claude.
 - GEO (Generative Engine Optimization): Optimizing for visibility in generative AI responses.
 - opensoul: Soulcraft's autonomous content and demand generation platform.
+- OKF (Open Knowledge Format): An open, vendor-neutral standard for representing knowledge as markdown files with YAML frontmatter, readable by humans and agents. Soulcraft publishes its knowledge bundle in OKF at /okf/.
 - Agentic marketing: Marketing systems that act autonomously, producing content, optimizing presence, and distributing across channels without waiting for human instructions.
