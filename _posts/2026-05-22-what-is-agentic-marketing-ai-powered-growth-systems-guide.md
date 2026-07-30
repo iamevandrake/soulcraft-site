@@ -1,18 +1,16 @@
 ---
 layout: post
-title: "What Is Agentic Marketing? AI-Powered Growth Systems Guide"
+title: "What Is Agentic Marketing? A Practical Guide"
 description: "Discover agentic marketing: AI-powered agents that make independent decisions, optimize campaigns in real-time, and automate entire marketing workflows."
 date: 2026-05-22
 category: learn
 permalink: /learn/what-is-agentic-marketing/
 keywords: "agentic marketing"
-og_title: "What Is Agentic Marketing? AI-Powered Growth Systems Guide"
+og_title: "What Is Agentic Marketing? A Practical Guide"
 og_description: "Discover how agentic marketing uses AI-powered agents to make independent decisions, optimize campaigns in real-time, and automate entire marketing workflows."
 schema_markup: |
   {"@context": "https://schema.org", "@type": "Article", "headline": "What Is Agentic Marketing? AI-Powered Growth Systems Guide", "description": "Learn how agentic marketing uses AI-powered agents to make independent decisions, optimize campaigns in real-time, and handle entire marketing workflows autonomously.", "keywords": ["agentic marketing", "AI marketing", "marketing automation", "AI-powered growth", "marketing agents"], "author": {"@type": "Organization", "name": "Marketing Technology Guide"}, "datePublished": "2024-01-01", "dateModified": "2024-01-01", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://example.com/what-is-agentic-marketing"}}
 ---
-
-# What Is Agentic Marketing? AI-Powered Growth Systems Guide
 
 Marketing automation promised to revolutionize how companies scale their growth efforts. But for most businesses, it delivered glorified email sequences and basic lead scoring -- hardly the intelligent, autonomous systems needed to compete in today's market. For a complete picture of how [AI marketing automation](/services/) has evolved beyond these limitations, see our 2026 guide.
 

@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "How Series A-C Startups Choose the Right AI Marketing Agency"
-description: "Growth-stage startups have different needs than enterprise organizations. What to require, what to ask, and how to avoid hiring an enterprise agency in a startup costume."
+title: "Choosing an AI Marketing Agency at Series A to C"
+description: "How funding stage and team size change the agency decision for Series A through C startups, and what to weigh before you sign."
 date: 2026-05-01
 category: learn
 content_type: Guide

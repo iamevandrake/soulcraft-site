@@ -1,14 +1,14 @@
 ---
 layout: post
 title: "How to Measure Your Brand's Visibility in AI Search"
-description: "A complete method for measuring whether ChatGPT, Gemini, Perplexity, and Google AI Overviews recommend you. The four metrics that matter, how to build a baseline you can defend, what the tools actually do, and how to tell a real move from noise."
+description: "How to measure whether ChatGPT, Gemini, and Perplexity recommend you: the four metrics that matter, a repeatable baseline method, and how to tell signal from noise."
 date: 2026-06-24
 last_modified_at: 2026-07-30
 category: learn
 content_type: Guide
 keywords: "how to measure AI search visibility, track AI search citations, AI visibility baseline, share of voice AI search, monitor brand in ChatGPT, AEO measurement, LLM visibility, LLM SEO, generative engine visibility tracking"
 og_title: "How to Measure Your Brand's Visibility in AI Search"
-og_description: "Most teams cannot tell whether AI recommends them. This is the measurement method: the four metrics that matter, how to build a baseline, and how to tell a real move from noise."
+og_description: "Four metrics, a baseline you can defend, and how to tell a real move from sampling noise."
 permalink: /learn/how-to-measure-ai-search-visibility/
 schema_markup: '{"@context":"https://schema.org","@type":"Article","headline":"How to Measure Your Brand''s Visibility in AI Search","description":"A practical method for measuring AI search visibility across ChatGPT, Gemini, Perplexity, and Google AI Overviews, covering the four metrics that matter, how to build a defensible baseline, and how to separate signal from sampling noise.","author":{"@type":"Person","@id":"https://soulcraftagency.com/#evan-drake","name":"Evan Drake"},"datePublished":"2026-06-24","dateModified":"2026-07-30","publisher":{"@type":"Organization","name":"Soulcraft","url":"https://soulcraftagency.com"},"about":[{"@type":"Thing","name":"Answer Engine Optimization"},{"@type":"Thing","name":"AI search visibility"},{"@type":"Thing","name":"LLM visibility"}]}'
 ---

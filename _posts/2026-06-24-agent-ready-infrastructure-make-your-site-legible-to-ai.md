@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Agent-Ready Infrastructure: How to Make Your Site Legible to AI"
-description: "Most AI search advice is about content. The deeper advantage is infrastructure: the structured, machine-readable layer that lets AI systems understand and cite you correctly. Here is what it is and how to build it."
+title: "Agent-Ready Infrastructure for AI Crawlers"
+description: "How to make a site legible to AI crawlers and agents: the structural signals that matter, what to publish, and how to verify machines can read you."
 date: 2026-06-24
 category: learn
 content_type: Guide

@@ -1,14 +1,14 @@
 ---
 layout: post
-title: "AI-Native vs. Traditional Marketing Agency: What's the Real Difference?"
-description: "Every agency says AI now. Here is the operational test that separates agencies built around AI from agencies that added it to the pitch deck, what each model is genuinely better at, and the six questions that reveal which one you are talking to."
+title: "AI-Native vs. Traditional Marketing Agency"
+description: "One operational test separates agencies built on AI from agencies that added it to the pitch deck. Where each model genuinely wins, plus six questions to ask."
 date: 2026-05-01
 last_modified_at: 2026-07-30
 category: learn
 content_type: Comparison
 keywords: "AI native marketing agency, AI marketing agency vs traditional, AI-first agency, AEO agency, AI marketing comparison 2026, how to choose an AI marketing agency"
-og_title: "AI-Native vs. Traditional Marketing Agency: What's the Real Difference?"
-og_description: "How to tell whether an agency actually operates on AI or just added it to the pitch deck. The operational test, the honest trade-offs, and six questions that reveal the answer."
+og_title: "AI-Native vs. Traditional Marketing Agency"
+og_description: "The operational test, the honest trade-offs, and six questions that reveal which one you are talking to."
 permalink: /learn/ai-native-vs-traditional-marketing-agency/
 schema_markup: '{"@context":"https://schema.org","@type":"Article","headline":"AI-Native vs. Traditional Marketing Agency: What is the Real Difference?","description":"An operational comparison of AI-native and traditional marketing agencies, covering where each model genuinely wins, the failure modes of both, and the questions that reveal which one you are evaluating.","author":{"@type":"Person","@id":"https://soulcraftagency.com/#evan-drake","name":"Evan Drake"},"datePublished":"2026-05-01","dateModified":"2026-07-30","publisher":{"@type":"Organization","name":"Soulcraft","url":"https://soulcraftagency.com"}}'
 ---
