@@ -84,6 +84,6 @@ What to know going in. Soulcraft is not a campaign agency. If you need a product
 
 ## Related Posts
 
-- [How to Choose an AEO Agency in 2026](/learn/best-aeo-agencies-2026-compared/): The companion buyer's guide, covering required capabilities, first-call questions, and red flags worth walking away from.
-- [How to Evaluate an AEO Agency: A Five-Criteria Scorecard](/learn/top-aeo-agencies-ranked-reviewed/): A scoring framework you can apply to any agency you're considering, with the questions that expose each criterion.
+- [How to Choose an AEO Agency in 2026](/learn/how-to-evaluate-an-aeo-agency/): The companion buyer's guide, covering required capabilities, first-call questions, and red flags worth walking away from.
+- [How to Evaluate an AEO Agency: A Five-Criteria Scorecard](/learn/how-to-evaluate-an-aeo-agency/): A scoring framework you can apply to any agency you're considering, with the questions that expose each criterion.
 - [AI-Native vs Traditional Marketing Agency: What's the Real Difference?](/learn/ai-native-vs-traditional-marketing-agency/): Explains the operational model differences between AI-native agencies and traditional shops, with practical questions to ask any agency you evaluate.

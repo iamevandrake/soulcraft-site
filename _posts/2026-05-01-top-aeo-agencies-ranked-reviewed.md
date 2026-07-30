@@ -102,6 +102,6 @@ We'd rather be scored than take your trust on credit. [Bring us this scorecard](
 
 ## Related Posts
 
-- [How to Choose an AEO Agency in 2026](/learn/best-aeo-agencies-2026-compared/): The companion buyer's guide, covering required capabilities, first-call questions, and the red flags worth walking away from.
+- [How to Choose an AEO Agency in 2026](/learn/how-to-evaluate-an-aeo-agency/): The companion buyer's guide, covering required capabilities, first-call questions, and the red flags worth walking away from.
 - [Answer Engine Optimization: The Complete 2026 Guide](/learn/answer-engine-optimization-complete-guide/): The full AEO strategy framework that explains what a complete program covers, providing context for the strategy depth criterion.
 - [AI-Native vs Traditional Marketing Agency: What's the Real Difference?](/learn/ai-native-vs-traditional-marketing-agency/): Explains the operational differences behind the AI-nativeness criterion, with practical questions to cut through agency positioning.

@@ -1,225 +1,208 @@
 ---
 layout: post
 title: "Answer Engine Optimization: The Complete 2026 Guide"
-description: "AEO is how you show up in ChatGPT, Perplexity, Gemini, and other AI systems when people ask questions in your space. This is the complete guide to understanding it, measuring it, and improving it."
+description: "The complete guide to AEO: what it is, how AI systems actually decide what to surface, the four-layer strategy that works, how AEO differs from SEO and GEO, what to do differently for ChatGPT specifically, and the tactics that get you penalized."
 date: 2026-05-01
+last_modified_at: 2026-07-30
 category: learn
 content_type: Guide
-keywords: "answer engine optimization, AEO guide, AEO strategy 2026, GEO generative engine optimization, how to rank in AI search, ChatGPT SEO"
+keywords: "answer engine optimization, AEO guide, AEO strategy 2026, GEO generative engine optimization, how to rank in AI search, ChatGPT SEO, AEO vs SEO, AI search optimization, LLM optimization"
 og_title: "Answer Engine Optimization: The Complete 2026 Guide"
-og_description: "Everything you need to know about AEO: what it is, how it works, how to measure it, and what the most effective programs actually do."
+og_description: "What AEO is, how AI systems decide what to surface, the four-layer strategy that works, how it differs from SEO and GEO, and the shortcuts that get you penalized."
 permalink: /learn/answer-engine-optimization-complete-guide/
-schema_markup: '{"@context":"https://schema.org","@type":"Article","headline":"Answer Engine Optimization: The Complete 2026 Guide","description":"A comprehensive guide to answer engine optimization (AEO) in 2026 covering strategy, measurement, content, and technical foundations.","author":{"@type":"Person","name":"Evan Drake"},"datePublished":"2026-05-01","publisher":{"@type":"Organization","name":"Soulcraft","url":"https://soulcraftagency.com"}}'
+schema_markup: '{"@context":"https://schema.org","@type":"Article","headline":"Answer Engine Optimization: The Complete 2026 Guide","description":"A comprehensive guide to answer engine optimization covering retrieval mechanics, the four-layer strategy framework, how AEO relates to SEO and GEO, platform-specific considerations, measurement, and the manipulation tactics to avoid.","author":{"@type":"Person","@id":"https://soulcraftagency.com/#evan-drake","name":"Evan Drake"},"datePublished":"2026-05-01","dateModified":"2026-07-30","publisher":{"@type":"Organization","name":"Soulcraft","url":"https://soulcraftagency.com"},"about":[{"@type":"Thing","name":"Answer Engine Optimization"},{"@type":"Thing","name":"Generative Engine Optimization"}]}'
 ---
 
-The question used to be: where do you rank on Google?
+Someone in your market just asked an AI which company solves their problem. It answered. It named three companies, described what each is good at, and linked two sources.
 
-Now the question is: what does ChatGPT say about you?
+You were either in that answer or you were not. There was no page two to be on.
 
-Answer engine optimization (AEO) is the practice of improving how your organization shows up in AI-generated answers. When someone asks Perplexity who the leading AEO agencies are, or asks ChatGPT to recommend a CRM for a SaaS startup, or asks Claude which cybersecurity platform is best for mid-size companies, the answers they get are not random. They're shaped by everything the AI system knows about the organizations in that space: what's been written about them, how credibly they've been cited, how clearly they've articulated their position, and whether their content is structured in a way that AI retrieval systems can work with.
+That is the whole of answer engine optimization, and it is why the discipline exists as something separate from search engine optimization. This guide covers what AEO is, how these systems actually decide what to surface, the strategy that works, how it relates to the neighbouring acronyms, and the shortcuts that will eventually cost you.
 
-This guide covers the full picture. What AEO is and how it differs from SEO. How AI systems decide what to surface and what to ignore. What the most effective AEO programs actually do. How to measure it. And what it takes to build a program that compounds over time.
+## What AEO is
 
----
+Answer engine optimization is the practice of making a company legible, credible, and retrievable to systems that answer questions directly rather than returning a list of links.
 
-## What Is AEO?
+The surfaces: ChatGPT, Claude, Gemini, Perplexity, Copilot, Google AI Overviews, and increasingly the agents that book, buy, and compare on someone's behalf.
 
-AEO stands for answer engine optimization. It's sometimes called GEO (generative engine optimization) or AIO (AI optimization). The terms are largely interchangeable, though practitioners use them with slightly different emphasis. For a full treatment of the GEO side, see the [generative engine optimization complete guide](/blog/generative-engine-optimization-complete-guide-to-geo/).
+The goal is not a ranking. It is being present in the answer, cited as the source, described accurately, and recommended for the right reasons.
 
-- **AEO** tends to focus on appearing in answer-format responses, particularly in AI assistants and chatbots
-- **GEO** tends to focus on the broader question of how generative AI systems retrieve and represent your organization
-- **AIO** is the umbrella term some use for all AI-era search optimization
+### How AEO differs from SEO
 
-For the purposes of this guide, we'll use AEO as the primary term, with the understanding that the same principles apply across all three.
+They share infrastructure and diverge on almost everything else.
 
-### How AEO Differs from SEO
+| | SEO | AEO |
+|---|---|---|
+| **Output** | A ranked list of links | A synthesized answer |
+| **Positions** | Ten or more per page | Typically one to five companies named |
+| **Stability** | Same result for the same query | Regenerated each time, varies run to run |
+| **Unit of success** | A page ranking | An entity being recommended |
+| **Click model** | The click is the goal | The answer may be the entire interaction |
+| **Measurement** | Rank tracking, repeatable | Sampling across repeated runs |
+| **Timeframe** | Weeks to months | Weeks to months, plus training data lag |
 
-Traditional SEO is about ranking in a list of links. The user sees ten blue links and clicks one.
+The consequential difference is the second row. Ten blue links meant a long tail of viable positions. A generative answer naming three companies means a winner-take-most distribution. Being the fourth best documented company in your category used to earn traffic. Increasingly it earns nothing.
 
-AEO is about appearing in a synthesized answer. The AI reads, retrieves, and synthesizes information from many sources and produces a response. There's no ranked list. There's a recommendation, a summary, an answer. If your organization isn't in that answer, you effectively don't exist for that query.
+The second consequential difference is the fourth row. SEO optimizes pages. AEO optimizes an entity, which is the model's accumulated understanding of what your company is, who it serves, and what it is good at. Pages are how you influence that understanding. They are not the thing being ranked.
 
-The difference in mechanism creates a difference in strategy:
+SEO is not dead and this is not that argument. Strong organic performance feeds AEO directly, because the pages models retrieve are largely the pages that already earned authority. The work compounds. It just no longer stops where it used to.
 
-| SEO | AEO |
-|---|---|
-| Optimize for crawlers and ranking algorithms | Optimize for retrieval and synthesis |
-| Keyword targeting | Entity and topic authority |
-| Backlinks as primary authority signal | Citations, mentions, and retrieval quality |
-| Traffic to specific pages | Presence in AI-generated answers |
-| Measurable via rankings and traffic | Measurable via AI impressions and share of voice |
+### AEO, GEO, LLM SEO, AI SEO
 
-This doesn't mean SEO is irrelevant to AEO. Strong traditional SEO signals, quality backlinks, well-structured content, high domain authority, all contribute to AI systems treating your content as credible. But they're necessary, not sufficient.
+Four names, heavily overlapping, and the boundaries are softer than anyone selling them admits.
 
----
+**GEO (generative engine optimization)** usually emphasizes the generative surfaces specifically. **LLM SEO** and **AI SEO** are broadly the same practice with different marketing. **AEO** is the widest of the four, covering any surface that answers a question directly, including featured snippets and voice assistants that predate language models entirely.
 
-## How AI Systems Decide What to Surface
+We use AEO because it describes the buyer's behaviour rather than the vendor's technology, and buyer behaviour changes more slowly than model architecture. Pick whichever term your organization understands. Do not pay a premium for the acronym.
 
-Understanding how AI-powered answer engines work is essential to building an effective strategy. The mechanism varies by platform, but the core process is similar across ChatGPT, Perplexity, Gemini, and Claude.
+## How AI systems decide what to surface
 
-### Retrieval-Augmented Generation (RAG)
+You cannot optimize for a black box you have not opened. Three mechanisms matter, and they have different response times.
 
-Many modern AI answer systems use a process called retrieval-augmented generation, or RAG. The system retrieves relevant content from a corpus (the web, a curated index, or both) and uses that content to generate a response. The retrieval step is the gate. If your content doesn't get retrieved, it can't influence the answer.
+### Retrieval
 
-Retrieval is governed by semantic relevance: does the content address the topic of the query? And by credibility signals: is this content from a trustworthy, authoritative source?
+Most answer engines search the live web, pull a handful of pages, and generate an answer grounded in what they retrieved. This is where the majority of near-term movement happens, because it responds to changes in weeks rather than waiting on a training cycle.
 
-### Training Data
+What wins retrieval: pages that answer a specific question directly and early, that are structurally parseable, that come from a domain with existing authority, and that are recent enough to look current.
 
-Some AI systems respond primarily from training data rather than live retrieval. In this case, what matters is whether your organization has been mentioned, cited, and discussed in the content that was used to train the model. Training data cutoffs mean that recent organizations may not appear in older models, but as AI systems are updated more frequently, this is a decreasing concern for most categories.
+What loses it: an answer buried under eight hundred words of preamble, content locked behind interaction, and pages whose actual subject is unclear from the first screen.
 
-### Entity Recognition
+The practical implication is unglamorous. Put the answer first. A page that opens with the direct answer and then elaborates gets retrieved and quoted. A page that builds to a conclusion gets skipped, because the extractable passage never appears near the top.
 
-AI systems understand the world through entities: organizations, people, products, concepts. If your organization is clearly recognized as an entity in a given category, you're more likely to be retrieved when queries in that category are asked.
+### Training data
 
-Building entity presence means being consistently referenced in ways that help AI systems understand what you do, who you serve, and what distinguishes you. Vague, jargon-heavy content creates weak entity signals. Clear, specific, credible content creates strong ones.
+The model's baseline understanding of your company, formed during training and updated on the provider's schedule. Slower to influence, harder to correct, and disproportionately powerful because it shapes what the model believes before it retrieves anything.
 
----
+This is why consistency across the open web matters more in AEO than it ever did in SEO. If your positioning changed eighteen months ago but half the internet still describes the old version, the model will keep repeating the old version with total confidence, and no amount of on-site optimization fixes it.
 
-## The AEO Strategy Framework
+### Entity recognition
 
-Effective AEO programs operate across four layers. Weakness in any layer limits the program's impact.
+Whether the system knows you exist as a distinct thing, and what it associates you with.
+
+Entity clarity is the most underrated work in AEO. Models need to resolve "Soulcraft" to one specific company rather than a video game, a philosophy book, or a nearby competitor with a similar name. That resolution depends on consistent naming, structured data, corroborating third-party sources, and unambiguous descriptions of what the company does.
+
+Companies with weak entity definition suffer a specific failure: they get described in generic category language rather than in their own terms. The model knows the category and does not know you.
+
+## The four-layer strategy
+
+Effective programs work through four layers in order. Skipping to layer three is the most common and most expensive mistake in this field.
 
 ### Layer 1: Identity
 
-Everything starts here. The most fundamental AEO question is: do AI systems know what your organization is and what it stands for?
+Before you publish anything, you need a precise, structured answer to what the company is, who it serves, what it does better than the alternatives, and what it deliberately does not do.
 
-If your positioning is unclear, your content is inconsistent, and your voice shifts from page to page, AI systems will have a muddled picture of you. That muddled picture produces muddled retrieval. You might show up, but you'll show up as a vague entry rather than a clear recommendation.
+This sounds like positioning work because it is. The difference is that AEO requires it in a form machines can consume: explicit, consistent, and available in a structured file rather than living in a founder's head.
 
-Identity work includes:
-- Articulating your organization's core positioning in clear, non-jargon language
-- Defining the terms and topics you want to be associated with
-- Ensuring that positioning is consistent across all content, pages, and external references
-- Creating a canonical source of truth for your identity that informs everything downstream
+At Soulcraft this is the soul.md file. Whatever you call it, the requirement is the same. Every page, every schema block, every third-party listing traces back to one description of the company. Where descriptions conflict, models average them, and the average of an inconsistent set is generic.
 
-At Soulcraft, we build a soul.md for every client before anything else. It's a structured document that answers every relevant identity question, and every agent, every system, and every content brief draws from it.
+Do this first. Content produced before identity is settled has to be redone.
 
 ### Layer 2: Content
 
-AEO content is different from traditional SEO content in three specific ways.
+Build pages that answer the questions your buyers actually ask, structured for extraction.
 
-**Depth over volume.** A single, authoritative, comprehensive piece performs better in AI retrieval than ten thin pieces on related topics. This is why [LLM visibility optimization](/blog/llm-visibility-optimization-make-your-content-ai-discoverable/) prioritizes structural quality and semantic clarity over keyword volume. AI systems are good at recognizing depth. They surface content that actually addresses a query, not content that merely mentions the relevant terms.
+What this means concretely:
 
-**Question-answer structure.** AI answer engines respond to questions. Content structured as direct answers to specific questions, with clear claims, evidence, and context, is more retrievable than content structured as a narrative.
+- **One page per intent.** Not per keyword. Three pages covering the same buyer question compete with each other, dilute the signal, and none of them wins. Consolidate.
+- **Answer in the first hundred words.** Then elaborate for the humans who keep reading.
+- **Headings that are questions.** They map directly to how prompts are phrased.
+- **Self-contained sections.** Each one comprehensible when lifted out of context, because that is exactly what happens to it.
+- **Original material.** Data you gathered, a method you developed, a position you can defend. Synthesis of the same twelve sources everyone else synthesized gives a model no reason to prefer you.
+- **Named authors with real credentials.** Attribution feeds the credibility signals these systems weight.
 
-**Entity-rich specificity.** The more specific and concrete your content, the stronger the entity signals. Specific claims ("we work with Series A through C companies in AI, crypto, and health and wellness") are more useful to AI retrieval systems than vague claims ("we serve innovative companies at every stage").
+The last two are where most programs fail. It is possible to produce a technically perfect page that contains nothing a model could not get from four other places, and that page will not be cited, because there is no reason to cite it.
 
-Effective AEO content types include:
-- Long-form guides that comprehensively address a topic in your category
-- Comparison and review articles that position your organization clearly
-- FAQ pages that directly answer the questions people ask AI systems
-- Case studies with specific, quantified claims
-- Thought leadership that makes clear, named positions
+### Layer 3: Technical foundation
 
-### Layer 3: Technical Foundation
+Make the site legible to machines.
 
-Technical AEO works alongside the content layer. The most important technical elements include:
+- **Schema markup.** Organization, Article, FAQPage, Product where they apply. This is how you state facts in a form that requires no interpretation.
+- **Clean, crawlable HTML.** Content that requires JavaScript execution is retrieved inconsistently.
+- **`llms.txt`.** An emerging convention for describing your site to language models in plain markdown. Cheap to add, and it lets you frame your own content.
+- **Accurate sitemaps.** Live, indexable URLs only. Redirecting or noindexed URLs in a sitemap are a quality signal in the wrong direction.
+- **Consistent canonical URLs.** One address per piece of content, everywhere it is referenced.
+- **Speed and accessibility.** Same reasons as always.
 
-**Structured data.** Schema markup helps AI systems understand what a page is, who wrote it, when it was published, and what it claims. Article, Organization, FAQ, and HowTo schema are particularly valuable.
+Nothing here is exotic. It is the same discipline good technical SEO always required, with entity clarity weighted higher and duplication punished harder.
 
-**llms.txt.** A growing convention in the AEO space is the llms.txt file: a simple text document at the root of your site that gives AI systems a quick, structured overview of who you are and what your site contains. Similar in spirit to robots.txt but designed for LLMs rather than crawlers.
+### Layer 4: Authority
 
-**Canonical signals.** Your site should have a clear canonical structure: one authoritative page for each major topic, no duplicate content, and clear internal linking that tells retrieval systems which pages carry the most authority on each subject.
+Models weight corroboration. What third parties say about you moves the needle more than what you say about yourself.
 
-**Page speed and accessibility.** AI retrieval systems work with the same content the web serves to users. Slow, broken, or inaccessible pages are harder to retrieve from.
+Legitimate authority work: earning coverage in outlets that cover your category, contributing genuine expertise where practitioners gather, publishing original research others cite, keeping directory and reference entries accurate, and answering real questions in public under your own name.
 
-### Layer 4: Authority Signals
+None of this is fast. All of it compounds. And it is where the temptation to cheat becomes strongest, which brings us to the part of this guide that matters most.
 
-AI systems use many of the same authority signals that traditional SEO does, plus some that are specific to the AI context.
+## The tactics that will cost you
 
-**Backlinks and citations.** Inbound links from credible sources still matter. They signal that other trusted entities have endorsed your content.
+There is a growing industry selling manufactured authority signals. Some of it works right now. Understand what you are buying.
 
-**External mentions.** Being mentioned, cited, or referenced in content that AI systems retrieve from is a direct AEO signal. Press coverage, analyst mentions, podcast appearances, and industry publications all contribute.
+**Self-ranking listicles.** Publishing "the ten best agencies in our category" and placing yourself first. Models do retrieve these. They also increasingly discount sources where the publisher is a candidate, and the reputational exposure when a buyer notices is asymmetric.
 
-**Sentiment.** AI systems pay attention to the sentiment of how your organization is described. Positive, neutral, and negative sentiment in retrieved content can all influence how you're represented in an AI-generated answer.
+**Sock puppets and seeded forum posts.** Manufactured word of mouth in communities where models retrieve. Detectable, increasingly detected, and it poisons the communities it targets.
 
-**Recency.** For many queries, recency matters. AI systems weight recent content more heavily for fast-moving topics. A consistent content program keeps your organization's presence fresh.
+**Prompt injection.** Hidden text engineered to manipulate a model's output. This is adversarial behaviour against the platform, and platforms respond to adversarial behaviour by removing you.
 
----
+**Fabricated credentials and planted superlatives.** Inventing awards, citing studies that do not exist, describing yourself as the leading provider in language designed to be quoted back.
 
-## How to Measure AEO
+**Volume without review.** Hundreds of pages generated and published unread. Even when nothing is technically false, the result is a site with no reason to be trusted, and it degrades the environment everyone else works in.
 
-Measuring AEO requires different tools and different thinking than measuring SEO. The core metrics are:
+Our position, stated plainly: legitimate AEO makes real authority legible to machines. Structure, schema, original data, named authors, honest comparison. Faking the underlying authority is a different activity that borrows the same vocabulary, and it is a bet that detection stays behind manipulation forever. That bet has lost every previous time it was made in search.
 
-**AI Impressions.** How often does your organization appear in AI-generated answers for your target queries? Measured via AI visibility platforms that run systematic queries across major AI systems.
+If a comparison page cannot survive being read by the competitor it ranks below you, it is not a comparison page.
 
-**Share of Voice (SOV).** For a given set of queries relevant to your category, what percentage of AI answers mention you versus competitors? This is the AEO equivalent of keyword ranking.
+## Platform differences worth knowing
 
-**Sentiment Score.** When your organization is mentioned in AI-generated answers, is the sentiment positive, neutral, or negative? This matters more than mere presence.
+The fundamentals transfer. The emphasis shifts.
 
-**Citation Rate.** How often does your content get cited as a source in AI-generated answers? Citations are a strong indicator that your content is seen as authoritative.
+**ChatGPT** leans heavily on both training data and live retrieval, which makes long-run entity consistency unusually important. Correcting a stale description across the open web pays off here more than anywhere else.
 
-**Platform Coverage.** Where do you appear? ChatGPT and Perplexity have meaningfully different retrieval architectures. Share of voice on one platform doesn't guarantee presence on another.
+**Perplexity** is retrieval-first and cites aggressively. It rewards clearly structured, recently updated pages faster than the others, and it is the best early indicator that your content changes are working.
 
-### Tools for AEO Measurement
+**Google AI Overviews** draw substantially on pages that already perform in organic search. Existing SEO strength transfers most directly here, which makes it the surface where traditional work pays the clearest AEO dividend.
 
-The AEO measurement tooling ecosystem is maturing rapidly. As of 2026, the leading platforms include:
+**Claude and Gemini** each weight source quality and recency differently enough that you will see genuine divergence across them. This is a reason to measure per platform rather than reporting one blended number.
 
-- **Scrunch AI:** Tracks AI impressions, share of voice, and sentiment across major AI platforms. Particularly strong on sentiment analysis.
-- **Profound:** Real-time AI visibility monitoring with query-level detail.
-- **Ahrefs:** Traditional SEO platform that has added AI visibility features.
-- **Semrush AI Toolkit:** Growing AI search capability layered on top of the established platform.
+Do not build separate content for each. Build one excellent, well-structured, honestly-sourced page per intent, and measure where it lands. Platform-specific content is a maintenance burden that rarely earns its cost.
 
-Any serious AEO program should be measuring at least AI impressions and share of voice from the start. Without baseline data, you can't know whether the work is moving the needle.
+## Measuring it
 
----
+You cannot manage this without a measurement method, and the method is genuinely different from rank tracking because responses are generated rather than retrieved. Presence, citation, share of voice, and sentiment are four separate metrics with four different fixes, and blending them into one score hides the thing you needed to know.
 
-## Building a Program That Compounds
+That method has its own guide: [how to measure your brand's visibility in AI search](/learn/how-to-measure-ai-search-visibility/). Read it before you start publishing, not after. It is the only way to tell whether the work is working or whether the model simply updated.
 
-The most common mistake in AEO is treating it as a campaign. Run a set of content pieces. Measure once. Move on.
+## Common mistakes
 
-AEO works like a reputation. It builds over time through consistent signals. An organization that publishes authoritative content continuously, maintains a clear and consistent identity across all touchpoints, and keeps its external presence active will outperform an organization that does an intensive sprint and goes quiet.
+**Treating it as an SEO checklist.** Adding FAQ schema to existing pages and calling it an AEO program. Schema helps. It does not substitute for having something worth citing.
 
-This has practical implications for how you build the program:
+**Optimizing pages instead of the entity.** Models recommend companies, not URLs. Everything on the open web that describes you is part of the surface area.
 
-**Set a cadence and keep it.** A consistent publishing schedule is better than a burst followed by silence. Even one authoritative piece per week, maintained over a year, builds a meaningfully stronger AI presence than twelve pieces in a month followed by nothing.
+**Publishing before positioning.** Content produced against an unsettled identity has to be redone, and the inconsistency actively damages entity clarity in the meantime.
 
-**Treat identity as infrastructure.** The soul.md or its equivalent isn't a document you write once. It's a living system that informs every piece of content. Keep it updated as your positioning evolves.
+**Keyword-shaped content.** Prompts are conversational and specific. Pages built for keyword strings answer questions nobody phrases that way.
 
-**Distribute strategically.** AEO benefit accrues from external mentions as well as owned content. A guest post on a credible industry publication, a podcast appearance, a mention in an analyst report: these all contribute to the external signal environment that AI systems evaluate.
+**Chasing volume.** More pages covering the same intent is not more coverage. It is cannibalization, and it makes every page weaker.
 
-**Monitor and adapt.** AI systems change. Retrieval architectures shift. Platforms add features. A good AEO program has monitoring in place to notice when something changes and adapt accordingly.
+**No original material.** If a model can get the same information from four better-known sources, it will.
 
----
+**Measuring once.** A screenshot is not a baseline. Without a frozen prompt set and a repeated cadence, you cannot separate your work from the model's release schedule.
 
-## Common AEO Mistakes
+## Getting started
 
-**Optimizing for keywords instead of entities.** AEO isn't keyword stuffing for AI. It's building a credible, consistent presence around the topics and entities you want to be known for.
+If you are beginning from nothing, in order:
 
-**Producing volume over depth.** Thin content is worse than no content for AEO. AI systems can identify low-value content, and it can actually dilute your entity signals by creating inconsistent or low-quality representations of your organization.
+1. **Baseline.** Forty to sixty prompts across four buyer stages, run repeatedly, on the platforms your buyers use. Record raw responses.
+2. **Settle identity.** One structured description of the company. Reconcile it everywhere it appears, including the places you do not control.
+3. **Audit and consolidate.** Find pages competing for the same intent and merge them. Most sites have more duplication than they realize, and cutting it is faster than writing anything new.
+4. **Fix the technical layer.** Schema, clean HTML, accurate sitemap, `llms.txt`.
+5. **Build the pillars.** One genuinely excellent page per core intent, with original material and a named author.
+6. **Earn corroboration.** Slowly, legitimately, in the places your category actually gathers.
+7. **Re-measure.** Same prompt set, same conditions, and a threshold you committed to in advance.
 
-**Ignoring the identity layer.** Companies that jump straight to content without doing the identity work produce content that's inconsistent in voice, positioning, and claim. AI systems retrieve content that tells a coherent story.
+The programs that work are boring and cumulative. They fix the identity, cut the duplication, publish fewer and better pages, and measure honestly enough to notice when something is not working.
 
-**Measuring SEO metrics and calling it AEO.** Traffic, rankings, and impressions in traditional search are not AEO metrics. For a breakdown of how the two measurement frameworks differ, see the [AEO vs SEO complete guide](/blog/aeo-vs-seo-complete-guide-to-ai-search-optimization/). If you don't have AI-specific measurement in place, you're not running an AEO program.
-
-**Treating AEO as a one-time project.** The organizations winning in AI search in 2026 are the ones that started building their presence in 2024 and kept going. It compounds. Start now.
-
----
-
-## Getting Started
-
-The practical first steps for any organization building an AEO program:
-
-1. **Audit your current AI presence.** Run your target queries across ChatGPT, Perplexity, Gemini, and Claude. What do they say about you? What do they say about your competitors? Where are the gaps?
-
-2. **Define your identity.** What do you want to be known for? Who do you serve? What's your distinctive position? Get this on paper clearly before producing any content.
-
-3. **Set up measurement.** Start tracking AI impressions and share of voice from day one. You need a baseline before you can know if your work is moving anything.
-
-4. **Build your content foundation.** Identify the five to ten topics you most need to be known for. Create one authoritative, comprehensive piece on each.
-
-5. **Establish a sustainable cadence.** How much can you realistically publish per month, indefinitely? That number, whatever it is, is more valuable than a bigger number you can't sustain.
-
-6. **Distribute actively.** Don't just publish. Get the content in front of audiences who can cite it, share it, and build external mentions.
-
-AEO is a long game. The organizations building the strongest AI presence in 2026 are the ones who understand that and are operating accordingly.
+The programs that fail chase volume, skip measurement, and mistake activity for progress.
 
 ---
 
-If you want help with any part of this, from the identity work through to the technical infrastructure and ongoing measurement, [we'd be glad to talk](/contact/). AEO is the center of what we do at Soulcraft. We've built the systems to do it well, and we're happy to show you what that looks like in practice.
-
-
-## Related Posts
-
-- [Generative Engine Optimization: Complete Guide to GEO](/blog/generative-engine-optimization-complete-guide-to-geo/): The parallel framework to AEO, covering how generative engines select and cite content and how to optimize for their specific retrieval patterns.
-- [AEO vs SEO: Complete Guide to AI Search Optimization](/blog/aeo-vs-seo-complete-guide-to-ai-search-optimization/): A detailed comparison of both optimization approaches, including technical requirements, content strategy differences, and how to run them in parallel.
-- [LLM Visibility Strategies for Marketing Teams in 2026](/blog/llm-visibility-strategies-for-marketing-teams-in-2026/): Practical LLM visibility tactics that complement the AEO strategy framework, with specific guidance for B2B marketing teams.
-
+*Soulcraft builds AEO programs for Series A through C companies: measurement, identity, and the systems that produce the content. If that is the work you need, [start here](/contact/).*
