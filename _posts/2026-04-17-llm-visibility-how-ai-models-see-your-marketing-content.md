@@ -1,4 +1,5 @@
 ---
 layout: redirect
-redirect_to: /blog/llm-visibility-how-to-optimize-content-for-ai-search-results/
+redirect_to: /learn/how-to-measure-ai-search-visibility/
+sitemap: false
 ---

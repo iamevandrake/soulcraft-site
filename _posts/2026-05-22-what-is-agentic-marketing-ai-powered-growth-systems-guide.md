@@ -3,6 +3,8 @@ layout: post
 title: "What Is Agentic Marketing? AI-Powered Growth Systems Guide"
 description: "Discover agentic marketing: AI-powered agents that make independent decisions, optimize campaigns in real-time, and automate entire marketing workflows."
 date: 2026-05-22
+category: learn
+permalink: /learn/what-is-agentic-marketing/
 keywords: "agentic marketing"
 og_title: "What Is Agentic Marketing? AI-Powered Growth Systems Guide"
 og_description: "Discover how agentic marketing uses AI-powered agents to make independent decisions, optimize campaigns in real-time, and automate entire marketing workflows."

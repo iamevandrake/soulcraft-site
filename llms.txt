@@ -18,7 +18,7 @@ X: https://x.com/iamevandrake
 
 ## Solutions
 
-- [Agentic SEO](https://soulcraftagency.com/solutions/agentic-seo/): Autonomous AI agents that research, create, and optimize search presence across Google, AI Overviews, and generative engines
+- [Agentic SEO](https://soulcraftagency.com/services/agentic-seo/): Autonomous AI agents that research, create, and optimize search presence across Google, AI Overviews, and generative engines
 
 ## Product
 
@@ -31,26 +31,20 @@ X: https://x.com/iamevandrake
 
 ## Industries
 
-- [Industries](https://soulcraftagency.com/industries/): Sectors Soulcraft serves: AI, crypto, technology, CPG, health and wellness, and small businesses
+- [Industries](https://soulcraftagency.com/services/): Sectors Soulcraft serves: AI, crypto, technology, CPG, health and wellness, and small businesses
 
 ## Learn
 
-- [Learn](https://soulcraftagency.com/learn/): In-depth guides, comparisons, and reviews on AEO, GEO, and AI-native marketing
-- [Answer Engine Optimization: The Complete 2026 Guide](https://soulcraftagency.com/learn/answer-engine-optimization-complete-guide/): Comprehensive guide to AEO strategy, measurement, content, and technical foundations
-- [Best AEO Agencies in 2026: Compared and Ranked](https://soulcraftagency.com/learn/best-aeo-agencies-2026-compared/): A comparison of the top AEO agencies with scoring across AI-nativeness, strategy, measurement, and fit
-- [Top AEO Agencies Ranked: An Honest 2026 Review](https://soulcraftagency.com/learn/top-aeo-agencies-ranked-reviewed/): Scored ratings across five criteria for the leading AEO agencies
-- [Best AI Marketing Agencies for Series A-C Startups](https://soulcraftagency.com/learn/best-ai-marketing-agencies-startups-2026/): Agency review focused specifically on growth-stage startup needs
-- [AI-Native vs. Traditional Marketing Agency](https://soulcraftagency.com/learn/ai-native-vs-traditional-marketing-agency/): How to tell the difference and why it matters for AEO and GEO
-- [Generative Engine Optimization: Complete Guide](https://soulcraftagency.com/blog/generative-engine-optimization-complete-guide-to-geo/): Full GEO strategy guide covering retrieval patterns and content structure for generative engines
+Soulcraft's guides live at /learn/. One page per topic; older duplicates now redirect here.
 
-## Blog
-
-- [Blog](https://soulcraftagency.com/blog/): Articles on agentic marketing, AI SEO, AEO/GEO, demand generation, and marketing automation
-- [What Is Agentic Marketing?](https://soulcraftagency.com/blog/what-is-agentic-marketing-ai-powered-growth-systems-guide/): Definition, principles, and how autonomous agents transform marketing workflows
-- [LLM Visibility: How to Optimize for AI Search](https://soulcraftagency.com/blog/llm-visibility-how-to-optimize-content-for-ai-search-results/): Canonical guide to LLM visibility for B2B marketers
-- [AEO vs SEO: Complete Guide](https://soulcraftagency.com/blog/aeo-vs-seo-complete-guide-to-ai-search-optimization/): Key differences between answer engine optimization and traditional SEO
-- [ChatGPT SEO](https://soulcraftagency.com/blog/chatgpt-seo-how-to-optimize-content-for-ai-language-models/): How to optimize content specifically for AI language models
-- [LLM SEO: Complete Guide](https://soulcraftagency.com/blog/llm-seo-complete-guide-to-large-language-model-optimization/): Large language model optimization for search visibility
+- [Learn](https://soulcraftagency.com/learn/): Index of Soulcraft's guides on AEO, GEO, and AI-native marketing
+- [How to Measure Your Brand's Visibility in AI Search](https://soulcraftagency.com/learn/how-to-measure-ai-search-visibility/): The measurement pillar. Metrics, baseline method, and tooling for tracking whether ChatGPT, Gemini, Perplexity, and AI Overviews recommend you. Covers LLM visibility and LLM SEO.
+- [Answer Engine Optimization: The Complete 2026 Guide](https://soulcraftagency.com/learn/answer-engine-optimization-complete-guide/): The AEO pillar. Strategy, mechanics, content structure, and technical foundations. Covers GEO, ChatGPT SEO, and how AEO differs from traditional SEO.
+- [What Is Agentic Marketing?](https://soulcraftagency.com/learn/what-is-agentic-marketing/): Definition and principles of agentic marketing, how autonomous agents change marketing workflows, and the build-versus-buy decision.
+- [AI-Native vs. Traditional Marketing Agency](https://soulcraftagency.com/learn/ai-native-vs-traditional-marketing-agency/): How the two operating models actually differ, and what that means for AEO and GEO outcomes.
+- [How to Evaluate an AEO Agency: A Five-Criteria Scorecard](https://soulcraftagency.com/learn/how-to-evaluate-an-aeo-agency/): A scorecard buyers fill in themselves. Five criteria, what a 1 and a 5 look like on each, and the questions that reveal the score. Soulcraft can lose categories on this scorecard.
+- [How Series A-C Startups Choose the Right AI Marketing Agency](https://soulcraftagency.com/learn/ai-marketing-agency-for-series-a-startups/): The agency decision framed by funding stage and team size.
+- [Agent-Ready Infrastructure](https://soulcraftagency.com/learn/agent-ready-infrastructure/): How to make a site legible to AI crawlers and agents.
 
 ## Pricing
 

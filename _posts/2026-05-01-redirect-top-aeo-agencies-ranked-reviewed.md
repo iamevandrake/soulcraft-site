@@ -1,6 +1,6 @@
 ---
 layout: redirect
 redirect_to: /learn/how-to-evaluate-an-aeo-agency/
-permalink: /learn/best-aeo-agencies-2026-compared/
+permalink: /learn/top-aeo-agencies-ranked-reviewed/
 sitemap: false
 ---

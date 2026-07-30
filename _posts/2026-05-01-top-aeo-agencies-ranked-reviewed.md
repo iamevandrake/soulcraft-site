@@ -8,7 +8,7 @@ content_type: Guide
 keywords: "AEO agency evaluation criteria, AEO agency scorecard, how to evaluate an answer engine optimization agency, AEO agency comparison framework"
 og_title: "How to Evaluate an AEO Agency: A Five-Criteria Scorecard"
 og_description: "Five criteria. A scorecard you fill in yourself. How to evaluate any AEO agency before you sign."
-permalink: /learn/top-aeo-agencies-ranked-reviewed/
+permalink: /learn/how-to-evaluate-an-aeo-agency/
 schema_markup: '{"@context":"https://schema.org","@type":"Article","headline":"How to Evaluate an AEO Agency: A Five-Criteria Scorecard","description":"A scoring framework for evaluating answer engine optimization agencies across AI-nativeness, strategy depth, measurement capability, content quality, and fit.","author":{"@type":"Person","name":"Evan Drake"},"datePublished":"2026-05-01","dateModified":"2026-06-11","publisher":{"@type":"Organization","name":"Soulcraft","url":"https://soulcraftagency.com"}}'
 ---
 

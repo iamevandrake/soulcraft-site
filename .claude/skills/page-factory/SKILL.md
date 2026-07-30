@@ -13,6 +13,26 @@ When the user provides a topic, keyword, or page request, you will:
 5. **Update** sitemap.xml
 6. **Deploy** by committing and pushing to GitHub
 
+## URL structure (updated 2026-07-30)
+
+The site was consolidated on 2026-07-30. Respect these rules or you will recreate the
+duplication that consolidation removed:
+
+- **All new guide/article content goes to `/learn/`**, never `/blog/`. Set
+  `permalink: /learn/<slug>/` and `category: learn` in the post frontmatter.
+  `/blog/` is retired and redirects to `/learn/`.
+- **`/solutions/` and `/industries/` are retired** and redirect to `/services/`.
+  Service pages live at `/services/<slug>/`.
+- **Before creating a page, check for an existing page on the same intent.** If one
+  exists, extend it instead of publishing a near-duplicate. The four consolidated
+  clusters are: AI search measurement, answer engine optimization, agentic marketing,
+  and agency selection.
+- **Never publish self-ranking listicles** ("best X", "top X ranked") where Soulcraft
+  is a candidate. Comparison content is allowed only when Soulcraft can lose categories
+  and the methodology is stated on-page.
+- **`sitemap.xml` lists live, indexable URLs only.** Redirect stubs carry
+  `sitemap: false`. Never add a redirecting or noindexed URL to the sitemap.
+
 ## Input Format
 
 The user can invoke this skill in several ways:
@@ -203,8 +223,6 @@ Use this exact HTML structure. The CSS is loaded from `/assets/css/landing.css`.
     </button>
     <ul class="sc-nav-links">
       <li><a href="/services/">Services</a></li>
-      <li><a href="/industries/">Industries</a></li>
-      <li><a href="/solutions/">Solutions</a></li>
       <li><a href="mailto:hello@soulcraftagency.com" class="sc-nav-cta">Get in Touch</a></li>
     </ul>
   </nav>
@@ -347,8 +365,6 @@ Use this exact HTML structure. The CSS is loaded from `/assets/css/landing.css`.
       <div class="sc-footer-links">
         <a href="mailto:hello@soulcraftagency.com">Contact</a>
         <a href="/services/">Services</a>
-        <a href="/industries/">Industries</a>
-        <a href="/solutions/">Solutions</a>
       </div>
     </div>
   </footer>
