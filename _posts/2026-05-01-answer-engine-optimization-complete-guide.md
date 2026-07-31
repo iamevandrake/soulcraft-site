@@ -145,7 +145,7 @@ There is a growing industry selling manufactured authority signals. Some of it w
 
 **Volume without review.** Hundreds of pages generated and published unread. Even when nothing is technically false, the result is a site with no reason to be trusted, and it degrades the environment everyone else works in.
 
-Our position, stated plainly: legitimate AEO makes real authority legible to machines. Structure, schema, original data, named authors, honest comparison. Faking the underlying authority is a different activity that borrows the same vocabulary, and it is a bet that detection stays behind manipulation forever. That bet has lost every previous time it was made in search.
+Our position, stated plainly: legitimate AEO makes real authority legible to machines. Structure, schema, original data, named authors, honest comparison. Saying out loud that a person stands behind a page belongs on that list too, which is what [the Not Slop badge](/notslop/) is for. Faking the underlying authority is a different activity that borrows the same vocabulary, and it is a bet that detection stays behind manipulation forever. That bet has lost every previous time it was made in search.
 
 If a comparison page cannot survive being read by the competitor it ranks below you, it is not a comparison page.
 

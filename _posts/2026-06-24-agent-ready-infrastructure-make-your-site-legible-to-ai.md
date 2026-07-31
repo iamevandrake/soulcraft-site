@@ -32,9 +32,11 @@ So the goal of this layer is simple to state. Make the true facts about your bra
 
 **A knowledge bundle.** Beyond page-level markup, you can publish a single structured representation of your brand: the facts, the relationships, the sources. We do this with an Open Knowledge Format bundle and an [EntityMap](/entitymap.html), a machine-readable map of who Soulcraft is. The point is to give an answer engine one authoritative, structured place to learn you from, rather than reassembling you from scraps.
 
+**Visible accountability.** Readers and models are both working out whether anyone stands behind a page. Named authors, honest dates, and a stated way to challenge what you published all feed that judgment. We publish [the Not Slop badge](/notslop/) for the last piece, an open-source marker that says a human is accountable for this page and hands readers a button to argue otherwise. Anyone can install it, and unlike a claim buried in a footer, it can be tested.
+
 ## An agent-readiness checklist
 
-You can audit your own site against a short list. Does your homepage state, in plain and marked-up form, what you do and for whom? Is your organization and your key people described in schema? Are your facts consistent across your site and your external profiles? Do you publish an llms.txt that points to your important pages? Is there a single structured source of truth a model could cite? Most sites fail several of these, which is exactly why this layer is an advantage rather than table stakes.
+You can audit your own site against a short list. Does your homepage state, in plain and marked-up form, what you do and for whom? Is your organization and your key people described in schema? Are your facts consistent across your site and your external profiles? Do you publish an llms.txt that points to your important pages? Is there a single structured source of truth a model could cite? Can a reader tell who stands behind a page, and say so if they disagree? Most sites fail several of these, which is exactly why this layer is an advantage rather than table stakes.
 
 ## Why this is the durable layer
 

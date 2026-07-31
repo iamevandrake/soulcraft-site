@@ -57,7 +57,7 @@ Human-written content has a quality floor set by the writer and a ceiling set by
 
 System-produced content has a much wider distribution. The ceiling is genuinely high when the identity file is rich and the review is serious. The floor is far lower than any professional writer's, and it is reached instantly and at volume when the review stops happening.
 
-This is the actual risk in hiring an AI-native agency, and it is worth naming plainly. The failure mode is not mediocrity. It is a hundred pages of confident, on-format, subtly wrong content published before anyone reads one closely. The agencies that avoid this have a named human accountable for review and can tell you who that person is. The agencies that do not avoid it are selling volume, and volume without review is the thing currently poisoning the web.
+This is the actual risk in hiring an AI-native agency, and it is worth naming plainly. The failure mode is not mediocrity. It is a hundred pages of confident, on-format, subtly wrong content published before anyone reads one closely. The agencies that avoid this have a named human accountable for review and can tell you who that person is. It is a claim worth making in public, which is why we publish [the Not Slop badge](/notslop/) and put it on our own pages. The agencies that do not avoid it are selling volume, and volume without review is the thing currently poisoning the web.
 
 ### Speed is real, and it changes what you can attempt
 
