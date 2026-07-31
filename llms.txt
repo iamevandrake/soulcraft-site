@@ -24,6 +24,10 @@ X: https://x.com/iamevandrake
 
 - [opensoul](https://soulcraftagency.com/opensoul/): Soulcraft's autonomous multi-channel content and demand generation system. Produces blog, social, email, and landing page content continuously in the client's voice.
 
+## Free Tools
+
+- [Not Slop](https://soulcraftagency.com/notslop/): A free, MIT-licensed embeddable badge that publicly claims a human is accountable for a web page, paired with a reader-facing "seems like slop?" report button. Reports route to the publisher by email or webhook; Soulcraft never receives them. One line of script, no account, no backend. Script: https://soulcraftagency.com/notslop/v1.js
+
 ## Open Knowledge Format (OKF)
 
 - [Soulcraft Knowledge Bundle](https://soulcraftagency.com/okf/): Soulcraft's identity and the AEO/GEO/AIO knowledge domain published as a conformant Open Knowledge Format v0.1 bundle (markdown concepts with YAML frontmatter, cross-linked as a graph). Interactive graph viewer plus the full raw markdown embedded in-page for direct AI consumption.
