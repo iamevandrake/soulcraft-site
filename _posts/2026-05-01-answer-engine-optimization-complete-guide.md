@@ -7,8 +7,6 @@ last_modified_at: 2026-07-30
 category: learn
 content_type: Guide
 keywords: "answer engine optimization, AEO guide, AEO strategy 2026, GEO generative engine optimization, how to rank in AI search, ChatGPT SEO, AEO vs SEO, AI search optimization, LLM optimization"
-og_title: "Answer Engine Optimization: The Complete 2026 Guide"
-og_description: "How AI systems decide what to surface, the four-layer strategy, and the shortcuts to avoid."
 permalink: /learn/answer-engine-optimization-complete-guide/
 schema_markup: '{"@context":"https://schema.org","@type":"Article","headline":"Answer Engine Optimization: The Complete 2026 Guide","description":"A comprehensive guide to answer engine optimization covering retrieval mechanics, the four-layer strategy framework, how AEO relates to SEO and GEO, platform-specific considerations, measurement, and the manipulation tactics to avoid.","author":{"@type":"Person","@id":"https://soulcraftagency.com/#evan-drake","name":"Evan Drake"},"datePublished":"2026-05-01","dateModified":"2026-07-30","publisher":{"@type":"Organization","name":"Soulcraft","url":"https://soulcraftagency.com"},"about":[{"@type":"Thing","name":"Answer Engine Optimization"},{"@type":"Thing","name":"Generative Engine Optimization"}]}'
 ---

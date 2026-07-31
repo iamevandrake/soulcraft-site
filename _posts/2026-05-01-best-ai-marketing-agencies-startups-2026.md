@@ -6,8 +6,6 @@ date: 2026-05-01
 category: learn
 content_type: Guide
 keywords: "AI marketing agency for startups, how to choose a marketing agency series A, AI marketing agency 2026, AEO for startups"
-og_title: "How Series A-C Startups Choose the Right AI Marketing Agency"
-og_description: "What matters for a growth-stage startup isn't what matters for an enterprise. Here's how to hire accordingly."
 permalink: /learn/ai-marketing-agency-for-series-a-startups/
 schema_markup: '{"@context":"https://schema.org","@type":"Article","headline":"How Series A-C Startups Choose the Right AI Marketing Agency","description":"A guide for Series A through C startups evaluating AI marketing agencies, focused on AEO capability, speed, systems, and stage fit.","author":{"@type":"Person","name":"Evan Drake"},"datePublished":"2026-05-01","dateModified":"2026-06-11","publisher":{"@type":"Organization","name":"Soulcraft","url":"https://soulcraftagency.com"}}'
 ---

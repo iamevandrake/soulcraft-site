@@ -7,8 +7,6 @@ last_modified_at: 2026-07-30
 category: learn
 content_type: Comparison
 keywords: "AI native marketing agency, AI marketing agency vs traditional, AI-first agency, AEO agency, AI marketing comparison 2026, how to choose an AI marketing agency"
-og_title: "AI-Native vs. Traditional Marketing Agency"
-og_description: "The operational test, the honest trade-offs, and six questions that reveal which one you are talking to."
 permalink: /learn/ai-native-vs-traditional-marketing-agency/
 schema_markup: '{"@context":"https://schema.org","@type":"Article","headline":"AI-Native vs. Traditional Marketing Agency: What is the Real Difference?","description":"An operational comparison of AI-native and traditional marketing agencies, covering where each model genuinely wins, the failure modes of both, and the questions that reveal which one you are evaluating.","author":{"@type":"Person","@id":"https://soulcraftagency.com/#evan-drake","name":"Evan Drake"},"datePublished":"2026-05-01","dateModified":"2026-07-30","publisher":{"@type":"Organization","name":"Soulcraft","url":"https://soulcraftagency.com"}}'
 ---

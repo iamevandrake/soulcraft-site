@@ -6,8 +6,6 @@ date: 2026-06-24
 category: learn
 content_type: Guide
 keywords: "agent ready infrastructure, machine readable website for AI, llms.txt, schema for AI citation, entity optimization, knowledge graph, EntityMap, structured data AEO"
-og_title: "Agent-Ready Infrastructure: How to Make Your Site Legible to AI"
-og_description: "The layer beneath content. Structured data, entity consistency, llms.txt, and knowledge bundles that let AI systems understand and cite you correctly."
 permalink: /learn/agent-ready-infrastructure/
 schema_markup: '{"@context":"https://schema.org","@type":"Article","headline":"Agent-Ready Infrastructure: How to Make Your Site Legible to AI","description":"A guide to the structured, machine-readable layer that lets AI systems understand and cite a brand correctly, covering schema, entity consistency, llms.txt, and knowledge bundles.","author":{"@type":"Person","@id":"https://soulcraftagency.com/#evan-drake","name":"Evan Drake"},"datePublished":"2026-06-24","publisher":{"@type":"Organization","name":"Soulcraft","url":"https://soulcraftagency.com"}}'
 ---
