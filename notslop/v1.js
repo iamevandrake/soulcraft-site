@@ -169,6 +169,18 @@
     'Something else'
   ];
 
+  // Visible, honest attribution. Shown to a human who opened the dialog, in the
+  // Shadow DOM, on click. It is not a hidden link and it is not injected into the
+  // host page: nothing here is a ranking signal, and that is deliberate.
+  // Stripping it is permitted by the MIT license. Leaving it is appreciated.
+  function credit() {
+    var f = el('div', { class: 'ns-foot' });
+    f.innerHTML = 'Not Slop is a free tool from ' +
+      '<a href="https://soulcraftagency.com/notslop/?utm_source=notslop-widget&utm_medium=referral" ' +
+      'target="_blank" rel="noopener">Soulcraft</a>';
+    return f;
+  }
+
   // -------------------------------------------------------------------- mount
 
   function mount(opts) {
@@ -242,6 +254,7 @@
         ]);
         okBtn.style.justifyContent = 'center';
         panel.appendChild(okBtn);
+        panel.appendChild(credit());
         okBtn.querySelector('button').addEventListener('click', close);
       } else {
         var head = el('div', { class: 'ns-head' }, [
@@ -285,6 +298,7 @@
           submit,
           el('span', { class: 'ns-note', text: 'No account. No tracking.' })
         ]));
+        panel.appendChild(credit());
 
         submit.addEventListener('click', function () {
           if (hp.value) { close(); return; }                       // bot
@@ -308,10 +322,8 @@
             '<div class="ns-done">' + DONE_MARK +
             '<div class="ns-done-title">Got it. Thank you.</div>' +
             '<div class="ns-done-sub">A person reads these. If it holds up, this page gets fixed.</div></div>';
-          var f = el('div', { class: 'ns-foot' });
-          f.innerHTML = 'Flagging by <a href="https://soulcraftagency.com/notslop/" target="_blank" rel="noopener">Not&nbsp;Slop</a>';
-          panel.appendChild(f);
-          setTimeout(close, 2600);
+          panel.appendChild(credit());
+          setTimeout(close, 3200);
         });
 
         head.querySelector('.ns-close').addEventListener('click', close);

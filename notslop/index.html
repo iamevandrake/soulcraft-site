@@ -123,6 +123,14 @@ layout: null
         },
         {
           "@type": "Question",
+          "name": "Does Not Slop add hidden links or backlinks to my site?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The widget never injects anchors, markup, or schema into your page. The only credit is one visible line inside the report dialog reading 'Not Slop is a free tool from Soulcraft', shown to a reader who opened the panel, and the MIT license lets you remove it. Hidden widget links are a documented link scheme that search engines discount, and a tool about content accountability has no business using one."
+          }
+        },
+        {
+          "@type": "Question",
           "name": "How is this different from the LinkedIn 'seems like AI slop' button?",
           "acceptedAnswer": {
             "@type": "Answer",
@@ -555,8 +563,30 @@ footer .container { padding-left: 48px; padding-right: 48px; }
   </div>
 </section>
 
-<!-- FAQ -->
+<!-- Attribution -->
 <section class="plain">
+  <div class="container">
+    <div class="narrow">
+      <div class="eyebrow">Credit</div>
+      <h2 class="section-title">What we ask for, and what we <em>don't</em></h2>
+      <p>The dialog carries one line: <em>Not Slop is a free tool from Soulcraft.</em> A reader sees it after they open the panel. That is the entire ask, and the MIT license means you can delete it.</p>
+      <p>What the widget will never do is put a hidden link on your page. No injected anchors, no invisible markup, no schema written into your document, nothing your visitors cannot see. Widget links are a documented link scheme and search engines discount or penalize them. Building a tool about content accountability that quietly manipulates your page would be the joke writing itself.</p>
+      <p>If you want to link back on purpose, that is a different thing entirely, and we would love it. Here is a snippet you can put in your footer or colophon.</p>
+    </div>
+    <div class="code-wrap" style="margin-top:36px;">
+      <button class="copy-btn" id="copy-credit" type="button">Copy</button>
+<pre id="code-credit"><span class="c">&lt;!-- Optional. Only if you mean it. --&gt;</span>
+<span class="t">&lt;p&gt;</span>Slop reporting by
+  <span class="t">&lt;a</span> <span class="a">href</span>=<span class="v">"https://soulcraftagency.com/notslop/"</span><span class="t">&gt;</span>Not Slop<span class="t">&lt;/a&gt;</span>,
+  a free tool from
+  <span class="t">&lt;a</span> <span class="a">href</span>=<span class="v">"https://soulcraftagency.com/"</span><span class="t">&gt;</span>Soulcraft<span class="t">&lt;/a&gt;</span>.
+<span class="t">&lt;/p&gt;</span></pre>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="band">
   <div class="container">
     <div class="narrow" style="text-align:center;">
       <div class="eyebrow">Questions</div>
@@ -582,6 +612,10 @@ footer .container { padding-left: 48px; padding-right: 48px; }
       <details>
         <summary>Is it really free?</summary>
         <p>Yes, and MIT licensed. Download the file and self-host it if you would rather not depend on us being online. That is not a loophole, it is the intended use.</p>
+      </details>
+      <details>
+        <summary>Does this put hidden links or backlinks on my site?</summary>
+        <p>No. Nothing is injected into your page: no anchors, no markup, no schema, nothing a visitor cannot see. The only credit is one visible line inside the report dialog, and you can delete it under the license. Hidden widget links are a known link scheme that search engines discount anyway, and building that into a tool about content accountability would be absurd.</p>
       </details>
       <details>
         <summary>Why would I invite criticism of my own content?</summary>
@@ -662,6 +696,7 @@ footer .container { padding-left: 48px; padding-right: 48px; }
   }
   wireCopy('copy-basic', 'code-basic');
   wireCopy('copy-endpoint', 'code-endpoint');
+  wireCopy('copy-credit', 'code-credit');
 })();
 </script>
 

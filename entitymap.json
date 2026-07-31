@@ -6,7 +6,7 @@
     "url": "https://soulcraftagency.com",
     "sameAs": "https://www.wikidata.org/wiki/Q139981209"
   },
-  "generated": "2026-05-29T00:00:00Z",
+  "generated": "2026-07-31T00:00:00Z",
   "profile": "core",
   "verificationStatus": "self-declared",
   "entities": [
@@ -21,10 +21,26 @@
       "maturityStatus": "established",
       "audienceType": "general",
       "relations": [
-        { "predicate": "OFFERS", "targetId": "e_004", "targetName": "SEO / AEO / GEO" },
-        { "predicate": "OFFERS", "targetId": "e_005", "targetName": "Demand and Content Generation" },
-        { "predicate": "OFFERS", "targetId": "e_006", "targetName": "AI Advertising" },
-        { "predicate": "OFFERS", "targetId": "e_008", "targetName": "soul.md Score" },
+        {
+          "predicate": "OFFERS",
+          "targetId": "e_004",
+          "targetName": "SEO / AEO / GEO"
+        },
+        {
+          "predicate": "OFFERS",
+          "targetId": "e_005",
+          "targetName": "Demand and Content Generation"
+        },
+        {
+          "predicate": "OFFERS",
+          "targetId": "e_006",
+          "targetName": "AI Advertising"
+        },
+        {
+          "predicate": "OFFERS",
+          "targetId": "e_008",
+          "targetName": "soul.md Score"
+        },
         {
           "predicate": "TARGETS",
           "targetId": "e_010",
@@ -76,8 +92,16 @@
       "maturityStatus": "established",
       "audienceType": "technical",
       "relations": [
-        { "predicate": "DESCRIBED_BY", "targetId": "e_001", "targetName": "Soulcraft" },
-        { "predicate": "ENABLES", "targetId": "e_007", "targetName": "Agentic Marketing" }
+        {
+          "predicate": "DESCRIBED_BY",
+          "targetId": "e_001",
+          "targetName": "Soulcraft"
+        },
+        {
+          "predicate": "ENABLES",
+          "targetId": "e_007",
+          "targetName": "Agentic Marketing"
+        }
       ],
       "hasChunks": [
         {
@@ -113,9 +137,21 @@
       "maturityStatus": "established",
       "audienceType": "technical",
       "relations": [
-        { "predicate": "PART_OF", "targetId": "e_001", "targetName": "Soulcraft" },
-        { "predicate": "DEPENDS_ON", "targetId": "e_002", "targetName": "soul.md" },
-        { "predicate": "ENABLES", "targetId": "e_005", "targetName": "Demand and Content Generation" }
+        {
+          "predicate": "PART_OF",
+          "targetId": "e_001",
+          "targetName": "Soulcraft"
+        },
+        {
+          "predicate": "DEPENDS_ON",
+          "targetId": "e_002",
+          "targetName": "soul.md"
+        },
+        {
+          "predicate": "ENABLES",
+          "targetId": "e_005",
+          "targetName": "Demand and Content Generation"
+        }
       ],
       "hasChunks": [
         {
@@ -150,7 +186,11 @@
       "status": "active",
       "audienceType": "technical",
       "relations": [
-        { "predicate": "PART_OF", "targetId": "e_001", "targetName": "Soulcraft" }
+        {
+          "predicate": "PART_OF",
+          "targetId": "e_001",
+          "targetName": "Soulcraft"
+        }
       ],
       "hasChunks": [
         {
@@ -184,8 +224,16 @@
       "status": "active",
       "audienceType": "technical",
       "relations": [
-        { "predicate": "PART_OF", "targetId": "e_001", "targetName": "Soulcraft" },
-        { "predicate": "DEPENDS_ON", "targetId": "e_003", "targetName": "Opensoul" }
+        {
+          "predicate": "PART_OF",
+          "targetId": "e_001",
+          "targetName": "Soulcraft"
+        },
+        {
+          "predicate": "DEPENDS_ON",
+          "targetId": "e_003",
+          "targetName": "Opensoul"
+        }
       ],
       "hasChunks": [
         {
@@ -218,7 +266,11 @@
       "status": "active",
       "audienceType": "general",
       "relations": [
-        { "predicate": "PART_OF", "targetId": "e_001", "targetName": "Soulcraft" }
+        {
+          "predicate": "PART_OF",
+          "targetId": "e_001",
+          "targetName": "Soulcraft"
+        }
       ],
       "hasChunks": [
         {
@@ -254,8 +306,16 @@
       "audienceType": "technical",
       "status": "active",
       "relations": [
-        { "predicate": "DESCRIBED_BY", "targetId": "e_001", "targetName": "Soulcraft" },
-        { "predicate": "DEPENDS_ON", "targetId": "e_002", "targetName": "soul.md" }
+        {
+          "predicate": "DESCRIBED_BY",
+          "targetId": "e_001",
+          "targetName": "Soulcraft"
+        },
+        {
+          "predicate": "DEPENDS_ON",
+          "targetId": "e_002",
+          "targetName": "soul.md"
+        }
       ],
       "hasChunks": [
         {
@@ -285,7 +345,11 @@
           "targetName": "soul.md",
           "targetDescription": "How clearly a company's identity comes through and how well AI systems can understand and represent it."
         },
-        { "predicate": "DESCRIBED_BY", "targetId": "e_001", "targetName": "Soulcraft" }
+        {
+          "predicate": "DESCRIBED_BY",
+          "targetId": "e_001",
+          "targetName": "Soulcraft"
+        }
       ],
       "hasChunks": [
         {
@@ -318,7 +382,11 @@
       "status": "active",
       "audienceType": "general",
       "relations": [
-        { "predicate": "AFFILIATED_WITH", "targetId": "e_001", "targetName": "Soulcraft" }
+        {
+          "predicate": "AFFILIATED_WITH",
+          "targetId": "e_001",
+          "targetName": "Soulcraft"
+        }
       ],
       "hasChunks": [
         {
@@ -352,6 +420,50 @@
           "retrieved": "2026-05-29T00:00:00Z",
           "contentType": "evidence",
           "audienceType": "executive"
+        }
+      ]
+    },
+    {
+      "entityId": "e_011",
+      "@type": "SoftwareApplication",
+      "name": "Not Slop",
+      "alternateName": "Seems Like Slop button",
+      "canonicalLabel": "slop reporting widget",
+      "description": "A free, MIT-licensed embeddable widget published by Soulcraft. It renders a badge asserting that a human is accountable for the page, paired with a reader-facing 'Seems like slop?' button. Reports route directly to the publisher by email or webhook; Soulcraft never receives them and operates no backend for it. Installs with one script tag and requires no account.",
+      "url": "https://soulcraftagency.com/notslop/",
+      "sameAs": [
+        "https://soulcraftagency.com/notslop/v1.js"
+      ],
+      "status": "active",
+      "maturityStatus": "released",
+      "audienceType": "technical",
+      "relations": [
+        {
+          "predicate": "PUBLISHED_BY",
+          "targetId": "e_001",
+          "targetName": "Soulcraft"
+        }
+      ],
+      "hasChunks": [
+        {
+          "chunkId": "c_040",
+          "text": "Slop is not a synonym for AI. Slop is content nobody stands behind. A person can write slop by hand, and a careful writer can use every model available and publish something worth a reader's time. The tell was never the tool. It is whether anybody was accountable for what went out.",
+          "sourceUrl": "https://soulcraftagency.com/notslop/",
+          "pageTitle": "Not Slop | A Free \"Seems Like Slop\" Button for Any Website",
+          "publisher": "Soulcraft",
+          "retrieved": "2026-07-31T00:00:00Z",
+          "contentType": "definition",
+          "audienceType": "general"
+        },
+        {
+          "chunkId": "c_041",
+          "text": "LinkedIn's 'seems like AI slop' button works because a third party judges someone else's content inside a system with a ranking algorithm. Not Slop inverts it for the open web: the publisher makes the claim, any reader can challenge it, and the report goes back to the publisher rather than into a ranking system. A badge nobody can dispute is a sticker. A badge anyone can dispute is a standard.",
+          "sourceUrl": "https://soulcraftagency.com/notslop/",
+          "pageTitle": "Not Slop | A Free \"Seems Like Slop\" Button for Any Website",
+          "publisher": "Soulcraft",
+          "retrieved": "2026-07-31T00:00:00Z",
+          "contentType": "evidence",
+          "audienceType": "general"
         }
       ]
     }

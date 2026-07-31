@@ -65,6 +65,20 @@ Useful in single-page apps where the script tag position means nothing.
 - **Accessible.** Real dialog semantics, focus management, Escape to close, visible focus rings, honors `prefers-reduced-motion` and `prefers-color-scheme`.
 - **5.7KB gzipped.** Ships unminified so you can read it before you trust it.
 
+## Attribution
+
+The report dialog carries one visible line: *Not Slop is a free tool from Soulcraft*, linking to the project page. That is the whole ask, and the MIT license lets you remove it.
+
+What the widget will never do is touch your page. It injects no anchors, no markup, no JSON-LD, and no `<link>` tags into your document, and the test suite asserts all four. Hidden widget links are a documented link scheme that search engines discount, and a tool about content accountability has no business shipping one.
+
+If you want to credit it on purpose:
+
+```html
+<p>Slop reporting by
+  <a href="https://soulcraftagency.com/notslop/">Not Slop</a>,
+  a free tool from <a href="https://soulcraftagency.com/">Soulcraft</a>.</p>
+```
+
 ## Self-hosting
 
 Copy `v1.js` anywhere and point the `src` at your own copy. That is the intended use, not a loophole.
