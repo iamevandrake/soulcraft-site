@@ -63,7 +63,7 @@ Useful in single-page apps where the script tag position means nothing.
 - **No cookies.** One `localStorage` key for rate limiting.
 - **Abuse resistance.** One report per page per 24h, hidden honeypot field, and submissions faster than 1.2s are discarded.
 - **Accessible.** Real dialog semantics, focus management, Escape to close, visible focus rings, honors `prefers-reduced-motion` and `prefers-color-scheme`.
-- **5.7KB gzipped.** Ships unminified so you can read it before you trust it.
+- **About 6KB gzipped.** Ships unminified so you can read it before you trust it.
 
 ## Attribution
 
