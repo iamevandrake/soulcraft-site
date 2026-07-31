@@ -26,6 +26,8 @@ X: https://x.com/iamevandrake
 
 ## Free Tools
 
+- [AI Visibility Check](https://soulcraftagency.com/tools/ai-visibility-check/): A free browser-based diagnostic that fetches a site's homepage, robots.txt, llms.txt and sitemap.xml and reports which AI search readiness checks pass, fail, or could not be verified. Audits AI crawler access for OAI-SearchBot, ClaudeBot, PerplexityBot, Google-Extended, GPTBot and CCBot; checks server-rendered content, structured data and entity signals. Unverified checks are excluded from the score rather than guessed. No signup, no backend, nothing stored.
+- [All free tools](https://soulcraftagency.com/tools/): Index of Soulcraft's free, no-signup tools
 - [Not Slop](https://soulcraftagency.com/notslop/): A free, MIT-licensed embeddable badge that publicly claims a human is accountable for a web page, paired with a reader-facing "seems like slop?" report button. Reports route to the publisher by email or webhook; Soulcraft never receives them. One line of script, no account, no backend. Script: https://soulcraftagency.com/notslop/v1.js
 
 ## Open Knowledge Format (OKF)

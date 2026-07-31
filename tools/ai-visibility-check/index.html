@@ -1,0 +1,757 @@
+---
+layout: null
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{% include gtag.html %}
+{% include scrunch.html %}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AI Visibility Check: Why Your Site Isn't in AI Answers | Soulcraft</title>
+<meta name="description" content="Free diagnostic. Enter your domain and see the real reasons AI search leaves you out: crawler blocks, missing llms.txt, thin entity signals, unstructured answers. No signup.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://soulcraftagency.com/tools/ai-visibility-check/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+<!-- Open Graph -->
+<meta property="og:title" content="AI Visibility Check | Soulcraft" />
+<meta property="og:description" content="Enter your domain and see the real reasons AI search leaves you out. Free, no signup, nothing stored." />
+<meta property="og:image" content="https://soulcraftagency.com/soulcraft-og-image.png" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://soulcraftagency.com/tools/ai-visibility-check/" />
+
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="AI Visibility Check | Soulcraft" />
+<meta name="twitter:description" content="Enter your domain and see the real reasons AI search leaves you out. Free, no signup." />
+<meta name="twitter:image" content="https://soulcraftagency.com/soulcraft-og-image.png" />
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://soulcraftagency.com/#evan-drake",
+      "name": "Evan Drake",
+      "jobTitle": "Founder",
+      "url": "https://soulcraftagency.com",
+      "sameAs": ["https://www.linkedin.com/in/iamevandrake/", "https://x.com/iamevandrake"]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://soulcraftagency.com/#organization",
+      "name": "Soulcraft",
+      "url": "https://soulcraftagency.com",
+      "foundingDate": "2026",
+      "founder": { "@id": "https://soulcraftagency.com/#evan-drake" }
+    },
+    {
+      "@type": "WebApplication",
+      "@id": "https://soulcraftagency.com/tools/ai-visibility-check/#app",
+      "name": "AI Visibility Check",
+      "url": "https://soulcraftagency.com/tools/ai-visibility-check/",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Any modern browser",
+      "browserRequirements": "Requires JavaScript",
+      "description": "A free diagnostic that fetches a site's homepage, robots.txt, llms.txt and sitemap.xml, then reports which AI search readiness checks pass, fail, or could not be verified.",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "publisher": { "@id": "https://soulcraftagency.com/#organization" },
+      "featureList": [
+        "AI crawler access audit across GPTBot, ClaudeBot, PerplexityBot, Google-Extended, OAI-SearchBot and CCBot",
+        "llms.txt and sitemap.xml detection",
+        "Structured data and entity signal checks",
+        "Answer-shaped content structure analysis",
+        "Server-rendered content detection"
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "@id": "https://soulcraftagency.com/tools/ai-visibility-check/#howto",
+      "name": "How to find out why your website is not showing up in AI search answers",
+      "description": "A four-step diagnostic sequence for a site that is absent from ChatGPT, Perplexity, Gemini and Google AI Overviews.",
+      "step": [
+        {"@type": "HowToStep", "position": 1, "name": "Confirm AI crawlers can reach you", "text": "Read robots.txt and check whether GPTBot, ClaudeBot, PerplexityBot, Google-Extended, OAI-SearchBot or CCBot are disallowed. A block here makes every other fix irrelevant."},
+        {"@type": "HowToStep", "position": 2, "name": "Confirm your content exists without JavaScript", "text": "Most AI crawlers do not execute JavaScript. Fetch the raw HTML and check whether the words a reader sees are actually in the source."},
+        {"@type": "HowToStep", "position": 3, "name": "Check your entity signals", "text": "Verify that structured data names the organization, that sameAs links connect it to known profiles, and that the title, description and canonical agree with each other."},
+        {"@type": "HowToStep", "position": 4, "name": "Check whether your content is answer-shaped", "text": "Look for question-shaped headings, a direct definition near the top, and lists or tables. Models extract passages, not pages."}
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://soulcraftagency.com/tools/ai-visibility-check/#faq",
+      "mainEntity": [
+        {"@type": "Question", "name": "Why is my website not showing up in AI search answers?",
+         "acceptedAnswer": {"@type": "Answer", "text": "In most cases it is one of four things: an AI crawler is blocked in robots.txt, the content only exists after JavaScript runs so the crawler sees an empty page, there are no structured entity signals telling the model what the company is, or the content is written as prose that offers no extractable passage. Ranking in Google is not the same job as being quoted in an answer, and a site can do the first well while failing the second completely."}},
+        {"@type": "Question", "name": "Does blocking GPTBot hurt my visibility in ChatGPT?",
+         "acceptedAnswer": {"@type": "Answer", "text": "GPTBot is the training crawler and OAI-SearchBot is the one that fetches pages to answer live queries. Blocking OAI-SearchBot removes you from ChatGPT search results. Blocking GPTBot keeps you out of training data but does not by itself remove you from live search answers. Many sites block both without realizing they are separate decisions."}},
+        {"@type": "Question", "name": "Does llms.txt actually do anything?",
+         "acceptedAnswer": {"@type": "Answer", "text": "No major AI platform has committed to reading llms.txt as a ranking or retrieval input, so treat it as a low-cost bet rather than a fix. It is cheap to publish and it forces a useful exercise: writing down what your company is in plain language. The checks in this tool that carry real weight are crawler access, server-rendered content, and structured data."}},
+        {"@type": "Question", "name": "How do I measure success in AI search optimization?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Track mention rate on non-branded prompts, separately from branded ones. Branded prompts sit near a ceiling for almost every company, so blending them into one number inflates it and hides whether anything is working. Measure the rate at which you appear in answers to questions that do not contain your name, and track citation rate separately, since being cited and being mentioned are different events."}},
+        {"@type": "Question", "name": "How long does it take to appear in AI answers after fixing these?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Crawler access changes can show up within days because live-retrieval systems refetch often. Entity and structured data changes typically take weeks to propagate. Content that depends on being cited by other sites takes longest, because it waits on the sources those models already read rather than on your own publishing schedule."}},
+        {"@type": "Question", "name": "Is this tool storing my domain or my data?",
+         "acceptedAnswer": {"@type": "Answer", "text": "No. Every check runs in your browser. The page fetches your public homepage, robots.txt, llms.txt and sitemap.xml through a public read-only proxy, scores what comes back, and forgets it when you close the tab. There is no account and no backend."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://soulcraftagency.com/"},
+        {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://soulcraftagency.com/tools/"},
+        {"@type": "ListItem", "position": 3, "name": "AI Visibility Check"}
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+:root {
+  --color-paper: oklch(96.5% 0.012 83);
+  --color-paper-2: oklch(93.8% 0.014 80);
+  --color-surface: oklch(99.2% 0.006 83);
+  --color-ink: oklch(22% 0.014 60);
+  --color-body: oklch(40% 0.012 58);
+  --color-muted: oklch(55% 0.012 60);
+  --color-rule: oklch(87% 0.012 75);
+  --color-accent: oklch(47% 0.13 52);
+  --color-accent-deep: oklch(40% 0.13 50);
+  --color-accent-soft: oklch(93% 0.035 62);
+  --color-good: oklch(52% 0.12 150);
+  --color-warn: oklch(58% 0.17 28);
+  --color-unknown: oklch(62% 0.008 70);
+  --black: var(--color-paper); --card: var(--color-surface); --border: var(--color-rule);
+  --muted: var(--color-muted); --text: var(--color-body); --white: var(--color-ink);
+  --accent: var(--color-accent);
+  --radius: 6px;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; overflow-x: clip; }
+body { font-family: 'Inter', system-ui, sans-serif; background: var(--color-paper); color: var(--color-body); line-height: 1.65; overflow-x: clip; -webkit-font-smoothing: antialiased; }
+a { color: var(--color-accent); text-decoration: none; }
+a:hover { color: var(--color-accent-deep); }
+::selection { background: var(--color-accent-soft); color: var(--color-ink); }
+:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; border-radius: 2px; }
+.container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+.narrow { max-width: 760px; margin: 0 auto; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: color-mix(in oklch, var(--color-paper) 88%, transparent); backdrop-filter: blur(20px) saturate(1.1); -webkit-backdrop-filter: blur(20px) saturate(1.1); border-bottom: 1px solid var(--color-rule); }
+nav .container { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+.logo { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--white); display: flex; align-items: center; gap: 10px; }
+.logo-text span { color: var(--accent); }
+.heartmark { width: 28px; height: 28px; flex-shrink: 0; color: var(--color-accent); }
+.nav-right { display: flex; gap: 24px; align-items: center; }
+.nav-right a { color: var(--muted); font-size: 13px; font-weight: 500; transition: color 0.2s; }
+.nav-right a:hover { color: var(--white); }
+.nav-cta-btn { background: var(--accent) !important; color: var(--color-paper) !important; padding: 8px 20px; border-radius: 6px; font-weight: 600 !important; }
+@media (max-width: 720px) { .nav-right a:not(.nav-cta-btn) { display: none; } }
+
+.breadcrumbs { font-size: 12px; color: var(--muted); padding-top: 96px; }
+.breadcrumbs a { color: var(--muted); }
+.breadcrumbs a:hover { color: var(--accent); }
+
+.hero { padding: 32px 0 24px; text-align: center; }
+.chapter-num { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 4px; color: var(--accent); margin-bottom: 24px; opacity: 0.75; }
+h1 { font-family: 'Playfair Display', serif; font-size: clamp(34px, 5.6vw, 60px); line-height: 1.1; color: var(--white); font-weight: 400; margin-bottom: 20px; }
+h1 em { font-style: normal; color: var(--accent); font-weight: 700; }
+.hero-sub { font-size: 19px; color: var(--muted); font-weight: 300; max-width: 620px; margin: 0 auto 36px; }
+
+.tool { max-width: 640px; margin: 0 auto; }
+.domain-wrap { display: flex; gap: 10px; margin-bottom: 12px; }
+.domain-input { flex: 1; padding: 18px 24px; background: var(--card); border: 1px solid var(--border); border-radius: 12px; color: var(--white); font-size: 17px; font-family: 'Playfair Display', serif; text-align: center; outline: none; transition: all 0.25s; letter-spacing: 0.5px; min-width: 0; }
+.domain-input:focus { border-color: var(--accent); box-shadow: 0 0 0 4px var(--color-accent-soft); }
+.domain-input::placeholder { color: var(--muted); }
+.run-btn { padding: 18px 30px; background: var(--accent); color: var(--color-paper); border: none; border-radius: 12px; font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 600; cursor: pointer; transition: background 0.2s; white-space: nowrap; }
+.run-btn:hover:not(:disabled) { background: var(--color-accent-deep); }
+.run-btn:disabled { opacity: 0.6; cursor: default; }
+.tool-note { font-size: 12.5px; color: var(--muted); }
+.tool-note strong { color: var(--accent); font-weight: 600; }
+@media (max-width: 560px) { .domain-wrap { flex-direction: column; } }
+
+.status { font-size: 13px; color: var(--muted); min-height: 20px; margin-top: 16px; font-variant-numeric: tabular-nums; }
+
+.report { max-width: 860px; margin: 48px auto 0; display: none; }
+.report.show { display: block; }
+.report-head { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 32px; text-align: center; margin-bottom: 16px; }
+.report-domain { font-family: 'Playfair Display', serif; font-size: 24px; color: var(--white); margin-bottom: 6px; word-break: break-all; }
+.report-score { font-family: 'Playfair Display', serif; font-size: 64px; font-weight: 700; line-height: 1; color: var(--white); font-variant-numeric: tabular-nums; }
+.report-score small { font-size: 24px; color: var(--muted); font-weight: 400; }
+.report-verdict { font-size: 15px; color: var(--text); margin-top: 12px; max-width: 520px; margin-left: auto; margin-right: auto; }
+.report-caveat { font-size: 12.5px; color: var(--muted); margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--border); }
+
+.dims { display: grid; gap: 10px; margin-bottom: 24px; }
+.dim { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 14px 18px; display: grid; grid-template-columns: 190px 1fr 74px; gap: 16px; align-items: center; }
+.dim-name { font-family: 'Playfair Display', serif; font-size: 15px; color: var(--white); }
+.dim-bar { height: 6px; background: var(--border); border-radius: 3px; overflow: hidden; }
+.dim-fill { height: 100%; border-radius: 3px; transition: width 1s cubic-bezier(0.22,1,0.36,1); }
+.dim-val { font-size: 13px; font-weight: 700; color: var(--white); text-align: right; font-variant-numeric: tabular-nums; }
+.dim-val span { font-weight: 400; color: var(--muted); }
+@media (max-width: 620px) { .dim { grid-template-columns: 1fr; gap: 8px; } .dim-val { text-align: left; } }
+
+.group { margin-bottom: 28px; }
+.group-title { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--white); margin-bottom: 4px; }
+.group-why { font-size: 13.5px; color: var(--muted); margin-bottom: 14px; }
+.check { background: var(--card); border: 1px solid var(--border); border-left: 3px solid var(--border); border-radius: 0 10px 10px 0; padding: 14px 18px; margin-bottom: 8px; }
+.check.pass { border-left-color: var(--color-good); }
+.check.fail { border-left-color: var(--color-warn); }
+.check.warn { border-left-color: var(--color-accent); }
+.check.unknown { border-left-color: var(--color-unknown); }
+.check-head { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.check-mark { font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 3px 8px; border-radius: 5px; flex: none; }
+.pass .check-mark { background: color-mix(in oklch, var(--color-good) 15%, transparent); color: var(--color-good); }
+.fail .check-mark { background: color-mix(in oklch, var(--color-warn) 15%, transparent); color: var(--color-warn); }
+.warn .check-mark { background: var(--color-accent-soft); color: var(--color-accent-deep); }
+.unknown .check-mark { background: color-mix(in oklch, var(--color-unknown) 18%, transparent); color: oklch(45% 0.008 70); }
+.check-label { font-size: 14.5px; color: var(--white); font-weight: 500; }
+.check-detail { font-size: 13.5px; color: var(--muted); margin-top: 6px; }
+.check-fix { font-size: 13px; color: var(--text); margin-top: 8px; padding-top: 8px; border-top: 1px solid var(--border); }
+.check-fix b { color: var(--white); font-weight: 600; }
+
+.report-cta { background: var(--color-accent-soft); border-radius: 14px; padding: 32px; text-align: center; margin-top: 32px; }
+.report-cta h3 { font-family: 'Playfair Display', serif; font-size: 24px; color: var(--white); font-weight: 400; margin-bottom: 10px; }
+.report-cta p { font-size: 14.5px; color: var(--text); max-width: 480px; margin: 0 auto 20px; }
+.cta-btn { display: inline-block; background: var(--accent); color: var(--color-paper); padding: 14px 30px; border-radius: 8px; font-size: 15px; font-weight: 600; }
+.cta-btn:hover { background: var(--color-accent-deep); color: var(--color-paper); }
+
+section.band { background: var(--color-paper-2); margin-top: 96px; padding: 80px 0; }
+section.plain { padding: 80px 0 0; }
+h2 { font-family: 'Playfair Display', serif; font-size: clamp(26px, 3.6vw, 40px); line-height: 1.15; color: var(--white); font-weight: 400; margin-bottom: 18px; }
+h2 em { font-style: normal; color: var(--accent); font-weight: 700; }
+h3 { font-family: 'Playfair Display', serif; font-size: 21px; color: var(--white); font-weight: 400; margin: 32px 0 10px; }
+.narrow p { font-size: 16.5px; margin-bottom: 18px; }
+.narrow ul { margin: 0 0 18px 20px; font-size: 16.5px; }
+.narrow li { margin-bottom: 8px; }
+.pull { border-left: 3px solid var(--accent); padding: 4px 0 4px 20px; margin: 28px 0; font-size: 17px; color: var(--white); font-family: 'Playfair Display', serif; line-height: 1.5; }
+
+.faq-item { border-bottom: 1px solid var(--border); }
+.faq-q { width: 100%; background: none; border: none; text-align: left; padding: 20px 40px 20px 0; font-family: 'Playfair Display', serif; font-size: 18px; color: var(--white); cursor: pointer; position: relative; line-height: 1.4; }
+.faq-q::after { content: '+'; position: absolute; right: 8px; top: 50%; transform: translateY(-50%); color: var(--accent); font-size: 22px; font-family: 'Inter', sans-serif; }
+.faq-item.open .faq-q::after { content: '\2212'; }
+.faq-a { max-height: 0; overflow: hidden; transition: max-height 0.35s cubic-bezier(0.22,1,0.36,1); }
+.faq-item.open .faq-a { max-height: 600px; }
+.faq-a p { font-size: 15.5px; color: var(--text); padding-bottom: 20px; margin: 0; }
+
+footer { border-top: 1px solid var(--border); margin-top: 96px; padding: 48px 0 40px; }
+.footer-row { display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap; }
+.footer-links { display: flex; gap: 20px; flex-wrap: wrap; }
+.footer-links a { color: var(--muted); font-size: 13px; }
+.footer-links a:hover { color: var(--accent); }
+.footer-tagline { text-align: center; margin-top: 32px; font-family: 'Playfair Display', serif; font-style: italic; font-size: 14px; color: var(--muted); }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <a href="/" class="logo" aria-label="Soulcraft home">
+      <svg class="heartmark" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect x="20" y="20" width="160" height="160" rx="4" stroke="currentColor" stroke-width="3" stroke-linecap="round" fill="none"/>
+        <path d="M100 152 C 100 152, 48 116, 46 84 C 44 62, 58 50, 74 50 C 86 50, 94 58, 100 68 C 106 58, 114 50, 126 50 C 142 50, 156 62, 154 84 C 152 116, 100 152, 100 152Z" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <circle cx="100" cy="96" r="4.5" fill="currentColor"/>
+      </svg>
+      <span class="logo-text">Soul<span>craft</span></span>
+    </a>
+    <div class="nav-right">
+      <a href="/services/">Services</a>
+      <a href="/learn/">Learn</a>
+      <a href="/opensoul/">Opensoul</a>
+      <a href="/contact/" class="nav-cta-btn">Get Started</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+<div class="container">
+  <div class="breadcrumbs"><a href="/">Home</a> / <a href="/tools/">Tools</a> / AI Visibility Check</div>
+</div>
+
+<div class="container hero">
+  <p class="chapter-num">Free Tool</p>
+  <h1>Why isn't my site showing up in <em>AI answers</em>?</h1>
+  <p class="hero-sub">Enter a domain. This reads the live site the way an AI crawler does and tells you what is actually blocking you, one check at a time.</p>
+
+  <div class="tool">
+    <div class="domain-wrap">
+      <label for="domainInput" class="sr-only">Enter a domain to check</label>
+      <input type="text" class="domain-input" id="domainInput" placeholder="enter your domain" autocomplete="off" autocapitalize="off" spellcheck="false">
+      <button class="run-btn" id="runBtn">Run the check</button>
+    </div>
+    <p class="tool-note">Reads your homepage, robots.txt, llms.txt and sitemap.xml. <strong>Free. No signup. Nothing stored.</strong></p>
+    <p class="status" id="status" role="status" aria-live="polite"></p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="report" id="report">
+    <div class="report-head">
+      <p class="report-domain" id="repDomain"></p>
+      <p class="report-score" id="repScore"></p>
+      <p class="report-verdict" id="repVerdict"></p>
+      <p class="report-caveat" id="repCaveat"></p>
+    </div>
+    <div class="dims" id="repDims"></div>
+    <div id="repGroups"></div>
+    <div class="report-cta">
+      <h3>Want the version that keeps watching?</h3>
+      <p>This is a snapshot of one page. We track presence across ChatGPT, Claude, Gemini, Perplexity and AI Overviews over time, and build the content that closes the gaps.</p>
+      <a href="/contact/" class="cta-btn">Start a conversation</a>
+    </div>
+  </div>
+</div>
+
+<section class="band">
+  <div class="container narrow">
+    <h2>Four reasons a good site stays <em>invisible</em></h2>
+    <p>Ranking well in Google and being quoted in an AI answer are two different jobs. A site can do the first beautifully and fail the second completely, which is why the usual SEO report comes back clean while the answers never mention you.</p>
+
+    <h3>1. The crawler never arrived</h3>
+    <p>This is the most common cause and the least discussed. A line in robots.txt, often added years ago or inherited from a template, tells GPTBot or ClaudeBot or PerplexityBot to stay out. Everything downstream becomes irrelevant. It is worth knowing that these crawlers do different jobs: <b>GPTBot</b> gathers training data, while <b>OAI-SearchBot</b> fetches pages to answer a live question. Blocking the second removes you from ChatGPT search results today. Blocking the first affects what the model learns over time. Plenty of sites block both without ever deciding to.</p>
+
+    <h3>2. The page is empty until JavaScript runs</h3>
+    <p>Most AI crawlers take the raw HTML and leave. They do not wait for a framework to hydrate. If your copy is assembled in the browser, the crawler sees a shell: a title, a script tag, and nothing to quote. The check above counts the words present in the source itself, which is the only text a model can work with.</p>
+
+    <div class="pull">A model cannot cite a sentence it never received.</div>
+
+    <h3>3. Nothing tells the model what you are</h3>
+    <p>Search engines infer. Language models need the entity spelled out. Organization schema, a canonical that agrees with the title, sameAs links tying the name to profiles the model already trusts: these are the difference between a company the model can describe and a string of characters it has seen somewhere. Without them you can be indexed and still be unnameable.</p>
+
+    <h3>4. The content has no extractable passage</h3>
+    <p>Models pull passages, not pages. Long unbroken prose gives them nothing to lift. A question as a heading, a direct answer in the two sentences below it, a list where a list belongs: this is what makes a page quotable. It also happens to make it more readable, which is the rare case where the optimization and the craft point the same direction.</p>
+  </div>
+</section>
+
+<section class="plain">
+  <div class="container narrow">
+    <h2>What this check does <em>not</em> tell you</h2>
+    <p>Honesty about a diagnostic's limits is part of the diagnostic. This tool reads one page plus three files. It reports what it can verify and marks the rest as unverified rather than guessing, because a confident number built on a failed fetch is worse than no number.</p>
+    <ul>
+      <li><b>It does not measure whether you actually appear in answers.</b> That takes running real prompts across platforms repeatedly and watching the mention rate. This checks readiness, which is upstream of that.</li>
+      <li><b>It reads your homepage, not your whole site.</b> A strong homepage and thin interior pages will score better here than it deserves.</li>
+      <li><b>It cannot see what other sites say about you.</b> In most categories the answers are assembled largely from third-party sources: community threads, publisher roundups, video. Your own site is one input among many.</li>
+      <li><b>It does not weight llms.txt heavily.</b> No major platform has committed to reading it. It is a cheap bet worth taking, not a fix worth celebrating.</li>
+    </ul>
+    <p>If you want the part this cannot do, that is the work: measuring non-branded mention rate over time, per platform, and building toward the sources the models already read. <a href="/services/">That is what we do</a>.</p>
+  </div>
+</section>
+
+<section class="plain">
+  <div class="container narrow">
+    <h2>Common questions</h2>
+    <div class="faq">
+      <div class="faq-item"><button class="faq-q">Why is my website not showing up in AI search answers?</button><div class="faq-a"><p>In most cases it is one of four things: an AI crawler is blocked in robots.txt, the content only exists after JavaScript runs so the crawler sees an empty page, there are no structured entity signals telling the model what the company is, or the content is written as prose that offers no extractable passage. Ranking in Google is not the same job as being quoted in an answer, and a site can do the first well while failing the second completely.</p></div></div>
+      <div class="faq-item"><button class="faq-q">Does blocking GPTBot hurt my visibility in ChatGPT?</button><div class="faq-a"><p>GPTBot is the training crawler and OAI-SearchBot is the one that fetches pages to answer live queries. Blocking OAI-SearchBot removes you from ChatGPT search results. Blocking GPTBot keeps you out of training data but does not by itself remove you from live search answers. Many sites block both without realizing they are separate decisions.</p></div></div>
+      <div class="faq-item"><button class="faq-q">Does llms.txt actually do anything?</button><div class="faq-a"><p>No major AI platform has committed to reading llms.txt as a ranking or retrieval input, so treat it as a low-cost bet rather than a fix. It is cheap to publish and it forces a useful exercise: writing down what your company is in plain language. The checks in this tool that carry real weight are crawler access, server-rendered content, and structured data.</p></div></div>
+      <div class="faq-item"><button class="faq-q">How do I measure success in AI search optimization?</button><div class="faq-a"><p>Track mention rate on non-branded prompts, separately from branded ones. Branded prompts sit near a ceiling for almost every company, so blending them into one number inflates it and hides whether anything is working. Measure the rate at which you appear in answers to questions that do not contain your name, and track citation rate separately, since being cited and being mentioned are different events.</p></div></div>
+      <div class="faq-item"><button class="faq-q">How long does it take to appear in AI answers after fixing these?</button><div class="faq-a"><p>Crawler access changes can show up within days because live-retrieval systems refetch often. Entity and structured data changes typically take weeks to propagate. Content that depends on being cited by other sites takes longest, because it waits on the sources those models already read rather than on your own publishing schedule.</p></div></div>
+      <div class="faq-item"><button class="faq-q">Is this tool storing my domain or my data?</button><div class="faq-a"><p>No. Every check runs in your browser. The page fetches your public homepage, robots.txt, llms.txt and sitemap.xml through a public read-only proxy, scores what comes back, and forgets it when you close the tab. There is no account and no backend.</p></div></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-row">
+      <span class="logo">
+        <svg class="heartmark" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="20" y="20" width="160" height="160" rx="4" stroke="currentColor" stroke-width="3" stroke-linecap="round" fill="none"/>
+          <path d="M100 152 C 100 152, 48 116, 46 84 C 44 62, 58 50, 74 50 C 86 50, 94 58, 100 68 C 106 58, 114 50, 126 50 C 142 50, 156 62, 154 84 C 152 116, 100 152, 100 152Z" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <circle cx="100" cy="96" r="4.5" fill="currentColor"/>
+        </svg>
+        <span class="logo-text">Soul<span>craft</span></span>
+      </span>
+      <div class="footer-links">
+        <a href="/services/">Services</a>
+        <a href="/learn/">Learn</a>
+        <a href="/opensoul/">Opensoul</a>
+        <a href="/tools/">Tools</a>
+        <a href="/notslop/">Not Slop</a>
+        <a href="/entitymap.html">EntityMap</a>
+        <a href="/okf/">Knowledge Bundle</a>
+        <a href="/contact/">Contact</a>
+      </div>
+    </div>
+    <div class="footer-notslop" data-notslop-mount style="display:flex;justify-content:center;margin-top:28px;"></div>
+    <div class="footer-tagline">&copy; 2026 Soulcraft. The soul is the system.</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+'use strict';
+
+var PROXIES = ['https://api.allorigins.win/raw?url=', 'https://corsproxy.io/?url='];
+
+function cleanDomain(v){
+  return (v||'').trim().toLowerCase()
+    .replace(/^https?:\/\//,'').replace(/^www\./,'').replace(/\/.*$/,'').replace(/\s/g,'');
+}
+function setStatus(m){ document.getElementById('status').textContent = m; }
+
+/* Fetch a URL through the proxy chain. Resolves {ok, text} and never rejects. */
+function grab(url){
+  var i = 0;
+  function attempt(){
+    if (i >= PROXIES.length) return Promise.resolve({ok:false, text:''});
+    var p = PROXIES[i++] + encodeURIComponent(url);
+    return fetch(p, {signal: AbortSignal.timeout(9000)})
+      .then(function(r){ if(!r.ok) throw new Error('bad'); return r.text(); })
+      .then(function(t){ return {ok:true, text:t}; })
+      .catch(function(){ return attempt(); });
+  }
+  return attempt();
+}
+
+/* ---- check helpers. status: 'pass' | 'fail' | 'warn' | 'unknown' ---- */
+function chk(status, label, detail, fix){
+  return {status:status, label:label, detail:detail||'', fix:fix||''};
+}
+
+var AI_BOTS = [
+  {name:'OAI-SearchBot', alias:['oai-searchbot'], critical:true, who:'ChatGPT live search', weightNote:'This is the one that fetches pages to answer questions in ChatGPT right now.'},
+  {name:'ClaudeBot', alias:['claudebot','anthropic-ai','claude-web','claude-searchbot','claude-user'], critical:true, who:'Anthropic', weightNote:'Claude reads pages through this to answer live questions.'},
+  {name:'PerplexityBot', alias:['perplexitybot','perplexity-user'], critical:true, who:'Perplexity', weightNote:'Perplexity cites heavily and refetches often.'},
+  {name:'Google-Extended', alias:['google-extended'], critical:true, who:'Gemini and AI Overviews grounding', weightNote:'Controls use in Gemini and AI Overviews, separate from Googlebot.'},
+  {name:'GPTBot', alias:['gptbot'], critical:false, who:'OpenAI training', weightNote:'Gathers training data. A separate decision from live search.'},
+  {name:'CCBot', alias:['ccbot'], critical:false, who:'Common Crawl', weightNote:'Feeds many downstream datasets.'}
+];
+
+/* Parse robots.txt into user-agent blocks */
+function parseRobots(txt){
+  var lines = txt.split(/\r?\n/), blocks = [], cur = null;
+  for (var i=0;i<lines.length;i++){
+    var line = lines[i].replace(/#.*$/,'').trim();
+    if(!line) continue;
+    var m = line.match(/^([A-Za-z-]+)\s*:\s*(.*)$/);
+    if(!m) continue;
+    var key = m[1].toLowerCase(), val = m[2].trim();
+    if(key === 'user-agent'){
+      if(cur && cur.rules.length){ blocks.push(cur); cur = null; }
+      if(!cur) cur = {agents:[], rules:[]};
+      cur.agents.push(val.toLowerCase());
+    } else if(cur && (key === 'disallow' || key === 'allow')){
+      cur.rules.push({type:key, path:val});
+    } else if(key === 'sitemap'){
+      blocks.sitemapSeen = true;
+    }
+  }
+  if(cur && cur.agents.length) blocks.push(cur);
+  blocks.hasSitemapDirective = /(^|\n)\s*sitemap\s*:/i.test(txt);
+  return blocks;
+}
+
+/* Is a named bot blocked from the site root? Checks its own block, then '*'. */
+function botBlocked(blocks, aliases){
+  function verdictFor(agentMatch){
+    for(var i=0;i<blocks.length;i++){
+      if(blocks[i].agents.indexOf(agentMatch) === -1) continue;
+      var blocked = false, allowedRoot = false;
+      for(var j=0;j<blocks[i].rules.length;j++){
+        var r = blocks[i].rules[j];
+        if(r.type === 'disallow' && (r.path === '/' || r.path === '')) { if(r.path === '/') blocked = true; }
+        if(r.type === 'allow' && r.path === '/') allowedRoot = true;
+      }
+      return (blocked && !allowedRoot) ? 'blocked' : 'allowed';
+    }
+    return null;
+  }
+  for(var a=0; a<aliases.length; a++){
+    var own = verdictFor(aliases[a]);
+    if(own !== null) return own === 'blocked';
+  }
+  var star = verdictFor('*');
+  if(star !== null) return star === 'blocked';
+  return false;
+}
+
+function textWords(s){ return s ? s.trim().split(/\s+/).filter(Boolean).length : 0; }
+
+function analyze(domain, res){
+  var groups = [];
+  var criticalBlocks = [];
+  var home = res.home, robots = res.robots, llms = res.llms, sitemap = res.sitemap;
+
+  var doc = null, rawBodyText = '', words = 0;
+  if(home.ok){
+    doc = new DOMParser().parseFromString(home.text, 'text/html');
+    rawBodyText = doc.body ? doc.body.textContent.replace(/\s+/g,' ').trim() : '';
+    words = textWords(rawBodyText);
+  }
+
+  /* ---------- 1. Crawler access ---------- */
+  var access = [];
+  if(!robots.ok){
+    access.push(chk('unknown','robots.txt could not be read',
+      'The request for ' + domain + '/robots.txt did not return. It may not exist, which is permissive by default, or the fetch was blocked.',
+      '<b>Check it yourself:</b> open https://' + domain + '/robots.txt in a browser. If it 404s, no crawler is blocked, and publishing one is optional.'));
+  } else {
+    var blocks = parseRobots(robots.text);
+    AI_BOTS.forEach(function(b){
+      var blocked = botBlocked(blocks, b.alias);
+      if(blocked && b.critical) criticalBlocks.push(b.name);
+      access.push(chk(blocked ? 'fail' : 'pass',
+        b.name + (blocked ? ' is blocked' : ' can reach you'),
+        b.who + '. ' + b.weightNote,
+        blocked ? '<b>Fix:</b> remove the <code>Disallow: /</code> under <code>User-agent: ' + b.name + '</code> in robots.txt, or add an explicit <code>Allow: /</code> block for it if a wildcard rule is catching it.' : ''));
+    });
+    access.push(chk(blocks.hasSitemapDirective ? 'pass' : 'warn',
+      blocks.hasSitemapDirective ? 'robots.txt points to a sitemap' : 'robots.txt names no sitemap',
+      blocks.hasSitemapDirective ? 'Crawlers arriving cold have a map of the site.' : 'A crawler that lands on robots.txt gets no index of what else exists.',
+      blocks.hasSitemapDirective ? '' : '<b>Fix:</b> add one line to robots.txt: <code>Sitemap: https://' + domain + '/sitemap.xml</code>'));
+  }
+  groups.push({key:'access', name:'Crawler access', why:'Whether AI systems are permitted to read the site at all. A block here makes every other fix on this page irrelevant.', checks:access});
+
+  /* ---------- 2. Server-rendered content ---------- */
+  var render = [];
+  if(!home.ok){
+    render.push(chk('unknown','The homepage could not be fetched','Neither proxy returned HTML for https://' + domain + '. The site may block proxied requests, or it may be down.','<b>Check it yourself:</b> run <code>curl -s https://' + domain + '</code> and see whether your copy appears in the output. That is what a crawler receives.'));
+  } else {
+    render.push(chk(words >= 300 ? 'pass' : (words >= 100 ? 'warn' : 'fail'),
+      words >= 300 ? 'Content is in the HTML' : (words >= 100 ? 'Thin content in the HTML' : 'Almost no content in the HTML'),
+      words.toLocaleString() + ' words are present in the raw source, before any JavaScript runs. Most AI crawlers read only this.',
+      words >= 300 ? '' : '<b>Fix:</b> serve the main copy server-side or pre-rendered. If the site is a client-rendered app, static generation or SSR for public pages is the single highest-value change here.'));
+    var h1 = doc.querySelector('h1');
+    render.push(chk(h1 && h1.textContent.trim().length > 5 ? 'pass' : 'fail',
+      h1 ? 'H1 present' : 'No H1 found',
+      h1 ? '"' + h1.textContent.trim().slice(0,110) + '"' : 'The page has no top-level heading in the source.',
+      h1 ? '' : '<b>Fix:</b> add one H1 that states what the page is, in words a stranger would use.'));
+    var h2s = doc.querySelectorAll('h2, h3');
+    render.push(chk(h2s.length >= 3 ? 'pass' : 'warn',
+      h2s.length + ' subheadings',
+      'Subheadings are the seams a model uses to lift a passage out of a page.',
+      h2s.length >= 3 ? '' : '<b>Fix:</b> break the page into sections with real headings. Three or more gives a model somewhere to cut.'));
+    var qHead = 0;
+    h2s.forEach(function(h){
+      var t = h.textContent.trim().toLowerCase();
+      if(t.indexOf('?') > -1 || /^(how|what|why|when|which|who|where|do|does|can|is|are)\b/.test(t)) qHead++;
+    });
+    render.push(chk(qHead >= 1 ? 'pass' : 'warn',
+      qHead >= 1 ? qHead + ' question-shaped heading' + (qHead>1?'s':'') : 'No question-shaped headings',
+      'Headings phrased as questions match the shape of what people actually ask a model.',
+      qHead >= 1 ? '' : '<b>Fix:</b> rewrite at least one heading as the question a customer would type, and answer it directly in the two sentences underneath.'));
+    var lists = doc.querySelectorAll('ul li, ol li, table tr');
+    render.push(chk(lists.length >= 5 ? 'pass' : 'warn',
+      lists.length >= 5 ? 'Structured passages present' : 'Little structured content',
+      lists.length + ' list items or table rows in the source. Lists and tables extract cleanly into answers.',
+      lists.length >= 5 ? '' : '<b>Fix:</b> where the content is genuinely a list of things, format it as a list. Models lift these intact.'));
+  }
+  groups.push({key:'render', name:'Answer surface', why:'Whether the words a reader sees are actually in the source, and whether they are shaped into passages a model can lift.', checks:render});
+
+  /* ---------- 3. Entity signals ---------- */
+  var entity = [];
+  if(!home.ok){
+    entity.push(chk('unknown','Entity signals could not be checked','The homepage did not load, so the structured data on it could not be read.','<b>Check it yourself:</b> paste your URL into Google’s Rich Results Test to see the structured data a crawler parses.'));
+  } else {
+    var lds = doc.querySelectorAll('script[type="application/ld+json"]');
+    var ldText = '';
+    lds.forEach(function(s){ ldText += s.textContent; });
+    entity.push(chk(lds.length > 0 ? 'pass' : 'fail',
+      lds.length > 0 ? lds.length + ' structured data block' + (lds.length>1?'s':'') : 'No structured data',
+      lds.length > 0 ? 'JSON-LD is present in the source.' : 'Nothing on the page tells a machine what kind of thing this is.',
+      lds.length > 0 ? '' : '<b>Fix:</b> add JSON-LD with an Organization node at minimum. This is the cheapest high-value item on the list.'));
+    entity.push(chk(/"@type"\s*:\s*"(Organization|Corporation|LocalBusiness|ProfessionalService)"/.test(ldText) ? 'pass' : 'fail',
+      'Organization schema',
+      'Names the company as an entity rather than leaving it as a string of text.',
+      /"@type"\s*:\s*"(Organization|Corporation|LocalBusiness|ProfessionalService)"/.test(ldText) ? '' : '<b>Fix:</b> add an Organization node with name, url, description and logo.'));
+    var hasSameAs = /"sameAs"/.test(ldText);
+    entity.push(chk(hasSameAs ? 'pass' : 'fail',
+      'sameAs entity links',
+      hasSameAs ? 'The company is tied to profiles the models already know.' : 'Nothing connects this name to LinkedIn, Crunchbase, Wikipedia or any known profile.',
+      hasSameAs ? '' : '<b>Fix:</b> add a <code>sameAs</code> array to your Organization node listing your LinkedIn, X, Crunchbase and any other canonical profiles. This is how a model resolves "which company is this".'));
+    entity.push(chk(/"@type"\s*:\s*"FAQPage"/.test(ldText) ? 'pass' : 'warn',
+      'FAQ schema',
+      'Marks question and answer pairs explicitly.',
+      /"@type"\s*:\s*"FAQPage"/.test(ldText) ? '' : '<b>Fix:</b> if the page answers real questions, mark them up as FAQPage. If it does not, skip this one rather than inventing questions.'));
+    var t = doc.querySelector('title');
+    var md = doc.querySelector('meta[name="description"]');
+    entity.push(chk(t && t.textContent.trim().length > 10 && md && md.content.length > 50 ? 'pass' : 'warn',
+      'Title and description',
+      (t ? 'Title: "' + t.textContent.trim().slice(0,80) + '". ' : 'No title. ') + (md && md.content ? 'Description is ' + md.content.length + ' characters.' : 'No meta description.'),
+      (t && t.textContent.trim().length > 10 && md && md.content.length > 50) ? '' : '<b>Fix:</b> write a title that names the company and what it does, and a description of 120 to 160 characters that a model could quote as a summary.'));
+    var can = doc.querySelector('link[rel="canonical"]');
+    entity.push(chk(can ? 'pass' : 'warn','Canonical URL',
+      can ? 'Declared: ' + (can.getAttribute('href')||'').slice(0,90) : 'No canonical link, so duplicate versions of a page can compete with each other.',
+      can ? '' : '<b>Fix:</b> add <code>&lt;link rel="canonical"&gt;</code> to every page pointing at its single true URL.'));
+  }
+  groups.push({key:'entity', name:'Entity clarity', why:'Whether a model can tell what company this is, and connect it to what it already knows. Search engines infer this. Language models need it stated.', checks:entity});
+
+  /* ---------- 4. AI-native files ---------- */
+  var files = [];
+  var llmsGood = llms.ok && llms.text.length > 40 && !/<html/i.test(llms.text.slice(0,400));
+  files.push(chk(llmsGood ? 'pass' : 'warn',
+    llmsGood ? 'llms.txt is published' : 'No llms.txt',
+    llmsGood ? 'A plain-language index of the site exists at /llms.txt (' + llms.text.length.toLocaleString() + ' characters).' : 'The file is absent or the server returned a page instead.',
+    llmsGood ? '' : '<b>Fix, with a caveat:</b> no major platform has committed to reading llms.txt, so treat it as a cheap bet rather than a lever. It costs an hour and it forces you to write down what the company is in plain language, which is worth doing anyway.'));
+  var siteGood = sitemap.ok && /<urlset|<sitemapindex/i.test(sitemap.text);
+  var urlCount = siteGood ? (sitemap.text.match(/<loc>/g) || []).length : 0;
+  files.push(chk(siteGood ? 'pass' : 'warn',
+    siteGood ? 'sitemap.xml is valid' : 'No sitemap.xml found',
+    siteGood ? urlCount.toLocaleString() + ' URLs listed.' : 'Nothing valid returned at /sitemap.xml.',
+    siteGood ? '' : '<b>Fix:</b> publish a sitemap listing live, indexable URLs only, and reference it from robots.txt.'));
+  if(home.ok){
+    var ogT = doc.querySelector('meta[property="og:title"]'), ogD = doc.querySelector('meta[property="og:description"]'), ogI = doc.querySelector('meta[property="og:image"]');
+    files.push(chk(ogT && ogD && ogI ? 'pass' : 'warn','Open Graph tags',
+      (ogT?'title ':'') + (ogD?'description ':'') + (ogI?'image':'') || 'None present.',
+      (ogT && ogD && ogI) ? '' : '<b>Fix:</b> add og:title, og:description and og:image. These get reused as the summary when a link is passed around, including by assistants.'));
+    var lang = doc.documentElement.getAttribute('lang');
+    files.push(chk(lang ? 'pass' : 'warn','Language declared',
+      lang ? 'lang="' + lang + '"' : 'The html element has no lang attribute.',
+      lang ? '' : '<b>Fix:</b> add <code>lang="en"</code> (or the right code) to the html element.'));
+  } else {
+    files.push(chk('unknown','Page-level metadata could not be checked','The homepage did not load.',''));
+  }
+  groups.push({key:'files', name:'Machine-readable signals', why:'The files and tags that describe the site to something that is not a person. Lower weight than the first two groups, and cheap to fix.', checks:files});
+
+  /* ---------- 5. Citation readiness ---------- */
+  var cite = [];
+  if(!home.ok){
+    cite.push(chk('unknown','Citation signals could not be checked','The homepage did not load.',''));
+  } else {
+    var links = doc.querySelectorAll('a[href]');
+    var ext = 0;
+    links.forEach(function(a){
+      var h = a.getAttribute('href') || '';
+      if(/^https?:\/\//.test(h) && h.indexOf(domain) === -1) ext++;
+    });
+    cite.push(chk(ext >= 3 ? 'pass' : 'warn', ext + ' outbound link' + (ext===1?'':'s'),
+      'Pages that cite sources tend to get cited. Models weight material that shows its work.',
+      ext >= 3 ? '' : '<b>Fix:</b> link out to the primary sources behind your claims. It costs a click and buys credibility with readers and models alike.'));
+    var nums = (rawBodyText.match(/\b\d+(\.\d+)?%|\b\d{2,}\b/g) || []).length;
+    cite.push(chk(nums >= 3 ? 'pass' : 'warn', nums >= 3 ? 'Specific figures present' : 'Few specific figures',
+      nums + ' numbers or percentages found in the copy. Concrete figures are what an answer quotes.',
+      nums >= 3 ? '' : '<b>Fix:</b> replace a general claim with a specific one you can stand behind. "Faster" is unquotable. A measured number is not.'));
+    var imgs = doc.querySelectorAll('img'), alts = 0;
+    imgs.forEach(function(i){ if((i.getAttribute('alt')||'').length > 3) alts++; });
+    var altPct = imgs.length ? Math.round(alts/imgs.length*100) : null;
+    cite.push(chk(imgs.length === 0 ? 'unknown' : (altPct >= 70 ? 'pass' : 'warn'),
+      imgs.length === 0 ? 'No images to check' : altPct + '% of images have alt text',
+      imgs.length === 0 ? 'The page has no img elements in the source.' : alts + ' of ' + imgs.length + ' images carry a real description.',
+      (imgs.length === 0 || altPct >= 70) ? '' : '<b>Fix:</b> write alt text that describes the content, not the file. It is the only way a text model reads an image.'));
+    var yr = new Date().getFullYear();
+    var fresh = rawBodyText.indexOf(String(yr)) > -1 || rawBodyText.indexOf(String(yr-1)) > -1;
+    cite.push(chk(fresh ? 'pass' : 'warn', fresh ? 'Recent dates present' : 'No recent dates found',
+      fresh ? 'The copy references ' + yr + ' or ' + (yr-1) + '.' : 'Nothing in the copy signals when this was last true.',
+      fresh ? '' : '<b>Fix:</b> date the material. Models discount content they cannot place in time, and a page that never says "as of" reads as stale.'));
+  }
+  groups.push({key:'cite', name:'Citation readiness', why:'Whether the page gives a model a reason to quote it, and something concrete to quote.', checks:cite});
+
+  return {groups:groups, criticalBlocks:criticalBlocks};
+}
+
+function render(domain, groups, criticalBlocks){
+  var totalPass = 0, totalWarn = 0, totalFail = 0, totalScored = 0, unknowns = 0;
+  var dimHtml = '', groupHtml = '';
+
+  groups.forEach(function(g){
+    var scored = g.checks.filter(function(c){ return c.status !== 'unknown'; });
+    var passed = scored.filter(function(c){ return c.status === 'pass'; }).length;
+    var warned = scored.filter(function(c){ return c.status === 'warn'; }).length;
+    var failed = scored.filter(function(c){ return c.status === 'fail'; }).length;
+    unknowns += g.checks.length - scored.length;
+    totalPass += passed; totalWarn += warned; totalFail += failed; totalScored += scored.length;
+    var pctVal = scored.length ? Math.round((passed + warned * 0.5) / scored.length * 100) : 0;
+    var color = scored.length === 0 ? 'var(--color-unknown)' : (pctVal >= 75 ? 'var(--color-good)' : (pctVal >= 40 ? 'var(--color-accent)' : 'var(--color-warn)'));
+    dimHtml += '<div class="dim"><div class="dim-name">' + g.name + '</div>' +
+      '<div class="dim-bar"><div class="dim-fill" style="width:0;background:' + color + '" data-w="' + pctVal + '"></div></div>' +
+      '<div class="dim-val">' + (scored.length ? passed + '<span>/' + scored.length + '</span>' : '<span>n/a</span>') + '</div></div>';
+
+    groupHtml += '<div class="group"><p class="group-title">' + g.name + '</p><p class="group-why">' + g.why + '</p>' +
+      g.checks.map(function(c){
+        var mark = c.status === 'pass' ? 'Pass' : c.status === 'fail' ? 'Fix this' : c.status === 'warn' ? 'Worth doing' : 'Unverified';
+        return '<div class="check ' + c.status + '"><div class="check-head"><span class="check-mark">' + mark + '</span>' +
+          '<span class="check-label">' + c.label + '</span></div>' +
+          (c.detail ? '<p class="check-detail">' + c.detail + '</p>' : '') +
+          (c.fix ? '<p class="check-fix">' + c.fix + '</p>' : '') + '</div>';
+      }).join('') + '</div>';
+  });
+
+  /* A 'worth doing' item is a real but lower-stakes gap, so it counts as half rather than zero. */
+  var score = totalScored ? Math.round((totalPass + totalWarn * 0.5) / totalScored * 100) : 0;
+  var enough = totalScored >= 6;
+  document.getElementById('repDomain').textContent = domain;
+  document.getElementById('repScore').innerHTML =
+    (criticalBlocks && criticalBlocks.length) ? '<small>Blocked</small>'
+    : (enough ? score + '<small>%</small>' : '<small>Not enough to score</small>');
+
+  var verdict;
+  if(criticalBlocks && criticalBlocks.length){
+    verdict = criticalBlocks.join(', ') + (criticalBlocks.length === 1 ? ' is blocked in robots.txt, and it is one of the crawlers that fetches pages to answer live questions. Until that is lifted, nothing else on this page can help.' : ' are blocked in robots.txt, and those are the crawlers that fetch pages to answer live questions. Until that is lifted, nothing else on this page can help.');
+  }
+  else if(!enough){
+    verdict = 'Only ' + totalScored + ' of the ' + (totalScored + unknowns) + ' checks could run, which is too few to score honestly. The site did not answer the requests this tool makes, which can mean it blocks proxied traffic rather than that anything is wrong. The unverified items below tell you how to check each one by hand.';
+  }
+  else if(score >= 85) verdict = 'The groundwork is solid. If you are still absent from answers, the constraint is upstream of your site: it is what other sources say about you.';
+  else if(score >= 60) verdict = 'Readable, with real gaps. Start at the top of the list. Crawler access and server-rendered content outrank everything below them.';
+  else if(score >= 35) verdict = 'A model can reach this site but struggles to describe it. The entity and structure work is where the return is.';
+  else verdict = 'Most of the signals an AI system looks for are missing. That is a good position to be in, because the first fixes are the cheap ones.';
+  document.getElementById('repVerdict').textContent = verdict;
+
+  var parts = [];
+  if(totalPass) parts.push(totalPass + ' passed');
+  if(totalWarn) parts.push(totalWarn + ' worth doing');
+  if(totalFail) parts.push(totalFail + ' to fix');
+  document.getElementById('repCaveat').textContent =
+    (parts.length ? parts.join(', ') + ' across ' + totalScored + ' verifiable check' + (totalScored === 1 ? '' : 's') + '. ' : '') +
+    (unknowns ? unknowns + ' check' + (unknowns === 1 ? ' could' : 's could') + ' not be verified and ' + (unknowns === 1 ? 'is' : 'are') + ' left out of the score entirely. ' : '') +
+    ((criticalBlocks && criticalBlocks.length)
+       ? 'The score is withheld because an access block outranks everything it would average together. '
+       : '') +
+    'This reads one page plus three files, which is a starting point rather than a verdict.';
+
+  document.getElementById('repDims').innerHTML = dimHtml;
+  document.getElementById('repGroups').innerHTML = groupHtml;
+  document.getElementById('report').classList.add('show');
+  setStatus('');
+  requestAnimationFrame(function(){
+    setTimeout(function(){
+      document.querySelectorAll('.dim-fill').forEach(function(f){ f.style.width = f.getAttribute('data-w') + '%'; });
+    }, 60);
+  });
+  document.getElementById('report').scrollIntoView({behavior:'smooth', block:'start'});
+}
+
+function run(){
+  var input = document.getElementById('domainInput');
+  var domain = cleanDomain(input.value);
+  if(!domain || domain.indexOf('.') === -1){ input.focus(); setStatus('Enter a domain, like example.com'); return; }
+
+  var btn = document.getElementById('runBtn');
+  btn.disabled = true; btn.textContent = 'Reading...';
+  document.getElementById('report').classList.remove('show');
+  setStatus('Fetching ' + domain + ' the way a crawler would...');
+
+  var base = 'https://' + domain;
+  Promise.all([grab(base + '/'), grab(base + '/robots.txt'), grab(base + '/llms.txt'), grab(base + '/sitemap.xml')])
+    .then(function(r){
+      setStatus('Scoring the signals...');
+      var out = analyze(domain, {home:r[0], robots:r[1], llms:r[2], sitemap:r[3]});
+      render(domain, out.groups, out.criticalBlocks);
+    })
+    .catch(function(){
+      setStatus('Something went wrong reading that domain. Try again, or check it loads over https.');
+    })
+    .then(function(){ btn.disabled = false; btn.textContent = 'Run the check'; });
+}
+
+document.getElementById('runBtn').addEventListener('click', run);
+document.getElementById('domainInput').addEventListener('keydown', function(e){ if(e.key === 'Enter') run(); });
+
+document.querySelectorAll('.faq-q').forEach(function(b){
+  b.addEventListener('click', function(){ b.parentElement.classList.toggle('open'); });
+});
+})();
+</script>
+<!-- Not Slop badge: we stand behind what we publish. https://soulcraftagency.com/notslop/ -->
+<script src="/notslop/v1.js" data-notslop data-to="hello@soulcraftagency.com"></script>
+</body>
+</html>

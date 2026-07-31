@@ -1,0 +1,211 @@
+---
+layout: null
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{% include gtag.html %}
+{% include scrunch.html %}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Free Tools for AI Search Visibility | Soulcraft</title>
+<meta name="description" content="Free tools from Soulcraft. Check why your site is missing from AI answers, and claim human accountability for what you publish. No signup, no backend.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://soulcraftagency.com/tools/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+<meta property="og:title" content="Free Tools | Soulcraft" />
+<meta property="og:description" content="Free tools for AI search visibility. No signup, no backend." />
+<meta property="og:image" content="https://soulcraftagency.com/soulcraft-og-image.png" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://soulcraftagency.com/tools/" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Free Tools | Soulcraft" />
+<meta name="twitter:description" content="Free tools for AI search visibility. No signup, no backend." />
+<meta name="twitter:image" content="https://soulcraftagency.com/soulcraft-og-image.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://soulcraftagency.com/#organization",
+      "name": "Soulcraft",
+      "url": "https://soulcraftagency.com",
+      "foundingDate": "2026"
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://soulcraftagency.com/tools/",
+      "name": "Soulcraft Free Tools",
+      "url": "https://soulcraftagency.com/tools/",
+      "description": "Free, no-signup tools from Soulcraft for AI search visibility and publishing accountability.",
+      "isPartOf": { "@id": "https://soulcraftagency.com/#organization" },
+      "hasPart": [
+        {
+          "@type": "WebApplication",
+          "name": "AI Visibility Check",
+          "url": "https://soulcraftagency.com/tools/ai-visibility-check/",
+          "applicationCategory": "BusinessApplication",
+          "description": "Reads a site's homepage, robots.txt, llms.txt and sitemap.xml and reports which AI search readiness checks pass, fail, or could not be verified.",
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+        },
+        {
+          "@type": "WebApplication",
+          "name": "Not Slop",
+          "url": "https://soulcraftagency.com/notslop/",
+          "applicationCategory": "UtilitiesApplication",
+          "description": "An MIT-licensed embeddable badge that publicly claims a human is accountable for a web page, paired with a reader-facing report button.",
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://soulcraftagency.com/"},
+        {"@type": "ListItem", "position": 2, "name": "Tools"}
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+:root {
+  --color-paper: oklch(96.5% 0.012 83);
+  --color-surface: oklch(99.2% 0.006 83);
+  --color-ink: oklch(22% 0.014 60);
+  --color-body: oklch(40% 0.012 58);
+  --color-muted: oklch(55% 0.012 60);
+  --color-rule: oklch(87% 0.012 75);
+  --color-accent: oklch(47% 0.13 52);
+  --color-accent-deep: oklch(40% 0.13 50);
+  --color-accent-soft: oklch(93% 0.035 62);
+  --white: var(--color-ink); --muted: var(--color-muted); --accent: var(--color-accent);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; overflow-x: clip; }
+body { font-family: 'Inter', system-ui, sans-serif; background: var(--color-paper); color: var(--color-body); line-height: 1.65; -webkit-font-smoothing: antialiased; }
+a { color: var(--color-accent); text-decoration: none; }
+a:hover { color: var(--color-accent-deep); }
+:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; border-radius: 2px; }
+.container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: color-mix(in oklch, var(--color-paper) 88%, transparent); backdrop-filter: blur(20px) saturate(1.1); -webkit-backdrop-filter: blur(20px) saturate(1.1); border-bottom: 1px solid var(--color-rule); }
+nav .container { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+.logo { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--white); display: flex; align-items: center; gap: 10px; }
+.logo-text span { color: var(--accent); }
+.heartmark { width: 28px; height: 28px; flex-shrink: 0; color: var(--color-accent); }
+.nav-right { display: flex; gap: 24px; align-items: center; }
+.nav-right a { color: var(--muted); font-size: 13px; font-weight: 500; }
+.nav-right a:hover { color: var(--white); }
+.nav-cta-btn { background: var(--accent) !important; color: var(--color-paper) !important; padding: 8px 20px; border-radius: 6px; font-weight: 600 !important; }
+@media (max-width: 720px) { .nav-right a:not(.nav-cta-btn) { display: none; } }
+.breadcrumbs { font-size: 12px; color: var(--muted); padding-top: 96px; }
+.breadcrumbs a { color: var(--muted); }
+.hero { padding: 32px 0 56px; }
+.chapter-num { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 4px; color: var(--accent); margin-bottom: 24px; opacity: 0.75; }
+h1 { font-family: 'Playfair Display', serif; font-size: clamp(34px, 5.4vw, 56px); line-height: 1.1; color: var(--white); font-weight: 400; margin-bottom: 20px; }
+h1 em { font-style: normal; color: var(--accent); font-weight: 700; }
+.hero-sub { font-size: 19px; color: var(--muted); font-weight: 300; max-width: 620px; }
+.tools { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; padding-bottom: 40px; }
+.tool-card { background: var(--color-surface); border: 1px solid var(--color-rule); border-radius: 14px; padding: 32px; display: flex; flex-direction: column; }
+.tool-card h2 { font-family: 'Playfair Display', serif; font-size: 26px; color: var(--white); font-weight: 400; margin-bottom: 10px; }
+.tool-card p { font-size: 15px; margin-bottom: 18px; flex: 1; }
+.tool-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
+.tool-tags span { font-size: 11px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--color-accent-deep); background: var(--color-accent-soft); padding: 4px 10px; border-radius: 5px; }
+.tool-link { font-size: 15px; font-weight: 600; }
+footer { border-top: 1px solid var(--color-rule); margin-top: 60px; padding: 48px 0 40px; }
+.footer-row { display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap; }
+.footer-links { display: flex; gap: 20px; flex-wrap: wrap; }
+.footer-links a { color: var(--muted); font-size: 13px; }
+.footer-links a:hover { color: var(--accent); }
+.footer-tagline { text-align: center; margin-top: 32px; font-family: 'Playfair Display', serif; font-style: italic; font-size: 14px; color: var(--muted); }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <a href="/" class="logo" aria-label="Soulcraft home">
+      <svg class="heartmark" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect x="20" y="20" width="160" height="160" rx="4" stroke="currentColor" stroke-width="3" stroke-linecap="round" fill="none"/>
+        <path d="M100 152 C 100 152, 48 116, 46 84 C 44 62, 58 50, 74 50 C 86 50, 94 58, 100 68 C 106 58, 114 50, 126 50 C 142 50, 156 62, 154 84 C 152 116, 100 152, 100 152Z" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <circle cx="100" cy="96" r="4.5" fill="currentColor"/>
+      </svg>
+      <span class="logo-text">Soul<span>craft</span></span>
+    </a>
+    <div class="nav-right">
+      <a href="/services/">Services</a>
+      <a href="/learn/">Learn</a>
+      <a href="/opensoul/">Opensoul</a>
+      <a href="/contact/" class="nav-cta-btn">Get Started</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+<div class="container">
+  <div class="breadcrumbs"><a href="/">Home</a> / Tools</div>
+</div>
+
+<div class="container hero">
+  <p class="chapter-num">Free Tools</p>
+  <h1>Small things we built and <em>gave away</em></h1>
+  <p class="hero-sub">No accounts, no backends, no email gates. Each one does a single job and tells you honestly what it cannot do.</p>
+</div>
+
+<div class="container">
+  <div class="tools">
+    <div class="tool-card">
+      <h2>AI Visibility Check</h2>
+      <p>Enter a domain and see why AI search leaves it out. Reads the homepage, robots.txt, llms.txt and sitemap.xml the way a crawler does, then reports which checks pass, which need fixing, and which could not be verified. Unverified checks are excluded from the score rather than guessed.</p>
+      <div class="tool-tags"><span>Free</span><span>No signup</span><span>Runs in your browser</span></div>
+      <a href="/tools/ai-visibility-check/" class="tool-link">Run the check &rarr;</a>
+    </div>
+    <div class="tool-card">
+      <h2>Not Slop</h2>
+      <p>An embeddable badge that publicly claims a human is accountable for a page, paired with a reader-facing report button. Reports route to the publisher by email or webhook. Soulcraft never receives them. One line of script, MIT licensed.</p>
+      <div class="tool-tags"><span>Free</span><span>MIT licensed</span><span>One line of script</span></div>
+      <a href="/notslop/" class="tool-link">Get the badge &rarr;</a>
+    </div>
+  </div>
+</div>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-row">
+      <span class="logo">
+        <svg class="heartmark" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="20" y="20" width="160" height="160" rx="4" stroke="currentColor" stroke-width="3" stroke-linecap="round" fill="none"/>
+          <path d="M100 152 C 100 152, 48 116, 46 84 C 44 62, 58 50, 74 50 C 86 50, 94 58, 100 68 C 106 58, 114 50, 126 50 C 142 50, 156 62, 154 84 C 152 116, 100 152, 100 152Z" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <circle cx="100" cy="96" r="4.5" fill="currentColor"/>
+        </svg>
+        <span class="logo-text">Soul<span>craft</span></span>
+      </span>
+      <div class="footer-links">
+        <a href="/services/">Services</a>
+        <a href="/learn/">Learn</a>
+        <a href="/opensoul/">Opensoul</a>
+        <a href="/notslop/">Not Slop</a>
+        <a href="/entitymap.html">EntityMap</a>
+        <a href="/okf/">Knowledge Bundle</a>
+        <a href="/contact/">Contact</a>
+      </div>
+    </div>
+    <div class="footer-notslop" data-notslop-mount style="display:flex;justify-content:center;margin-top:28px;"></div>
+    <div class="footer-tagline">&copy; 2026 Soulcraft. The soul is the system.</div>
+  </div>
+</footer>
+
+<!-- Not Slop badge: we stand behind what we publish. https://soulcraftagency.com/notslop/ -->
+<script src="/notslop/v1.js" data-notslop data-to="hello@soulcraftagency.com"></script>
+</body>
+</html>
