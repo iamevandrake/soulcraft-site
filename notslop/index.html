@@ -9,24 +9,30 @@ layout: null
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Not Slop | A Free "Seems Like Slop" Button for Any Website</title>
-<meta name="description" content="A free badge that says a human stands behind your page, plus a button that lets any reader disagree. One line of code, no account, no backend required. Built by Soulcraft.">
+<title>The Not Slop Badge | Free Human-Accountability Badge for Any Website</title>
+<meta name="description" content="In the age of AI, trusted content matters more than ever. A free, open-source badge for your website footer that says a human stands behind your content, with a button for readers to say otherwise. One line of code, no account, no backend.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://soulcraftagency.com/notslop/">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 
 <!-- Open Graph -->
-<meta property="og:title" content="Not Slop - a free slop-reporting button for any website" />
-<meta property="og:description" content="A badge that claims a human stands behind the page, and a button that lets readers say otherwise. One line of code." />
-<meta property="og:image" content="https://soulcraftagency.com/soulcraft-og-image.png" />
+<meta property="og:title" content="The Not Slop Badge" />
+<meta property="og:description" content="Tell readers a human stands behind your content. Give them a button to say otherwise. Free, open source, one line of code." />
+<meta property="og:image" content="https://soulcraftagency.com/notslop/notslop-og.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="627" />
+<meta property="og:image:alt" content="The Not Slop Badge, a free tool from Soulcraft. Shows the badge reading Not Slop next to a link reading Seems like slop?" />
 <meta property="og:type" content="website" />
+<meta property="og:site_name" content="Soulcraft" />
 <meta property="og:url" content="https://soulcraftagency.com/notslop/" />
 
 <!-- Twitter / X -->
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Not Slop - a free slop-reporting button for any website" />
-<meta name="twitter:description" content="A badge that claims a human stands behind the page, and a button that lets readers say otherwise." />
-<meta name="twitter:image" content="https://soulcraftagency.com/soulcraft-og-image.png" />
+<meta name="twitter:site" content="@iamevandrake" />
+<meta name="twitter:title" content="The Not Slop Badge" />
+<meta name="twitter:description" content="Tell readers a human stands behind your content. Give them a button to say otherwise. Free, open source, one line of code." />
+<meta name="twitter:image" content="https://soulcraftagency.com/notslop/notslop-og.png" />
+<meta name="twitter:image:alt" content="The Not Slop Badge, a free tool from Soulcraft." />
 
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -57,7 +63,9 @@ layout: null
     {
       "@type": "SoftwareApplication",
       "@id": "https://soulcraftagency.com/notslop/#app",
-      "name": "Not Slop",
+      "name": "The Not Slop Badge",
+      "alternateName": "Not Slop",
+      "image": "https://soulcraftagency.com/notslop/notslop-og.png",
       "applicationCategory": "WebApplication",
       "operatingSystem": "Any web browser",
       "softwareVersion": "1.0.0",
@@ -389,8 +397,8 @@ footer .container { padding-left: 48px; padding-right: 48px; }
 <section class="hero">
   <div class="container">
     <div class="eyebrow">Free tool</div>
-    <h1>Not <em>Slop</em></h1>
-    <p class="lede">A badge that says a human stands behind this page. And a button that lets any reader say otherwise. One line of code. No account, no server, nothing to log into.</p>
+    <h1>The <em>Not Slop</em> Badge</h1>
+    <p class="lede">In the age of AI, trusted content matters more than ever. So we made a badge you can install on your website that says a human stands behind your content, along with a button for readers to say otherwise. This can be installed in the footer of your website, to indicate to readers that you stand behind your content. It's open source. Try it today.</p>
     <div class="hero-actions">
       <a href="#install" class="btn btn-primary">Get the code</a>
       <a href="#why" class="btn btn-ghost">Why it works this way</a>
@@ -404,7 +412,7 @@ footer .container { padding-left: 48px; padding-right: 48px; }
     <div class="stage-inner">
       <div class="stage-label">Live on this page</div>
       <div class="stage-mount" data-notslop-mount></div>
-      <p class="stage-note">Go on, flag us. This one runs in demo mode, so nothing leaves your browser. On your site it lands in your inbox.</p>
+      <p class="stage-note">This one is real. Flag this page and the report comes to us at hello@soulcraftagency.com. We stand behind what we publish, so hold us to it.</p>
     </div>
   </div>
 </section>
@@ -700,7 +708,7 @@ footer .container { padding-left: 48px; padding-right: 48px; }
 })();
 </script>
 
-<!-- The widget, eating its own dog food -->
-<script src="/notslop/v1.js" data-notslop></script>
+<!-- The widget, eating its own dog food. Real reports, real inbox. -->
+<script src="/notslop/v1.js" data-notslop data-to="hello@soulcraftagency.com"></script>
 </body>
 </html>

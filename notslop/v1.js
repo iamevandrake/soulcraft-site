@@ -1,4 +1,4 @@
-/*! Not Slop v1.0.0 — a human accountability badge with a dissent channel.
+/*! Not Slop v1.0.0. A human accountability badge with a dissent channel.
  *  https://soulcraftagency.com/notslop/
  *  MIT licensed. No cookies. No tracking. No network calls unless you configure one.
  *
@@ -316,14 +316,28 @@
           };
 
           store(pageKey(), String(Date.now()));
-          send(payload, opts);
+          var mode = send(payload, opts);
 
-          panel.innerHTML =
-            '<div class="ns-done">' + DONE_MARK +
-            '<div class="ns-done-title">Got it. Thank you.</div>' +
-            '<div class="ns-done-sub">A person reads these. If it holds up, this page gets fixed.</div></div>';
+          // Only claim it arrived when it actually did. On the mailto path the
+          // reader still has to press send, so saying "got it" would be a lie
+          // on a page about not publishing things nobody checked.
+          var title, sub;
+          if (mode === 'mailto') {
+            title = 'One more step.';
+            sub = 'Your mail app is opening with the report filled in. Press send and it reaches a person.';
+          } else if (mode === 'local') {
+            title = 'Noted, locally.';
+            sub = 'This page has no report address configured, so nothing left your browser.';
+          } else {
+            title = 'Got it. Thank you.';
+            sub = 'A person reads these. If it holds up, this page gets fixed.';
+          }
+          panel.innerHTML = '<div class="ns-done">' + DONE_MARK +
+            '<div class="ns-done-title"></div><div class="ns-done-sub"></div></div>';
+          panel.querySelector('.ns-done-title').textContent = title;
+          panel.querySelector('.ns-done-sub').textContent = sub;
           panel.appendChild(credit());
-          setTimeout(close, 3200);
+          setTimeout(close, mode === 'mailto' ? 5000 : 3200);
         });
 
         head.querySelector('.ns-close').addEventListener('click', close);
@@ -364,7 +378,7 @@
           }).catch(function () {});
         } catch (e) { /* give up quietly */ }
       }
-      return;
+      return 'endpoint';
     }
 
     if (opts.to) {
@@ -377,14 +391,14 @@
         '',
         payload.email ? 'Reply to: ' + payload.email : '',
         '',
-        '— sent via Not Slop'
+        'Sent via Not Slop (soulcraftagency.com/notslop)'
       ].join('\n');
       var href = 'mailto:' + opts.to + '?subject=' + encodeURIComponent(subject) +
                  '&body=' + encodeURIComponent(lines);
       var a = document.createElement('a');
       a.href = href; a.target = '_blank'; a.rel = 'noopener';
       document.body.appendChild(a); a.click(); a.remove();
-      return;
+      return 'mailto';
     }
 
     // Demo mode: nothing configured. Keep it local so the widget still demonstrates.
@@ -393,6 +407,7 @@
       log.push(payload);
       store('log', JSON.stringify(log.slice(-50)));
     } catch (e) { /* ignore */ }
+    return 'local';
   }
 
   // ------------------------------------------------------------------- boot
