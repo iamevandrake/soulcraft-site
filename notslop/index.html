@@ -398,7 +398,7 @@ footer .container { padding-left: 48px; padding-right: 48px; }
   <div class="container">
     <div class="eyebrow">Free tool</div>
     <h1>The <em>Not Slop</em> Badge</h1>
-    <p class="lede">In the age of AI, trusted content matters more than ever. So we made a badge you can install on your website that says a human stands behind your content, along with a button for readers to say otherwise. This can be installed in the footer of your website, to indicate to readers that you stand behind your content. It's open source. Try it today.</p>
+    <p class="lede">In the age of AI, trusted content matters more than ever. So we made a badge you can install on your website that says a human stands behind your content, along with a button for readers to say otherwise. Put it in your footer, next to a byline, or anywhere on the page. It's open source. Try it today.</p>
     <div class="hero-actions">
       <a href="#install" class="btn btn-primary">Get the code</a>
       <a href="#why" class="btn btn-ghost">Why it works this way</a>
@@ -488,8 +488,39 @@ footer .container { padding-left: 48px; padding-right: 48px; }
   </div>
 </section>
 
+<!-- Where to put it -->
+<section class="band" id="placement">
+  <div class="container">
+    <div class="narrow" style="text-align:center;">
+      <div class="eyebrow">Placement</div>
+      <h2 class="section-title">Where to put <em>it</em></h2>
+      <p class="lede">Three spots work. They are not equally good, so here is the honest version.</p>
+    </div>
+    <div class="routes">
+      <div class="route">
+        <h3>Your footer</h3>
+        <p>One script tag covers every page, and it sits where readers already look for trust marks. The catch is that footers get read the least, and a badge down there reads as a claim about the whole site rather than the page in front of them. Reports still carry the exact URL, so you always know which page was flagged.</p>
+        <code>Best for: sitewide, one install</code>
+      </div>
+      <div class="route">
+        <h3>Next to the byline</h3>
+        <p>The strongest spot. A reader decides whether to trust something while reading it, not after scrolling past your nav links, and provenance belongs beside the name of the person who wrote it. Costs you a per-template edit instead of one tag, which is the only reason it isn't the default.</p>
+        <code>Best for: articles and posts</code>
+      </div>
+      <div class="route">
+        <h3>End of the article</h3>
+        <p>A fair middle. The reader has finished and formed an opinion, which is exactly when they are most able to tell you the thing was thin. Weaker than the byline because anyone who bailed halfway never sees it, and those are the readers with the most to report.</p>
+        <code>Best for: long reads</code>
+      </div>
+    </div>
+    <div class="narrow" style="margin-top:36px;">
+      <p style="font-size:15px;">There is a fourth option we would mostly skip. <code style="font-family:ui-monospace,Menlo,monospace;font-size:13px;background:var(--color-paper-2);border:1px solid var(--border);border-radius:4px;padding:2px 6px;">data-position="corner"</code> pins the badge to the bottom right of every page. It is the most visible placement by a distance, and it reads like a chat widget, which is the opposite of the quiet confidence the badge is meant to carry. Useful for testing. Rarely the right answer for a brand.</p>
+    </div>
+  </div>
+</section>
+
 <!-- Where reports go -->
-<section class="band">
+<section class="plain">
   <div class="container">
     <div class="narrow" style="text-align:center;">
       <div class="eyebrow">Routing</div>
@@ -530,7 +561,7 @@ footer .container { padding-left: 48px; padding-right: 48px; }
 </section>
 
 <!-- Options -->
-<section class="plain">
+<section class="band">
   <div class="container">
     <div class="narrow" style="text-align:center;">
       <div class="eyebrow">Reference</div>
@@ -558,7 +589,7 @@ footer .container { padding-left: 48px; padding-right: 48px; }
 </section>
 
 <!-- Origin -->
-<section class="band">
+<section class="plain">
   <div class="container">
     <div class="narrow">
       <div class="eyebrow">Where this came from</div>
@@ -573,7 +604,7 @@ footer .container { padding-left: 48px; padding-right: 48px; }
 </section>
 
 <!-- Attribution -->
-<section class="plain">
+<section class="band">
   <div class="container">
     <div class="narrow">
       <div class="eyebrow">Credit</div>
@@ -595,7 +626,7 @@ footer .container { padding-left: 48px; padding-right: 48px; }
 </section>
 
 <!-- FAQ -->
-<section class="band">
+<section class="plain">
   <div class="container">
     <div class="narrow" style="text-align:center;">
       <div class="eyebrow">Questions</div>
