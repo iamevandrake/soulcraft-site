@@ -191,7 +191,7 @@ function contentMax() { return CONTENT.reduce((a, c) => a + c.value * c.aeo * 1.
 function authorityScore(s) { let v = 0; for (const h of s.hexes.filter(h => h.kind === 'citation' && h.status === 'owned')) v += Math.max(0, h.value + (s.mods.hexValue[h.key] || 0)); return v; }
 function authorityMax() { return CITATIONS.reduce((a, c) => a + c.value, 0); }
 function aiGateMult(s) { const ai = s.hexes.find(h => h.key === 'ai'); return ai.status === 'built' ? 1 : 0.35; }
-function visibility(s) { const c = crawlability(s); const cov = 100 * contentScore(s) / contentMax(); const auth = 100 * authorityScore(s) / authorityMax(); return 1.8 * gate(c) * aiGateMult(s) * (0.45 * cov + 0.55 * auth); }
+function visibility(s) { const c = crawlability(s); const cov = 100 * contentScore(s) / contentMax(); const auth = s.realAuthority != null ? s.realAuthority : 100 * authorityScore(s) / authorityMax(); return 1.8 * gate(c) * aiGateMult(s) * (0.45 * cov + 0.55 * auth); }
 function rivalVisibility(s, r) { const held = s.hexes.filter(h => h.kind === 'citation' && h.owner === r.key && h.status !== 'owned').reduce((a, h) => a + Math.max(0, h.value + (s.mods.hexValue[h.key] || 0)), 0); return r.base + r.bonus + r.growth * (s.turn - 1) + held * 1.6; }
 // ---------- Verified-only view: the same formula, counting only hexes proven live ----------
 function vCrawl(s) { let got = 0, tot = 0; for (const h of s.hexes.filter(h => h.kind === 'foundation')) { tot += h.weight; if (h.status === 'built' && h.verified) got += h.weight; } return Math.round(100 * got / tot); }
@@ -202,7 +202,7 @@ function recompute(s) {
   const me = visibility(s); const rv = s.rivals.map(r => rivalVisibility(s, r)); const total = me + rv.reduce((a, b) => a + b, 0);
   const vme = vVisibility(s); const vtotal = vme + rv.reduce((a, b) => a + b, 0);
   const all = s.hexes.filter(h => h.kind !== 'capital'); const built = all.filter(h => (h.kind === 'citation' ? h.status === 'owned' : h.status === 'built'));
-  s.stats = { crawl: crawlability(s), coverage: Math.min(100, Math.round(100 * contentScore(s) / contentMax())), authority: Math.min(100, Math.round(100 * authorityScore(s) / authorityMax())), visibility: Math.min(100, Math.round(me / 1.8)), sov: total ? Math.round(100 * me / total) : 0, rivalSov: rv.map(v => total ? Math.round(100 * v / total) : 0),
+  s.stats = { crawl: crawlability(s), coverage: Math.min(100, Math.round(100 * contentScore(s) / contentMax())), authority: s.realAuthority != null ? Math.round(s.realAuthority) : Math.min(100, Math.round(100 * authorityScore(s) / authorityMax())), authorityLive: s.realAuthority != null, visibility: Math.min(100, Math.round(me / 1.8)), sov: total ? Math.round(100 * me / total) : 0, rivalSov: rv.map(v => total ? Math.round(100 * v / total) : 0),
     vcrawl: vCrawl(s), vcoverage: Math.min(100, Math.round(100 * vContent(s) / contentMax())), vauthority: Math.min(100, Math.round(100 * vAuthority(s) / authorityMax())), vsov: vtotal ? Math.round(100 * vme / vtotal) : 0,
     built: built.length, verified: built.filter(h => h.verified).length, simulated: built.filter(h => !h.verified).length };
   return s.stats;

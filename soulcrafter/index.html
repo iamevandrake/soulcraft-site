@@ -131,7 +131,7 @@ table.lb{width:100%;border-collapse:collapse;font-size:14px}table.lb th{text-ali
     <div id="err" class="err" hidden></div>
     <div id="scoutlog"></div>
     <p class="small">The scout only reads public files (robots.txt, sitemap, homepage). Finished games can be posted to the weekly league board; nothing else is stored. A <a href="https://soulcraftagency.com/" style="color:inherit">Soulcraft</a> game.</p>
-    <div class="actrow" style="margin-top:10px"><button class="btn ghost" id="howbtn0">📖 How to play</button><button class="btn ghost" id="boardbtn0">🏆 This week's leaderboard</button></div>
+    <div class="actrow" style="margin-top:10px"><button class="btn ghost" id="howbtn0">📖 How to play</button><button class="btn ghost" id="boardbtn0">🏆 This week's leaderboard</button><button class="btn ghost" id="pfbtn0" onclick="location.href='portfolio.html'" title="Team mode for agencies: your whole client book on one board">🗂 Portfolio mode</button></div>
   </div>
   <div class="hero" aria-hidden="true"><canvas id="hero"></canvas><div class="cap"><b id="heroline">Turn 1 · Lost in the Fog</b><span id="herosub">A real website, before anyone fixes it</span><div class="bar"><i id="herobar"></i></div></div></div>
   </div>
@@ -206,10 +206,12 @@ table.lb{width:100%;border-collapse:collapse;font-size:14px}table.lb th{text-ali
 
 <script src="game.js"></script>
 <script>
-const API = 'https://soulcrafter.vercel.app';
+const API = location.hostname.endsWith('soulcraftagency.com') ? 'https://soulcrafter.vercel.app' : '';
 const $ = (id) => document.getElementById(id);
 const C = window.Citadel;
 let S = null, hover = null, nameHint = '';
+let PKEY = null, PBRAND = null, pfSaveT = null;
+try { const pk = new URLSearchParams(location.search).get('pkey'); if (/^scp_[a-f0-9]{30}$/.test(pk || '')) PKEY = pk; } catch {}
 
 // ---------- Start / scout ----------
 const slog = (t, cls) => { const d = document.createElement('div'); d.className = cls || ''; d.textContent = t; $('scoutlog').appendChild(d); $('scoutlog').scrollTop = 1e6; };
@@ -236,7 +238,9 @@ async function start() {
     if (d.wikipedia) slog((d.wikipedia.exact ? '✓ Wikipedia article "' + d.wikipedia.top + '"' : d.wikipedia.likely ? '· Wikipedia: closest is "' + d.wikipedia.top + '"' : '· no Wikipedia article'), d.wikipedia.exact ? 'ok' : 'dim');
     slog('> raising the map for ' + d.brand + '…', 'dim');
     await wait(700);
-    S = C.buildState(d); S.category = $('cat').value; S.player = $('player').value.trim(); launch();
+    S = C.buildState(d); S.category = $('cat').value; S.player = $('player').value.trim();
+    if (PKEY) { try { const pr = await fetch(API + '/api/portfolio?key=' + PKEY).then(r => r.json()); PBRAND = pr.portfolio ? pr.portfolio.brands.find(x => x.host === S.host.replace(/^www\./, '')) : null; } catch { PBRAND = null; } }
+    launch();
   } catch (e) { $('err').textContent = e.message; $('err').hidden = false; }
   $('go').disabled = false; $('go').textContent = 'Scout the land';
 }
@@ -249,7 +253,13 @@ const qp = new URLSearchParams(location.search).get('brand'); if (qp) { $('url')
 function launch() {
   $('start').style.display = 'none'; $('game').style.display = 'grid'; $('hbrand').textContent = S.brand; $('hhost').textContent = S.host;
   S.selected = S.hexes.find(h => h.kind === 'foundation' && h.status === 'ruin') || S.hexes[0];
-  const np = loadProofs(); resize(); renderAll(); let seen = false; try { seen = !!localStorage.getItem('sc_seen'); } catch {} if (!seen) setTimeout(openHow, 900);
+  let np = 0;
+  if (PBRAND) {
+    S.pkey = PKEY; for (const h of S.hexes) if (PBRAND.proofs && PBRAND.proofs[h.key]) { h.proof = PBRAND.proofs[h.key]; np++; }
+    if (PBRAND.real && typeof PBRAND.real.authority === 'number') { S.realAuthority = PBRAND.real.authority; C.recompute(S); }
+    if (!$('pfback')) { const b = document.createElement('button'); b.className = 'btn ghost'; b.id = 'pfback'; b.title = 'Back to your portfolio'; b.textContent = '🗂'; b.onclick = () => location.href = 'portfolio.html'; $('howbtn').before(b); }
+  } else np = loadProofs();
+  resize(); renderAll(); let seen = false; try { seen = !!localStorage.getItem('sc_seen'); } catch {} if (!seen) setTimeout(openHow, 900);
   if (np) setTimeout(() => toast(np + ' saved proof URL' + (np === 1 ? '' : 's') + ' for ' + S.host + '. Press ✅ Verify all to check what has shipped.'), seen ? 4500 : 9000);
   const ph = S.hexes.some(h => h.kind === 'foundation' && h.status === 'ruin') ? 1 : C.phase(S); toast(ph === 1 ? 'Turn 1. Code first: rebuild what the scout found broken, then the land beyond unlocks. Fix it for real and hit Verify to rebuild for free.' : ph === 2 ? 'Turn 1. The code ring stands. Raise content districts; each one lifts the fog around it.' : 'Turn 1. Strong ground. Claim neutral sources, contest the rivals, and refresh content for answers.');
 }
@@ -361,8 +371,15 @@ function saveProof(h) { try { const m = JSON.parse(localStorage.getItem(proofKey
 async function verifyProof(h, url) {
   const r = await fetch(API + '/api/verify', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ host: S.host, brand: S.brand, kind: h.kind, key: h.key, url }) }).then(r => r.json());
   if (r.error) throw new Error(r.error);
-  const line = C.applyProof(S, h, r); if (r.status !== 'failed') { h.proof = r.url; saveProof(h); } return line;
+  const line = C.applyProof(S, h, r); if (r.status !== 'failed') { h.proof = r.url; saveProof(h); pfQueueSave(); } return line;
 }
+function savePortfolio(mode) {
+  if (!PKEY || !S) return;
+  const st = S.stats; const proofs = {}; for (const h of S.hexes) if (h.proof) proofs[h.key] = h.proof;
+  const rank = st.sov >= 50 ? 'Sovereign' : st.sov >= 35 ? 'Citadel' : st.sov >= 20 ? 'Outpost' : 'Lost in the Fog';
+  fetch(API + '/api/portfolio', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ key: PKEY, action: 'save_brand', host: S.host, brand: S.brand, mode: mode || 'verify', proofs, stats: { sov: st.sov, vsov: st.vsov, crawl: st.crawl, coverage: st.coverage, authority: st.authority, verified: st.verified, built: st.built, rank } }) }).catch(() => {});
+}
+function pfQueueSave() { if (!PKEY) return; clearTimeout(pfSaveT); pfSaveT = setTimeout(() => savePortfolio('verify'), 2500); }
 async function verifyAll() {
   if (!S || S.over) return; const b = $('verifyall'); b.disabled = true;
   let ok = 0, no = 0, n = 0; const todo = S.hexes.filter(h => (h.kind === 'content' || h.kind === 'citation') && h.proof);
@@ -371,14 +388,14 @@ async function verifyAll() {
     if (!d.error) { S.scout = d; for (const h of S.hexes.filter(h => h.kind === 'foundation')) { const line = C.verifyHex(S, h, d); if (line && line.good) ok++; else no++; } }
     for (const h of todo) { n++; b.textContent = '✅ ' + n + ' / ' + todo.length + '…'; try { const line = await verifyProof(h, h.proof); if (line.good) ok++; else no++; } catch { no++; } renderAll(); }
   } catch (e) { toast('Verify all stopped: ' + e.message); }
-  renderAll(); b.disabled = false; b.textContent = '✅ Verify all';
+  renderAll(); b.disabled = false; b.textContent = '✅ Verify all'; if (PKEY) savePortfolio('verify');
   toast('Verified ' + ok + ' hex' + (ok === 1 ? '' : 'es') + ' live' + (no ? ', ' + no + ' not confirmed' : '') + '. Verified share of voice: ' + S.stats.vsov + '%.' + (todo.length ? '' : ' Paste proof URLs on Content and Citation hexes to check more.'));
 }
 $('verifyall').onclick = verifyAll;
 function renderStats() {
   const st = S.stats; const rv = C.RIVALS;
   const bar = (name, v, col, hint) => `<div class="bar"><label><span>${name} <span style="font-weight:500">${hint || ''}</span></span><b>${v}</b></label><div class="track"><div class="fill" style="width:${v}%;background:${col}"></div></div></div>`;
-  let html = bar('Crawlability', st.crawl, 'var(--teal)', 'gates everything') + bar('Coverage', st.coverage, 'var(--green)', 'content') + bar('Authority', st.authority, 'var(--purple)', 'citations');
+  let html = bar('Crawlability', st.crawl, 'var(--teal)', 'gates everything') + bar('Coverage', st.coverage, 'var(--green)', 'content') + bar('Authority', st.authority, 'var(--purple)', st.authorityLive ? 'live data' : 'citations');
   html += `<div class="bar"><label><span>Share of voice</span><b>${st.sov}%</b></label><div class="sov"><div style="width:${st.sov}%;background:var(--gold)">${st.sov >= 8 ? st.sov + '%' : ''}</div>${rv.map((r, i) => `<div style="width:${st.rivalSov[i]}%;background:${r.color}">${st.rivalSov[i] >= 8 ? st.rivalSov[i] + '%' : ''}</div>`).join('')}</div>`;
   html += `<div class="rivals">${rv.map((r, i) => `<span class="rv" title="${r.style}"><i style="background:${r.color}"></i>${r.icon} ${r.name} ${st.rivalSov[i]}%</span>`).join('')}</div></div>`;
   html += `<div class="bar" title="Only hexes proven live count here"><label><span>✓ Verified share of voice <span style="font-weight:500">${st.verified} of ${st.built} hexes proven</span></span><b>${st.vsov}%</b></label><div class="track"><div class="fill" style="width:${st.vsov}%;background:#9ff0b8"></div></div></div>`;
@@ -410,6 +427,7 @@ function showEnd() {
   html += fr.verified.length ? `<div class="it ok"><span class="s">✓</span><span class="n">Proven live</span><span class="d">${fr.verified.map(h => esc(h.name) + (h.level >= 2 && (h.verifiedLevel || 1) < 2 ? ' (refresh not verified)' : '') + (h.proof ? ' <a href="' + esc(h.proof) + '" target="_blank" rel="noopener">↗</a>' : '')).join(', ')}</span></div>` : '';
   html += fr.simulated.length ? `<div class="it bad"><span class="s">~</span><span class="n">Still simulated</span><span class="d">${fr.simulated.map(h => esc(h.real || h.name)).join('; ')}. These are the real to-do list. Ship them, paste the URLs, verify.</span></div>` : '<div class="it ok"><span class="s">✓</span><span class="d">Everything you hold is verified live. That is rare.</span></div>';
   html += '<p class="small">A citation is not a recommendation. Visibility granted by a platform can be revoked on a Tuesday; the research you publish, the people behind your pages, and the identity the engines can verify are yours. In the real world the map is the same and the turns are weeks: code is a sprint, content is a quarter, citations are a year. Depth, made durable. A <a href="https://soulcraftagency.com/" style="color:inherit">Soulcraft</a> game.</p>';
+  if (PKEY) savePortfolio('game');
   $('report').innerHTML = html; $('end').style.display = 'flex'; drawChart(); $('submitbtn').disabled = false; $('submitbtn').textContent = '🏆 Post to this week\'s board'; $('submitnote').textContent = 'League: ' + CAT_LABEL[S.category || 'startup'] + (S.player ? ' · ' + S.player : '');
   $('copy').onclick = () => { const txt = ['SOULCRAFTER field report for ' + S.host, 'Rank: ' + fr.rank + ' (' + st.sov + '% share of voice)', '', ...fr.items.map(i => (i.ok ? '[ok] ' : '[fix] ') + i.name + ': ' + i.detail + (i.ok ? '' : ' Fix: ' + i.fix)), '', 'Content to build/refresh: ' + fr.missing.map(h => h.real).join('; '), 'Citations held: ' + fr.held.join(', '), 'Verified live (' + st.vsov + '% share of voice): ' + fr.verified.map(h => h.name + (h.proof ? ' ' + h.proof : '')).join('; '), 'Still simulated: ' + fr.simulated.map(h => h.real || h.name).join('; ')].join('\n'); navigator.clipboard.writeText(txt).then(() => toast('Copied.')); };
 }
