@@ -1,0 +1,582 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Soulcrafter: the AEO strategy game</title>
+<meta name="description" content="Soulcrafter. Scout a real domain, fix its code, raise content districts, and capture the citations that make AI engines say your name. A Polytopia-style strategy game for SEOs and AEOs.">
+<link rel="canonical" href="https://soulcraftagency.com/soulcrafter/">
+<meta property="og:title" content="Soulcrafter: the AEO strategy game">
+<meta property="og:description" content="Scout a real domain and play twenty turns to make ChatGPT, Claude, and Google say its name. Every hex verifiable against the live site.">
+<meta property="og:url" content="https://soulcraftagency.com/soulcrafter/">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0f1524;--bg2:#161d30;--panel:#1b2340;--line:#2a3457;--ink:#eef2ff;--mut:#9aa6c9;--gold:#ffcf5a;--teal:#38d0c6;--green:#5bd67a;--purple:#b48cff;--red:#e5484d;--orange:#f5a524;--violet:#7c5cff}
+*{box-sizing:border-box}html,body{margin:0;height:100%}
+body{background:var(--bg);color:var(--ink);font-family:Nunito,ui-rounded,system-ui,-apple-system,"Segoe UI",sans-serif;font-weight:500;overflow:hidden}
+button{font:inherit;cursor:pointer;border:0;border-radius:12px;padding:10px 16px;font-weight:900;letter-spacing:.2px}
+.btn{background:var(--gold);color:#2a1d00;box-shadow:0 4px 0 #b88a1c;transition:transform .05s}.btn:active{transform:translateY(3px);box-shadow:0 1px 0 #b88a1c}.btn:disabled{background:#3a4468;color:#8b95b8;box-shadow:0 4px 0 #222a45;cursor:not-allowed}
+.btn.ghost{background:#2a3457;color:var(--ink);box-shadow:0 4px 0 #171d33}
+.btn.teal{background:var(--teal);color:#032b28;box-shadow:0 4px 0 #1a8b84}
+a{color:var(--teal)}
+/* Start screen */
+#start{position:fixed;inset:0;display:flex;align-items:flex-start;justify-content:center;padding:24px 0;background:radial-gradient(1200px 600px at 50% -10%,#233064 0%,var(--bg) 60%);z-index:20;overflow:auto}
+.card{width:min(680px,92vw);margin:auto;background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:34px 36px;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+h1.logo{font-size:48px;line-height:1;margin:0 0 6px;letter-spacing:-1px;color:var(--gold);text-shadow:0 4px 0 #7d5b0d}
+.kicker{color:var(--teal);font-weight:900;letter-spacing:2px;text-transform:uppercase;font-size:13px;margin:0 0 10px}
+.tag{color:var(--mut);font-size:17px;margin:0 0 22px}
+.verifyrow{display:flex;gap:8px;align-items:center;margin-top:10px;flex-wrap:wrap}.verifyrow input{flex:1;min-width:180px;font:inherit;font-size:13px;padding:8px 10px;border-radius:10px;border:2px solid var(--line);background:#0f1528;color:var(--ink);outline:0}.verifyrow input:focus{border-color:var(--teal)}
+.vtag{display:inline-block;font-size:11px;font-weight:900;padding:2px 8px;border-radius:999px;margin-left:6px;vertical-align:middle}.vtag.ok{background:#1f5a3a;color:#9ff0b8}.vtag.sim{background:#3a3457;color:#c9bfff}.vtag.seed{background:#2a3457;color:#c7d0f0}
+.row{display:flex;gap:10px}.row input{flex:1;min-width:0;font:inherit;font-size:18px;padding:12px 16px;border-radius:12px;border:2px solid var(--line);background:#0f1528;color:var(--ink);outline:0}.row input:focus{border-color:var(--teal)}
+.small{color:var(--mut);font-size:13px;margin-top:14px;line-height:1.5}
+#scoutlog{margin-top:18px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13px;line-height:1.7;color:#c7d0f0;min-height:0;max-height:260px;overflow:auto;white-space:pre-wrap}
+#scoutlog .ok{color:var(--green)}#scoutlog .bad{color:#ff8a8f}#scoutlog .dim{color:var(--mut)}
+.err{color:#ff8a8f;margin-top:10px;font-weight:700}
+/* Game layout */
+#game{display:none;height:100%;grid-template-rows:60px 1fr;grid-template-columns:1fr 380px}
+header{grid-column:1/3;display:flex;align-items:center;gap:12px;padding:0 16px;background:var(--bg2);border-bottom:1px solid var(--line);white-space:nowrap}header .btn{padding:8px 12px}
+header .logo{font-size:20px;font-weight:900;color:var(--gold);letter-spacing:-.5px}
+header .brand{color:var(--mut);overflow:hidden;text-overflow:ellipsis;max-width:34vw}header .brand b{color:var(--ink)}
+.spacer{flex:1}
+.turn{font-weight:900}.turn span{color:var(--mut);font-weight:700}
+.ap{display:flex;align-items:center;gap:6px}.ap .pip{width:16px;height:16px;border-radius:50%;background:var(--gold);box-shadow:inset 0 -3px 0 #b88a1c}.ap .pip.off{background:#2a3457;box-shadow:none}
+#map{position:relative;background:radial-gradient(900px 700px at 50% 45%,#1a2342 0%,var(--bg) 70%);overflow:hidden}
+canvas{display:block;width:100%;height:100%;cursor:pointer}
+#phase{position:absolute;left:16px;top:14px;display:flex;gap:8px}
+.chip{background:#1b2340cc;border:1px solid var(--line);padding:6px 12px;border-radius:999px;font-size:13px;font-weight:700;color:var(--mut);backdrop-filter:blur(6px)}.chip.on{color:var(--ink);border-color:var(--teal)}
+#toast{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);background:#1b2340ee;border:1px solid var(--line);padding:12px 18px;border-radius:14px;max-width:min(680px,90%);font-weight:700;opacity:0;transition:opacity .25s;pointer-events:none}
+#toast.show{opacity:1}
+#legend{position:absolute;right:16px;bottom:14px;display:flex;flex-direction:column;gap:5px;font-size:12px;color:var(--mut)}
+#legend div{display:flex;align-items:center;gap:8px}#legend i{width:12px;height:12px;border-radius:3px;display:inline-block}
+aside{background:var(--panel);border-left:1px solid var(--line);display:flex;flex-direction:column;overflow:hidden}
+#sel{padding:18px 18px 14px;border-bottom:1px solid var(--line)}
+#sel h2{margin:0 0 2px;font-size:22px;display:flex;align-items:center;gap:10px}
+#sel .real{color:var(--teal);font-weight:700;font-size:13px;margin-bottom:8px}
+#sel p{margin:6px 0;color:#cdd5f3;font-size:14px;line-height:1.5}
+#sel .detail{background:#0f1528;border-radius:10px;padding:10px 12px;font-size:13px;color:#c7d0f0;margin:10px 0;border-left:3px solid var(--teal)}
+#sel .detail.bad{border-left-color:var(--red)}#sel .detail.good{border-left-color:var(--green)}
+.cost{color:var(--gold);font-weight:900}
+.actrow{display:flex;gap:8px;align-items:center;margin-top:8px;flex-wrap:wrap}
+.chance{font-size:13px;color:var(--mut)}
+#stats{padding:14px 18px;border-bottom:1px solid var(--line)}
+.bar{margin:7px 0}.bar label{display:flex;justify-content:space-between;font-size:12px;font-weight:700;color:var(--mut);margin-bottom:3px}.bar label b{color:var(--ink)}
+.track{height:10px;background:#0f1528;border-radius:6px;overflow:hidden}.fill{height:100%;border-radius:6px;transition:width .4s}
+.sov{display:flex;height:18px;border-radius:9px;overflow:hidden;background:#0f1528;margin-top:4px}.sov div{transition:width .5s;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;color:#0b0f1c;overflow:hidden;white-space:nowrap}
+.rivals{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap}.rv{font-size:11px;color:var(--mut);display:flex;align-items:center;gap:4px}.rv i{width:9px;height:9px;border-radius:50%;display:inline-block}
+#log{flex:1;overflow:auto;padding:12px 18px;font-size:13px;line-height:1.45}
+#log div{padding:6px 0;border-bottom:1px dashed #262f4f;color:#c7d0f0}#log .good{color:var(--green)}#log .bad{color:#ff9a9e}#log .event{color:var(--gold)}
+/* End screen */
+#end{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:#0b0f1ce6;z-index:30;overflow:auto;padding:20px}
+#end .card{width:min(820px,94vw);max-height:92vh;overflow:auto}
+.rank{font-size:44px;font-weight:900;color:var(--gold);margin:0}
+.bigsov{font-size:18px;color:var(--mut);margin:4px 0 18px}
+.report h3{margin:18px 0 8px;font-size:15px;color:var(--teal);text-transform:uppercase;letter-spacing:1px}
+.report .it{display:flex;gap:10px;padding:8px 0;border-bottom:1px dashed #262f4f;font-size:14px}.report .it .s{width:22px;flex:none}.report .it .n{font-weight:900;min-width:160px}.report .it .d{color:#c7d0f0;flex:1}
+.report .it.ok .s{color:var(--green)}.report .it.bad .s{color:var(--red)}
+#chart{width:100%;height:120px;margin-top:10px}
+#share{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:#0b0f1ce6;z-index:40;padding:20px}
+.sharecard{width:min(900px,96vw)}.sharehead{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:18px}
+#shareimg{width:100%;border-radius:12px;border:1px solid var(--line);display:block}
+.row2{display:flex;gap:10px;margin-top:10px;flex-wrap:wrap}.row2 select,.row2 input{font:inherit;font-size:15px;padding:10px 12px;border-radius:12px;border:2px solid var(--line);background:#0f1528;color:var(--ink);outline:0}.row2 select:focus,.row2 input:focus{border-color:var(--teal)}.row2 select{flex:1;min-width:200px}.row2 input{flex:1;min-width:160px}
+.examples{margin-top:10px;font-size:13px;color:var(--mut);display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.ex{background:#2a3457;color:var(--ink);border:0;border-radius:999px;padding:7px 12px;font-weight:800;font-size:13px;cursor:pointer;box-shadow:0 3px 0 #171d33}.ex span{display:block;font-weight:600;font-size:11px;color:var(--mut)}.ex.primary{background:var(--teal);color:#032b28;box-shadow:0 3px 0 #1a8b84}.ex.primary span{color:#0b4a45}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px}.steps div{background:#0f1528;border:1px solid var(--line);border-radius:12px;padding:10px 12px;font-size:12.5px;line-height:1.45;color:#c7d0f0}.steps b{display:block;color:var(--teal);font-size:13px;margin-bottom:3px}
+@media (max-width:640px){.steps{grid-template-columns:1fr}}
+#howto{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:#0b0f1ce6;z-index:45;padding:20px}
+.how h4{margin:14px 0 4px;font-size:15px;color:var(--teal)}.how p{margin:0;font-size:14px;line-height:1.55;color:#cdd5f3}.how .k{display:inline-block;width:12px;height:12px;border-radius:3px;vertical-align:-1px;margin-right:4px}
+/* Welcome visual */
+.startcard{width:min(1020px,94vw);display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:30px;align-items:center}
+.hero{position:relative;border-radius:18px;border:1px solid var(--line);background:radial-gradient(420px 320px at 50% 42%,#1a2342 0%,#0f1528 75%);overflow:hidden;aspect-ratio:1/1.08}
+.hero canvas{position:absolute;inset:0;width:100%;height:100%;cursor:default}
+.hero .cap{position:absolute;left:12px;right:12px;bottom:12px;background:#0b0f1cd9;border:1px solid var(--line);border-radius:12px;padding:8px 12px;font-size:12px;color:var(--mut);backdrop-filter:blur(6px)}
+.hero .cap b{display:block;color:var(--ink);font-size:13px}.hero .cap .bar{height:6px;border-radius:3px;background:#2a3457;margin-top:6px;overflow:hidden}.hero .cap .bar i{display:block;height:100%;width:0;background:var(--gold);transition:width .6s ease}
+@media (max-width:880px){.startcard{grid-template-columns:minmax(0,1fr);gap:18px;padding:22px 20px}.startcard>div{min-width:0}.hero{aspect-ratio:auto;height:250px;order:-1}h1.logo{font-size:40px}.tag{font-size:15px}}
+@media (max-width:640px){.row{flex-direction:column}.row .btn{width:100%}}
+#board{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:#0b0f1ce6;z-index:40;padding:20px}
+.boardcard{width:min(760px,96vw);max-height:92vh;overflow:auto}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0 12px}.tabs .chip{cursor:pointer}
+.weeknav{display:flex;align-items:center;gap:10px;color:var(--mut);font-size:13px;font-weight:700}
+table.lb{width:100%;border-collapse:collapse;font-size:14px}table.lb th{text-align:left;color:var(--mut);font-size:12px;font-weight:700;padding:6px 8px;border-bottom:1px solid var(--line)}table.lb td{padding:8px;border-bottom:1px dashed #262f4f;vertical-align:middle}table.lb td.n{color:var(--mut);width:28px}table.lb td.b b{display:block}table.lb td.b span{color:var(--mut);font-size:12px}table.lb td.s{font-weight:900;color:var(--gold);white-space:nowrap}table.lb td.c{color:var(--mut);font-size:12px;white-space:nowrap}table.lb tr.me td{background:#20294a}
+.empty{color:var(--mut);padding:18px 0;font-size:14px}
+@media (max-width:900px){#game{grid-template-columns:1fr;grid-template-rows:60px 55vh 1fr}header{grid-column:1}aside{border-left:0;border-top:1px solid var(--line)}#legend{display:none}}
+</style>
+</head>
+<body>
+
+<div id="start">
+  <div class="card startcard">
+  <div>
+    <h1 class="logo">SOULCRAFTER</h1>
+    <p class="kicker">Gamifying web optimization</p>
+    <p class="tag">Type in any real website. The game scouts it, turns what it finds into a kingdom on a hex map, and gives you twenty turns to make ChatGPT, Claude, and Google say its name. Every hex can be verified against the live site, so the map doubles as your real to-do list.</p>
+    <div class="row"><input id="url" placeholder="any website, e.g. berkshirehathaway.com" autocomplete="off" spellcheck="false"><button class="btn" id="go">Scout the land</button></div>
+    <div class="examples">Try one: <button class="ex primary" data-brand="berkshirehathaway.com" data-name="Berkshire Hathaway">Berkshire Hathaway <span>a trillion-dollar company with a 1990s website</span></button><button class="ex" data-brand="nytimes.com" data-name="The New York Times">The New York Times <span>blocks every AI crawler</span></button><button class="ex" data-brand="nike.com" data-name="Nike">Nike</button></div>
+    <div class="steps">
+      <div><b>1 · Scout</b>Real fetch of robots.txt, sitemap, homepage HTML, schema, and outbound links. The opening map is what the engines actually see.</div>
+      <div><b>2 · Build</b>Three actions a turn. Plan the Code ring, Content districts, and Citations against three rival kingdoms. Twenty turns to 50% share of voice.</div>
+      <div><b>3 · Verify</b>Every hex has a Verify button. Ship the real fix, paste the URL, and the scout proves it. Verified share of voice is the score that counts.</div>
+    </div>
+    <div class="row2">
+      <select id="cat" title="Your league: startups play startups">
+        <option value="startup">League: Startup (pre-seed to Series B)</option>
+        <option value="growth">League: Growth (Series C+, mid-market)</option>
+        <option value="enterprise">League: Enterprise (public or 1,000+ staff)</option>
+        <option value="agency">League: Agency / consultancy</option>
+        <option value="local">League: Local / small business</option>
+        <option value="creator">League: Personal brand / creator</option>
+      </select>
+      <input id="player" placeholder="Your handle for the board (optional)" maxlength="24" autocomplete="off">
+    </div>
+    <div id="err" class="err" hidden></div>
+    <div id="scoutlog"></div>
+    <p class="small">The scout only reads public files (robots.txt, sitemap, homepage). Finished games can be posted to the weekly league board; nothing else is stored. A Soulcraft game.</p>
+    <div class="actrow" style="margin-top:10px"><button class="btn ghost" id="howbtn0">📖 How to play</button><button class="btn ghost" id="boardbtn0">🏆 This week's leaderboard</button></div>
+  </div>
+  <div class="hero" aria-hidden="true"><canvas id="hero"></canvas><div class="cap"><b id="heroline">Turn 1 · Lost in the Fog</b><span id="herosub">A real website, before anyone fixes it</span><div class="bar"><i id="herobar"></i></div></div></div>
+  </div>
+</div>
+
+<div id="game">
+  <header>
+    <div class="logo">SOULCRAFTER</div>
+    <div class="brand"><b id="hbrand"></b> <span id="hhost"></span></div>
+    <div class="spacer"></div>
+    <div class="turn">Turn <span id="turn"></span></div>
+    <div class="ap" id="ap"></div>
+    <button class="btn ghost" id="howbtn" title="How to play">📖</button>
+    <button class="btn ghost" id="boardbtn" title="Weekly leaderboard, per league">🏆</button>
+    <button class="btn ghost" id="sharebtn" title="Make a share card of this map">📸 Share</button>
+    <button class="btn ghost" id="scoutbtn" title="Spend 1 action to reveal 4 sources in the fog">🔭 Scout</button>
+    <button class="btn ghost" id="verifyall" title="Re-check every hex that has a proof URL against the live web">✅ Verify all</button>
+    <button class="btn" id="endbtn">End turn ▶</button>
+  </header>
+  <div id="map">
+    <canvas id="cv"></canvas>
+    <div id="phase"><span class="chip" id="p1">I · Code</span><span class="chip" id="p2">II · Content</span><span class="chip" id="p3">III · Citations</span></div>
+    <div id="legend"><div><i style="background:#ffcf5a"></i>Capital</div><div><i style="background:#38d0c6"></i>Code</div><div><i style="background:#5bd67a"></i>Content district</div><div><i style="background:#b48cff"></i>Citation held</div><div><i style="background:#3a4468"></i>Ruin / unbuilt</div><div><i style="background:#141a2c;border:1px solid #2a3457"></i>Fog of search</div><div><i style="background:transparent;border:1.5px dashed #fff"></i>Simulated, not verified</div><div><i style="background:transparent;color:#9ff0b8;font-style:normal;font-weight:900;font-size:11px;line-height:12px;text-align:center">✓</i>Verified live</div></div>
+    <div id="toast"></div>
+  </div>
+  <aside>
+    <div id="sel"></div>
+    <div id="stats"></div>
+    <div id="log"></div>
+  </aside>
+</div>
+
+<div id="share"><div class="card sharecard">
+  <div class="sharehead"><b>Share card</b><button class="btn ghost" id="sharex" style="padding:6px 12px">✕</button></div>
+  <img id="shareimg" alt="Soulcrafter share card">
+  <div class="actrow" style="margin-top:14px"><button class="btn" id="dl">Download PNG</button><button class="btn teal" id="cpimg">Copy image</button><button class="btn ghost" id="postx">Post on X</button><button class="btn ghost" id="postli">Post on LinkedIn</button><button class="btn ghost" id="cplink">Copy link</button></div>
+  <p class="small">X and LinkedIn cannot attach an image from a link, so copy or download the card and drop it into the post. The caption is filled in for you.</p>
+</div></div>
+
+<div id="board"><div class="card boardcard">
+  <div class="sharehead"><b>🏆 Weekly leaderboard</b><button class="btn ghost" id="boardx" style="padding:6px 12px">✕</button></div>
+  <div class="tabs" id="tabs"></div>
+  <div class="weeknav"><button class="btn ghost" id="wprev" style="padding:6px 10px">◀</button><span id="wlabel"></span><button class="btn ghost" id="wnext" style="padding:6px 10px">▶</button><span class="spacer"></span><span id="wnote"></span></div>
+  <div id="boardbody"></div>
+  <p class="small">One entry per domain per league per week; replaying keeps your best. Resets Monday 00:00 UTC. Scores are self-reported by the game client, so treat this as a friendly board, not an audit.</p>
+</div></div>
+
+<div id="howto"><div class="card boardcard how">
+  <div class="sharehead"><b>📖 How to play</b><button class="btn ghost" id="howx" style="padding:6px 12px">✕</button></div>
+  <p>Your website is a kingdom. The AI answer engines are the map. Three rival kingdoms already hold most of it. You have twenty turns to make the engines talk about you more than about them.</p>
+  <h4>The map</h4>
+  <p>The gold hex in the middle is your homepage. Around it are three rings. <span class="k" style="background:#38d0c6"></span><b>Code</b>: six things about how the site is built that decide whether crawlers can read it at all. <span class="k" style="background:#5bd67a"></span><b>Content</b>: twelve kinds of pages worth quoting. <span class="k" style="background:#b48cff"></span><b>Citations</b>: eighteen places other people talk about you, from LinkedIn to Wikipedia. Dark hexes are in the fog until you build next to them. Hexes with a 🦁 🦊 or 🐺 belong to a rival.</p>
+  <h4>A turn</h4>
+  <p>You get three actions a turn (more as you grow). Click any hex to see what it is in real SEO terms, what the scout found, and what it costs. Rebuild a ruined Code hex, build or rewrite a Content district, claim a neutral Citation, or contest one a rival holds (a dice roll, better odds with more authority). When you are out of actions, end the turn. The rivals move, sometimes an event hits, and you get a fresh set.</p>
+  <h4>The order matters</h4>
+  <p>Content is locked until three Code hexes stand. Citations are locked until three Content districts are built. Block AI crawlers and everything you own counts at a third. That is not a game rule we invented; it is how the engines work.</p>
+  <h4>Simulated vs verified</h4>
+  <p>Spending actions builds a hex in the simulation: a plan. Every hex also has a Verify button. For Code hexes the scout re-reads the real site. For Content and Citations you paste the URL of the real page (your pricing page, your Wikidata item, the Reddit thread) and the scout fetches it and checks it does what the hex claims. Verified hexes get a ✓ and are built for free; simulated ones stay dashed. Proof URLs are remembered per domain, so next week you press Verify all and see what has actually shipped.</p>
+  <h4>Winning</h4>
+  <p>Share of voice is your visibility divided by everyone's. Finish at 50% or more and you are <b>Sovereign</b>. 35% is <b>Citadel</b>, 20% is <b>Outpost</b>, below that you are <b>Lost in the Fog</b>. Two numbers are tracked: the planned share of voice from everything you built, and the verified share of voice from only what is proven live. The verified one is the one worth bragging about. You get a field report of what is actually broken on the domain, a share card, and a spot on this week's league board.</p>
+  <div class="actrow" style="margin-top:16px"><button class="btn" id="howgo">Got it</button></div>
+</div></div>
+
+<div id="end"><div class="card">
+  <p class="rank" id="rank"></p>
+  <div class="bigsov" id="bigsov"></div>
+  <canvas id="chart"></canvas>
+  <div class="report" id="report"></div>
+  <div class="actrow" style="margin-top:18px"><button class="btn teal" id="submitbtn">🏆 Post to this week's board</button><span class="chance" id="submitnote"></span></div>
+  <div class="actrow" style="margin-top:10px"><button class="btn" id="endshare">📸 Share card</button><button class="btn ghost" id="again">Play another brand</button><button class="btn ghost" id="copy">Copy field report</button></div>
+</div></div>
+
+<script src="game.js"></script>
+<script>
+const API = 'https://soulcrafter.vercel.app';
+const $ = (id) => document.getElementById(id);
+const C = window.Citadel;
+let S = null, hover = null, nameHint = '';
+
+// ---------- Start / scout ----------
+const slog = (t, cls) => { const d = document.createElement('div'); d.className = cls || ''; d.textContent = t; $('scoutlog').appendChild(d); $('scoutlog').scrollTop = 1e6; };
+async function start() {
+  const url = $('url').value.trim(); if (!url) return;
+  $('err').hidden = true; $('scoutlog').innerHTML = ''; $('go').disabled = true; $('go').textContent = 'Scouting…';
+  slog('> sending scouts to ' + url, 'dim');
+  const wait = (ms) => new Promise(r => setTimeout(r, ms));
+  try {
+    const p = fetch(API + '/api/scout?url=' + encodeURIComponent(url)).then(r => r.json());
+    await wait(500); slog('> knocking on robots.txt', 'dim'); await wait(500); slog('> walking the sitemap', 'dim'); await wait(400); slog('> reading the homepage HTML', 'dim');
+    const d = await p; if (d.error) throw new Error(d.error);
+    if (nameHint && d.host && $('url').value.trim().replace(/^https?:\/\//, '').replace(/^www\./, '').replace(/\/.*$/, '') === d.host.replace(/^www\./, '')) d.brand = nameHint; nameHint = '';
+    if (!d.page && !d.robots?.found && !d.sitemap?.found) throw new Error('Nothing answered at ' + d.host + ' (homepage HTTP ' + (d.home?.status || 0) + (d.home?.error ? ', ' + d.home.error : '') + '). Try another domain.');
+    const rb = d.robots, pg = d.page, sm = d.sitemap;
+    slog((rb.found ? '✓ robots.txt found' + (rb.blocksEverything ? ', but it blocks everything' : '') : '✗ no robots.txt'), rb.found && !rb.blocksEverything ? 'ok' : 'bad');
+    const blocked = Object.entries(rb.bots || {}).filter(([, v]) => v === 'blocked').map(([k]) => k);
+    slog(blocked.length ? '✗ AI crawlers blocked: ' + blocked.join(', ') : '✓ AI crawlers allowed', blocked.length ? 'bad' : 'ok');
+    slog(sm.found ? '✓ sitemap: ' + sm.count + ' URLs' + (sm.isIndex ? ' (index, ' + sm.children + ' children)' : '') : '✗ no sitemap found', sm.found ? 'ok' : 'bad');
+    if (pg) { slog((pg.spaSuspect ? '✗ homepage HTML has only ' + pg.words + ' words (client-rendered?)' : '✓ homepage renders ' + pg.words + ' words, ' + pg.h1s + ' H1'), pg.spaSuspect ? 'bad' : 'ok');
+      slog(pg.schemaTypes.length ? '✓ schema: ' + pg.schemaTypes.slice(0, 5).join(', ') : '✗ no JSON-LD schema', pg.schemaTypes.length ? 'ok' : 'bad');
+      slog(pg.socials.length ? '✓ links out to ' + pg.socials.join(', ') : '· no third-party profiles linked', pg.socials.length ? 'ok' : 'dim'); }
+    else slog('✗ homepage did not return HTML (status ' + d.home.status + ')', 'bad');
+    if (d.wikipedia) slog((d.wikipedia.exact ? '✓ Wikipedia article "' + d.wikipedia.top + '"' : d.wikipedia.likely ? '· Wikipedia: closest is "' + d.wikipedia.top + '"' : '· no Wikipedia article'), d.wikipedia.exact ? 'ok' : 'dim');
+    slog('> raising the map for ' + d.brand + '…', 'dim');
+    await wait(700);
+    S = C.buildState(d); S.category = $('cat').value; S.player = $('player').value.trim(); launch();
+  } catch (e) { $('err').textContent = e.message; $('err').hidden = false; }
+  $('go').disabled = false; $('go').textContent = 'Scout the land';
+}
+try { const sc = localStorage.getItem('sc_cat'); if (sc) $('cat').value = sc; const sp = localStorage.getItem('sc_player'); if (sp) $('player').value = sp; } catch {}
+$('cat').onchange = () => { try { localStorage.setItem('sc_cat', $('cat').value); } catch {} };
+$('player').onchange = () => { try { localStorage.setItem('sc_player', $('player').value.trim()); } catch {} };
+$('go').onclick = start; $('url').addEventListener('keydown', e => { if (e.key === 'Enter') start(); });
+const qp = new URLSearchParams(location.search).get('brand'); if (qp) { $('url').value = qp; start(); }
+
+function launch() {
+  $('start').style.display = 'none'; $('game').style.display = 'grid'; $('hbrand').textContent = S.brand; $('hhost').textContent = S.host;
+  S.selected = S.hexes.find(h => h.kind === 'foundation' && h.status === 'ruin') || S.hexes[0];
+  const np = loadProofs(); resize(); renderAll(); let seen = false; try { seen = !!localStorage.getItem('sc_seen'); } catch {} if (!seen) setTimeout(openHow, 900);
+  if (np) setTimeout(() => toast(np + ' saved proof URL' + (np === 1 ? '' : 's') + ' for ' + S.host + '. Press ✅ Verify all to check what has shipped.'), seen ? 4500 : 9000);
+  const ph = S.hexes.some(h => h.kind === 'foundation' && h.status === 'ruin') ? 1 : C.phase(S); toast(ph === 1 ? 'Turn 1. Code first: rebuild what the scout found broken, then the land beyond unlocks. Fix it for real and hit Verify to rebuild for free.' : ph === 2 ? 'Turn 1. The code ring stands. Raise content districts; each one lifts the fog around it.' : 'Turn 1. Strong ground. Claim neutral sources, contest the rivals, and refresh content for answers.');
+}
+
+// ---------- Map rendering ----------
+const cv = $('cv'), ctx = cv.getContext('2d');
+let SIZE = 40, OX = 0, OY = 0, DPR = 1;
+function resize() { const r = cv.parentElement.getBoundingClientRect(); DPR = window.devicePixelRatio || 1; cv.width = r.width * DPR; cv.height = r.height * DPR; SIZE = Math.max(22, Math.min(46, Math.min(r.width / 14.5, r.height / 13))); OX = r.width / 2; OY = r.height / 2 + 6; draw(); }
+window.addEventListener('resize', resize);
+function toPx(h) { const x = SIZE * Math.sqrt(3) * (h.q + h.r / 2), y = SIZE * 1.5 * h.r; return [OX + x, OY + y]; }
+function hexPath(x, y, s) { ctx.beginPath(); for (let i = 0; i < 6; i++) { const a = Math.PI / 180 * (60 * i - 30); const px = x + s * Math.cos(a), py = y + s * Math.sin(a); i ? ctx.lineTo(px, py) : ctx.moveTo(px, py); } ctx.closePath(); }
+function colorOf(h) {
+  if (h.kind === 'capital') return ['#ffcf5a', '#b88a1c'];
+  if (h.kind === 'foundation') return h.status === 'built' ? ['#38d0c6', '#1a8b84'] : ['#3a4468', '#232a45'];
+  if (h.kind === 'content') return h.status === 'built' ? (h.level >= 2 ? ['#7ee89a', '#2f9a4f'] : ['#5bd67a', '#2f9a4f']) : ['#2d3656', '#1b2138'];
+  if (h.status === 'fog') return ['#141a2c', '#0d1120'];
+  if (h.status === 'owned') return ['#b48cff', '#6a44c9'];
+  if (h.status === 'rival') { const r = C.RIVALS.find(r => r.key === h.owner); return [r.color, shade(r.color)]; }
+  return ['#2a3253', '#181d33'];
+}
+function shade(hex) { const n = parseInt(hex.slice(1), 16); const f = (v) => Math.max(0, Math.floor(v * 0.55)); return '#' + [(n >> 16) & 255, (n >> 8) & 255, n & 255].map(f).map(v => v.toString(16).padStart(2, '0')).join(''); }
+function drawMap(g, cx, cy, size, opts) {
+  opts = opts || {}; const fb = C.foundationsBuilt(S), cb = C.contentBuilt(S);
+  const toP = (h) => [cx + size * Math.sqrt(3) * (h.q + h.r / 2), cy + size * 1.5 * h.r];
+  const path = (x, y, s) => { g.beginPath(); for (let i = 0; i < 6; i++) { const a = Math.PI / 180 * (60 * i - 30); const px = x + s * Math.cos(a), py = y + s * Math.sin(a); i ? g.lineTo(px, py) : g.moveTo(px, py); } g.closePath(); };
+  const order = [...S.hexes].sort((a, b) => a.r - b.r);
+  for (const h of order) {
+    const [x, y] = toP(h); const [top, side] = colorOf(h); const s = size - 3;
+    const locked = !opts.flat && ((h.kind === 'content' && fb < 3) || (h.kind === 'citation' && h.status !== 'fog' && h.status !== 'owned' && cb < 3));
+    g.globalAlpha = locked ? 0.55 : 1;
+    g.fillStyle = side; path(x, y + size * 0.15, s); g.fill();
+    g.fillStyle = top; path(x, y, s); g.fill();
+    if (h.status === 'ruin' || (h.kind === 'content' && h.status === 'empty')) { g.strokeStyle = '#4a557a'; g.setLineDash([5, 4]); g.lineWidth = 1.5; path(x, y, s - 4); g.stroke(); g.setLineDash([]); }
+    if (!opts.flat && h === S.selected) { g.strokeStyle = '#fff'; g.lineWidth = 3; path(x, y, s); g.stroke(); }
+    else if (!opts.flat && h === hover) { g.strokeStyle = '#ffffff88'; g.lineWidth = 2; path(x, y, s); g.stroke(); }
+    g.textAlign = 'center'; g.textBaseline = 'middle';
+    if (h.status === 'fog') { g.font = `${size * 0.55}px Nunito`; g.fillStyle = '#39436a'; g.fillText('?', x, y - 2); }
+    else { g.font = `${size * 0.62}px "Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif`; g.fillStyle = '#000'; g.fillText(h.icon, x, y - (opts.labels === false ? 0 : 4)); }
+    if (h.status === 'rival') { const r = C.RIVALS.find(r => r.key === h.owner); g.font = `${size * 0.34}px sans-serif`; g.fillText(r.icon, x + s * 0.5, y - s * 0.5); }
+    if (h.kind === 'content' && h.level >= 2) { g.fillStyle = '#fff'; g.font = `900 ${size * 0.28}px Nunito`; g.fillText('★', x + s * 0.5, y - s * 0.55); }
+    if (h.weakened && !opts.flat) { g.fillStyle = '#fff'; g.font = `900 ${size * 0.3}px Nunito`; g.fillText('⚡', x - s * 0.5, y - s * 0.5); }
+    const own = h.kind === 'citation' ? h.status === 'owned' : (h.kind === 'foundation' || h.kind === 'content') && h.status === 'built';
+    if (own && h.verified) { g.fillStyle = '#0b0f1c'; g.beginPath(); g.arc(x - s * 0.55, y - s * 0.5, size * 0.19, 0, Math.PI * 2); g.fill(); g.fillStyle = '#9ff0b8'; g.font = `900 ${size * 0.28}px Nunito`; g.fillText('✓', x - s * 0.55, y - s * 0.49); }
+    else if (own && h.kind !== 'foundation' && (!h.seeded || h.simulated)) { g.strokeStyle = '#ffffffaa'; g.setLineDash([4, 3]); g.lineWidth = 1.5; path(x, y, s - 3); g.stroke(); g.setLineDash([]); }
+    else if (own && h.kind === 'foundation' && h.simulated) { g.strokeStyle = '#ffffffaa'; g.setLineDash([4, 3]); g.lineWidth = 1.5; path(x, y, s - 3); g.stroke(); g.setLineDash([]); }
+    if (h.status !== 'fog' && opts.labels !== false) { g.font = `900 ${Math.max(9, size * 0.24)}px Nunito`; g.fillStyle = (h.kind === 'capital' || (h.kind === 'foundation' && h.status === 'built') || (h.kind === 'content' && h.status === 'built')) ? '#0b0f1c' : '#c7d0f0'; g.fillText(short(h.name), x, y + s * 0.5); }
+    g.globalAlpha = 1;
+  }
+}
+function draw() { if (!S) return; ctx.setTransform(DPR, 0, 0, DPR, 0, 0); ctx.clearRect(0, 0, cv.width, cv.height); drawMap(ctx, OX, OY, SIZE, {}); }
+function short(n) { return n.length > 14 ? n.split(' ')[0] : n; }
+function hexAt(px, py) { let best = null, bd = 1e9; for (const h of S.hexes) { const [x, y] = toPx(h); const d = Math.hypot(px - x, py - y); if (d < bd) { bd = d; best = h; } } return bd < SIZE * 0.9 ? best : null; }
+cv.addEventListener('mousemove', e => { const r = cv.getBoundingClientRect(); const h = hexAt(e.clientX - r.left, e.clientY - r.top); if (h !== hover) { hover = h; draw(); } });
+cv.addEventListener('click', e => { const r = cv.getBoundingClientRect(); const h = hexAt(e.clientX - r.left, e.clientY - r.top); if (h) { S.selected = h; renderAll(); } });
+
+// ---------- Panel ----------
+function renderAll() { draw(); renderHeader(); renderSel(); renderStats(); renderLog(); }
+function renderHeader() {
+  $('turn').innerHTML = S.turn + '<span> / ' + C.MAX_TURNS + '</span>';
+  $('ap').innerHTML = '<span style="color:var(--mut);font-size:12px;font-weight:700;margin-right:4px">ACTIONS</span>' + Array.from({ length: S.apMax }, (_, i) => `<span class="pip ${i < S.ap ? '' : 'off'}"></span>`).join('');
+  const ph = C.phase(S); ['p1', 'p2', 'p3'].forEach((id, i) => $(id).classList.toggle('on', ph === i + 1));
+  $('scoutbtn').disabled = S.over || S.ap < 1 || !S.hexes.some(h => h.kind === 'citation' && h.status === 'fog');
+  $('endbtn').textContent = S.turn >= C.MAX_TURNS && !S.over ? 'Final turn: end ▶' : 'End turn ▶';
+}
+function renderSel() {
+  const h = S.selected; if (!h) { $('sel').innerHTML = ''; return; }
+  const a = C.actionFor(S, h);
+  const kindLabel = { capital: 'Capital', foundation: 'Code', content: 'Content district', citation: 'Third-party citation' }[h.kind];
+  let statusTxt = '';
+  if (h.kind === 'foundation') statusTxt = h.status === 'built' ? (h.verified ? 'Standing · verified live' : h.simulated ? 'Standing · simulated, not live' : 'Standing') : 'In ruins';
+  const vt = (h.kind === 'content' ? h.status === 'built' : h.status === 'owned') ? (h.verified ? '<span class="vtag ok">✓ verified live</span>' : h.seeded && !h.simulated ? '<span class="vtag seed">in sitemap, unverified</span>' : '<span class="vtag sim">simulated</span>') : '';
+  if (h.kind === 'content') statusTxt = (h.status === 'built' ? (h.level >= 2 ? 'Built and refreshed ★' : 'Built (level 1)') : 'Unbuilt') + vt;
+  if (h.kind === 'citation') statusTxt = (h.status === 'fog' ? 'Fog of search' : h.status === 'owned' ? 'Held by you' : h.status === 'rival' ? 'Held by ' + C.RIVALS.find(r => r.key === h.owner).name : 'Neutral, unclaimed') + vt;
+  let html = `<h2><span>${h.status === 'fog' ? '❔' : h.icon}</span>${h.status === 'fog' ? 'Unknown source' : h.name}</h2>`;
+  html += `<div class="real">${kindLabel}${h.status !== 'fog' && h.real ? ' · ' + h.real : ''} · ${statusTxt}</div>`;
+  if (h.status !== 'fog') html += `<p>${h.why}</p>`;
+  if (h.detail && h.status !== 'fog') html += `<div class="detail ${h.kind === 'foundation' ? (h.status === 'built' ? 'good' : 'bad') : ''}">${h.note ? '⚠️ ' + h.note + ' ' : ''}Scout report: ${h.detail}</div>`;
+  if (h.kind === 'citation' && h.status !== 'fog') html += `<p style="font-size:13px;color:var(--mut)">Authority value <b style="color:var(--ink)">${h.value + (S.mods.hexValue[h.key] || 0)}</b>${h.contest ? ' · contested ground' : ''}${h.prereq ? ' · needs ' + [h.prereq.citation, h.prereq.foundation].filter(Boolean).map(k => S.hexes.find(x => x.key === k).name).join(' + ') : ''}</p>`;
+  if (h.kind === 'content' && h.status !== 'built') html += `<p style="font-size:13px;color:var(--mut)">Coverage value <b style="color:var(--ink)">${h.value}</b> · AEO multiplier <b style="color:var(--ink)">×${h.aeo}</b></p>`;
+  if (a) {
+    if (a.verb) html += `<div class="actrow"><button class="btn ${a.verb === 'contest' ? '' : 'teal'}" id="act" ${a.ok ? '' : 'disabled'}>${a.label} <span class="cost">· ${a.cost} action${a.cost === 1 ? '' : 's'}</span></button>${a.chance !== undefined ? `<span class="chance">${Math.round(a.chance * 100)}% chance</span>` : ''}${!a.ok ? '<span class="chance">Not enough actions this turn</span>' : ''}</div>`;
+    else html += `<div class="actrow"><span class="chip ${a.done ? 'on' : ''}">${a.done ? '✓ ' : '🔒 '}${a.label}</span></div>`;
+  }
+  if (h.kind === 'foundation' && !S.over) html += `<div class="actrow"><button class="btn ghost" id="verify">🔎 Verify live</button><span class="chance">${h.status === 'built' ? 'Re-checks the real site.' : 'Fixed it for real? Re-check the site and rebuild for free.'}</span></div>`;
+  if ((h.kind === 'content' || h.kind === 'citation') && h.status !== 'fog' && !S.over) html += `<div class="verifyrow"><input id="proof" placeholder="${esc(proofHint(h))}" value="${esc(h.proof || '')}" spellcheck="false" autocomplete="off"><button class="btn ghost" id="verify">🔎 Verify live</button></div><div class="chance" style="margin-top:4px">${h.verified ? 'Proven live. Re-check any time.' : h.kind === 'content' ? 'Paste the real page on ' + S.host + '. The scout fetches it and checks the HTML does what this hex claims. Pass and it is built for free.' : 'Paste the real URL. The scout checks it exists and names you. Pass and it is claimed for free, even from a rival.'}</div>`;
+  $('sel').innerHTML = html;
+  const b = $('act'); if (b) b.onclick = () => { if (C.doAction(S, h)) { renderAll(); const last = S.log[S.log.length - 1]; toast(last.t); } };
+  const v = $('verify'); if (v) v.onclick = async () => {
+    if (h.kind === 'foundation') {
+      v.disabled = true; v.textContent = '🔎 Checking ' + S.host + '…';
+      try { const d = await fetch(API + '/api/scout?url=' + encodeURIComponent(S.host)).then(r => r.json()); if (d.error) throw new Error(d.error);
+        S.scout = d; const line = C.verifyHex(S, h, d); renderAll(); toast(line.t); }
+      catch (e) { toast('Could not reach ' + S.host + ': ' + e.message); v.disabled = false; v.textContent = '🔎 Verify live'; }
+      return;
+    }
+    const url = $('proof').value.trim(); if (!url) { toast('Paste the URL first.'); $('proof').focus(); return; }
+    v.disabled = true; v.textContent = '🔎 Checking…';
+    try { const line = await verifyProof(h, url); renderAll(); toast(line.t); }
+    catch (e) { toast('Check failed: ' + e.message); v.disabled = false; v.textContent = '🔎 Verify live'; }
+  };
+  const pi = $('proof'); if (pi) pi.addEventListener('keydown', e => { if (e.key === 'Enter') $('verify').click(); });
+}
+const CITE_HINT = { linkedin: 'https://www.linkedin.com/company/…', wikidata: 'https://www.wikidata.org/wiki/Q…', crunchbase: 'https://www.crunchbase.com/organization/…', github: 'https://github.com/…', youtube: 'https://www.youtube.com/@…', x: 'https://x.com/…', reddit: 'a Reddit thread that mentions you', quora: 'a Quora answer that mentions you', g2: 'your G2 / Capterra / Trustpilot profile', producthunt: 'https://www.producthunt.com/products/…', industry: 'a trade-press article about you', press: 'a tier-1 press article about you', wikipedia: 'https://en.wikipedia.org/wiki/…', podcast: 'a podcast episode page that names you', newsletter: 'a public newsletter issue that names you', directory: 'your listing on Clutch, GoodFirms, a niche directory', partners: 'a partner page that links to you', community: 'a forum, Discord, Slack or Stack Overflow thread' };
+function proofHint(h) { return h.kind === 'content' ? 'https://' + S.host + '/… (your ' + h.real.toLowerCase() + ')' : (CITE_HINT[h.key] || 'URL'); }
+// ---------- Proof URLs: remembered per domain so next week is one click ----------
+function proofKey() { return 'sc_proof:' + S.host.replace(/^www\./, ''); }
+function loadProofs() { try { const m = JSON.parse(localStorage.getItem(proofKey()) || '{}'); let n = 0; for (const h of S.hexes) if (m[h.key]) { h.proof = m[h.key]; n++; } return n; } catch { return 0; } }
+function saveProof(h) { try { const m = JSON.parse(localStorage.getItem(proofKey()) || '{}'); if (h.proof) m[h.key] = h.proof; localStorage.setItem(proofKey(), JSON.stringify(m)); } catch {} }
+async function verifyProof(h, url) {
+  const r = await fetch(API + '/api/verify', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ host: S.host, brand: S.brand, kind: h.kind, key: h.key, url }) }).then(r => r.json());
+  if (r.error) throw new Error(r.error);
+  const line = C.applyProof(S, h, r); if (r.status !== 'failed') { h.proof = r.url; saveProof(h); } return line;
+}
+async function verifyAll() {
+  if (!S || S.over) return; const b = $('verifyall'); b.disabled = true;
+  let ok = 0, no = 0, n = 0; const todo = S.hexes.filter(h => (h.kind === 'content' || h.kind === 'citation') && h.proof);
+  try {
+    b.textContent = '✅ Code ring…'; const d = await fetch(API + '/api/scout?url=' + encodeURIComponent(S.host)).then(r => r.json());
+    if (!d.error) { S.scout = d; for (const h of S.hexes.filter(h => h.kind === 'foundation')) { const line = C.verifyHex(S, h, d); if (line && line.good) ok++; else no++; } }
+    for (const h of todo) { n++; b.textContent = '✅ ' + n + ' / ' + todo.length + '…'; try { const line = await verifyProof(h, h.proof); if (line.good) ok++; else no++; } catch { no++; } renderAll(); }
+  } catch (e) { toast('Verify all stopped: ' + e.message); }
+  renderAll(); b.disabled = false; b.textContent = '✅ Verify all';
+  toast('Verified ' + ok + ' hex' + (ok === 1 ? '' : 'es') + ' live' + (no ? ', ' + no + ' not confirmed' : '') + '. Verified share of voice: ' + S.stats.vsov + '%.' + (todo.length ? '' : ' Paste proof URLs on Content and Citation hexes to check more.'));
+}
+$('verifyall').onclick = verifyAll;
+function renderStats() {
+  const st = S.stats; const rv = C.RIVALS;
+  const bar = (name, v, col, hint) => `<div class="bar"><label><span>${name} <span style="font-weight:500">${hint || ''}</span></span><b>${v}</b></label><div class="track"><div class="fill" style="width:${v}%;background:${col}"></div></div></div>`;
+  let html = bar('Crawlability', st.crawl, 'var(--teal)', 'gates everything') + bar('Coverage', st.coverage, 'var(--green)', 'content') + bar('Authority', st.authority, 'var(--purple)', 'citations');
+  html += `<div class="bar"><label><span>Share of voice</span><b>${st.sov}%</b></label><div class="sov"><div style="width:${st.sov}%;background:var(--gold)">${st.sov >= 8 ? st.sov + '%' : ''}</div>${rv.map((r, i) => `<div style="width:${st.rivalSov[i]}%;background:${r.color}">${st.rivalSov[i] >= 8 ? st.rivalSov[i] + '%' : ''}</div>`).join('')}</div>`;
+  html += `<div class="rivals">${rv.map((r, i) => `<span class="rv" title="${r.style}"><i style="background:${r.color}"></i>${r.icon} ${r.name} ${st.rivalSov[i]}%</span>`).join('')}</div></div>`;
+  html += `<div class="bar" title="Only hexes proven live count here"><label><span>✓ Verified share of voice <span style="font-weight:500">${st.verified} of ${st.built} hexes proven</span></span><b>${st.vsov}%</b></label><div class="track"><div class="fill" style="width:${st.vsov}%;background:#9ff0b8"></div></div></div>`;
+  const ai = S.hexes.find(h => h.key === 'ai'); if (ai.status !== 'built') html += `<div class="detail bad" style="margin:8px 0 0;font-size:12px">AI crawlers blocked: everything you build counts at 35% until AI Access is rebuilt.</div>`;
+  $('stats').innerHTML = html;
+}
+function renderLog() { $('log').innerHTML = [...S.log].reverse().slice(0, 60).map(l => `<div class="${l.good ? 'good' : l.bad ? 'bad' : l.event ? 'event' : ''}">${l.t}</div>`).join(''); }
+let toastT; function toast(t) { const el = $('toast'); el.textContent = t; el.classList.add('show'); clearTimeout(toastT); toastT = setTimeout(() => el.classList.remove('show'), 4200); }
+
+$('scoutbtn').onclick = () => { if (C.scoutAction(S)) { renderAll(); toast(S.log[S.log.length - 1].t); } };
+$('endbtn').onclick = () => {
+  if (S.ap > 0 && !confirm('You still have ' + S.ap + ' action' + (S.ap === 1 ? '' : 's') + ' left. End the turn anyway?')) return;
+  C.endTurn(S); renderAll();
+  if (S.over) return showEnd();
+  const ev = S.event; toast(ev ? ev.icon + ' ' + ev.name + ': ' + ev.text : 'Turn ' + S.turn + '. Rivals moved. ' + S.apMax + ' fresh actions.');
+};
+
+// ---------- End ----------
+function showEnd() {
+  const fr = C.fieldReport(S); const st = S.stats;
+  $('rank').textContent = fr.rank === 'Lost in the Fog' ? 'Lost in the Fog' : fr.rank + '!';
+  $('bigsov').textContent = `${S.brand} finished with ${st.sov}% planned share of voice · ${st.vsov}% verified live (${fr.vrank}) · crawlability ${st.crawl} · coverage ${st.coverage} · authority ${st.authority}`;
+  let html = '<h3>Code: what the scout actually found on ' + S.host + '</h3>';
+  for (const it of fr.items) html += `<div class="it ${it.ok ? 'ok' : 'bad'}"><span class="s">${it.ok ? '✓' : '✗'}</span><span class="n">${it.name}</span><span class="d">${it.detail}${it.ok ? '' : ' <b>Fix:</b> ' + it.fix}</span></div>`;
+  html += '<h3>Content the answer engines want that you have not built (or refreshed)</h3>';
+  html += fr.missing.length ? fr.missing.map(h => `<div class="it bad"><span class="s">·</span><span class="n">${h.real}</span><span class="d">${h.why}</span></div>`).join('') : '<div class="it ok"><span class="s">✓</span><span class="d">All high-value content types built and refreshed.</span></div>';
+  html += '<h3>Citations held at the end</h3><div class="it"><span class="d">' + (fr.held.length ? fr.held.join(', ') : 'None. Start with Wikidata and LinkedIn; they are one action each.') + '</span></div>';
+  html += '<h3>Verified vs simulated</h3>';
+  html += fr.verified.length ? `<div class="it ok"><span class="s">✓</span><span class="n">Proven live</span><span class="d">${fr.verified.map(h => esc(h.name) + (h.level >= 2 && (h.verifiedLevel || 1) < 2 ? ' (refresh not verified)' : '') + (h.proof ? ' <a href="' + esc(h.proof) + '" target="_blank" rel="noopener">↗</a>' : '')).join(', ')}</span></div>` : '';
+  html += fr.simulated.length ? `<div class="it bad"><span class="s">~</span><span class="n">Still simulated</span><span class="d">${fr.simulated.map(h => esc(h.real || h.name)).join('; ')}. These are the real to-do list. Ship them, paste the URLs, verify.</span></div>` : '<div class="it ok"><span class="s">✓</span><span class="d">Everything you hold is verified live. That is rare.</span></div>';
+  html += '<p class="small">A citation is not a recommendation. Visibility granted by a platform can be revoked on a Tuesday; the research you publish, the people behind your pages, and the identity the engines can verify are yours. In the real world the map is the same and the turns are weeks: code is a sprint, content is a quarter, citations are a year. Depth, made durable.</p>';
+  $('report').innerHTML = html; $('end').style.display = 'flex'; drawChart(); $('submitbtn').disabled = false; $('submitbtn').textContent = '🏆 Post to this week\'s board'; $('submitnote').textContent = 'League: ' + CAT_LABEL[S.category || 'startup'] + (S.player ? ' · ' + S.player : '');
+  $('copy').onclick = () => { const txt = ['SOULCRAFTER field report for ' + S.host, 'Rank: ' + fr.rank + ' (' + st.sov + '% share of voice)', '', ...fr.items.map(i => (i.ok ? '[ok] ' : '[fix] ') + i.name + ': ' + i.detail + (i.ok ? '' : ' Fix: ' + i.fix)), '', 'Content to build/refresh: ' + fr.missing.map(h => h.real).join('; '), 'Citations held: ' + fr.held.join(', '), 'Verified live (' + st.vsov + '% share of voice): ' + fr.verified.map(h => h.name + (h.proof ? ' ' + h.proof : '')).join('; '), 'Still simulated: ' + fr.simulated.map(h => h.real || h.name).join('; ')].join('\n'); navigator.clipboard.writeText(txt).then(() => toast('Copied.')); };
+}
+
+// ---------- Share card ----------
+function diagnosisLine() {
+  const ruins = S.hexes.filter(h => h.kind === 'foundation' && h.status !== 'built');
+  if (ruins.length) return ruins.slice(0, 2).map(h => h.name).join(' and ') + (ruins.length > 2 ? ' and ' + (ruins.length - 2) + ' more' : '') + ' in ruins.';
+  const held = S.hexes.filter(h => h.kind === 'citation' && h.status === 'rival').sort((a, b) => b.value - a.value)[0];
+  if (held) return held.name.replace(/ (Fort|Vault|Tower|Forge|Amphitheater|Outpost|Commons|Well|Bazaar|Camp|Keep|Citadel|Circle|Caravan|Waystation|Banners|Guild)$/, '') + ' held by ' + C.RIVALS.find(r => r.key === held.owner).name + '.';
+  const empty = S.hexes.filter(h => h.kind === 'content' && h.status !== 'built');
+  if (empty.length) return 'Code stands. ' + empty.length + ' content districts still unbuilt.';
+  return 'All six code hexes standing. Now hold the citations.';
+}
+function rankNow() { const sov = S.stats.sov; return sov >= 50 ? 'Sovereign' : sov >= 35 ? 'Citadel' : sov >= 20 ? 'Outpost' : 'Lost in the Fog'; }
+async function buildShareCard() {
+  try { await document.fonts.ready; } catch {}
+  const W = 1200, Hh = 630, c = document.createElement('canvas'); c.width = W * 2; c.height = Hh * 2; const g = c.getContext('2d'); g.setTransform(2, 0, 0, 2, 0, 0);
+  const bg = g.createRadialGradient(330, 330, 40, 330, 330, 520); bg.addColorStop(0, '#1e2a52'); bg.addColorStop(1, '#0f1524');
+  g.fillStyle = '#0f1524'; g.fillRect(0, 0, W, Hh); g.fillStyle = bg; g.fillRect(0, 0, W, Hh);
+  const saveS = S.selected, saveH = hover; S.selected = null; hover = null;
+  drawMap(g, 330, 318, 44, { flat: true, labels: false });
+  S.selected = saveS; hover = saveH;
+  const x0 = 660; const st = S.stats;
+  g.textAlign = 'left'; g.textBaseline = 'alphabetic';
+  g.fillStyle = '#ffcf5a'; g.font = '900 26px Nunito'; g.fillText('SOULCRAFTER', x0, 72);
+  g.fillStyle = '#9aa6c9'; g.font = '700 16px Nunito'; g.fillText(S.over ? 'FINAL · 20 TURNS' : 'TURN ' + S.turn + ' OF ' + C.MAX_TURNS, x0 + 205, 72);
+  let fs = 44; g.font = '900 ' + fs + 'px Nunito'; while (g.measureText(S.brand).width > 500 && fs > 22) { fs -= 2; g.font = '900 ' + fs + 'px Nunito'; }
+  g.fillStyle = '#eef2ff'; g.fillText(S.brand, x0, 130);
+  g.fillStyle = '#38d0c6'; g.font = '700 20px Nunito'; g.fillText(S.host, x0, 160);
+  g.fillStyle = '#ffcf5a'; g.font = '900 60px Nunito'; g.fillText(rankNow(), x0, 240);
+  g.fillStyle = '#eef2ff'; g.font = '700 24px Nunito'; g.fillText(st.sov + '% share of voice', x0, 278);
+  if (st.verified) { const w = g.measureText(st.sov + '% share of voice').width; g.fillStyle = '#9ff0b8'; g.font = '700 18px Nunito'; g.fillText('✓ ' + st.vsov + '% verified live', x0 + w + 16, 278); }
+  const bar = (label, v, col, y) => { g.fillStyle = '#9aa6c9'; g.font = '700 15px Nunito'; g.fillText(label, x0, y); g.textAlign = 'right'; g.fillStyle = '#eef2ff'; g.fillText(String(v), x0 + 480, y); g.textAlign = 'left';
+    g.fillStyle = '#0f1528'; roundRect(g, x0, y + 8, 480, 12, 6); g.fill(); g.fillStyle = col; roundRect(g, x0, y + 8, Math.max(12, 480 * v / 100), 12, 6); g.fill(); };
+  bar('Crawlability', st.crawl, '#38d0c6', 322); bar('Coverage', st.coverage, '#5bd67a', 366); bar('Authority', st.authority, '#b48cff', 410);
+  // rivals strip
+  let rx = x0; const ry = 452; const segs = [[st.sov, '#ffcf5a'], ...C.RIVALS.map((r, i) => [st.rivalSov[i], r.color])];
+  g.fillStyle = '#0f1528'; roundRect(g, x0, ry, 480, 14, 7); g.fill();
+  for (const [v, col] of segs) { const w = 480 * v / 100; if (w > 0) { g.fillStyle = col; g.fillRect(rx, ry, w, 14); rx += w; } }
+  g.fillStyle = '#9aa6c9'; g.font = '700 13px Nunito'; g.fillText('you  ·  ' + C.RIVALS.map((r, i) => r.name.replace('The ', '') + ' ' + st.rivalSov[i] + '%').join('  ·  '), x0, 486);
+  // diagnosis
+  g.fillStyle = '#eef2ff'; g.font = '700 20px Nunito'; wrapText(g, diagnosisLine(), x0, 530, 490, 26);
+  g.fillStyle = '#9aa6c9'; g.font = '700 15px Nunito'; g.fillText('Scout your brand: ' + location.host + location.pathname.replace(/\/$/, ''), x0, 596);
+  g.fillStyle = '#39436a'; g.font = '700 13px Nunito'; g.textAlign = 'left'; g.fillText('Real robots.txt, sitemap, HTML. Simulated rivals. Depth, made durable. A Soulcraft game.', 40, 596);
+  return c;
+}
+function roundRect(g, x, y, w, h, r) { g.beginPath(); g.moveTo(x + r, y); g.arcTo(x + w, y, x + w, y + h, r); g.arcTo(x + w, y + h, x, y + h, r); g.arcTo(x, y + h, x, y, r); g.arcTo(x, y, x + w, y, r); g.closePath(); }
+function wrapText(g, text, x, y, maxW, lh) { const words = text.split(' '); let line = ''; for (const w of words) { const t = line ? line + ' ' + w : w; if (g.measureText(t).width > maxW && line) { g.fillText(line, x, y); line = w; y += lh; } else line = t; } if (line) g.fillText(line, x, y); }
+let shareBlob = null;
+async function openShare() {
+  const c = await buildShareCard(); const url = c.toDataURL('image/png'); $('shareimg').src = url;
+  shareBlob = await new Promise(r => c.toBlob(r, 'image/png'));
+  $('share').style.display = 'flex';
+}
+function shareText() { return `${S.brand} on Soulcrafter: ${rankNow()}, ${S.stats.sov}% share of voice${S.stats.verified ? ' (' + S.stats.vsov + '% verified live)' : ''}${S.over ? ' after 20 turns' : ' at turn ' + S.turn}. ${diagnosisLine()} Scout your own brand:`; }
+function shareLink() { return location.origin + location.pathname.replace(/\/$/, '') + '/?brand=' + encodeURIComponent(S.host); }
+$('sharebtn').onclick = openShare; $('endshare').onclick = openShare;
+$('sharex').onclick = () => { $('share').style.display = 'none'; };
+$('dl').onclick = () => { const a = document.createElement('a'); a.href = $('shareimg').src; a.download = 'soulcrafter-' + S.host.replace(/\W+/g, '-') + '.png'; a.click(); };
+$('cpimg').onclick = async () => { try { await navigator.clipboard.write([new ClipboardItem({ 'image/png': shareBlob })]); toast('Image copied. Paste it into your post.'); } catch (e) { toast('Your browser blocked image copy. Use Download instead.'); } };
+$('cplink').onclick = () => navigator.clipboard.writeText(shareLink()).then(() => toast('Link copied.'));
+$('postx').onclick = () => window.open('https://x.com/intent/post?text=' + encodeURIComponent(shareText()) + '&url=' + encodeURIComponent(shareLink()), '_blank');
+$('postli').onclick = () => { navigator.clipboard.writeText(shareText() + ' ' + shareLink()).then(() => toast('Caption copied. Paste it with the image on LinkedIn.')); window.open('https://www.linkedin.com/feed/?shareActive=true&text=' + encodeURIComponent(shareText() + ' ' + shareLink()), '_blank'); };
+
+// ---------- Leaderboard ----------
+const CAT_LABEL = { startup: 'Startup', growth: 'Growth', enterprise: 'Enterprise', agency: 'Agency', local: 'Local', creator: 'Creator' };
+let boardWeek = null, boardCat = null;
+async function openBoard(cat, week) {
+  boardCat = cat || boardCat || (S && S.category) || $('cat').value || 'startup'; boardWeek = week || boardWeek || null;
+  $('board').style.display = 'flex'; $('boardbody').innerHTML = '<div class="empty">Loading…</div>';
+  $('tabs').innerHTML = Object.keys(CAT_LABEL).map(k => `<span class="chip ${k === boardCat ? 'on' : ''}" data-cat="${k}">${CAT_LABEL[k]}</span>`).join('');
+  $('tabs').querySelectorAll('.chip').forEach(el => el.onclick = () => openBoard(el.dataset.cat, boardWeek));
+  try {
+    const d = await fetch(API + '/api/leaderboard?category=' + boardCat + (boardWeek ? '&week=' + boardWeek : '')).then(r => r.json());
+    if (d.configured === false) { $('boardbody').innerHTML = '<div class="empty">The leaderboard is being set up. Check back soon.</div>'; $('wlabel').textContent = ''; return; }
+    if (d.error) throw new Error(d.error);
+    boardWeek = d.week; $('wlabel').textContent = d.week + (d.week === d.current ? ' (this week)' : ''); $('wnote').textContent = d.entries.length + ' brand' + (d.entries.length === 1 ? '' : 's');
+    $('wprev').onclick = () => openBoard(boardCat, d.prev); $('wnext').disabled = !d.next; $('wnext').onclick = () => d.next && openBoard(boardCat, d.next);
+    if (!d.entries.length) { $('boardbody').innerHTML = '<div class="empty">No ' + CAT_LABEL[boardCat].toLowerCase() + ' brands on the board for ' + d.week + ' yet. Finish a game and post it.</div>'; return; }
+    const me = S ? S.host.replace(/^www\./, '') : null;
+    $('boardbody').innerHTML = '<table class="lb"><tr><th></th><th>Brand</th><th>Share of voice</th><th>✓ Verified</th><th>Climb</th><th>Code · Content · Cites</th><th>Rank</th></tr>' + d.entries.map((e, i) =>
+      `<tr class="${e.host === me ? 'me' : ''}"><td class="n">${i + 1}</td><td class="b"><b>${esc(e.brand)}</b><span>${esc(e.host)}${e.player ? ' · ' + esc(e.player) : ''}</span></td><td class="s">${e.sov}%</td><td class="c" style="color:#9ff0b8;font-weight:900">${e.vsov === undefined ? '–' : e.vsov + '%'}</td><td class="c">${e.open}% → ${e.sov}%</td><td class="c">${e.crawl} · ${e.coverage} · ${e.authority}</td><td class="c">${e.rank}</td></tr>`).join('') + '</table>';
+  } catch (e) { $('boardbody').innerHTML = '<div class="empty">Could not load the board: ' + esc(e.message) + '</div>'; }
+}
+function esc(t) { return String(t).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c])); }
+document.querySelectorAll('.ex').forEach(b => b.onclick = () => { $('url').value = b.dataset.brand; nameHint = b.dataset.name || ''; start(); });
+$('url').addEventListener('input', () => { nameHint = ''; });
+
+// ---------- Welcome visual: a kingdom rising out of the fog ----------
+(function hero() {
+  const hc = $('hero'); if (!hc) return; const g = hc.getContext('2d');
+  const RV = C.RIVALS; const hexes = [];
+  const dirs = [[1, 0], [0, 1], [-1, 1], [-1, 0], [0, -1], [1, -1]];
+  hexes.push({ q: 0, r: 0, ring: 0 });
+  for (let k = 1; k <= 3; k++) { let q = 0, r = -k; for (let side = 0; side < 6; side++) for (let i = 0; i < k; i++) { hexes.push({ q, r, ring: k }); q += dirs[side][0]; r += dirs[side][1]; } }
+  // deterministic script: when each hex changes, and to what
+  const seq = (ring) => hexes.map((h, i) => i).filter(i => hexes[i].ring === ring);
+  const code = seq(1), cont = seq(2), cit = seq(3);
+  const st = {}; // idx -> {status at t}
+  code.forEach((i, n) => st[i] = { t0: n < 2 ? 'built' : 'ruin', at: 0.6 + n * 0.45, to: 'built' });
+  cont.forEach((i, n) => st[i] = { t0: 'empty', at: 3.4 + n * 0.32, to: n % 4 === 1 ? 'star' : 'built' });
+  cit.forEach((i, n) => { const rival = n % 3 === 1 ? RV[n % RV.length] : null; st[i] = { t0: 'fog', reveal: 3.8 + (n % 6) * 0.5 + Math.floor(n / 6) * 0.9, rival, at: 7.4 + n * 0.26, to: (n % 5 === 2) ? 'keep' : 'owned' }; });
+  const LOOP = 15, HOLD = 12.6;
+  const line = (t) => t < 2.8 ? ['Turn 1 · Lost in the Fog', 'A real website, before anyone fixes it', 4] : t < 7.2 ? ['Turn 6 · Outpost', 'Code ring fixed, content districts rising', 9 + (t - 2.8) * 3.5] : t < HOLD ? ['Turn 14 · Citadel', 'Claiming the places AI engines actually read', 24 + (t - 7.2) * 5.2] : ['Turn 20 · Sovereign', 'More than half of every answer mentions you', 52];
+  const path = (x, y, s) => { g.beginPath(); for (let i = 0; i < 6; i++) { const a = Math.PI / 180 * (60 * i - 30); const px = x + s * Math.cos(a), py = y + s * Math.sin(a); i ? g.lineTo(px, py) : g.moveTo(px, py); } g.closePath(); };
+  const dark = (hex) => { const n = parseInt(hex.slice(1), 16); const f = (v) => Math.floor(v * 0.55); return '#' + [(n >> 16) & 255, (n >> 8) & 255, n & 255].map(f).map(v => v.toString(16).padStart(2, '0')).join(''); };
+  let W = 0, H = 0, dpr = 1;
+  function fit() { const r = hc.parentElement.getBoundingClientRect(); dpr = window.devicePixelRatio || 1; W = r.width; H = r.height; hc.width = W * dpr; hc.height = H * dpr; }
+  function frame(t) {
+    g.setTransform(dpr, 0, 0, dpr, 0, 0); g.clearRect(0, 0, W, H);
+    const size = Math.min(W / 13.2, (H - 70) / 11.5); const cx = W / 2, cy = (H - 60) / 2 + 4;
+    const fade = t > LOOP - 0.6 ? (LOOP - t) / 0.6 : t < 0.5 ? t / 0.5 : 1;
+    g.globalAlpha = Math.max(0, Math.min(1, fade));
+    for (const h of [...hexes].map((h, i) => ({ ...h, i })).sort((a, b) => a.r - b.r)) {
+      const x = cx + size * Math.sqrt(3) * (h.q + h.r / 2), y = cy + size * 1.5 * h.r; const s = size - 3; const k = st[h.i];
+      let top = '#2a3253', side = '#181d33', icon = '', badge = '', dash = false, pop = 0;
+      if (h.ring === 0) { top = '#ffcf5a'; side = '#b88a1c'; icon = '🏰'; }
+      else if (h.ring === 1) { const built = k.t0 === 'built' || t >= k.at; top = built ? '#38d0c6' : '#3a4468'; side = built ? '#1a8b84' : '#232a45'; icon = built ? '⚙️' : '🧱'; dash = !built; if (k.t0 !== 'built' && t >= k.at) pop = t - k.at; }
+      else if (h.ring === 2) { const built = t >= k.at; top = built ? (k.to === 'star' ? '#7ee89a' : '#5bd67a') : '#2d3656'; side = built ? '#2f9a4f' : '#1b2138'; icon = built ? '📜' : ''; dash = !built; if (built) { pop = t - k.at; if (k.to === 'star') badge = '★'; } }
+      else { const seen = t >= k.reveal; if (!seen) { top = '#141a2c'; side = '#0d1120'; icon = '?'; } else { const mine = t >= k.at && k.to === 'owned'; if (mine) { top = '#b48cff'; side = '#6a44c9'; icon = '🔗'; pop = t - k.at; } else if (k.rival) { top = k.rival.color; side = dark(k.rival.color); icon = '🔗'; badge = k.rival.icon; } else { top = '#2a3253'; side = '#181d33'; icon = '🔗'; } } }
+      const sc = pop > 0 && pop < 0.4 ? 1 + 0.18 * Math.sin(pop / 0.4 * Math.PI) : 1; const ss = s * sc;
+      g.fillStyle = side; path(x, y + size * 0.15, ss); g.fill(); g.fillStyle = top; path(x, y, ss); g.fill();
+      if (dash) { g.strokeStyle = '#4a557a'; g.setLineDash([5, 4]); g.lineWidth = 1.5; path(x, y, ss - 4); g.stroke(); g.setLineDash([]); }
+      g.textAlign = 'center'; g.textBaseline = 'middle';
+      if (icon === '?') { g.font = `${size * 0.55}px Nunito`; g.fillStyle = '#39436a'; g.fillText('?', x, y - 2); }
+      else if (icon) { g.font = `${size * 0.6}px "Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif`; g.fillStyle = '#000'; g.fillText(icon, x, y); }
+      if (badge) { g.font = `900 ${size * 0.34}px sans-serif`; g.fillStyle = '#fff'; g.fillText(badge, x + s * 0.5, y - s * 0.5); }
+    }
+    g.globalAlpha = 1;
+    const [l1, l2, sov] = line(t); const hl = $('heroline'), hs = $('herosub'), hb = $('herobar');
+    if (hl.textContent !== l1) { hl.textContent = l1; hs.textContent = l2; }
+    hb.style.width = Math.round(sov) + '%';
+  }
+  const still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  fit(); window.addEventListener('resize', () => { fit(); if (still) frame(HOLD); });
+  if (still) { frame(HOLD); return; }
+  const start0 = performance.now();
+  (function tick(now) { if ($('start').style.display !== 'none') frame(((now - start0) / 1000) % LOOP); requestAnimationFrame(tick); })(start0);
+})();
+const openHow = () => { $('howto').style.display = 'flex'; try { localStorage.setItem('sc_seen', '1'); } catch {} };
+const closeHow = () => { $('howto').style.display = 'none'; };
+$('howbtn0').onclick = openHow; $('howbtn').onclick = openHow; $('howx').onclick = closeHow; $('howgo').onclick = closeHow;
+$('boardbtn').onclick = () => openBoard(); $('boardbtn0').onclick = () => openBoard($('cat').value); $('boardx').onclick = () => { $('board').style.display = 'none'; };
+async function submitScore() {
+  if (!S || !S.over || S.submitted) return; const b = $('submitbtn'); b.disabled = true; b.textContent = 'Posting…';
+  const fr = C.fieldReport(S); const st = S.stats;
+  try {
+    const d = await fetch(API + '/api/leaderboard', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ host: S.host, brand: S.brand, category: S.category || 'startup', player: S.player || '', sov: st.sov, vsov: st.vsov, open: S.history[0].sov, crawl: st.crawl, coverage: st.coverage, authority: st.authority, rank: fr.rank }) }).then(r => r.json());
+    if (d.configured === false) { $('submitnote').textContent = 'Board is being set up; not posted.'; b.textContent = '🏆 Board offline'; return; }
+    if (d.error) throw new Error(d.error);
+    S.submitted = true; b.textContent = '🏆 Posted'; $('submitnote').textContent = d.improved ? 'On the ' + CAT_LABEL[d.category] + ' board for ' + d.week + '.' : 'Your earlier ' + d.entry.sov + '% this week stands; this run did not beat it.';
+    openBoard(d.category, d.week);
+  } catch (e) { $('submitnote').textContent = e.message; b.disabled = false; b.textContent = '🏆 Post to this week\'s board'; }
+}
+$('submitbtn').onclick = submitScore;
+const qb = new URLSearchParams(location.search).get('board'); if (qb) openBoard(Object.keys(CAT_LABEL).includes(qb) ? qb : 'startup');
+
+function drawChart() {
+  const c = $('chart'); const r = c.getBoundingClientRect(); c.width = r.width * DPR; c.height = 120 * DPR; const x = c.getContext('2d'); x.setTransform(DPR, 0, 0, DPR, 0, 0);
+  const H = S.history, W = r.width, Hh = 120, pad = 8; const px = (i) => pad + (W - 2 * pad) * i / Math.max(1, H.length - 1), py = (v) => Hh - pad - (Hh - 2 * pad) * v / 100;
+  x.strokeStyle = '#2a3457'; x.beginPath(); x.moveTo(pad, py(50)); x.lineTo(W - pad, py(50)); x.stroke();
+  const line = (get, col, w) => { x.strokeStyle = col; x.lineWidth = w; x.beginPath(); H.forEach((s, i) => i ? x.lineTo(px(i), py(get(s))) : x.moveTo(px(i), py(get(s)))); x.stroke(); };
+  C.RIVALS.forEach((rv, i) => line(s => s.rivals[i], rv.color, 1.5)); line(s => s.sov, '#ffcf5a', 3);
+  x.fillStyle = '#9aa6c9'; x.font = '700 11px Nunito'; x.fillText('share of voice, turn 1 → ' + C.MAX_TURNS, pad, 12);
+}
+$('again').onclick = () => location.href = location.pathname;
+</script>
+</body>
+</html>
