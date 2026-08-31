@@ -128,7 +128,7 @@ Use this exact HTML structure. The CSS is loaded from `/assets/css/landing.css`.
   <!-- Open Graph -->
   <meta property="og:title" content="{Page Title} | Soulcraft">
   <meta property="og:description" content="{Same as meta description}">
-  <meta property="og:image" content="https://soulcraftagency.com/soulcraft-og-image.png">
+  <meta property="og:image" content="https://soulcraftagency.com/soulcraft-og.png">
   <meta property="og:url" content="https://soulcraftagency.com/{page-path}/">
   <meta property="og:type" content="website">
 
@@ -136,7 +136,7 @@ Use this exact HTML structure. The CSS is loaded from `/assets/css/landing.css`.
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{Page Title} | Soulcraft">
   <meta name="twitter:description" content="{Same as meta description}">
-  <meta name="twitter:image" content="https://soulcraftagency.com/soulcraft-og-image.png">
+  <meta name="twitter:image" content="https://soulcraftagency.com/soulcraft-og.png">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
