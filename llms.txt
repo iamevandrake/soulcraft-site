@@ -54,10 +54,11 @@ Soulcraft's guides live at /learn/. One page per topic; older duplicates now red
 
 ## Pricing
 
-Soulcraft offers three retainer tiers with no long-term contracts:
-- Spark: $3,000/month. SEO/AEO content engine with soul.md
-- Forge: $5,000/month. Full demand generation and multi-channel distribution
-- Crucible: $10,000/month. AI advertising and custom agentic workflows
+One core engagement plus optional add-ons. No long-term contracts.
+- Core engagement: $5,000/month. A content engine and hub, AI visibility and share of voice monitoring, technical SEO auditing and website advisory, weekly reporting and strategy, weekly calls plus Slack, ideation on PR and thought leadership
+- Distribution Engine (add-on): $2,500/month. LinkedIn, Medium, Reddit, Substack, X, each piece tailored to the channel and posted
+- Citation Engine (add-on): $2,500/month. Outreach to Wikipedia, directories, and industry publications
+Add-ons are month to month and can be added or dropped at any time.
 
 ## Contact
 

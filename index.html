@@ -160,7 +160,7 @@
           "name": "How much does Soulcraft cost?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Soulcraft offers three tiers: Spark at $3,000/month for SEO/AEO content engine, Forge at $5,000/month adding demand generation and multi-channel distribution, and Crucible at $10,000/month including AI advertising and custom agentic workflows. No long-term contracts."
+            "text": "The Soulcraft core engagement is $5,000/month: a content engine and hub, AI visibility and share of voice monitoring, technical SEO auditing and website advisory, weekly reporting and strategy, weekly calls plus Slack, and PR and thought leadership ideation. Two optional add-ons are $2,500/month each: the Distribution Engine (LinkedIn, Medium, Reddit, Substack, X) and the Citation Engine (Wikipedia, directories, industry publications). Add-ons are month to month with no long-term lock."
           }
         }
       ]
@@ -184,9 +184,9 @@
     "@type": "OfferCatalog",
     "name": "Soulcraft Plans",
     "itemListElement": [
-      { "@type": "Offer", "name": "Spark", "price": "3000", "priceCurrency": "USD", "description": "SEO/AEO content engine with soul.md" },
-      { "@type": "Offer", "name": "Forge", "price": "5000", "priceCurrency": "USD", "description": "Full demand generation and multi-channel distribution" },
-      { "@type": "Offer", "name": "Crucible", "price": "10000", "priceCurrency": "USD", "description": "AI advertising and custom agentic workflows" }
+      { "@type": "Offer", "name": "Core Engagement", "price": "5000", "priceCurrency": "USD", "description": "Content engine and hub, AI visibility and share of voice monitoring, technical SEO auditing and website advisory, weekly reporting and strategy, weekly calls and Slack, PR and thought leadership ideation" },
+      { "@type": "Offer", "name": "Distribution Engine", "price": "2500", "priceCurrency": "USD", "description": "Add-on. Channel distribution across LinkedIn, Medium, Reddit, Substack, and X, each piece tailored and posted" },
+      { "@type": "Offer", "name": "Citation Engine", "price": "2500", "priceCurrency": "USD", "description": "Add-on. Citation outreach to Wikipedia, directories, and industry publications" }
     ]
   }
 }
@@ -413,6 +413,20 @@ nav .container { display: flex; align-items: center; justify-content: space-betw
 .tier.featured .tier-btn { background: var(--accent); color: var(--black); border-color: var(--accent); }
 .tier.featured .tier-btn:hover { background: var(--white); }
 
+/* Core + add-ons layout */
+.tiers-split { display: grid; grid-template-columns: 1.05fr 1fr; gap: 20px; align-items: start; }
+.tier-core { border: 1px solid var(--accent); border-radius: 16px; padding: 48px 40px; background: var(--card); }
+.tier-eyebrow { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 3px; color: var(--accent); margin-bottom: 24px; }
+.tier-core .tier-price { font-size: clamp(48px, 6vw, 64px); margin-bottom: 2px; }
+.addons { display: flex; flex-direction: column; gap: 20px; }
+.addon-card { border: 1px solid var(--border); border-radius: 16px; padding: 32px; background: var(--card); transition: border-color 0.3s; }
+.addon-card:hover { border-color: var(--accent); }
+.addon-head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; margin-bottom: 10px; flex-wrap: wrap; }
+.addon-name { font-family: 'Playfair Display', serif; font-size: 22px; color: var(--white); font-weight: 400; }
+.addon-price { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--accent); font-weight: 700; white-space: nowrap; }
+.addon-card p { font-size: 14px; color: var(--muted); line-height: 1.7; margin: 0; }
+.addon-note { border: 1px solid var(--border); border-left: 2px solid var(--accent); border-radius: 12px; padding: 20px 24px; background: var(--accent-dim); font-size: 14px; color: var(--text); line-height: 1.7; }
+
 /* Closing CTA */
 .closing { padding: 160px 0; text-align: center; position: relative; }
 .closing::before { content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 1px; height: 80px; background: linear-gradient(var(--border), transparent); }
@@ -467,7 +481,10 @@ footer { padding: 48px 0; border-top: 1px solid var(--border); }
   .opening .hero-sub { font-size: 15px; line-height: 1.55; margin-bottom: 20px; }
   .nav-right { display: none; }
   .nav-burger { display: flex; }
-  .cap-grid, .tiers { grid-template-columns: 1fr; }
+  .cap-grid, .tiers, .tiers-split { grid-template-columns: 1fr; }
+  .tier-core { padding: 40px 28px; }
+  .addon-head { flex-direction: column; align-items: flex-start; gap: 4px; }
+  .addons .tier-eyebrow { margin-top: 8px; margin-bottom: 0; }
   .closing-form { flex-direction: column; }
   .hero-domain-wrap { flex-direction: column; }
   .hero-domain-btn { width: 100%; }
@@ -758,48 +775,39 @@ footer { padding: 48px 0; border-top: 1px solid var(--border); }
   <div class="container">
     <div class="chapter-num" style="text-align:center;">Investment</div>
     <h2>What it costs. What it's worth.</h2>
-    <p>Three tiers, each built around autonomous systems. No long-term contracts. No overhead passed to you.</p>
-    <div class="tiers">
-      <div class="tier">
-        <div class="tier-name">Spark</div>
-        <div class="tier-price">$3,000</div>
-        <div class="tier-freq">per month</div>
-        <ul class="tier-list">
-          <li>AI search audit and ongoing refinement</li>
-          <li>SEO / AEO automated content engine</li>
-          <li>Bi-weekly strategy sessions</li>
-          <li>Async Slack support</li>
-          <li>Monthly performance reporting</li>
-        </ul>
-        <a href="/contact/" class="tier-btn" onclick="showModal(); return false;">Get Started</a>
-      </div>
-      <div class="tier featured">
-        <div class="tier-name">Forge</div>
+    <p>One core engagement, built around autonomous systems. Add distribution or citations when you want them. No long-term contracts, no overhead passed to you.</p>
+    <div class="tiers-split">
+      <div class="tier-core">
+        <div class="tier-eyebrow">Core Engagement</div>
         <div class="tier-price">$5,000</div>
         <div class="tier-freq">per month</div>
         <ul class="tier-list">
-          <li>Everything in Spark</li>
-          <li>Opensoul demand generation system</li>
-          <li>CRM + email automation</li>
-          <li>Weekly strategy sessions</li>
-          <li>Multi-channel content distribution</li>
-          <li>GEO + prompt optimization</li>
+          <li>A content engine and hub</li>
+          <li>AI visibility and share of voice monitoring</li>
+          <li>Technical SEO auditing and website advisory</li>
+          <li>Weekly reporting, analysis, and strategy</li>
+          <li>Weekly calls, Slack for everything in between</li>
+          <li>Ideation on PR and thought leadership</li>
         </ul>
         <a href="/contact/" class="tier-btn" onclick="showModal(); return false;">Get Started</a>
       </div>
-      <div class="tier">
-        <div class="tier-name">Crucible</div>
-        <div class="tier-price">$10,000</div>
-        <div class="tier-freq">per month</div>
-        <ul class="tier-list">
-          <li>Everything in Forge</li>
-          <li>AI advertising (ChatGPT, Perplexity)</li>
-          <li>Custom agentic workflows</li>
-          <li>Priority support</li>
-          <li>Executive strategy partnership</li>
-          <li>Dedicated systems architect</li>
-        </ul>
-        <a href="/contact/" class="tier-btn" onclick="showModal(); return false;">Get Started</a>
+      <div class="addons">
+        <div class="tier-eyebrow">Add-ons, month to month</div>
+        <div class="addon-card">
+          <div class="addon-head">
+            <span class="addon-name">Distribution Engine</span>
+            <span class="addon-price">$2,500/mo</span>
+          </div>
+          <p>LinkedIn, Medium, Reddit, Substack, X. Each piece tailored to the channel and posted.</p>
+        </div>
+        <div class="addon-card">
+          <div class="addon-head">
+            <span class="addon-name">Citation Engine</span>
+            <span class="addon-price">$2,500/mo</span>
+          </div>
+          <p>Wikipedia, directories, industry publications. Outreach to the third-party sources that compound.</p>
+        </div>
+        <div class="addon-note">No long-term lock. Add or drop any add-on month to month.</div>
       </div>
     </div>
   </div>
@@ -827,7 +835,7 @@ footer { padding: 48px 0; border-top: 1px solid var(--border); }
       <p><strong>How is Soulcraft different from a traditional marketing agency?</strong> Traditional agencies charge for human hours. Soulcraft charges for autonomous systems. You get around the clock production, not nine to five project management. The systems compound in effectiveness over time, which human teams simply cannot replicate at scale. We don't produce deliverables and hand them off. We build living systems that evolve alongside your business.</p>
       <p><strong>What does agentic marketing mean?</strong> Agentic means the systems act autonomously. They don't wait for instructions. They produce content, optimize search presence, distribute across channels, and learn from performance data, all on their own, guided by your soul.md identity file. You set the direction. The agents do the work.</p>
       <p><strong>What is AI advertising?</strong> Platforms like ChatGPT and Perplexity are beginning to offer advertising placements. Soulcraft connects your product feeds to these services so your offerings appear when users ask relevant questions. It's an emerging channel with significant first mover advantage, and we are already building the infrastructure to place our clients there.</p>
-      <p><strong>How much does Soulcraft cost?</strong> Soulcraft offers three tiers. Spark at three thousand dollars per month for the SEO and AEO content engine. Forge at five thousand dollars per month adds demand generation and multi channel distribution. Crucible at ten thousand dollars per month includes AI advertising and custom agentic workflows. No long term contracts. No hidden fees. No overhead passed to you. Every tier includes an AI search audit and ongoing refinement, so the system gets sharper the longer you use it.</p>
+      <p><strong>How much does Soulcraft cost?</strong> The core engagement is five thousand dollars per month. That covers a content engine and hub, AI visibility and share of voice monitoring, technical SEO auditing and website advisory, weekly reporting and strategy, weekly calls with Slack in between, and ideation on PR and thought leadership. Two add-ons run twenty five hundred dollars per month each and can be added or dropped month to month. The Distribution Engine tailors and posts each piece across LinkedIn, Medium, Reddit, Substack, and X. The Citation Engine handles outreach to Wikipedia, directories, and industry publications. No long term contracts. No hidden fees. No overhead passed to you.</p>
     </div>
   </div>
 </section>
