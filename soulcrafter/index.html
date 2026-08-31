@@ -108,17 +108,24 @@ aside{background:var(--panel);border-left:1px solid var(--line);display:flex;fle
 table.lb{width:100%;border-collapse:collapse;font-size:14px}table.lb th{text-align:left;color:var(--mut);font-size:12px;font-weight:700;padding:6px 8px;border-bottom:1px solid var(--line)}table.lb td{padding:8px;border-bottom:1px dashed #262f4f;vertical-align:middle}table.lb td.n{color:var(--mut);width:28px}table.lb td.b b{display:block}table.lb td.b span{color:var(--mut);font-size:12px}table.lb td.s{font-weight:900;color:var(--gold);white-space:nowrap}table.lb td.c{color:var(--mut);font-size:12px;white-space:nowrap}table.lb tr.me td{background:#20294a}
 .empty{color:var(--mut);padding:18px 0;font-size:14px}
 @media (max-width:900px){
-#game{grid-template-columns:1fr;grid-template-rows:auto 46dvh 1fr;height:100dvh}
-header{grid-column:1;flex-wrap:wrap;white-space:normal;padding:8px 10px;gap:8px;row-gap:6px}
+/* The page scrolls on phones: the map keeps a fixed slice of the screen, the
+   panel below flows to its natural height, and nothing can be clipped out of reach. */
+html,body{height:auto;min-height:100%}
+body{overflow-y:auto;overflow-x:hidden;overscroll-behavior-y:none}
+#game{grid-template-columns:1fr;grid-template-rows:auto 46vh auto;height:auto;min-height:100vh}
+#game{grid-template-rows:auto 46svh auto;min-height:100svh}
+header{grid-column:1;flex-wrap:wrap;white-space:normal;padding:8px 10px;gap:8px;row-gap:6px;position:sticky;top:0;z-index:15}
 header .logo{font-size:16px}header .brand{max-width:42vw;font-size:13px}
 header .btn{padding:7px 10px;font-size:13px}header .lbl{display:none}
 .turn{font-size:14px}.ap .pip{width:13px;height:13px}
 #phase{left:10px;top:10px;gap:6px}.chip{padding:4px 9px;font-size:11.5px}
-#toast{bottom:12px;max-width:94%;font-size:13px;padding:10px 14px}
+#toast{position:fixed;bottom:12px;max-width:94%;font-size:13px;padding:10px 14px;z-index:18}
 #legend{display:none}
-aside{border-left:0;border-top:1px solid var(--line)}
-#sel{padding:14px 14px 12px}#sel h2{font-size:19px}#stats{padding:12px 14px}#log{padding:10px 14px}
+aside{border-left:0;border-top:1px solid var(--line);overflow:visible}
+#sel{padding:14px 14px 12px}#sel h2{font-size:19px}#stats{padding:12px 14px}
+#log{padding:10px 14px;flex:none;overflow:visible;max-height:none}
 .verifyrow input{font-size:16px}.row2 select,.row2 input{font-size:16px}
+#share .card{max-height:92vh;overflow:auto}
 }
 </style>
 </head>
@@ -288,7 +295,16 @@ function launch() {
 const cv = $('cv'), ctx = cv.getContext('2d');
 let SIZE = 40, OX = 0, OY = 0, DPR = 1;
 function resize() { const r = cv.parentElement.getBoundingClientRect(); DPR = window.devicePixelRatio || 1; cv.width = r.width * DPR; cv.height = r.height * DPR; SIZE = Math.max(22, Math.min(46, Math.min(r.width / 14.5, r.height / 13))); OX = r.width / 2; OY = r.height / 2 + 6; draw(); }
-window.addEventListener('resize', resize);
+let resizeRAF = 0;
+window.addEventListener('resize', () => { if (resizeRAF) return; resizeRAF = requestAnimationFrame(() => { resizeRAF = 0; resize(); }); });
+const isPhone = () => window.matchMedia('(max-width:900px)').matches;
+// On a phone the panel sits below the map, so bring it into view when a hex is picked.
+function revealPanel() {
+  if (!isPhone()) return;
+  const a = document.querySelector('aside'), hd = document.querySelector('header'); if (!a || !hd) return;
+  const y = window.scrollY + a.getBoundingClientRect().top - hd.getBoundingClientRect().height - 6;
+  window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
+}
 function toPx(h) { const x = SIZE * Math.sqrt(3) * (h.q + h.r / 2), y = SIZE * 1.5 * h.r; return [OX + x, OY + y]; }
 function hexPath(x, y, s) { ctx.beginPath(); for (let i = 0; i < 6; i++) { const a = Math.PI / 180 * (60 * i - 30); const px = x + s * Math.cos(a), py = y + s * Math.sin(a); i ? ctx.lineTo(px, py) : ctx.moveTo(px, py); } ctx.closePath(); }
 function colorOf(h) {
@@ -333,7 +349,7 @@ function draw() { if (!S) return; ctx.setTransform(DPR, 0, 0, DPR, 0, 0); ctx.cl
 function short(n) { return n.length > 14 ? n.split(' ')[0] : n; }
 function hexAt(px, py) { let best = null, bd = 1e9; for (const h of S.hexes) { const [x, y] = toPx(h); const d = Math.hypot(px - x, py - y); if (d < bd) { bd = d; best = h; } } return bd < SIZE * 0.9 ? best : null; }
 cv.addEventListener('mousemove', e => { const r = cv.getBoundingClientRect(); const h = hexAt(e.clientX - r.left, e.clientY - r.top); if (h !== hover) { hover = h; draw(); } });
-cv.addEventListener('click', e => { const r = cv.getBoundingClientRect(); const h = hexAt(e.clientX - r.left, e.clientY - r.top); if (h) { S.selected = h; renderAll(); } });
+cv.addEventListener('click', e => { const r = cv.getBoundingClientRect(); const h = hexAt(e.clientX - r.left, e.clientY - r.top); if (h) { S.selected = h; renderAll(); revealPanel(); } });
 
 // ---------- Panel ----------
 function renderAll() { draw(); renderHeader(); renderSel(); renderStats(); renderLog(); }
