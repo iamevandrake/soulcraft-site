@@ -233,7 +233,13 @@ nav .container { display: flex; align-items: center; justify-content: space-betw
 .tl-what p { font-size: 15px; line-height: 1.7; margin: 0; }
 
 /* Proof list */
-.proof { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+/* NOTE: the 1px gap over a --border background is what draws the cell dividers,
+   so a part-empty row leaks that colour as a grey block. Column counts below are
+   fixed (3 / 2 / 1) and 6 items divide evenly into all three. If you add or remove
+   an artifact here, keep the total a multiple of 6 or adjust these counts. */
+.proof { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+@media (max-width: 900px) { .proof { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 620px) { .proof { grid-template-columns: 1fr; } }
 .proof-item { background: var(--color-surface); padding: 24px; display: flex; flex-direction: column; gap: 8px; }
 .proof-item h3 { font-family: 'Playfair Display', serif; font-size: 19px; color: var(--white); font-weight: 400; }
 .proof-item p { font-size: 14px; line-height: 1.7; margin: 0; }
