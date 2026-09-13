@@ -6,7 +6,7 @@
     "url": "https://soulcraftagency.com",
     "sameAs": "https://www.wikidata.org/wiki/Q139981209"
   },
-  "generated": "2026-07-31T00:00:00Z",
+  "generated": "2026-09-13T00:00:00Z",
   "profile": "core",
   "verificationStatus": "self-declared",
   "entities": [
@@ -127,56 +127,6 @@
       ]
     },
     {
-      "entityId": "e_003",
-      "@type": "SoftwareProduct",
-      "name": "Opensoul",
-      "alternateName": "opensoul",
-      "canonicalLabel": "agentic marketing stack",
-      "description": "Opensoul is Soulcraft's open-source agentic marketing stack (MIT licensed). It deploys a full AI marketing team of six specialized agents (Director, Strategist, Creative, Producer, Growth, and Analyst) that plan and execute campaigns autonomously while the operator approves strategy.",
-      "status": "active",
-      "maturityStatus": "established",
-      "audienceType": "technical",
-      "relations": [
-        {
-          "predicate": "PART_OF",
-          "targetId": "e_001",
-          "targetName": "Soulcraft"
-        },
-        {
-          "predicate": "DEPENDS_ON",
-          "targetId": "e_002",
-          "targetName": "soul file"
-        },
-        {
-          "predicate": "ENABLES",
-          "targetId": "e_005",
-          "targetName": "Demand and Content Generation"
-        }
-      ],
-      "hasChunks": [
-        {
-          "chunkId": "c_006",
-          "text": "Deploy a full marketing team: Director, Strategist, Creative, Producer, Growth, and Analyst. All AI agents working together autonomously. Manage outcomes, not prompts.",
-          "sourceUrl": "https://soulcraftagency.com/opensoul/",
-          "pageTitle": "Opensoul: An AI Agency That Runs Itself | Soulcraft",
-          "publisher": "Soulcraft",
-          "retrieved": "2026-05-29T00:00:00Z",
-          "contentType": "definition",
-          "audienceType": "technical"
-        },
-        {
-          "chunkId": "c_007",
-          "text": "Agents wake on schedule, check their queue, produce work, and hand off. Around the clock. Every decision, every draft, every revision is traced and explained.",
-          "sourceUrl": "https://soulcraftagency.com/opensoul/",
-          "pageTitle": "Opensoul: An AI Agency That Runs Itself | Soulcraft",
-          "publisher": "Soulcraft",
-          "retrieved": "2026-05-29T00:00:00Z",
-          "contentType": "evidence",
-          "audienceType": "technical"
-        }
-      ]
-    },
-    {
       "entityId": "e_004",
       "@type": "Service",
       "name": "SEO / AEO / GEO",
@@ -228,11 +178,6 @@
           "predicate": "PART_OF",
           "targetId": "e_001",
           "targetName": "Soulcraft"
-        },
-        {
-          "predicate": "DEPENDS_ON",
-          "targetId": "e_003",
-          "targetName": "Opensoul"
         }
       ],
       "hasChunks": [
@@ -248,7 +193,7 @@
         },
         {
           "chunkId": "c_011",
-          "text": "The opensoul system generates and distributes multi-channel content: blog, social, email, landing pages. All in your voice.",
+          "text": "We generate and distribute multi-channel content: blog, social, email, landing pages. All in your voice.",
           "sourceUrl": "https://soulcraftagency.com/",
           "pageTitle": "Soulcraft: Agentic Marketing Systems With Soul",
           "publisher": "Soulcraft",

@@ -10,7 +10,7 @@ layout: null
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>AI Visibility Check: Why Your Site Isn't in AI Answers | Soulcraft</title>
-<meta name="description" content="Free diagnostic. Enter your domain and see the real reasons AI search leaves you out: crawler blocks, missing llms.txt, thin entity signals, unstructured answers. No signup.">
+<meta name="description" content="Free diagnostic. Enter your domain and see the real reasons AI search leaves you out: crawler blocks, blocked rendering, thin entity signals, unstructured answers. No signup.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://soulcraftagency.com/tools/ai-visibility-check/">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -61,12 +61,12 @@ layout: null
       "applicationCategory": "BusinessApplication",
       "operatingSystem": "Any modern browser",
       "browserRequirements": "Requires JavaScript",
-      "description": "A free diagnostic that fetches a site's homepage, robots.txt, llms.txt and sitemap.xml, then reports which AI search readiness checks pass, fail, or could not be verified.",
+      "description": "A free diagnostic that fetches a site's homepage, robots.txt and sitemap.xml, then reports which AI search readiness checks pass, fail, or could not be verified.",
       "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
       "publisher": { "@id": "https://soulcraftagency.com/#organization" },
       "featureList": [
         "AI crawler access audit across GPTBot, ClaudeBot, PerplexityBot, Google-Extended, OAI-SearchBot and CCBot",
-        "llms.txt and sitemap.xml detection",
+        "Sitemap and robots.txt detection",
         "Structured data and entity signal checks",
         "Answer-shaped content structure analysis",
         "Server-rendered content detection"
@@ -92,14 +92,12 @@ layout: null
          "acceptedAnswer": {"@type": "Answer", "text": "In most cases it is one of four things: an AI crawler is blocked in robots.txt, the content only exists after JavaScript runs so the crawler sees an empty page, there are no structured entity signals telling the model what the company is, or the content is written as prose that offers no extractable passage. Ranking in Google is not the same job as being quoted in an answer, and a site can do the first well while failing the second completely."}},
         {"@type": "Question", "name": "Does blocking GPTBot hurt my visibility in ChatGPT?",
          "acceptedAnswer": {"@type": "Answer", "text": "GPTBot is the training crawler and OAI-SearchBot is the one that fetches pages to answer live queries. Blocking OAI-SearchBot removes you from ChatGPT search results. Blocking GPTBot keeps you out of training data but does not by itself remove you from live search answers. Many sites block both without realizing they are separate decisions."}},
-        {"@type": "Question", "name": "Does llms.txt actually do anything?",
-         "acceptedAnswer": {"@type": "Answer", "text": "No major AI platform has committed to reading llms.txt as a ranking or retrieval input, so treat it as a low-cost bet rather than a fix. It is cheap to publish and it forces a useful exercise: writing down what your company is in plain language. The checks in this tool that carry real weight are crawler access, server-rendered content, and structured data."}},
         {"@type": "Question", "name": "How do I measure success in AI search optimization?",
          "acceptedAnswer": {"@type": "Answer", "text": "Track mention rate on non-branded prompts, separately from branded ones. Branded prompts sit near a ceiling for almost every company, so blending them into one number inflates it and hides whether anything is working. Measure the rate at which you appear in answers to questions that do not contain your name, and track citation rate separately, since being cited and being mentioned are different events."}},
         {"@type": "Question", "name": "How long does it take to appear in AI answers after fixing these?",
          "acceptedAnswer": {"@type": "Answer", "text": "Crawler access changes can show up within days because live-retrieval systems refetch often. Entity and structured data changes typically take weeks to propagate. Content that depends on being cited by other sites takes longest, because it waits on the sources those models already read rather than on your own publishing schedule."}},
         {"@type": "Question", "name": "Is this tool storing my domain or my data?",
-         "acceptedAnswer": {"@type": "Answer", "text": "No. Every check runs in your browser. The page fetches your public homepage, robots.txt, llms.txt and sitemap.xml through a public read-only proxy, scores what comes back, and forgets it when you close the tab. There is no account and no backend."}}
+         "acceptedAnswer": {"@type": "Answer", "text": "No. Every check runs in your browser. The page fetches your public homepage, robots.txt and sitemap.xml through a public read-only proxy, scores what comes back, and forgets it when you close the tab. There is no account and no backend."}}
       ]
     },
     {
@@ -264,7 +262,6 @@ footer { border-top: 1px solid var(--border); margin-top: 96px; padding: 48px 0 
     <div class="nav-right">
       <a href="/services/">Services</a>
       <a href="/learn/">Learn</a>
-      <a href="/opensoul/">Opensoul</a>
       <a href="/contact/" class="nav-cta-btn">Get Started</a>
     </div>
   </div>
@@ -286,7 +283,7 @@ footer { border-top: 1px solid var(--border); margin-top: 96px; padding: 48px 0 
       <input type="text" class="domain-input" id="domainInput" placeholder="enter your domain" autocomplete="off" autocapitalize="off" spellcheck="false">
       <button class="run-btn" id="runBtn">Run the check</button>
     </div>
-    <p class="tool-note">Reads your homepage, robots.txt, llms.txt and sitemap.xml. <strong>Free. No signup. Nothing stored.</strong></p>
+    <p class="tool-note">Reads your homepage, robots.txt and sitemap.xml. <strong>Free. No signup. Nothing stored.</strong></p>
     <p class="status" id="status" role="status" aria-live="polite"></p>
   </div>
 </div>
@@ -333,12 +330,11 @@ footer { border-top: 1px solid var(--border); margin-top: 96px; padding: 48px 0 
 <section class="plain">
   <div class="container narrow">
     <h2>What this check does <em>not</em> tell you</h2>
-    <p>Honesty about a diagnostic's limits is part of the diagnostic. This tool reads one page plus three files. It reports what it can verify and marks the rest as unverified rather than guessing, because a confident number built on a failed fetch is worse than no number.</p>
+    <p>Honesty about a diagnostic's limits is part of the diagnostic. This tool reads one page plus two files. It reports what it can verify and marks the rest as unverified rather than guessing, because a confident number built on a failed fetch is worse than no number.</p>
     <ul>
       <li><b>It does not measure whether you actually appear in answers.</b> That takes running real prompts across platforms repeatedly and watching the mention rate. This checks readiness, which is upstream of that.</li>
       <li><b>It reads your homepage, not your whole site.</b> A strong homepage and thin interior pages will score better here than it deserves.</li>
       <li><b>It cannot see what other sites say about you.</b> In most categories the answers are assembled largely from third-party sources: community threads, publisher roundups, video. Your own site is one input among many.</li>
-      <li><b>It does not weight llms.txt heavily.</b> No major platform has committed to reading it. It is a cheap bet worth taking, not a fix worth celebrating.</li>
     </ul>
     <p>If you want the part this cannot do, that is the work: measuring non-branded mention rate over time, per platform, and building toward the sources the models already read. <a href="/services/">That is what we do</a>.</p>
   </div>
@@ -350,10 +346,9 @@ footer { border-top: 1px solid var(--border); margin-top: 96px; padding: 48px 0 
     <div class="faq">
       <div class="faq-item"><button class="faq-q">Why is my website not showing up in AI search answers?</button><div class="faq-a"><p>In most cases it is one of four things: an AI crawler is blocked in robots.txt, the content only exists after JavaScript runs so the crawler sees an empty page, there are no structured entity signals telling the model what the company is, or the content is written as prose that offers no extractable passage. Ranking in Google is not the same job as being quoted in an answer, and a site can do the first well while failing the second completely.</p></div></div>
       <div class="faq-item"><button class="faq-q">Does blocking GPTBot hurt my visibility in ChatGPT?</button><div class="faq-a"><p>GPTBot is the training crawler and OAI-SearchBot is the one that fetches pages to answer live queries. Blocking OAI-SearchBot removes you from ChatGPT search results. Blocking GPTBot keeps you out of training data but does not by itself remove you from live search answers. Many sites block both without realizing they are separate decisions.</p></div></div>
-      <div class="faq-item"><button class="faq-q">Does llms.txt actually do anything?</button><div class="faq-a"><p>No major AI platform has committed to reading llms.txt as a ranking or retrieval input, so treat it as a low-cost bet rather than a fix. It is cheap to publish and it forces a useful exercise: writing down what your company is in plain language. The checks in this tool that carry real weight are crawler access, server-rendered content, and structured data.</p></div></div>
       <div class="faq-item"><button class="faq-q">How do I measure success in AI search optimization?</button><div class="faq-a"><p>Track mention rate on non-branded prompts, separately from branded ones. Branded prompts sit near a ceiling for almost every company, so blending them into one number inflates it and hides whether anything is working. Measure the rate at which you appear in answers to questions that do not contain your name, and track citation rate separately, since being cited and being mentioned are different events.</p></div></div>
       <div class="faq-item"><button class="faq-q">How long does it take to appear in AI answers after fixing these?</button><div class="faq-a"><p>Crawler access changes can show up within days because live-retrieval systems refetch often. Entity and structured data changes typically take weeks to propagate. Content that depends on being cited by other sites takes longest, because it waits on the sources those models already read rather than on your own publishing schedule.</p></div></div>
-      <div class="faq-item"><button class="faq-q">Is this tool storing my domain or my data?</button><div class="faq-a"><p>No. Every check runs in your browser. The page fetches your public homepage, robots.txt, llms.txt and sitemap.xml through a public read-only proxy, scores what comes back, and forgets it when you close the tab. There is no account and no backend.</p></div></div>
+      <div class="faq-item"><button class="faq-q">Is this tool storing my domain or my data?</button><div class="faq-a"><p>No. Every check runs in your browser. The page fetches your public homepage, robots.txt and sitemap.xml through a public read-only proxy, scores what comes back, and forgets it when you close the tab. There is no account and no backend.</p></div></div>
     </div>
   </div>
 </section>
@@ -373,7 +368,6 @@ footer { border-top: 1px solid var(--border); margin-top: 96px; padding: 48px 0 
       <div class="footer-links">
         <a href="/services/">Services</a>
         <a href="/learn/">Learn</a>
-        <a href="/opensoul/">Opensoul</a>
         <a href="/tools/">Tools</a>
         <a href="/notslop/">Not Slop</a>
         <a href="/entitymap.html">EntityMap</a>
@@ -390,7 +384,13 @@ footer { border-top: 1px solid var(--border); margin-top: 96px; padding: 48px 0 
 (function(){
 'use strict';
 
-var PROXIES = ['https://api.allorigins.win/raw?url=', 'https://corsproxy.io/?url='];
+/* Read-only fetch proxies, tried in order. Public proxies rot: if the tool
+   starts returning "could not be read" across the board, test these first. */
+var PROXIES = [
+  'https://api.allorigins.win/raw?url=',
+  'https://proxy.corsfix.com/?',
+  'https://api.codetabs.com/v1/proxy?quest='
+];
 
 function cleanDomain(v){
   return (v||'').trim().toLowerCase()
@@ -399,14 +399,19 @@ function cleanDomain(v){
 function setStatus(m){ document.getElementById('status').textContent = m; }
 
 /* Fetch a URL through the proxy chain. Resolves {ok, text} and never rejects. */
-function grab(url){
+function grab(url, timeout){
   var i = 0;
+  var ms = timeout || 12000;
   function attempt(){
     if (i >= PROXIES.length) return Promise.resolve({ok:false, text:''});
     var p = PROXIES[i++] + encodeURIComponent(url);
-    return fetch(p, {signal: AbortSignal.timeout(9000)})
+    return fetch(p, {signal: AbortSignal.timeout(ms)})
       .then(function(r){ if(!r.ok) throw new Error('bad'); return r.text(); })
-      .then(function(t){ return {ok:true, text:t}; })
+      .then(function(t){
+        /* Proxies answer 200 with their own error page when they give up. */
+        if(/^\s*(Oops\.\.\. Request Timeout|\{"(corsfix_)?error")/i.test(t.slice(0,60))) throw new Error('proxy');
+        return {ok:true, text:t};
+      })
       .catch(function(){ return attempt(); });
   }
   return attempt();
@@ -479,7 +484,7 @@ function textWords(s){ return s ? s.trim().split(/\s+/).filter(Boolean).length :
 function analyze(domain, res){
   var groups = [];
   var criticalBlocks = [];
-  var home = res.home, robots = res.robots, llms = res.llms, sitemap = res.sitemap;
+  var home = res.home, robots = res.robots, sitemap = res.sitemap;
 
   var doc = null, rawBodyText = '', words = 0;
   if(home.ok){
@@ -587,11 +592,6 @@ function analyze(domain, res){
 
   /* ---------- 4. AI-native files ---------- */
   var files = [];
-  var llmsGood = llms.ok && llms.text.length > 40 && !/<html/i.test(llms.text.slice(0,400));
-  files.push(chk(llmsGood ? 'pass' : 'warn',
-    llmsGood ? 'llms.txt is published' : 'No llms.txt',
-    llmsGood ? 'A plain-language index of the site exists at /llms.txt (' + llms.text.length.toLocaleString() + ' characters).' : 'The file is absent or the server returned a page instead.',
-    llmsGood ? '' : '<b>Fix, with a caveat:</b> no major platform has committed to reading llms.txt, so treat it as a cheap bet rather than a lever. It costs an hour and it forces you to write down what the company is in plain language, which is worth doing anyway.'));
   var siteGood = sitemap.ok && /<urlset|<sitemapindex/i.test(sitemap.text);
   var urlCount = siteGood ? (sitemap.text.match(/<loc>/g) || []).length : 0;
   files.push(chk(siteGood ? 'pass' : 'warn',
@@ -706,7 +706,7 @@ function render(domain, groups, criticalBlocks){
     ((criticalBlocks && criticalBlocks.length)
        ? 'The score is withheld because an access block outranks everything it would average together. '
        : '') +
-    'This reads one page plus three files, which is a starting point rather than a verdict.';
+    'This reads one page plus two files, which is a starting point rather than a verdict.';
 
   document.getElementById('repDims').innerHTML = dimHtml;
   document.getElementById('repGroups').innerHTML = groupHtml;
@@ -731,10 +731,12 @@ function run(){
   setStatus('Fetching ' + domain + ' the way a crawler would...');
 
   var base = 'https://' + domain;
-  Promise.all([grab(base + '/'), grab(base + '/robots.txt'), grab(base + '/llms.txt'), grab(base + '/sitemap.xml')])
+  /* The homepage is the big one and the slowest through a proxy, so it gets
+     the longer budget and a head start on the two small files. */
+  Promise.all([grab(base + '/', 25000), grab(base + '/robots.txt', 12000), grab(base + '/sitemap.xml', 12000)])
     .then(function(r){
       setStatus('Scoring the signals...');
-      var out = analyze(domain, {home:r[0], robots:r[1], llms:r[2], sitemap:r[3]});
+      var out = analyze(domain, {home:r[0], robots:r[1], sitemap:r[2]});
       render(domain, out.groups, out.criticalBlocks);
     })
     .catch(function(){
