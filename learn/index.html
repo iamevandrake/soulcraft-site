@@ -255,6 +255,19 @@ nav .container { display: flex; align-items: center; justify-content: space-betw
   color: var(--muted);
   max-width: 680px;
 }
+
+/* Free-tool callout — a card, so it carries its own padding */
+.learn-callout {
+  padding: 32px 36px;
+  margin-bottom: 8px;
+  background: var(--color-accent-soft);
+  border: none;
+  border-left: 3px solid var(--color-accent);
+  border-radius: 0 var(--radius) var(--radius) 0;
+}
+.learn-callout:first-child { border-top: none; }
+.learn-callout:hover { border-left-color: var(--color-accent-deep); }
+.learn-callout .learn-post-description { margin-bottom: 0; }
 .learn-empty {
   text-align: center;
   padding: 80px 0;
@@ -292,6 +305,7 @@ footer .container { padding-left: 48px; padding-right: 48px; }
 @media (max-width: 768px) {
   .learn-hero { padding: 120px 0 40px; }
   .learn-post { padding: 28px 0; }
+  .learn-callout { padding: 24px 22px; }
   .nav-right { display: none; }
   .nav-burger { display: flex; }
   .footer-row { flex-direction: column; gap: 20px; text-align: center; }
@@ -351,7 +365,7 @@ footer .container { padding-left: 48px; padding-right: 48px; }
 <!-- Free tool callout -->
 <section class="learn-list" style="padding-bottom:0;">
   <div class="container">
-    <a href="/tools/ai-visibility-check/" class="learn-post" style="border-left:3px solid var(--color-accent);background:var(--color-accent-soft);">
+    <a href="/tools/ai-visibility-check/" class="learn-post learn-callout">
       <div class="learn-post-meta">
         <span class="learn-post-type">Free tool</span>
       </div>
