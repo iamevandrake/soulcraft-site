@@ -116,7 +116,6 @@ Make the site legible to machines.
 
 - **Schema markup.** Organization, Article, FAQPage, Product where they apply. This is how you state facts in a form that requires no interpretation.
 - **Clean, crawlable HTML.** Content that requires JavaScript execution is retrieved inconsistently.
-- **`llms.txt`.** An emerging convention for describing your site to language models in plain markdown. Cheap to add, and it lets you frame your own content.
 - **Accurate sitemaps.** Live, indexable URLs only. Redirecting or noindexed URLs in a sitemap are a quality signal in the wrong direction.
 - **Consistent canonical URLs.** One address per piece of content, everywhere it is referenced.
 - **Speed and accessibility.** Same reasons as always.
@@ -192,7 +191,7 @@ If you are beginning from nothing, in order:
 1. **Baseline.** Forty to sixty prompts across four buyer stages, run repeatedly, on the platforms your buyers use. Record raw responses.
 2. **Settle identity.** One structured description of the company. Reconcile it everywhere it appears, including the places you do not control.
 3. **Audit and consolidate.** Find pages competing for the same intent and merge them. Most sites have more duplication than they realize, and cutting it is faster than writing anything new.
-4. **Fix the technical layer.** Schema, clean HTML, accurate sitemap, `llms.txt`.
+4. **Fix the technical layer.** Schema, clean HTML, accurate sitemap.
 5. **Build the pillars.** One genuinely excellent page per core intent, with original material and a named author.
 6. **Earn corroboration.** Slowly, legitimately, in the places your category actually gathers.
 7. **Re-measure.** Same prompt set, same conditions, and a threshold you committed to in advance.

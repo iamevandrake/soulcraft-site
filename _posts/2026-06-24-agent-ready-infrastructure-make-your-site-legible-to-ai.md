@@ -5,9 +5,9 @@ description: "How to make a site legible to AI crawlers and agents: the structur
 date: 2026-06-24
 category: learn
 content_type: Guide
-keywords: "agent ready infrastructure, machine readable website for AI, llms.txt, schema for AI citation, entity optimization, knowledge graph, EntityMap, structured data AEO"
+keywords: "agent ready infrastructure, machine readable website for AI, schema for AI citation, entity optimization, knowledge graph, EntityMap, structured data AEO"
 permalink: /learn/agent-ready-infrastructure/
-schema_markup: '{"@context":"https://schema.org","@type":"Article","headline":"Agent-Ready Infrastructure: How to Make Your Site Legible to AI","description":"A guide to the structured, machine-readable layer that lets AI systems understand and cite a brand correctly, covering schema, entity consistency, llms.txt, and knowledge bundles.","author":{"@type":"Person","@id":"https://soulcraftagency.com/#evan-drake","name":"Evan Drake"},"datePublished":"2026-06-24","publisher":{"@type":"Organization","name":"Soulcraft","url":"https://soulcraftagency.com"}}'
+schema_markup: '{"@context":"https://schema.org","@type":"Article","headline":"Agent-Ready Infrastructure: How to Make Your Site Legible to AI","description":"A guide to the structured, machine-readable layer that lets AI systems understand and cite a brand correctly, covering schema, entity consistency, and knowledge bundles.","author":{"@type":"Person","@id":"https://soulcraftagency.com/#evan-drake","name":"Evan Drake"},"datePublished":"2026-06-24","publisher":{"@type":"Organization","name":"Soulcraft","url":"https://soulcraftagency.com"}}'
 ---
 
 Agent-Ready Infrastructure: How to Make Your Site Legible to AI
@@ -28,15 +28,13 @@ So the goal of this layer is simple to state. Make the true facts about your bra
 
 **Entity consistency.** A brand is an entity, and models build a profile of that entity from every mention of it. If your name, description, founding details, and category are stated one way on your site, another way in your profiles, and a third way elsewhere, you hand the model a contradiction to resolve. Consistency across every surface is not a branding nicety here. It is how you become a stable, recognizable thing the model can describe with confidence.
 
-**llms.txt.** A growing convention, llms.txt is a plain index that points AI systems to the pages that matter and tells them how to read your site. It is the agent-facing counterpart to a sitemap. We publish one on this site, and we implement the same standard for clients, so models can find the right pages instead of crawling blind.
-
 **A knowledge bundle.** Beyond page-level markup, you can publish a single structured representation of your brand: the facts, the relationships, the sources. We do this with an Open Knowledge Format bundle and an [EntityMap](/entitymap.html), a machine-readable map of who Soulcraft is. The point is to give an answer engine one authoritative, structured place to learn you from, rather than reassembling you from scraps.
 
 **Visible accountability.** Readers and models are both working out whether anyone stands behind a page. Named authors, honest dates, and a stated way to challenge what you published all feed that judgment. We publish [the Not Slop badge](/notslop/) for the last piece, an open-source marker that says a human is accountable for this page and hands readers a button to argue otherwise. Anyone can install it, and unlike a claim buried in a footer, it can be tested.
 
 ## An agent-readiness checklist
 
-You can audit your own site against a short list. Does your homepage state, in plain and marked-up form, what you do and for whom? Is your organization and your key people described in schema? Are your facts consistent across your site and your external profiles? Do you publish an llms.txt that points to your important pages? Is there a single structured source of truth a model could cite? Can a reader tell who stands behind a page, and say so if they disagree? Most sites fail several of these, which is exactly why this layer is an advantage rather than table stakes.
+You can audit your own site against a short list. Does your homepage state, in plain and marked-up form, what you do and for whom? Is your organization and your key people described in schema? Are your facts consistent across your site and your external profiles? Is there a single structured source of truth a model could cite? Can a reader tell who stands behind a page, and say so if they disagree? Most sites fail several of these, which is exactly why this layer is an advantage rather than table stakes.
 
 ## Why this is the durable layer
 

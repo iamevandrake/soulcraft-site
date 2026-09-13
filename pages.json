@@ -25,7 +25,7 @@
     {
       "slug": "tools/ai-visibility-check",
       "title": "AI Visibility Check",
-      "description": "Free diagnostic. Enter your domain and see the real reasons AI search leaves you out: crawler blocks, missing llms.txt, thin entity signals, unstructured answers.",
+      "description": "Free diagnostic. Enter your domain and see the real reasons AI search leaves you out: crawler blocks, blocked rendering, thin entity signals, unstructured answers.",
       "type": "tool",
       "primaryKeyword": "why is my website not showing up in AI search",
       "secondaryKeywords": [
@@ -33,7 +33,7 @@
         "AI search audit",
         "how to audit content for AI performance",
         "GPTBot blocked",
-        "llms.txt checker",
+        "sitemap and robots.txt checker",
         "AI crawler access"
       ],
       "createdAt": "2026-07-31",
