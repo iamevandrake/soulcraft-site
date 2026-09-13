@@ -13,7 +13,7 @@
 <meta name="twitter:title" content="Soulcraft - SEO and AEO with soul." />
 <meta name="twitter:description" content="We help you get recommended and discovered by AI." />
 <meta name="twitter:image" content="https://soulcraftagency.com/soulcraft-og.png" />
-<meta name="description" content="Add identity analysis to your AI agents. The Soulcraft API scores any company's identity across 5 dimensions and generates a soul.md. Free API key, MCP server, CLI.">
+<meta name="description" content="Add identity analysis to your AI agents. The Soulcraft API scores any company's identity across 5 dimensions and generates a soul file. Free API key, MCP server, CLI.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://soulcraftagency.com/developers">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -196,7 +196,7 @@
     <h1>Give your agents<br><em>the ability to understand identity.</em></h1>
     <p>
       The Soulcraft API scores any company's identity across 5 dimensions,
-      generates a complete soul.md, and returns 10 tailored recommendations.
+      generates a complete soul file, and returns 10 tailored recommendations.
       Available as a REST API, CLI, and MCP server.
     </p>
   </div>
@@ -205,12 +205,12 @@
   <div class="surfaces">
     <div class="surface-card">
       <h3>REST API</h3>
-      <p>Call it from anywhere. Returns structured JSON with scores and full soul.md content.</p>
+      <p>Call it from anywhere. Returns structured JSON with scores and full soul file content.</p>
       <code>POST /api/soul/analyze</code>
     </div>
     <div class="surface-card">
       <h3>CLI</h3>
-      <p>Analyze any domain from your terminal. Pipe scores, save soul.md files, or trigger PDF reports. <a href="https://github.com/iamevandrake/soulcraft-agents/tree/main/cli" target="_blank" rel="noopener">Download soul.py on GitHub</a>.</p>
+      <p>Analyze any domain from your terminal. Pipe scores, save soul file files, or trigger PDF reports. <a href="https://github.com/iamevandrake/soulcraft-agents/tree/main/cli" target="_blank" rel="noopener">Download soul.py on GitHub</a>.</p>
       <code>python soul.py analyze</code>
     </div>
     <div class="surface-card">
@@ -269,7 +269,7 @@ curl -X POST https://soulcraft-report-production.up.railway.app/api/soul/analyze
     <span class="key">"content"</span>: <span class="accent">79</span>,
     <span class="key">"overall"</span>: <span class="accent">77</span>
   },
-  <span class="key">"soul"</span>: { <span class="comment">/* full soul.md sections */</span> }
+  <span class="key">"soul"</span>: { <span class="comment">/* full soul file sections */</span> }
 }</pre>
   </div>
 

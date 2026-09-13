@@ -15,7 +15,7 @@
       "@type": "Organization",
       "name": "Soulcraft",
       "alternateName": "Soulcraft Agency",
-      "description": "Soulcraft is an AI-native marketing agency that builds agentic marketing systems driven by a company's identity. Its work spans SEO, AEO, and GEO, demand and content generation, and AI advertising, all anchored to a structured soul.md identity file.",
+      "description": "Soulcraft is an AI-native marketing agency that builds agentic marketing systems driven by a company's identity. Its work spans SEO, AEO, and GEO, demand and content generation, and AI advertising, all anchored to a structured soul file.",
       "sameAs": "https://www.wikidata.org/wiki/Q139981209",
       "status": "active",
       "maturityStatus": "established",
@@ -39,7 +39,7 @@
         {
           "predicate": "OFFERS",
           "targetId": "e_008",
-          "targetName": "soul.md Score"
+          "targetName": "Soul File Score"
         },
         {
           "predicate": "TARGETS",
@@ -85,9 +85,9 @@
     {
       "entityId": "e_002",
       "@type": "ProprietaryTerm",
-      "name": "soul.md",
-      "alternateName": "soul.md file",
-      "description": "A soul.md is a structured identity file that captures a company's voice, values, positioning, audience, and competitive context. It is the single source of truth that every Soulcraft agentic system inherits and carries forward into the content it produces.",
+      "name": "soul file",
+      "alternateName": "soul identity file",
+      "description": "The soul file is a structured identity file that captures a company's voice, values, positioning, audience, and competitive context. It is the single source of truth that every Soulcraft agentic system inherits and carries forward into the content it produces.",
       "status": "active",
       "maturityStatus": "established",
       "audienceType": "technical",
@@ -106,7 +106,7 @@
       "hasChunks": [
         {
           "chunkId": "c_004",
-          "text": "A soul.md is a structured document that captures your company's identity: voice, values, positioning, audience, and competitive context. It's the file that drives every agentic marketing system Soulcraft builds. Think of it as the DNA your marketing agents inherit.",
+          "text": "The soul file is a structured document that captures your company's identity: voice, values, positioning, audience, and competitive context. It's the file that drives every agentic marketing system Soulcraft builds. Think of it as the DNA your marketing agents inherit.",
           "sourceUrl": "https://soulcraftagency.com/",
           "pageTitle": "Soulcraft: Agentic Marketing Systems With Soul",
           "publisher": "Soulcraft",
@@ -116,7 +116,7 @@
         },
         {
           "chunkId": "c_005",
-          "text": "When agents carry your soul.md, they don't produce generic content. They produce work that sounds like you, thinks like you, and reaches the people you care about, autonomously, around the clock.",
+          "text": "When agents carry your soul file, they don't produce generic content. They produce work that sounds like you, thinks like you, and reaches the people you care about, autonomously, around the clock.",
           "sourceUrl": "https://soulcraftagency.com/",
           "pageTitle": "Soulcraft: Agentic Marketing Systems With Soul",
           "publisher": "Soulcraft",
@@ -145,7 +145,7 @@
         {
           "predicate": "DEPENDS_ON",
           "targetId": "e_002",
-          "targetName": "soul.md"
+          "targetName": "soul file"
         },
         {
           "predicate": "ENABLES",
@@ -301,7 +301,7 @@
       "name": "Agentic Marketing",
       "alternateName": "agentic marketing",
       "canonicalLabel": "agentic marketing",
-      "description": "Agentic marketing is an approach in which autonomous AI systems (rather than humans driving every step) produce content, optimize search presence, distribute across channels, and learn from performance, all guided by a brand's soul.md identity file.",
+      "description": "Agentic marketing is an approach in which autonomous AI systems (rather than humans driving every step) produce content, optimize search presence, distribute across channels, and learn from performance, all guided by a brand's soul file.",
       "maturityStatus": "proposed",
       "audienceType": "technical",
       "status": "active",
@@ -314,13 +314,13 @@
         {
           "predicate": "DEPENDS_ON",
           "targetId": "e_002",
-          "targetName": "soul.md"
+          "targetName": "soul file"
         }
       ],
       "hasChunks": [
         {
           "chunkId": "c_014",
-          "text": "Agentic means the systems act autonomously. They don't wait for instructions. They produce content, optimize search presence, distribute across channels, and learn from performance data, all on their own, guided by your soul.md identity file.",
+          "text": "Agentic means the systems act autonomously. They don't wait for instructions. They produce content, optimize search presence, distribute across channels, and learn from performance data, all on their own, guided by your soul file.",
           "sourceUrl": "https://soulcraftagency.com/",
           "pageTitle": "Soulcraft: Agentic Marketing Systems With Soul",
           "publisher": "Soulcraft",
@@ -333,7 +333,7 @@
     {
       "entityId": "e_008",
       "@type": "Metric",
-      "name": "soul.md Score",
+      "name": "Soul File Score",
       "alternateName": "Soul Report",
       "description": "A free identity score Soulcraft generates for a domain, rating Identity Clarity, Voice Consistency, AI Readiness, Positioning, and Content Signal, with tailored recommendations for how clearly AI systems can understand and represent a brand.",
       "status": "active",
@@ -342,7 +342,7 @@
         {
           "predicate": "MEASURES",
           "targetId": "e_002",
-          "targetName": "soul.md",
+          "targetName": "soul file",
           "targetDescription": "How clearly a company's identity comes through and how well AI systems can understand and represent it."
         },
         {
@@ -354,7 +354,7 @@
       "hasChunks": [
         {
           "chunkId": "c_015",
-          "text": "Enter your domain. Get your soul.md identity score. Free. Your full soul.md includes 15+ tailored recommendations.",
+          "text": "Enter your domain. Get your soul file identity score. Free. Your full soul file includes 15+ tailored recommendations.",
           "sourceUrl": "https://soulcraftagency.com/",
           "pageTitle": "Soulcraft: Agentic Marketing Systems With Soul",
           "publisher": "Soulcraft",
