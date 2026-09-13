@@ -107,7 +107,7 @@
       "name": "Soulcraft -- Agentic Marketing Systems With Soul",
       "description": "We build autonomous marketing systems driven by your identity. Enter your domain and discover your soul.md score.",
       "datePublished": "2026-03-08",
-      "dateModified": "2026-03-21",
+      "dateModified": "2026-09-13",
       "speakable": {
         "@type": "SpeakableSpecification",
         "cssSelector": [".opening h1", ".opening .hero-sub", ".narrative-block h2", ".narrative-block p"]
@@ -162,6 +162,46 @@
             "@type": "Answer",
             "text": "The Soulcraft core engagement is $5,000/month: a content engine and hub, AI visibility and share of voice monitoring, technical SEO auditing and website advisory, weekly reporting and strategy, weekly calls plus Slack, and PR and thought leadership ideation. Two optional add-ons are $2,500/month each: the Distribution Engine (LinkedIn, Medium, Reddit, Substack, X) and the Citation Engine (Wikipedia, directories, industry publications). Add-ons are month to month with no long-term lock."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "How is AI search different from traditional search?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Traditional search returns a ranked list of links and lets the person choose. AI search returns one composed answer and names a few sources inside it. That changes the goal: you are no longer competing for position three, you are competing to be the source the model quotes. A page can rank well on Google and still be invisible inside ChatGPT, Claude, Gemini, or Perplexity, because those systems select for parseable structure and clear, citable claims, not for links alone."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does it take to show up in AI answers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Technical legibility moves fastest: schema, llms.txt, and entity data can be re-crawled within days. Content and citations take longer, usually one to three months before a new page is reliably pulled into answers, because the engines need to encounter it in enough places to trust it. Soulcraft tracks days to first tracked citation on every engagement, so the timeline is a measured number rather than a promise."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which AI platforms does Soulcraft optimize for?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ChatGPT, Claude, Gemini, Perplexity, and Google AI Overviews, alongside traditional Google and Bing results. Soulcraft monitors each one separately, because they cite different sources and disagree more often than people expect. A brand can hold strong share of voice in Perplexity and be absent from ChatGPT on the same question."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you measure AI search visibility?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Three numbers, tracked from day one: citation lift across AI engines, days to first tracked citation, and share of voice against the competitors you name. Soulcraft runs the same prompt set on a fixed schedule so the comparison stays honest, and publishes the method alongside the results. Soulcraft does not report estimates."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does AI search replace SEO, or do we need both?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Both, for now. The technical foundations overlap almost entirely: clean structure, fast pages, accurate schema, and real authority help in both places. What differs is the target. Traditional SEO competes for a click; answer engine optimization competes to be the cited source inside an answer that may never produce a click. Teams that drop SEO to chase AI visibility usually lose the crawl quality that AI visibility depends on."
+          }
         }
       ]
     }
@@ -189,6 +229,23 @@
       { "@type": "Offer", "name": "Citation Engine", "price": "2500", "priceCurrency": "USD", "description": "Add-on. Citation outreach to Wikipedia, directories, and industry publications" }
     ]
   }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "@id": "https://soulcraftagency.com/#how-we-do-ai-search-optimization",
+  "name": "How Soulcraft does AI search optimization",
+  "description": "Soulcraft's five-step method for making a brand visible and citable in AI search results across ChatGPT, Claude, Gemini, Perplexity, and Google AI Overviews.",
+  "step": [
+    { "@type": "HowToStep", "position": 1, "name": "Map the identity", "text": "Build the soul.md file capturing voice, values, positioning, audience, and competitive context. Every later step reads from this file.", "url": "https://soulcraftagency.com/#method" },
+    { "@type": "HowToStep", "position": 2, "name": "Baseline the answers", "text": "Ask the engines the questions buyers actually ask, and record whether the brand is named, which sources are cited, and how much of the answer belongs to competitors.", "url": "https://soulcraftagency.com/#method" },
+    { "@type": "HowToStep", "position": 3, "name": "Make the site legible to machines", "text": "Add schema markup, llms.txt, a published entity map, clean heading structure, and descriptive alt text, so answer engines can parse and cite the site.", "url": "https://soulcraftagency.com/#method" },
+    { "@type": "HowToStep", "position": 4, "name": "Publish the answers", "text": "Write pages that respond directly to those questions, in the brand voice, with definitions and comparisons placed up front where models extract them.", "url": "https://soulcraftagency.com/#method" },
+    { "@type": "HowToStep", "position": 5, "name": "Earn citations, then measure the lift", "text": "Pursue the sources these engines already trust, then re-run the baseline to report citation lift, days to first tracked citation, and share of voice against named competitors.", "url": "https://soulcraftagency.com/#method" }
+  ]
 }
 </script>
 
@@ -502,6 +559,23 @@ footer { padding: 48px 0; border-top: 1px solid var(--border); }
   .hero-report.visible { animation: none; }
   .scroll-hint { animation: none; opacity: 0.5; }
 }
+
+/* Method steps + comparison table */
+.method-steps { list-style: none; counter-reset: step; margin: 40px 0 0; padding: 0; }
+.method-steps li { counter-increment: step; position: relative; padding-left: 56px; margin-bottom: 32px; }
+.method-steps li:last-child { margin-bottom: 0; }
+.method-steps li::before { content: counter(step, decimal-leading-zero); position: absolute; left: 0; top: 2px; font-family: 'Playfair Display', serif; font-size: 20px; color: var(--accent); opacity: 0.8; }
+.method-steps h3 { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 400; color: var(--white); margin-bottom: 8px; line-height: 1.3; }
+.method-steps p { font-size: 16px; color: var(--muted); line-height: 1.8; margin: 0; }
+.compare-wrap { overflow-x: auto; margin-top: 40px; -webkit-overflow-scrolling: touch; }
+.compare-table { width: 100%; border-collapse: collapse; font-size: 15px; min-width: 560px; }
+.compare-table caption { text-align: left; font-size: 13px; color: var(--muted); padding-bottom: 16px; line-height: 1.6; }
+.compare-table th, .compare-table td { text-align: left; padding: 16px 20px; border-bottom: 1px solid var(--border); vertical-align: top; line-height: 1.6; }
+.compare-table thead th { font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 3px; color: var(--accent); }
+.compare-table tbody th { font-weight: 500; color: var(--text); width: 24%; }
+.compare-table td { color: var(--muted); }
+.compare-table td.sc { color: var(--text); background: var(--accent-dim); }
+@media (max-width: 768px) { .method-steps li { padding-left: 44px; } .compare-table th, .compare-table td { padding: 14px 16px; } }
 </style>
 <script type="text/javascript">     (function(c,l,a,r,i,t,y){         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};         t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);     })(window, document, "clarity", "script", "y0ez4omsj4"); </script>  
 </head>
@@ -725,6 +799,68 @@ footer { padding: 48px 0; border-top: 1px solid var(--border); }
   </div>
 </section>
 
+<!-- Method: how AI search optimization works, step by step -->
+<section class="narrative" id="method" style="border-top:1px solid var(--border);">
+  <div class="container">
+    <div class="narrative-block">
+      <div class="chapter-num">How It Works</div>
+      <h2>Five steps to AI search visibility.</h2>
+      <p><strong>AI search optimization is the practice of getting a brand named and cited when people ask an AI assistant a question instead of typing into a search box.</strong> It spans three overlapping disciplines: SEO for ranked results, answer engine optimization (AEO) for direct answers, and generative engine optimization (GEO) for systems like ChatGPT, Claude, Gemini, Perplexity, and Google AI Overviews.</p>
+      <p>It is a method, not a mystery. Here is what we do, in order, on every engagement.</p>
+      <ol class="method-steps">
+        <li>
+          <h3>Map the identity</h3>
+          <p>We build your soul.md: voice, values, positioning, audience, competitive context. Every later step reads from this file, which is what keeps the output sounding like you instead of like the category.</p>
+        </li>
+        <li>
+          <h3>Baseline the answers</h3>
+          <p>We ask the engines the questions your buyers actually ask, then record what comes back: whether you are named, which sources get cited, and how much of the answer belongs to competitors. That baseline is what every later claim gets measured against.</p>
+        </li>
+        <li>
+          <h3>Make the site legible to machines</h3>
+          <p>Schema markup, llms.txt, a published entity map, clean heading structure, descriptive alt text. An answer engine cannot cite what it cannot parse, and most sites fail here before they fail on content.</p>
+        </li>
+        <li>
+          <h3>Publish the answers</h3>
+          <p>We write the pages that respond directly to those questions, in your voice, with definitions and comparisons up front where models extract them. Depth beats volume: one page that answers a question completely does more than ten that circle it.</p>
+        </li>
+        <li>
+          <h3>Earn citations, then measure the lift</h3>
+          <p>We pursue the sources these engines already trust, then re-run the baseline. You see citation lift, days to first tracked citation, and share of voice against the competitors you named, with the method shown next to the numbers.</p>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- Contrast: Soulcraft vs a traditional SEO agency -->
+<section class="narrative" id="vs-traditional" style="border-top:1px solid var(--border);">
+  <div class="container">
+    <div class="narrative-block" style="max-width:880px;">
+      <div class="chapter-num">The Difference</div>
+      <h2>How this differs from a traditional SEO agency.</h2>
+      <p>Traditional SEO is not wrong. It is aimed at a surface that is losing share. The gap shows up in seven places.</p>
+      <div class="compare-wrap">
+        <table class="compare-table">
+          <caption>A traditional SEO agency compared with Soulcraft's agentic approach, across seven dimensions.</caption>
+          <thead>
+            <tr><th scope="col">Dimension</th><th scope="col">Traditional SEO agency</th><th scope="col">Soulcraft</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">What you buy</th><td>Human hours, billed monthly</td><td class="sc">Autonomous systems that run continuously</td></tr>
+            <tr><th scope="row">Surface optimized</th><td>Google's ranked links</td><td class="sc">Google plus ChatGPT, Claude, Gemini, Perplexity, and AI Overviews</td></tr>
+            <tr><th scope="row">Measure of success</th><td>Keyword rankings and sessions</td><td class="sc">Citations, share of voice in AI answers, and qualified demand</td></tr>
+            <tr><th scope="row">How content is made</th><td>Briefs, writers, review cycles</td><td class="sc">Agents working from your soul.md, edited by humans</td></tr>
+            <tr><th scope="row">Where identity lives</th><td>A slide deck nobody reopens</td><td class="sc">A structured file the systems read on every run</td></tr>
+            <tr><th scope="row">Behavior at scale</th><td>Cost rises with headcount</td><td class="sc">Output compounds while cost stays flat</td></tr>
+            <tr><th scope="row">Reporting</th><td>A monthly deck of rankings</td><td class="sc">Instrumented from day one, with the method published</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- Proof -->
 <section class="capabilities" id="proof" style="border-top:1px solid var(--border);">
   <div class="container">
@@ -836,6 +972,11 @@ footer { padding: 48px 0; border-top: 1px solid var(--border); }
       <p><strong>What does agentic marketing mean?</strong> Agentic means the systems act autonomously. They don't wait for instructions. They produce content, optimize search presence, distribute across channels, and learn from performance data, all on their own, guided by your soul.md identity file. You set the direction. The agents do the work.</p>
       <p><strong>What is AI advertising?</strong> Platforms like ChatGPT and Perplexity are beginning to offer advertising placements. Soulcraft connects your product feeds to these services so your offerings appear when users ask relevant questions. It's an emerging channel with significant first mover advantage, and we are already building the infrastructure to place our clients there.</p>
       <p><strong>How much does Soulcraft cost?</strong> The core engagement is five thousand dollars per month. That covers a content engine and hub, AI visibility and share of voice monitoring, technical SEO auditing and website advisory, weekly reporting and strategy, weekly calls with Slack in between, and ideation on PR and thought leadership. Two add-ons run twenty five hundred dollars per month each and can be added or dropped month to month. The Distribution Engine tailors and posts each piece across LinkedIn, Medium, Reddit, Substack, and X. The Citation Engine handles outreach to Wikipedia, directories, and industry publications. No long term contracts. No hidden fees. No overhead passed to you.</p>
+      <p><strong>How is AI search different from traditional search?</strong> Traditional search returns a ranked list of links and lets the person choose. AI search returns one composed answer and names a few sources inside it. That changes the goal: you are no longer competing for position three, you are competing to be the source the model quotes. A page can rank well on Google and still be invisible inside ChatGPT, Claude, Gemini, or Perplexity, because those systems select for parseable structure and clear, citable claims, not for links alone.</p>
+      <p><strong>How long does it take to show up in AI answers?</strong> Technical legibility moves fastest: schema, llms.txt, and entity data can be re-crawled within days. Content and citations take longer, usually one to three months before a new page is reliably pulled into answers, because the engines need to encounter it in enough places to trust it. Soulcraft tracks days to first tracked citation on every engagement, so the timeline is a measured number rather than a promise.</p>
+      <p><strong>Which AI platforms does Soulcraft optimize for?</strong> ChatGPT, Claude, Gemini, Perplexity, and Google AI Overviews, alongside traditional Google and Bing results. Soulcraft monitors each one separately, because they cite different sources and disagree more often than people expect. A brand can hold strong share of voice in Perplexity and be absent from ChatGPT on the same question.</p>
+      <p><strong>How do you measure AI search visibility?</strong> Three numbers, tracked from day one: citation lift across AI engines, days to first tracked citation, and share of voice against the competitors you name. Soulcraft runs the same prompt set on a fixed schedule so the comparison stays honest, and publishes the method alongside the results. Soulcraft does not report estimates. <a href="/learn/how-to-measure-ai-search-visibility/">See how we measure AI visibility</a>.</p>
+      <p><strong>Does AI search replace SEO, or do we need both?</strong> Both, for now. The technical foundations overlap almost entirely: clean structure, fast pages, accurate schema, and real authority help in both places. What differs is the target. Traditional SEO competes for a click; answer engine optimization competes to be the cited source inside an answer that may never produce a click. Teams that drop SEO to chase AI visibility usually lose the crawl quality that AI visibility depends on.</p>
     </div>
   </div>
 </section>
