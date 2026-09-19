@@ -13,7 +13,7 @@
 <meta name="twitter:title" content="Soulcraft - SEO and AEO with soul." />
 <meta name="twitter:description" content="We help you get recommended and discovered by AI." />
 <meta name="twitter:image" content="https://soulcraftagency.com/soulcraft-og.png" />
-<meta name="description" content="Soulcraft's identity and AEO knowledge domain published as a conformant Open Knowledge Format v0.1 bundle, with an interactive graph and a downloadable tarball.">
+<meta name="description" content="Soulcraft's identity and AEO knowledge domain, published as a conformant Open Knowledge Format v0.1 bundle with a graph and a downloadable tarball.">
 <link rel="canonical" href="https://soulcraftagency.com/okf/">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.30.2/cytoscape.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
@@ -63,6 +63,81 @@
   .srcdoc pre{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto;font-size:12.5px;line-height:1.5;color:#d8d8de;white-space:pre-wrap}
   @media (max-width:860px){#app{grid-template-columns:1fr;grid-template-rows:auto 55vh 1fr}#side{border-left:none;border-top:1px solid var(--line)}}
 </style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://soulcraftagency.com/#evan-drake",
+      "name": "Evan Drake",
+      "jobTitle": "Founder",
+      "url": "https://soulcraftagency.com/about/",
+      "sameAs": [
+        "https://www.linkedin.com/in/iamevandrake/",
+        "https://x.com/iamevandrake",
+        "https://github.com/iamevandrake"
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://soulcraftagency.com/#organization",
+      "name": "Soulcraft",
+      "url": "https://soulcraftagency.com",
+      "sameAs": [
+        "https://www.linkedin.com/company/112723961/",
+        "https://www.designrush.com/agency/profile/soulcraft",
+        "https://www.wikidata.org/wiki/Q139981209"
+      ],
+      "founder": {
+        "@id": "https://soulcraftagency.com/#evan-drake"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://soulcraftagency.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Knowledge Bundle",
+          "item": "https://soulcraftagency.com/okf/"
+        }
+      ]
+    },
+    {
+      "@type": "Dataset",
+      "@id": "https://soulcraftagency.com/okf/#dataset",
+      "name": "Soulcraft Knowledge Bundle (Open Knowledge Format v0.1)",
+      "description": "Soulcraft's identity and answer engine optimization knowledge domain, published as a conformant Open Knowledge Format v0.1 bundle.",
+      "url": "https://soulcraftagency.com/okf/",
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "creator": {
+        "@id": "https://soulcraftagency.com/#organization"
+      },
+      "publisher": {
+        "@id": "https://soulcraftagency.com/#organization"
+      },
+      "encodingFormat": [
+        "text/markdown",
+        "application/gzip"
+      ],
+      "distribution": {
+        "@type": "DataDownload",
+        "encodingFormat": "application/gzip",
+        "contentUrl": "https://soulcraftagency.com/okf/soulcraft-okf-v0.1.tar.gz",
+        "name": "soulcraft-okf-v0.1.tar.gz"
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <div id="app">
