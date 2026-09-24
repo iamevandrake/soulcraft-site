@@ -27,9 +27,11 @@ duplication that consolidation removed:
   exists, extend it instead of publishing a near-duplicate. The four consolidated
   clusters are: AI search measurement, answer engine optimization, agentic marketing,
   and agency selection.
-- **Never publish self-ranking listicles** ("best X", "top X ranked") where Soulcraft
-  is a candidate. Comparison content is allowed only when Soulcraft can lose categories
-  and the methodology is stated on-page.
+- **Self-ranking listicles** ("best X", "top X ranked") where Soulcraft is a candidate are
+  allowed only when the ranking comes from a rubric locked before scoring, applied identically
+  to every candidate, with the rubric, method and raw data published on-page, a disclosure that
+  Soulcraft is the publisher, and the categories where Soulcraft lost points stated. See
+  `_ops/ai-readiness-audit/` for the reference implementation. Never tune weights after seeing results.
 - **`sitemap.xml` lists live, indexable URLs only.** Redirect stubs carry
   `sitemap: false`. Never add a redirecting or noindexed URL to the sitemap.
 

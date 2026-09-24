@@ -12,7 +12,7 @@ schema_markup: '{"@context":"https://schema.org","@type":"Article","headline":"H
 
 The AEO agency market is young, crowded, and full of positioning that outpaces capability. Everyone has added AI search to their services page. Very few have built the internal systems to deliver it well, and from the outside the two groups look nearly identical.
 
-You may notice the web is full of "top AEO agencies" rankings that resolve this for you. Most are published by an agency that happens to sit at #1, which is a format worth distrusting on sight, including when the publisher is us. What works better is a scorecard you fill in yourself.
+You may notice the web is full of "top AEO agencies" rankings that resolve this for you. Most are published by an agency that happens to sit at #1, so ask how the ranking was scored before you trust it, including when the publisher is us. (Our own ranking, [the AI-readiness audit of 24 AEO agencies](/learn/best-aeo-agencies-ai-readiness/), publishes its rubric and raw data for that reason.) What works better still is a scorecard you fill in yourself.
 
 Score each agency you're considering from 1 to 5 on the five criteria below. The descriptions tell you what the extremes look like, and each criterion comes with the questions that reveal the real score. By the end you'll have a number, but more importantly you'll have watched how each agency answers under specific questioning, which tells you most of what the number can't.
 
