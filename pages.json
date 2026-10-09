@@ -1,7 +1,7 @@
 {
   "version": "1.0",
   "site": "https://soulcraftagency.com",
-  "lastUpdated": "2026-07-31",
+  "lastUpdated": "2026-10-09",
   "pages": [
     {
       "slug": "solutions/agentic-seo",
@@ -55,6 +55,24 @@
       "updatedAt": "2026-07-31",
       "wordCount": 300,
       "url": "https://soulcraftagency.com/tools/"
+    },
+    {
+      "slug": "learn/seo-means-superintelligence-engine-optimization",
+      "title": "SEO Now Means Superintelligence Engine Optimization",
+      "description": "The White House renamed AI to Super Intelligence. Evan Drake argues the search industry should retire AEO and GEO and call the work SEO again, with the S standing for something new.",
+      "type": "learn",
+      "contentType": "Perspective",
+      "primaryKeyword": "superintelligence engine optimization",
+      "secondaryKeywords": [
+        "super intelligence engine optimization",
+        "SEO meaning 2026",
+        "AEO vs GEO vs SEO",
+        "super intelligence executive order"
+      ],
+      "createdAt": "2026-10-09",
+      "updatedAt": "2026-10-09",
+      "wordCount": 1550,
+      "url": "https://soulcraftagency.com/learn/seo-means-superintelligence-engine-optimization/"
     }
   ]
 }

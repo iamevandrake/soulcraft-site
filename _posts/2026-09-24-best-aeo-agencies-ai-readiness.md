@@ -3,6 +3,7 @@ layout: post
 title: "Best AEO Agencies in 2026, Ranked by AI-Readiness"
 description: "We audited 24 AEO and GEO agencies' own websites for crawler access, schema, entity markup, sitemaps and speed. Soulcraft scored 96/100. Full data inside."
 date: 2026-09-24
+last_modified_at: 2026-10-09
 category: learn
 content_type: Research
 keywords: "best AEO agencies, best GEO agencies, AEO agency ranking 2026, AI-readiness audit, most AI-ready agency websites, generative engine optimization agencies"
@@ -169,7 +170,7 @@ The full rubric, the audit script and the raw results for every site are publish
 
 ## How to use this ranking
 
-A high score here tells you an agency's own site is built the way it says yours should be. That's worth knowing: an agency whose homepage doesn't identify its own founder to AI systems may not prioritise that work for you. But it's a floor, not a verdict. Ask any agency you're considering to walk you through its own structured data, then ask the harder questions in [our AEO agency scorecard](/learn/how-to-evaluate-an-aeo-agency/): how it measures AI visibility, what it changed for a client and what moved as a result. If you want to see how your own site reads to AI, [run the free AI visibility check](/tools/ai-visibility-check/).
+A high score here tells you an agency's own site is built the way it says yours should be, whether it calls the work AEO, GEO or, as we now do, [Superintelligence Engine Optimization](/learn/seo-means-superintelligence-engine-optimization/). That's worth knowing: an agency whose homepage doesn't identify its own founder to AI systems may not prioritise that work for you. But it's a floor, not a verdict. Ask any agency you're considering to walk you through its own structured data, then ask the harder questions in [our AEO agency scorecard](/learn/how-to-evaluate-an-aeo-agency/): how it measures AI visibility, what it changed for a client and what moved as a result. If you want to see how your own site reads to AI, [run the free AI visibility check](/tools/ai-visibility-check/).
 
 ## Frequently asked questions
 

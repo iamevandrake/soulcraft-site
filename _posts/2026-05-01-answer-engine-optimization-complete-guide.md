@@ -3,7 +3,7 @@ layout: post
 title: "Answer Engine Optimization: The Complete 2026 Guide"
 description: "What AEO is, how AI systems decide what to surface, the four-layer strategy that works, how it differs from SEO and GEO, and the shortcuts that will cost you."
 date: 2026-05-01
-last_modified_at: 2026-07-30
+last_modified_at: 2026-10-09
 category: learn
 content_type: Guide
 keywords: "answer engine optimization, AEO guide, AEO strategy 2026, GEO generative engine optimization, how to rank in AI search, ChatGPT SEO, AEO vs SEO, AI search optimization, LLM optimization"
@@ -16,6 +16,8 @@ Someone in your market just asked an AI which company solves their problem. It a
 You were either in that answer or you were not. There was no page two to be on.
 
 That is the whole of answer engine optimization, and it is why the discipline exists as something separate from search engine optimization. This guide covers what AEO is, how these systems actually decide what to surface, the strategy that works, how it relates to the neighbouring acronyms, and the shortcuts that will eventually cost you.
+
+*Update, October 2026: we now call this work Superintelligence Engine Optimization, or simply SEO, following the US government's rename of AI to Super Intelligence. [Here's why.](/learn/seo-means-superintelligence-engine-optimization/) This guide keeps the AEO terminology because it's what the industry still searches for.*
 
 ## What AEO is
 

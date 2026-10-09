@@ -3,6 +3,7 @@ layout: post
 title: "How to Evaluate an AEO Agency: A Scorecard"
 description: "A scoring framework for evaluating answer engine optimization agencies. Five criteria, what a 1 and a 5 look like on each, and the questions that reveal the score."
 date: 2026-05-01
+last_modified_at: 2026-10-09
 category: learn
 content_type: Guide
 keywords: "AEO agency evaluation criteria, AEO agency scorecard, how to evaluate an answer engine optimization agency, AEO agency comparison framework"
@@ -10,7 +11,7 @@ permalink: /learn/how-to-evaluate-an-aeo-agency/
 schema_markup: '{"@context":"https://schema.org","@type":"Article","headline":"How to Evaluate an AEO Agency: A Five-Criteria Scorecard","description":"A scoring framework for evaluating answer engine optimization agencies across AI-nativeness, strategy depth, measurement capability, content quality, and fit.","author":{"@type":"Person","name":"Evan Drake"},"datePublished":"2026-05-01","dateModified":"2026-06-11","publisher":{"@type":"Organization","name":"Soulcraft","url":"https://soulcraftagency.com"}}'
 ---
 
-The AEO agency market is young, crowded, and full of positioning that outpaces capability. Everyone has added AI search to their services page. Very few have built the internal systems to deliver it well, and from the outside the two groups look nearly identical.
+The AEO agency market is young, crowded, and full of positioning that outpaces capability. Everyone has added AI search to their services page. Very few have built the internal systems to deliver it well, and from the outside the two groups look nearly identical. (And whatever the agency calls it, AEO, GEO or [Superintelligence Engine Optimization](/learn/seo-means-superintelligence-engine-optimization/), the criteria below are the same.)
 
 You may notice the web is full of "top AEO agencies" rankings that resolve this for you. Most are published by an agency that happens to sit at #1, so ask how the ranking was scored before you trust it, including when the publisher is us. (Our own ranking, [the AI-readiness audit of 24 AEO agencies](/learn/best-aeo-agencies-ai-readiness/), publishes its rubric and raw data for that reason.) What works better still is a scorecard you fill in yourself.
 

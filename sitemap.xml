@@ -38,9 +38,15 @@
   </url>
   <url>
     <loc>https://soulcraftagency.com/learn/</loc>
-    <lastmod>2026-09-19</lastmod>
+    <lastmod>2026-10-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://soulcraftagency.com/learn/seo-means-superintelligence-engine-optimization/</loc>
+    <lastmod>2026-10-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://soulcraftagency.com/learn/agent-ready-infrastructure/</loc>
