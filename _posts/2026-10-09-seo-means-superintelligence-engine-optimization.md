@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "SEO Now Means Superintelligence Engine Optimization"
-description: "The White House renamed AI to Super Intelligence. Evan Drake argues the search industry should retire AEO and GEO and call the work SEO again, with the S standing for something new."
+description: "The White House renamed AI to Super Intelligence. I argue the search industry should retire AEO and GEO and call the work SEO again, with the S standing for something new."
 date: 2026-10-09
 category: learn
 content_type: Perspective
