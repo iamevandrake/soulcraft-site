@@ -17,7 +17,7 @@ is sitting on stub pages instead of consolidating into `/learn/` and `/services/
 
 ## Files
 
-- `cloudflare-bulk-redirects.csv` — 35 rows, ready to upload. 29 exact mappings
+- `cloudflare-bulk-redirects.csv` — 38 rows, ready to upload. 32 exact mappings
   (one per retired URL, generated from the stub front matter) plus 6 subpath
   catch-alls. No header row — Cloudflare requires none.
   Columns: `SOURCE,TARGET,STATUS,PRESERVE_QUERY_STRING,INCLUDE_SUBDOMAINS,SUBPATH_MATCHING,PRESERVE_PATH_SUFFIX`
