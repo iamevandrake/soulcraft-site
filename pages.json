@@ -4,23 +4,22 @@
   "lastUpdated": "2026-10-09",
   "pages": [
     {
-      "slug": "solutions/agentic-seo",
-      "title": "Agentic SEO: Autonomous Search Optimization",
-      "description": "Agentic SEO deploys autonomous AI agents to research, create, and optimize your search presence across Google, AI Overviews, and generative engines.",
-      "type": "solution",
-      "primaryKeyword": "agentic SEO",
+      "slug": "services/seo",
+      "title": "SEO for the Superintelligence Era, Handcrafted",
+      "description": "Handcrafted SEO that earns rankings in Google and citations in ChatGPT, Claude, Gemini and Perplexity. One senior practitioner, AI for leverage, your identity at the center.",
+      "type": "service",
+      "primaryKeyword": "handcrafted SEO",
       "secondaryKeywords": [
-        "AI SEO",
-        "generative engine optimization",
+        "superintelligence engine optimization",
+        "SEO agency",
+        "AEO",
         "GEO",
-        "AIO",
-        "AI-powered search optimization",
-        "agentic marketing"
+        "AI search optimization"
       ],
       "createdAt": "2026-03-05",
-      "updatedAt": "2026-03-05",
+      "updatedAt": "2026-10-09",
       "wordCount": 2100,
-      "url": "https://soulcraftagency.com/services/agentic-seo/"
+      "url": "https://soulcraftagency.com/services/seo/"
     },
     {
       "slug": "tools/ai-visibility-check",
