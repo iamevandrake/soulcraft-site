@@ -11,7 +11,7 @@ PAGES = ['index.html', 'about/index.html', 'brand/index.html', 'contact/index.ht
          'developers/index.html', 'learn/index.html', 'media/index.html', 'notslop/index.html',
          'services/index.html', 'services/seo/index.html', 'sitemap/index.html',
          'tools/index.html', 'tools/ai-visibility-check/index.html',
-         'case-studies/axonis/index.html', 'case-studies/us-sports-camps/index.html', '_layouts/post.html']
+         'case-studies/index.html', 'case-studies/axonis/index.html', 'case-studies/us-sports-camps/index.html', '_layouts/post.html']
 block_re = re.compile(r'(<!-- SITE FOOTER:.*?<!-- /SITE FOOTER -->|<footer\b.*?</footer>)', re.S)
 for rel in PAGES:
     p = root / rel
