@@ -366,17 +366,16 @@ nav .container { display: flex; align-items: center; justify-content: space-betw
 .chapter-num { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 4px; color: var(--accent); margin-bottom: 32px; opacity: 0.7; }
 
 /* Opening hero */
-.opening { min-height: 100vh; min-height: 100svh; display: flex; align-items: center; justify-content: center; text-align: center; padding-top: 100px; position: relative; }
-.opening::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 200px; background: linear-gradient(transparent, var(--black)); pointer-events: none; }
-.opening-inner { max-width: 700px; position: relative; z-index: 1; }
+.opening { display: flex; align-items: center; justify-content: center; text-align: center; padding: 152px 0 40px; position: relative; }
+.opening::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 80px; background: linear-gradient(transparent, var(--black)); pointer-events: none; }
+.opening-inner { max-width: 940px; position: relative; z-index: 1; }
 .opening h1 { font-family: 'Playfair Display', serif; font-size: clamp(36px, 6.4vw, 70px); line-height: 1.08; color: var(--white); margin-bottom: 20px; font-weight: 400; }
 .opening h1 em { font-style: normal; color: var(--color-accent); font-weight: 700; }
-.opening .hero-sub { font-size: 20px; color: var(--muted); margin-bottom: 40px; line-height: 1.8; font-weight: 300; }
+.opening .hero-sub { font-size: 20px; color: var(--muted); margin: 0 auto; max-width: 640px; line-height: 1.8; font-weight: 300; }
 
 
 @media (max-width: 768px) {
 }
-.scroll-hint { font-size: 12px; color: var(--color-muted); text-transform: uppercase; letter-spacing: 3px; animation: pulse 2s infinite; margin-top: 48px; }
 @keyframes pulse { 0%, 100% { opacity: 0.3; } 50% { opacity: 0.8; } }
 
 /* Analysis loading state */
@@ -398,7 +397,7 @@ nav .container { display: flex; align-items: center; justify-content: space-betw
 .narrative-block .highlight { color: var(--accent); font-weight: 500; }
 
 /* Capabilities */
-.client-strip { background: var(--black); padding: 56px 0 64px; border-bottom: 1px solid var(--border); }
+.client-strip { background: var(--black); padding: 32px 0 64px; border-bottom: 1px solid var(--border); }
 .client-strip .chapter-num { text-align: center; margin-bottom: 28px; }
 .client-logos { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 24px 52px; }
 .client-logos a { display: inline-flex; align-items: center; opacity: 0.8; transition: opacity var(--dur-mid) var(--ease-out); }
@@ -506,9 +505,9 @@ footer { padding: 48px 0; border-top: 1px solid var(--border); }
 .nav-drawer .nav-cta-btn { background: var(--accent); color: var(--black) !important; border-radius: 8px; text-align: center; font-weight: 600; padding: 14px; border-bottom: none; }
 
 @media (max-width: 768px) {
-  .opening { padding-top: 88px; }
+  .opening { padding: 112px 0 24px; }
   .opening h1 { margin-bottom: 14px; }
-  .opening .hero-sub { font-size: 15px; line-height: 1.55; margin-bottom: 20px; }
+  .opening .hero-sub { font-size: 15px; line-height: 1.55; }
   .nav-right { display: none; }
   .nav-burger { display: flex; }
   .cap-grid, .tiers, .tiers-split { grid-template-columns: 1fr; }
@@ -527,7 +526,6 @@ footer { padding: 48px 0; border-top: 1px solid var(--border); }
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
   }
-  .scroll-hint { animation: none; opacity: 0.5; }
 }
 
 /* Method steps + comparison table */
@@ -589,7 +587,6 @@ footer { padding: 48px 0; border-top: 1px solid var(--border); }
     <h1>We grow your business by optimizing it for <em>Google and ChatGPT.</em></h1>
     <p class="hero-sub">Soulcraft is an SEO agency that puts you in the answers your customers are looking for.</p>
 
-    <div class="scroll-hint">Scroll to explore</div>
   </div>
 </section>
 
