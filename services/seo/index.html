@@ -272,6 +272,14 @@ nav .container { display: flex; align-items: center; justify-content: space-betw
 
 /* Divider */
 .divider { height: 1px; background: var(--border); margin: 0; }
+/* Client pull-quote (full testimonial lives on the case study page) */
+.pullquote { max-width: 760px; margin-top: 32px; padding: 26px 30px; background: var(--color-surface, #fff); border: 1px solid var(--border); border-left: 3px solid var(--color-accent-line, #c9a27a); border-radius: 0 6px 6px 0; }
+.pullquote blockquote { margin: 0; }
+.pullquote blockquote p { font-family: 'Playfair Display', Georgia, serif; font-size: 19px; line-height: 1.6; color: var(--white); max-width: none; margin: 0; }
+.pullquote figcaption { display: flex; align-items: center; gap: 14px; margin-top: 18px; font-size: 13.5px; line-height: 1.5; color: var(--muted); }
+.pullquote figcaption img { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+.pullquote figcaption strong { display: block; color: var(--white); font-weight: 600; }
+.pullquote figcaption a { color: var(--accent); }
 
 /* Sections */
 .section { padding: 80px 0; }
@@ -453,6 +461,27 @@ footer { padding: 48px 0; border-top: 1px solid var(--border); }
     <h2>Why <em>handcrafted</em></h2>
     <p>Most AI-powered SEO is a volume play: generate hundreds of pages, publish, hope. The engines have learned to recognize it, and so have your customers. What gets cited is work that demonstrates experience, expertise, authority and trust, and that doesn't come out of a pipeline. It comes from someone who understands your market, reads every draft, checks every claim and puts their name on the result.</p>
     <p>That's how Soulcraft works. AI does what it's good at: research at scale, first drafts, technical audits, monitoring hundreds of prompts across engines. A practitioner does what only a practitioner can: decide what's worth saying, write it so it sounds like you, and stand behind it. Fewer pages. Better pages. Pages that earn their place in the answer.</p>
+  </section>
+
+  <div class="container"><div class="divider"></div></div>
+
+  <!-- Proof -->
+  <section class="section container reveal">
+    <p class="section-label">Proof</p>
+    <h2>What it looks like <em>when it works</em></h2>
+    <p>Axonis came out of stealth in April 2026 with eight referring domains, a site health score of 11 and no idea how AI assistants described it. Six months later it has 374 referring domains, a site health score of 92, and axonis.ai is cited in 73.7% of AI answers about the company. The figures, the method and the caveats are in the <a href="/case-studies/axonis/">Axonis case study</a>.</p>
+      <figure class="pullquote">
+        <blockquote cite="https://soulcraftagency.com/case-studies/axonis/#testimonial">
+          <p>&ldquo;He rebuilt our site&rsquo;s technical foundation, grew our referring domains from 8 to more than 370, and made axonis.ai the source AI assistants cite when buyers ask about us.&rdquo;</p>
+        </blockquote>
+        <figcaption>
+          <picture>
+            <source srcset="/images/evan-whelchel-cro-axonis.webp" type="image/webp">
+            <img src="/images/evan-whelchel-cro-axonis.jpg" alt="Evan Whelchel, Chief Revenue Officer at Axonis" width="320" height="320" loading="lazy" decoding="async">
+          </picture>
+          <div><strong>Evan Whelchel</strong>Chief Revenue Officer, Axonis &middot; <a href="/case-studies/axonis/">Read the Axonis case study</a></div>
+        </figcaption>
+      </figure>
   </section>
 
   <div class="container"><div class="divider"></div></div>
@@ -655,7 +684,8 @@ footer.sf-footer { padding: 64px 0 36px; border-top: 1px solid var(--color-rule,
         <ul>
           <li><a href="/services/">Services</a></li>
           <li><a href="/#investment">Pricing</a></li>
-          <li><a href="/case-studies/us-sports-camps/">Case study</a></li>
+          <li><a href="/case-studies/axonis/">Axonis case study</a></li>
+          <li><a href="/case-studies/us-sports-camps/">US Sports Camps case study</a></li>
           <li><a href="/contact/">Contact</a></li>
         </ul>
       </div>

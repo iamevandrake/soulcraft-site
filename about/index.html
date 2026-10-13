@@ -254,6 +254,15 @@ nav .container { display: flex; align-items: center; justify-content: space-betw
 .clients a { font-size: 14px; padding: 8px 16px; border: 1px solid var(--border); border-radius: 100px; color: var(--text); transition: 0.2s; }
 .clients a:hover { border-color: var(--accent); color: var(--accent); }
 
+/* Client pull-quote (full testimonial lives on the case study page) */
+.pullquote { max-width: 760px; margin-top: 32px; padding: 26px 30px; background: var(--color-surface, #fff); border: 1px solid var(--border); border-left: 3px solid var(--color-accent-line, #c9a27a); border-radius: 0 6px 6px 0; }
+.pullquote blockquote { margin: 0; }
+.pullquote blockquote p { font-family: 'Playfair Display', Georgia, serif; font-size: 19px; line-height: 1.6; color: var(--white); max-width: none; margin: 0; }
+.pullquote figcaption { display: flex; align-items: center; gap: 14px; margin-top: 18px; font-size: 13.5px; line-height: 1.5; color: var(--muted); }
+.pullquote figcaption img { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+.pullquote figcaption strong { display: block; color: var(--white); font-weight: 600; }
+.pullquote figcaption a { color: var(--accent); }
+
 /* Method */
 .method { max-width: 760px; counter-reset: step; }
 .method-item { display: grid; grid-template-columns: 40px 1fr; gap: 20px; padding: 18px 0; }
@@ -462,16 +471,28 @@ footer { padding: 48px 0; border-top: 1px solid var(--border); }
       <div class="section-label">Who we work with</div>
       <h2>A small list, on purpose.</h2>
       <div class="clients" style="margin-top:24px">
-        <a href="https://www.axonis.ai/" rel="noopener" target="_blank">Axonis</a>
+        <a href="/case-studies/axonis/">Axonis</a>
         <a href="https://www.deepbook.tech/" rel="noopener" target="_blank">DeepBook</a>
         <a href="https://ironweave.io/" rel="noopener" target="_blank">IronWeave</a>
         <a href="https://www.sui.io/" rel="noopener" target="_blank">Sui</a>
-        <a href="https://www.ussportscamps.com/" rel="noopener" target="_blank">US Sports Camps</a>
+        <a href="/case-studies/us-sports-camps/">US Sports Camps</a>
         <a href="https://www.safesplash.com/" rel="noopener" target="_blank">SafeSplash Swim School</a>
         <a href="https://petpartners.org/" rel="noopener" target="_blank">Pet Partners</a>
         <a href="https://www.clarios.com/" rel="noopener" target="_blank">Clarios</a>
       </div>
-      <!-- TODO(evan): once the case study pages exist, link each client name to its case study instead of to the client's homepage. That is the single biggest upgrade available to this section. -->
+      <!-- Axonis and US Sports Camps link to their case studies; the rest link to the client homepage until a case study exists. -->
+      <figure class="pullquote">
+        <blockquote cite="https://soulcraftagency.com/case-studies/axonis/#testimonial">
+          <p>&ldquo;Axonis had just come out of stealth with almost no search footprint and no idea how AI assistants were describing us. Evan Drake changed that.&rdquo;</p>
+        </blockquote>
+        <figcaption>
+          <picture>
+            <source srcset="/images/evan-whelchel-cro-axonis.webp" type="image/webp">
+            <img src="/images/evan-whelchel-cro-axonis.jpg" alt="Evan Whelchel, Chief Revenue Officer at Axonis" width="320" height="320" loading="lazy" decoding="async">
+          </picture>
+          <div><strong>Evan Whelchel</strong>Chief Revenue Officer, Axonis &middot; <a href="/case-studies/axonis/">Read the Axonis case study</a></div>
+        </figcaption>
+      </figure>
     </section>
 
   </div>
@@ -536,7 +557,8 @@ footer.sf-footer { padding: 64px 0 36px; border-top: 1px solid var(--color-rule,
         <ul>
           <li><a href="/services/">Services</a></li>
           <li><a href="/#investment">Pricing</a></li>
-          <li><a href="/case-studies/us-sports-camps/">Case study</a></li>
+          <li><a href="/case-studies/axonis/">Axonis case study</a></li>
+          <li><a href="/case-studies/us-sports-camps/">US Sports Camps case study</a></li>
           <li><a href="/contact/">Contact</a></li>
         </ul>
       </div>
