@@ -198,7 +198,7 @@
       "entityId": "e_006",
       "@type": "Service",
       "name": "AI Advertising",
-      "description": "Soulcraft's emerging-channel advertising service that places client products inside AI platforms such as ChatGPT and Perplexity by connecting product feeds to those services, so a brand's offerings surface when users ask relevant questions.",
+      "description": "Soulcraft's emerging-channel advertising service that places client products inside AI platforms such as ChatGPT by connecting product feeds to those services, so a brand's offerings surface when users ask relevant questions.",
       "status": "active",
       "audienceType": "general",
       "relations": [
@@ -211,7 +211,7 @@
       "hasChunks": [
         {
           "chunkId": "c_012",
-          "text": "Platforms like ChatGPT and Perplexity are beginning to offer advertising placements. Soulcraft connects your product feeds to these services so your offerings appear when users ask relevant questions.",
+          "text": "Platforms like ChatGPT are beginning to offer advertising placements. Soulcraft connects your product feeds to these services so your offerings appear when users ask relevant questions.",
           "sourceUrl": "https://soulcraftagency.com/",
           "pageTitle": "Soulcraft: SEO Agency for Google and ChatGPT | Bay Area",
           "publisher": "Soulcraft",
