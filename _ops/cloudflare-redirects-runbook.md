@@ -71,7 +71,7 @@ and no target is itself a redirect source (no chains).
    changing the global setting does not move them.
 
 9. **Search Console:** resubmit the sitemap and run URL Inspection on two or three
-   redirected URLs. Then re-run the AI Visibility Check against the domain.
+   redirected URLs.
 
 ## Constraints worth knowing
 

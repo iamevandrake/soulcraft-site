@@ -22,28 +22,9 @@
       "url": "https://soulcraftagency.com/services/seo/"
     },
     {
-      "slug": "tools/ai-visibility-check",
-      "title": "AI Visibility Check",
-      "description": "Free diagnostic. Enter your domain and see the real reasons AI search leaves you out: crawler blocks, blocked rendering, thin entity signals, unstructured answers.",
-      "type": "tool",
-      "primaryKeyword": "why is my website not showing up in AI search",
-      "secondaryKeywords": [
-        "AI visibility check",
-        "AI search audit",
-        "how to audit content for AI performance",
-        "GPTBot blocked",
-        "sitemap and robots.txt checker",
-        "AI crawler access"
-      ],
-      "createdAt": "2026-07-31",
-      "updatedAt": "2026-07-31",
-      "wordCount": 1600,
-      "url": "https://soulcraftagency.com/tools/ai-visibility-check/"
-    },
-    {
       "slug": "tools",
       "title": "Free Tools",
-      "description": "Free tools from Soulcraft. Check why your site is missing from AI answers, and claim human accountability for what you publish.",
+      "description": "Free tools from Soulcraft. Claim human accountability for what you publish.",
       "type": "index",
       "primaryKeyword": "free AI search tools",
       "secondaryKeywords": [

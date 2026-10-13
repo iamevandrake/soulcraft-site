@@ -130,7 +130,7 @@ The full rubric, the audit script and the raw results for every site are publish
 
 ## How to use this ranking
 
-A high score here tells you an agency's own site is built the way it says yours should be. That's worth knowing: an agency whose homepage doesn't identify its own founder to AI systems may not prioritise that work for you. But it's a floor, not a verdict. Ask any agency you're considering to walk you through its own structured data, then ask the harder questions in [our AEO agency scorecard](/learn/how-to-evaluate-an-aeo-agency/): how it measures AI visibility, what it changed for a client and what moved as a result. If you want to see how your own site reads to AI, [run the free AI visibility check](/tools/ai-visibility-check/).
+A high score here tells you an agency's own site is built the way it says yours should be. That's worth knowing: an agency whose homepage doesn't identify its own founder to AI systems may not prioritise that work for you. But it's a floor, not a verdict. Ask any agency you're considering to walk you through its own structured data, then ask the harder questions in [our AEO agency scorecard](/learn/how-to-evaluate-an-aeo-agency/): how it measures AI visibility, what it changed for a client and what moved as a result.
 
 ## Frequently asked questions
 

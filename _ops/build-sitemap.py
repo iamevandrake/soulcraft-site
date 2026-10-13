@@ -21,7 +21,7 @@ SKIP_DIRS = ('_to_delete', 'Claude outputs', 'case-studies', '_layouts', '_inclu
              'blog', '_posts', 'assets', 'images', '.git', '.claude', '_ops', '.well-known')
 
 PRIORITY = {"/": "1.0", "/services/": "0.9", "/about/": "0.9",
-            "/tools/ai-visibility-check/": "0.9", "/services/agentic-seo/": "0.8",
+            "/services/agentic-seo/": "0.8",
             "/learn/": "0.8", "/notslop/": "0.8", "/media/": "0.8", "/contact/": "0.7"}
 DEFAULT_PRIORITY = "0.7"
 
