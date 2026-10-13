@@ -6,7 +6,7 @@
     "url": "https://soulcraftagency.com",
     "sameAs": "https://www.wikidata.org/wiki/Q139981209"
   },
-  "generated": "2026-10-09T00:00:00Z",
+  "generated": "2026-10-13T00:00:00Z",
   "profile": "core",
   "verificationStatus": "self-declared",
   "entities": [
@@ -35,11 +35,6 @@
           "predicate": "OFFERS",
           "targetId": "e_006",
           "targetName": "AI Advertising"
-        },
-        {
-          "predicate": "OFFERS",
-          "targetId": "e_008",
-          "targetName": "Soul File Score"
         },
         {
           "predicate": "TARGETS",
@@ -263,40 +258,6 @@
           "retrieved": "2026-10-09T00:00:00Z",
           "contentType": "definition",
           "audienceType": "technical"
-        }
-      ]
-    },
-    {
-      "entityId": "e_008",
-      "@type": "Metric",
-      "name": "Soul File Score",
-      "alternateName": "Soul Report",
-      "description": "A free identity score Soulcraft generates for a domain, rating Identity Clarity, Voice Consistency, AI Readiness, and Content Signal, with tailored recommendations for how clearly AI systems can understand and represent a brand.",
-      "status": "active",
-      "audienceType": "general",
-      "relations": [
-        {
-          "predicate": "MEASURES",
-          "targetId": "e_002",
-          "targetName": "soul file",
-          "targetDescription": "How clearly a company's identity comes through and how well AI systems can understand and represent it."
-        },
-        {
-          "predicate": "DESCRIBED_BY",
-          "targetId": "e_001",
-          "targetName": "Soulcraft"
-        }
-      ],
-      "hasChunks": [
-        {
-          "chunkId": "c_015",
-          "text": "Enter your domain. Get your identity score. Free. Your full report includes 15+ tailored recommendations.",
-          "sourceUrl": "https://soulcraftagency.com/",
-          "pageTitle": "Soulcraft: SEO Agency for Google and ChatGPT | Bay Area",
-          "publisher": "Soulcraft",
-          "retrieved": "2026-10-09T00:00:00Z",
-          "contentType": "definition",
-          "audienceType": "general"
         }
       ]
     },

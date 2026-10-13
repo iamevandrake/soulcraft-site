@@ -28,7 +28,7 @@
 <meta name="twitter:image" content="https://soulcraftagency.com/soulcraft-og.png" />
 
 <title>Soulcraft: SEO Agency for Google and ChatGPT | Bay Area</title>
-<meta name="description" content="Handcrafted SEO for the superintelligence era, built on your identity. SEO, AEO, GEO, content, and AI search visibility from a practitioner, not a production line. Get your free soul file score.">
+<meta name="description" content="Handcrafted SEO for the superintelligence era, built on your identity. SEO, AEO, GEO, content, and AI search visibility from a practitioner, not a production line.">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
 <meta name="keywords" content="AIQ, AI quotient, handcrafted SEO, soul file, brand identity, SEO, AEO, GEO, AI optimization, Soulcraft, Evan Drake">
 <link rel="canonical" href="https://soulcraftagency.com/">
@@ -126,9 +126,9 @@
       "@id": "https://soulcraftagency.com/",
       "url": "https://soulcraftagency.com/",
       "name": "Soulcraft -- SEO With Soul",
-      "description": "Handcrafted SEO driven by your identity. Enter your domain and discover your soul file score.",
+      "description": "Soulcraft is an SEO agency that puts you in the answers your customers are looking for.",
       "datePublished": "2026-03-08",
-      "dateModified": "2026-09-13",
+      "dateModified": "2026-10-13",
       "speakable": {
         "@type": "SpeakableSpecification",
         "cssSelector": [".opening h1", ".opening .hero-sub", ".narrative-block h2", ".narrative-block p"]
@@ -373,48 +373,9 @@ nav .container { display: flex; align-items: center; justify-content: space-betw
 .opening h1 em { font-style: normal; color: var(--color-accent); font-weight: 700; }
 .opening .hero-sub { font-size: 20px; color: var(--muted); margin-bottom: 40px; line-height: 1.8; font-weight: 300; }
 
-/* Hero Soul Tool */
-.hero-soul-tool { max-width: 520px; margin: 0 auto; position: relative; }
-.hero-soul-tool::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 500px; height: 500px; background: radial-gradient(circle, var(--accent-glow) 0%, transparent 60%); pointer-events: none; opacity: 0.3; }
-.hero-domain-wrap { display: flex; gap: 10px; margin-bottom: 12px; position: relative; z-index: 1; }
-.hero-domain-input { flex: 1; padding: 18px 24px; background: var(--card); border: 1px solid var(--border); border-radius: 12px; color: var(--white); font-size: 17px; font-family: 'Playfair Display', serif; text-align: center; outline: none; transition: all 0.3s; letter-spacing: 0.5px; }
-.hero-domain-input:focus { border-color: var(--accent); box-shadow: 0 0 40px var(--accent-dim); }
-.hero-domain-input::placeholder { color: var(--color-muted); font-style: normal; }
-.hero-domain-btn { padding: 18px 28px; background: var(--accent); color: var(--black); border: none; border-radius: 12px; font-weight: 700; font-size: 15px; cursor: pointer; font-family: 'Inter', sans-serif; transition: all 0.3s; white-space: nowrap; position: relative; z-index: 1; }
-.hero-domain-btn:hover { background: var(--white); transform: translateY(-1px); }
-.hero-domain-btn:disabled { opacity: 0.7; cursor: not-allowed; transform: none; }
-.hero-tool-note { font-size: 12px; color: var(--color-muted); position: relative; z-index: 1; }
-.hero-tool-note strong { color: var(--accent); font-weight: 600; }
 
-/* Hero Report */
-.hero-report { display: none; max-width: 520px; margin: 28px auto 0; text-align: left; position: relative; z-index: 1; }
-.hero-report.visible { display: block; animation: revealUp 0.8s ease; }
-@keyframes revealUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
-.report-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 32px; }
-.report-title { font-family: 'Playfair Display', serif; font-size: 22px; color: var(--white); margin-bottom: 6px; }
-.report-subtitle { font-size: 12px; color: var(--muted); margin-bottom: 24px; }
-.soul-scores { display: flex; flex-direction: column; gap: 16px; margin-bottom: 24px; }
-.soul-score-row { display: flex; align-items: center; gap: 14px; }
-.soul-score-label { font-family: 'Playfair Display', serif; font-size: 13px; color: var(--text); width: 120px; flex-shrink: 0; position: relative; cursor: help; border-bottom: 1px dotted var(--muted); }
-.soul-score-label .score-tip { visibility: hidden; opacity: 0; position: absolute; bottom: calc(100% + 10px); left: 50%; transform: translateX(-50%); width: 260px; padding: 14px 16px; background: var(--card); border: 1px solid var(--accent); border-radius: 10px; font-family: 'Inter', sans-serif; font-size: 12px; color: var(--text); line-height: 1.6; z-index: 50; pointer-events: none; transition: opacity 0.2s, visibility 0.2s; box-shadow: 0 12px 28px -12px oklch(22% 0.014 60 / 0.3); }
-.soul-score-label .score-tip::after { content: ''; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); border: 6px solid transparent; border-top-color: var(--accent); }
-.soul-score-label:hover .score-tip { visibility: visible; opacity: 1; }
 @media (max-width: 768px) {
-  .soul-score-label .score-tip { left: 0; transform: none; width: 220px; }
-  .soul-score-label .score-tip::after { left: 30px; }
 }
-.soul-score-bar { flex: 1; height: 4px; background: var(--border); border-radius: 2px; overflow: hidden; }
-.soul-score-fill { height: 100%; border-radius: 2px; transition: width 1.2s cubic-bezier(0.22, 1, 0.36, 1); }
-.soul-score-fill.gold { background: var(--color-accent); }
-.soul-score-fill.green { background: var(--color-good); }
-.soul-score-fill.red { background: var(--color-warn); }
-.soul-score-num { font-size: 13px; font-weight: 700; color: var(--white); width: 28px; text-align: right; font-family: 'Inter', sans-serif; }
-.report-insight { padding: 16px; background: var(--accent-dim); border-radius: 8px; margin-bottom: 20px; }
-.report-insight p { font-size: 13px; color: var(--text); line-height: 1.6; font-style: italic; }
-.report-gate { text-align: center; }
-.report-gate p { font-size: 13px; color: var(--muted); margin-bottom: 12px; }
-.report-gate-btn { display: inline-block; padding: 12px 36px; background: var(--accent); color: var(--black); border: none; border-radius: 8px; font-weight: 700; font-size: 14px; cursor: pointer; font-family: 'Inter', sans-serif; transition: all 0.2s; }
-.report-gate-btn:hover { background: var(--white); }
 .scroll-hint { font-size: 12px; color: var(--color-muted); text-transform: uppercase; letter-spacing: 3px; animation: pulse 2s infinite; margin-top: 48px; }
 @keyframes pulse { 0%, 100% { opacity: 0.3; } 50% { opacity: 0.8; } }
 
@@ -528,18 +489,6 @@ footer { padding: 48px 0; border-top: 1px solid var(--border); }
 .footer-links a:hover { color: var(--accent); }
 .footer-tagline { font-family: var(--font-display); font-size: 14px; color: var(--color-muted); font-style: normal; }
 
-/* Modal */
-.modal-overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: oklch(22% 0.014 60 / 0.45); backdrop-filter: blur(2px); z-index: 200; align-items: center; justify-content: center; }
-.modal-overlay.visible { display: flex; }
-.modal { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 48px; max-width: 440px; width: 90%; text-align: center; position: relative; }
-.modal h3 { font-family: 'Playfair Display', serif; font-size: 24px; color: var(--white); margin-bottom: 8px; font-weight: 400; }
-.modal p { font-size: 14px; color: var(--muted); margin-bottom: 28px; }
-.modal input { width: 100%; padding: 14px 16px; background: var(--black); border: 1px solid var(--border); border-radius: 8px; color: var(--white); font-size: 15px; font-family: 'Inter', sans-serif; margin-bottom: 10px; outline: none; }
-.modal input:focus { border-color: var(--accent); }
-.modal .modal-submit { width: 100%; padding: 14px; background: var(--accent); color: var(--black); border: none; border-radius: 8px; font-weight: 700; font-size: 15px; cursor: pointer; font-family: 'Inter', sans-serif; }
-.modal .modal-submit:hover { background: var(--white); }
-.modal-close { position: absolute; top: 12px; right: 16px; background: none; border: none; color: var(--color-muted); font-size: 20px; cursor: pointer; transition: color var(--dur-fast) var(--ease-out); }
-.modal-close:hover { color: var(--color-ink); }
 
 /* Hamburger button */
 .nav-burger { display: none; flex-direction: column; justify-content: center; gap: 5px; width: 36px; height: 36px; background: none; border: none; cursor: pointer; padding: 4px; z-index: 110; }
@@ -567,8 +516,6 @@ footer { padding: 48px 0; border-top: 1px solid var(--border); }
   .addon-head { flex-direction: column; align-items: flex-start; gap: 4px; }
   .addons .tier-eyebrow { margin-top: 8px; margin-bottom: 0; }
   .closing-form { flex-direction: column; }
-  .hero-domain-wrap { flex-direction: column; }
-  .hero-domain-btn { width: 100%; }
   .footer-row { flex-direction: column; gap: 20px; text-align: center; }
   .footer-links { justify-content: center; }
 }
@@ -580,7 +527,6 @@ footer { padding: 48px 0; border-top: 1px solid var(--border); }
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
   }
-  .hero-report.visible { animation: none; }
   .scroll-hint { animation: none; opacity: 0.5; }
 }
 
@@ -637,61 +583,11 @@ footer { padding: 48px 0; border-top: 1px solid var(--border); }
 <!-- Main content -->
 <main>
 
-<!-- Opening with integrated soul tool -->
+<!-- Opening -->
 <section class="opening">
   <div class="opening-inner">
     <h1>We grow your business by optimizing it for <em>Google and ChatGPT.</em></h1>
     <p class="hero-sub">Soulcraft is an SEO agency that puts you in the answers your customers are looking for.</p>
-
-    <div class="hero-soul-tool" id="soul-tool">
-      <div class="hero-domain-wrap">
-        <input type="text" class="hero-domain-input" id="domainInput" placeholder="enter your domain" aria-label="Enter your domain for soul analysis" autocomplete="off" autocapitalize="off" spellcheck="false">
-        <button class="hero-domain-btn" id="soulBtn" onclick="discoverSoul()">Discover</button>
-      </div>
-      <p class="hero-tool-note">Enter your domain. Get your identity score. Free.</p>
-      <div class="analysis-status" id="analysisStatus" aria-live="polite"></div>
-
-      <div class="hero-report" id="soulReport">
-        <div class="report-card">
-          <div class="report-title" id="reportTitle">Soul Report</div>
-          <div class="report-subtitle" id="reportSub">Identity analysis</div>
-          <div class="soul-scores">
-            <div class="soul-score-row">
-              <span class="soul-score-label">Identity Clarity<span class="score-tip">How well your origin, beliefs, and purpose come through. Can a stranger tell what you do and why you exist?</span></span>
-              <div class="soul-score-bar"><div class="soul-score-fill gold" id="fillIdentity" style="width:0"></div></div>
-              <span class="soul-score-num" id="numIdentity">--</span>
-            </div>
-            <div class="soul-score-row">
-              <span class="soul-score-label">Voice Consistency<span class="score-tip">How uniform your personality is across your site. Does every page sound like the same company wrote it?</span></span>
-              <div class="soul-score-bar"><div class="soul-score-fill gold" id="fillVoice" style="width:0"></div></div>
-              <span class="soul-score-num" id="numVoice">--</span>
-            </div>
-            <div class="soul-score-row">
-              <span class="soul-score-label">AI Readiness<span class="score-tip">How well AI systems can understand and represent you. When someone asks ChatGPT about you, does it get you right?</span></span>
-              <div class="soul-score-bar"><div class="soul-score-fill gold" id="fillAI" style="width:0"></div></div>
-              <span class="soul-score-num" id="numAI">--</span>
-            </div>
-            <div class="soul-score-row">
-              <span class="soul-score-label">Positioning<span class="score-tip">How clearly you occupy a distinct space. Not "are you better" but "are you a different kind of thing?"</span></span>
-              <div class="soul-score-bar"><div class="soul-score-fill gold" id="fillPosition" style="width:0"></div></div>
-              <span class="soul-score-num" id="numPosition">--</span>
-            </div>
-            <div class="soul-score-row">
-              <span class="soul-score-label">Content Signal<span class="score-tip">The strength of what you're putting into the world. Clear identity means nothing if the world can't hear you.</span></span>
-              <div class="soul-score-bar"><div class="soul-score-fill gold" id="fillContent" style="width:0"></div></div>
-              <span class="soul-score-num" id="numContent">--</span>
-            </div>
-          </div>
-          <div class="report-insight">
-            <p id="insightText"></p>
-          </div>
-          <div class="report-gate">
-            <p>Your full report includes 15+ tailored recommendations.</p>
-            <button class="report-gate-btn" onclick="showModal()">Unlock Full Report</button>
-          </div>
-        </div>
-      </div>
-    </div>
 
     <div class="scroll-hint">Scroll to explore</div>
   </div>
@@ -949,7 +845,7 @@ footer { padding: 48px 0; border-top: 1px solid var(--border); }
           <li>Weekly calls, Slack for everything in between</li>
           <li>Ideation on PR and thought leadership</li>
         </ul>
-        <a href="/contact/" class="tier-btn" onclick="showModal(); return false;">Get Started</a>
+        <a href="/contact/" class="tier-btn">Get Started</a>
       </div>
       <div class="addons">
         <div class="tier-eyebrow">Add-ons, month to month</div>
@@ -1110,390 +1006,18 @@ footer.sf-footer { padding: 64px 0 36px; border-top: 1px solid var(--color-rule,
 </footer>
 <!-- /SITE FOOTER -->
 
-<!-- Email Capture Modal -->
-<div class="modal-overlay" id="modalOverlay">
-  <div class="modal">
-    <button class="modal-close" onclick="hideModal()" aria-label="Close">&times;</button>
-    <h3>Your soul report awaits.</h3>
-    <p>We'll send your complete identity audit with tailored recommendations.</p>
-    <input type="text" placeholder="Your name" id="modalName" aria-label="Your name">
-    <input type="email" placeholder="you@company.com" id="modalEmail" aria-label="Your email">
-    <input type="text" placeholder="Company" id="modalCompany" aria-label="Company name">
-    <input type="hidden" id="modalDomain" value="">
-    <input type="hidden" id="modalScores" value="">
-    <button class="modal-submit" onclick="submitModal()">Send My Report</button>
-  </div>
-</div>
-
 <script>
-// ============================================================
-// Soul.md Analysis Engine -- Client-side domain identity scorer
-// ============================================================
-
-var PROXY_URL = 'https://api.allorigins.win/raw?url=';
-
-function cleanDomain(input) {
-  var d = input.trim().toLowerCase();
-  d = d.replace(/^https?:\/\//, '');
-  d = d.replace(/\/.*$/, '');
-  d = d.replace(/^www\./, '');
-  return d;
-}
-
-function setStatus(msg) {
-  document.getElementById('analysisStatus').textContent = msg;
-}
-
-function discoverSoul() {
-  var input = document.getElementById('domainInput');
-  var domain = cleanDomain(input.value);
-  if (!domain || !domain.includes('.')) {
-    input.focus();
-    return;
-  }
-
-  var btn = document.getElementById('soulBtn');
-  btn.textContent = 'Reading...';
-  btn.disabled = true;
-  setStatus('Connecting to ' + domain + '...');
-
-  // Store domain for modal
-  document.getElementById('modalDomain').value = domain;
-
-  // Self-domain detection: if scoring our own site, analyze the live DOM directly
-  var currentHost = window.location.hostname.replace(/^www\./, '');
-  var targetDomain = domain.replace(/^www\./, '');
-  if (targetDomain === currentHost) {
-    setStatus('Analyzing identity signals...');
-    var scores = analyzeHTML(document.documentElement.outerHTML, domain);
-    displayReport(domain, scores);
-    return;
-  }
-
-  // Try fetching the site via CORS proxies (with fallback chain)
-  var proxyUrls = [
-    'https://api.allorigins.win/raw?url=',
-    'https://corsproxy.io/?url='
-  ];
-
-  function tryProxy(idx) {
-    if (idx >= proxyUrls.length) {
-      setStatus('Limited access -- scoring domain structure...');
-      setTimeout(function() {
-        var scores = analyzeDomainOnly(domain);
-        displayReport(domain, scores);
-      }, 1000);
-      return;
-    }
-    var url = proxyUrls[idx] + encodeURIComponent('https://' + domain);
-    fetch(url, { signal: AbortSignal.timeout(8000) })
-      .then(function(res) {
-        if (!res.ok) throw new Error('fetch failed');
-        setStatus('Analyzing identity signals...');
-        return res.text();
-      })
-      .then(function(html) {
-        var scores = analyzeHTML(html, domain);
-        displayReport(domain, scores);
-      })
-      .catch(function() {
-        tryProxy(idx + 1);
-      });
-  }
-  tryProxy(0);
-}
-
-function analyzeHTML(html, domain) {
-  var parser = new DOMParser();
-  var doc = parser.parseFromString(html, 'text/html');
-
-  // === Identity Clarity (0-100) ===
-  var identity = 30; // base
-  var title = doc.querySelector('title');
-  if (title && title.textContent.length > 10) identity += 12;
-  if (title && title.textContent.length > 30) identity += 5;
-  var metaDesc = doc.querySelector('meta[name="description"]');
-  if (metaDesc && metaDesc.content.length > 50) identity += 15;
-  if (metaDesc && metaDesc.content.length > 120) identity += 5;
-  var h1 = doc.querySelector('h1');
-  if (h1 && h1.textContent.trim().length > 5) identity += 10;
-  var ogTitle = doc.querySelector('meta[property="og:title"]');
-  if (ogTitle) identity += 8;
-  var ogDesc = doc.querySelector('meta[property="og:description"]');
-  if (ogDesc) identity += 5;
-  var ogImg = doc.querySelector('meta[property="og:image"]');
-  if (ogImg) identity += 5;
-  var canonical = doc.querySelector('link[rel="canonical"]');
-  if (canonical) identity += 5;
-
-  // === Voice Consistency (0-100) ===
-  var voice = 25;
-  var headings = doc.querySelectorAll('h1, h2, h3');
-  if (headings.length >= 3) voice += 10;
-  if (headings.length >= 6) voice += 10;
-  var paragraphs = doc.querySelectorAll('p');
-  var totalWords = 0;
-  paragraphs.forEach(function(p) { totalWords += p.textContent.split(/\s+/).length; });
-  if (totalWords > 100) voice += 10;
-  if (totalWords > 300) voice += 10;
-  if (totalWords > 600) voice += 5;
-  // Check for consistent structure
-  var sections = doc.querySelectorAll('section, article');
-  if (sections.length >= 3) voice += 10;
-  // Check for about/mission language
-  var bodyText = doc.body ? doc.body.textContent.toLowerCase() : '';
-  if (bodyText.includes('mission') || bodyText.includes('values') || bodyText.includes('about us') || bodyText.includes('who we are')) voice += 10;
-  if (bodyText.includes('our story') || bodyText.includes('our approach') || bodyText.includes('what we believe')) voice += 10;
-
-  // === AI Readiness (0-100) ===
-  var ai = 15;
-  var jsonLd = doc.querySelectorAll('script[type="application/ld+json"]');
-  if (jsonLd.length > 0) ai += 20;
-  if (jsonLd.length > 1) ai += 5;
-  var metaRobots = doc.querySelector('meta[name="robots"]');
-  if (metaRobots) ai += 8;
-  // Schema checks
-  var schemaText = '';
-  jsonLd.forEach(function(s) { schemaText += s.textContent; });
-  if (schemaText.includes('Organization')) ai += 8;
-  if (schemaText.includes('FAQPage')) ai += 8;
-  if (schemaText.includes('SpeakableSpecification')) ai += 10;
-  if (schemaText.includes('Product') || schemaText.includes('Service')) ai += 6;
-  // Semantic HTML
-  var nav = doc.querySelector('nav');
-  var main = doc.querySelector('main');
-  var footer = doc.querySelector('footer');
-  if (nav) ai += 5;
-  if (main) ai += 5;
-  if (footer) ai += 5;
-  // Open Graph completeness
-  if (ogTitle && ogDesc && ogImg) ai += 5;
-
-  // === Positioning (0-100) ===
-  var position = 20;
-  // Value proposition in first 200 chars
-  if (h1 && h1.textContent.length > 10) position += 15;
-  // Differentiation language
-  if (bodyText.includes('unique') || bodyText.includes('different') || bodyText.includes('unlike') || bodyText.includes('only')) position += 10;
-  // Social proof
-  if (bodyText.includes('testimonial') || bodyText.includes('client') || bodyText.includes('partner') || bodyText.includes('trusted')) position += 10;
-  // Pricing visibility
-  if (bodyText.includes('pricing') || bodyText.includes('price') || bodyText.includes('$') || bodyText.includes('plan')) position += 10;
-  // CTA presence
-  var ctas = doc.querySelectorAll('a[href], button');
-  var ctaCount = 0;
-  ctas.forEach(function(el) {
-    var t = el.textContent.toLowerCase();
-    if (t.includes('start') || t.includes('get') || t.includes('try') || t.includes('contact') || t.includes('demo') || t.includes('sign up') || t.includes('book')) ctaCount++;
-  });
-  if (ctaCount >= 1) position += 10;
-  if (ctaCount >= 3) position += 10;
-  // Clear service/product description
-  if (bodyText.includes('service') || bodyText.includes('solution') || bodyText.includes('product') || bodyText.includes('platform')) position += 10;
-  if (bodyText.includes('how it works') || bodyText.includes('features') || bodyText.includes('benefits')) position += 5;
-
-  // === Content Signal (0-100) ===
-  var content = 20;
-  if (totalWords > 200) content += 10;
-  if (totalWords > 500) content += 10;
-  if (totalWords > 1000) content += 5;
-  // Images
-  var images = doc.querySelectorAll('img');
-  if (images.length >= 1) content += 5;
-  if (images.length >= 3) content += 5;
-  // Alt text
-  var altCount = 0;
-  images.forEach(function(img) { if (img.alt && img.alt.length > 3) altCount++; });
-  if (images.length > 0 && altCount / images.length > 0.5) content += 10;
-  // Links
-  var links = doc.querySelectorAll('a[href]');
-  if (links.length >= 5) content += 5;
-  if (links.length >= 15) content += 5;
-  // Blog/resource link
-  var hasResourceLinks = false;
-  links.forEach(function(a) {
-    var href = (a.href || '').toLowerCase();
-    var text = a.textContent.toLowerCase();
-    if (href.includes('blog') || href.includes('resource') || href.includes('article') || text.includes('blog') || text.includes('learn')) hasResourceLinks = true;
-  });
-  if (hasResourceLinks) content += 10;
-  // Social links
-  if (bodyText.includes('linkedin') || bodyText.includes('twitter') || bodyText.includes('facebook') || bodyText.includes('instagram')) content += 5;
-  // Video
-  if (doc.querySelector('video, iframe[src*="youtube"], iframe[src*="vimeo"]')) content += 10;
-
-  return {
-    identity: Math.min(100, identity),
-    voice: Math.min(100, voice),
-    ai: Math.min(100, ai),
-    position: Math.min(100, position),
-    content: Math.min(100, content)
-  };
-}
-
-function analyzeDomainOnly(domain) {
-  // Fallback when we can't fetch the page
-  var parts = domain.split('.');
-  var name = parts[0];
-  var tld = parts[parts.length - 1];
-
-  var identity = 30;
-  if (name.length >= 4 && name.length <= 15) identity += 10; // Good name length
-  if (tld === 'com') identity += 5;
-  if (tld === 'ai' || tld === 'io') identity += 8;
-  // Penalize very long or hyphenated domains
-  if (name.includes('-')) identity -= 5;
-  if (name.length > 20) identity -= 5;
-
-  return {
-    identity: Math.min(65, Math.max(20, identity + Math.floor(Math.random() * 15))),
-    voice: Math.min(55, 25 + Math.floor(Math.random() * 20)),
-    ai: Math.min(40, 15 + Math.floor(Math.random() * 15)),
-    position: Math.min(55, 25 + Math.floor(Math.random() * 20)),
-    content: Math.min(50, 20 + Math.floor(Math.random() * 20))
-  };
-}
-
-function displayReport(domain, scores) {
-  var name = domain.split('.')[0];
-  name = name.charAt(0).toUpperCase() + name.slice(1);
-
-  document.getElementById('reportTitle').textContent = 'Soul Report: ' + name;
-  document.getElementById('reportSub').textContent = domain;
-
-  // Store scores for modal
-  document.getElementById('modalScores').value = JSON.stringify(scores);
-
-  var dims = [
-    { fill: 'fillIdentity', num: 'numIdentity', val: scores.identity },
-    { fill: 'fillVoice',    num: 'numVoice',    val: scores.voice },
-    { fill: 'fillAI',       num: 'numAI',       val: scores.ai },
-    { fill: 'fillPosition', num: 'numPosition',  val: scores.position },
-    { fill: 'fillContent',  num: 'numContent',   val: scores.content }
-  ];
-
-  dims.forEach(function(d) {
-    var fill = document.getElementById(d.fill);
-    var num = document.getElementById(d.num);
-    fill.style.width = d.val + '%';
-    fill.className = 'soul-score-fill ' + (d.val >= 65 ? 'green' : d.val >= 45 ? 'gold' : 'red');
-    num.textContent = d.val;
-  });
-
-  // Generate contextual insight
-  var avg = Math.round((scores.identity + scores.voice + scores.ai + scores.position + scores.content) / 5);
-  var weakest = 'ai';
-  var weakVal = scores.ai;
-  if (scores.identity < weakVal) { weakest = 'identity'; weakVal = scores.identity; }
-  if (scores.voice < weakVal) { weakest = 'voice'; weakVal = scores.voice; }
-  if (scores.position < weakVal) { weakest = 'positioning'; weakVal = scores.position; }
-  if (scores.content < weakVal) { weakest = 'content signal'; weakVal = scores.content; }
-
-  var insight = '';
-  if (avg >= 65) {
-    insight = 'Strong foundations. Your identity comes through in several areas. Your biggest opportunity is in ' + weakest + ' (scored ' + weakVal + '), which is limiting how effectively AI systems and search engines represent you.';
-  } else if (avg >= 45) {
-    insight = 'Your identity has real potential but isn\'t translating consistently across channels. ' + weakest.charAt(0).toUpperCase() + weakest.slice(1) + ' is your biggest gap at ' + weakVal + '. A soul file would give your marketing a coherent center that every page can carry forward.';
-  } else {
-    insight = 'Significant opportunity here. Your digital presence doesn\'t yet reflect a clear identity, which means AI systems are likely misrepresenting you. The good news: this is fixable, and the upside is massive. A soul file would transform how you show up everywhere.';
-  }
-  document.getElementById('insightText').textContent = insight;
-
-  // Show report
-  document.getElementById('soulReport').classList.add('visible');
-  setStatus('');
-
-  var btn = document.getElementById('soulBtn');
-  btn.textContent = 'Discover';
-  btn.disabled = false;
-
-  setTimeout(function() {
-    document.getElementById('soulReport').scrollIntoView({ behavior: 'smooth', block: 'center' });
-  }, 100);
-}
-
-// Modal
-function showModal() {
-  document.getElementById('modalOverlay').classList.add('visible');
-}
-function hideModal() {
-  document.getElementById('modalOverlay').classList.remove('visible');
-}
-
 // ============================================================
 // Lead submission -- POSTs to Supabase Edge Function -> Attio
 // ============================================================
 // IMPORTANT: Replace this URL with your deployed Supabase Edge Function URL
 var LEAD_ENDPOINT = 'https://owisphatovxkygwnchkw.supabase.co/functions/v1/attio-lead';
-var SOUL_REPORT_ENDPOINT = 'https://soulcraft-report-production.up.railway.app/api/soul/queue';
 
 function submitLead(data) {
   return fetch(LEAD_ENDPOINT, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(data)
-  });
-}
-
-function queueSoulReport(data) {
-  // Fire-and-forget -- Railway returns 202 immediately, report emails when ready (~60s)
-  fetch(SOUL_REPORT_ENDPOINT, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(data)
-  }).catch(function() {
-    // Silent fallback -- CRM capture already succeeded
-  });
-}
-
-function submitModal() {
-  var name = document.getElementById('modalName').value.trim();
-  var email = document.getElementById('modalEmail').value.trim();
-  var company = document.getElementById('modalCompany').value.trim();
-  var domain = document.getElementById('modalDomain').value;
-  var scores = document.getElementById('modalScores').value;
-  var submitBtn = document.querySelector('.modal-submit');
-
-  if (!email) {
-    document.getElementById('modalEmail').focus();
-    return;
-  }
-
-  submitBtn.textContent = 'Sending...';
-  submitBtn.disabled = true;
-
-  // 1. CRM capture
-  submitLead({
-    name: name,
-    email: email,
-    company: company,
-    domain: domain,
-    scores: scores,
-    source: 'soul-report'
-  })
-  .then(function(res) {
-    if (!res.ok) throw new Error('submit failed');
-
-    // 2. Queue the real PDF report -- async, returns immediately
-    queueSoulReport({
-      domain: domain,
-      company: company || null,
-      name: name || null,
-      email: email,
-      scores: scores ? JSON.parse(scores) : null,
-    });
-
-    submitBtn.textContent = 'On its way!';
-    setTimeout(function() { hideModal(); submitBtn.textContent = 'Send My Report'; submitBtn.disabled = false; }, 1500);
-  })
-  .catch(function() {
-    // Fallback: open mailto if edge function is unreachable
-    var subject = encodeURIComponent('Soul Report Request: ' + (domain || company || 'New Lead'));
-    var body = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\nCompany: ' + company + '\nDomain: ' + domain + '\nScores: ' + scores);
-    window.location.href = 'mailto:hello@soulcraftagency.com?subject=' + subject + '&body=' + body;
-    submitBtn.textContent = 'Send My Report';
-    submitBtn.disabled = false;
-    hideModal();
   });
 }
 
@@ -1525,17 +1049,6 @@ function submitClosing() {
     btn.disabled = false;
   });
 }
-
-// Event listeners
-document.getElementById('modalOverlay').addEventListener('click', function(e) {
-  if (e.target === this) hideModal();
-});
-document.getElementById('domainInput').addEventListener('keypress', function(e) {
-  if (e.key === 'Enter') discoverSoul();
-});
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') hideModal();
-});
 
 // Mobile nav
 (function() {
