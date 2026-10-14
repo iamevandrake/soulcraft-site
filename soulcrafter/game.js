@@ -85,7 +85,7 @@ function evalFoundations(scout) {
   const rb = scout.robots || {}, pg = scout.page, sm = scout.sitemap || {};
   const out = {};
   out.robots = { built: !!(rb.found && !rb.blocksEverything), detail: !rb.found ? 'No robots.txt found (HTTP ' + (rb.status || 0) + ').' : rb.blocksEverything ? 'robots.txt has Disallow: / for all crawlers.' : 'robots.txt found, ' + (rb.groups || 0) + ' user-agent group' + (rb.groups === 1 ? '' : 's') + (rb.sitemaps?.length ? ', declares a sitemap.' : ', no Sitemap: line.') };
-  const bots = rb.bots || {}; const blocked = Object.entries(bots).filter(([k, v]) => v === 'blocked' && ['GPTBot', 'ClaudeBot', 'PerplexityBot', 'OAI-SearchBot', 'Google-Extended'].includes(k)).map(([k]) => k);
+  const bots = rb.bots || {}; const blocked = Object.entries(bots).filter(([k, v]) => v === 'blocked' && ['GPTBot', 'ClaudeBot', 'OAI-SearchBot', 'Google-Extended'].includes(k)).map(([k]) => k);
   out.ai = { built: blocked.length === 0, detail: blocked.length ? 'Blocked: ' + blocked.join(', ') + '.' : rb.found ? 'GPTBot, ClaudeBot, OAI-SearchBot, Google-Extended all allowed.' : 'No robots.txt, so AI crawlers are allowed by default.' };
   if (!out.robots.built && out.ai.built) out.ai.detail += ' Build the Robots Gate to make it explicit.';
   out.sitemap = { built: !!sm.found, detail: sm.found ? (sm.count + ' URLs' + (sm.isIndex ? ' across ' + sm.children + ' child sitemaps' : '') + (sm.lastmod ? ', lastmod present.' : ', no lastmod dates.')) : 'No sitemap.xml at the usual paths or in robots.txt.' };

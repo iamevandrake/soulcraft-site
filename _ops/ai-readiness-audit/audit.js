@@ -1,7 +1,7 @@
 // AEO Agency AI-Readiness Audit v1.0 — run in the browser console on an agency's homepage.
 // Returns raw measurements; score.py turns them into points per rubric.md.
 (async () => {
-  const UAS = ['GPTBot','OAI-SearchBot','ChatGPT-User','ClaudeBot','Claude-SearchBot','Claude-User','PerplexityBot','Perplexity-User','Google-Extended','Applebot-Extended'];
+  const UAS = ['GPTBot','OAI-SearchBot','ChatGPT-User','ClaudeBot','Claude-SearchBot','Claude-User','Google-Extended','Applebot-Extended'];
   const O = location.origin;
   const get = async (u) => { try { const r = await fetch(u, {cache:'no-store', redirect:'follow', credentials:'omit'}); return {s:r.status, t:await r.text()}; } catch (e) { return {s:0, t:''}; } };
 

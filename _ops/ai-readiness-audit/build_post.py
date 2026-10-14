@@ -37,7 +37,7 @@ faq = [
  ("What does AI-readiness mean for a website?",
   "AI-readiness is how easily AI systems can find, read and correctly identify a site. In this audit it means five things: AI crawlers are allowed in robots.txt and the page's text is in the raw HTML; the page carries structured data (schema.org JSON-LD); that data identifies the organization and the people behind it and links to their other profiles; the site publishes a sitemap; and the page loads quickly."),
  ("Do AEO agencies block AI crawlers on their own sites?",
-  "No. All 24 agencies in the audit allowed all 10 AI user agents we tested, including GPTBot, ClaudeBot, PerplexityBot and Google-Extended, and all 24 served at least 300 words of text without JavaScript."),
+  "No. All 24 agencies in the audit allowed all 10 AI user agents we tested, including GPTBot, ClaudeBot and Google-Extended, and all 24 served at least 300 words of text without JavaScript."),
  ("Where do most AEO agency websites fall short?",
   "Entity markup. The median agency scored 8 out of 20. Only 9 of 24 linked their organization to three or more external profiles, only 4 connected the organization to a named person, and only 1 used the knowsAbout property to state its areas of expertise. Two sites had no structured data at all."),
  ("Does a high AI-readiness score mean an agency does better client work?",

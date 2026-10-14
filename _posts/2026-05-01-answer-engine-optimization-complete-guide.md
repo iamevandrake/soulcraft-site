@@ -23,7 +23,7 @@ That is the whole of answer engine optimization, and it is why the discipline ex
 
 Answer engine optimization is the practice of making a company legible, credible, and retrievable to systems that answer questions directly rather than returning a list of links.
 
-The surfaces: ChatGPT, Claude, Gemini, Perplexity, Copilot, Google AI Overviews, and increasingly the agents that book, buy, and compare on someone's behalf.
+The surfaces: ChatGPT, Claude, Gemini, Copilot, Google AI Overviews, and increasingly the agents that book, buy, and compare on someone's behalf.
 
 The goal is not a ranking. It is being present in the answer, cited as the source, described accurately, and recommended for the right reasons.
 
@@ -155,8 +155,6 @@ If a comparison page cannot survive being read by the competitor it ranks below 
 The fundamentals transfer. The emphasis shifts.
 
 **ChatGPT** leans heavily on both training data and live retrieval, which makes long-run entity consistency unusually important. Correcting a stale description across the open web pays off here more than anywhere else.
-
-**Perplexity** is retrieval-first and cites aggressively. It rewards clearly structured, recently updated pages faster than the others, and it is the best early indicator that your content changes are working.
 
 **Google AI Overviews** draw substantially on pages that already perform in organic search. Existing SEO strength transfers most directly here, which makes it the surface where traditional work pays the clearest AEO dividend.
 

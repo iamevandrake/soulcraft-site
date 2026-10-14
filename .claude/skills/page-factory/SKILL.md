@@ -91,7 +91,7 @@ AI Overviews pull from content that:
 - Uses **entity-rich language** (name specific tools, methodologies, outcomes)
 
 ### GEO (Generative Engine Optimization) Principles
-For AI search engines (Perplexity, ChatGPT search, Gemini):
+For AI search engines (ChatGPT search, Gemini):
 - Include **statistical claims with context** (not just numbers)
 - Use **authoritative, factual tone** in definition sections
 - Build **entity relationships** (connect concepts, tools, outcomes)

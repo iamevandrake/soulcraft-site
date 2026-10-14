@@ -44,7 +44,7 @@ Scores are from {{RUN}}-24. Download the full data, including word counts, schem
 <li><strong>1 of 24</strong>uses <code>knowsAbout</code> to tell AI systems what it's expert in.</li>
 </ul>
 
-The basics are solved. No agency in the sample blocks GPTBot, ClaudeBot, PerplexityBot, Google-Extended or the other AI user agents we tested, and none hides its homepage copy behind client-side rendering. Load speed didn't separate anyone either: every homepage painted its largest element in about a second or less in our test.
+The basics are solved. No agency in the sample blocks GPTBot, ClaudeBot, Google-Extended or the other AI user agents we tested, and none hides its homepage copy behind client-side rendering. Load speed didn't separate anyone either: every homepage painted its largest element in about a second or less in our test.
 
 The differences are in the harder layer: whether the page tells AI systems *who* the agency is. Twenty of the 24 sites publish an Organization node, but most stop at a name, URL and logo, usually the defaults an SEO plugin writes. Only 9 link that organization to three or more of its profiles elsewhere (the `sameAs` property that lets AI systems match a site to its LinkedIn, Crunchbase or Wikipedia entries). Only 4 connect it to a founder or team member, and only 3 publish a Person node with that person's own linked profiles. Two agencies have no structured data at all in their homepage's raw HTML.
 
@@ -118,7 +118,7 @@ Single Grain marks up its homepage as a LocalBusiness with a postal address, a c
 
 We scored each agency's homepage, robots.txt and sitemap against a 100-point rubric, measuring the raw server HTML a crawler receives rather than the page after JavaScript runs.
 
-- **Crawler access (25 points).** 2 points for each of 10 AI user agents that robots.txt allows to fetch the homepage: GPTBot, OAI-SearchBot, ChatGPT-User, ClaudeBot, Claude-SearchBot, Claude-User, PerplexityBot, Perplexity-User, Google-Extended and Applebot-Extended. 5 more if the raw HTML contains at least 300 words of visible text.
+- **Crawler access (25 points).** 2 points for each of 10 AI user agents that robots.txt allows to fetch the homepage: GPTBot, OAI-SearchBot, ChatGPT-User, ClaudeBot, Claude-SearchBot, Claude-User, Google-Extended and Applebot-Extended. 5 more if the raw HTML contains at least 300 words of visible text.
 - **Schema depth (20 points).** Valid JSON-LD, one point per distinct schema.org type (up to 10), plus points for the types that matter most: an Organization or subtype, WebSite, WebPage, Service or OfferCatalog, FAQPage and BreadcrumbList.
 - **Entity markup (20 points).** How completely the best Organization node identifies the business: name, URL, logo, `@id`, description, founding date, `knowsAbout`, `sameAs` links, a link to a founder or team member, location or service area, and contact details. 3 more points if a Person node carries its own `sameAs` profiles.
 - **Sitemaps (15 points).** A Sitemap line in robots.txt, a valid XML sitemap, and `lastmod` dates in it.

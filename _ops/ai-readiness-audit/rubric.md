@@ -9,7 +9,7 @@ Everything is measured from the raw server HTML (what a non-JS crawler receives)
 ## 1. Crawler access — 25 pts
 - 2 pts for each of 10 AI user agents allowed to fetch "/" under robots.txt rules (20):
   GPTBot, OAI-SearchBot, ChatGPT-User, ClaudeBot, Claude-SearchBot, Claude-User,
-  PerplexityBot, Perplexity-User, Google-Extended, Applebot-Extended.
+  Google-Extended, Applebot-Extended.
   No robots.txt (404) = allowed. robots.txt that errors (5xx) = 0 for this line.
 - 5 pts if the raw homepage HTML contains >= 300 words of visible text (readable without JavaScript).
 

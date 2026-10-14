@@ -6,7 +6,7 @@ Replaces the Jekyll `layout: redirect` stubs with real HTTP 301s at the edge.
 
 GitHub Pages cannot return a 301. The stubs return **HTTP 200** with a meta refresh,
 a JS `location.replace`, and a canonical. Google treats a 0-second meta refresh as a
-soft permanent redirect and usually consolidates. AI crawlers (GPTBot, PerplexityBot,
+soft permanent redirect and usually consolidates. AI crawlers (GPTBot,
 ClaudeBot) largely fetch raw HTML — they don't run JS and don't follow meta refresh.
 To them every stub is a live page titled "Redirecting...".
 

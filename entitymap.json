@@ -15,7 +15,7 @@
       "@type": "Organization",
       "name": "Soulcraft",
       "alternateName": "Soulcraft Agency",
-      "description": "Soulcraft is a practitioner-led SEO agency for the superintelligence era. It sharpens a company's identity and puts it in the answers customers read, across Google, AI Overviews, ChatGPT, Claude, Gemini and Perplexity. Its work spans SEO, AEO and GEO, demand and content generation, and AI advertising, all made by hand from a structured soul file, with AI as leverage and a human accountable for every page.",
+      "description": "Soulcraft is a practitioner-led SEO agency for the superintelligence era. It sharpens a company's identity and puts it in the answers customers read, across Google, AI Overviews, ChatGPT, Claude and Gemini. Its work spans SEO, AEO and GEO, demand and content generation, and AI advertising, all made by hand from a structured soul file, with AI as leverage and a human accountable for every page.",
       "sameAs": "https://www.wikidata.org/wiki/Q139981209",
       "status": "active",
       "maturityStatus": "established",
@@ -122,7 +122,7 @@
       "name": "SEO",
       "alternateName": "Superintelligence Engine Optimization",
       "canonicalLabel": "search optimization",
-      "description": "Soulcraft's search service: making a brand legible, trustworthy and citable to every engine its customers ask, from Google to ChatGPT, Claude, Gemini and Perplexity. It treats traditional SEO, AI Overviews (AEO) and generative engines (GEO) as one discipline. AI handles research, drafts and monitoring; a practitioner with twenty years of experience handles the judgment, the writing and the sign-off.",
+      "description": "Soulcraft's search service: making a brand legible, trustworthy and citable to every engine its customers ask, from Google to ChatGPT, Claude and Gemini. It treats traditional SEO, AI Overviews (AEO) and generative engines (GEO) as one discipline. AI handles research, drafts and monitoring; a practitioner with twenty years of experience handles the judgment, the writing and the sign-off.",
       "status": "active",
       "audienceType": "technical",
       "relations": [
@@ -135,7 +135,7 @@
       "hasChunks": [
         {
           "chunkId": "c_008",
-          "text": "Search and answers, done by a person who has done it for twenty years. We audit your site, map the questions your buyers ask every engine, fix what keeps machines from reading you, and write the pages that earn rankings in Google and citations in ChatGPT, Claude, Gemini and Perplexity. AI handles the research, the drafts and the monitoring. A practitioner handles the judgment, the writing, and the sign-off. We call it Superintelligence Engine Optimization, and we still call it SEO.",
+          "text": "Search and answers, done by a person who has done it for twenty years. We audit your site, map the questions your buyers ask every engine, fix what keeps machines from reading you, and write the pages that earn rankings in Google and citations in ChatGPT, Claude and Gemini. AI handles the research, the drafts and the monitoring. A practitioner handles the judgment, the writing, and the sign-off. We call it Superintelligence Engine Optimization, and we still call it SEO.",
           "sourceUrl": "https://soulcraftagency.com/services/",
           "pageTitle": "SEO, Content & AI Search Services, Handcrafted | Soulcraft",
           "publisher": "Soulcraft",
@@ -221,7 +221,7 @@
         },
         {
           "chunkId": "c_013",
-          "text": "Place your products inside ChatGPT, Perplexity, and emerging AI platforms. A channel that barely exists yet. We're already there.",
+          "text": "Place your products inside ChatGPT and emerging AI platforms. A channel that barely exists yet. We're already there.",
           "sourceUrl": "https://soulcraftagency.com/",
           "pageTitle": "Soulcraft: SEO Agency for Google and ChatGPT | Bay Area",
           "publisher": "Soulcraft",
