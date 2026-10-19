@@ -17,7 +17,7 @@ SITE = "https://soulcraftagency.com"
 TODAY = datetime.date.today().isoformat()
 
 SKIP_DIRS = ('_to_delete', 'Claude outputs', 'case-studies', '_layouts', '_includes',
-             'soulcraft', 'games', 'demo', 'opensoul', 'industries', 'solutions',
+             'soulcraft', 'soulcrafter', 'games', 'demo', 'opensoul', 'industries', 'solutions',
              'blog', '_posts', 'assets', 'images', '.git', '.claude', '_ops', '.well-known')
 
 PRIORITY = {"/": "1.0", "/services/": "0.9", "/about/": "0.9",

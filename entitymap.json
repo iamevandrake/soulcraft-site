@@ -6,7 +6,7 @@
     "url": "https://soulcraftagency.com",
     "sameAs": "https://www.wikidata.org/wiki/Q139981209"
   },
-  "generated": "2026-10-13T00:00:00Z",
+  "generated": "2026-10-19T00:00:00Z",
   "profile": "core",
   "verificationStatus": "self-declared",
   "entities": [
@@ -15,7 +15,7 @@
       "@type": "Organization",
       "name": "Soulcraft",
       "alternateName": "Soulcraft Agency",
-      "description": "Soulcraft is a practitioner-led SEO agency for the superintelligence era. It sharpens a company's identity and puts it in the answers customers read, across Google, AI Overviews, ChatGPT, Claude and Gemini. Its work spans SEO, AEO and GEO, demand and content generation, and AI advertising, all made by hand from a structured soul file, with AI as leverage and a human accountable for every page.",
+      "description": "Soulcraft is a practitioner-led SEO agency. It sharpens a company's identity and puts it in the answers customers read, across Google, AI Overviews, ChatGPT, Claude and Gemini. Its work spans SEO, AEO and GEO, content and distribution, and citations, all made by hand from a structured soul file, with AI as leverage and a human accountable for every page.",
       "sameAs": "https://www.wikidata.org/wiki/Q139981209",
       "status": "active",
       "maturityStatus": "established",
@@ -32,16 +32,11 @@
           "targetName": "Demand and Content Generation"
         },
         {
-          "predicate": "OFFERS",
-          "targetId": "e_006",
-          "targetName": "AI Advertising"
-        },
-        {
           "predicate": "TARGETS",
           "targetId": "e_010",
-          "targetName": "Growth-stage technology, SaaS, and health and wellness companies",
+          "targetName": "Companies defining or defending a category",
           "confidence": "declared",
-          "targetDescription": "Founders and marketing leaders at growth-stage companies who want to work with the person who does the work rather than add agency headcount."
+          "targetDescription": "Crypto protocols and infrastructure teams, AI platforms selling into defense and regulated industries, multi-location consumer brands and mission-driven organizations that need AI answers to describe them accurately, and want to work with the practitioner doing the work."
         }
       ],
       "hasChunks": [
@@ -195,43 +190,6 @@
       ]
     },
     {
-      "entityId": "e_006",
-      "@type": "Service",
-      "name": "AI Advertising",
-      "description": "Soulcraft's emerging-channel advertising service that places client products inside AI platforms such as ChatGPT by connecting product feeds to those services, so a brand's offerings surface when users ask relevant questions.",
-      "status": "active",
-      "audienceType": "general",
-      "relations": [
-        {
-          "predicate": "PART_OF",
-          "targetId": "e_001",
-          "targetName": "Soulcraft"
-        }
-      ],
-      "hasChunks": [
-        {
-          "chunkId": "c_012",
-          "text": "Platforms like ChatGPT are beginning to offer advertising placements. Soulcraft connects your product feeds to these services so your offerings appear when users ask relevant questions.",
-          "sourceUrl": "https://soulcraftagency.com/",
-          "pageTitle": "Soulcraft: SEO Agency for Google and ChatGPT | Bay Area",
-          "publisher": "Soulcraft",
-          "retrieved": "2026-05-29T00:00:00Z",
-          "contentType": "definition",
-          "audienceType": "general"
-        },
-        {
-          "chunkId": "c_013",
-          "text": "Place your products inside ChatGPT and emerging AI platforms. A channel that barely exists yet. We're already there.",
-          "sourceUrl": "https://soulcraftagency.com/",
-          "pageTitle": "Soulcraft: SEO Agency for Google and ChatGPT | Bay Area",
-          "publisher": "Soulcraft",
-          "retrieved": "2026-05-29T00:00:00Z",
-          "contentType": "evidence",
-          "audienceType": "general"
-        }
-      ]
-    },
-    {
       "entityId": "e_007",
       "@type": "ProprietaryTerm",
       "name": "Agentic Marketing",
@@ -291,20 +249,20 @@
     {
       "entityId": "e_010",
       "@type": "ProprietaryTerm",
-      "name": "Growth-stage technology, SaaS, and health and wellness companies",
+      "name": "Companies defining or defending a category",
       "canonicalLabel": "ideal customer profile",
-      "description": "Soulcraft's primary audience: founders and marketing leaders at growth-stage companies across B2B SaaS, professional services, technology, and health and wellness, who want their identity carried into every channel by the person who does the work rather than by added agency headcount.",
+      "description": "Crypto protocols and infrastructure teams, AI platforms selling into defense and regulated industries, multi-location consumer brands and mission-driven organizations that need AI answers to describe them accurately, and want to work with the practitioner doing the work.",
       "status": "active",
       "audienceType": "executive",
       "relations": [],
       "hasChunks": [
         {
           "chunkId": "c_018",
-          "text": "Our clients span B2B SaaS, professional services, health and wellness brands, and emerging technology companies. What they share is ambition, clarity of purpose, and a preference for working with the person who does the work.",
+          "text": "Soulcraft works with companies that need the engines to describe them accurately when a buyer asks. What they share is a category to define or defend, and AI answers that decide who gets named in it.",
           "sourceUrl": "https://soulcraftagency.com/",
           "pageTitle": "Soulcraft: SEO Agency for Google and ChatGPT | Bay Area",
           "publisher": "Soulcraft",
-          "retrieved": "2026-10-09T00:00:00Z",
+          "retrieved": "2026-10-19T00:00:00Z",
           "contentType": "evidence",
           "audienceType": "executive"
         }
