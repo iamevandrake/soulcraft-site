@@ -1,0 +1,1504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FXWVCQJ7YT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-FXWVCQJ7YT');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Soulcraft - SEO and AEO with soul." />
+<meta property="og:description" content="We help you get recommended and discovered by AI." />
+<meta property="og:image" content="https://soulcraftagency.com/soulcraft-og.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://soulcraftagency.com/" />
+
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Soulcraft - SEO and AEO with soul." />
+<meta name="twitter:description" content="We help you get recommended and discovered by AI." />
+<meta name="twitter:image" content="https://soulcraftagency.com/soulcraft-og.png" />
+
+<title>Soulcraft: Bay Area SEO, AEO, and GEO Agency for Growth-Stage Startups</title>
+<meta name="description" content="Soulcraft builds agentic marketing systems driven by your identity. SEO, AEO, GEO, demand generation, and AI advertising. Get your free soul file score.">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta name="keywords" content="AIQ, AI quotient, agentic marketing, soul file, brand identity, SEO, AEO, GEO, AI optimization, Soulcraft, Evan Drake">
+<link rel="canonical" href="https://soulcraftagency.com/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="entitymap" type="application/json" href="https://soulcraftagency.com/entitymap.json">
+
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://soulcraftagency.com/#evan-drake",
+      "name": "Evan Drake",
+      "jobTitle": "Founder",
+      "description": "Founder of Soulcraft, an AI-native marketing agency. Former Head of Growth at Chainlink Labs. 20 years at the intersection of technology and marketing, from Apple to Chainlink Labs. Building agentic systems that give every company a soul.",
+      "url": "https://soulcraftagency.com/about/",
+      "alumniOf": {
+        "@type": "Organization",
+        "name": "Chainlink Labs",
+        "url": "https://chainlinklabs.com"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/iamevandrake/",
+        "https://x.com/iamevandrake",
+        "https://github.com/iamevandrake"
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://soulcraftagency.com/#organization",
+      "name": "Soulcraft",
+      "url": "https://soulcraftagency.com",
+      "foundingDate": "2026",
+      "sameAs": [
+        "https://www.linkedin.com/company/112723961/",
+        "https://www.designrush.com/agency/profile/soulcraft",
+        "https://www.wikidata.org/wiki/Q139981209"
+      ],
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://soulcraftagency.com/soulcraft-og.png",
+        "width": 1200,
+        "height": 300
+      },
+      "email": "hello@soulcraftagency.com",
+      "description": "Soulcraft builds agentic marketing systems driven by your identity. We help companies discover their soul and build autonomous systems for SEO, AEO, GEO, demand generation, and AI advertising.",
+      "founder": {
+        "@id": "https://soulcraftagency.com/#evan-drake"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://soulcraftagency.com/#website",
+      "name": "Soulcraft",
+      "url": "https://soulcraftagency.com/",
+      "publisher": {
+        "@id": "https://soulcraftagency.com/#organization"
+      }
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://soulcraftagency.com/#service",
+      "name": "Soulcraft",
+      "url": "https://soulcraftagency.com",
+      "description": "AI-native marketing agency building agentic systems with soul. SEO/AEO/GEO, demand generation, AI advertising.",
+      "email": "hello@soulcraftagency.com",
+      "founder": {
+        "@id": "https://soulcraftagency.com/#evan-drake"
+      },
+      "areaServed": [
+        { "@type": "Place", "name": "San Francisco Bay Area" },
+        { "@type": "Place", "name": "United States" }
+      ],
+      "serviceType": ["Agentic Marketing Systems", "SEO/AEO/GEO", "Demand Generation", "AI Advertising", "Identity Design"]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://soulcraftagency.com/",
+      "url": "https://soulcraftagency.com/",
+      "name": "Soulcraft -- Agentic Marketing Systems With Soul",
+      "description": "We build autonomous marketing systems driven by your identity. Enter your domain and discover your soul file score.",
+      "datePublished": "2026-03-08",
+      "dateModified": "2026-09-13",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [".opening h1", ".opening .hero-sub", ".narrative-block h2", ".narrative-block p"]
+      },
+      "isPartOf": {
+        "@id": "https://soulcraftagency.com/#website"
+      },
+      "about": {
+        "@id": "https://soulcraftagency.com/#organization"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://soulcraftagency.com/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the soul file?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The soul file is a structured document that captures your company's identity: voice, values, positioning, audience, and competitive context. It's the file that drives every agentic marketing system Soulcraft builds. Think of it as the DNA your marketing agents inherit."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is Soulcraft different from a traditional marketing agency?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Traditional agencies charge for human hours. Soulcraft charges for autonomous systems. You get 24/7 production, not 9-to-5 project management. The systems compound in effectiveness over time, which human teams can't replicate at scale."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does agentic marketing mean?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Agentic means the systems act autonomously. They don't wait for instructions. They produce content, optimize search presence, distribute across channels, and learn from performance data, all on their own, guided by your soul file."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is AI advertising?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Platforms like ChatGPT and Perplexity are beginning to offer advertising placements. Soulcraft connects your product feeds to these services so your offerings appear when users ask relevant questions. It's an emerging channel with first-mover advantage."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does Soulcraft cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Soulcraft core engagement is $5,000/month: a content engine and hub, AI visibility and share of voice monitoring, technical SEO auditing and website advisory, weekly reporting and strategy, weekly calls plus Slack, and PR and thought leadership ideation. Two optional add-ons are $2,500/month each: the Distribution Engine (LinkedIn, Medium, Reddit, Substack, X) and the Citation Engine (Wikipedia, directories, industry publications). Add-ons are month to month with no long-term lock."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is AI search different from traditional search?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Traditional search returns a ranked list of links and lets the person choose. AI search returns one composed answer and names a few sources inside it. That changes the goal: you are no longer competing for position three, you are competing to be the source the model quotes. A page can rank well on Google and still be invisible inside ChatGPT, Claude, Gemini, or Perplexity, because those systems select for parseable structure and clear, citable claims, not for links alone."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does it take to show up in AI answers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Technical legibility moves fastest: schema, entity data, and crawler access can be re-crawled within days. Content and citations take longer, usually one to three months before a new page is reliably pulled into answers, because the engines need to encounter it in enough places to trust it. Soulcraft tracks days to first tracked citation on every engagement, so the timeline is a measured number rather than a promise."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which AI platforms does Soulcraft optimize for?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ChatGPT, Claude, Gemini, Perplexity, and Google AI Overviews, alongside traditional Google and Bing results. Soulcraft monitors each one separately, because they cite different sources and disagree more often than people expect. A brand can hold strong share of voice in Perplexity and be absent from ChatGPT on the same question."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you measure AI search visibility?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Three numbers, tracked from day one: citation lift across AI engines, days to first tracked citation, and share of voice against the competitors you name. Soulcraft runs the same prompt set on a fixed schedule so the comparison stays honest, and publishes the method alongside the results. Soulcraft does not report estimates."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does AI search replace SEO, or do we need both?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Both, for now. The technical foundations overlap almost entirely: clean structure, fast pages, accurate schema, and real authority help in both places. What differs is the target. Traditional SEO competes for a click; answer engine optimization competes to be the cited source inside an answer that may never produce a click. Teams that drop SEO to chase AI visibility usually lose the crawl quality that AI visibility depends on."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Soulcraft Agentic Marketing",
+  "provider": {
+    "@id": "https://soulcraftagency.com/#organization"
+  },
+  "description": "Autonomous marketing systems driven by identity. SEO/AEO/GEO, demand generation, AI advertising, and content production powered by the soul file.",
+  "serviceType": "Agentic Marketing Systems",
+  "areaServed": [
+    { "@type": "Place", "name": "San Francisco Bay Area" },
+    { "@type": "Place", "name": "United States" }
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Soulcraft Plans",
+    "itemListElement": [
+      { "@type": "Offer", "name": "Core Engagement", "price": "5000", "priceCurrency": "USD", "description": "Content engine and hub, AI visibility and share of voice monitoring, technical SEO auditing and website advisory, weekly reporting and strategy, weekly calls and Slack, PR and thought leadership ideation" },
+      { "@type": "Offer", "name": "Distribution Engine", "price": "2500", "priceCurrency": "USD", "description": "Add-on. Channel distribution across LinkedIn, Medium, Reddit, Substack, and X, each piece tailored and posted" },
+      { "@type": "Offer", "name": "Citation Engine", "price": "2500", "priceCurrency": "USD", "description": "Add-on. Citation outreach to Wikipedia, directories, and industry publications" }
+    ]
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "@id": "https://soulcraftagency.com/#how-we-do-ai-search-optimization",
+  "name": "How Soulcraft does AI search optimization",
+  "description": "Soulcraft's five-step method for making a brand visible and citable in AI search results across ChatGPT, Claude, Gemini, Perplexity, and Google AI Overviews.",
+  "step": [
+    { "@type": "HowToStep", "position": 1, "name": "Map the identity", "text": "Build the soul file capturing voice, values, positioning, audience, and competitive context. Every later step reads from this file.", "url": "https://soulcraftagency.com/#method" },
+    { "@type": "HowToStep", "position": 2, "name": "Baseline the answers", "text": "Ask the engines the questions buyers actually ask, and record whether the brand is named, which sources are cited, and how much of the answer belongs to competitors.", "url": "https://soulcraftagency.com/#method" },
+    { "@type": "HowToStep", "position": 3, "name": "Make the site legible to machines", "text": "Add schema markup, a published entity map, clean heading structure, and descriptive alt text, so answer engines can parse and cite the site.", "url": "https://soulcraftagency.com/#method" },
+    { "@type": "HowToStep", "position": 4, "name": "Publish the answers", "text": "Write pages that respond directly to those questions, in the brand voice, with definitions and comparisons placed up front where models extract them.", "url": "https://soulcraftagency.com/#method" },
+    { "@type": "HowToStep", "position": 5, "name": "Earn citations, then measure the lift", "text": "Pursue the sources these engines already trust, then re-run the baseline to report citation lift, days to first tracked citation, and share of voice against named competitors.", "url": "https://soulcraftagency.com/#method" }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,700&display=swap"></noscript>
+
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+/* Hallmark · macrostructure: Long Document · tone: editorial · anchor hue: warm (terracotta 52)
+ * theme: Editorial (light) · genre: editorial · nav: Masthead · footer: Statement · enrichment: none
+ * pre-emit critique: P5 H5 E4 S4 R5 V4
+ */
+:root {
+  /* — Editorial palette (OKLCH source of truth) — */
+  --color-paper:        oklch(96.5% 0.012 83);   /* warm cream page */
+  --color-paper-2:      oklch(93.8% 0.014 80);   /* alt section band */
+  --color-surface:      oklch(99.2% 0.006 83);   /* card / input */
+  --color-ink:          oklch(22% 0.014 60);     /* headings, high-contrast */
+  --color-body:         oklch(40% 0.012 58);     /* paragraph text */
+  --color-muted:        oklch(55% 0.012 60);     /* secondary, labels */
+  --color-rule:         oklch(87% 0.012 75);     /* hairlines, borders */
+  --color-rule-strong:  oklch(78% 0.014 70);     /* emphasised divider */
+  --color-accent:       oklch(47% 0.13 52);      /* terracotta — links, CTA, emphasis */
+  --color-accent-deep:  oklch(40% 0.13 50);      /* accent hover */
+  --color-accent-soft:  oklch(93% 0.035 62);     /* accent tint background */
+  --color-accent-line:  oklch(70% 0.09 72);      /* gold hairline, decorative */
+  --color-on-accent:    oklch(97% 0.012 83);     /* text on accent fills */
+  --color-good:         oklch(52% 0.12 150);
+  --color-warn:         oklch(58% 0.17 28);
+
+  /* — Legacy aliases: existing markup references flip automatically — */
+  --black: var(--color-paper);
+  --dark: var(--color-paper-2);
+  --card: var(--color-surface);
+  --border: var(--color-rule);
+  --muted: var(--color-muted);
+  --text: var(--color-body);
+  --white: var(--color-ink);
+  --accent: var(--color-accent);
+  --accent-dim: var(--color-accent-soft);
+  --accent-glow: transparent;
+
+  /* — Type — */
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+
+  /* — Spacing (4pt) — */
+  --space-xs: 8px; --space-sm: 16px; --space-md: 24px;
+  --space-lg: 48px; --space-xl: 96px; --space-2xl: 160px;
+
+  /* — Motion — */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in: cubic-bezier(0.55, 0, 1, 0.45);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 0.18s; --dur-mid: 0.32s; --dur-slow: 0.8s;
+
+  --radius: 6px;
+}
+html { scroll-behavior: smooth; overflow-x: clip; }
+body { font-family: var(--font-body); background: var(--color-paper); color: var(--color-body); line-height: 1.65; overflow-x: clip; -webkit-font-smoothing: antialiased; }
+a { color: var(--color-accent); text-decoration: none; }
+a:hover { color: var(--color-accent-deep); }
+::selection { background: var(--color-accent-soft); color: var(--color-ink); }
+:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; border-radius: 2px; }
+.container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+/* Accessibility */
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+
+/* Body content gets more breathing room */
+.opening .opening-inner,
+.manifesto .container,
+.narrative .container,
+.capabilities .container,
+.investment .container,
+.closing .container,
+footer .container { padding-left: 48px; padding-right: 48px; }
+
+/* Nav */
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: color-mix(in oklch, var(--color-paper) 88%, transparent); backdrop-filter: blur(20px) saturate(1.1); -webkit-backdrop-filter: blur(20px) saturate(1.1); border-bottom: 1px solid var(--color-rule); }
+nav .container { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+.logo { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--white); display: flex; align-items: center; gap: 10px; }
+.logo-text { white-space: nowrap; }
+.logo-text span { color: var(--accent); }
+.heartmark { width: 28px; height: 28px; flex-shrink: 0; color: var(--color-accent); }
+.nav-right { display: flex; gap: 24px; align-items: center; }
+.nav-right a { color: var(--muted); font-size: 13px; font-weight: 500; transition: color 0.2s; }
+.nav-right a:hover { color: var(--white); }
+.nav-cta-btn { background: var(--accent) !important; color: var(--black) !important; padding: 8px 20px; border-radius: 6px; font-weight: 600 !important; font-size: 13px !important; }
+
+/* Chapter labels */
+.chapter-num { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 4px; color: var(--accent); margin-bottom: 32px; opacity: 0.7; }
+
+/* Opening hero */
+.opening { min-height: 100vh; min-height: 100svh; display: flex; align-items: center; justify-content: center; text-align: center; padding-top: 100px; position: relative; }
+.opening::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 200px; background: linear-gradient(transparent, var(--black)); pointer-events: none; }
+.opening-inner { max-width: 700px; position: relative; z-index: 1; }
+.opening h1 { font-family: 'Playfair Display', serif; font-size: clamp(36px, 6.4vw, 70px); line-height: 1.08; color: var(--white); margin-bottom: 20px; font-weight: 400; }
+.opening h1 em { font-style: normal; color: var(--color-accent); font-weight: 700; }
+.opening .hero-sub { font-size: 20px; color: var(--muted); margin-bottom: 40px; line-height: 1.8; font-weight: 300; }
+
+/* Hero Soul Tool */
+.hero-soul-tool { max-width: 520px; margin: 0 auto; position: relative; }
+.hero-soul-tool::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 500px; height: 500px; background: radial-gradient(circle, var(--accent-glow) 0%, transparent 60%); pointer-events: none; opacity: 0.3; }
+.hero-domain-wrap { display: flex; gap: 10px; margin-bottom: 12px; position: relative; z-index: 1; }
+.hero-domain-input { flex: 1; padding: 18px 24px; background: var(--card); border: 1px solid var(--border); border-radius: 12px; color: var(--white); font-size: 17px; font-family: 'Playfair Display', serif; text-align: center; outline: none; transition: all 0.3s; letter-spacing: 0.5px; }
+.hero-domain-input:focus { border-color: var(--accent); box-shadow: 0 0 40px var(--accent-dim); }
+.hero-domain-input::placeholder { color: var(--color-muted); font-style: normal; }
+.hero-domain-btn { padding: 18px 28px; background: var(--accent); color: var(--black); border: none; border-radius: 12px; font-weight: 700; font-size: 15px; cursor: pointer; font-family: 'Inter', sans-serif; transition: all 0.3s; white-space: nowrap; position: relative; z-index: 1; }
+.hero-domain-btn:hover { background: var(--white); transform: translateY(-1px); }
+.hero-domain-btn:disabled { opacity: 0.7; cursor: not-allowed; transform: none; }
+.hero-tool-note { font-size: 12px; color: var(--color-muted); position: relative; z-index: 1; }
+.hero-tool-note strong { color: var(--accent); font-weight: 600; }
+
+/* Hero Report */
+.hero-report { display: none; max-width: 520px; margin: 28px auto 0; text-align: left; position: relative; z-index: 1; }
+.hero-report.visible { display: block; animation: revealUp 0.8s ease; }
+@keyframes revealUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+.report-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 32px; }
+.report-title { font-family: 'Playfair Display', serif; font-size: 22px; color: var(--white); margin-bottom: 6px; }
+.report-subtitle { font-size: 12px; color: var(--muted); margin-bottom: 24px; }
+.soul-scores { display: flex; flex-direction: column; gap: 16px; margin-bottom: 24px; }
+.soul-score-row { display: flex; align-items: center; gap: 14px; }
+.soul-score-label { font-family: 'Playfair Display', serif; font-size: 13px; color: var(--text); width: 120px; flex-shrink: 0; position: relative; cursor: help; border-bottom: 1px dotted var(--muted); }
+.soul-score-label .score-tip { visibility: hidden; opacity: 0; position: absolute; bottom: calc(100% + 10px); left: 50%; transform: translateX(-50%); width: 260px; padding: 14px 16px; background: var(--card); border: 1px solid var(--accent); border-radius: 10px; font-family: 'Inter', sans-serif; font-size: 12px; color: var(--text); line-height: 1.6; z-index: 50; pointer-events: none; transition: opacity 0.2s, visibility 0.2s; box-shadow: 0 12px 28px -12px oklch(22% 0.014 60 / 0.3); }
+.soul-score-label .score-tip::after { content: ''; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); border: 6px solid transparent; border-top-color: var(--accent); }
+.soul-score-label:hover .score-tip { visibility: visible; opacity: 1; }
+@media (max-width: 768px) {
+  .soul-score-label .score-tip { left: 0; transform: none; width: 220px; }
+  .soul-score-label .score-tip::after { left: 30px; }
+}
+.soul-score-bar { flex: 1; height: 4px; background: var(--border); border-radius: 2px; overflow: hidden; }
+.soul-score-fill { height: 100%; border-radius: 2px; transition: width 1.2s cubic-bezier(0.22, 1, 0.36, 1); }
+.soul-score-fill.gold { background: var(--color-accent); }
+.soul-score-fill.green { background: var(--color-good); }
+.soul-score-fill.red { background: var(--color-warn); }
+.soul-score-num { font-size: 13px; font-weight: 700; color: var(--white); width: 28px; text-align: right; font-family: 'Inter', sans-serif; }
+.report-insight { padding: 16px; background: var(--accent-dim); border-radius: 8px; margin-bottom: 20px; }
+.report-insight p { font-size: 13px; color: var(--text); line-height: 1.6; font-style: italic; }
+.report-gate { text-align: center; }
+.report-gate p { font-size: 13px; color: var(--muted); margin-bottom: 12px; }
+.report-gate-btn { display: inline-block; padding: 12px 36px; background: var(--accent); color: var(--black); border: none; border-radius: 8px; font-weight: 700; font-size: 14px; cursor: pointer; font-family: 'Inter', sans-serif; transition: all 0.2s; }
+.report-gate-btn:hover { background: var(--white); }
+.scroll-hint { font-size: 12px; color: var(--color-muted); text-transform: uppercase; letter-spacing: 3px; animation: pulse 2s infinite; margin-top: 48px; }
+@keyframes pulse { 0%, 100% { opacity: 0.3; } 50% { opacity: 0.8; } }
+
+/* Analysis loading state */
+.analysis-status { font-size: 12px; color: var(--accent); margin-top: 8px; position: relative; z-index: 1; min-height: 18px; }
+
+/* Manifesto */
+.manifesto { padding: 120px 0; text-align: center; border-bottom: 1px solid var(--border); }
+.manifesto blockquote { font-family: var(--font-display); font-size: clamp(24px, 3.5vw, 40px); color: var(--color-ink); line-height: 1.5; max-width: 800px; margin: 0 auto 32px; font-weight: 400; font-style: normal; }
+.manifesto .attribution { font-size: 14px; color: var(--muted); }
+.manifesto .founder-photo { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 2px solid var(--accent); margin-top: 24px; }
+
+/* Narrative */
+.narrative { padding: 100px 0; }
+.narrative-block { max-width: 680px; margin: 0 auto 100px; }
+.narrative-block:last-child { margin-bottom: 0; }
+.narrative-block h2 { font-family: 'Playfair Display', serif; font-size: clamp(28px, 3.5vw, 44px); color: var(--white); margin-bottom: 20px; line-height: 1.2; }
+.narrative-block p { font-size: 17px; color: var(--muted); line-height: 1.8; margin-bottom: 20px; }
+.narrative-block p strong { color: var(--text); font-weight: 600; }
+.narrative-block .highlight { color: var(--accent); font-weight: 500; }
+
+/* Capabilities */
+.client-strip { background: var(--black); padding: 56px 0 64px; border-bottom: 1px solid var(--border); }
+.client-strip .chapter-num { text-align: center; margin-bottom: 28px; }
+.client-logos { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 24px 52px; }
+.client-logos a { display: inline-flex; align-items: center; opacity: 0.8; transition: opacity var(--dur-mid) var(--ease-out); }
+.client-logos a:hover, .client-logos a:focus-visible { opacity: 1; }
+.client-logos img { display: block; width: auto; }
+.logo-axonis { height: 19px; }
+.logo-deepbook { height: 26px; }
+.logo-ironweave { height: 28px; }
+.logo-sui { height: 32px; }
+.logo-ussc { height: 34px; }
+.logo-safesplash { height: 38px; }
+.logo-petpartners { height: 36px; }
+.logo-clarios { height: 25px; }
+.client-logos .logo-row-break { flex-basis: 100%; height: 0; }
+/* below 1024px the first five no longer fit on one line, so let all eight flow naturally */
+@media (max-width: 1023px) { .client-logos .logo-row-break { display: none; } }
+@media (max-width: 768px) {
+  .client-strip { padding: 40px 0 44px; }
+  .client-logos { gap: 22px 36px; }
+  .logo-axonis { height: 16px; } .logo-deepbook { height: 21px; } .logo-ironweave { height: 23px; }
+  .logo-sui { height: 26px; } .logo-ussc { height: 28px; }
+  .logo-safesplash { height: 31px; } .logo-petpartners { height: 29px; } .logo-clarios { height: 20px; }
+}
+.capabilities { padding: 100px 0; background: var(--dark); }
+.capabilities h2 { font-family: 'Playfair Display', serif; font-size: clamp(32px, 4vw, 48px); color: var(--white); text-align: center; margin-bottom: 16px; }
+.capabilities > .container > p { text-align: center; color: var(--muted); font-size: 17px; margin-bottom: 60px; }
+.cap-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.cap-card { border: 1px solid var(--color-rule); border-radius: var(--radius); padding: 48px 32px; background: var(--color-surface); transition: border-color var(--dur-mid) var(--ease-out), box-shadow var(--dur-mid) var(--ease-out); position: relative; overflow: hidden; }
+.cap-card:hover { border-color: var(--color-rule-strong); box-shadow: 0 1px 0 var(--color-accent-line) inset; }
+.cap-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 3px; color: var(--accent); margin-bottom: 20px; }
+.cap-card h3 { font-family: 'Playfair Display', serif; font-size: 28px; color: var(--white); margin-bottom: 16px; font-weight: 400; }
+.cap-card p { font-size: 15px; color: var(--muted); line-height: 1.7; margin-bottom: 20px; }
+.cap-details { display: flex; flex-direction: column; gap: 8px; }
+.cap-detail { font-size: 13px; color: var(--text); display: flex; align-items: center; gap: 8px; }
+.cap-detail::before { content: ''; width: 4px; height: 4px; background: var(--accent); border-radius: 50%; flex-shrink: 0; }
+
+/* Investment / Pricing */
+.investment { padding: 100px 0; background: var(--dark); }
+.investment h2 { font-family: 'Playfair Display', serif; font-size: clamp(32px, 4vw, 48px); color: var(--white); text-align: center; margin-bottom: 16px; font-weight: 400; }
+.investment > .container > p { text-align: center; color: var(--muted); font-size: 17px; margin-bottom: 60px; }
+.tiers { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.tier { border: 1px solid var(--border); border-radius: 16px; padding: 48px 32px; background: var(--card); position: relative; transition: all 0.3s; }
+.tier:hover { border-color: var(--accent); }
+.tier.featured { border-color: var(--accent); }
+.tier.featured::after { content: 'Recommended'; position: absolute; top: -11px; left: 50%; transform: translateX(-50%); background: var(--accent); color: var(--black); padding: 4px 16px; border-radius: 100px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+.tier-name { font-family: var(--font-display); font-size: 20px; color: var(--color-accent); margin-bottom: 8px; font-style: normal; }
+.tier-price { font-family: 'Playfair Display', serif; font-size: 44px; color: var(--white); font-weight: 700; margin-bottom: 4px; }
+.tier-freq { font-size: 13px; color: var(--muted); margin-bottom: 32px; }
+.tier-list { list-style: none; margin-bottom: 32px; }
+.tier-list li { padding: 6px 0; font-size: 14px; color: var(--text); display: flex; align-items: flex-start; gap: 10px; line-height: 1.5; }
+.tier-list li::before { content: ''; width: 4px; height: 4px; background: var(--accent); border-radius: 50%; flex-shrink: 0; margin-top: 8px; }
+.tier-btn { display: block; width: 100%; padding: 14px; border: 1px solid var(--border); border-radius: 8px; background: transparent; color: var(--white); font-weight: 600; font-size: 14px; cursor: pointer; font-family: 'Inter', sans-serif; transition: all 0.2s; text-align: center; }
+.tier-btn:hover { border-color: var(--accent); color: var(--accent); }
+.tier.featured .tier-btn { background: var(--accent); color: var(--black); border-color: var(--accent); }
+.tier.featured .tier-btn:hover { background: var(--white); }
+
+/* Core + add-ons layout */
+.tiers-split { display: grid; grid-template-columns: 1.05fr 1fr; gap: 20px; align-items: start; }
+.tier-core { border: 1px solid var(--accent); border-radius: 16px; padding: 48px 40px; background: var(--card); }
+.tier-eyebrow { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 3px; color: var(--accent); margin-bottom: 24px; }
+.tier-core .tier-price { font-size: clamp(48px, 6vw, 64px); margin-bottom: 2px; }
+.addons { display: flex; flex-direction: column; gap: 20px; }
+.addon-card { border: 1px solid var(--border); border-radius: 16px; padding: 32px; background: var(--card); transition: border-color 0.3s; }
+.addon-card:hover { border-color: var(--accent); }
+.addon-head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; margin-bottom: 10px; flex-wrap: wrap; }
+.addon-name { font-family: 'Playfair Display', serif; font-size: 22px; color: var(--white); font-weight: 400; }
+.addon-price { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--accent); font-weight: 700; white-space: nowrap; }
+.addon-card p { font-size: 14px; color: var(--muted); line-height: 1.7; margin: 0; }
+.addon-note { border: 1px solid var(--border); border-left: 2px solid var(--accent); border-radius: 12px; padding: 20px 24px; background: var(--accent-dim); font-size: 14px; color: var(--text); line-height: 1.7; }
+
+/* Closing CTA */
+.closing { padding: 160px 0; text-align: center; position: relative; }
+.closing::before { content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 1px; height: 80px; background: linear-gradient(var(--border), transparent); }
+.closing h2 { font-family: 'Playfair Display', serif; font-size: clamp(36px, 5vw, 56px); color: var(--white); margin-bottom: 20px; font-weight: 400; line-height: 1.2; }
+.closing h2 em { font-style: normal; color: var(--color-accent); background-image: linear-gradient(var(--color-accent-line), var(--color-accent-line)); background-size: 100% 2px; background-position: 0 92%; background-repeat: no-repeat; padding-bottom: 2px; }
+.closing p { font-size: 17px; color: var(--muted); margin-bottom: 48px; max-width: 480px; margin-left: auto; margin-right: auto; }
+.closing-form { display: flex; gap: 12px; max-width: 480px; margin: 0 auto; }
+.closing-form input { flex: 1; padding: 18px 20px; background: var(--card); border: 1px solid var(--border); border-radius: 10px; color: var(--white); font-size: 15px; font-family: 'Inter', sans-serif; outline: none; }
+.closing-form input:focus { border-color: var(--accent); }
+.closing-form button { padding: 18px 32px; background: var(--accent); color: var(--black); border: none; border-radius: 10px; font-weight: 700; font-size: 15px; cursor: pointer; font-family: 'Inter', sans-serif; white-space: nowrap; }
+.closing-form button:hover { background: var(--white); }
+
+/* Footer */
+footer { padding: 48px 0; border-top: 1px solid var(--border); }
+.footer-row { display: flex; justify-content: space-between; align-items: center; }
+.footer-links { display: flex; gap: 20px; flex-wrap: wrap; }
+.footer-links a { font-size: 12px; color: var(--muted); }
+.footer-links a:hover { color: var(--accent); }
+.footer-tagline { font-family: var(--font-display); font-size: 14px; color: var(--color-muted); font-style: normal; }
+
+/* Modal */
+.modal-overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: oklch(22% 0.014 60 / 0.45); backdrop-filter: blur(2px); z-index: 200; align-items: center; justify-content: center; }
+.modal-overlay.visible { display: flex; }
+.modal { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 48px; max-width: 440px; width: 90%; text-align: center; position: relative; }
+.modal h3 { font-family: 'Playfair Display', serif; font-size: 24px; color: var(--white); margin-bottom: 8px; font-weight: 400; }
+.modal p { font-size: 14px; color: var(--muted); margin-bottom: 28px; }
+.modal input { width: 100%; padding: 14px 16px; background: var(--black); border: 1px solid var(--border); border-radius: 8px; color: var(--white); font-size: 15px; font-family: 'Inter', sans-serif; margin-bottom: 10px; outline: none; }
+.modal input:focus { border-color: var(--accent); }
+.modal .modal-submit { width: 100%; padding: 14px; background: var(--accent); color: var(--black); border: none; border-radius: 8px; font-weight: 700; font-size: 15px; cursor: pointer; font-family: 'Inter', sans-serif; }
+.modal .modal-submit:hover { background: var(--white); }
+.modal-close { position: absolute; top: 12px; right: 16px; background: none; border: none; color: var(--color-muted); font-size: 20px; cursor: pointer; transition: color var(--dur-fast) var(--ease-out); }
+.modal-close:hover { color: var(--color-ink); }
+
+/* Hamburger button */
+.nav-burger { display: none; flex-direction: column; justify-content: center; gap: 5px; width: 36px; height: 36px; background: none; border: none; cursor: pointer; padding: 4px; z-index: 110; }
+.nav-burger span { display: block; width: 22px; height: 2px; background: var(--text); border-radius: 2px; transition: transform 0.25s, opacity 0.25s; transform-origin: center; }
+.nav-burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-burger.open span:nth-child(2) { opacity: 0; }
+.nav-burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* Mobile drawer */
+.nav-drawer { display: none; position: fixed; top: 64px; left: 0; right: 0; background: var(--color-paper); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border-top: 1px solid var(--color-rule); box-shadow: 0 12px 32px -16px oklch(22% 0.014 60 / 0.25); z-index: 99; padding: 24px; flex-direction: column; gap: 4px; }
+.nav-drawer.open { display: flex; }
+.nav-drawer a { color: var(--text); font-size: 16px; font-weight: 400; padding: 14px 8px; border-bottom: 1px solid var(--border); transition: color 0.2s; text-decoration: none; }
+.nav-drawer a:last-child { border-bottom: none; margin-top: 8px; }
+.nav-drawer a:hover { color: var(--accent); }
+.nav-drawer .nav-cta-btn { background: var(--accent); color: var(--black) !important; border-radius: 8px; text-align: center; font-weight: 600; padding: 14px; border-bottom: none; }
+
+@media (max-width: 768px) {
+  .opening { padding-top: 88px; }
+  .opening h1 { margin-bottom: 14px; }
+  .opening .hero-sub { font-size: 15px; line-height: 1.55; margin-bottom: 20px; }
+  .nav-right { display: none; }
+  .nav-burger { display: flex; }
+  .cap-grid, .tiers, .tiers-split { grid-template-columns: 1fr; }
+  .tier-core { padding: 40px 28px; }
+  .addon-head { flex-direction: column; align-items: flex-start; gap: 4px; }
+  .addons .tier-eyebrow { margin-top: 8px; margin-bottom: 0; }
+  .closing-form { flex-direction: column; }
+  .hero-domain-wrap { flex-direction: column; }
+  .hero-domain-btn { width: 100%; }
+  .footer-row { flex-direction: column; gap: 20px; text-align: center; }
+  .footer-links { justify-content: center; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+  .hero-report.visible { animation: none; }
+  .scroll-hint { animation: none; opacity: 0.5; }
+}
+
+/* Method steps + comparison table */
+.method-steps { list-style: none; counter-reset: step; margin: 40px 0 0; padding: 0; }
+.method-steps li { counter-increment: step; position: relative; padding-left: 56px; margin-bottom: 32px; }
+.method-steps li:last-child { margin-bottom: 0; }
+.method-steps li::before { content: counter(step, decimal-leading-zero); position: absolute; left: 0; top: 2px; font-family: 'Playfair Display', serif; font-size: 20px; color: var(--accent); opacity: 0.8; }
+.method-steps h3 { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 400; color: var(--white); margin-bottom: 8px; line-height: 1.3; }
+.method-steps p { font-size: 16px; color: var(--muted); line-height: 1.8; margin: 0; }
+.compare-wrap { overflow-x: auto; margin-top: 40px; -webkit-overflow-scrolling: touch; }
+.compare-table { width: 100%; border-collapse: collapse; font-size: 15px; min-width: 560px; }
+.compare-table caption { text-align: left; font-size: 13px; color: var(--muted); padding-bottom: 16px; line-height: 1.6; }
+.compare-table th, .compare-table td { text-align: left; padding: 16px 20px; border-bottom: 1px solid var(--border); vertical-align: top; line-height: 1.6; }
+.compare-table thead th { font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 3px; color: var(--accent); }
+.compare-table tbody th { font-weight: 500; color: var(--text); width: 24%; }
+.compare-table td { color: var(--muted); }
+.compare-table td.sc { color: var(--text); background: var(--accent-dim); }
+@media (max-width: 768px) { .method-steps li { padding-left: 44px; } .compare-table th, .compare-table td { padding: 14px 16px; } }
+</style>
+<script type="text/javascript">     (function(c,l,a,r,i,t,y){         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};         t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);     })(window, document, "clarity", "script", "y0ez4omsj4"); </script>  
+</head>
+<body>
+
+<!-- Nav -->
+<nav>
+  <div class="container">
+    <a href="/" class="logo" aria-label="Soulcraft home">
+      <svg class="heartmark" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect x="20" y="20" width="160" height="160" rx="4" stroke="currentColor" stroke-width="3" stroke-linecap="round" fill="none"/>
+        <path d="M100 152 C 100 152, 48 116, 46 84 C 44 62, 58 50, 74 50 C 86 50, 94 58, 100 68 C 106 58, 114 50, 126 50 C 142 50, 156 62, 154 84 C 152 116, 100 152, 100 152Z" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <circle cx="100" cy="96" r="4.5" fill="currentColor"/>
+      </svg>
+      <span class="logo-text">Soul<span>craft</span></span>
+    </a>
+    <div class="nav-right">
+      <a href="/about/">About</a>
+      <a href="/services/">Services</a>
+      <a href="/learn/">Learn</a>
+      <a href="/contact/" class="nav-cta-btn">Get Started</a>
+    </div>
+    <button class="nav-burger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="nav-drawer" id="nav-drawer">
+  <a href="/about/">About</a>
+      <a href="/services/">Services</a>
+  <a href="/learn/">Learn</a>
+  <a href="/contact/" class="nav-cta-btn">Get Started</a>
+</div>
+
+<!-- Main content -->
+<main>
+
+<!-- Opening with integrated soul tool -->
+<section class="opening">
+  <div class="opening-inner">
+    <h1>We grow your business by optimizing it for <em>search and AI answers.</em></h1>
+    <p class="hero-sub">Soulcraft is an SEO and AI search agency that sharpens your identity and puts you in the answers your customers are reading.</p>
+
+    <div class="hero-soul-tool" id="soul-tool">
+      <div class="hero-domain-wrap">
+        <input type="text" class="hero-domain-input" id="domainInput" placeholder="enter your domain" aria-label="Enter your domain for soul analysis" autocomplete="off" autocapitalize="off" spellcheck="false">
+        <button class="hero-domain-btn" id="soulBtn" onclick="discoverSoul()">Discover</button>
+      </div>
+      <p class="hero-tool-note">Enter your domain. Get your identity score. Free.</p>
+      <div class="analysis-status" id="analysisStatus" aria-live="polite"></div>
+
+      <div class="hero-report" id="soulReport">
+        <div class="report-card">
+          <div class="report-title" id="reportTitle">Soul Report</div>
+          <div class="report-subtitle" id="reportSub">Identity analysis</div>
+          <div class="soul-scores">
+            <div class="soul-score-row">
+              <span class="soul-score-label">Identity Clarity<span class="score-tip">How well your origin, beliefs, and purpose come through. Can a stranger tell what you do and why you exist?</span></span>
+              <div class="soul-score-bar"><div class="soul-score-fill gold" id="fillIdentity" style="width:0"></div></div>
+              <span class="soul-score-num" id="numIdentity">--</span>
+            </div>
+            <div class="soul-score-row">
+              <span class="soul-score-label">Voice Consistency<span class="score-tip">How uniform your personality is across your site. Does every page sound like the same company wrote it?</span></span>
+              <div class="soul-score-bar"><div class="soul-score-fill gold" id="fillVoice" style="width:0"></div></div>
+              <span class="soul-score-num" id="numVoice">--</span>
+            </div>
+            <div class="soul-score-row">
+              <span class="soul-score-label">AI Readiness<span class="score-tip">How well AI systems can understand and represent you. When someone asks ChatGPT about you, does it get you right?</span></span>
+              <div class="soul-score-bar"><div class="soul-score-fill gold" id="fillAI" style="width:0"></div></div>
+              <span class="soul-score-num" id="numAI">--</span>
+            </div>
+            <div class="soul-score-row">
+              <span class="soul-score-label">Positioning<span class="score-tip">How clearly you occupy a distinct space. Not "are you better" but "are you a different kind of thing?"</span></span>
+              <div class="soul-score-bar"><div class="soul-score-fill gold" id="fillPosition" style="width:0"></div></div>
+              <span class="soul-score-num" id="numPosition">--</span>
+            </div>
+            <div class="soul-score-row">
+              <span class="soul-score-label">Content Signal<span class="score-tip">The strength of what you're putting into the world. Clear identity means nothing if the world can't hear you.</span></span>
+              <div class="soul-score-bar"><div class="soul-score-fill gold" id="fillContent" style="width:0"></div></div>
+              <span class="soul-score-num" id="numContent">--</span>
+            </div>
+          </div>
+          <div class="report-insight">
+            <p id="insightText"></p>
+          </div>
+          <div class="report-gate">
+            <p>Your full report includes 15+ tailored recommendations.</p>
+            <button class="report-gate-btn" onclick="showModal()">Unlock Full Report</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-hint">Scroll to explore</div>
+  </div>
+</section>
+
+<!-- Trusted by / client logos -->
+<section class="client-strip" aria-labelledby="trusted-by-label">
+  <div class="container">
+    <div class="chapter-num" id="trusted-by-label">Trusted by</div>
+    <div class="client-logos">
+      <a href="https://www.axonis.ai/" target="_blank" rel="noopener" aria-label="Axonis (opens in a new tab)">
+        <img class="logo-axonis" src="images/clients/axonis.png" alt="Axonis logo" width="384" height="40" loading="lazy" decoding="async">
+      </a>
+      <a href="https://www.deepbook.tech/" target="_blank" rel="noopener" aria-label="DeepBook (opens in a new tab)">
+        <img class="logo-deepbook" src="images/clients/deepbook.png" alt="DeepBook logo" width="600" height="98" loading="lazy" decoding="async">
+      </a>
+      <a href="https://ironweave.io/" target="_blank" rel="noopener" aria-label="IronWeave (opens in a new tab)">
+        <img class="logo-ironweave" src="images/clients/ironweave.png" alt="IronWeave logo" width="600" height="119" loading="lazy" decoding="async">
+      </a>
+      <a href="https://www.sui.io/" target="_blank" rel="noopener" aria-label="Sui (opens in a new tab)">
+        <img class="logo-sui" src="images/clients/sui.png" alt="Sui logo" width="480" height="249" loading="lazy" decoding="async">
+      </a>
+      <a href="https://www.ussportscamps.com/" target="_blank" rel="noopener" aria-label="US Sports Camps (opens in a new tab)">
+        <img class="logo-ussc" src="images/clients/us-sports-camps.png" alt="US Sports Camps logo" width="600" height="117" loading="lazy" decoding="async">
+      </a>
+      <div class="logo-row-break" aria-hidden="true"></div>
+      <a href="https://www.safesplash.com/" target="_blank" rel="noopener" aria-label="SafeSplash Swim School (opens in a new tab)">
+        <img class="logo-safesplash" src="images/clients/safesplash.png" alt="SafeSplash Swim School logo" width="414" height="133" loading="lazy" decoding="async">
+      </a>
+      <a href="https://petpartners.org/" target="_blank" rel="noopener" aria-label="Pet Partners (opens in a new tab)">
+        <img class="logo-petpartners" src="images/clients/pet-partners.png" alt="Pet Partners logo" width="479" height="157" loading="lazy" decoding="async">
+      </a>
+      <a href="https://www.clarios.com/" target="_blank" rel="noopener" aria-label="Clarios (opens in a new tab)">
+        <img class="logo-clarios" src="images/clients/clarios.png" alt="Clarios logo" width="600" height="70" loading="lazy" decoding="async">
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Capabilities -->
+<section class="capabilities" id="capabilities">
+  <div class="container">
+    <div class="chapter-num" style="text-align:center;">What We Build</div>
+    <h2>Three pillars. One identity.</h2>
+    <p>Every system starts with your soul file and compounds from there.</p>
+    <div class="cap-grid">
+      <div class="cap-card">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Ccircle cx='24' cy='24' r='20' stroke='%239d5a37' stroke-width='2' fill='none'/%3E%3Cpath d='M16 24h16M24 16v16' stroke='%239d5a37' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E" alt="Soulcraft SEO AEO GEO search optimization icon" width="48" height="48" style="margin-bottom:16px;opacity:0.7;">
+        <div class="cap-label">Pillar One</div>
+        <h3>SEO / AEO / GEO</h3>
+        <p>We optimize how you appear in traditional search, AI-generated answers, and generative search. One engine, three surfaces.</p>
+        <div class="cap-details">
+          <div class="cap-detail">Automated content production</div>
+          <div class="cap-detail">AI answer optimization</div>
+          <div class="cap-detail">Generative engine optimization</div>
+          <div class="cap-detail">Continuous keyword targeting</div>
+        </div>
+      </div>
+      <div class="cap-card">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Crect x='8' y='12' width='32' height='24' rx='3' stroke='%239d5a37' stroke-width='2' fill='none'/%3E%3Cpath d='M8 18l16 10 16-10' stroke='%239d5a37' stroke-width='2' fill='none'/%3E%3C/svg%3E" alt="Soulcraft demand generation and content distribution icon" width="48" height="48" style="margin-bottom:16px;opacity:0.7;">
+        <div class="cap-label">Pillar Two</div>
+        <h3>Demand + Content</h3>
+        <p>We generate and distribute multi-channel content: blog, social, email, landing pages. All in your voice.</p>
+        <div class="cap-details">
+          <div class="cap-detail">CRM + email integration</div>
+          <div class="cap-detail">Lead scoring + nurture flows</div>
+          <div class="cap-detail">Social distribution</div>
+          <div class="cap-detail">Identity-matched voice</div>
+        </div>
+      </div>
+      <div class="cap-card">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Ccircle cx='24' cy='20' r='8' stroke='%239d5a37' stroke-width='2' fill='none'/%3E%3Cpath d='M12 38c0-6.6 5.4-12 12-12s12 5.4 12 12' stroke='%239d5a37' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E" alt="Soulcraft AI advertising and ChatGPT placement icon" width="48" height="48" style="margin-bottom:16px;opacity:0.7;">
+        <div class="cap-label">Pillar Three</div>
+        <h3>AI Advertising</h3>
+        <p>Place your products inside ChatGPT, Perplexity, and emerging AI platforms. A channel that barely exists yet. We're already there.</p>
+        <div class="cap-details">
+          <div class="cap-detail">ChatGPT product placement</div>
+          <div class="cap-detail">Perplexity sponsored answers</div>
+          <div class="cap-detail">Product feed integration</div>
+          <div class="cap-detail">Emerging channel strategy</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Manifesto -->
+<section class="manifesto">
+  <div class="container">
+    <blockquote>"The most valuable asset a person or business possesses is its identity. And that identity isn't fixed. Identity evolves. It can be shaped, refined, tuned. That's the craft."</blockquote>
+    <div class="attribution">- Evan Drake, Founder</div>
+    <picture>
+      <source srcset="images/evan-drake.webp" type="image/webp">
+      <img src="images/evan-drake.jpg" alt="Evan Drake, Founder of Soulcraft" class="founder-photo" loading="lazy" decoding="async" width="320" height="320">
+    </picture>
+  </div>
+</section>
+
+<!-- Narrative -->
+<section class="narrative">
+  <div class="container">
+    <div class="narrative-block">
+      <div class="chapter-num">Chapter 01</div>
+      <h2>Marketing broke when it forgot what it was for.</h2>
+      <p>Somewhere along the way, marketing became a production line. More content, more channels, more dashboards. Agencies scaled their headcount and passed the overhead to you. The result? <strong>Generic output that sounds like everyone else.</strong></p>
+      <p>Then AI arrived, and the production line got faster. But faster doesn't fix the fundamental problem: if the system doesn't know who you are, it can't speak for you. It just makes noise. More noise, faster, from more directions. And the companies drowning in that noise are the same ones paying for it.</p>
+    </div>
+
+    <div class="narrative-block">
+      <div class="chapter-num">Chapter 02</div>
+      <h2>What if the system <em>knew</em> you?</h2>
+      <p>That's what the soul file is. It's a structured file that captures your identity: your voice, your values, your positioning, your competitive context. It's the DNA that every agentic system inherits.</p>
+      <p>When agents carry your soul file, they don't produce generic content. They produce <span class="highlight">work that sounds like you</span>, thinks like you, and reaches the people you care about. Autonomously. Around the clock.</p>
+    </div>
+
+    <div class="narrative-block">
+      <div class="chapter-num">Chapter 03</div>
+      <h2>The soul is the system.</h2>
+      <p>Soulcraft doesn't bolt AI onto old processes. We build from the premise that <strong>agents do the work, and the soul is what makes that work feel human.</strong></p>
+      <p>SEO, demand gen, content, advertising, all orchestrated by agentic systems that learn, adapt, and compound over time. The identity gets sharper. The outputs get better. The flywheel spins.</p>
+    </div>
+
+    <div class="narrative-block">
+      <div class="chapter-num">What We Believe</div>
+      <h2>Our approach is different.</h2>
+      <p>We believe the only lasting advantage is identity. Tools get copied. Tactics expire. But a company that truly knows itself produces work that compounds, because every piece reinforces the same signal. That's how it works: soul in, leverage out. The benefits aren't incremental. They're exponential.</p>
+      <p>Most agencies deliver tactics without context. They optimize for metrics without meaning. We start with who you are and build systems that carry that truth into every channel, every touchpoint, every interaction. The result is marketing that doesn't just perform. It resonates. It compounds. It becomes a trusted extension of your team, working around the clock with the same conviction you bring to your best days.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Method: how AI search optimization works, step by step -->
+<section class="narrative" id="method" style="border-top:1px solid var(--border);">
+  <div class="container">
+    <div class="narrative-block">
+      <div class="chapter-num">How It Works</div>
+      <h2>Five steps to AI search visibility.</h2>
+      <p><strong>AI search optimization is the practice of getting a brand named and cited when people ask an AI assistant a question instead of typing into a search box.</strong> It spans three overlapping disciplines: SEO for ranked results, answer engine optimization (AEO) for direct answers, and generative engine optimization (GEO) for systems like ChatGPT, Claude, Gemini, Perplexity, and Google AI Overviews.</p>
+      <p>It is a method, not a mystery. Here is what we do, in order, on every engagement.</p>
+      <ol class="method-steps">
+        <li>
+          <h3>Map the identity</h3>
+          <p>We build your soul file: voice, values, positioning, audience, competitive context. Every later step reads from this file, which is what keeps the output sounding like you instead of like the category.</p>
+        </li>
+        <li>
+          <h3>Baseline the answers</h3>
+          <p>We ask the engines the questions your buyers actually ask, then record what comes back: whether you are named, which sources get cited, and how much of the answer belongs to competitors. That baseline is what every later claim gets measured against.</p>
+        </li>
+        <li>
+          <h3>Make the site legible to machines</h3>
+          <p>Schema markup, a published entity map, clean heading structure, descriptive alt text. An answer engine cannot cite what it cannot parse, and most sites fail here before they fail on content.</p>
+        </li>
+        <li>
+          <h3>Publish the answers</h3>
+          <p>We write the pages that respond directly to those questions, in your voice, with definitions and comparisons up front where models extract them. Depth beats volume: one page that answers a question completely does more than ten that circle it.</p>
+        </li>
+        <li>
+          <h3>Earn citations, then measure the lift</h3>
+          <p>We pursue the sources these engines already trust, then re-run the baseline. You see citation lift, days to first tracked citation, and share of voice against the competitors you named, with the method shown next to the numbers.</p>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- Contrast: Soulcraft vs a traditional SEO agency -->
+<section class="narrative" id="vs-traditional" style="border-top:1px solid var(--border);">
+  <div class="container">
+    <div class="narrative-block" style="max-width:880px;">
+      <div class="chapter-num">The Difference</div>
+      <h2>How this differs from a traditional SEO agency.</h2>
+      <p>Traditional SEO is not wrong. It is aimed at a surface that is losing share. The gap shows up in seven places.</p>
+      <div class="compare-wrap">
+        <table class="compare-table">
+          <caption>A traditional SEO agency compared with Soulcraft's agentic approach, across seven dimensions.</caption>
+          <thead>
+            <tr><th scope="col">Dimension</th><th scope="col">Traditional SEO agency</th><th scope="col">Soulcraft</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">What you buy</th><td>Human hours, billed monthly</td><td class="sc">Autonomous systems that run continuously</td></tr>
+            <tr><th scope="row">Surface optimized</th><td>Google's ranked links</td><td class="sc">Google plus ChatGPT, Claude, Gemini, Perplexity, and AI Overviews</td></tr>
+            <tr><th scope="row">Measure of success</th><td>Keyword rankings and sessions</td><td class="sc">Citations, share of voice in AI answers, and qualified demand</td></tr>
+            <tr><th scope="row">How content is made</th><td>Briefs, writers, review cycles</td><td class="sc">Agents working from your soul file, edited by humans</td></tr>
+            <tr><th scope="row">Where identity lives</th><td>A slide deck nobody reopens</td><td class="sc">A structured file the systems read on every run</td></tr>
+            <tr><th scope="row">Behavior at scale</th><td>Cost rises with headcount</td><td class="sc">Output compounds while cost stays flat</td></tr>
+            <tr><th scope="row">Reporting</th><td>A monthly deck of rankings</td><td class="sc">Instrumented from day one, with the method published</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Proof -->
+<section class="capabilities" id="proof" style="border-top:1px solid var(--border);">
+  <div class="container">
+    <div class="chapter-num" style="text-align:center;">Proof</div>
+    <h2>Evidence over adjectives.</h2>
+    <p>Identity is the strategy. Proof is how we stay honest about it. We ship infrastructure you can inspect right now, and we publish results only after we have measured them.</p>
+    <div class="cap-grid">
+      <a class="cap-card" href="/entitymap.html" style="color:var(--white);text-decoration:none;display:block;">
+        <div class="cap-label">Shipped &amp; verifiable</div>
+        <h3>EntityMap</h3>
+        <p>A live, machine-readable map of who Soulcraft is, built so AI systems describe us accurately. Open it and read exactly what the models read.</p>
+        <div class="cap-details"><div class="cap-detail">Inspect it live</div></div>
+      </a>
+      <a class="cap-card" href="/okf/" style="color:var(--white);text-decoration:none;display:block;">
+        <div class="cap-label">Shipped &amp; verifiable</div>
+        <h3>Knowledge Bundle</h3>
+        <p>Our Open Knowledge Format bundle: the structured facts, relationships, and sources an answer engine needs to cite a brand correctly.</p>
+        <div class="cap-details"><div class="cap-detail">Inspect it live</div></div>
+      </a>
+      <a class="cap-card" href="/soulcrafter/" style="color:var(--white);text-decoration:none;display:block;">
+        <div class="cap-label">Shipped &amp; playable</div>
+        <h3>Soulcrafter</h3>
+        <p>Our AEO strategy game. Scout any real domain, take twenty turns to make ChatGPT, Claude, and Google say its name, and verify every move against the live site.</p>
+        <div class="cap-details"><div class="cap-detail">Play it live</div></div>
+      </a>
+    </div>
+
+    <div style="margin-top:48px;border-top:1px solid var(--border);padding-top:48px;text-align:center;">
+      <div class="chapter-num" style="text-align:center;">Results, measured</div>
+      <p style="max-width:640px;margin:0 auto;">Every engagement is instrumented from day one. We track citation lift across AI engines, time to first tracked citation, and share of voice against the competitors you name. We publish those figures once they are verified, and we show the method behind them. No estimates, no vanity metrics.</p>
+      <div style="margin-top:32px;">
+        <a href="/learn/how-to-measure-ai-search-visibility/" style="display:inline-block;width:auto;padding:14px 28px;border:1px solid var(--accent);border-radius:8px;color:var(--accent);font-weight:600;font-size:14px;font-family:'Inter',sans-serif;text-decoration:none;">See how we measure AI visibility</a>
+      </div>
+    </div>
+
+    <!-- METRICS TEMPLATE. Evan: when you have VERIFIED figures, delete this comment wrapper to publish the row. Replace [number] and labels with real measured values only. Do not publish estimates (no-sloptimization bright line).
+    <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:40px;">
+      <div style="text-align:center;"><div style="font-family:var(--font-display);font-size:52px;color:var(--accent);line-height:1;">[number]</div><div style="font-size:13px;color:var(--muted);margin-top:10px;line-height:1.5;">Citation lift across AI engines</div></div>
+      <div style="text-align:center;"><div style="font-family:var(--font-display);font-size:52px;color:var(--accent);line-height:1;">[number]</div><div style="font-size:13px;color:var(--muted);margin-top:10px;line-height:1.5;">Days to first tracked AI citation</div></div>
+      <div style="text-align:center;"><div style="font-family:var(--font-display);font-size:52px;color:var(--accent);line-height:1;">[number]</div><div style="font-size:13px;color:var(--muted);margin-top:10px;line-height:1.5;">Share of voice vs named competitors</div></div>
+    </div>
+    -->
+  </div>
+</section>
+
+<!-- Investment -->
+<section class="investment" id="investment">
+  <div class="container">
+    <div class="chapter-num" style="text-align:center;">Investment</div>
+    <h2>What it costs. What it's worth.</h2>
+    <p>One core engagement, built around autonomous systems. Add distribution or citations when you want them. No long-term contracts, no overhead passed to you.</p>
+    <div class="tiers-split">
+      <div class="tier-core">
+        <div class="tier-eyebrow">Core Engagement</div>
+        <div class="tier-price">$5,000</div>
+        <div class="tier-freq">per month</div>
+        <ul class="tier-list">
+          <li>A content engine and hub</li>
+          <li>AI visibility and share of voice monitoring</li>
+          <li>Technical SEO auditing and website advisory</li>
+          <li>Weekly reporting, analysis, and strategy</li>
+          <li>Weekly calls, Slack for everything in between</li>
+          <li>Ideation on PR and thought leadership</li>
+        </ul>
+        <a href="/contact/" class="tier-btn" onclick="showModal(); return false;">Get Started</a>
+      </div>
+      <div class="addons">
+        <div class="tier-eyebrow">Add-ons, month to month</div>
+        <div class="addon-card">
+          <div class="addon-head">
+            <span class="addon-name">Distribution Engine</span>
+            <span class="addon-price">$2,500/mo</span>
+          </div>
+          <p>LinkedIn, Medium, Reddit, Substack, X. Each piece tailored to the channel and posted.</p>
+        </div>
+        <div class="addon-card">
+          <div class="addon-head">
+            <span class="addon-name">Citation Engine</span>
+            <span class="addon-price">$2,500/mo</span>
+          </div>
+          <p>Wikipedia, directories, industry publications. Outreach to the third-party sources that compound.</p>
+        </div>
+        <div class="addon-note">No long-term lock. Add or drop any add-on month to month.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Who We Serve -->
+<section class="narrative" style="border-bottom:1px solid var(--border);">
+  <div class="container">
+    <div class="narrative-block">
+      <div class="chapter-num">Who We Serve</div>
+      <h2>Built for companies ready to lead, not follow.</h2>
+      <p>Soulcraft works with founders and marketing leaders at growth-stage companies who are tired of outsourcing their voice to agencies that don't understand them. You have a product people love. You have a story worth telling. What you need is a system that tells it at scale, without losing what makes you, you. Our clients span B2B SaaS, professional services, health and wellness brands, and emerging technology companies. What they share is ambition, clarity of purpose, and a willingness to let autonomous systems do what they do best.</p>
+      <p>If you're spending more time managing your marketing than running your company, something is broken. We fix that. Not by adding more people to the process, but by replacing the process itself with intelligent systems that learn from your identity and compound their effectiveness over time. The result is marketing that grows while you sleep, reaches the right people in the right channels, and sounds unmistakably like you.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="narrative" id="faq" style="border-bottom:1px solid var(--border);">
+  <div class="container">
+    <div class="narrative-block">
+      <div class="chapter-num">Questions</div>
+      <h2>What people ask us.</h2>
+      <p><strong>What is the soul file?</strong> The soul file is a structured document that captures your company's identity: voice, values, positioning, audience, and competitive context. It's the file that drives every agentic marketing system Soulcraft builds. Think of it as the DNA your marketing agents inherit. Every piece of content, every campaign, every optimization decision flows from this single source of truth.</p>
+      <p><strong>How is Soulcraft different from a traditional marketing agency?</strong> Traditional agencies charge for human hours. Soulcraft charges for autonomous systems. You get around the clock production, not nine to five project management. The systems compound in effectiveness over time, which human teams simply cannot replicate at scale. We don't produce deliverables and hand them off. We build living systems that evolve alongside your business.</p>
+      <p><strong>What does agentic marketing mean?</strong> Agentic means the systems act autonomously. They don't wait for instructions. They produce content, optimize search presence, distribute across channels, and learn from performance data, all on their own, guided by your soul file. You set the direction. The agents do the work.</p>
+      <p><strong>What is AI advertising?</strong> Platforms like ChatGPT and Perplexity are beginning to offer advertising placements. Soulcraft connects your product feeds to these services so your offerings appear when users ask relevant questions. It's an emerging channel with significant first mover advantage, and we are already building the infrastructure to place our clients there.</p>
+      <p><strong>How much does Soulcraft cost?</strong> The core engagement is five thousand dollars per month. That covers a content engine and hub, AI visibility and share of voice monitoring, technical SEO auditing and website advisory, weekly reporting and strategy, weekly calls with Slack in between, and ideation on PR and thought leadership. Two add-ons run twenty five hundred dollars per month each and can be added or dropped month to month. The Distribution Engine tailors and posts each piece across LinkedIn, Medium, Reddit, Substack, and X. The Citation Engine handles outreach to Wikipedia, directories, and industry publications. No long term contracts. No hidden fees. No overhead passed to you.</p>
+      <p><strong>How is AI search different from traditional search?</strong> Traditional search returns a ranked list of links and lets the person choose. AI search returns one composed answer and names a few sources inside it. That changes the goal: you are no longer competing for position three, you are competing to be the source the model quotes. A page can rank well on Google and still be invisible inside ChatGPT, Claude, Gemini, or Perplexity, because those systems select for parseable structure and clear, citable claims, not for links alone.</p>
+      <p><strong>How long does it take to show up in AI answers?</strong> Technical legibility moves fastest: schema, entity data, and crawler access can be re-crawled within days. Content and citations take longer, usually one to three months before a new page is reliably pulled into answers, because the engines need to encounter it in enough places to trust it. Soulcraft tracks days to first tracked citation on every engagement, so the timeline is a measured number rather than a promise.</p>
+      <p><strong>Which AI platforms does Soulcraft optimize for?</strong> ChatGPT, Claude, Gemini, Perplexity, and Google AI Overviews, alongside traditional Google and Bing results. Soulcraft monitors each one separately, because they cite different sources and disagree more often than people expect. A brand can hold strong share of voice in Perplexity and be absent from ChatGPT on the same question.</p>
+      <p><strong>How do you measure AI search visibility?</strong> Three numbers, tracked from day one: citation lift across AI engines, days to first tracked citation, and share of voice against the competitors you name. Soulcraft runs the same prompt set on a fixed schedule so the comparison stays honest, and publishes the method alongside the results. Soulcraft does not report estimates. <a href="/learn/how-to-measure-ai-search-visibility/">See how we measure AI visibility</a>.</p>
+      <p><strong>Does AI search replace SEO, or do we need both?</strong> Both, for now. The technical foundations overlap almost entirely: clean structure, fast pages, accurate schema, and real authority help in both places. What differs is the target. Traditional SEO competes for a click; answer engine optimization competes to be the cited source inside an answer that may never produce a click. Teams that drop SEO to chase AI visibility usually lose the crawl quality that AI visibility depends on.</p>
+    </div>
+  </div>
+</section>
+
+<!--
+<section class="explainer" style="padding:80px 0;text-align:center;">
+  <div class="container">
+    <h2 style="font-family:'Playfair Display',serif;font-size:clamp(28px,3vw,36px);color:var(--white);margin-bottom:12px;font-weight:400;">See it in action.</h2>
+    <p style="color:var(--muted);font-size:17px;margin-bottom:40px;">How agentic marketing systems carry your identity forward.</p>
+    <video poster="/soulcraft-og.png" controls preload="none" style="width:100%;max-width:720px;border-radius:12px;border:1px solid var(--border);background:var(--card);" aria-label="Soulcraft agentic marketing system demo">
+      <source src="/demo.mp4" type="video/mp4">
+    </video>
+  </div>
+</section>
+-->
+
+<!-- Closing CTA -->
+<section class="closing">
+  <div class="container">
+    <h2>The path starts with <em>knowing who you are.</em></h2>
+    <p>Let's discover your soul and build the systems that carry it forward. Every day, across every channel, in every interaction. The companies that win the next decade will be the ones whose identity is so clear that even autonomous systems can carry it faithfully. Start here. Start now. Start with soul.</p>
+    <div class="closing-form">
+      <input type="email" placeholder="you@company.com" id="closingEmail" aria-label="Your email address">
+      <button onclick="submitClosing()">Start the Conversation</button>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="footer-row">
+      <span class="logo">
+        <svg class="heartmark" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="20" y="20" width="160" height="160" rx="4" stroke="currentColor" stroke-width="3" stroke-linecap="round" fill="none"/>
+          <path d="M100 152 C 100 152, 48 116, 46 84 C 44 62, 58 50, 74 50 C 86 50, 94 58, 100 68 C 106 58, 114 50, 126 50 C 142 50, 156 62, 154 84 C 152 116, 100 152, 100 152Z" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <circle cx="100" cy="96" r="4.5" fill="currentColor"/>
+        </svg>
+        <span class="logo-text">Soul<span>craft</span></span>
+      </span>
+      <div class="footer-links">
+        <a href="/services/">Services</a>
+        <a href="#investment">Pricing</a>
+  <a href="/developers/">Developers</a>
+        <a href="/brand/">Identity Guide</a>
+        <a href="/contact/">Contact</a>
+        <a href="/entitymap.html">EntityMap</a>
+                    <a href="/okf/">Knowledge Bundle</a>
+        <a href="/notslop/">Not Slop</a>
+        <a href="/media/">Media</a>
+        <a href="/soulcrafter/">Soulcrafter</a>
+        <a href="https://www.linkedin.com/in/iamevandrake/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+        <div class="footer-description" style="max-width:680px;margin:32px auto 0;text-align:center;font-size:13px;line-height:1.7;color:#888;">Soulcraft helps brands understand and improve how they appear across AI search platforms, including ChatGPT, Gemini, Claude, and Google AI Overviews. We work with marketing teams on visibility audits, content strategy, and AI search monitoring. Based in the California Bay Area and helping teams globally.</div>
+    <div class="footer-notslop" data-notslop-mount style="display:flex;justify-content:center;margin-top:28px;"></div>
+
+    <div class="footer-tagline" style="text-align:center;margin-top:32px;">&copy; 2026 Soulcraft. The soul is the system.</div>
+  </div>
+</footer>
+
+<!-- Email Capture Modal -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal">
+    <button class="modal-close" onclick="hideModal()" aria-label="Close">&times;</button>
+    <h3>Your soul report awaits.</h3>
+    <p>We'll send your complete identity audit with tailored recommendations.</p>
+    <input type="text" placeholder="Your name" id="modalName" aria-label="Your name">
+    <input type="email" placeholder="you@company.com" id="modalEmail" aria-label="Your email">
+    <input type="text" placeholder="Company" id="modalCompany" aria-label="Company name">
+    <input type="hidden" id="modalDomain" value="">
+    <input type="hidden" id="modalScores" value="">
+    <button class="modal-submit" onclick="submitModal()">Send My Report</button>
+  </div>
+</div>
+
+<script>
+// ============================================================
+// Soul.md Analysis Engine -- Client-side domain identity scorer
+// ============================================================
+
+var PROXY_URL = 'https://api.allorigins.win/raw?url=';
+
+function cleanDomain(input) {
+  var d = input.trim().toLowerCase();
+  d = d.replace(/^https?:\/\//, '');
+  d = d.replace(/\/.*$/, '');
+  d = d.replace(/^www\./, '');
+  return d;
+}
+
+function setStatus(msg) {
+  document.getElementById('analysisStatus').textContent = msg;
+}
+
+function discoverSoul() {
+  var input = document.getElementById('domainInput');
+  var domain = cleanDomain(input.value);
+  if (!domain || !domain.includes('.')) {
+    input.focus();
+    return;
+  }
+
+  var btn = document.getElementById('soulBtn');
+  btn.textContent = 'Reading...';
+  btn.disabled = true;
+  setStatus('Connecting to ' + domain + '...');
+
+  // Store domain for modal
+  document.getElementById('modalDomain').value = domain;
+
+  // Self-domain detection: if scoring our own site, analyze the live DOM directly
+  var currentHost = window.location.hostname.replace(/^www\./, '');
+  var targetDomain = domain.replace(/^www\./, '');
+  if (targetDomain === currentHost) {
+    setStatus('Analyzing identity signals...');
+    var scores = analyzeHTML(document.documentElement.outerHTML, domain);
+    displayReport(domain, scores);
+    return;
+  }
+
+  // Try fetching the site via CORS proxies (with fallback chain)
+  var proxyUrls = [
+    'https://api.allorigins.win/raw?url=',
+    'https://corsproxy.io/?url='
+  ];
+
+  function tryProxy(idx) {
+    if (idx >= proxyUrls.length) {
+      setStatus('Limited access -- scoring domain structure...');
+      setTimeout(function() {
+        var scores = analyzeDomainOnly(domain);
+        displayReport(domain, scores);
+      }, 1000);
+      return;
+    }
+    var url = proxyUrls[idx] + encodeURIComponent('https://' + domain);
+    fetch(url, { signal: AbortSignal.timeout(8000) })
+      .then(function(res) {
+        if (!res.ok) throw new Error('fetch failed');
+        setStatus('Analyzing identity signals...');
+        return res.text();
+      })
+      .then(function(html) {
+        var scores = analyzeHTML(html, domain);
+        displayReport(domain, scores);
+      })
+      .catch(function() {
+        tryProxy(idx + 1);
+      });
+  }
+  tryProxy(0);
+}
+
+function analyzeHTML(html, domain) {
+  var parser = new DOMParser();
+  var doc = parser.parseFromString(html, 'text/html');
+
+  // === Identity Clarity (0-100) ===
+  var identity = 30; // base
+  var title = doc.querySelector('title');
+  if (title && title.textContent.length > 10) identity += 12;
+  if (title && title.textContent.length > 30) identity += 5;
+  var metaDesc = doc.querySelector('meta[name="description"]');
+  if (metaDesc && metaDesc.content.length > 50) identity += 15;
+  if (metaDesc && metaDesc.content.length > 120) identity += 5;
+  var h1 = doc.querySelector('h1');
+  if (h1 && h1.textContent.trim().length > 5) identity += 10;
+  var ogTitle = doc.querySelector('meta[property="og:title"]');
+  if (ogTitle) identity += 8;
+  var ogDesc = doc.querySelector('meta[property="og:description"]');
+  if (ogDesc) identity += 5;
+  var ogImg = doc.querySelector('meta[property="og:image"]');
+  if (ogImg) identity += 5;
+  var canonical = doc.querySelector('link[rel="canonical"]');
+  if (canonical) identity += 5;
+
+  // === Voice Consistency (0-100) ===
+  var voice = 25;
+  var headings = doc.querySelectorAll('h1, h2, h3');
+  if (headings.length >= 3) voice += 10;
+  if (headings.length >= 6) voice += 10;
+  var paragraphs = doc.querySelectorAll('p');
+  var totalWords = 0;
+  paragraphs.forEach(function(p) { totalWords += p.textContent.split(/\s+/).length; });
+  if (totalWords > 100) voice += 10;
+  if (totalWords > 300) voice += 10;
+  if (totalWords > 600) voice += 5;
+  // Check for consistent structure
+  var sections = doc.querySelectorAll('section, article');
+  if (sections.length >= 3) voice += 10;
+  // Check for about/mission language
+  var bodyText = doc.body ? doc.body.textContent.toLowerCase() : '';
+  if (bodyText.includes('mission') || bodyText.includes('values') || bodyText.includes('about us') || bodyText.includes('who we are')) voice += 10;
+  if (bodyText.includes('our story') || bodyText.includes('our approach') || bodyText.includes('what we believe')) voice += 10;
+
+  // === AI Readiness (0-100) ===
+  var ai = 15;
+  var jsonLd = doc.querySelectorAll('script[type="application/ld+json"]');
+  if (jsonLd.length > 0) ai += 20;
+  if (jsonLd.length > 1) ai += 5;
+  var metaRobots = doc.querySelector('meta[name="robots"]');
+  if (metaRobots) ai += 8;
+  // Schema checks
+  var schemaText = '';
+  jsonLd.forEach(function(s) { schemaText += s.textContent; });
+  if (schemaText.includes('Organization')) ai += 8;
+  if (schemaText.includes('FAQPage')) ai += 8;
+  if (schemaText.includes('SpeakableSpecification')) ai += 10;
+  if (schemaText.includes('Product') || schemaText.includes('Service')) ai += 6;
+  // Semantic HTML
+  var nav = doc.querySelector('nav');
+  var main = doc.querySelector('main');
+  var footer = doc.querySelector('footer');
+  if (nav) ai += 5;
+  if (main) ai += 5;
+  if (footer) ai += 5;
+  // Open Graph completeness
+  if (ogTitle && ogDesc && ogImg) ai += 5;
+
+  // === Positioning (0-100) ===
+  var position = 20;
+  // Value proposition in first 200 chars
+  if (h1 && h1.textContent.length > 10) position += 15;
+  // Differentiation language
+  if (bodyText.includes('unique') || bodyText.includes('different') || bodyText.includes('unlike') || bodyText.includes('only')) position += 10;
+  // Social proof
+  if (bodyText.includes('testimonial') || bodyText.includes('client') || bodyText.includes('partner') || bodyText.includes('trusted')) position += 10;
+  // Pricing visibility
+  if (bodyText.includes('pricing') || bodyText.includes('price') || bodyText.includes('$') || bodyText.includes('plan')) position += 10;
+  // CTA presence
+  var ctas = doc.querySelectorAll('a[href], button');
+  var ctaCount = 0;
+  ctas.forEach(function(el) {
+    var t = el.textContent.toLowerCase();
+    if (t.includes('start') || t.includes('get') || t.includes('try') || t.includes('contact') || t.includes('demo') || t.includes('sign up') || t.includes('book')) ctaCount++;
+  });
+  if (ctaCount >= 1) position += 10;
+  if (ctaCount >= 3) position += 10;
+  // Clear service/product description
+  if (bodyText.includes('service') || bodyText.includes('solution') || bodyText.includes('product') || bodyText.includes('platform')) position += 10;
+  if (bodyText.includes('how it works') || bodyText.includes('features') || bodyText.includes('benefits')) position += 5;
+
+  // === Content Signal (0-100) ===
+  var content = 20;
+  if (totalWords > 200) content += 10;
+  if (totalWords > 500) content += 10;
+  if (totalWords > 1000) content += 5;
+  // Images
+  var images = doc.querySelectorAll('img');
+  if (images.length >= 1) content += 5;
+  if (images.length >= 3) content += 5;
+  // Alt text
+  var altCount = 0;
+  images.forEach(function(img) { if (img.alt && img.alt.length > 3) altCount++; });
+  if (images.length > 0 && altCount / images.length > 0.5) content += 10;
+  // Links
+  var links = doc.querySelectorAll('a[href]');
+  if (links.length >= 5) content += 5;
+  if (links.length >= 15) content += 5;
+  // Blog/resource link
+  var hasResourceLinks = false;
+  links.forEach(function(a) {
+    var href = (a.href || '').toLowerCase();
+    var text = a.textContent.toLowerCase();
+    if (href.includes('blog') || href.includes('resource') || href.includes('article') || text.includes('blog') || text.includes('learn')) hasResourceLinks = true;
+  });
+  if (hasResourceLinks) content += 10;
+  // Social links
+  if (bodyText.includes('linkedin') || bodyText.includes('twitter') || bodyText.includes('facebook') || bodyText.includes('instagram')) content += 5;
+  // Video
+  if (doc.querySelector('video, iframe[src*="youtube"], iframe[src*="vimeo"]')) content += 10;
+
+  return {
+    identity: Math.min(100, identity),
+    voice: Math.min(100, voice),
+    ai: Math.min(100, ai),
+    position: Math.min(100, position),
+    content: Math.min(100, content)
+  };
+}
+
+function analyzeDomainOnly(domain) {
+  // Fallback when we can't fetch the page
+  var parts = domain.split('.');
+  var name = parts[0];
+  var tld = parts[parts.length - 1];
+
+  var identity = 30;
+  if (name.length >= 4 && name.length <= 15) identity += 10; // Good name length
+  if (tld === 'com') identity += 5;
+  if (tld === 'ai' || tld === 'io') identity += 8;
+  // Penalize very long or hyphenated domains
+  if (name.includes('-')) identity -= 5;
+  if (name.length > 20) identity -= 5;
+
+  return {
+    identity: Math.min(65, Math.max(20, identity + Math.floor(Math.random() * 15))),
+    voice: Math.min(55, 25 + Math.floor(Math.random() * 20)),
+    ai: Math.min(40, 15 + Math.floor(Math.random() * 15)),
+    position: Math.min(55, 25 + Math.floor(Math.random() * 20)),
+    content: Math.min(50, 20 + Math.floor(Math.random() * 20))
+  };
+}
+
+function displayReport(domain, scores) {
+  var name = domain.split('.')[0];
+  name = name.charAt(0).toUpperCase() + name.slice(1);
+
+  document.getElementById('reportTitle').textContent = 'Soul Report: ' + name;
+  document.getElementById('reportSub').textContent = domain;
+
+  // Store scores for modal
+  document.getElementById('modalScores').value = JSON.stringify(scores);
+
+  var dims = [
+    { fill: 'fillIdentity', num: 'numIdentity', val: scores.identity },
+    { fill: 'fillVoice',    num: 'numVoice',    val: scores.voice },
+    { fill: 'fillAI',       num: 'numAI',       val: scores.ai },
+    { fill: 'fillPosition', num: 'numPosition',  val: scores.position },
+    { fill: 'fillContent',  num: 'numContent',   val: scores.content }
+  ];
+
+  dims.forEach(function(d) {
+    var fill = document.getElementById(d.fill);
+    var num = document.getElementById(d.num);
+    fill.style.width = d.val + '%';
+    fill.className = 'soul-score-fill ' + (d.val >= 65 ? 'green' : d.val >= 45 ? 'gold' : 'red');
+    num.textContent = d.val;
+  });
+
+  // Generate contextual insight
+  var avg = Math.round((scores.identity + scores.voice + scores.ai + scores.position + scores.content) / 5);
+  var weakest = 'ai';
+  var weakVal = scores.ai;
+  if (scores.identity < weakVal) { weakest = 'identity'; weakVal = scores.identity; }
+  if (scores.voice < weakVal) { weakest = 'voice'; weakVal = scores.voice; }
+  if (scores.position < weakVal) { weakest = 'positioning'; weakVal = scores.position; }
+  if (scores.content < weakVal) { weakest = 'content signal'; weakVal = scores.content; }
+
+  var insight = '';
+  if (avg >= 65) {
+    insight = 'Strong foundations. Your identity comes through in several areas. Your biggest opportunity is in ' + weakest + ' (scored ' + weakVal + '), which is limiting how effectively AI systems and search engines represent you.';
+  } else if (avg >= 45) {
+    insight = 'Your identity has real potential but isn\'t translating consistently across channels. ' + weakest.charAt(0).toUpperCase() + weakest.slice(1) + ' is your biggest gap at ' + weakVal + '. A soul file would give your marketing a coherent center that agents can carry forward.';
+  } else {
+    insight = 'Significant opportunity here. Your digital presence doesn\'t yet reflect a clear identity, which means AI systems are likely misrepresenting you. The good news: this is fixable, and the upside is massive. A soul file would transform how you show up everywhere.';
+  }
+  document.getElementById('insightText').textContent = insight;
+
+  // Show report
+  document.getElementById('soulReport').classList.add('visible');
+  setStatus('');
+
+  var btn = document.getElementById('soulBtn');
+  btn.textContent = 'Discover';
+  btn.disabled = false;
+
+  setTimeout(function() {
+    document.getElementById('soulReport').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }, 100);
+}
+
+// Modal
+function showModal() {
+  document.getElementById('modalOverlay').classList.add('visible');
+}
+function hideModal() {
+  document.getElementById('modalOverlay').classList.remove('visible');
+}
+
+// ============================================================
+// Lead submission -- POSTs to Supabase Edge Function -> Attio
+// ============================================================
+// IMPORTANT: Replace this URL with your deployed Supabase Edge Function URL
+var LEAD_ENDPOINT = 'https://owisphatovxkygwnchkw.supabase.co/functions/v1/attio-lead';
+var SOUL_REPORT_ENDPOINT = 'https://soulcraft-report-production.up.railway.app/api/soul/queue';
+
+function submitLead(data) {
+  return fetch(LEAD_ENDPOINT, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  });
+}
+
+function queueSoulReport(data) {
+  // Fire-and-forget -- Railway returns 202 immediately, report emails when ready (~60s)
+  fetch(SOUL_REPORT_ENDPOINT, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  }).catch(function() {
+    // Silent fallback -- CRM capture already succeeded
+  });
+}
+
+function submitModal() {
+  var name = document.getElementById('modalName').value.trim();
+  var email = document.getElementById('modalEmail').value.trim();
+  var company = document.getElementById('modalCompany').value.trim();
+  var domain = document.getElementById('modalDomain').value;
+  var scores = document.getElementById('modalScores').value;
+  var submitBtn = document.querySelector('.modal-submit');
+
+  if (!email) {
+    document.getElementById('modalEmail').focus();
+    return;
+  }
+
+  submitBtn.textContent = 'Sending...';
+  submitBtn.disabled = true;
+
+  // 1. CRM capture
+  submitLead({
+    name: name,
+    email: email,
+    company: company,
+    domain: domain,
+    scores: scores,
+    source: 'soul-report'
+  })
+  .then(function(res) {
+    if (!res.ok) throw new Error('submit failed');
+
+    // 2. Queue the real PDF report -- async, returns immediately
+    queueSoulReport({
+      domain: domain,
+      company: company || null,
+      name: name || null,
+      email: email,
+      scores: scores ? JSON.parse(scores) : null,
+    });
+
+    submitBtn.textContent = 'On its way!';
+    setTimeout(function() { hideModal(); submitBtn.textContent = 'Send My Report'; submitBtn.disabled = false; }, 1500);
+  })
+  .catch(function() {
+    // Fallback: open mailto if edge function is unreachable
+    var subject = encodeURIComponent('Soul Report Request: ' + (domain || company || 'New Lead'));
+    var body = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\nCompany: ' + company + '\nDomain: ' + domain + '\nScores: ' + scores);
+    window.location.href = 'mailto:hello@soulcraftagency.com?subject=' + subject + '&body=' + body;
+    submitBtn.textContent = 'Send My Report';
+    submitBtn.disabled = false;
+    hideModal();
+  });
+}
+
+function submitClosing() {
+  var email = document.getElementById('closingEmail').value.trim();
+  if (!email) {
+    document.getElementById('closingEmail').focus();
+    return;
+  }
+
+  var btn = document.querySelector('.closing-form button');
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+
+  submitLead({
+    email: email,
+    source: 'closing-cta'
+  })
+  .then(function(res) {
+    if (!res.ok) throw new Error('submit failed');
+    btn.textContent = 'We\'ll be in touch!';
+    setTimeout(function() { btn.textContent = 'Start the Conversation'; btn.disabled = false; }, 3000);
+  })
+  .catch(function() {
+    var subject = encodeURIComponent('Soulcraft Inquiry');
+    var body = encodeURIComponent('From: ' + email + '\n\nI\'d like to learn more about Soulcraft.');
+    window.location.href = 'mailto:hello@soulcraftagency.com?subject=' + subject + '&body=' + body;
+    btn.textContent = 'Start the Conversation';
+    btn.disabled = false;
+  });
+}
+
+// Event listeners
+document.getElementById('modalOverlay').addEventListener('click', function(e) {
+  if (e.target === this) hideModal();
+});
+document.getElementById('domainInput').addEventListener('keypress', function(e) {
+  if (e.key === 'Enter') discoverSoul();
+});
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') hideModal();
+});
+
+// Mobile nav
+(function() {
+  var burger = document.querySelector('.nav-burger');
+  var drawer = document.getElementById('nav-drawer');
+  if (!burger || !drawer) return;
+  burger.addEventListener('click', function() {
+    var open = drawer.classList.toggle('open');
+    burger.classList.toggle('open', open);
+    burger.setAttribute('aria-expanded', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+  // Close on link click
+  drawer.querySelectorAll('a').forEach(function(a) {
+    a.addEventListener('click', function() {
+      drawer.classList.remove('open');
+      burger.classList.remove('open');
+      burger.setAttribute('aria-expanded', false);
+      document.body.style.overflow = '';
+    });
+  });
+})();
+</script>
+<!-- Not Slop badge: we stand behind what we publish. https://soulcraftagency.com/notslop/ -->
+<script src="/notslop/v1.js" data-notslop data-to="hello@soulcraftagency.com"></script>
+</body>
+</html>

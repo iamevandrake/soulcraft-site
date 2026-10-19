@@ -48,7 +48,7 @@
       "@id": "https://soulcraftagency.com/#evan-drake",
       "name": "Evan Drake",
       "jobTitle": "Founder",
-      "description": "Founder of Soulcraft, an AI-native marketing agency. 20 years at the intersection of technology and marketing, from Apple to Chainlink Labs.",
+      "description": "Founder of Soulcraft, an SEO agency for the superintelligence era. 20 years at the intersection of technology and marketing, from Apple to Chainlink Labs.",
       "url": "https://soulcraftagency.com/about/",
       "image": {
         "@type": "ImageObject",
@@ -59,13 +59,14 @@
         "name": "Chainlink Labs",
         "url": "https://chainlinklabs.com"
       },
-      "sameAs": ["https://www.linkedin.com/in/iamevandrake/", "https://x.com/iamevandrake", "https://github.com/iamevandrake"]
+      "sameAs": ["https://www.linkedin.com/in/iamevandrake/", "https://x.com/iamevandrake", "https://github.com/iamevandrake"],
+      "worksFor": { "@id": "https://soulcraftagency.com/#organization" }
     },
     {
       "@type": "Organization",
       "@id": "https://soulcraftagency.com/#organization",
       "name": "Soulcraft",
-      "description": "AI-native marketing agency building agentic marketing systems driven by identity.",
+      "description": "Soulcraft is an SEO agency for the superintelligence era. We sharpen your identity and put you in the answers your customers are reading.",
       "url": "https://soulcraftagency.com",
       "foundingDate": "2026",
       "email": "hello@soulcraftagency.com",
@@ -87,13 +88,18 @@
         "@id": "{{ site.url }}{{ page.url }}"
       },
       "datePublished": "{{ page.date | date_to_xmlschema }}",
-      "dateModified": "{{ page.date | date_to_xmlschema }}",
+      "dateModified": "{{ page.last_modified_at | default: page.date | date_to_xmlschema }}",
       "image": {
         "@type": "ImageObject",
         "url": "https://soulcraftagency.com/soulcraft-og.png"
       },
+      "inLanguage": "en-US",
+      "isAccessibleForFree": true,{% if page.content_type %}
+      "articleSection": "{{ page.content_type }}",{% endif %}{% if page.schema_about %}
+      "about": { "@id": "{{ page.schema_about }}" },{% endif %}
       "author": { "@id": "https://soulcraftagency.com/#evan-drake" },
-      "publisher": { "@id": "https://soulcraftagency.com/#organization" }
+      "publisher": { "@id": "https://soulcraftagency.com/#organization" },
+      "copyrightHolder": { "@id": "https://soulcraftagency.com/#organization" }
     }
   ]
 }
