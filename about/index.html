@@ -244,6 +244,9 @@ nav .container { display: flex; align-items: center; justify-content: space-betw
 .proof { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
 @media (max-width: 900px) { .proof { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 620px) { .proof { grid-template-columns: 1fr; } }
+.proof--pairs { grid-template-columns: repeat(2, 1fr); }
+.proof--pairs .proof-item { padding: 32px; }
+@media (max-width: 620px) { .proof--pairs { grid-template-columns: 1fr; } .proof--pairs .proof-item { padding: 24px; } }
 .proof-item { background: var(--color-surface); padding: 24px; display: flex; flex-direction: column; gap: 8px; }
 .proof-item h3 { font-family: 'Playfair Display', serif; font-size: 19px; color: var(--white); font-weight: 400; }
 .proof-item p { font-size: 14px; line-height: 1.7; margin: 0; }
@@ -421,7 +424,7 @@ footer { padding: 48px 0; border-top: 1px solid var(--border); }
       <div class="section-label">What we've published</div>
       <h2>The method is public. Check it.</h2>
       <p>Most agencies describe their process. We publish the artifacts, so you can read the method before you hire anyone, and so machines can read it too.</p>
-      <div class="proof" style="margin-top:28px">
+      <div class="proof proof--pairs" style="margin-top:28px">
         <div class="proof-item">
           <h3>EntityMap</h3>
           <p>A live, machine-readable map of the Soulcraft brand entity, served as JSON alongside the site.</p>
