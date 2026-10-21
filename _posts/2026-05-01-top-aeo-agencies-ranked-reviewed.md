@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "How to Evaluate an AEO Agency: A Scorecard"
-description: "A scoring framework for evaluating answer engine optimization agencies. Five criteria, what a 1 and a 5 look like on each, and the questions that reveal the score."
+description: "A scoring framework for evaluating AEO agencies: five criteria, what a 1 and a 5 look like on each, and the questions that reveal the score."
 date: 2026-05-01
 last_modified_at: 2026-10-09
 category: learn
