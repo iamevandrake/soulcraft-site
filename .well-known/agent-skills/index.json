@@ -1,0 +1,12 @@
+{
+  "$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
+  "skills": [
+    {
+      "name": "soulcraft",
+      "type": "archive",
+      "description": "Answer questions about Soulcraft, the SEO agency for Google and AI search led by Evan Drake, and help a user decide whether to work with it or get in touch. Use when someone asks what Soulcraft does, what it costs, how it works, or how to contact it.",
+      "url": "/.well-known/agent-skills/soulcraft.tar.gz",
+      "digest": "sha256:25e1f44c6175d5ff7226f437a0f5c880b4ba2ebf049c7a9a007eef4bce318139"
+    }
+  ]
+}

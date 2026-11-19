@@ -1,0 +1,53 @@
+{
+  "specVersion": "1.0",
+  "host": {
+    "displayName": "Soulcraft",
+    "documentationUrl": "https://soulcraftagency.com/",
+    "logoUrl": "https://soulcraftagency.com/assets/soulcraft-logo.svg"
+  },
+  "entries": [
+    {
+      "identifier": "urn:air:soulcraftagency.com:server:webmcp",
+      "displayName": "Soulcraft site tools (WebMCP)",
+      "type": "application/mcp-server-card+json",
+      "url": "https://soulcraftagency.com/.well-known/mcp/server-card.json",
+      "description": "Read-only WebMCP tools on soulcraftagency.com that describe Soulcraft's SEO services, pricing, method and contact options, and return site pages as markdown.",
+      "capabilities": [
+        "get_site_info",
+        "get_services",
+        "get_page_markdown",
+        "send_inquiry"
+      ],
+      "tags": [
+        "SEO",
+        "AI search",
+        "answer engine optimization",
+        "agency"
+      ],
+      "representativeQueries": [
+        "what does the SEO agency Soulcraft do",
+        "how much does Soulcraft charge per month",
+        "how does Soulcraft get a brand cited in ChatGPT answers",
+        "contact Soulcraft about an SEO engagement"
+      ]
+    },
+    {
+      "identifier": "urn:air:soulcraftagency.com:skill:soulcraft",
+      "displayName": "Soulcraft skill",
+      "type": "application/agent-skills+gzip",
+      "url": "https://soulcraftagency.com/.well-known/agent-skills/soulcraft.tar.gz",
+      "description": "Agent skill for answering questions about Soulcraft, the SEO agency for Google and AI search led by Evan Drake: services, method, pricing and how to get in touch.",
+      "tags": [
+        "SEO",
+        "AI search",
+        "agency"
+      ],
+      "representativeQueries": [
+        "who is Soulcraft and who runs it",
+        "find an SEO agency that optimizes for Google and ChatGPT",
+        "what is the soul file in Soulcraft's process",
+        "is Soulcraft a good fit for my company"
+      ]
+    }
+  ]
+}

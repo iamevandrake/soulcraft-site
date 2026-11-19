@@ -39,3 +39,6 @@ Sitemap: https://soulcraftagency.com/sitemap.xml
 
 # Entity-first knowledge index for AI systems (EntityMap v1.0)
 EntityMap: https://soulcraftagency.com/entitymap.json
+
+# Agentic resource discovery (ARD) catalog: site tools and agent skill
+Agentmap: https://soulcraftagency.com/.well-known/ard.json

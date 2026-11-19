@@ -291,26 +291,26 @@ footer { padding: 48px 0; border-top: 1px solid var(--border); }
         <h2>Start the conversation.</h2>
         <p class="form-sub">No pitch decks, no sales calls to qualify you. Just a real conversation about your marketing and where agentic systems can take it.</p>
 
-        <form id="inquiryForm" onsubmit="submitForm(event)">
+        <form id="inquiryForm" onsubmit="submitForm(event)" toolname="send_inquiry" tooldescription="Send Soulcraft a project inquiry. Soulcraft replies by email within one business day.">
           <div class="form-group">
             <label for="name">Your name</label>
-            <input type="text" id="name" name="name" placeholder="Jane Smith" required autocomplete="name">
+            <input type="text" id="name" name="name" toolparamdescription="Full name of the person making the inquiry" placeholder="Jane Smith" required autocomplete="name">
           </div>
           <div class="form-group">
             <label for="email">Work email</label>
-            <input type="email" id="email" name="email" placeholder="jane@yourcompany.com" required autocomplete="email">
+            <input type="email" id="email" name="email" toolparamdescription="Work email address Soulcraft should reply to" placeholder="jane@yourcompany.com" required autocomplete="email">
           </div>
           <div class="form-group">
             <label for="company">Company</label>
-            <input type="text" id="company" name="company" placeholder="Acme Inc." required autocomplete="organization">
+            <input type="text" id="company" name="company" toolparamdescription="Company name" placeholder="Acme Inc." required autocomplete="organization">
           </div>
           <div class="form-group">
             <label for="website">Website</label>
-            <input type="url" id="website" name="website" placeholder="https://yourcompany.com" autocomplete="url">
+            <input type="url" id="website" name="website" toolparamdescription="Company website URL, including https://" placeholder="https://yourcompany.com" autocomplete="url">
           </div>
           <div class="form-group">
             <label for="budget">Monthly budget range</label>
-            <select id="budget" name="budget">
+            <select id="budget" name="budget" toolparamdescription="Monthly budget range: core ($5,000), core-plus-one ($7,500), core-plus-both ($10,000), or custom">
               <option value="" disabled selected>Select a range</option>
               <option value="core">$5,000/mo -- Core engagement</option>
               <option value="core-plus-one">$7,500/mo -- Core plus one add-on</option>
@@ -320,7 +320,7 @@ footer { padding: 48px 0; border-top: 1px solid var(--border); }
           </div>
           <div class="form-group">
             <label for="message">What are you trying to solve?</label>
-            <textarea id="message" name="message" placeholder="Tell us about your marketing situation, goals, or whatever's on your mind." rows="4"></textarea>
+            <textarea id="message" name="message" toolparamdescription="What the company is trying to solve" placeholder="Tell us about your marketing situation, goals, or whatever's on your mind." rows="4"></textarea>
           </div>
           <button type="submit" class="form-submit">Send It</button>
         </form>
@@ -449,6 +449,7 @@ footer.sf-footer { padding: 64px 0 36px; border-top: 1px solid var(--color-rule,
       </div>
     </div>
   </div>
+<script src="/assets/js/webmcp.js" defer></script>
 </footer>
 <!-- /SITE FOOTER -->
 

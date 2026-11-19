@@ -1,12 +1,12 @@
 {
   "serverInfo": {
-    "name": "Soulcraft Agency",
-    "version": "1.0.0"
+    "name": "Soulcraft",
+    "version": "1.1.0"
   },
-  "description": "Soulcraft is an AI-native marketing agency. This MCP server provides tools for understanding Soulcraft's services, identity framework (soul.md), and agentic marketing systems.",
+  "description": "Soulcraft is an SEO agency that puts businesses in the answers their customers are looking for, in Google and AI assistants such as ChatGPT, Claude and Gemini. These read-only WebMCP tools run in the visitor's browser on soulcraftagency.com and describe Soulcraft's services, pricing, method and contact options, and return site pages as markdown.",
   "transport": {
     "type": "webmcp",
-    "endpoint": "https://soulcraftagency.com/mcp/"
+    "endpoint": "https://soulcraftagency.com/"
   },
   "capabilities": {
     "tools": true
@@ -14,15 +14,19 @@
   "tools": [
     {
       "name": "get_site_info",
-      "description": "Get an overview of Soulcraft, its services, pricing, and contact information"
-    },
-    {
-      "name": "get_soul_md",
-      "description": "Get the soul.md identity framework specification and how it drives agentic marketing systems"
+      "description": "Overview of Soulcraft: what it does, who leads the work, where it is based, how to get in touch, and the main pages."
     },
     {
       "name": "get_services",
-      "description": "Get detailed information about Soulcraft's SEO/AEO/GEO, content and distribution, and citation services"
+      "description": "Soulcraft services, its five-step method, and published monthly pricing (core engagement and add-ons)."
+    },
+    {
+      "name": "get_page_markdown",
+      "description": "Return a page on soulcraftagency.com as markdown, for reading without the page chrome."
+    },
+    {
+      "name": "send_inquiry",
+      "description": "Declarative form tool on https://soulcraftagency.com/contact/: send Soulcraft a project inquiry (name, work email, company, website, budget range, message). Submitted through the visible form in the visitor's browser."
     }
   ]
 }
