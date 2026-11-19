@@ -48,6 +48,27 @@
         "what is the soul file in Soulcraft's process",
         "is Soulcraft a good fit for my company"
       ]
+    },
+    {
+      "identifier": "urn:air:soulcraftagency.com:api:soul-score",
+      "displayName": "Soul Score API",
+      "type": "application/vnd.oai.openapi+json",
+      "url": "https://soulcraftagency.com/developers/openapi.json",
+      "description": "REST API that scores a company's identity on five dimensions and generates its soul file. Free key, 3 analyses per day.",
+      "capabilities": [
+        "soulAnalyze",
+        "requestKey"
+      ],
+      "tags": [
+        "brand identity",
+        "AI readiness",
+        "API"
+      ],
+      "representativeQueries": [
+        "score how clearly a company's brand identity comes across",
+        "check how AI-ready a company's identity is",
+        "generate a brand identity document for a domain"
+      ]
     }
   ]
 }

@@ -1,0 +1,286 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Soulcraft Soul Score API",
+    "version": "0.1.0",
+    "description": "Scores a company's identity across five dimensions (identity clarity, voice consistency, AI readiness, positioning, content signal), generates its soul file, and returns tailored recommendations. Free tier: 3 analyses per day. Public subset of the service; documentation at https://soulcraftagency.com/developers/.",
+    "contact": {
+      "name": "Soulcraft",
+      "email": "hello@soulcraftagency.com",
+      "url": "https://soulcraftagency.com/developers/"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://soulcraft-report-production.up.railway.app"
+    }
+  ],
+  "externalDocs": {
+    "url": "https://soulcraftagency.com/developers/"
+  },
+  "paths": {
+    "/": {
+      "get": {
+        "summary": "Health",
+        "operationId": "health",
+        "security": [],
+        "responses": {
+          "200": {
+            "description": "Service is up",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string"
+                    },
+                    "service": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/soul/keys/request": {
+      "post": {
+        "summary": "Request a free API key",
+        "operationId": "requestKey",
+        "security": [],
+        "description": "Self-serve key request. Sends a verification link to the email address; the key is emailed after the person clicks it.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/KeyRequestBody"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Verification email sent"
+          },
+          "422": {
+            "description": "Validation error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/soul/analyze": {
+      "post": {
+        "summary": "Analyze a company's identity",
+        "operationId": "soulAnalyze",
+        "description": "Researches the domain, scores it on five dimensions (0-100) and generates the soul file content. Optionally builds a branded PDF and emails it.",
+        "security": [
+          {
+            "SoulKey": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SoulAnalyzeRequest"
+              },
+              "example": {
+                "domain": "stripe.com"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Scores and soul file content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SoulAnalyzeResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "SoulKey": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-Soul-Key",
+        "description": "Free key from POST /api/soul/keys/request or the form at https://soulcraftagency.com/developers/"
+      }
+    },
+    "schemas": {
+      "KeyRequestBody": {
+        "type": "object",
+        "required": [
+          "email"
+        ],
+        "properties": {
+          "email": {
+            "type": "string",
+            "format": "email"
+          },
+          "name": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "company": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      },
+      "SoulAnalyzeRequest": {
+        "type": "object",
+        "required": [
+          "domain"
+        ],
+        "properties": {
+          "domain": {
+            "type": "string",
+            "description": "Domain to analyze, e.g. stripe.com"
+          },
+          "company": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "name": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "email": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Where to send the PDF report, if requested"
+          },
+          "include_pdf": {
+            "type": "boolean",
+            "default": false
+          },
+          "force_refresh": {
+            "type": "boolean",
+            "default": false
+          }
+        }
+      },
+      "SoulAnalyzeResponse": {
+        "type": "object",
+        "properties": {
+          "company": {
+            "type": "string"
+          },
+          "domain": {
+            "type": "string"
+          },
+          "scores": {
+            "type": "object",
+            "properties": {
+              "identity": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 100
+              },
+              "voice": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 100
+              },
+              "ai": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 100
+              },
+              "position": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 100
+              },
+              "content": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 100
+              },
+              "overall": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 100
+              }
+            }
+          },
+          "soul": {
+            "type": "object",
+            "description": "Soul file content, by section"
+          },
+          "email_sent": {
+            "type": "boolean"
+          }
+        }
+      },
+      "HTTPValidationError": {
+        "type": "object",
+        "properties": {
+          "detail": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "loc": {
+                  "type": "array",
+                  "items": {
+                    "type": [
+                      "string",
+                      "integer"
+                    ]
+                  }
+                },
+                "msg": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -5,7 +5,7 @@ Runs in front of soulcraftagency.com and does three things GitHub Pages can't:
 1. **Markdown for agents.** A request whose `Accept` header prefers `text/markdown` gets the page's main
    content as markdown (`Content-Type: text/markdown`, plus `x-markdown-tokens`). Browsers still get HTML.
    Cloudflare's own "Markdown for Agents" toggle needs a Pro plan; this does the same on Free.
-2. **Link headers** (RFC 8288) on every HTML page, pointing agents at the ARD catalog, the MCP server card,
+2. **Link headers** (RFC 8288) on every HTML page, pointing agents at the API catalog, the ARD catalog, the MCP server card,
    the agent-skills index, the sitemap and the markdown version of the page.
 3. **CORS and content types** on `/.well-known/` files (the ARD spec asks for `Access-Control-Allow-Origin: *`).
 

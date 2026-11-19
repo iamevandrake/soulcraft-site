@@ -5149,6 +5149,7 @@ var require_dist2 = __commonJS({
 
 // src.js
 var import_node_html_markdown = __toESM(require_dist2(), 1), CONTENT_SIGNAL = "ai-train=yes, search=yes, ai-input=yes", LINKS = [
+  '</.well-known/api-catalog>; rel="api-catalog"; type="application/linkset+json"',
   '</.well-known/ard.json>; rel="ard"; type="application/json"',
   '</.well-known/ai-catalog.json>; rel="ai-catalog"; type="application/json"',
   '</.well-known/mcp/server-card.json>; rel="mcp-server-card"; type="application/json"',
