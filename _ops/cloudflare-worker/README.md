@@ -11,6 +11,12 @@ Runs in front of soulcraftagency.com and does three things GitHub Pages can't:
 
 It fails open: if the Worker errors, visitors get the normal origin response.
 
+## Deploy (CLI, recommended)
+
+From this folder, with Node installed: `npx wrangler deploy`. The first run opens a browser to sign in to
+Cloudflare. `wrangler.toml` holds the account, Worker name and the `soulcraftagency.com/*` route. Afterwards,
+set Failure mode to Fail open in the dashboard (Worker → Settings → Domains & Routes).
+
 ## Deploy (dashboard, no CLI needed)
 
 1. Cloudflare dashboard → Workers & Pages → Create → Create Worker. Name it `soulcraft-agent-edge`, Deploy.

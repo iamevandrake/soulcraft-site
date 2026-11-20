@@ -1,0 +1,9 @@
+# Deploy from this folder: npx wrangler deploy   (opens a browser to sign in to Cloudflare the first time)
+name = "soulcraft-agent-edge"
+main = "dist/worker.js"
+compatibility_date = "2026-09-01"
+account_id = "908ec1f54285e7f9c18e66ef73567f74"
+workers_dev = false
+routes = [
+  { pattern = "soulcraftagency.com/*", zone_name = "soulcraftagency.com" }
+]
